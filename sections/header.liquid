@@ -47,7 +47,7 @@
       </div>
       <div class="header-account">
         {%- if shop.customer_accounts_enabled -%}
-        <a href="{{ customer_login_link }}">
+        <a href="/account">
           <svg width="24" height="24">
             <use href="#user" />
           </svg>
@@ -115,6 +115,20 @@
   <!-- navigation -->
 </header>
 
+{%- if shop.customer_accounts_enabled -%}
+<a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
+  {% render 'icon-account' %}
+  <span class="visually-hidden">
+    {%- liquid
+      if customer
+        echo 'customer.account_fallback' | t
+      else
+        echo 'customer.log_in' | t
+      endif
+    -%}
+  </span>
+</a>
+{%- endif -%}
 
 <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
   {%- liquid
