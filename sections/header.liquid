@@ -13,8 +13,7 @@
             widths: '50, 100, 150, 200, 250, 300, 400, 500',
             height: logo_height,
             width: section.settings.logo_width,
-            alt: logo_alt,
-            itemprop: logo
+            alt: logo_alt
           }}
         {%- else -%}
           <span class="h2">{{ shop.name }}</span>
@@ -126,7 +125,7 @@
       "type": "image_picker",
       "id": "logo",
       "label": "t:sections.header.settings.logo.label"
-    },
+    }
     {
       "type": "link_list",
       "id": "menu",
