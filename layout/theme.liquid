@@ -160,9 +160,36 @@
           <span class="cart-count">44</span>
         </div>
         <div class="header-account">
-          <svg width="24" height="24">
-            <use href="#user" />
-          </svg>
+          {%- if shop.customer_accounts_enabled -%}
+          <ul>
+            {%- if customer -%}
+              <li>
+                <a href="/account">Account
+                  <svg width="24" height="24">
+                    <use href="#user" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                {{ 'Log out' | customer_logout_link }}
+              </li>
+            {%- else -%}
+              <li>
+                {{ 'Log in' | customer_login_link }}
+                <svg width="24" height="24">
+                  <use href="#user" />
+                </svg>
+              </li>
+              <li>
+                {{ 'Create account' | customer_register_link }}
+                <svg width="24" height="24">
+                  <use href="#user" />
+                </svg>
+              </li>
+            {%- endif -%}
+          </ul>
+        {%- endif -%}
+
         </div>
       </div>
     </div>
