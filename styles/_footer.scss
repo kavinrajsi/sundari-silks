@@ -1,0 +1,19 @@
+.footer-copyright {
+  font-family:var(--font-montserrat);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: var(--pure-black);
+  padding: 16px 0px;
+  background: #f5dec9;
+  border-top: 1px solid #bfafa0;
+  a {
+    color: inherit;
+  }
+}
+
+.locale-selectors__container {
+  display: none !important;
+}

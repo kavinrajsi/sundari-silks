@@ -1,0 +1,8 @@
+body {
+  display: none !important;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 14px;
+}

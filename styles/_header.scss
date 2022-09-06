@@ -1,0 +1,203 @@
+.skip-to-content-link {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#shopify-section-announcement-bar {
+  a {
+    display: block;
+
+    p {
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      background-color: var(--pure-black);
+      color: #fff;
+      font-size: 12px;
+      line-height: 1.4;
+      padding: 10px 0px;
+    }
+  }
+}
+
+.header-action-list {
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 8px;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    padding: 12px 12px;
+  }
+  .header-logo {
+    flex: 1 0 auto;
+    text-align: center;
+    @media (min-width: 768px) {
+      text-align: left;
+    }
+  }
+  .header-action-lists {
+    div {
+      position: relative;
+      display: inline-block;
+      padding: 12px 12px;
+      cursor: pointer;
+      &:not(:first-child) {
+        display: none;
+      }
+      @media (min-width: 768px) {
+        &:not(:first-child) {
+          display: inline-block;
+        }
+      }
+      @media (min-width: 1415px) {
+        &:first-child {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.header-search-area {
+  margin: 0px 12px;
+  padding: 12px 0px;
+  @media (min-width: 768px) {
+    margin: 0px 40px;
+    padding: 20px 0px;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+
+  .input__search-icon,
+  .input__close-icon {
+    position: absolute;
+  }
+  .input__search-icon {
+    left: 16px;
+  }
+  .input__close-icon {
+    cursor: pointer;
+    right: 16px;
+  }
+  .input-full {
+    width: calc(100% - 82px);
+    padding: 20px 40px 20px 50px;
+  }
+}
+
+.header-nav-list-main {
+  ul {
+    text-align: center;
+    li {
+      display: inline-block;
+      > a {
+        display: inline-block;
+        padding: 10px;
+        color: inherit;
+        font-size: 16px;
+        line-height: 1.4;
+        font-family: var(--font-montserrat);
+        position: relative;
+        transition: all 0.2s ease-in;
+        font-weight: 400;
+        &:after {
+          content: none;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          width: 0%;
+          height: 1px;
+          background-color: var(--pure-black);
+        }
+        &:hover {
+          &::after {
+            content: "";
+            width: 100%;
+          }
+        }
+      }
+      > ul {
+        display: none;
+      }
+      &:hover > ul {
+        background-color: var(--pure-white);
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 0;
+        > li {
+          // background-color: red;
+          position: relative;
+          a {
+            font-weight: 500;
+            display: block;
+            border-bottom: 1px solid var(--border-color);
+            text-align: left;
+          }
+
+          > ul {
+            position: relative;
+            // background-color: blue;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            padding: 0;
+            li {
+              // background-color: yellow;
+              > ul {
+                position: relative;
+                // background-color: green;
+                li {
+                  &:last-child a {
+                    border-bottom: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.header-nav-list-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5dec9;
+  border: 1px solid #bfafa0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  > div {
+    text-align: center;
+    padding: 8px 16px;
+    svg {
+      text-align: center;
+    }
+    span {
+      display: block;
+      font-size: 14px;
+      line-height: 150%;
+      color: var(--pure-black);
+    }
+  }
+}

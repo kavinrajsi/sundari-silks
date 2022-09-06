@@ -1,0 +1,42 @@
+:root {
+  --mobile: 576px;
+  ---tablet: 768px;
+  --laptop: 992px;
+  --desktop: 1200px;
+  --font-playfair: "Playfair Display", serif;
+  --font-montserrat: "Montserrat", sans-serif;
+  --gutter-full: 24px;
+  --gutter-half: 12px;
+  --menu-font-size: 16px;
+  --pure-black: #000;
+  --pure-white: #fff;
+  --light-black: #222;
+  --border-color: #e8e8e1;
+  --background-color: #fef1e1;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--light-black);
+  text-align: left;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body{
+  background-color: #fef1e1;
+}
+
+#MainContent {
+  position: relative;
+  z-index: 1;
+}

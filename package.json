@@ -1,0 +1,27 @@
+{
+  "name": "boomer",
+  "version": "1.0.0",
+  "description": "learn shopify theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kavinrajsi/boomer.git"
+  },
+  "author": "kavinrajsi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kavinrajsi/boomer/issues"
+  },
+  "homepage": "https://github.com/kavinrajsi/boomer#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-sass": "^5.1.0",
+    "node-sass": "^7.0.1",
+    "sass": "^1.54.8"
+  }
+}
