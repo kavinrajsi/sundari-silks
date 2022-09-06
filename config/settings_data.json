@@ -1,0 +1,18 @@
+{
+  "current": {
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "show_announcement": true,
+          "home_page_only": true,
+          "text": "Announce something here",
+          "link": "shopify:\/\/blogs\/article"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  }
+}
