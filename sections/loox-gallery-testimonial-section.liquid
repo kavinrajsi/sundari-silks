@@ -1,0 +1,198 @@
+
+    <div class="loox-v2-carousel-container"
+         id="LOOX-V2_CAROUSEL-{{ 'now' | date: "%09N" }}"
+         data-widget="carousel"
+         data-slide-type="testimonial"
+         {% if section.settings.maxWidth %} data-max-width="{{ section.settings.maxWidth }}" {% endif %}
+{% if section.settings.maxNumberOfCharacters %} data-max-number-of-characters="{{ section.settings.maxNumberOfCharacters }}" {% endif %}
+{% if section.settings.quoteMarkIcon %} data-quote-mark-icon="{{ section.settings.quoteMarkIcon }}" {% endif %}
+{% if section.settings.reviewerNameColor %} data-reviewer-name-color="{{ section.settings.reviewerNameColor | replace: "#", "" }}" {% endif %}
+{% if section.settings.textColor %} data-text-color="{{ section.settings.textColor | replace: "#", "" }}" {% endif %}
+{% if section.settings.starsColor %} data-stars-color="{{ section.settings.starsColor | replace: "#", "" }}" {% endif %}
+{% if section.settings.quotesIconColor %} data-quotes-icon-color="{{ section.settings.quotesIconColor | replace: "#", "" }}" {% endif %}
+{% if section.settings.arrows_iconColor %} data-arrows_icon-color="{{ section.settings.arrows_iconColor | replace: "#", "" }}" {% endif %}
+{% if section.settings.arrows_hideOnMobile %} data-arrows_hide-on-mobile="yes" {% else %} data-arrows_hide-on-mobile="no" {% endif %}
+{% if section.settings.pagination_active %} data-pagination_active="yes" {% else %} data-pagination_active="no" {% endif %}
+{% if section.settings.pagination_selectedDotColor %} data-pagination_selected-dot-color="{{ section.settings.pagination_selectedDotColor | replace: "#", "" }}" {% endif %}
+{% if section.settings.pagination_dotColor %} data-pagination_dot-color="{{ section.settings.pagination_dotColor | replace: "#", "" }}" {% endif %}
+{% if section.settings.autoplay_active %} data-autoplay_active="yes" {% else %} data-autoplay_active="no" {% endif %}
+{% if section.settings.autoplay_duration %} data-autoplay_duration="{{ section.settings.autoplay_duration }}" {% endif %}
+{% if section.settings.productIds %} data-product-ids="{{ all_products[section.settings.productIds].id }}" {% endif %}
+
+         data-customer-locale="{{ request.locale.iso_code }}"
+         {% if request.design_mode %}
+         data-preview="yes"
+         data-loox-block-id="{{ section.id }}"
+         data-request-path="{{ request.path }}"
+         data-page-type="{{ request.page_type }}"
+         data-origin="{{ request.origin }}"
+         data-template="{{ template }}"
+         {% endif %}
+    >
+    </div>
+    
+    {% schema %}
+        {
+    "name": "Loox - Testimonials",
+    "class": "loox-testimonial-carousel-lqd-section",
+    "settings": [
+        {
+            "type": "paragraph",
+            "content": "Note that this widget will display only the text of the review"
+        },
+        {
+            "type": "range",
+            "id": "maxWidth",
+            "min": 600,
+            "max": 1600,
+            "step": 10,
+            "unit": "px",
+            "label": "Maximum width",
+            "default": 1100
+        },
+        {
+            "type": "range",
+            "id": "maxNumberOfCharacters",
+            "min": 50,
+            "max": 500,
+            "step": 10,
+            "label": "Max number of characters",
+            "default": 100
+        },
+        {
+            "type": "select",
+            "id": "quoteMarkIcon",
+            "label": "Quote marks icon",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "No icon"
+                },
+                {
+                    "value": "style-1",
+                    "label": "Style 1"
+                },
+                {
+                    "value": "style-2",
+                    "label": "Style 2"
+                },
+                {
+                    "value": "style-3",
+                    "label": "Style 3"
+                },
+                {
+                    "value": "style-4",
+                    "label": "Style 4"
+                },
+                {
+                    "value": "style-5",
+                    "label": "Style 5"
+                }
+            ],
+            "default": "style-1"
+        },
+        {
+            "type": "color",
+            "id": "reviewerNameColor",
+            "label": "Reviewer name color",
+            "default": "#000000"
+        },
+        {
+            "type": "color",
+            "id": "textColor",
+            "label": "Text color",
+            "default": "#000000"
+        },
+        {
+            "type": "color",
+            "id": "starsColor",
+            "label": "Stars color"
+        },
+        {
+            "type": "color",
+            "id": "quotesIconColor",
+            "label": "Quotes icon color",
+            "default": "#EAEAEA"
+        },
+        {
+            "type": "color",
+            "id": "arrows_iconColor",
+            "label": "Arrow color",
+            "default": "#000000"
+        },
+        {
+            "type": "checkbox",
+            "id": "arrows_hideOnMobile",
+            "label": "Hide arrows on mobile",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "Pagination"
+        },
+        {
+            "type": "checkbox",
+            "id": "pagination_active",
+            "label": "Pagination dots",
+            "default": true
+        },
+        {
+            "type": "color",
+            "id": "pagination_selectedDotColor",
+            "label": "Selected dot",
+            "default": "#000000"
+        },
+        {
+            "type": "color",
+            "id": "pagination_dotColor",
+            "label": "Dot background",
+            "default": "#000000"
+        },
+        {
+            "type": "header",
+            "content": "Animation"
+        },
+        {
+            "type": "checkbox",
+            "id": "autoplay_active",
+            "label": "Auto animation",
+            "default": false
+        },
+        {
+            "type": "range",
+            "id": "autoplay_duration",
+            "min": 1,
+            "max": 15,
+            "step": 1,
+            "unit": "sec",
+            "label": "Delay (sec)",
+            "default": 2
+        },
+        {
+            "type": "header",
+            "content": "Reviews Selection"
+        },
+        {
+            "type": "paragraph",
+            "content": "Learn how to select reviews to display on this widget [Learn more](https://help.loox.io/article/607-loox-carousel-widgets)."
+        },
+        {
+            "type": "product",
+            "id": "productIds",
+            "label": "Select product (optional)",
+            "info": "If you prefer to display reviews of a specific product, select it here."
+        },
+        {
+            "type": "paragraph",
+            "content": "Customize the carousel font on your Loox settings [Loox Branding settings](/admin/apps/loox-fashion-reviews/admin/settings/branding)"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Loox - Testimonials",
+            "category": "Loox"
+        }
+    ]
+}
+    {% endschema %}
+    

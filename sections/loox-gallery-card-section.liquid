@@ -1,0 +1,225 @@
+
+    <div class="loox-v2-carousel-container"
+         id="LOOX-V2_CAROUSEL-{{ 'now' | date: "%09N" }}"
+         data-widget="carousel"
+         data-slide-type="card"
+         {% if section.settings.maxWidth %} data-max-width="{{ section.settings.maxWidth }}" {% endif %}
+{% if section.settings.borderRadius %} data-border-radius="{{ section.settings.borderRadius }}" {% endif %}
+{% if section.settings.itemsPerView %} data-items-per-view="{{ section.settings.itemsPerView }}" {% endif %}
+{% if section.settings.maxNumberOfCharacters %} data-max-number-of-characters="{{ section.settings.maxNumberOfCharacters }}" {% endif %}
+{% if section.settings.imageRatio %} data-image-ratio="{{ section.settings.imageRatio }}" {% endif %}
+{% if section.settings.reviewerNameColor %} data-reviewer-name-color="{{ section.settings.reviewerNameColor | replace: "#", "" }}" {% endif %}
+{% if section.settings.textColor %} data-text-color="{{ section.settings.textColor | replace: "#", "" }}" {% endif %}
+{% if section.settings.itemBackgroundColor %} data-item-background-color="{{ section.settings.itemBackgroundColor | replace: "#", "" }}" {% endif %}
+{% if section.settings.starsColor %} data-stars-color="{{ section.settings.starsColor | replace: "#", "" }}" {% endif %}
+{% if section.settings.starsBackgroundColor %} data-stars-background-color="{{ section.settings.starsBackgroundColor | replace: "#", "" }}" {% endif %}
+{% if section.settings.arrows_backgroundColor %} data-arrows_background-color="{{ section.settings.arrows_backgroundColor | replace: "#", "" }}" {% endif %}
+{% if section.settings.arrows_iconColor %} data-arrows_icon-color="{{ section.settings.arrows_iconColor | replace: "#", "" }}" {% endif %}
+{% if section.settings.shadow %} data-shadow="{{ section.settings.shadow }}" {% endif %}
+{% if section.settings.border_active %} data-border_active="yes" {% else %} data-border_active="no" {% endif %}
+{% if section.settings.border_width %} data-border_width="{{ section.settings.border_width }}" {% endif %}
+{% if section.settings.border_color %} data-border_color="{{ section.settings.border_color | replace: "#", "" }}" {% endif %}
+{% if section.settings.productIds %} data-product-ids="{{ all_products[section.settings.productIds].id }}" {% endif %}
+
+         data-customer-locale="{{ request.locale.iso_code }}"
+         {% if request.design_mode %}
+         data-preview="yes"
+         data-loox-block-id="{{ section.id }}"
+         data-request-path="{{ request.path }}"
+         data-page-type="{{ request.page_type }}"
+         data-origin="{{ request.origin }}"
+         data-template="{{ template }}"
+         {% endif %}
+    >
+    </div>
+    
+    {% schema %}
+        {
+    "name": "Loox Carousel - Cards",
+    "class": "loox-card-carousel-lqd-section",
+    "settings": [
+        {
+            "type": "paragraph",
+            "content": "Note that this widget will display only reviews with a photo"
+        },
+        {
+            "type": "range",
+            "id": "maxWidth",
+            "min": 600,
+            "max": 1600,
+            "step": 10,
+            "unit": "px",
+            "label": "Maximum width",
+            "default": 1100
+        },
+        {
+            "type": "range",
+            "id": "borderRadius",
+            "min": 0,
+            "max": 60,
+            "step": 1,
+            "unit": "px",
+            "label": "Corner radius",
+            "default": 8
+        },
+        {
+            "type": "range",
+            "id": "itemsPerView",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "label": "Number of reviews on desktop",
+            "default": 4
+        },
+        {
+            "type": "range",
+            "id": "maxNumberOfCharacters",
+            "min": 50,
+            "max": 500,
+            "step": 10,
+            "label": "Max number of characters",
+            "default": 100
+        },
+        {
+            "type": "select",
+            "id": "imageRatio",
+            "label": "Image ratio",
+            "options": [
+                {
+                    "value": "1",
+                    "label": "1:1"
+                },
+                {
+                    "value": "0.72",
+                    "label": "3:4"
+                },
+                {
+                    "value": "1.25",
+                    "label": "4:3"
+                },
+                {
+                    "value": "0.5625",
+                    "label": "16:9"
+                }
+            ],
+            "default": "0.72"
+        },
+        {
+            "type": "color",
+            "id": "reviewerNameColor",
+            "label": "Reviewer name color",
+            "default": "#000000"
+        },
+        {
+            "type": "color",
+            "id": "textColor",
+            "label": "Text color",
+            "default": "#000000"
+        },
+        {
+            "type": "color",
+            "id": "itemBackgroundColor",
+            "label": "Text background color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "starsColor",
+            "label": "Stars color"
+        },
+        {
+            "type": "color",
+            "id": "starsBackgroundColor",
+            "label": "Stars background color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "arrows_backgroundColor",
+            "label": "Arrow background color",
+            "default": "#FFFFFF"
+        },
+        {
+            "type": "color",
+            "id": "arrows_iconColor",
+            "label": "Arrow color",
+            "default": "#9A9A9A"
+        },
+        {
+            "type": "header",
+            "content": "Shadow & Border"
+        },
+        {
+            "type": "select",
+            "id": "shadow",
+            "label": "Drop shadow style",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "No shadow"
+                },
+                {
+                    "value": "basic",
+                    "label": "Basic"
+                },
+                {
+                    "value": "offset-dark",
+                    "label": "Offset Dark"
+                },
+                {
+                    "value": "offset-light",
+                    "label": "Offset Light"
+                }
+            ],
+            "default": "offset-dark"
+        },
+        {
+            "type": "checkbox",
+            "id": "border_active",
+            "label": "Show border",
+            "default": false
+        },
+        {
+            "type": "range",
+            "id": "border_width",
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "unit": "px",
+            "label": "Border width",
+            "default": 2
+        },
+        {
+            "type": "color",
+            "id": "border_color",
+            "label": "Border color",
+            "default": "#000000"
+        },
+        {
+            "type": "header",
+            "content": "Reviews Selection"
+        },
+        {
+            "type": "paragraph",
+            "content": "Learn how to select reviews to display on this widget [Learn more](https://help.loox.io/article/607-loox-carousel-widgets)."
+        },
+        {
+            "type": "product",
+            "id": "productIds",
+            "label": "Select product (optional)",
+            "info": "If you prefer to display reviews of a specific product, select it here."
+        },
+        {
+            "type": "paragraph",
+            "content": "Customize the carousel font on your Loox settings [Loox Branding settings](/admin/apps/loox-fashion-reviews/admin/settings/branding)"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Loox Carousel - Cards",
+            "category": "Loox"
+        }
+    ]
+}
+    {% endschema %}
+    
