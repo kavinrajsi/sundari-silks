@@ -45,9 +45,9 @@
   <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <a class="skip-to-content-link button visually-hidden" href="#MainContent">
-      {{ "accessibility.skip_to_text" | t }}
-    </a>
+  <a class="skip-to-content-link button visually-hidden" href="#MainContent">
+    {{ "accessibility.skip_to_text" | t }}
+  </a>
   <svg style="display:none">
     <symbol id="search" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round"
       stroke-linejoin="round" class="feather feather-search">
@@ -120,23 +120,12 @@
   {% section 'announcement-bar' %}
   <header>
     <div class="header-action-list">
-      {%- if template.name == 'index' -%}
-      <h1 itemscope itemtype="http://schema.org/Organization">
-    {%- else -%}
+
       <div class="header-logo" itemscope itemtype="http://schema.org/Organization">
-    {%- endif -%}
-
-      <a href="/" itemprop="url">
-        <img src="{{ "logo.svg" | asset_url }}"
-          alt="{{ shop.name }}"
-          itemprop="logo">
-      </a>
-
-    {%- if template.name == 'index' -%}
-      </h1>
-    {%- else -%}
+        <a href="/" itemprop="url">
+          <img src="{{ " logo.svg" | asset_url }}" alt="{{ shop.name }}" width="{{ image.width }}" height="{{ image.height }}" loading="lazy" itemprop="logo">
+        </a>
       </div>
-    {%- endif -%}
       <div class="header-action-lists">
         <div class="header-menu">
           <svg width="24" height="24">
@@ -164,11 +153,7 @@
           <ul>
             {%- if customer -%}
               <li>
-                <a href="/account">Account
-                  <svg width="24" height="24">
-                    <use href="#user" />
-                  </svg>
-                </a>
+                <a href="/account">Account</a>
               </li>
               <li>
                 {{ 'Log out' | customer_logout_link }}
@@ -176,15 +161,9 @@
             {%- else -%}
               <li>
                 {{ 'Log in' | customer_login_link }}
-                <svg width="24" height="24">
-                  <use href="#user" />
-                </svg>
               </li>
               <li>
                 {{ 'Create account' | customer_register_link }}
-                <svg width="24" height="24">
-                  <use href="#user" />
-                </svg>
               </li>
             {%- endif -%}
           </ul>
@@ -201,7 +180,8 @@
             <use href="#search" />
           </svg>
         </i>
-        <input type="search" class="input-full" placeholder="Search for product" name="q" value="{{ search.terms | escape }}"  />
+        <input type="search" class="input-full" placeholder="Search for product" name="q"
+          value="{{ search.terms | escape }}" />
         <i class="input__close-icon">
           <svg width="24" height="24">
             <use href="#close" />
@@ -214,37 +194,37 @@
     <nav role="navigation">
       <ul>
         {%- for link in linklists.main-menu.links -%}
-          <li>
-            <a href="{{ link.url }}" {% if link.active %}aria-current="page"{% endif %}>
-              {{ link.title }}
-            </a>
+        <li>
+          <a href="{{ link.url }}" {% if link.active %}aria-current="page" {% endif %}>
+            {{ link.title }}
+          </a>
 
-            {%- if link.links != blank -%}
+          {%- if link.links != blank -%}
+          <ul>
+            {%- for child_link in link.links -%}
+            <li>
+              <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page" {% endif %}>
+                {{ child_link.title }}
+              </a>
+
+              {%- if child_link.links != blank -%}
               <ul>
-                {%- for child_link in link.links -%}
-                  <li>
-                    <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page"{% endif %}>
-                      {{ child_link.title }}
-                    </a>
-
-                    {%- if child_link.links != blank -%}
-                      <ul>
-                        {%- for grandchild_link in child_link.links -%}
-                          <li>
-                            <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page"{% endif %}>
-                              {{ grandchild_link.title }}
-                            </a>
-                          </li>
-                        {%- endfor -%}
-                      </ul>
-                    {%- endif -%}
-
-                  </li>
+                {%- for grandchild_link in child_link.links -%}
+                <li>
+                  <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page" {% endif %}>
+                    {{ grandchild_link.title }}
+                  </a>
+                </li>
                 {%- endfor -%}
               </ul>
-            {%- endif -%}
+              {%- endif -%}
 
-          </li>
+            </li>
+            {%- endfor -%}
+          </ul>
+          {%- endif -%}
+
+        </li>
         {%- endfor -%}
       </ul>
     </nav>
@@ -253,16 +233,19 @@
 
   <ul class="header_user">
     {% if customer %}
-        <li><a href="/account"><i class="fa fa-user"></i>{{ customer.first_name | truncate:15 }}</a></li>
-        <li><a href="/account/logout"><i class="fa fa-unlock-alt"></i>{% assign X = 'layout.header.logout' | t %}{% if X.size > 0 %}{{ X }}{% else %}Log out{% endif %}</a></li>
+    <li><a href="/account"><i class="fa fa-user"></i>{{ customer.first_name | truncate:15 }}</a></li>
+    <li><a href="/account/logout"><i class="fa fa-unlock-alt"></i>{% assign X = 'layout.header.logout' | t %}{% if
+        X.size > 0 %}{{ X }}{% else %}Log out{% endif %}</a></li>
     {% else %}
-        <li><a href="/account/login"><i class="fa fa-unlock-alt"></i>{% assign X = 'layout.header.login' | t %}{% if X.size > 0 %}{{ X }}{% else %}Log in{% endif %}</a></li>
-        {% if shop.customer_accounts_optional %}
-            <li><a href="/account/register"><i class="fa fa-user-plus"></i>{% assign X = 'layout.header.create_account' | t %}{% if X.size > 0 %}{{ X }}{% else %}Create an account{% endif %}</a></li>
-        {% endif %}
+    <li><a href="/account/login"><i class="fa fa-unlock-alt"></i>{% assign X = 'layout.header.login' | t %}{% if X.size
+        > 0 %}{{ X }}{% else %}Log in{% endif %}</a></li>
+    {% if shop.customer_accounts_optional %}
+    <li><a href="/account/register"><i class="fa fa-user-plus"></i>{% assign X = 'layout.header.create_account' | t %}{%
+        if X.size > 0 %}{{ X }}{% else %}Create an account{% endif %}</a></li>
+    {% endif %}
     {% endif %}
     <li><a href="https://www.google.com">Custom link</a></li>
-</ul>
+  </ul>
 
   <nav class="header-nav-list-footer">
     <div class="header-search">
