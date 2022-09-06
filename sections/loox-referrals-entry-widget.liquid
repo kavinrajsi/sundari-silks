@@ -1,0 +1,90 @@
+<div class="loox-referrals-entry-form"
+     id="LOOX-REFERRALS_SECTION-{{ 'now' | date: "%09N" }}"
+     data-widget="referral-page"
+    {% if section.settings.layout %}data-layout="{{ section.settings.layout }}"{% endif %}
+    {% if section.settings.max_width %}data-max-width="{{ section.settings.max_width }}"{% endif %}
+    {% if section.settings.primary_color %}data-primary-color="{{ section.settings.primary_color | replace: "#", "" }}"{% endif %}
+    {% if section.settings.photo %}data-photo="{{ section.settings.photo | image_url }}"{% endif %}
+    {% if section.settings.text_color %}data-text-color="{{ section.settings.text_color | replace: "#", "" }}"{% endif %}
+    {% if section.settings.text_field_border_color %}data-text-field-border-color="{{ section.settings.text_field_border_color | replace: "#", "" }}"{% endif %}
+    {% if section.settings.background %}data-background="{{ section.settings.background | replace: "#", "" }}"{% endif %}
+    {% if request.design_mode %}
+        data-preview="yes"
+        data-loox-block-id="{{ section.id }}"
+        data-request-path="{{ request.path }}"
+        data-page-type="{{ request.page_type }}"
+        data-origin="{{ request.origin }}"
+        data-template="{{ template }}"
+    {% endif %}
+>
+</div>
+
+{% schema %}
+    {
+        "name": "Loox - Referrals Widget",
+        "class": "index-section",
+        "settings": [
+            {
+                "type": "range",
+                "id": "max_width",
+                "min": 480,
+                "max": 1440,
+                "step": 10,
+                "unit": "px",
+                "label": "Maximum width",
+                "default": 1100
+            },
+            {
+                "type": "select",
+                "id": "layout",
+                "label": "Layout",
+                "options": [
+                    {
+                        "value": "with-photo",
+                        "label": "Display Photo"
+                    },
+                    {
+                        "value": "without-photo",
+                        "label": "No Photo"
+                    }
+                ],
+                "default": "with-photo"
+            },
+            {
+                "type": "image_picker",
+                "id": "photo",
+                "label": "Photo"
+            },
+            {
+                "type": "color",
+                "id": "primary_color",
+                "label": "Primary Color"
+            },
+            {
+                "type": "color",
+                "id": "text_color",
+                "default": "#000000",
+                "label": "Text color"
+            },
+            {
+                "type": "color",
+                "id": "text_field_border_color",
+                "default": "#C9CDD4",
+                "label": "Text field border color"
+            },
+            {
+                "type": "color",
+                "id": "background",
+                "label": "Background"
+            },
+            {
+                "type": "paragraph",
+                "content": "Customize referral rules and texts in Loox admin. [Loox referrals settings](/admin/apps/loox-fashion-reviews/admin/settings/referrals)"
+            }
+        ],
+        "presets": [{
+            "name": "Loox - Referrals Widget",
+            "category": "Loox"
+        }]
+    }
+{% endschema %}
