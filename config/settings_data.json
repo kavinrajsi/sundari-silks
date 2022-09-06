@@ -14,6 +14,7 @@
         "type": "header",
         "settings": {
           "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
+          "logo_width": 120,
           "menu": "main-menu"
         }
       },
