@@ -123,7 +123,8 @@
 
       <div class="header-logo" itemscope itemtype="http://schema.org/Organization">
         <a href="/" itemprop="url">
-          <img src="{{ " logo.svg" | asset_url }}" alt="{{ shop.name }}" width="{{ image.width }}" height="{{ image.height }}" loading="lazy" itemprop="logo">
+          <img src="{{ " logo.svg" | asset_url }}" alt="{{ shop.name }}" width="{{ image.width }}"
+            height="{{ image.height }}" loading="lazy" itemprop="logo">
         </a>
       </div>
       <div class="header-action-lists">
@@ -150,25 +151,12 @@
         </div>
         <div class="header-account">
           {%- if shop.customer_accounts_enabled -%}
-          <ul>
-            {%- if customer -%}
-              <li>
-                <a href="/account">Account</a>
-              </li>
-              <li>
-                {{ 'Log out' | customer_logout_link }}
-              </li>
-            {%- else -%}
-              <li>
-                {{ 'Log in' | customer_login_link }}
-              </li>
-              <li>
-                {{ 'Create account' | customer_register_link }}
-              </li>
-            {%- endif -%}
-          </ul>
-        {%- endif -%}
-
+          <a href="{{ customer_login_link }}">
+            <svg width="24" height="24">
+              <use href="#user" />
+            </svg>
+          </a>
+          {%- endif -%}
         </div>
       </div>
     </div>
@@ -230,22 +218,10 @@
     </nav>
     <!-- navigation -->
   </header>
+  <p>&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: '/' }}</p>
+  <p>{{ powered_by_link }}</p>
 
-  <ul class="header_user">
-    {% if customer %}
-    <li><a href="/account"><i class="fa fa-user"></i>{{ customer.first_name | truncate:15 }}</a></li>
-    <li><a href="/account/logout"><i class="fa fa-unlock-alt"></i>{% assign X = 'layout.header.logout' | t %}{% if
-        X.size > 0 %}{{ X }}{% else %}Log out{% endif %}</a></li>
-    {% else %}
-    <li><a href="/account/login"><i class="fa fa-unlock-alt"></i>{% assign X = 'layout.header.login' | t %}{% if X.size
-        > 0 %}{{ X }}{% else %}Log in{% endif %}</a></li>
-    {% if shop.customer_accounts_optional %}
-    <li><a href="/account/register"><i class="fa fa-user-plus"></i>{% assign X = 'layout.header.create_account' | t %}{%
-        if X.size > 0 %}{{ X }}{% else %}Create an account{% endif %}</a></li>
-    {% endif %}
-    {% endif %}
-    <li><a href="https://www.google.com">Custom link</a></li>
-  </ul>
+
 
   <nav class="header-nav-list-footer">
     <div class="header-search">
