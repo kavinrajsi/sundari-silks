@@ -44,7 +44,6 @@
         <svg width="24" height="24">
           <use xlink:href="#bag" />
         </svg>
-        <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         {%- if cart != empty -%}
         <div class="cart-count">
           {%- if cart.item_count < 100 -%} <span aria-hidden="true">{{ cart.item_count }}</span>
@@ -62,15 +61,6 @@
           <svg width="24" height="24">
             <use href="#user" />
           </svg>
-          <span class="visually-hidden">
-            {%- liquid
-            if customer
-            echo 'customer.account_fallback' | t
-            else
-            echo 'customer.log_in' | t
-            endif
-            -%}
-          </span>
         </a>
         {%- endif -%}
       </div>
