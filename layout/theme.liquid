@@ -160,10 +160,6 @@
   {% section 'announcement-bar' %}
   {% section 'header' %}
 
-  <p>&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: '/' }}</p>
-  <p>{{ powered_by_link }}</p>
-
-
 
   <nav class="header-nav-list-footer">
     <div class="header-search">
@@ -196,6 +192,8 @@
   <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
     {{ content_for_layout }}
   </main>
+
+  {% section 'footer' %}
 
 
 </body>
