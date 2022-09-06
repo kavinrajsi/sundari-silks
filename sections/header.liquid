@@ -34,17 +34,12 @@
           <use href="#search" />
         </svg>
       </div>
-      <div class="header-wishlist">
+      <div class="header-wishlist" style="display: none;">
         <svg width="24" height="24">
           <use href="#heart" />
         </svg>
       </div>
       <div class="header-cart">
-        <svg width="24" height="24">
-          <use xlink:href="#bag" />
-        </svg>
-      </div>
-
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
         <svg width="24" height="24">
           <use xlink:href="#bag" />
@@ -58,6 +53,7 @@
         </div>
         {%- endif -%}
       </a>
+    </div>
 
       <div class="header-account">
         {%- if shop.customer_accounts_enabled -%}
