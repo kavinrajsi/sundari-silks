@@ -1,0 +1,48 @@
+<div class="template-404 page-width page-margin center">
+
+<h1 class="title">
+  {{ section.settings.no-found-title }}
+</h1>
+<p>
+  {{ section.settings.not-found-content }}
+</p>
+<a href="{{ routes.all_products_collection_url }}" type="button" class="button">
+  {{ section.settings.not-found-cta }}
+</a>
+
+</div>
+
+
+{% schema %}
+{
+	"name": "404 page",
+	"class": "section-404",
+	"settings": [
+
+		{
+			"type": "text",
+			"id": "no-found-title",
+			"label": "404 Title",
+			"default": "404 😢"
+		},
+    {
+      "type": "textarea",
+      "id": "not-found-content",
+      "label": "404 Content",
+      "default": "The page you are looking for cannot be found."
+    },
+    {
+      "type": "text",
+      "id": "not-found-cta",
+      "label": "CTA Text",
+      "default": "Back to Home"
+    },
+    {
+      "type": "url",
+      "id": "not-found-url",
+      "label": "CTA URL",
+      "default": "/collections/all"
+    }
+	]
+}
+{% endschema %}

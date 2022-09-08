@@ -1,0 +1,15 @@
+{
+  "name": "Default product template",
+  "sections": {
+    "main": {
+      "type": "main-404"
+    },
+    "recommendations": {
+      "type": "resent-product-list-404"
+    }
+  },
+  "order": [
+    "main",
+    "recommendations"
+  ]
+}

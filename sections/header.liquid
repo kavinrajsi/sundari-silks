@@ -86,25 +86,25 @@
   </div>
   <!-- navigation -->
   <nav class="header-nav-list-main" role="navigation">
-    <ul>
+    <ul class="menu-level-1">
       {%- for link in linklists.main-menu.links -%}
-      <li>
+      <li class="menu-level-1-item">
         <a href="{{ link.url }}" {% if link.active %}aria-current="page" {% endif %}>
           {{ link.title }}
         </a>
 
         {%- if link.links != blank -%}
-        <ul>
+        <ul class="menu-level-2">
           {%- for child_link in link.links -%}
-          <li>
+          <li class="menu-level-2-item">
             <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page" {% endif %}>
               {{ child_link.title }}
             </a>
 
             {%- if child_link.links != blank -%}
-            <ul>
+            <ul class="menu-level-3">
               {%- for grandchild_link in child_link.links -%}
-              <li>
+              <li class="menu-level-3-item">
                 <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page" {% endif %}>
                   {{ grandchild_link.title }}
                 </a>
@@ -115,6 +115,13 @@
 
           </li>
           {%- endfor -%}
+
+          <li class="menu-level-2-image">
+            <a href="#">
+              {{ section.settings.image_silk_saree | image_url : width: section.settings.width | image_tag : class: 'try-3d', loading: 'lazy',
+              alt: section.settings.image_silk_saree.alt }}
+              </a>
+          </li>
         </ul>
         {%- endif -%}
 
@@ -126,6 +133,17 @@
 </header>
 
 
+{% comment %}
+  TODO: Add labels
+    hot
+    new
+    sales
+  TODO: Mega menu
+    Image item
+    Image item location
+    Image URL
+  TODO: Menu, Sale text color and Image for special occasion
+{% endcomment %}
 
 {% schema %}
 {
@@ -154,9 +172,9 @@
 "label": "t:sections.header.settings.menu.label"
 },
 {
-  "label": "Image for Saree 1",
   "type":  "image_picker",
-  "id": "image_silk_saree"
+  "id": "image_silk_saree",
+  "label": "Image #1"
 }
 ]
 }
