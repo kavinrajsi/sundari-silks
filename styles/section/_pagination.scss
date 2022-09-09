@@ -1,0 +1,26 @@
+.pagination--number {
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 120px 0 80px;
+  span {
+    &{
+      transition: color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+      border-bottom: 1px solid #dddddd;
+      a{
+        padding: 16px 20px;
+        display: inline-block;
+        color:  inherit;
+      }
+      &.current {
+        padding: 16px 20px;
+        color: var(--primary-color);
+        border-bottom-color: var(--primary-color);
+        box-shadow: 0 -2px var(--primary-color) inset;
+      }
+      &.prev,
+      &.next {
+      }
+    }
+  }
+}

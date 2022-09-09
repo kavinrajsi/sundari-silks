@@ -1,0 +1,36 @@
+.collection-page-header {
+  @include content-block-max-center;
+
+  margin-bottom: 28px;
+  &-image {
+    margin-bottom: 28px;
+    img {
+      width: 1920px;
+      height: 340px;
+      object-fit: cover;
+      object-position: top center;
+    }
+  }
+  p {
+    font-family: var(--font-montserrat);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--pure-black);
+  }
+}
+
+.collection-page-action-list {
+  @include content-block-max-center;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  .collection-action-sortyby {
+    font-size: 14px;
+    line-height: 1.25;
+    select{
+      padding: 12px 8px;
+    }
+  }
+}

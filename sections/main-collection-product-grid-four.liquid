@@ -1,109 +1,114 @@
 {{ 'testproduct.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
+.section-{{ section.id }}-padding {
+padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+}
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
+@media screen and (min-width: 750px) {
+.section-{{ section.id }}-padding {
+padding-top: {{ section.settings.padding_top }}px;
+padding-bottom: {{ section.settings.padding_bottom }}px;
+}
+}
 {%- endstyle -%}
+<div class="collection-page-header">
+  <div class="collection-page-header-image text-center image-radius">
+    {%- if collection.description != blank -%}
+    {{ collection | image_url: width: 1920, height: 340 | image_tag : alt: collection.image.alt, class: 'image-radius'
+    }}
+    {%- else -%}
+    <img src="//via.placeholder.com/1920x340" alt="{{ collection.title }}" class="image-radius">
+    {%- endif -%}
+  </div>
+  <div class="collection-page-description">
+    {%- if collection.description != blank -%}
+    <p>{{ collection.description }}</p>
+    {%- else -%}
+    <p>we are working on the page</p>
+    {%- endif -%}
+  </div>
+</div>
+
 <div class="section-{{ section.id }}-padding">
+  <div class="collection-page-action-list">
+    <div></div>
+    <div class="collection-action-sortyby">
+      Sort By:
+      <select id="sort-by">
+        {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
 
-{{ collection | img_url: '450x450' | img_tag : alt: collection.image.alt}}
-<h1>{{ collection.title }}</h1>
-{%- if collection.description != blank -%}
-<p>{{ collection.description }}</p>
-{%- endif -%}
+        {% for option in collection.sort_options %}
+        <option value="{{ option.value }}" {% if option.value==sort_by %}selected="selected" {% endif %}>
+          {{ option.name }}
+        </option>
+        {% endfor %}
+      </select>
+      <script>
+        Shopify.queryParams = {};
 
-<hr>
-{% if collection.all_tags.size > 0 %}
-  <ul class="tag-filters">
-    {% for tag in collection.all_tags %}
-      {% if current_tags contains tag %}
-        <li class="tag-filters__item active">{{ tag | link_to_remove_tag: tag }} active</li>
-      {% else %}
-        <li class="tag-filters__item">{{ tag | link_to_add_tag: tag }}</li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-{% endif %}
+        // Preserve existing query parameters
+        if (location.search.length) {
+          var params = location.search.substr(1).split('&');
 
-<hr>
-<select id="sort-by">
-  {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+          for (var i = 0; i < params.length; i++) {
+            var keyValue = params[i].split('=');
 
-  {% for option in collection.sort_options %}
-    <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
-      {{ option.name }}
-    </option>
-  {% endfor %}
-</select>
-<script>
-  Shopify.queryParams = {};
+            if (keyValue.length) {
+              Shopify.queryParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+            }
+          }
+        }
 
-  // Preserve existing query parameters
-  if (location.search.length) {
-    var params = location.search.substr(1).split('&');
+        // Update sort_by query parameter on select change
+        document.querySelector('#sort-by').addEventListener('change', function (e) {
+          var value = e.target.value;
 
-    for (var i = 0; i < params.length; i++) {
-      var keyValue = params[i].split('=');
-
-      if (keyValue.length) {
-        Shopify.queryParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
-      }
-    }
-  }
-
-  // Update sort_by query parameter on select change
-  document.querySelector('#sort-by').addEventListener('change', function(e) {
-    var value = e.target.value;
-
-    Shopify.queryParams.sort_by = value;
-    location.search = new URLSearchParams(Shopify.queryParams).toString();
-  });
-</script>
-
-<section>
-
-  {% paginate collection.products by 4 %}
-  <div class="test--product-card--grid">
-    {%- for product in collection.products -%}
-    <div class="test--product-card">
-      <a href="{{product.url | within: collection }}" class="product-link">
-        {{ product.featured_image | image_url: width: 400, height: 400, crop: 'bottom' | image_tag : class:
-        'product-image', loading: 'lazy', alt: product.feature_image.alt}}
-        {% comment %}
-        <p>
-          <span aria-hidden="true">—</span>
-          {%- if product.price_varies -%}
-          <span class="visuallyhidden">Starting at</span>
-          {{ product.price_min | money_without_trailing_zeros }}
-          <span aria-hidden="true">+</span>
-          {%- else -%}
-          {{ product.price | money_without_trailing_zeros }}
-          {%- endif -%}
-        </p>
-        <img src="{{ product.featured_image.src | img_url: '1024x' }}" alt="">
-        {% endcomment %}
-        <h2 class="product-title">{{ product.title }}</h2>
-        <p class="product-money"> {{ product.price | money }} </p>
-        {% if product.available != true %}
-        <span class="product-label-soldout"> sold out </span>
-        {% endif %}
-      </a>
+          Shopify.queryParams.sort_by = value;
+          location.search = new URLSearchParams(Shopify.queryParams).toString();
+        });
+      </script>
     </div>
-    {%- endfor -%}  <!-- show pagination links here -->
-
   </div>
 
-  {{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
-  {% endpaginate %}
+  <section>
 
-</section>
+    {% paginate collection.products by 4 %}
+    <div class="test--product-card--grid">
+      {%- for product in collection.products -%}
+      <div class="test--product-card">
+        <a href="{{product.url | within: collection }}" class="product-link">
+          {{ product.featured_image | image_url: width: 400, height: 400, crop: 'bottom' | image_tag : class:
+          'product-image', loading: 'lazy', alt: product.feature_image.alt}}
+          {% comment %}
+          <p>
+            <span aria-hidden="true">—</span>
+            {%- if product.price_varies -%}
+            <span class="visuallyhidden">Starting at</span>
+            {{ product.price_min | money_without_trailing_zeros }}
+            <span aria-hidden="true">+</span>
+            {%- else -%}
+            {{ product.price | money_without_trailing_zeros }}
+            {%- endif -%}
+          </p>
+          <img src="{{ product.featured_image.src | img_url: '1024x' }}" alt="">
+          {% endcomment %}
+          <h2 class="product-title">{{ product.title }}</h2>
+          <p class="product-money"> {{ product.price | money }} </p>
+          {% if product.available != true %}
+          <span class="product-label-soldout"> sold out </span>
+          {% endif %}
+        </a>
+      </div>
+      {%- endfor -%}
+      <!-- show pagination links here -->
+
+    </div>
+    <div class="pagination--number">
+      {{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
+    </div>
+    {% endpaginate %}
+
+  </section>
 </div>

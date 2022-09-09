@@ -1,18 +1,35 @@
 :root {
   --mobile: 576px;
-  ---tablet: 768px;
+  --tablet: 768px;
   --laptop: 992px;
-  --desktop: 1200px;
+  --desktop: 1140px;
+  --content-width: 1200px;
   --font-playfair: "Playfair Display", serif;
   --font-montserrat: "Montserrat", sans-serif;
   --gutter-full: 24px;
   --gutter-half: 12px;
+  --gutter-mobile: 8px;
   --menu-font-size: 16px;
+  --font-h1: 48px;
+  --font-h2: 38px;
+  --font-h3: 24px;
+  --font-h4: 20px;
+  --font-h5: 18px;
+  --font-para: 16px;
+  --font-14: 14px;
+  --font-button: 14px;
+  --font-12: 12px;
+  --font-10: 10px;
   --pure-black: #000;
   --pure-white: #fff;
   --light-black: #222;
   --border-color: #e8e8e1;
   --background-color: #fef1e1;
+  --primary-color: #1d5d31;
+  --secondary-color: #fdd933;
+  --border-radius: 4px;
+  --shadow-8dp: 0px 8px 10px rgba(0, 0, 0, 0.14),
+    0px 3px 14px rgba(0, 0, 0, 0.12), 0px 4px 5px rgba(0, 0, 0, 0.2);
 }
 
 *,
@@ -32,11 +49,87 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-body{
+body {
   background-color: #fef1e1;
 }
 
 #MainContent {
   position: relative;
   z-index: 1;
+}
+
+.text-center{
+  text-align: center;
+}
+
+@mixin content-block-max-center{
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.block-center{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-radius{
+  border-radius: 4px;
+}
+
+// button
+.button,
+.btn,
+button,
+a[type="button"] {
+  border: 0;
+  outline: 0;
+  font-size: var(--font-button);
+  font-weight: 500;
+  font-family: var(--font-montserrat);
+  padding: 8px 16px;
+  border-radius: 4px;
+  line-height: 1.25;
+  & --ghost {
+    background: transparent;
+    color: var(--primary-color);
+    transition: all 0.2s ease-in;
+    &:hover,
+    &:focus {
+      background: var(--primary-color);
+      color: var(--pure-white);
+    }
+    &:focus {
+      outline: 1px solid var(--primary-color);
+    }
+  }
+  & --primary {
+    background: var(--primary-color);
+    color: var(--pure-white);
+    transition: all 0.2s ease-in;
+    &:hover,
+    &:focus {
+      background: transparent;
+      color: var(--primary-color);
+    }
+    &:focus {
+      outline: 1px solid var(--primary-color);
+    }
+  }
+}
+
+input {
+  padding: 12px 16px;
+  background: #ffffff;
+  border-radius: 4px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+#shopify-chat iframe,
+iframe#dummy-chat-button-iframe {
+  bottom: 220px !important;
 }

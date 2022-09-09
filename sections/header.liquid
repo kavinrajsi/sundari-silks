@@ -29,6 +29,13 @@
           <use href="#menu" />
         </svg>
       </div>
+      <div class="header-chat">
+        <a href="{{ canonical_url }}?chat" class="header__icon" id="cart-icon-bubble">
+        <svg width="24" height="24">
+          <use href="#chat" />
+        </svg>
+        </a>
+      </div>
       <div class="header-search">
         <svg width="24" height="24">
           <use href="#search" />
@@ -40,7 +47,7 @@
         </svg>
       </div>
       <div class="header-cart">
-      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+      <a href="{{ routes.cart_url }}" class="" id="cart-icon-bubble">
         <svg width="24" height="24">
           <use xlink:href="#bag" />
         </svg>
@@ -116,10 +123,20 @@
           </li>
           {%- endfor -%}
 
-          <li class="menu-level-2-image">
+          <li class="menu-level-2-item-image image-one">
             <a href="#">
               {{ section.settings.image_silk_saree | image_url : width: section.settings.width | image_tag : class: 'try-3d', loading: 'lazy',
               alt: section.settings.image_silk_saree.alt }}
+              <p class="menu-image-title">Kanchipuram Silk</p>
+              <p class="menu-image-link-button">Explore Now</p>
+              </a>
+          </li>
+          <li class="menu-level-2-item-image image-two">
+            <a href="#">
+              {{ section.settings.image_silk_saree | image_url : width: section.settings.width | image_tag : class: 'try-3d', loading: 'lazy',
+              alt: section.settings.image_silk_saree.alt }}
+              <p class="menu-image-title">Wedding Edit</p>
+              <p class="menu-image-link-button">Explore Now</p>
               </a>
           </li>
         </ul>
@@ -127,6 +144,9 @@
 
       </li>
       {%- endfor -%}
+      <!-- <li>
+        <a href="{{}}/?chat">Chat</a>
+      </li> -->
     </ul>
   </nav>
   <!-- navigation -->

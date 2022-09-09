@@ -1,9 +1,8 @@
 .test--product-card--grid {
-  max-width: 1140px;
-  margin: 0 auto;
+  margin: 0 4vw;
   display: grid;
   gap: 24px;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .test--product-card {
