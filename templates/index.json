@@ -3,6 +3,9 @@
     "recommendations": {
       "type": "resent-product-list-404",
       "settings": {
+        "show_collection": "arthirshtam",
+        "show_productcount": 4,
+        "show_soldout": false
       }
     },
     "main": {
