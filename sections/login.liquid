@@ -1,0 +1,65 @@
+<h1>Sign in to your Account</h1>
+
+{%- form 'customer_login' -%}
+  {{ form.errors | default_errors }}
+
+  <div>
+    <label for="customerEmail">Email Address</label>
+    <input type="email"
+      name="customer[email]"
+      id="customerEmail"
+      autocorrect="off"
+      autocapitalize="off"
+      autocomplete="email">
+  </div>
+  <div>
+    <label for="customerPassword">Password</label>
+    <input type="password"
+      name="customer[password]"
+      id="customerPassword">
+  </div>
+
+  <input type="submit" value="Sign In" />
+
+  <p>
+    {{ 'Create Account' | customer_register_link }}
+  </p>
+  <p>
+    <a href="#recover">Forgot your password?</a>
+  </p>
+
+{%- endform -%}
+
+<!-- If accounts are set as optional, the following will be shown as an option when coming from checkout, not on the default /login page. -->
+{%- if shop.checkout.guest_login -%}
+  {%- form 'guest_login' -%}
+    <input type="submit" value="Continue as Guest" />
+  {%- endform -%}
+{%- endif -%}
+
+<!-- Use JavaScript to show/hide this form -->
+{%- form 'recover_customer_password' -%}
+
+  {%- if form.posted_successfully? -%}
+    <div role="status">
+      <p>We've sent you an email with a link to update your password.</p>
+    </div>
+  {%- endif -%}
+
+  <div id="recover"{% unless form.errors %} style="display: none;"{% endunless %}>
+    <p>We will send you an email to reset your password.</p>
+
+    {{ form.errors | default_errors }}
+
+    <label for="customerEmail">Email Address</label>
+    <input type="email"
+      name="email"
+      id="customerEmail"
+      autocorrect="off"
+      autocapitalize="off"
+      autocomplete="email">
+
+    <input type="submit" value="Submit">
+  </div>
+
+{%- endform -%}

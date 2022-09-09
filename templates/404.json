@@ -1,5 +1,5 @@
 {
-  "name": "Default product template",
+  "name": "Default 404 template",
   "sections": {
     "main": {
       "type": "main-404"
