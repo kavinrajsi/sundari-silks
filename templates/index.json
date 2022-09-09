@@ -1,11 +1,14 @@
 {
-  "name": "Default index template",
   "sections": {
-    "main": {
-      "type": "main-index"
-    },
     "recommendations": {
-      "type": "resent-product-list-404"
+      "type": "resent-product-list-404",
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "main-index",
+      "settings": {
+      }
     }
   },
   "order": [
