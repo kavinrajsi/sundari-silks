@@ -463,8 +463,17 @@ body {
   border-radius: 4px;
 }
 
+b,
+strong {
+  font-weight: 500;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
 .button,
-.btn,
 button,
 a[type=button] {
   border: 0;
@@ -476,56 +485,47 @@ a[type=button] {
   border-radius: 4px;
   line-height: 1.25;
 }
-.button --ghost,
-.btn --ghost,
-button --ghost,
-a[type=button] --ghost {
-  background: transparent;
-  color: var(--primary-color);
-  transition: all 0.2s ease-in;
-}
-.button --ghost:hover, .button --ghost:focus,
-.btn --ghost:hover,
-.btn --ghost:focus,
-button --ghost:hover,
-button --ghost:focus,
-a[type=button] --ghost:hover,
-a[type=button] --ghost:focus {
+
+.button--primary {
   background: var(--primary-color);
   color: var(--pure-white);
+  transition: all 0.2s ease-in;
 }
-.button --ghost:focus,
-.btn --ghost:focus,
-button --ghost:focus,
-a[type=button] --ghost:focus {
+.button--primary:hover, .button--primary:focus {
+  background: transparent;
+  color: var(--primary-color);
+}
+.button--primary:focus {
   outline: 1px solid var(--primary-color);
 }
-.button --primary,
-.btn --primary,
-button --primary,
-a[type=button] --primary {
-  background: var(--primary-color);
-  color: var(--pure-white);
-  transition: all 0.2s ease-in;
-}
-.button --primary:hover, .button --primary:focus,
-.btn --primary:hover,
-.btn --primary:focus,
-button --primary:hover,
-button --primary:focus,
-a[type=button] --primary:hover,
-a[type=button] --primary:focus {
+.button--ghost {
   background: transparent;
   color: var(--primary-color);
+  transition: all 0.2s ease-in;
 }
-.button --primary:focus,
-.btn --primary:focus,
-button --primary:focus,
-a[type=button] --primary:focus {
+.button--ghost:hover, .button--ghost:focus {
+  background: var(--primary-color);
+  color: var(--pure-white);
+}
+.button--ghost:focus {
   outline: 1px solid var(--primary-color);
 }
 
-input {
+form div {
+  margin-bottom: 28px;
+}
+form label {
+  margin-bottom: 8px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+form input {
+  outline: 0px;
+  border: 0px;
   padding: 12px 16px;
   background: #ffffff;
   border-radius: 4px;
@@ -534,6 +534,12 @@ input {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+  display: block;
+  width: 100%;
+}
+form svg {
+  width: 24px;
+  height: 24px;
 }
 
 #shopify-chat iframe,
@@ -613,7 +619,7 @@ iframe#dummy-chat-button-iframe {
 @media (min-width: 992px) {
   .header-nav-list-main .menu-level-1 {
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
   }
 }
@@ -769,6 +775,124 @@ iframe#dummy-chat-button-iframe {
 }
 .collection-page-action-list .collection-action-sortyby select {
   padding: 12px 8px;
+}
+
+.customer-login {
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  margin-bottom: 48px;
+}
+.customer-login .customer-login-content {
+  margin-right: 24px;
+  max-width: 320px;
+}
+.customer-login .customer-login-image {
+  width: 100%;
+  margin-left: 24px;
+}
+.customer-login .customer-login-image img {
+  width: 100%;
+}
+.customer-login .page-title {
+  margin-bottom: 24px;
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 120%;
+  color: var(--pure-black);
+}
+.customer-login .page-description {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--pure-black);
+  margin-bottom: 24px;
+}
+
+.customer-account {
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0 auto 48px;
+  padding: 0 48px 0;
+}
+.customer-account .customer-account-title {
+  margin-bottom: 28px;
+}
+.customer-account .customer-account-title h2 {
+  font-weight: 500;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+.customer-account .customer-account-title a {
+  color: initial;
+}
+.customer-account .customer-account-detail {
+  display: grid;
+  gap: 48px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.customer-account .customer-account-detail h2 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 18px;
+}
+.customer-account .customer-account-detail .order-list {
+  background-color: #fff;
+  border-bottom: 1px solid #d5d9d9;
+  margin-bottom: 24px;
+  border-radius: 8px;
+}
+.customer-account .customer-account-detail .order-list .order-list-header {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 18px;
+  margin-bottom: 18px;
+  display: flex;
+  background-color: #f0f2f2;
+  border-bottom: 1px solid #d5d9d9;
+}
+.customer-account .customer-account-detail .order-list .order-list-header .data-title,
+.customer-account .customer-account-detail .order-list .order-list-header .data-value {
+  display: block;
+  margin-bottom: 8px;
+}
+.customer-account .customer-account-detail .order-list .order-list-header .data-value {
+  margin-bottom: 0;
+}
+.customer-account .customer-account-detail .order-list .order-list-header-data {
+  display: flex;
+  text-align: left;
+}
+.customer-account .customer-account-detail .order-list .order-list-header-data > div {
+  padding-right: 24px;
+}
+.customer-account .customer-account-detail .order-list .order-placed-id span {
+  display: inline-block !important;
+}
+.customer-account .customer-account-detail .order-list .order-list-data li {
+  display: flex;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+.customer-account .customer-account-detail .order-list .order-list-data li .line-item-image {
+  flex: 1 0 100px;
+  max-width: 100px;
+  width: 100px;
+  height: 100px;
+}
+.customer-account .customer-account-detail .order-list .order-list-data li span:last-child {
+  margin-left: 18px;
+  font-size: 14px;
+  line-height: 24px;
 }
 
 .pagination--number {

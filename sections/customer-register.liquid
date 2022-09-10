@@ -1,0 +1,97 @@
+<div class="customer-login">
+  <div class="customer-login-content">
+  <h2 class="page-title" id="login">
+    {{section.settings.custom_form_title}}
+  </h2>
+  <p class="page-description">
+    {{section.settings.custom_form_description}}
+  </p>
+  {% form 'create_customer' %}
+  {{ form.errors | default_errors }}
+
+  <div class="first-name">
+    <label for="first-name">First name</label>
+    <input type="text" name="customer[first_name]">
+  </div>
+
+  <div class="last-name">
+    <label for="last-name">Last name</label>
+    <input type="text" name="customer[last_name]">
+  </div>
+
+  <div class="email">
+    <label for="email">Email</label>
+    <input type="email" name="customer[email]">
+  </div>
+
+  <div class="password">
+    <label for="password">Password</label>
+    <input type="password" name="customer[password]">
+  </div>
+
+  <div class="password">
+    <label for="password-confirmation">Confirm Password</label>
+    <input id="password-confirmation" type="password" name="customer[password]" />
+  </div>
+
+  <div class="birthday">
+    <label for="birthday">Birthday</label>
+    <input id="birthday" type="date" name="customer[note][Birthday]" />
+  </div>
+  <div class="accepts-marketing">
+    <input type="hidden" name="customer[accepts_marketing]" value="false" />
+
+    <input type="checkbox" name="customer[accepts_marketing]" />
+    <label for="accepts-marketing">Subscribe to email / whatappmarketing</label>
+  </div>
+
+  <div class="submit">
+    <input type="submit" value="Create">
+  </div>
+{% endform %}
+<a href="{{ routes.account_login_url }}">
+  Already have an account? Sign in
+</a>
+
+</div>
+<div class="customer-login-image">
+{%- if section.settings.custom_form_image != blank -%}
+{{ section.settings.custom_form_image | image_url: width: 720, height: 400 | image_tag : loading: 'lazy', alt: section.settings.custom_form_image.alt }}
+{%- else -%}
+{{ 'lifestyle-1' | placeholder_svg_tag }}
+{%- endif -%}
+</div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Customer Account",
+  "class": "section-customer-account",
+  "settings": [
+  {
+    "type": "text",
+    "id": "custom_form_title",
+    "label": "Title",
+    "default": "Add a title or tagline"
+  },
+    {
+      "type": "textarea",
+      "id": "custom_form_description",
+      "label": "Description",
+      "default": "Add description content"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_form_image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+      {
+          "name": "Customer Account",
+          "category": "customer"
+      }
+  ]
+}
+{% endschema %}

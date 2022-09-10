@@ -58,28 +58,36 @@ body {
   z-index: 1;
 }
 
-.text-center{
+.text-center {
   text-align: center;
 }
 
-@mixin content-block-max-center{
+@mixin content-block-max-center {
   max-width: var(--content-width);
   margin-left: auto;
   margin-right: auto;
 }
 
-.block-center{
+.block-center {
   margin-left: auto;
   margin-right: auto;
 }
 
-.image-radius{
+.image-radius {
   border-radius: 4px;
+}
+
+b,
+strong {
+  font-weight: 500;
+}
+em,
+i {
+  font-style: italic;
 }
 
 // button
 .button,
-.btn,
 button,
 a[type="button"] {
   border: 0;
@@ -90,20 +98,10 @@ a[type="button"] {
   padding: 8px 16px;
   border-radius: 4px;
   line-height: 1.25;
-  & --ghost {
-    background: transparent;
-    color: var(--primary-color);
-    transition: all 0.2s ease-in;
-    &:hover,
-    &:focus {
-      background: var(--primary-color);
-      color: var(--pure-white);
-    }
-    &:focus {
-      outline: 1px solid var(--primary-color);
-    }
-  }
-  & --primary {
+}
+
+.button {
+  &--primary {
     background: var(--primary-color);
     color: var(--pure-white);
     transition: all 0.2s ease-in;
@@ -116,17 +114,52 @@ a[type="button"] {
       outline: 1px solid var(--primary-color);
     }
   }
+  &--ghost {
+    background: transparent;
+    color: var(--primary-color);
+    transition: all 0.2s ease-in;
+    &:hover,
+    &:focus {
+      background: var(--primary-color);
+      color: var(--pure-white);
+    }
+    &:focus {
+      outline: 1px solid var(--primary-color);
+    }
+  }
 }
 
-input {
-  padding: 12px 16px;
-  background: #ffffff;
-  border-radius: 4px;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
+form {
+  div {
+    margin-bottom: 28px;
+  }
+  label {
+    margin-bottom: 8px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+  }
+  input {
+    outline: 0px;
+    border: 0px;
+    padding: 12px 16px;
+    background: #ffffff;
+    border-radius: 4px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: block;
+    width: 100%;
+  }
+  svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 #shopify-chat iframe,

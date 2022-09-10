@@ -34,6 +34,9 @@
       {% endif %}
     </div>
     <form class="address-delete-form" method="post" action="/account/addresses/{{ address.id }}">
+      <svg width="24" height="24">
+        <use href="#trash" />
+      </svg>
       <input type="hidden" name="_method" value="delete">
       <button type="submit">delete</button>
     </form>
@@ -73,6 +76,9 @@
       {% endif %}
     </div>
     <form class="address-delete-form" method="post" action="/account/addresses/{{ address.id }}">
+      <svg width="24" height="24">
+        <use href="#trash" />
+      </svg>
       <input type="hidden" name="_method" value="delete">
       <button type="submit">delete</button>
     </form>
