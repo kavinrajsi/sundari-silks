@@ -60,8 +60,6 @@ media video tag media:
   {% endcase %}
 {% endfor %}
 external video:
-{% when 'external_video' %}
- {{ media | external_video_tag: class: "youtube_video" }}
 
 Price : <p>{{ product.price }}</p>
 Price max : <p>{{ product.price_max }}</p>
