@@ -848,6 +848,7 @@ iframe#dummy-chat-button-iframe {
   border-bottom: 1px solid #d5d9d9;
   margin-bottom: 24px;
   border-radius: 8px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 }
 .customer-account .customer-account-detail .order-list .order-list-header {
   border-top-left-radius: 8px;
@@ -857,6 +858,9 @@ iframe#dummy-chat-button-iframe {
   display: flex;
   background-color: #f0f2f2;
   border-bottom: 1px solid #d5d9d9;
+}
+.customer-account .customer-account-detail .order-list .order-list-header .data-title {
+  font-weight: 300;
 }
 .customer-account .customer-account-detail .order-list .order-list-header .data-title,
 .customer-account .customer-account-detail .order-list .order-list-header .data-value {
@@ -872,9 +876,6 @@ iframe#dummy-chat-button-iframe {
 }
 .customer-account .customer-account-detail .order-list .order-list-header-data > div {
   padding-right: 24px;
-}
-.customer-account .customer-account-detail .order-list .order-placed-id span {
-  display: inline-block !important;
 }
 .customer-account .customer-account-detail .order-list .order-list-data li {
   display: flex;

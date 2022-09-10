@@ -1,14 +1,13 @@
-<h2>{{ product.title }}</h2>
-{{ product.description }}
-<form action="/cart/add" method="post" enctype="multipart/form-data">
-<select name="id">
-{% for variant in product.variants %}
-{% if variant.available == true %}
-<option value="{{variant.id}}"> {{ variant.title }} for {{ variant.price | money_with_currency }}</option>
-{% else %}
-<option disabled="disabled"> {{ variant.title }} - sold out!</option>
-{% endif %}
-{% endfor %}
-</select>
-<input type="submit" name="add" id="add" value="Add to Cart" class="button">
-</form>
+title : <h2>{{ product.title }}</h2>
+content : <p>{{ product.content | | strip_html }}</p>
+available : <p>{{ product.available }}</p>
+price varies : <p>{{ product.compare_at_price_varies }}</p>
+<!-- Featured Image : <p>{{ product.featured_image }}</p> -->
+{% for image in product.images %}
+    <p><img src="{{ image.src | product_img_url: "large" }}"></p>
+  {% endfor %}
+Price : <p>{{ product.price }}</p>
+Price max : <p>{{ product.price_max }}</p>
+Price min : <p>{{ product.price_min }}</p>
+Price varies : <p>{{ product.price_varies }}</p>
+Type : <p>{{ product.type }}</p>

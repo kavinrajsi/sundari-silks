@@ -2,22 +2,22 @@
   @include content-block-max-center;
   margin: 0 auto 48px;
   padding: 0 48px 0;
-  .customer-account-title{
-   h2{
-    font-weight: 500;
-   font-size: 28px;
-   margin-bottom: 12px;
-  }
-  a{
-    color: initial;
-  }
-  margin-bottom: 28px;
+  .customer-account-title {
+    h2 {
+      font-weight: 500;
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    a {
+      color: initial;
+    }
+    margin-bottom: 28px;
   }
   .customer-account-detail {
     display: grid;
     gap: 48px;
     grid-template-columns: repeat(2, 1fr);
-    h2{
+    h2 {
       font-size: 18px;
       font-weight: 500;
       line-height: normal;
@@ -28,6 +28,7 @@
       border-bottom: 1px solid #d5d9d9;
       margin-bottom: 24px;
       border-radius: 8px;
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 16%);
 
       .order-list-header {
         border-top-left-radius: 8px;
@@ -37,6 +38,9 @@
         display: flex;
         background-color: #f0f2f2;
         border-bottom: 1px solid #d5d9d9;
+        .data-title {
+          font-weight: 300;
+        }
         .data-title,
         .data-value {
           display: block;
@@ -54,11 +58,11 @@
         }
       }
 
-      .order-placed-id {
-        span {
-          display: inline-block !important;
-        }
-      }
+      // .order-placed-id {
+      //   span {
+      //     display: inline-block !important;
+      //   }
+      // }
 
       .order-list-data {
         li {
@@ -67,15 +71,15 @@
           padding-right: 18px;
           padding-bottom: 8px;
           margin-bottom: 8px;
-          .line-item-image{
+          .line-item-image {
             flex: 1 0 100px;
             max-width: 100px;
             width: 100px;
             height: 100px;
           }
-          span:last-child{
+          span:last-child {
             margin-left: 18px;
-            font-size:14px;
+            font-size: 14px;
             line-height: 24px;
           }
         }
