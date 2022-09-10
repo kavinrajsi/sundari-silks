@@ -1,32 +1,58 @@
 {
   "current": {
+    "mlvedaACS_roundDecimal": false,
+    "mlvedaACS_positionLeft": "10px",
+    "mlvedaACS_defaultCurrency": "INR",
+    "mlvedaACS_textColor": "inherit",
+    "mlvedaACS_autoSwitch": false,
+    "mlvedaACS_flagStyle": "circle",
+    "mlvedaACS_isMessageDisplay": true,
+    "mlvedaACS_positionBottom": "10px",
+    "mlvedaACS_messageBackgroundColor": "inherit",
+    "mlvedaACS_messageContent": "<<shop.name>> process all orders in <<shop.currency>>. While the content of your cart is currently displayed in <<shop.selected_currency>>, you will checkout using <<shop.currency>> at the most current exchange rate.",
+    "mlvedaACS_roundDecimalValue": 1,
+    "mlvedaACS_backgroundColor": "inherit",
+    "mlvedaACS_position": "top_with_right",
+    "mlvedaACS_messageColor": "inherit",
+    "mlvedaACS_textHoverColor": "inherit",
+    "mlvedaACS_enable": true,
+    "mlvedaACS_positionTop": "10px",
+    "mlvedaACS_supportedCurrencies": "INR USD GBP EUR CAD AUD SGD",
+    "mlvedaACS_isCustomized": true,
     "sections": {
       "announcement-bar": {
-        "type": "announcement-bar",
         "settings": {
-          "show_announcement": true,
+          "link": "shopify:\/\/blogs\/article",
           "home_page_only": true,
           "text": "Announce something here",
-          "link": "shopify:\/\/blogs\/article"
-        }
-      },
-      "header": {
-        "type": "header",
-        "settings": {
-          "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
-          "logo_width": 120,
-          "menu": "main-menu",
-          "image_silk_saree": "shopify:\/\/shop_images\/TRUI-3D.png"
-        }
+          "show_announcement": true
+        },
+        "type": "announcement-bar"
       },
       "footer": {
-        "type": "footer",
         "settings": {
-        }
+        },
+        "type": "footer"
+      },
+      "header": {
+        "settings": {
+          "image_silk_saree": "shopify:\/\/shop_images\/TRUI-3D.png",
+          "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
+          "menu": "main-menu",
+          "logo_width": 120
+        },
+        "type": "header"
       }
     },
+    "mlvedaACS_hideDecimal": false,
     "content_for_index": [
 
-    ]
+    ],
+    "mlvedaACS_hoverBackgroundColor": "inherit",
+    "mlvedaACS_positionRight": "10px",
+    "mlvedaACS_currencyFormat": "money_with_currency_format",
+    "mlvedaACS_borderLineColor": "inherit",
+    "mlvedaACS_displayFlag": false,
+    "mlvedaACS_borderLook": false
   }
 }

@@ -1,0 +1,261 @@
+{% if settings.mlvedaACS_enable %}
+<script type="text/javascript">
+//document.write('<scr'+'ipt src=\"//mlveda-shopifyapps.s3.amazonaws.com/multiCurrencyPricing/js/currencies.js?rnd='+Math.floor((Math.random() * 10000000000) + 1)+'\" type=\"text/javascript\"></scr'+'ipt>');
+//document.write('<scr'+'ipt src=\"/apps/MultiCurrency/New/js/jquery.currencies.min.js?rnd='+Math.floor((Math.random() * 10000000000) + 1)+'\" type=\"text/javascript\"></scr'+'ipt>');
+
+
+ var loadScript = (src) => {
+        return new Promise((resolve, reject) => {
+            const el = document.createElement('script');
+            el.src = src;
+            el.onload = resolve;
+            el.onerror = reject;
+
+            document.head.appendChild(el);
+        });
+    };
+
+    var performAjax = async () => {
+        try {
+            await loadScript(
+                '//mlveda-shopifyapps.s3.amazonaws.com/multiCurrencyPricing/js/currencies.js?rnd=' +
+                Math.floor(Math.random() * 10000000000 + 1),
+            );
+            window.ACSCurrency = Currency;
+
+            await loadScript(
+                '/apps/MultiCurrency/New/js/jquery.currencies.min.js?rnd=' +
+                Math.floor(Math.random() * 10000000000 + 1),
+            );
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    performAjax();
+
+
+</script>
+{% form 'currency', class: "currency-selector small--hide" %}
+<input type="hidden" name="currency" value="{{ cart.currency }}">
+{% endform %}
+<script>
+window.shopify_supported_currencies = "";
+  {% for currency in shop.enabled_currencies %}
+    shopify_supported_currencies = shopify_supported_currencies + "{{ currency.iso_code }} ";
+{% endfor %}
+  
+  
+    //var ACSCurrency = Currency;
+function mlvedaCreateCookie(name, value, days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        var expires = "; expires=" + date.toGMTString();
+    }
+    else
+        var expires = "";
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function mlvedaReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ')
+            c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0)
+            return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+function mlvedaEraseCookie(name) {
+    createCookie(name, "", -1);
+}
+
+
+var onetimecallflag = true;
+
+$acs('span.money span.money').each(function() {
+  $acs(this).parents('span.money').removeClass('money');
+});
+
+
+function mlvedaload(){
+
+{% if settings.mlvedaACS_currencyFormat %}
+ACSCurrency.format = '{{ settings.mlvedaACS_currencyFormat }}';
+{% endif %}
+
+var shopCurrency = '{{ cart.currency.iso_code }}';
+
+
+/* Sometimes merchants change their shop currency, let's tell our JavaScript file */
+ACSCurrency.moneyFormats[shopCurrency].money_with_currency_format = {{ shop.money_with_currency_format | strip_html | json }};
+ACSCurrency.moneyFormats[shopCurrency].money_format = {{ shop.money_format | strip_html | json }};
+
+/* Default currency */
+var defaultCurrency = '{{ settings.mlvedaACS_defaultCurrency }}';
+  
+/* Cookie currency */
+var cookieCurrency = ACSCurrency.cookie.read();
+var resetCurrencyCookie = mlvedaReadCookie("resetCurrencyCookie");
+if (resetCurrencyCookie == null)
+{
+    cookieCurrency = null;
+    mlvedaCreateCookie("resetCurrencyCookie", 1, 365);
+}
+
+/* Fix for customer account pages */
+$acs('span.money span.money').each(function() {
+  $acs(this).parents('span.money').removeClass('money');
+});
+
+/* Saving the current price */
+$acs('span.money').each(function() {
+if(!$acs(this).attr('data-currency-{{ cart.currency.iso_code }}'))
+{
+  $acs(this).attr('data-currency-{{ cart.currency.iso_code }}', $acs(this).html());
+}
+});
+
+// If there's no cookie.
+if (cookieCurrency == null) {
+  if (shopCurrency == "{{ shop.currency }}" && shopCurrency !== defaultCurrency) {
+    ACSCurrency.convertAll(shopCurrency, defaultCurrency);
+  }
+  else {
+    if(shopCurrency == "{{ shop.currency }}") {
+      ACSCurrency.currentCurrency = defaultCurrency;
+    } else {
+      ACSCurrency.currentCurrency = shopCurrency;
+    }
+  }
+}
+// If the cookie value does not correspond to any value in the currency dropdown.
+else if ($acs('[name=currencies]').length && $acs('[name=currencies] option[value=' + cookieCurrency + ']').length === 0) {
+  ACSCurrency.currentCurrency = shopCurrency;
+  ACSCurrency.cookie.write(shopCurrency);
+}
+else if (cookieCurrency === shopCurrency) {
+  ACSCurrency.currentCurrency = shopCurrency;
+}
+else {
+  if(shopify_supported_currencies.length > 4 && shopify_supported_currencies.indexOf(cookieCurrency) != -1) {
+    ACSCurrency.cookie.write(cookieCurrency);
+    $acs("#currency_form input[name=currency]").val(cookieCurrency);
+    $acs("#currency_form").submit();
+  } else if( shopCurrency !== "{{ shop.currency }}") {
+    ACSCurrency.cookie.write(cookieCurrency);
+    $acs("#currency_form input[name=currency]").val("{{ shop.currency }}");
+    $acs("#currency_form").submit();
+  } else {
+    ACSCurrency.convertAll(shopCurrency, cookieCurrency);
+    $acs(".mlvedaCartNote").css("display","block");
+  }
+}
+
+$acs('[name=currencies]').val(ACSCurrency.currentCurrency).change(function() {
+  var newCurrency = $acs(this).val();
+if(shopify_supported_currencies.length > 4 && shopify_supported_currencies.indexOf(newCurrency) != -1) {
+    ACSCurrency.cookie.write(newCurrency);
+    $acs("#currency_form input[name=currency]").val(newCurrency);
+    $acs("#currency_form").submit();
+  } else if( shopCurrency !== "{{ shop.currency }}") {
+    ACSCurrency.cookie.write(newCurrency);
+    $acs("#currency_form input[name=currency]").val("{{ shop.currency }}");
+    $acs("#currency_form").submit();
+  } else {
+    ACSCurrency.convertAll(ACSCurrency.currentCurrency, newCurrency);
+    $acs('.selected-currency').text(ACSCurrency.currentCurrency);
+    if(newCurrency != shopCurrency) {
+      $acs(".mlvedaCartNote").css("display","block");
+    } else {
+      $acs(".mlvedaCartNote").css("display","none");
+    }
+  }
+});
+
+var original_selectCallback = window.selectCallback;
+var selectCallback = function(variant, selector) {
+  original_selectCallback(variant, selector);
+  ACSCurrency.convertAll(shopCurrency, $acs('[name=currencies]').val());
+  $acs('.selected-currency').text(ACSCurrency.currentCurrency);
+};
+
+$acs('.selected-currency').text(ACSCurrency.currentCurrency);
+
+if(onetimecallflag) {
+  $acs('.single-option-selector').change(function() {
+    mlvedaload();
+  });
+
+  $acs('.swatch').change(function() {
+    mlvedaload();
+  });
+
+  $acs('.single-option-radio').change(function() {
+    mlvedaload();
+  });
+$acs('input[name^=id]:checked, select[name^=id], input[name=id], hidden[name^=id] , form[action*="/cart/add"]').on("change",function() {
+     setTimeout(function(){ 
+             mlvedaload();
+             }, 300);
+  });
+  /*if( typeof $ !== "undefined" ) {
+$acs(document).ajaxComplete(function(event, xhr, settings) {
+          if(settings.url.indexOf("cart.js")!=-1 || settings.url.indexOf("add.js")!=-1 || settings.url.indexOf("change.js")!=-1) {
+       setTimeout(function() {
+         mlvedaload();
+       }, 1000);
+     }
+   });
+}*/
+
+(function () {
+   const send = XMLHttpRequest.prototype.send;
+   XMLHttpRequest.prototype.send = function() {
+       this.addEventListener('load', function() {
+           console.log('global handler', this)
+           if(this._url.indexOf("cart.js")!=-1 || this._url.indexOf("?page=")!=-1 || this._url.indexOf("search?")!=-1 || this._url.indexOf("view=")!=-1 || this._url.indexOf("type=")!=-1 || this._url.indexOf("change.js")!=-1 || this._url.indexOf("add.js")!=-1 || this._url.indexOf("recently-viewed")!=-1 || this._url.indexOf("recentlyviewed")!=-1 || this._url.indexOf("/recommendation")!=-1 ) {
+             setTimeout(function(){
+                 mlvedaload();
+             }, 300);
+    }
+           // add your global handler here
+       })
+       return send.apply(this, arguments)
+   }
+
+ 
+
+   const fetch = window.fetch;
+   window.fetch = function(){
+     var e = arguments;
+     return fetch.apply(this, Array.prototype.slice.call(arguments)).then(function(t) {
+         if (!t.ok)
+             return t;
+         try {
+            if(t.url.indexOf("cart.js")!=-1 || t.url.indexOf("?page=")!=-1 || t.url.indexOf("search?")!=-1 || t.url.indexOf("view=")!=-1 || t.url.indexOf("type=")!=-1 || t.url.indexOf("change.js")!=-1 || t.url.indexOf("add.js")!=-1 || t.url.indexOf("recently-viewed")!=-1 || t.url.indexOf("recentlyviewed")!=-1 || t.url.indexOf("/recommendation")!=-1 ) {  
+              setTimeout(function(){
+             mlvedaload();
+             }, 300);
+            }
+         } catch (e) {
+             console && console.warn && console.warn("[shop_events_listener] Error in handleFetchRequest:  " + e.message);
+         }
+         return t
+     })
+   }
+})();
+  $acs("#currencies").niceSelect();
+  $acs("#currencies1").niceSelect();
+$acs("#currencies2").niceSelect();  
+  onetimecallflag = false;
+  }
+}
+</script>
+
+{% endif %}

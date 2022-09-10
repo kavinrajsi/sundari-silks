@@ -1,7 +1,9 @@
 {
   "sections": {
     "main": {
-      "type": "customer-activate"
+      "type": "customer-activate",
+      "settings": {
+      }
     }
   },
   "order": [
