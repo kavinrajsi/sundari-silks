@@ -1,0 +1,52 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+<div class="customer account">
+  <div>
+    <h1>Account</h1>
+    <a href="{{ routes.account_logout_url }}">
+      <svg width="24" height="24">
+        <use href="#layout" />
+      </svg>
+      {{ 'customer.log_out' | t }}
+    </a>
+  </div>
+
+  <div>
+    <div>
+      <h2>Order History</h2>
+
+      {% paginate customer.orders by 2 %}
+      {%- if customer.orders.size > 0 -%}
+      <ul>
+        {%- for order in customer.orders -%}
+        <li>{{ order.customer_url }}</li>
+        <li>{{ order.name }}</li>
+        <li>{{ order.created_at | time_tag: format: 'date' }}</li>
+        <li>{{ order.financial_status_label }}</li>
+        <li>{{ order.fulfillment_status_label }}</li>
+        <li>{{ order.total_price | money_with_currency }}</li>
+        <hr>
+        {%- endfor -%}
+      </ul>
+
+      {%- else -%}
+      <p>{{ 'customer.orders.none' | t }}</p>
+      {%- endif -%}
+      <div class="pagination--number">
+        {{ paginate | default_pagination: next: 'Next', previous: 'Prev' }}
+      </div>
+      {% endpaginate %}
+    </div>
+
+    <div>
+      <h2>{{ 'customer.account.details' | t }}</h2>
+      {{ customer.default_address | format_address }}
+
+      <a href="{{ routes.account_addresses_url }}">
+        {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
+      </a>
+    </div>
+
+  </div>
+</div>
+

@@ -1,0 +1,84 @@
+<div class="address-list">
+  {% for address in customer.addresses %}
+  {% if address == customer.default_address %}
+  <address>
+    <div itemscope itemtype="https://schema.org/Person">
+      <span itemprop="givenName"> {{ customer.default_address.first_name }} </span>
+      <span itemprop="familyName"> {{ customer.default_address.last_name }} </span>
+      <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        {% if customer.default_address.address2 != blank %}
+        <span itemprop="streetAddress">{{ customer.default_address.address2 }} </span>
+        {% endif %}
+        {% if customer.default_address.address1 != blank %}
+        <span itemprop="streetAddress">
+          {{ customer.default_address.address1 }}
+        </span>
+        {% endif %}
+        {% if customer.default_address.city != blank %}
+        <span itemprop="addressLocality"> {{ customer.default_address.city }}
+        </span>
+        {% endif %}
+        {% if customer.default_address.province != blank %}
+        <span itemprop="addressRegion">{{ customer.default_address.province }}</span>
+        {% endif %}
+        {% if customer.default_address.country != blank %}
+        <span itemprop="addressRegion"> {{ customer.default_address.country }} </span>
+        {% endif %}
+        {% if customer.default_address.zip != blank %}
+        <span itemprop="postalCode"> {{ customer.default_address.zip }} </span>
+        {% endif %}
+      </div>
+      {% if customer.default_address.phone != blank %}
+      <span itemprop="telephone"> <a href="tel://{{customer.default_address.phone}}">{{ customer.default_address.phone
+          }}</a> </span>
+      {% endif %}
+    </div>
+    <form class="address-delete-form" method="post" action="/account/addresses/{{ address.id }}">
+      <input type="hidden" name="_method" value="delete">
+      <button type="submit">delete</button>
+    </form>
+  </address>
+
+  {% else %}
+
+  <address>
+    <div itemscope itemtype="https://schema.org/Person">
+      <span itemprop="givenName"> {{ customer.first_name }} </span>
+      <span itemprop="familyName"> {{ customer.last_name }} </span>
+      <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        {% if address.address2 != blank %}
+        <span itemprop="streetAddress">{{ address.address2 }} </span>
+        {% endif %}
+        {% if address.address1 != blank %}
+        <span itemprop="streetAddress">
+          {{ address.address1 }}
+        </span>
+        {% endif %}
+        {% if address.city != blank %}
+        <span itemprop="addressLocality"> {{ address.city }}
+        </span>
+        {% endif %}
+        {% if address.province != blank %}
+        <span itemprop="addressRegion">{{ address.province }}</span>
+        {% endif %}
+        {% if address.country != blank %}
+        <span itemprop="addressRegion"> {{ address.country }} </span>
+        {% endif %}
+        {% if address.zip != blank %}
+        <span itemprop="postalCode"> {{ address.zip }} </span>
+        {% endif %}
+      </div>
+      {% if address.phone != blank %}
+      <span itemprop="telephone"> <a href="tel://{{address.phone}}">{{ address.phone }}</a> </span>
+      {% endif %}
+    </div>
+    <form class="address-delete-form" method="post" action="/account/addresses/{{ address.id }}">
+      <input type="hidden" name="_method" value="delete">
+      <button type="submit">delete</button>
+    </form>
+  </address>
+  {% endif %}
+
+
+  {% endfor %}
+</div>

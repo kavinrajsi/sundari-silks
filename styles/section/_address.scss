@@ -1,0 +1,23 @@
+address {
+  background-color: var(--pure-white);
+  border-radius: 4px;
+  padding: 14px;
+  span {
+    display: block;
+    font-size: 16px;
+    list-style: 1.5;
+    margin-bottom: 8px;
+    &:nth-child(1),
+    &:nth-child(2) {
+      display: inline-block;
+    }
+  }
+}
+
+.address-list {
+  @include content-block-max-center;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 28px;
+}
