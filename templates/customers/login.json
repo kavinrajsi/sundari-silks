@@ -1,7 +1,9 @@
 {
   "sections": {
     "main": {
-      "type": "customer-login"
+      "type": "customer-login",
+      "settings": {
+      }
     }
   },
   "order": [

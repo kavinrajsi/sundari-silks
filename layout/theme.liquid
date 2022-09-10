@@ -39,7 +39,12 @@
 
   {{ 'base.css' | asset_url | stylesheet_tag }}
 
-</head>
+
+<script>
+window.mlvedaShopCurrency = "{{ shop.currency }}";
+window.shopCurrency = "{{ shop.currency }}";
+window.supported_currencies = "{{ settings.mlvedaACS_supportedCurrencies }}";
+</script></head>
 
 <body>
   <!--[if IE]>
@@ -228,6 +233,6 @@
 
   {% section 'footer' %}
 
-</body>
+{% include 'mlveda-currencies-switcher' %}{% include 'mlveda-currencies' %}{% include 'mlveda-flag' %}{% include 'mlveda-currencies-style' %}</body>
 
 </html>
