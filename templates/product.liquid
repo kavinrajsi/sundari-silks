@@ -13,7 +13,7 @@ preview image
   <div class="thumbnails-wrapper">
     {% for media in product.media %}
       <a data-thumbnail-id="{{ media.id }}">
-        {{ media.preview_image | image_url: width: 110, height: 110, scale: 2 | image_tag: media.alt, 'product-single__thumbnail-image' }}
+        {{ media.preview_image | image_url: width: 110, height: 110| image_tag: media.alt, 'product-single__thumbnail-image' }}
       </a>
     {% endfor %}
   </div>
