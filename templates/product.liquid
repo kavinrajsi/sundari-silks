@@ -6,16 +6,6 @@ price varies : <p>{{ product.compare_at_price_varies }}</p>
 {% for image in product.images %}
     <p><img src="{{ image.src | product_img_url: "large" }}"></p>
   {% endfor %}
-  {% if product.media.size > 1 %}
-  <div class="thumbnails-wrapper">
-    {% for media in product.media %}
-      <a data-thumbnail-id="{{ media.id }}">
-        {{ media.preview_image | image_url: width: 110, height: 110 | image_tag: media.alt, 'product-single__thumbnail-image' }}
-      </a>
-    {% endfor %}
-  </div>
-{% endif %}
-
 Price : <p>{{ product.price }}</p>
 Price max : <p>{{ product.price_max }}</p>
 Price min : <p>{{ product.price_min }}</p>
