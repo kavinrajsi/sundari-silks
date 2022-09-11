@@ -1,27 +1,53 @@
-title : <h2>{{ product.title }}</h2>
-content : <p>{{ product.content | | strip_html }}</p>
-available : <p>{{ product.available }}</p>
-{% form 'product', product %}
-<select name="id">
-{% for variant in product.variants %}
-<option value="{{ variant.id }}"> {{ variant.title }}- {{ variant.price | money }}</option>
-{% endfor %}
-</select>
+{% assign current_product = product.selected_or_first_available_variant%}
+{% assign product_image = current_product.featured_image | default : product.featured_image %}
 
-<button type="submit" {% unless product.available %} disabled="disabled" {% endunless %}>
-{% if product.available %}
-  <p>Add to Cart</p>
-{% else %}
-  <p>Sold Out</p>
-{% endif %}
-</button>
-{% endform %}
-price varies : <p>{{ product.compare_at_price_varies }}</p>
-image:
-{% for image in product.images %}
+<div class="product-image">
+  <img src="{{ product_image | image_url: width: 440 }}" alt="{{ product_image.alt }}" id="product-image-main">
+  <br>
+  {% for image in product.images %}
+  <img src="{{ image.src | image_url : width: 400 }}" alt="{{image.alt }}">
+  {% endfor %}
+</div>
+<div class="product-content">
+  <h2 class="product-image">{{product.title}}</h2>
+  <h2 class="product-description">{{product.content | strip_html }}</h2>
+  <p class="product-price">{{current_product.price | money_with_currency }}</p>
+
+  {% form 'product', product, class: 'product-form', id:AddToCartForm %}
+  <select class="product-form-select" name="id" id="product-form-select">
+    {% for variant in product.variants %}
+    <option value="{{ variant.id }}"> {{ variant.title }}- {{ variant.price | money }}</option>
+    {% endfor %}
+  </select>
+
+
+  <input type="number" class="form-control" name="quantity" id="quantity" value="1" min="1">
+  <button type="submit" {% unless product.available %} disabled="disabled" {% endunless %}>
+    {% if product.available %}
+    <p>Add to Cart</p>
+    {% else %}
+    <p>Sold Out</p>
+    {% endif %}
+  </button>
+  <!-- <button type="submit" name="buynow" id="AddToBuyNow" class="button button--ghost">Buy Now</button> -->
+
+  {% endform %}
+
+
+</div>
+
+
+<hr>
+
+
+<!-- price varies : <p>{{ product.compare_at_price_varies }}</p> -->
+<!-- image: -->
+<!-- {% for image in product.images %}
     <p><img src="{{ image.src | product_img_url: "large" }}"></p>
-{% endfor %}
-media code:
+{% endfor %} -->
+
+<!-- Media -->
+<!-- media code:
 {% for media in product.media %}
   <code for media>
 {% endfor %}
@@ -58,11 +84,12 @@ media video tag media:
         {{ media | media_tag }}
       </div>
   {% endcase %}
-{% endfor %}
-external video:
+{% endfor %} -->
 
-Price : <p>{{ product.price }}</p>
+<!-- external video: -->
+
+<!-- Price : <p>{{ product.price }}</p>
 Price max : <p>{{ product.price_max }}</p>
 Price min : <p>{{ product.price_min }}</p>
 Price varies : <p>{{ product.price_varies }}</p>
-Type : <p>{{ product.type }}</p>
+Type : <p>{{ product.type }}</p> -->

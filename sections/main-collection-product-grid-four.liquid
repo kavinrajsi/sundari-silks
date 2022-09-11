@@ -74,12 +74,12 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
 
   <section>
 
-    {% paginate collection.products by 4 %}
+    {% paginate collection.products by 24 %}
     <div class="test--product-card--grid">
       {%- for product in collection.products -%}
       <div class="test--product-card">
         <a href="{{product.url | within: collection }}" class="product-link">
-          {{ product.featured_image | image_url: width: 400, height: 400, crop: 'bottom' | image_tag : class:
+          {{ product.featured_image | image_url: width: 400, height: 400, crop: 'top' | image_tag : class:
           'product-image', loading: 'lazy', alt: product.feature_image.alt}}
           {% comment %}
           <p>
