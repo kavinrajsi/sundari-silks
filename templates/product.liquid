@@ -29,16 +29,37 @@
     <p>Sold Out</p>
     {% endif %}
   </button>
-  <!-- <button type="submit" name="buynow" id="AddToBuyNow" class="button button--ghost">Buy Now</button> -->
 
   {% endform %}
+  <form action="/cart/add" method="post" class="variants" id="product-actions-{{ product.id }}" enctype="multipart/form-data">
+    <input type="hidden" name="variantId" value="{{ product.variants[0].id }}" />
+    <button class="button buynow-btn" title="Buy" onClick="instantBuy()"><span>Buy now</span></button>
+    </form>
+
 
 
 </div>
 
 
 <hr>
+<script>
 
+ function instantBuy(){
+     var $ = jQuery;
+
+   var formParams = $('form.cart').serialize();
+     $.ajax({
+      url: "/cart/add",
+      type: "post",
+      data: formParams,
+      success: function(){
+       window.location.href = "/checkout";
+      },
+      error: function(){
+      }
+     })
+ }
+</script>
 
 <!-- price varies : <p>{{ product.compare_at_price_varies }}</p> -->
 <!-- image: -->
