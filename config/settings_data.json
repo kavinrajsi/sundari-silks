@@ -19,40 +19,40 @@
     "mlvedaACS_positionTop": "10px",
     "mlvedaACS_supportedCurrencies": "INR USD GBP EUR CAD AUD SGD",
     "mlvedaACS_isCustomized": true,
-    "sections": {
-      "announcement-bar": {
-        "settings": {
-          "link": "shopify:\/\/blogs\/article",
-          "home_page_only": true,
-          "text": "Announce something here",
-          "show_announcement": true
-        },
-        "type": "announcement-bar"
-      },
-      "footer": {
-        "settings": {
-        },
-        "type": "footer"
-      },
-      "header": {
-        "settings": {
-          "image_silk_saree": "shopify:\/\/shop_images\/TRUI-3D.png",
-          "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
-          "menu": "main-menu",
-          "logo_width": 120
-        },
-        "type": "header"
-      }
-    },
     "mlvedaACS_hideDecimal": false,
-    "content_for_index": [
-
-    ],
     "mlvedaACS_hoverBackgroundColor": "inherit",
     "mlvedaACS_positionRight": "10px",
     "mlvedaACS_currencyFormat": "money_with_currency_format",
     "mlvedaACS_borderLineColor": "inherit",
     "mlvedaACS_displayFlag": false,
-    "mlvedaACS_borderLook": false
+    "mlvedaACS_borderLook": false,
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "show_announcement": true,
+          "home_page_only": true,
+          "text": "Announce something here",
+          "link": "shopify:\/\/blogs\/article"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
+          "logo_width": 120,
+          "menu": "main-menu",
+          "image_silk_saree": "shopify:\/\/shop_images\/TRUI-3D.png"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
   }
 }
