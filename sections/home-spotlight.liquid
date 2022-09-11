@@ -1,0 +1,62 @@
+
+<section class="spot-light">
+  <div class="section-header-wrapper justify-content-start">
+    <div class="section-header text-left">
+
+      <div class="section-header-title">{{ block.settings.spotlight-title }}</div>
+      <div class="section-header-content"><p>{{ block.settings.spotlight-description }}</p></div>
+
+      <a class="section-header-action_link" href="{{ block.settings.spotlight-url }}">
+        View All
+        <svg width="20" height="20">
+          <use href="#link-arrow" />
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="section-content">
+    <div class="product-collection-list">
+      {{ block.settings.spotlight-url }}
+      {{ block.settings.spotlight-number }}
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+"name": "Spotlight Section",
+"tag": "section",
+"class": "section",
+"settings": [
+    {
+      "type": "text",
+      "id": "spotlight-title",
+      "label": "Section Title",
+      "default": "Sundari Spotlight"
+    },
+    {
+      "type": "text",
+      "id": "spotlight-description",
+      "label": "Section Description",
+      "default": "Bringing you our best sellers"
+    },
+    {
+      "type": "collection",
+      "id": "spotlight-collection",
+      "label": "Collection Name"
+    },
+    {
+      "type": "url",
+      "id": "spotlight-url",
+      "label": "Link URL"
+    },
+    {
+      "type": "number",
+      "id": "spotlight-count",
+      "label": "Product Count",
+      "default": 10
+    }
+]
+}
+{% endschema %}

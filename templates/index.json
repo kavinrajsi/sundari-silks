@@ -1,12 +1,38 @@
 {
   "sections": {
-    "main": {
-      "type": "main-index",
-      "settings": {
-      }
+    "slideshow":{
+      "type": "home-slideshow"
+    },
+    "curated":{
+      "type": "home-curated"
+    },
+    "spotlight":{
+      "type": "home-spotlight"
+    },
+    "collaborate":{
+      "type": "home-collaborate"
+    },
+    "dropped":{
+      "type": "home-just-dropped"
+    },
+    "recently":{
+      "type": "home-recently"
+    },
+    "blog":{
+      "type": "blog-feed"
+    },
+    "instagram":{
+      "type": "instagram"
     }
-  },
+    },
   "order": [
-    "main"
+    "slideshow",
+    "curated",
+    "spotlight",
+    "collaborate",
+    "dropped",
+    "recently",
+    "blog",
+    "instagram"
   ]
 }

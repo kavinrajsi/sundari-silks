@@ -1,0 +1,61 @@
+
+<section>
+  <div class="section-header-wrapper">
+    <div class="section-header text-left" style="flex: 1 0 auto;">
+      <div class="section-header-title">{{ block.settings.just-dropped-title }}</div>
+      <div class="section-header-content">{{ block.settings.just-dropped-description }}</div>
+    </div>
+    <nav class="section-header-nav__list">
+      <a class="section-header-action_link active" href="https://sundarisilks.com/collections/saress">Sarees</a>
+      <a class="section-header-action_link" href="https://sundarisilks.com/collections/readymades">Readymades</a>
+      <a class="section-header-action_link" href="https://sundarisilks.com/collection/decor">Decor & Accessories</a>
+      <a class="section-header-action_link" href="{{ block.settings.just-dropped-url }}">
+        View All
+        <svg width="20" height="20">
+          <use href="#link-arrow" />
+        </svg>
+      </a>
+    </nav>
+  </div>
+  <div class="section-content">
+    <div class="product-collection-list">
+
+      {{ block.settings.just-dropped-url }}
+      {{ block.settings.just-dropped-number }}
+    </div>
+  </div>
+</section>
+
+
+
+{% schema %}
+{
+"name": "Just Dropped Section",
+"class": "section-class",
+"settings": [
+    {
+      "type": "text",
+      "id": "just-dropped-title",
+      "label": "Section Title",
+      "default": "Just Dropped"
+    },
+    {
+      "type": "text",
+      "id": "just-dropped-description",
+      "label": "Section Description",
+      "default": "New arrivals you will love"
+    },
+    {
+      "type": "url",
+      "id": "just-dropped-url",
+      "label": "Link URL"
+    },
+    {
+      "type": "number",
+      "id": "just-dropped-count",
+      "label": "Product Count",
+      "default": 10
+    }
+]
+}
+{% endschema %}

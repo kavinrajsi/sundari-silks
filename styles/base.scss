@@ -1,7 +1,8 @@
 @import 'reset';
 @import 'common';
 @import 'header';
-
+@import 'owl-slider/owl.carousel.scss';
+@import 'owl-slider/owl.theme.default.scss';
 @import 'page/collection';
 @import 'page/login';
 @import 'page/account';
