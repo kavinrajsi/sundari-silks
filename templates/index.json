@@ -127,7 +127,7 @@
       "settings": {
         "recently-title": "Recently Viewed",
         "recently-description": "Products you fell in love with",
-        "recently-url": "",
+        "recently-url": "shopify:\/\/collections\/all",
         "recently-count": 10
       }
     },
