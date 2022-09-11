@@ -1,4 +1,5 @@
-
+{% comment %}
+<!--
 <section>
   <div class="section-header-wrapper justify-content-center">
     <div class="section-header">
@@ -8,41 +9,29 @@
   </div>
   <div class="section-content">
     <div class="blog-feed-container">
-      <!-- <div class="blog-feed-card">
-        <a href="https://www.sundarisilks.com/blogs/article/how-to-style-a-pastel-saree-this-festive-season"
-          target="_blank">
-          <img class="blog-feed-card-image"
-            src="https://cdn.shopify.com/s/files/1/0490/1158/9282/articles/how-to-style-a-pastel-saree-this-festive-season-cover.progressive.png.jpg?v=1662107457"
-            alt="How to style a pastel saree this festive season">
-          <h3 class="blog-feed-card-title">How to style a pastel saree this festive season</h3>
-          <p class="blog-feed-card-content">The soiree season is upon us! With Onam, Navaratri, Diwali and a number
-            of weddings to attend, we’ve got more than one reason to wear our beautiful sarees. Over the past few
-            years, Pastel Sarees have proved that are perfect for any occasion. Although at first sight, they may
-            suggest otherwise, pastel shades have a warmth that makes it hard to not</p>
-          <span class="blog-feed-card-link"> read more </span>
-        </a>
-      </div> -->
       {%- if section.settings.blog != blank and section.settings.blog.articles_count > 0 -%}
 
       {%- for article in section.settings.blog.articles limit: 2 -%}
-      <li  class="blog__post grid__item article slider__slide slider__slide--full-width">
+      <li  class="blog-feed-card">
         <div class="article-card-wrapper card-wrapper underline-links-hover">
-          {% comment %} <article aria-labelledby="Article-{{ article.id }}">  {{ article.id }} </article> {% endcomment %}
-          {%- if show_image == true and article.image -%}
-          <div class="article-card__image-wrapper card__media">
-            { article.image.src | image_url: width: 1500 }}
-            {{ article.title | truncate: 50 | escape }}
-            {{ article.url }}
-            {{ article.author }}
-            <span class="circle-divider">{{ article.published_at | time_tag: format: 'date' }}</span>
+           <a href=" {{ article.url }}" class="article-card__image-wrapper card__media">
+            {% if article.image %}
+            {{ article.image | image_url: width: 720 | image_tag: alt:article.image.alt }}
+            {% else %}
+            {{ 'product-w' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+            <h3 class="blog-feed-card-title"> {{ article.title | truncate: 50 | escape }} </h3>
+            {{ article.title }}
+            <!-- {{ article.author }} -->
+            <!-- <span class="circle-divider">{{ article.published_at | time_tag: format: 'date' }}</span> -->
+            <p class="blog-feed-card-content">
             {%- if article.excerpt.size > 0 -%}
             {{ article.excerpt | strip_html | truncatewords: 30 }}
           {%- else -%}
             {{ article.content | strip_html | truncatewords: 30 }}
           {%- endif -%}
-
-          </div>
-        {%- endif -%}
+        </p>
+      </a>
           </div>
       </li>
     {%- endfor -%}
@@ -74,6 +63,139 @@
     "id": "blog",
     "label": "Blog"
   }
+  ]
+}
+{% endschema %} -->
+
+{% endcomment %}
+
+<h1>{{ section.settings.title | escape }}</h1>
+
+{%- assign blog = blogs[section.settings.blog] -%}
+
+{%- if blog.articles_count > 0 -%}
+  <ul>
+
+    {%- for article in blog.articles limit: section.settings.post_limit -%}
+      <li>
+        <a href="{{ article.url }}">
+          {%- if article.image -%}
+            {{ article | img_url: '150x150', scale: 2 | img_tag: '' }}
+          {%- endif -%}
+          <h2>{{ article.title }}</h2>
+        </a>
+
+        {%- if section.settings.blog_show_author -%}
+          <span>
+            By {{ article.author }}
+          </span>
+        {%- endif -%}
+
+        {%- if section.settings.blog_show_date -%}
+          <span>
+            {{ article.published_at | time_tag: format: 'month_day_year' }}
+          </span>
+        {%- endif -%}
+
+        {%- if article.excerpt.size > 0 -%}
+          {{ article.excerpt }}
+        {%- else -%}
+          {{ article.content | strip_html | truncate: 150 }}
+        {%- endif -%}
+
+        {%- if article.tags.size > 0 -%}
+          <ul aria-label="{{ 'blogs.article.tags' }}">
+          {%- for tag in article.tags -%}
+            <li>
+              <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+            </li>
+          {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        <ul>
+          <li>
+            <a href="{{ article.url }}" aria-label="Read more: {{ article.title }}">
+              Read more
+            </a>
+          </li>
+
+          {%- if blog.comments_enabled? and article.comments_count > 0 -%}
+            <li>
+              <a href="{{ article.url }}#comments">
+                {{ article.comments_count }} comments
+              </a>
+            </li>
+          {%- endif -%}
+
+        </ul>
+      </li>
+    {%- endfor -%}
+
+  </ul>
+{%- endif -%}
+
+{%- if section.settings.show_view_all -%}
+  <a href="{{ blog.url }}"
+    class="btn"
+    aria-label="{{ 'blogs.article.view_all_blogs' }}">
+    {{ 'blogs.article.view_all' }}
+  </a>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Blog posts",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Blog posts"
+    },
+    {
+      "id": "blog",
+      "type": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "range",
+      "id": "post_limit",
+      "label": "Posts",
+      "min": 3,
+      "max": 12,
+      "step": 3,
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_author",
+      "label": "Show author",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_date",
+      "label": "Show date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": "Show 'View all' button",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog posts",
+      "category": "Blog",
+      "settings": {
+        "blog": "News",
+        "post_limit": 3
+      }
+    }
   ]
 }
 {% endschema %}
