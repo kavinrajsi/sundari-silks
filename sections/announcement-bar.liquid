@@ -9,7 +9,7 @@
   <a href="{{ section.settings.link }}">
     {%- endif -%}
 
-    <p>{{ section.settings.text | escape }}</p>
+    <p> {{ block.settings.text | escape }} </p>
 
     {%- if section.settings.link == blank -%}
 </div>
@@ -46,7 +46,7 @@
 "type": "text",
 "id": "text",
 "label": "Announcement text",
-"default": "Announce something here"
+"default": "Welcome to our store"
 },
 {
 "type": "color",
