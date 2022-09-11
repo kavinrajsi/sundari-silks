@@ -11,7 +11,7 @@
 
     {%- if section.settings.blog_show_date -%}
       <span>
-        {{ article.published_at | time_tag: format: 'month_day_year' }}
+        {{ article.published_at | time_tag: format: 'date' }}
       </span>
     {%- endif -%}
 

@@ -1,3 +1,5 @@
+<br>
+
 <section>
   <div class="section-header-wrapper justify-content-center">
     <div class="section-header">
@@ -10,16 +12,15 @@
       {%- if section.settings.blog != blank and section.settings.blog.articles_count > 0 -%}
 
       {%- for article in section.settings.blog.articles limit: 2 -%}
-      <li class="blog-feed-card">
+      <div class="blog-feed-card">
         <div class="article-card-wrapper card-wrapper underline-links-hover">
           <a href=" {{ article.url }}" class="article-card__image-wrapper card__media">
             {% if article.image %}
             {{ article.image | image_url: width: 720 | image_tag: alt:article.image.alt }}
             {% else %}
-            {{ 'product-w' | placeholder_svg_tag: 'placeholder-svg' }}
+            {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg' }}
             {% endif %}
             <h3 class="blog-feed-card-title"> {{ article.title | truncate: 50 | escape }} </h3>
-            {{ article.title }}
             <!-- {{ article.author }} -->
             <!-- <span class="circle-divider">{{ article.published_at | time_tag: format: 'date' }}</span> -->
             <p class="blog-feed-card-content">
@@ -31,7 +32,7 @@
             </p>
           </a>
         </div>
-      </li>
+      </div>
       {%- endfor -%}
       {%- endif -%}
 
