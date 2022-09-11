@@ -567,6 +567,9 @@ iframe#dummy-chat-button-iframe {
   padding: 10px 0px;
 }
 
+.header-container {
+  background-color: var(--pure-white);
+}
 .header-action-list {
   max-width: var(--content-width);
   margin-left: auto;
@@ -609,7 +612,6 @@ iframe#dummy-chat-button-iframe {
   margin-right: auto;
   --border-radius: 2px;
   margin: 0 auto 48px;
-  border-bottom: 1px solid var(--border-color);
   position: relative;
 }
 .header-nav-list-main .menu-level-1 {

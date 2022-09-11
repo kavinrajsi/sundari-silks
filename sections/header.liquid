@@ -1,4 +1,5 @@
 <header>
+  <div class="header-container">
   <div class="header-action-list">
 
     {%- if request.page_type == 'index' -%}
@@ -73,8 +74,9 @@
       </div>
     </div>
   </div>
+  </div>
 
-  <div class="header-search-area-wrapper" style="display: block;">
+  <div class="header-search-area-wrapper">
     <form class="header-search-area" action="{{ routes.search_url }}">
       <i class="input__search-icon">
         <svg width="24" height="24">
@@ -92,6 +94,7 @@
 
   </div>
   <!-- navigation -->
+  <div class="header-container">
   <nav class="header-nav-list-main" role="navigation">
     <ul class="menu-level-1">
       {%- for link in linklists.main-menu.links -%}
@@ -125,16 +128,16 @@
 
           <li class="menu-level-2-item-image image-one">
             <a href="#">
-              {{ section.settings.image_silk_saree | image_url : width: section.settings.width | image_tag : class: 'try-3d', loading: 'lazy',
-              alt: section.settings.image_silk_saree.alt }}
+              {{ section.settings.image_silk_saree--1 | image_url : width: section.settings.width | image_tag : class: 'try-3d', loading: 'lazy',
+              alt: section.settings.image_silk_saree--1.alt }}
               <p class="menu-image-title">Kanchipuram Silk</p>
               <p class="menu-image-link-button">Explore Now</p>
               </a>
           </li>
           <li class="menu-level-2-item-image image-two">
             <a href="#">
-              {{ section.settings.image_silk_saree | image_url : width: section.settings.width | image_tag : class: 'try-3d', loading: 'lazy',
-              alt: section.settings.image_silk_saree.alt }}
+              {{ section.settings.image_silk_saree--2 | image_url : width: section.settings.width | image_tag : class: 'try-3d', loading: 'lazy',
+              alt: section.settings.image_silk_saree--2.alt }}
               <p class="menu-image-title">Wedding Edit</p>
               <p class="menu-image-link-button">Explore Now</p>
               </a>
@@ -149,6 +152,7 @@
       </li> -->
     </ul>
   </nav>
+</div>
   <!-- navigation -->
 </header>
 
@@ -193,8 +197,13 @@
 },
 {
   "type":  "image_picker",
-  "id": "image_silk_saree",
+  "id": "image_silk_saree--1",
   "label": "Image #1"
+},
+{
+  "type":  "image_picker",
+  "id": "image_silk_saree--2",
+  "label": "Image #2"
 }
 ]
 }

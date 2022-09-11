@@ -22,6 +22,9 @@
 }
 
 .header {
+  &-container{
+    background-color: var(--pure-white);
+  }
   &-action-list {
     @include content-block-max-center;
 
@@ -60,7 +63,7 @@
     @include content-block-max-center;
     --border-radius: 2px;
     margin: 0 auto 48px;
-    border-bottom: 1px solid var(--border-color);
+    // border-bottom: 1px solid var(--border-color);
     position: relative;
     .menu-level-1 {
       display: flex;
