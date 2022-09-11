@@ -32,6 +32,7 @@
         "blocks": {
           "e5b9b3cb-42bb-43bc-adac-0cad652993ae": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "Announce something here lorm",
               "link": "",
