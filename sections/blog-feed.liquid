@@ -8,7 +8,7 @@
   </div>
   <div class="section-content">
     <div class="blog-feed-container">
-      <div class="blog-feed-card">
+      <!-- <div class="blog-feed-card">
         <a href="https://www.sundarisilks.com/blogs/article/how-to-style-a-pastel-saree-this-festive-season"
           target="_blank">
           <img class="blog-feed-card-image"
@@ -21,8 +21,32 @@
             suggest otherwise, pastel shades have a warmth that makes it hard to not</p>
           <span class="blog-feed-card-link"> read more </span>
         </a>
-      </div>
+      </div> -->
+      {%- if section.settings.blog != blank and section.settings.blog.articles_count > 0 -%}
 
+      {%- for article in section.settings.blog.articles limit: 2 -%}
+      <li  class="blog__post grid__item article slider__slide slider__slide--full-width">
+        <div class="article-card-wrapper card-wrapper underline-links-hover">
+          {% comment %} <article aria-labelledby="Article-{{ article.id }}">  {{ article.id }} </article> {% endcomment %}
+          {%- if show_image == true and article.image -%}
+          <div class="article-card__image-wrapper card__media">
+            { article.image.src | image_url: width: 1500 }}
+            {{ article.title | truncate: 50 | escape }}
+            {{ article.url }}
+            {{ article.author }}
+            <span class="circle-divider">{{ article.published_at | time_tag: format: 'date' }}</span>
+            {%- if article.excerpt.size > 0 -%}
+            {{ article.excerpt | strip_html | truncatewords: 30 }}
+          {%- else -%}
+            {{ article.content | strip_html | truncatewords: 30 }}
+          {%- endif -%}
+
+          </div>
+        {%- endif -%}
+          </div>
+      </li>
+    {%- endfor -%}
+      {%- endif -%}
 
     </div>
   </div>
