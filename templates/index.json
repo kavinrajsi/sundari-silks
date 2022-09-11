@@ -1,30 +1,46 @@
 {
   "sections": {
-    "slideshow":{
-      "type": "home-slideshow"
+    "slideshow": {
+      "type": "home-slideshow",
+      "settings": {
+      }
     },
-    "curated":{
-      "type": "home-curated"
+    "curated": {
+      "type": "home-curated",
+      "settings": {
+      }
     },
-    "spotlight":{
-      "type": "home-spotlight"
+    "spotlight": {
+      "type": "home-spotlight",
+      "settings": {
+      }
     },
-    "collaborate":{
-      "type": "home-collaborate"
+    "collaborate": {
+      "type": "home-collaborate",
+      "settings": {
+      }
     },
-    "dropped":{
-      "type": "home-just-dropped"
+    "dropped": {
+      "type": "home-just-dropped",
+      "settings": {
+      }
     },
-    "recently":{
-      "type": "home-recently"
+    "recently": {
+      "type": "home-recently",
+      "settings": {
+      }
     },
-    "blog":{
-      "type": "blog-feed"
+    "blog": {
+      "type": "blog-feed",
+      "settings": {
+      }
     },
-    "instagram":{
-      "type": "instagram"
+    "instagram": {
+      "type": "instagram",
+      "settings": {
+      }
     }
-    },
+  },
   "order": [
     "slideshow",
     "curated",

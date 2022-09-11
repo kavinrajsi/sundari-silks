@@ -33,12 +33,10 @@
           "e5b9b3cb-42bb-43bc-adac-0cad652993ae": {
             "type": "announcement",
             "settings": {
-              "show_announcement": true,
-              "home_page_only": false,
               "text": "Announce something here lorm",
+              "link": "",
               "announcement-background-color": "#000000",
-              "announcement-text-color": "#ffffff",
-              "link": ""
+              "announcement-text-color": "#ffffff"
             }
           }
         },
@@ -58,8 +56,7 @@
         "settings": {
           "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
           "logo_width": 120,
-          "menu": "main-menu",
-          "image_silk_saree": "shopify:\/\/shop_images\/TRUI-3D.png"
+          "menu": "main-menu"
         }
       }
     },
