@@ -29,6 +29,22 @@
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
+        "blocks": {
+          "e5b9b3cb-42bb-43bc-adac-0cad652993ae": {
+            "type": "announcement",
+            "settings": {
+              "show_announcement": true,
+              "home_page_only": false,
+              "text": "Announce something here lorm",
+              "announcement-background-color": "#000000",
+              "announcement-text-color": "#ffffff",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "e5b9b3cb-42bb-43bc-adac-0cad652993ae"
+        ],
         "settings": {
         }
       },
