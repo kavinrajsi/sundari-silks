@@ -1,4 +1,11 @@
-.test--product-card--grid {
+.test--product-card--grid-three {
+  margin: 0 4vw;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.test--product-card--grid-four {
   margin: 0 4vw;
   display: grid;
   gap: 24px;

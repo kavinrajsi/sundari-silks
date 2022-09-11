@@ -75,7 +75,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
   <section>
 
     {% paginate collection.products by 24 %}
-    <div class="test--product-card--grid">
+    <div class="test--product-card--grid-three">
       {%- for product in collection.products -%}
       <div class="test--product-card">
         <a href="{{product.url | within: collection }}" class="product-link">
