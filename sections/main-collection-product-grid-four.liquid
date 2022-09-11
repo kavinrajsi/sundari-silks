@@ -19,7 +19,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
     {{ collection | image_url: width: 1920, height: 340 | image_tag : alt: collection.image.alt, class: 'image-radius'
     }}
     {%- else -%}
-    <img src="//via.placeholder.com/1920x340" alt="{{ collection.title }}" class="image-radius">
+    {{ 'lifestyle-2' | placeholder_svg_tag: 'my-custom-class' }}
     {%- endif -%}
   </div>
   <div class="collection-page-description">
