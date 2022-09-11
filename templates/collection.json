@@ -1,7 +1,7 @@
 {
   "sections": {
     "product-grid": {
-      "type": "main-collection-product-grid",
+      "type": "collection-four-grid",
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
