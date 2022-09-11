@@ -4,27 +4,9 @@
       "type": "main-index",
       "settings": {
       }
-    },
-    "recommendations": {
-      "type": "resent-product-list-404",
-      "settings": {
-        "show_collection": "arthirshtam",
-        "show_productcount": 4,
-        "show_soldout": false
-      }
-    },
-    "1662900379fe79ef20": {
-      "type": "resent-product-list-404",
-      "settings": {
-        "show_collection": "all",
-        "show_productcount": 4,
-        "show_soldout": false
-      }
     }
   },
   "order": [
-    "main",
-    "recommendations",
-    "1662900379fe79ef20"
+    "main"
   ]
 }
