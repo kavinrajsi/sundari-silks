@@ -1,53 +1,47 @@
 <!-- TODO: Need to add dynamic color  -->
-
-{%- if section.settings.show_announcement -%}
-{%- if section.settings.home_page_only == false or template.name == 'index' -%}
-
-{%- if section.settings.link == blank -%}
-<div>
-  {%- else -%}
-  <a href="{{ section.settings.link }}">
+{%- for block in section.blocks -%}
+{%- case block.type -%}
+{%- when 'announcement' -%}
+<div
+  class="announcement-bar bg_color-{{block.settings.announcement-background-color}} text_color-{{block.settings.announcement-text-color}}"
+  role="region">
+  {%- if block.settings.text != blank -%}
+  {%- if block.settings.link != blank -%}
+  <a href="{{ block.settings.link }}" class="announcement-bar__link link link--text focus-inset animate-arrow">
     {%- endif -%}
-
-    <p> {{ block.settings.text | escape }} </p>
-
-    {%- if section.settings.link == blank -%}
+    <div class="page-width">
+      <p class="announcement-bar__message">
+        {{ block.settings.text | escape }}
+      </p>
+    </div>
+    {%- if block.settings.link != blank -%}
+  </a>
+  {%- endif -%}
+  {%- endif -%}
 </div>
-{%- else -%}
-</a>
-{%- endif -%}
-
-{%- endif -%}
-{%- endif -%}
-
+{%- endcase -%}
+{%- endfor-%}
 {% schema %}
 {
 "name": "Announcement bar",
-"max_blocks": 12,
+"max_blocks": 1,
 "blocks":[
 {
 "type" : "announcement",
-"name" : "announcement name",
+"name" : "new announcement",
 
 "settings": [
-{
-"type": "checkbox",
-"id": "show_announcement",
-"label": "Show announcement",
-"default": false
-},
-{
-"type": "checkbox",
-"id": "home_page_only",
-"label": "Home page only",
-"default": true
-},
 {
 "type": "text",
 "id": "text",
 "label": "Announcement text",
 "default": "Welcome to our store"
 },
+{
+  "type": "url",
+  "id": "link",
+  "label": "Announcement link"
+  },
 {
 "type": "color",
 "id": "announcement-background-color",
@@ -59,11 +53,6 @@
 "id": "announcement-text-color",
 "label": "Text Color",
 "default": "#ffffff"
-},
-{
-"type": "url",
-"id": "link",
-"label": "Announcement link"
 }
 ]
 }
