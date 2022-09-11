@@ -2,9 +2,29 @@
   "sections": {
     "main": {
       "type": "page-instagram",
+      "blocks": {
+        "96ce9597-a26e-44de-bbac-67a97cc17706": {
+          "type": "collection-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/a-model-perched-on-a-stool-smiles.jpg",
+            "link": "shopify:\/\/products\/chain-bracelet"
+          }
+        },
+        "b94a8e02-ac0a-4356-b550-0336ea4544ff": {
+          "type": "collection-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/model-with-leather-jacket-over-shoulders.jpg",
+            "link": "shopify:\/\/products\/abstract-printed-design-multicolor-printed-silk-saree"
+          }
+        }
+      },
+      "block_order": [
+        "96ce9597-a26e-44de-bbac-67a97cc17706",
+        "b94a8e02-ac0a-4356-b550-0336ea4544ff"
+      ],
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "instagram-title": "instagram collection",
+        "instagram-description": "Styles for every occasion"
       }
     }
   },
