@@ -16,7 +16,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
 <div class="collection-page-header">
   <div class="collection-page-header-image text-center image-radius">
     {%- if collection.description != blank -%}
-    {{ collection | image_url: width: 1920 | image_tag : alt: collection.image.alt, class: 'image-radius'
+    {{ collection | image_url: width: 1920, height: 340 | image_tag : alt: collection.image.alt, class: 'image-radius'
     }}
     {%- else -%}
     {{ 'lifestyle-2' | placeholder_svg_tag: 'my-custom-class' }}
@@ -79,7 +79,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
       {%- for product in collection.products -%}
       <div class="test--product-card">
         <a href="{{product.url | within: collection }}" class="product-link">
-          {{ product.featured_image | image_url: width: 400, height: 400, crop: 'top' | image_tag : class:
+          {{ product.featured_image | image_url: width: 400 | image_tag : class:
           'product-image', loading: 'lazy', alt: product.feature_image.alt}}
           {% comment %}
           <p>
