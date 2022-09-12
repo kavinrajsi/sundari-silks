@@ -79,8 +79,16 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
       {%- for product in collection.products -%}
       <div class="test--product-card">
         <a href="{{product.url | within: collection }}" class="product-link">
+
+          {%- if product.featured_image != blank -%}
           {{ product.featured_image | image_url: width: 400 | image_tag : class:
-          'product-image', loading: 'lazy', alt: product.feature_image.alt}}
+            'product-image', loading: 'lazy', alt: product.feature_image.alt }}
+          {%- else -%}
+          {{ 'product-2' | placeholder_svg_tag: 'my-custom-class' }}
+          {%- endif -%}
+
+
+
           {% comment %}
           <p>
             <span aria-hidden="true">—</span>
