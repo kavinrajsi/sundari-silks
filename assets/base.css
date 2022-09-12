@@ -1000,9 +1000,8 @@ iframe#dummy-chat-button-iframe {
 }
 
 .collection-page-header {
-  max-width: var(--content-width);
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 4vw;
+  margin-right: 4vw;
   margin-bottom: 28px;
 }
 .collection-page-header-image {
@@ -1010,6 +1009,7 @@ iframe#dummy-chat-button-iframe {
 }
 .collection-page-header-image img {
   width: 1920px;
+  width: 100%;
   height: 340px;
   object-fit: cover;
   object-position: top center;
