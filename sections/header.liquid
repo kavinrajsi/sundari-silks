@@ -1,4 +1,4 @@
-<header>
+<header class="header">
   <div class="header-container">
   <div class="header-action-list">
 
@@ -25,6 +25,12 @@
     {%- endif -%}
 
     <div class="header-action-lists">
+      <div>
+        {% include 'mlveda-currencies-style' %}
+        {% include 'mlveda-currencies-switcher' %}
+        {% include 'mlveda-currencies' %}
+        {% include 'mlveda-flag' %}
+      </div>
       <div class="header-menu">
         <svg width="24" height="24">
           <use href="#menu" />
@@ -76,7 +82,8 @@
   </div>
   </div>
 
-  <div class="header-search-area-wrapper">
+  <div class="header-search-area-wrapper" style="display: none;">
+  <div class="header-search-area-container">
     <form class="header-search-area" action="{{ routes.search_url }}">
       <i class="input__search-icon">
         <svg width="24" height="24">
@@ -91,7 +98,7 @@
         </svg>
       </i>
     </form>
-
+    </div>
   </div>
   <!-- navigation -->
   <div class="header-container">
