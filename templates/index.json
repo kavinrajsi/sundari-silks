@@ -93,7 +93,9 @@
       ],
       "settings": {
         "curated-title": "Curated collection",
-        "curated-description": "Styles for every occasion"
+        "curated-description": "Styles for every occasion",
+        "readymade-title": "Ready made collection",
+        "readymade-description": "Ready made Styles for every occasion"
       }
     },
     "spotlight": {
@@ -136,7 +138,9 @@
       "settings": {
         "heading": "Blogs by Sundari Silks",
         "richtext": "Stories of Fabrics, Styling Tips, Decor Inspiration and more…",
-        "blog": "article"
+        "blog": "article",
+        "blog_show_author": true,
+        "blog_show_date": true
       }
     },
     "instagram": {
