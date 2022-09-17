@@ -215,7 +215,6 @@
     },
     "collaborate": {
       "type": "home-collaborate",
-      "disabled": true,
       "settings": {
       }
     },
