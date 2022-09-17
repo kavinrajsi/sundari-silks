@@ -60,28 +60,70 @@
           "type": "collection-image",
           "settings": {
             "image": "shopify:\/\/shop_images\/CuratedCollectionImage-1.png",
-            "link": ""
+            "link": "shopify:\/\/collections\/all-kanchipuram"
           }
         },
         "3d1616af-f24e-40c8-b9c6-db9a40ab317c": {
           "type": "collection-image",
           "settings": {
             "image": "shopify:\/\/shop_images\/CuratedCollectionImage-2.png",
-            "link": ""
+            "link": "shopify:\/\/collections\/kanchipuram-wedding-edit"
           }
         },
         "e4c9673a-1fde-4af5-9e4a-6d2563a84c99": {
           "type": "collection-image",
           "settings": {
             "image": "shopify:\/\/shop_images\/CuratedCollectionImag-3.png",
-            "link": ""
+            "link": "shopify:\/\/collections\/kanchipuram-zari-and-thread-work"
           }
         },
         "3e91a06e-4db1-487e-920b-fcbc90f781c2": {
           "type": "collection-image",
           "settings": {
             "image": "shopify:\/\/shop_images\/kanchipuram-saree-styling-ideas-2.png",
-            "link": ""
+            "link": "shopify:\/\/collections\/kanchipuram-half-fine-zari"
+          }
+        },
+        "b8f50da7-dab7-470a-9316-30bf31b01a5a": {
+          "type": "readymade-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/baby-girl-feet.jpg",
+            "link": "shopify:\/\/collections\/readymades"
+          }
+        },
+        "af64ae0e-b0ce-44f1-9174-96c976588b5f": {
+          "type": "readymade-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/girl-by-brick-wall.jpg",
+            "link": "shopify:\/\/collections\/readymades"
+          }
+        },
+        "3df7725e-d735-4aca-a28b-46a8340b3ab5": {
+          "type": "readymade-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/laughing-kid-boy.jpg",
+            "link": "shopify:\/\/collections\/readymades"
+          }
+        },
+        "b64e9a81-ca1c-4151-bcdd-5de5dcabd06b": {
+          "type": "readymade-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/womens-fashion-tattooed-woman-holding-flowers-and-wine.jpg",
+            "link": "shopify:\/\/collections\/readymades"
+          }
+        },
+        "a71593b3-0ca8-4b76-bbe5-8de06e41635c": {
+          "type": "readymade-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/modern-male-fashion-with-glasses.jpg",
+            "link": "shopify:\/\/collections\/readymades"
+          }
+        },
+        "341a96da-ba85-4fdf-9220-c3a94a04920d": {
+          "type": "readymade-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/colorful-fabric.jpg",
+            "link": "shopify:\/\/collections\/readymades"
           }
         }
       },
@@ -89,18 +131,18 @@
         "1fb3c54d-915e-48cf-81db-15adfd6c2cb8",
         "3d1616af-f24e-40c8-b9c6-db9a40ab317c",
         "e4c9673a-1fde-4af5-9e4a-6d2563a84c99",
-        "3e91a06e-4db1-487e-920b-fcbc90f781c2"
+        "3e91a06e-4db1-487e-920b-fcbc90f781c2",
+        "b8f50da7-dab7-470a-9316-30bf31b01a5a",
+        "af64ae0e-b0ce-44f1-9174-96c976588b5f",
+        "3df7725e-d735-4aca-a28b-46a8340b3ab5",
+        "b64e9a81-ca1c-4151-bcdd-5de5dcabd06b",
+        "a71593b3-0ca8-4b76-bbe5-8de06e41635c",
+        "341a96da-ba85-4fdf-9220-c3a94a04920d"
       ],
       "settings": {
         "curated-title": "Curated collection",
-        "curated-description": "Styles for every occasion",
-        "readymade-title": "Ready made collection",
-        "readymade-description": "Ready made Styles for every occasion"
+        "curated-description": "Styles for every occasion"
       }
-    },
-    "readymade": {
-      "type": "home-readymade",
-      "disabled": false
     },
     "spotlight": {
       "type": "home-spotlight",
@@ -110,6 +152,13 @@
         "spotlight-collection": "collection1",
         "spotlight-url": "shopify:\/\/collections\/collection1",
         "spotlight-count": 10
+      }
+    },
+    "readymade": {
+      "type": "home-readymade",
+      "settings": {
+        "readymade-title": "Ready Made collection",
+        "readymade-description": "Styles for every occasion"
       }
     },
     "collaborate": {
