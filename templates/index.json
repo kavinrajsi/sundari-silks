@@ -96,6 +96,10 @@
         "curated-description": "Styles for every occasion"
       }
     },
+    "readymade": {
+      "type": "home-readymade",
+      "disabled": false
+    },
     "spotlight": {
       "type": "home-spotlight",
       "settings": {
@@ -149,6 +153,7 @@
     "slideshow",
     "curated",
     "spotlight",
+    "readymade",
     "collaborate",
     "dropped",
     "recently",

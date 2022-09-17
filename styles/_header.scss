@@ -37,10 +37,9 @@
   }
   &-action-lists {
     display: flex;
-    .header-search {
-      cursor: pointer;
-    }
+
     div[class^="header"] {
+      cursor: pointer;
       padding: 0 10px;
       margin: 0 2px;
       vertical-align: middle;
@@ -58,9 +57,21 @@
         margin-right: 0;
       }
     }
+
+    .header-menu,
+    .header-cart,
+    .header-account {
+      display: none;
+      @media (min-width: 576px) {
+        display: block;
+      }
+    }
+    .header-currency-price-list {
+      line-height: 24px;
+    }
   }
   &-search-area-wrapper {
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     margin: 0 auto;
     padding-top: 28px;
     position: absolute;
@@ -105,8 +116,11 @@
     @include content-block-max-center;
     --border-radius: 2px;
     margin: 0 auto;
-    // border-bottom: 1px solid var(--border-color);
     position: relative;
+    display: none;
+    @media (min-width: 992px) {
+      display: block;
+    }
     .menu-level-1 {
       display: flex;
       flex-direction: column;
@@ -231,6 +245,29 @@
     }
   }
   &-nav-list-footer {
-    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--pure-white);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    display: flex;
+    z-index: 2;
+    > div {
+      padding: 12px 8px;
+      flex: 1 0 auto;
+      text-align: center;
+      a {
+        color: initial;
+      }
+      span {
+        display: block;
+        padding-top: 4px;
+      }
+    }
+    @media (min-width: 576px) {
+      display: none;
+    }
   }
 }

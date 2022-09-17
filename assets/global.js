@@ -1,8 +1,6 @@
 (function ($) {
   $(function () {
     //document.ready
-    //document.ready
-
     //DOM READY code here
       $(".header-search, .input__close-icon").click(function(){
           $(".header-search-area-wrapper").toggle().toggleClass('active');

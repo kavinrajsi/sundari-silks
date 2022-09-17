@@ -586,10 +586,8 @@ iframe#dummy-chat-button-iframe {
 .header-action-lists {
   display: flex;
 }
-.header-action-lists .header-search {
-  cursor: pointer;
-}
 .header-action-lists div[class^=header] {
+  cursor: pointer;
   padding: 0 10px;
   margin: 0 2px;
   vertical-align: middle;
@@ -608,6 +606,21 @@ iframe#dummy-chat-button-iframe {
 }
 .header-action-lists div[class^=header]:last-child {
   margin-right: 0;
+}
+.header-action-lists .header-menu,
+.header-action-lists .header-cart,
+.header-action-lists .header-account {
+  display: none;
+}
+@media (min-width: 576px) {
+  .header-action-lists .header-menu,
+.header-action-lists .header-cart,
+.header-action-lists .header-account {
+    display: block;
+  }
+}
+.header-action-lists .header-currency-price-list {
+  line-height: 24px;
 }
 .header-search-area-wrapper {
   background-color: rgba(0, 0, 0, 0.4);
@@ -660,6 +673,12 @@ iframe#dummy-chat-button-iframe {
   --border-radius: 2px;
   margin: 0 auto;
   position: relative;
+  display: none;
+}
+@media (min-width: 992px) {
+  .header-nav-list-main {
+    display: block;
+  }
 }
 .header-nav-list-main .menu-level-1 {
   display: flex;
@@ -783,7 +802,32 @@ iframe#dummy-chat-button-iframe {
   word-wrap: break-word;
 }
 .header-nav-list-footer {
-  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--pure-white);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  display: flex;
+  z-index: 2;
+}
+.header-nav-list-footer > div {
+  padding: 12px 8px;
+  flex: 1 0 auto;
+  text-align: center;
+}
+.header-nav-list-footer > div a {
+  color: initial;
+}
+.header-nav-list-footer > div span {
+  display: block;
+  padding-top: 4px;
+}
+@media (min-width: 576px) {
+  .header-nav-list-footer {
+    display: none;
+  }
 }
 
 /*
@@ -997,33 +1041,17 @@ iframe#dummy-chat-button-iframe {
  * 	Default theme - Owl Carousel CSS File
  */
 .owl-theme .owl-nav {
-  margin-top: 10px;
-  text-align: center;
-  -webkit-tap-highlight-color: transparent;
-}
-.owl-theme .owl-nav [class*=owl-] {
-  color: #FFF;
-  font-size: 14px;
-  margin: 5px;
-  padding: 4px 7px;
-  background: #D6D6D6;
-  display: inline-block;
-  cursor: pointer;
-  border-radius: 3px;
-}
-.owl-theme .owl-nav [class*=owl-]:hover {
-  background: #869791;
-  color: #FFF;
-  text-decoration: none;
-}
-.owl-theme .owl-nav .disabled {
-  opacity: 0.5;
-  cursor: default;
+  display: none;
 }
 .owl-theme .owl-nav.disabled + .owl-dots {
   margin-top: 10px;
 }
 .owl-theme .owl-dots {
+  position: absolute;
+  top: initial;
+  bottom: 20px;
+  left: 0;
+  right: 0;
   text-align: center;
   -webkit-tap-highlight-color: transparent;
 }
@@ -1210,6 +1238,91 @@ iframe#dummy-chat-button-iframe {
   margin-left: 18px;
   font-size: 14px;
   line-height: 24px;
+}
+
+.section-header-wrapper {
+  margin-bottom: 32px;
+}
+.section-header-wrapper .section-header-title {
+  font-family: var(--font-playfair);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 38px;
+  text-align: center;
+  color: #000000;
+}
+.section-header-wrapper .section-header-content {
+  font-family: var(--font-montserrat);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: var(--pure-black);
+}
+
+.home-page-curated-section {
+  padding-top: 48px;
+}
+.home-page-curated-section .section-content.collection-saree {
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 8px;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 768px) {
+  .home-page-curated-section .section-content.collection-saree {
+    gap: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
+}
+@media (min-width: 1140px) {
+  .home-page-curated-section .section-content.collection-saree {
+    gap: 24px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.home-page-curated-section .section-content.collection-saree .item img {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .home-page-curated-section .section-content.collection-saree .item:last-child {
+    display: none;
+  }
+}
+.home-page-curated-section .section-content.collection-readymade {
+  display: none;
+}
+@media (min-width: 768px) {
+  .home-page-curated-section .section-content.collection-readymade {
+    display: grid;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+  }
+}
+@media (min-width: 1140px) {
+  .home-page-curated-section .section-content.collection-readymade {
+    gap: 24px;
+    margin-top: 24px;
+    margin-left: 24px;
+    margin-right: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(346, 1fr));
+  }
+}
+.home-page-curated-section .section-content.collection-readymade .item img {
+  width: 100%;
 }
 
 .pagination--number {
