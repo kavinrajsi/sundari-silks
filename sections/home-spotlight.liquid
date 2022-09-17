@@ -1,10 +1,11 @@
-
 <section class="spot-light">
   <div class="section-header-wrapper justify-content-start">
     <div class="section-header text-left">
 
       <div class="section-header-title">{{ section.settings.spotlight-title }}</div>
-      <div class="section-header-content"><p>{{ section.settings.spotlight-description }}</p></div>
+      <div class="section-header-content">
+        <p>{{ section.settings.spotlight-description }}</p>
+      </div>
 
       <a class="section-header-action_link" href="{{ section.settings.spotlight-url }}">
         View All
@@ -16,12 +17,37 @@
   </div>
   <div class="section-content">
     <div class="product-collection-list">
-      {{ section.settings.spotlight-url }}
-      {{ section.settings.spotlight-number }}
+
+{% assign collection = collections[section.settings.spotlight-collection] %}
+
+<div class="product-grid">
+      {% for product in collection.products  limit:section.settings.spotlight-number %}
+      <div class="product-card">
+        <a href="{{product.url | within: collection }}" class="product-link">
+          <div class="product-image-wrapper">
+          {{ product.featured_image | image_url: width: 400, height: 400, crop: 'bottom' | image_tag : class:
+          'product-image', loading: 'lazy', alt: product.feature_image.alt}}
+          <div class="product-status">
+            <div class="status status-sale"></div>
+            <div class="status status-percentage"></div>
+          </div>
+        </div>
+          <h2 class="product-title">{{ product.title }}</h2>
+          <p class="product-money"> {{ product.price | money }} </p>
+          {% if  product.available != true %}
+          <span class="product-label-soldout"> sold out </span>
+          {% endif %}
+        </a>
+      </div>
+      {% endfor %}
     </div>
+
+
+    </div>
+   <a href="{{section.settings.spotlight-url}}" type="button">View All</a>
   </div>
 </section>
-
+<br>
 
 {% schema %}
 {
@@ -29,34 +55,34 @@
 "tag": "section",
 "class": "section",
 "settings": [
-    {
-      "type": "text",
-      "id": "spotlight-title",
-      "label": "Section Title",
-      "default": "Sundari Spotlight"
-    },
-    {
-      "type": "text",
-      "id": "spotlight-description",
-      "label": "Section Description",
-      "default": "Bringing you our best sellers"
-    },
-    {
-      "type": "collection",
-      "id": "spotlight-collection",
-      "label": "Collection Name"
-    },
-    {
-      "type": "url",
-      "id": "spotlight-url",
-      "label": "Link URL"
-    },
-    {
-      "type": "number",
-      "id": "spotlight-count",
-      "label": "Product Count",
-      "default": 10
-    }
+{
+"type": "text",
+"id": "spotlight-title",
+"label": "Section Title",
+"default": "Sundari Spotlight"
+},
+{
+"type": "text",
+"id": "spotlight-description",
+"label": "Section Description",
+"default": "Bringing you our best sellers"
+},
+{
+"type": "collection",
+"id": "spotlight-collection",
+"label": "Collection Name"
+},
+{
+"type": "url",
+"id": "spotlight-url",
+"label": "Link URL"
+},
+{
+"type": "number",
+"id": "spotlight-count",
+"label": "Product Count",
+"default": 10
+}
 ]
 }
 {% endschema %}

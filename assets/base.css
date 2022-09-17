@@ -1375,6 +1375,13 @@ iframe#dummy-chat-button-iframe {
   display: grid;
 }
 
+.product-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
 .pagination--number {
   display: flex;
   justify-content: center;
