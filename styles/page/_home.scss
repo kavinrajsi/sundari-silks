@@ -183,3 +183,55 @@
     }
   }
 }
+
+.home-page-silver-section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  margin-top: 48px;
+  margin-bottom: 48px;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: rgba($color: #000000, $alpha: 0.4);
+
+  .section-content {
+    nav {
+      @include content-block-max-center;
+      display: grid;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+      margin-left: 8px;
+      margin-right: 8px;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(calc((100% / 3) - 8px), 1fr)
+      );
+      @media (min-width: 768px) {
+        gap: 16px;
+        margin-top: 16px;
+        margin-left: 16px;
+        margin-right: 16px;
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(calc((100% / 6) - 16px), 1fr)
+        );
+      }
+      @media (min-width: 1140px) {
+        gap: 24px;
+        margin-top: 24px;
+        margin-left: auto;
+        margin-right: auto;
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(calc((100% / 6) - 24px), 1fr)
+        );
+      }
+
+      img{
+        width: 100%;
+        border-radius: 50%;
+        aspect-ratio: 1 / 1;
+      }
+    }
+  }
+}

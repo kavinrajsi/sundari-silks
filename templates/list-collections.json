@@ -1,23 +1,15 @@
 {
   "sections": {
     "main": {
-      "type": "main-page",
+      "type": "collection-list",
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
-      }
-    },
-    "166293283059262758": {
-      "type": "resent-product-list",
-      "settings": {
-        "show_collection": "all",
-        "show_productcount": 4,
-        "show_soldout": false
+        "title": "Collections",
+        "sort": "alphabetical",
+        "image_ratio": "square"
       }
     }
   },
   "order": [
-    "main",
-    "166293283059262758"
+    "main"
   ]
 }

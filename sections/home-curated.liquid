@@ -6,95 +6,97 @@
     </div>
   </div>
   <div class="section-content collection-saree">
-  {%- for block in section.blocks limit:4 -%}
+    {%- for block in section.blocks limit:4 -%}
     {%- if block.settings.image -%}
     <div class="collection-item">
       <a class="collection-item-link" href="{{ block.settings.link }}">
-      {{ block.settings.image | image_url : width: 360, height: 608 | image_tag : alt: block.settings.image.alt, loading: 'lazy', class: "collection-item-image" }}
+        {{ block.settings.image | image_url : width: 360, height: 608 | image_tag : alt: block.settings.image.alt,
+        loading: 'lazy', class: "collection-item-image" }}
       </a>
     </div>
     {%- else -%}
     <div class="collection-item">
       <a class="collection-item-link" href="#">
-      {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
       </a>
     </div>
     {%- endif -%}
-  {%- endfor-%}
-</div>
-<div class="section-content collection-readymade">
-  {%- for block in section.blocks offset:4 -%}
+    {%- endfor-%}
+  </div>
+  <div class="section-content collection-readymade">
+    {%- for block in section.blocks offset:4 -%}
     {%- if block.settings.image -%}
     <div class="collection-item">
       <a class="collection-item-link" href="{{ block.settings.link }}">
-      {{ block.settings.image | image_url : width: 264, height: 290 | image_tag : alt: block.settings.image.alt, loading: 'lazy', class: "collection-item-image" }}
+        {{ block.settings.image | image_url : width: 264, height: 290 | image_tag : alt: block.settings.image.alt,
+        loading: 'lazy', class: "collection-item-image" }}
       </a>
     </div>
     {%- else -%}
     <div class="collection-item">
       <a class="collection-item-link" href="#">
-      {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
       </a>
     </div>
     {%- endif -%}
-  {%- endfor-%}
-</div>
+    {%- endfor-%}
+  </div>
 </section>
 
 {% schema %}
 {
-"name": "Curated Section",
-"tag": "section",
-"class": "section",
-"settings": [
-{
-"type": "text",
-"id": "curated-title",
-"label": "Section Title",
-"default": "Curated collection"
-},
-{
-"type": "text",
-"id": "curated-description",
-"label": "Section Description",
-"default": "Styles for every occasion"
-}
-],
-"blocks": [
-{
-"type": "collection-image",
-"name": "Curated Image Section",
-"limit": 4,
-"settings": [
-{
-"type": "image_picker",
-"id": "image",
-"label": "Image"
-},
-{
-"type": "url",
-"id": "link",
-"label": "Image link"
-}
-]
-},
-{
-"type": "readymade-image",
-"name": "Readymade Image Section",
-"limit": 6,
-"settings": [
-{
-"type": "image_picker",
-"id": "image",
-"label": "Image"
-},
-{
-"type": "url",
-"id": "link",
-"label": "Image link"
-}
-]
-}
-]
+  "name": "Curated Section",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "curated-title",
+      "label": "Section Title",
+      "default": "Curated collection"
+    },
+    {
+      "type": "text",
+      "id": "curated-description",
+      "label": "Section Description",
+      "default": "Styles for every occasion"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection-image",
+      "name": "Curated Image Section",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Image link"
+        }
+      ]
+    },
+    {
+      "type": "readymade-image",
+      "name": "Readymade Image Section",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Image link"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

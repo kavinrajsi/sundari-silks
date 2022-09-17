@@ -2,14 +2,15 @@
 <section>
   <div class="section-header-wrapper">
     <div class="section-header text-left" style="flex: 1 0 auto;">
-      <div class="section-header-title">{{ block.settings.just-dropped-title }}</div>
-      <div class="section-header-content">{{ block.settings.just-dropped-description }}</div>
+      <div class="section-header-title">{{ section.settings.just-dropped-title }}</div>
+      <div class="section-header-content">{{ section.settings.just-dropped-description }}</div>
     </div>
+
     <nav class="section-header-nav__list">
       <a class="section-header-action_link active" href="https://sundarisilks.com/collections/saress">Sarees</a>
       <a class="section-header-action_link" href="https://sundarisilks.com/collections/readymades">Readymades</a>
       <a class="section-header-action_link" href="https://sundarisilks.com/collection/decor">Decor & Accessories</a>
-      <a class="section-header-action_link" href="{{ block.settings.just-dropped-url }}">
+      <a class="section-header-action_link" href="/collections/all">
         View All
         <svg width="20" height="20">
           <use href="#link-arrow" />
@@ -20,8 +21,6 @@
   <div class="section-content">
     <div class="product-collection-list">
 
-      {{ block.settings.just-dropped-url }}
-      {{ block.settings.just-dropped-number }}
     </div>
   </div>
 </section>
