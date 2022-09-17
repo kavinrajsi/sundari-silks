@@ -1243,6 +1243,10 @@ iframe#dummy-chat-button-iframe {
   line-height: 24px;
 }
 
+.large-12.column {
+  padding-bottom: 48px;
+}
+
 .section-header-wrapper {
   margin-bottom: 32px;
 }
@@ -1265,20 +1269,48 @@ iframe#dummy-chat-button-iframe {
   color: var(--pure-black);
 }
 
-.home-page-curated-section {
-  padding-top: 48px;
-}
-.home-page-curated-section .section-content .collection-item {
+.section-content .collection-item {
   aspect-ratio: 1/1;
 }
-.home-page-curated-section .section-content .collection-item-link {
+.section-content .collection-item-link {
   display: block;
 }
-.home-page-curated-section .section-content .collection-item-image {
+.section-content .collection-item-image {
   width: 100%;
   aspect-ratio: auto;
 }
-.home-page-curated-section .section-content.collection-saree {
+
+.collection-readymade {
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(calc(50% - 8px), 1fr));
+}
+@media (min-width: 768px) {
+  .collection-readymade {
+    gap: 16px;
+    margin-top: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(calc(16.6666666667% - 16px), 1fr));
+  }
+}
+@media (min-width: 1140px) {
+  .collection-readymade {
+    gap: 24px;
+    margin-top: 24px;
+    margin-left: 24px;
+    margin-right: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(346, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(calc(16.6666666667% - 24px), 1fr));
+  }
+}
+
+.home-page-curated-section .collection-saree {
   max-width: var(--content-width);
   margin-left: auto;
   margin-right: auto;
@@ -1289,7 +1321,7 @@ iframe#dummy-chat-button-iframe {
   grid-template-columns: repeat(2, 1fr);
 }
 @media (min-width: 768px) {
-  .home-page-curated-section .section-content.collection-saree {
+  .home-page-curated-section .collection-saree {
     gap: 16px;
     margin-left: 16px;
     margin-right: 16px;
@@ -1298,54 +1330,49 @@ iframe#dummy-chat-button-iframe {
   }
 }
 @media (min-width: 1140px) {
-  .home-page-curated-section .section-content.collection-saree {
+  .home-page-curated-section .collection-saree {
     gap: 24px;
     margin-left: auto;
     margin-right: auto;
     grid-template-columns: repeat(auto-fit, minmax(calc(33.3333333333% - 24px), 1fr));
   }
 }
-.home-page-curated-section .section-content.collection-saree .collection-item .collection-item-image {
+.home-page-curated-section .collection-saree .collection-item .collection-item-image {
   aspect-ratio: 1/1;
   object-fit: cover;
   object-position: top;
 }
 @media (min-width: 768px) {
-  .home-page-curated-section .section-content.collection-saree .collection-item .collection-item-image {
+  .home-page-curated-section .collection-saree .collection-item .collection-item-image {
     aspect-ratio: auto;
     object-fit: unset;
     object-position: unset;
   }
 }
 @media (min-width: 768px) {
-  .home-page-curated-section .section-content.collection-saree .collection-item:last-child {
+  .home-page-curated-section .collection-saree .collection-item:last-child {
     display: none;
   }
 }
-.home-page-curated-section .section-content.collection-readymade {
+.home-page-curated-section .collection-readymade {
   display: none;
 }
 @media (min-width: 768px) {
-  .home-page-curated-section .section-content.collection-readymade {
+  .home-page-curated-section .collection-readymade {
     display: grid;
-    justify-content: center;
-    gap: 16px;
-    margin-top: 16px;
-    margin-left: 16px;
-    margin-right: 16px;
-    grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
-    grid-template-columns: repeat(auto-fit, minmax(calc(16.6666666667% - 16px), 1fr));
   }
 }
-@media (min-width: 1140px) {
-  .home-page-curated-section .section-content.collection-readymade {
-    gap: 24px;
-    margin-top: 24px;
-    margin-left: 24px;
-    margin-right: 24px;
-    grid-template-columns: repeat(auto-fit, minmax(346, 1fr));
-    grid-template-columns: repeat(auto-fit, minmax(calc(16.6666666667% - 24px), 1fr));
+
+.home-page-readymade-section {
+  display: block;
+}
+@media (min-width: 768px) {
+  .home-page-readymade-section {
+    display: none;
   }
+}
+.home-page-readymade-section .collection-readymade {
+  display: grid;
 }
 
 .pagination--number {

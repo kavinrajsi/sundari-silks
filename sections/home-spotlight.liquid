@@ -3,10 +3,10 @@
   <div class="section-header-wrapper justify-content-start">
     <div class="section-header text-left">
 
-      <div class="section-header-title">{{ block.settings.spotlight-title }}</div>
-      <div class="section-header-content"><p>{{ block.settings.spotlight-description }}</p></div>
+      <div class="section-header-title">{{ section.settings.spotlight-title }}</div>
+      <div class="section-header-content"><p>{{ section.settings.spotlight-description }}</p></div>
 
-      <a class="section-header-action_link" href="{{ block.settings.spotlight-url }}">
+      <a class="section-header-action_link" href="{{ section.settings.spotlight-url }}">
         View All
         <svg width="20" height="20">
           <use href="#link-arrow" />
@@ -16,8 +16,8 @@
   </div>
   <div class="section-content">
     <div class="product-collection-list">
-      {{ block.settings.spotlight-url }}
-      {{ block.settings.spotlight-number }}
+      {{ section.settings.spotlight-url }}
+      {{ section.settings.spotlight-number }}
     </div>
   </div>
 </section>
