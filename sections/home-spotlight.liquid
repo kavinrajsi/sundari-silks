@@ -1,12 +1,11 @@
-<section class="spot-light">
+<section class="home-page-spotlight-section">
+  <div class="spot-light">
   <div class="section-header-wrapper justify-content-start">
     <div class="section-header text-left">
-
       <div class="section-header-title">{{ section.settings.spotlight-title }}</div>
       <div class="section-header-content">
         <p>{{ section.settings.spotlight-description }}</p>
       </div>
-
       <a class="section-header-action_link" href="{{ section.settings.spotlight-url }}">
         View All
         <svg width="20" height="20">
@@ -17,11 +16,9 @@
   </div>
   <div class="section-content">
     <div class="product-collection-list">
-
 {% assign collection = collections[section.settings.spotlight-collection] %}
-
 <div class="product-grid">
-      {% for product in collection.products  limit:section.settings.spotlight-number %}
+      {% for product in collection.products limit:section.settings.spotlight-count %}
       <div class="product-card">
         <a href="{{product.url | within: collection }}" class="product-link">
           <div class="product-image-wrapper">
@@ -41,11 +38,10 @@
       </div>
       {% endfor %}
     </div>
-
-
     </div>
    <a href="{{section.settings.spotlight-url}}" type="button">View All</a>
   </div>
+</div>
 </section>
 <br>
 
@@ -81,7 +77,7 @@
 "type": "number",
 "id": "spotlight-count",
 "label": "Product Count",
-"default": 10
+"default": 3
 }
 ]
 }
