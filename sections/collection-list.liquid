@@ -1,6 +1,7 @@
 <div class="page-width">
   <h1 class="title title--primary"> collection Page</h1>
 
+  {% paginate collections by 4 %}
   <ul class="collection-list grid" role="list">
     {%- for collection in collections -%}
     <li class="collection-list__item grid__item">
@@ -39,5 +40,8 @@
     </li>
     {%- endfor -%}
   </ul>
-
+ <div class="pagination--number">
+      {{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
+    </div>
+    {% endpaginate %}
 </div>
