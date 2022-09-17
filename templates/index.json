@@ -220,7 +220,6 @@
     },
     "dropped": {
       "type": "home-just-dropped",
-      "disabled": true,
       "settings": {
         "just-dropped-title": "Just Dropped",
         "just-dropped-description": "New arrivals you will love",
