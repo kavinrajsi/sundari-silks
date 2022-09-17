@@ -247,12 +247,14 @@
         "889bfcee-afdc-446a-86cc-1bbbe3960f1f": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/a-person-looks-over-their-shoulder-facing-camera.jpg",
             "link": ""
           }
         },
         "9068c96d-920d-469e-a7d3-606ae4828e4e": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/persons-hands-hold-the-collar-of-their-sweater.jpg",
             "link": ""
           }
         }
