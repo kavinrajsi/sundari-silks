@@ -8,12 +8,16 @@
   <div class="section-content collection-saree">
   {%- for block in section.blocks limit:4 -%}
     {%- if block.settings.image -%}
-    <div class="item">
-      {{ block.settings.image | image_url : width: 360, height: 608 | image_tag : alt: block.settings.image.alt }}
+    <div class="collection-item">
+      <a class="collection-item-link" href="{{ block.settings.link }}">
+      {{ block.settings.image | image_url : width: 360, height: 608 | image_tag : alt: block.settings.image.alt, loading: 'lazy', class: "collection-item-image" }}
+      </a>
     </div>
     {%- else -%}
-    <div class="item">
+    <div class="collection-item">
+      <a class="collection-item-link" href="#">
       {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      </a>
     </div>
     {%- endif -%}
   {%- endfor-%}
@@ -21,12 +25,16 @@
 <div class="section-content collection-readymade">
   {%- for block in section.blocks offset:4 -%}
     {%- if block.settings.image -%}
-    <div class="item">
-      {{ block.settings.image | image_url : width: 264, height: 290 | image_tag : alt: block.settings.image.alt }}
+    <div class="collection-item">
+      <a class="collection-item-link" href="{{ block.settings.link }}">
+      {{ block.settings.image | image_url : width: 264, height: 290 | image_tag : alt: block.settings.image.alt, loading: 'lazy', class: "collection-item-image" }}
+      </a>
     </div>
     {%- else -%}
-    <div class="item">
+    <div class="collection-item">
+      <a class="collection-item-link" href="#">
       {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      </a>
     </div>
     {%- endif -%}
   {%- endfor-%}

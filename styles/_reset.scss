@@ -346,6 +346,9 @@ textarea {
 
 img {
     vertical-align: middle;
+    max-inline-size: 100%;
+    block-size: auto;
+    aspect-ratio: auto;
 }
 
 fieldset {

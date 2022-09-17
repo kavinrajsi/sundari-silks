@@ -322,6 +322,9 @@ textarea {
 
 img {
   vertical-align: middle;
+  max-inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: auto;
 }
 
 fieldset {
@@ -1265,6 +1268,16 @@ iframe#dummy-chat-button-iframe {
 .home-page-curated-section {
   padding-top: 48px;
 }
+.home-page-curated-section .section-content .collection-item {
+  aspect-ratio: 1/1;
+}
+.home-page-curated-section .section-content .collection-item-link {
+  display: block;
+}
+.home-page-curated-section .section-content .collection-item-image {
+  width: 100%;
+  aspect-ratio: auto;
+}
 .home-page-curated-section .section-content.collection-saree {
   max-width: var(--content-width);
   margin-left: auto;
@@ -1281,6 +1294,7 @@ iframe#dummy-chat-button-iframe {
     margin-left: 16px;
     margin-right: 16px;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(calc(33.3333333333% - 16px), 1fr));
   }
 }
 @media (min-width: 1140px) {
@@ -1288,13 +1302,23 @@ iframe#dummy-chat-button-iframe {
     gap: 24px;
     margin-left: auto;
     margin-right: auto;
+    grid-template-columns: repeat(auto-fit, minmax(calc(33.3333333333% - 24px), 1fr));
   }
 }
-.home-page-curated-section .section-content.collection-saree .item img {
-  width: 100%;
+.home-page-curated-section .section-content.collection-saree .collection-item .collection-item-image {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: top;
 }
 @media (min-width: 768px) {
-  .home-page-curated-section .section-content.collection-saree .item:last-child {
+  .home-page-curated-section .section-content.collection-saree .collection-item .collection-item-image {
+    aspect-ratio: auto;
+    object-fit: unset;
+    object-position: unset;
+  }
+}
+@media (min-width: 768px) {
+  .home-page-curated-section .section-content.collection-saree .collection-item:last-child {
     display: none;
   }
 }
@@ -1310,6 +1334,7 @@ iframe#dummy-chat-button-iframe {
     margin-left: 16px;
     margin-right: 16px;
     grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(calc(16.6666666667% - 16px), 1fr));
   }
 }
 @media (min-width: 1140px) {
@@ -1319,10 +1344,8 @@ iframe#dummy-chat-button-iframe {
     margin-left: 24px;
     margin-right: 24px;
     grid-template-columns: repeat(auto-fit, minmax(346, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(calc(16.6666666667% - 24px), 1fr));
   }
-}
-.home-page-curated-section .section-content.collection-readymade .item img {
-  width: 100%;
 }
 
 .pagination--number {

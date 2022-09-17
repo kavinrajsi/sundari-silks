@@ -23,6 +23,18 @@
 .home-page-curated-section {
   padding-top: 48px;
   .section-content {
+    .collection {
+      &-item {
+        aspect-ratio: 1 / 1;
+        &-link {
+          display: block;
+        }
+        &-image {
+          width: 100%;
+          aspect-ratio: auto;
+        }
+      }
+    }
     &.collection-saree {
       @include content-block-max-center;
       display: grid;
@@ -35,16 +47,30 @@
         margin-left: 16px;
         margin-right: 16px;
         grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(calc((100% / 3) - 16px), 1fr)
+        );
       }
       @media (min-width: 1140px) {
         gap: 24px;
         margin-left: auto;
         margin-right: auto;
-        // grid-template-columns: repeat(auto-fit, minmax(388px, 1fr));
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(calc((100% / 3) - 24px), 1fr)
+        );
       }
-      .item {
-        img {
-          width: 100%;
+      .collection-item {
+        .collection-item-image {
+          aspect-ratio: 1 / 1;
+          object-fit: cover;
+          object-position: top;
+          @media (min-width: 768px) {
+            aspect-ratio: auto;
+            object-fit: unset;
+            object-position: unset;
+          }
         }
         @media (min-width: 768px) {
           &:last-child {
@@ -63,6 +89,10 @@
         margin-left: 16px;
         margin-right: 16px;
         grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(calc((100% / 6) - 16px), 1fr)
+        );
       }
       @media (min-width: 1140px) {
         gap: 24px;
@@ -70,11 +100,10 @@
         margin-left: 24px;
         margin-right: 24px;
         grid-template-columns: repeat(auto-fit, minmax(346, 1fr));
-      }
-      .item {
-        img {
-          width: 100%;
-        }
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(calc((100% / 6) - 24px), 1fr)
+        );
       }
     }
   }
