@@ -183,7 +183,7 @@
     {%- if collection.products.size == 0 -%}
 
     {%- else -%}
-    {% render 'product-card', products: all_products, limit: 6, grid: 'four' %}
+    {% render 'product-card', products: all_products, limit: 0, grid: 'four' %}
 
     {%- endif -%}
     <div class="pagination--number">
