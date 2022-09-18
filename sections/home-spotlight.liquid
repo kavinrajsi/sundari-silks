@@ -18,25 +18,11 @@
       <div class="product-collection-list">
         {% assign collection = collections[section.settings.spotlight-collection] %}
         <div class="product-grid">
-          {% for product in collection.products limit:section.settings.spotlight-count %}
-          <div class="product-card">
-            <a href="{{product.url | within: collection }}" class="product-link">
-              <div class="product-image-wrapper">
-                {{ product.featured_image | image_url: width: 400, height: 400, crop: 'bottom' | image_tag : class:
-                'product-image', loading: 'lazy', alt: product.feature_image.alt}}
-                <div class="product-status">
-                  <div class="status status-sale"></div>
-                  <div class="status status-percentage"></div>
-                </div>
-              </div>
-              <h2 class="product-title">{{ product.title }}</h2>
-              <p class="product-money"> {{ product.price | money }} </p>
-              {% if product.available != true %}
-              <span class="product-label-soldout"> sold out </span>
-              {% endif %}
-            </a>
-          </div>
-          {% endfor %}
+
+ {% assign all_products = collections.all.products %}
+ {% render 'product-card', products: all_products, limit: 6 %}
+
+
         </div>
       </div>
       <a href="{{section.settings.spotlight-url}}" type="button">View All</a>

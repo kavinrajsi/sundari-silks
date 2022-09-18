@@ -1,0 +1,121 @@
+{% assign product_collection = products %}
+{% assign product_count = limit %}
+{% assign product_grid = grid %}
+{% assign current_variant = product.selected_or_first_available_variant %}
+
+
+<div class="test--product-card--grid-{{product_grid}}">
+  {% for product in product_collection %}
+  <div class="product__card">
+
+    {% comment %}
+    {% if customer and customer.tags contains 'admin' %}
+    {% endif %}
+    --
+    {% unless product == empty %}
+    <script type="application/json" id="ProductJson-{{ section.id }}">
+        {{ product_collection | json }}
+      </script>
+    {% endunless %}
+    <br>
+    {% endcomment %}
+
+    <div class="product__card--img">
+      <a href="{{product.url | within: collection }}" class="product-link">
+        <div class="product__image--wrapper">
+          {% if product.featured_image != blank %}
+          {{ product.featured_image | image_url: width: 400, height: 400, crop: 'bottom' | image_tag : class:
+          'product-img', loading: 'lazy', alt: product.feature_image.alt}}
+          {% else %}
+          {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
+          {% endif %}
+          <div class="product__status">
+            {% unless product.available %}
+            <!-- TODO: Sold out chip color -->
+            <span class="product__status-soldout">sold out</span>
+            {% endunless %}
+          </div>
+        </div>
+      </a>
+      <div class="product__card-cta">
+        <a href="https://google.com/?s={{forloop.index}}">Quick View</a>
+      </div>
+    </div>
+
+    <div class="product__card--content">
+      <a href="{{product.url | within: collection }}" class="product-link">
+
+        <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
+
+        <div hidden class="product__id" >{{ product.id }}</div>
+        <div hidden itemprop="brand" class="product__variant--vendor">{{ product.vendor }}</div>
+        <div hidden class="product__type"> {{ product.type }} </div>
+
+
+          {% if product.compare_at_price_max > product.price %}
+          You save {{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100.0 | remove: '.0'}} %
+          {% else %}
+          {% endif %}
+
+<hr>
+{% for variant in product.variants %}
+{{variant.title}} <br>
+1 :{{variant.price  }} <br>
+2: {{variant.compare_at_price  }} <br>
+
+You save {{ variant.price | minus: variant.compare_at_price | times: 100.0 | divided_by: variant.price |   money_without_currency | times: 100.0 | remove: '.0'  }} %
+<hr>
+{% endfor %}
+
+
+
+          {% if product.tags.size < 1 %}
+          {% for taglist in product.tags %}
+          <div hidden class="product__tag--list">
+            {{ taglist }},
+          </div>
+          {% endfor %}
+          {% endif %}
+
+
+          {% for variant in product.variants %}
+          <div hidden class="product__variant--title"> {{ variant.title }} </div>
+          <div hidden class="product__variant--weight"> {{ variant.weight | weight_with_unit : variant.weight_unit }} </div>
+          <div hidden class="product__variant--price"> {{ variant.price | money }} </div>
+          <div hidden class="product__variant--sku"> {{ variant.sku }} </div>
+          <div hidden class="product__variant--barcode"> {{ variant.barcode }} </div>
+          {% endfor %}
+
+
+
+          {% comment %}
+          TODO: Need show separate the variant list
+          {% endcomment %}
+
+          {% if product.variants.size > 1 %}
+          <div hidden class="product__variant--list">
+            {% for variant in product.variants %}
+            <span class="product__variant--list-name"> {{ variant.title }} </span>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          {% comment %}
+          {% if customer and customer.tags contains 'admin' %}
+          {% for variant in product.variants %}
+          <div class="product__variant--buybutton">
+            <button style="background: blue; color: red; padding: 8px;"
+              onclick="Shopify.addItem('{{ variant.id }}', 1)">
+              {{ variant.title }} -- button
+            </button>
+          </div>
+          {% endfor %}
+          {% endif %}
+          {% endcomment %}
+
+
+      </a>
+    </div>
+  </div>
+  {% endfor %}
+</div>

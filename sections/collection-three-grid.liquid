@@ -1,18 +1,5 @@
-{{ 'testproduct.css' | asset_url | stylesheet_tag }}
 
-{%- style -%}
-.section-{{ section.id }}-padding {
-padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-}
 
-@media screen and (min-width: 750px) {
-.section-{{ section.id }}-padding {
-padding-top: {{ section.settings.padding_top }}px;
-padding-bottom: {{ section.settings.padding_bottom }}px;
-}
-}
-{%- endstyle -%}
 <div class="collection-page-header">
   <div class="collection-page-header-image text-center image-radius">
     {%- if collection.description != blank -%}
@@ -26,13 +13,12 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
     {%- if collection.description != blank -%}
     <p>{{ collection.description }}</p>
     {%- else -%}
-    <p>we are working on the page</p>
+    <p> Please add description for the page </p>
     {%- endif -%}
   </div>
 </div>
 
 <div class="section-{{ section.id }}-padding">
-
 
   <div class="collection-page-action-list">
     <div class="collection-filter">
@@ -54,6 +40,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
             {% comment %}
             <div class="filter-group-display__header">
               <span class="filter-group-display__header-selected">{{ filter.active_values.size }} selected</span>
+
               {%- if filter.active_values.size > 0 -%}
               <a href="{{ filter.url_to_remove }}" class="filter-group-display__header-reset">Reset</a>
               {%- endif -%}
@@ -69,7 +56,10 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                   <input type="checkbox" name="{{ filter_value.param_name }}" value="{{ filter_value.value }}"
                     id="Filter-{{ filter.param_name }}-{{ forloop.index }}" {% if filter_value.active -%}checked{%-
                     endif %} {% if filter_value.count==0 and filter_value.active==false -%}disabled{%- endif %}>
-                    <span>{{ filter_value.label }}</span></label>
+                  <span>
+                    {{ filter_value.label }}
+                  </span>
+                </label>
               </li>
               {%- endfor -%}
             </ul>
@@ -183,47 +173,19 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
     </div>
   </div>
 
+
   <section>
 
-    {% paginate collection.products by 24 %}
-    <div class="test--product-card--grid-three">
-      {%- for product in collection.products -%}
-      <div class="test--product-card">
-        <a href="{{product.url | within: collection }}" class="product-link">
+    {% assign all_products = collection.products %}
 
-          {%- if product.featured_image != blank -%}
-          {{ product.featured_image | image_url: width: 400 | image_tag : class:
-            'product-image', loading: 'lazy', alt: product.feature_image.alt }}
-          {%- else -%}
-          {{ 'product-2' | placeholder_svg_tag: 'my-custom-class' }}
-          {%- endif -%}
+    {%- paginate collection.products by 4 -%}
 
+    {%- if collection.products.size == 0 -%}
 
+    {%- else -%}
+    {% render 'product-card', products: all_products, limit: 6, grid: 'three' %}
 
-          {% comment %}
-          <p>
-            <span aria-hidden="true">—</span>
-            {%- if product.price_varies -%}
-            <span class="visuallyhidden">Starting at</span>
-            {{ product.price_min | money_without_trailing_zeros }}
-            <span aria-hidden="true">+</span>
-            {%- else -%}
-            {{ product.price | money_without_trailing_zeros }}
-            {%- endif -%}
-          </p>
-          <img src="{{ product.featured_image.src | img_url: '1024x' }}" alt="">
-          {% endcomment %}
-          <h2 class="product-title">{{ product.title }}</h2>
-          <p class="product-money"> {{ product.price | money }} </p>
-          {% if product.available != true %}
-          <span class="product-label-soldout"> sold out </span>
-          {% endif %}
-        </a>
-      </div>
-      {%- endfor -%}
-      <!-- show pagination links here -->
-
-    </div>
+    {%- endif -%}
     <div class="pagination--number">
       {{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
     </div>
