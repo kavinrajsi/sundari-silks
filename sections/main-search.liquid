@@ -1,2 +1,87 @@
-h1: <h1 class="h2">{{ 'templates.search.title' | t }}</h1>
-h2: <h1 class="h2">{{ 'general.search.search' | t }}</h1>
+{% paginate search.results by 24 %}
+<div class="test--product-card--grid-four">
+{%- for item in search.results -%}
+{%- case item.object_type -%}
+{%- when 'product' -%}
+
+
+<div class="product__card">
+
+  {% comment %}
+  {% unless product == empty %}
+  <script type="application/json" id="ProductJson-{{ section.id }}">
+        {{ product_collection | json }}
+      </script>
+  {% endunless %}
+  {% endcomment %}
+
+  <div class="product__card--img">
+    <a href="{{item.url | within: collection }}" class="product-link">
+      <div class="product__image--wrapper">
+        {% if item.featured_image != blank %}
+        {{ item.featured_image | image_url: width: 400, height: 400, crop: 'bottom' | image_tag : class:
+        'product-img', loading: 'lazy', alt: product.feature_image.alt}}
+        {% else %}
+        {{ 'product-2' | placeholder_svg_tag: 'product-img' }}
+        {% endif %}
+        <div class="product__status">
+          {% unless product.available %}
+          <!-- TODO: Sold out chip color -->
+          <span class="product__status-soldout">sold out</span>
+          {% endunless %}
+        </div>
+      </div>
+    </a>
+    <div class="product__card-cta quick-view-button">
+      <a class="quick-view" data-handle="{{ item.handle }}">Quick View</a>
+    </div>
+  </div>
+
+  <div class="product__card--content">
+    <a href="{{ item.url | within: collection }}" class="product-link">
+
+      <h2 itemprop="name" class="product__title">{{ item.title }}</h2>
+
+      <div hidden class="product__id">{{ item.id }}</div>
+      <div hidden itemprop="brand" class="product__variant--vendor">{{ item.vendor }}</div>
+      <div hidden class="product__type"> {{ item.type }} </div>
+
+      <div class="product__variant--price">
+        {% if product.price_varies %}
+        <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency }}</p>
+        {% else %}
+        <p>
+          {% if product.compare_at_price_max > product.price %}
+          <span><s>{{ product.compare_at_price_max | money_with_currency }}</s></span>
+          <span>{{ product.price | money_with_currency }}</span>
+          {% else %}
+          <span>{{ product.price | money_with_currency }}</span>
+          {% endif %}
+        </p>
+        {% endif %}
+      </div>
+
+
+    </a>
+  </div>
+
+</div>
+
+
+
+{%- when 'article' -%}
+content article
+
+{%- when 'page' -%}
+content pge
+{%- endcase -%}
+
+{%- endfor -%}
+
+
+</div>
+
+<div class="pagination--number">
+  {{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
+</div>
+{% endpaginate %}

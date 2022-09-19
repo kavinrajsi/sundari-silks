@@ -1,5 +1,8 @@
 (function ($) {
+console.log('functions');
+
   $(function () {
+    console.log('document ready');
     //document.ready
     //DOM READY code here
       $(".header-search, .input__close-icon").click(function(){

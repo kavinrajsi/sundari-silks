@@ -41,12 +41,6 @@
   <script src="{{ 'owl.carousel.min.js' | asset_url }}" ></script>
   <script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js" ></script>
   <script src="{{ 'quickview.js' | asset_url }}" ></script>
-  <script src="{{ 'global.js' | asset_url }}" ></script>
-
-  <script>
-    {% capture content %}{% include 'quickview' %}{% endcapture %}
-    var content = {{ content | json }};
-  </script>
 
   <script>
     window.mlvedaShopCurrency = "{{ shop.currency }}";
@@ -194,6 +188,7 @@
   {% section 'footer' %}
 
 
+  <script src="{{ 'global.js' | asset_url }}" ></script>
 </body>
 
 </html>
