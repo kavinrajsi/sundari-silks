@@ -13,19 +13,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display&display=swap"
     rel="stylesheet">
 
-  {%- if settings.favicon != blank -%}
+  {% if settings.favicon != blank  %}
   <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
-  {%- endif -%}
+  {% endif  %}
 
-  {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
+  {% unless settings.type_header_font.system? and settings.type_body_font.system?  %}
   <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-  {%- endunless -%}
+  {% endunless  %}
 
   <title>
     {{ page_title }}
-    {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
-    {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-    {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    {% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif  %}
+    {% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif  %}
+    {% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless  %}
   </title>
 
   {% if page_description %}
@@ -142,7 +142,7 @@
     </symbol>
   </svg>
 
-  {%- if request.page_type == 'index' -%}
+  {% if request.page_type == 'index'  %}
   {% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
   <script type="application/ld+json">
     {
@@ -157,7 +157,7 @@
       "url": {{ request.origin | append: page.url | json }}
     }
   </script>
-  {%- endif -%}
+  {% endif  %}
 
   <script type="application/ld+json">
   {

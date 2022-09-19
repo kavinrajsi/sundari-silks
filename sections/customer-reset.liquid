@@ -25,7 +25,7 @@
     {{ 'customer.recover_password.subtext' | t }}
   </p>
 
-  {%- form 'recover_customer_password' -%}
+  {% form 'recover_customer_password'  %}
     {% assign recover_success = form.posted_successfully? %}
     <div class="field">
       <input type="email"
@@ -46,7 +46,7 @@
         {{ 'customer.login_page.email' | t }}
       </label>
     </div>
-    {%- if form.errors -%}
+    {% if form.errors  %}
       <small id="RecoverEmail-email-error" class="form__message">
         <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 13 13">
           <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
@@ -56,7 +56,7 @@
         </svg>
         {{ form.errors.messages['form'] }}
       </small>
-    {%- endif -%}
+    {% endif  %}
 
     <button>
       {{ 'customer.login_page.submit' | t }}
@@ -65,5 +65,5 @@
     <a href="#login">
       {{ 'customer.login_page.cancel' | t }}
     </a>
-  {%- endform -%}
+  {% endform  %}
 </div> -->

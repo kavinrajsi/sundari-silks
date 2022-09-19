@@ -1593,6 +1593,34 @@ iframe#dummy-chat-button-iframe {
   font-family: var(--font-montserrat);
 }
 
+.title {
+  padding: 28px 0px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 28px;
+  line-height: 1.4;
+}
+
+.collection-list {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.collection-list a {
+  display: block;
+}
+.collection-list .card__caption {
+  display: none;
+}
+.collection-list__item img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  margin-bottom: 28px;
+  border-radius: var(--border-radius);
+  object-fit: cover;
+  object-position: top center;
+}
+
 #quick-view {
   display: flex;
   height: 100%;

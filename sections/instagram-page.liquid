@@ -6,19 +6,19 @@
     </div>
   </div>
   <div class="section-content">
-    {%- for block in section.blocks -%}
-    {%- if block.settings.image -%}
+    {% for block in section.blocks  %}
+    {% if block.settings.image  %}
     <div class="item">
       <a href="{{ block.settings.link }}">
       {{ block.settings.image | image_url : width: 300 | image_tag : alt: block.settings.image.alt }}
     </a>
     </div>
-    {%- else -%}
+    {% else  %}
     <div class="item">
       {{ 'product-2' | placeholder_svg_tag: 'placeholder-svg' }}
     </div>
-    {%- endif -%}
-    {%- endfor-%}
+    {% endif  %}
+    {% endfor %}
   </div>
 </section>
 

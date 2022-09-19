@@ -55,11 +55,11 @@
 
 </div>
 <div class="customer-login-image">
-{%- if section.settings.custom_form_image != blank -%}
+{% if section.settings.custom_form_image != blank  %}
 {{ section.settings.custom_form_image | image_url: width: 720, height: 400 | image_tag : loading: 'lazy', alt: section.settings.custom_form_image.alt }}
-{%- else -%}
+{% else  %}
 {{ 'image' | placeholder_svg_tag }}
-{%- endif -%}
+{% endif  %}
 </div>
 </div>
 

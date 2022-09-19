@@ -10,15 +10,15 @@
   </div>
   <div class="section-content">
     <nav>
-    {%- for block in section.blocks -%}
-      {%- if block.settings.image != blank -%}
+    {% for block in section.blocks  %}
+      {% if block.settings.image != blank  %}
         <a href="{{block.settings.url}}">
           {{ block.settings.image | image_url : width: 168, height: 168 | image_tag : alt: block.settings.image.alt }}
         </a>
-      {%- else -%}
+      {% else  %}
         {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
-      {%- endif -%}
-    {%- endfor-%}
+      {% endif  %}
+    {% endfor %}
     </nav>
   </div>
 </section>

@@ -1,16 +1,16 @@
 <div class="large-12 columns">
   <div class="owl-carousel owl-theme">
-    {%- for block in section.blocks -%}
-    {%- if block.settings.image -%}
+    {% for block in section.blocks  %}
+    {% if block.settings.image  %}
     <div class="item">
       {{ block.settings.image | image_url : width: 1920 | image_tag : alt: block.settings.image.alt }}
     </div>
-    {%- else -%}
+    {% else  %}
     <div class="item">
       {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
     </div>
-    {%- endif -%}
-    {%- endfor-%}
+    {% endif  %}
+    {% endfor %}
   </div>
 </div>
 

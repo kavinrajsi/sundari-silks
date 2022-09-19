@@ -4,13 +4,13 @@
   <div class="header-container">
     <div class="header-action-list">
 
-      {%- if request.page_type == 'index' -%}
+      {% if request.page_type == 'index'  %}
       <h1 class="header-logo header__heading" itemscope itemtype="http://schema.org/Organization">
-        {%- endif -%}
+        {% endif  %}
         <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset" itemprop="url">
-          {%- if section.settings.logo != blank -%}
-          {%- assign logo_alt = section.settings.logo.alt | default: shop.name | escape -%}
-          {%- assign logo_height = section.settings.logo_width | divided_by: section.settings.logo.aspect_ratio -%}
+          {% if section.settings.logo != blank  %}
+          {% assign logo_alt = section.settings.logo.alt | default: shop.name | escape  %}
+          {% assign logo_height = section.settings.logo_width | divided_by: section.settings.logo.aspect_ratio  %}
           {{ section.settings.logo | image_url: width: section.settings.width | image_tag:
           class: 'header__heading-logo',
           widths: '50, 100, 150, 200, 250, 300, 400, 500',
@@ -18,13 +18,13 @@
           width: section.settings.logo_width,
           alt: logo_alt
           }}
-          {%- else -%}
+          {% else  %}
           <span class="h2">{{ shop.name }}</span>
-          {%- endif -%}
+          {% endif  %}
         </a>
-        {%- if request.page_type == 'index' -%}
+        {% if request.page_type == 'index'  %}
       </h1>
-      {%- endif -%}
+      {% endif  %}
 
       <div class="header-action-lists">
         <div class="header-menu">
@@ -54,25 +54,25 @@
             <svg width="24" height="24">
               <use xlink:href="#bag" />
             </svg>
-            {%- if cart != empty -%}
+            {% if cart != empty  %}
             <div class="cart-count">
-              {%- if cart.item_count < 100 -%} <span aria-hidden="true">{{ cart.item_count }}</span>
-                {%- endif -%}
+              {% if cart.item_count < 100  %} <span aria-hidden="true">{{ cart.item_count }}</span>
+                {% endif  %}
                 <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
             </div>
-            {%- endif -%}
+            {% endif  %}
           </a>
         </div>
 
         <div class="header-account">
-          {%- if shop.customer_accounts_enabled -%}
-          <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+          {% if shop.customer_accounts_enabled  %}
+          <a href="{% if customer  %}{{ routes.account_url }}{% else  %}{{ routes.account_login_url }}{% endif  %}"
             class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
             <svg width="24" height="24">
               <use href="#user" />
             </svg>
           </a>
-          {%- endif -%}
+          {% endif  %}
         </div>
         <div class="header-currency-price-list">
           INR
@@ -101,34 +101,34 @@
           <use xlink:href="#bag" />
         </svg>
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
-        {%- if cart != empty -%}
+        {% if cart != empty  %}
         <div class="cart-count">
-          {%- if cart.item_count < 100 -%} <span aria-hidden="true">{{ cart.item_count }}</span>
-            {%- endif -%}
+          {% if cart.item_count < 100  %} <span aria-hidden="true">{{ cart.item_count }}</span>
+            {% endif  %}
             <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
         </div>
-        {%- endif -%}
+        {% endif  %}
       </a>
 
     </div>
     <div class="header-account">
-      {%- if shop.customer_accounts_enabled -%}
-      <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+      {% if shop.customer_accounts_enabled  %}
+      <a href="{% if customer  %}{{ routes.account_url }}{% else  %}{{ routes.account_login_url }}{% endif  %}"
         class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
         <svg width="24" height="24">
           <use href="#user" />
         </svg>
         <span class="visually-hidden">
-          {%- liquid
+          {% liquid
           if customer
           echo 'customer.account_fallback' | t
           else
           echo 'customer.log_in' | t
           endif
-          -%}
+           %}
         </span>
       </a>
-      {%- endif -%}
+      {% endif  %}
     </div>
   </nav>
 
@@ -156,34 +156,34 @@
   <div class="header-container">
     <nav class="header-nav-list-main" role="navigation">
       <ul class="menu-level-1">
-        {%- for link in linklists.main-menu.links -%}
+        {% for link in linklists.main-menu.links  %}
         <li class="menu-level-1-item">
           <a href="{{ link.url }}" {% if link.active %}aria-current="page" {% endif %}>
             {{ link.title }}
           </a>
 
-          {%- if link.links != blank -%}
+          {% if link.links != blank  %}
           <ul class="menu-level-2">
-            {%- for child_link in link.links -%}
+            {% for child_link in link.links  %}
             <li class="menu-level-2-item">
               <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page" {% endif %}>
                 {{ child_link.title }}
               </a>
 
-              {%- if child_link.links != blank -%}
+              {% if child_link.links != blank  %}
               <ul class="menu-level-3">
-                {%- for grandchild_link in child_link.links -%}
+                {% for grandchild_link in child_link.links  %}
                 <li class="menu-level-3-item">
                   <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page" {% endif %}>
                     {{ grandchild_link.title }}
                   </a>
                 </li>
-                {%- endfor -%}
+                {% endfor  %}
               </ul>
-              {%- endif -%}
+              {% endif  %}
 
             </li>
-            {%- endfor -%}
+            {% endfor  %}
 
             <li class="menu-level-2-item-image image-one">
               <a href="#">
@@ -204,10 +204,10 @@
               </a>
             </li>
           </ul>
-          {%- endif -%}
+          {% endif  %}
 
         </li>
-        {%- endfor -%}
+        {% endfor  %}
         <!-- <li>
         <a href="{{}}/?chat">Chat</a>
       </li> -->

@@ -8,7 +8,7 @@
   </p>
   {% form 'customer_login', novalidate: 'novalidate' %}
   <!-- success -->
-  {%- if recover_success == true -%}
+  {% if recover_success == true  %}
   <h3 class="form__message" tabindex="-1" autofocus>
     <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 13 13">
       <path
@@ -19,10 +19,10 @@
     </svg>
     {{ 'customer.recover_password.success' | t }}
   </h3>
-  {%- endif -%}
+  {% endif  %}
   <!-- success end -->
   <!-- error -->
-  {%- if form.errors -%}
+  {% if form.errors  %}
   <h2 class="form__message" tabindex="-1" autofocus>
     <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>
     <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 13 13">
@@ -38,7 +38,7 @@
     {{ 'templates.contact.form.error_heading' | t }}
   </h2>
   {{ form.errors | default_errors }}
-  {%- endif -%}
+  {% endif  %}
   <!-- error end -->
 
   <div class="email">
@@ -64,11 +64,11 @@
   {% endform %}
 </div>
 <div class="customer-login-image">
-{%- if section.settings.custom_form_image != blank -%}
+{% if section.settings.custom_form_image != blank  %}
 {{ section.settings.custom_form_image | image_url: width: 720, height: 400 | image_tag : loading: 'lazy', alt: section.settings.custom_form_image.alt }}
-{%- else -%}
+{% else  %}
 {{ 'image' | placeholder_svg_tag }}
-{%- endif -%}
+{% endif  %}
 </div>
 </div>
 

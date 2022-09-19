@@ -1,24 +1,20 @@
 <div class="page-width">
   <h1 class="title title--primary"> collection Page</h1>
 
-  {% paginate collections by 4 %}
+  {% paginate collections by 24 %}
   <ul class="collection-list grid" role="list">
-    {%- for collection in collections -%}
+    {% for collection in collections  %}
     <li class="collection-list__item grid__item">
       <div class="card">
         <div class="card__media">
           <div class="media media--transparent media--hover-effect">
-            <!--
-              These control flow tags check to see if there is a featured image for a collection.
-              If there isn't one, then we assign the image from the first product in the collection.
-            -->
-            {%- if collection.image -%}
-            {%- assign collection_image = collection.image -%}
-            {%- elsif collection.products.first and collection.products.first.images != empty -%}
-            {%- assign collection_image = collection.products.first.featured_image -%}
-            {%- else -%}
-            {%- assign collection_image = blank -%}
-            {%- endif -%}
+            {% if collection.image  %}
+            {% assign collection_image = collection.image  %}
+            {% elsif collection.products.first and collection.products.first.images != empty  %}
+            {% assign collection_image = collection.products.first.featured_image  %}
+            {% else  %}
+            {% assign collection_image = blank  %}
+            {% endif  %}
             <a href="{{ collection.url }}">
               <img src="{{ collection_image | img_url: '480x' }}" alt="">
             </a>
@@ -38,7 +34,7 @@
         </div>
       </div>
     </li>
-    {%- endfor -%}
+    {% endfor  %}
   </ul>
  <div class="pagination--number">
       {{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}

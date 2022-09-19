@@ -6,21 +6,21 @@
     </div>
   </div>
 <div class="section-content collection-readymade">
-  {%- for block in section.blocks -%}
-    {%- if block.settings.image -%}
+  {% for block in section.blocks  %}
+    {% if block.settings.image  %}
     <div class="collection-item">
       <a class="collection-item-link" href="{{ block.settings.link }}">
       {{ block.settings.image | image_url : width: 264, height: 290 | image_tag : alt: block.settings.image.alt, class: "collection-item-image" }}
     </a>
     </div>
-    {%- else -%}
+    {% else  %}
     <div class="collection-item">
       <a class="collection-item-image" href="#">
       {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
     </a>
     </div>
-    {%- endif -%}
-    {%- endfor -%}
+    {% endif  %}
+    {% endfor  %}
 </div>
 </section>
 
