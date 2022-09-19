@@ -1,11 +1,11 @@
-<section>
+<section class="instagram-page">
   <div class="section-header-wrapper justify-content-center">
     <div class="section-header">
       <div class="section-header-title">{{ block.settings.curated-title }}</div>
       <div class="section-header-content">{{ block.settings.curated-description }}</div>
     </div>
   </div>
-  <div class="section-content">
+  <div class="instagram-page-grid section-content">
     {% for block in section.blocks  %}
     {% if block.settings.image  %}
     <div class="item">
@@ -22,42 +22,29 @@
   </div>
 </section>
 
+
+
 {% schema %}
 {
-"name": "Insta Shop Page",
-"tag": "section",
-"class": "section",
-"settings": [
-{
-"type": "text",
-"id": "instagram-title",
-"label": "Section Title",
-"default": "instagram collection"
-},
-{
-"type": "text",
-"id": "instagram-description",
-"label": "Section Description",
-"default": "Styles for every occasion"
-}
-],
-"blocks": [
-{
-"name": "instagram Image Section",
-"limit": 32,
-"settings": [
-{
-"type": "image_picker",
-"id": "image",
-"label": "Desktop Image"
-},
-{
-"type": "url",
-"id": "link",
-"label": "Image link"
-}
-]
-}
-]
+  "name": "Insta Shop Page",
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Instagram Image List",
+      "limit": 32,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
