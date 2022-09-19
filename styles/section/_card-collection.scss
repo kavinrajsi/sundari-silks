@@ -6,6 +6,8 @@
   line-height: 1.4;
 }
 .collection-list {
+
+  @include content-block-max-center;
   display: grid;
   gap: 24px;
   grid-template-columns: repeat(4, 1fr);

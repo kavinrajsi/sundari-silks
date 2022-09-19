@@ -1602,6 +1602,9 @@ iframe#dummy-chat-button-iframe {
 }
 
 .collection-list {
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
   display: grid;
   gap: 24px;
   grid-template-columns: repeat(4, 1fr);
@@ -1893,6 +1896,51 @@ iframe#dummy-chat-button-iframe {
 .fancybox-wrap.fancybox-desktop.fancybox-type-inline.fancybox-opened {
   z-index: 2;
   background-color: var(--pure-white);
+}
+
+.breadcrumbs {
+  margin: 16px 0;
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.breadcrumbs__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumbs__item {
+  display: inline-block;
+}
+
+.breadcrumbs__item:not(:last-child):after {
+  border-style: solid;
+  border-width: 0.1em 0.1em 0 0;
+  content: "";
+  display: inline-block;
+  height: 0.2em;
+  margin: 0 0.2em;
+  position: relative;
+  transform: rotate(45deg);
+  vertical-align: middle;
+  width: 0.2em;
+}
+
+.breadcrumbs__link {
+  text-decoration: underline;
+}
+
+.breadcrumbs__link[aria-current=page] {
+  color: inherit;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.breadcrumbs__link[aria-current=page]:hover,
+.breadcrumbs__link[aria-current=page]:focus {
+  text-decoration: underline;
 }
 
 .pagination--number {
