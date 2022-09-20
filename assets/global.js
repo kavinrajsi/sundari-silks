@@ -19,7 +19,7 @@ console.log('functions');
       items: 1,
       nav: true,
       autoplay: true,
-      autoplayTimeout: 1000,
+      autoplayTimeout: 2000,
       autoplayHoverPause: true,
     });
 

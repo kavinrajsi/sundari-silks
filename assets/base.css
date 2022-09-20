@@ -569,6 +569,10 @@ iframe#dummy-chat-button-iframe {
   bottom: 220px !important;
 }
 
+.homepage-section {
+  padding-bottom: 48px;
+}
+
 .skip-to-content-link {
   display: none;
   opacity: 0;

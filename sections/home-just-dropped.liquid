@@ -1,13 +1,46 @@
 {% assign my_array = section.settings.collection-list | split: "| " %}
-{% assign my_array_list = section.settings.collection-list %}
-{% assign my_array_lists = section.settings.collection-lists %}
+{% assign collection = collections[ section.settings.show_collection ] %}
+
+{% for item in my_array %}
+<a class="section-header-action_link" href="/collections/{{item}}">
+  {{ forloop.index }} - {{item}}
+</a>
+{% assign collection = collections[item] %}
+<div class="test--product-card--grid">
+  {% for product in collection.products limit:1 %}
+  {% unless
+  section.settings.show_soldout != false
+  and
+  product.available != true %}
+  <div class="test--product-card">
+    <a href="{{product.url | within: collection }}" class="product-link">
+      {{ product.featured_image | image_url: width: 400, height: 400, crop: 'bottom' | image_tag : class:
+      'product-image', loading: 'lazy', alt: product.feature_image.alt}}
+      <h2 class="product-title">{{ product.title }}</h2>
+      <p class="product-money"> {{ product.price | money }} </p>
+      {% if  product.available != true %}
+      <span class="product-label-soldout"> sold out </span>
+      {% endif %}
+    </a>
+  </div>
+  {% endunless %}
+  {% endfor %}
+</div>
+{% endfor %}
+
+<hr>
+
+{% if my_array.size == 3 %}
 <section>
   <div class="section-header-wrapper">
     <div class="section-header text-left" style="flex: 1 0 auto;">
       <div class="section-header-title">{{ section.settings.just-dropped-title }}</div>
       <div class="section-header-content">{{ section.settings.just-dropped-description }}</div>
     </div>
-
+    {{my_array.size}}
+    {{my_array[0]}}
+    {{my_array[1]}}
+    {{my_array[2]}}
     <nav class="section-header-nav__list">
       {% for item in my_array %}
       <a class="section-header-action_link" href="/collections/{{item}}">
@@ -22,50 +55,19 @@
       </a>
     </nav>
   </div>
+  {% else %}
+{% endif %}
 
-  {% assign myCycles = section.settings.collection-list | split: "| "  %}
-  {% for i in (1..4) %}
-   {% assign cycleIndex = i | modulo:myCycles.size | minus:1 %}
-   <div class="grid-item-{{ myCycles[cycleIndex] }}">{{ myCycles[cycleIndex] }}//content...</div>
-  {% endfor %}
 <br>
-  <div class="section-content">
-    <div class="product-collection-list">
-      <div class="product-grid">
-        {% for product in collections['collection1'].products limit: 4 %}
-        {{product.title}} <br>
-        {% endfor %}
-      </div>
-    </div>
-    <div class="product-collection-list">
-      <div class="product-grid">
-        {% for product in collections['collection2'].products limit: 4 %}
-        {{product.title}} <br>
-        {% endfor %}
-      </div>
-    </div>
-    <div class="product-collection-list">
-      <div class="product-grid">
-        {% for product in collections['collection3'].products limit: 4 %}
-        {{product.title}} <br>
-        {% endfor %}
-      </div>
-    </div>
-    <div class="product-collection-list">
-      <div class="product-grid">
-        {% for product in collections['collection4'].products limit: 4 %}
-        {{product.title}} <br>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
+
 </section>
 
 
 {% schema %}
 {
 "name": "Just Dropped Section",
-"class": "section-class",
+"class": "homepage-section",
+"tag": "section",
 "settings": [
 {
 "type": "text",
@@ -89,11 +91,6 @@
 "type": "text",
 "id": "collection-list",
 "label": "Collection List"
-},
-{
-"type": "text",
-"id": "collection-lists",
-"label": "Collection Lists"
 }
 ]
 }
