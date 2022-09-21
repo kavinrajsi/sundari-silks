@@ -1,44 +1,14 @@
 {% assign my_array = section.settings.collection-list | split: "| " %}
 {% assign collect = 0 %}
 
-{% style %}
-
-.page {display:none;}
-.page.active {
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.tab {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background-color: #8b9d98;
-  cursor: pointer;
-  /* font-weight: 500; */
-}
-
-.tab:hover {
-  background-color: #d7e0e0;
-  /* font-weight: 700; */
-  transition: .5s;
-}
-{% endstyle %}
-
-
-
-<div style="display: flex; justify-content: space-between;">
+<div
+  style="display: flex; justify-content: space-between; margin-bottom: 28px; max-width: var(--content-width); margin-left: auto; margin-right: auto;">
   <div>
-    {{section.settings.just-dropped-title}} <br>
-    {{section.settings.just-dropped-description}}
+    <h2> {{section.settings.just-dropped-title}} </h2>
+    <p> {{section.settings.just-dropped-description}} </p>
   </div>
 
-  <div class="tab-content">
+  <div class="tab-buttton">
     {% for item in my_array %}
     <div id="titem_{{forloop.index}}" class="tab {% if forloop.first %} active {% endif %} ">
       {{item}}
@@ -53,9 +23,6 @@
     {% for item in my_array %}
     {% assign collect = collections[ item ] %}
     <article class="page {% if forloop.first %} active {% endif %}" id="pitem_{{forloop.index}}">
-      <h2> {{item}} Lorem</h2>
-
-
       <div class="test--product-card--grid-four">
         {% for product in collect.products limit:4 %}
         <div class="product__card">
@@ -92,7 +59,8 @@
 
               <div class="product__variant--price">
                 {% if product.price_varies %}
-                <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency }}</p>
+                <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency
+                  }}</p>
                 {% else %}
                 <p>
                   {% if product.compare_at_price_max > product.price %}
@@ -126,7 +94,8 @@
 
                 {% for variant in product.variants %}
                 <div hidden class="product__variant--title"> {{ variant.title }} </div>
-                <div hidden class="product__variant--weight"> {{ variant.weight | weight_with_unit : variant.weight_unit }}
+                <div hidden class="product__variant--weight"> {{ variant.weight | weight_with_unit : variant.weight_unit
+                  }}
                 </div>
                 <div hidden class="product__variant--price"> {{ variant.price | money }} </div>
                 <div hidden class="product__variant--sku"> {{ variant.sku }} </div>
@@ -152,10 +121,6 @@
 </div>
 
 
-<script>
-
-</script>
-
 
 
 {% schema %}
@@ -180,7 +145,7 @@
 "type": "number",
 "id": "just-dropped-count",
 "label": "Product Count",
-"default": 10
+"default": 4
 },
 {
 "type": "text",
@@ -189,7 +154,7 @@
 },
 {
 "type": "paragraph",
-"content": "lorem"
+"content": "enter collection name and use | as separator, use only 4 collection"
 }
 ]
 }
