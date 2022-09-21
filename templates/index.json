@@ -277,8 +277,8 @@
       "settings": {
         "just-dropped-title": "Just Dropped",
         "just-dropped-description": "New arrivals you will love",
-        "just-dropped-url": "shopify:\/\/collections\/all",
-        "just-dropped-count": 10
+        "just-dropped-count": 4,
+        "collection-list": "saree | arthirshtam | readymades"
       }
     },
     "recently": {
