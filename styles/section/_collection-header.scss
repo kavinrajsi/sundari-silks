@@ -4,12 +4,19 @@
   margin-bottom: 28px;
   &-image {
     margin-bottom: 28px;
+    // height: 142px;
     img {
-      width: 1920px;
-      width: 100%;
-      height: 340px;
+      width: auto;
+      height: 142px;
       object-fit: cover;
-      object-position: top center;
+      object-position: center;
+      height: 142px;
+      @media(min-width: 768px){
+        width: 100%;
+        height: 280px;
+      }
+      object-fit: cover;
+      object-position: center;
     }
   }
   p {
@@ -29,7 +36,10 @@
   margin-left: 4vw;
   margin-right: 4vw;
   margin-bottom: 28px;
+  display: none;
+  @media(min-width: 768px){
   display: flex;
+  }
   justify-content: space-around;
   .collection-filter {
     flex: 1 0 auto;

@@ -1,20 +1,36 @@
 .test--product-card--grid-three {
   margin: 0 4vw;
+  overflow: hidden;
   display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  grid-template-columns: repeat(2, 1fr);
+  @media (min-width: 768px) {
+    gap: 24px;
+    grid-template-columns: repeat(3, calc(100% / 12 * 4 - 18px));
+  }
 }
 .test--product-card--grid-four {
   margin: 0 4vw;
+  overflow: hidden;
   display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  grid-template-columns: repeat(2, 1fr);
+  @media (min-width: 768px) {
+    gap: 24px;
+    grid-template-columns: repeat(4, calc(100% / 12 * 4 - 18px));
+  } @media (min-width: 1024px) {
+
+    grid-template-columns: repeat(4, calc(100% / 12 * 3 - 18px));
+  }
 }
 
 .product {
   &__card {
+    display: flex;
+    flex-direction: column;
     &--img {
-      a{
+      flex: 1 0 auto;
+      a {
         display: block;
       }
       position: relative;
@@ -79,6 +95,10 @@
     font-family: var(--font-playfair);
     color: var(--pure-black);
     font-feature-settings: "pnum" on, "lnum" on;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 28px;
   }
 
   &__price-list {
@@ -87,6 +107,7 @@
     span {
       font-size: 14px;
       font-family: var(--font-montserrat);
+      font-feature-settings: "pnum" on, "lnum" on;
     }
   }
 
