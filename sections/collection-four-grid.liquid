@@ -162,8 +162,23 @@
           <a href="{{product.url | within: collection }}" class="product-link">
             <div class="product__image--wrapper">
               {% if product.featured_image != blank %}
-              {{ product.featured_image | image_url: width: 400, height: 400, crop: 'bottom' | image_tag : class:
-              'product-img', loading: 'lazy', alt: product.feature_image.alt}}
+              <!--  360 x 348 -->
+              <img loading="lazy" alt="{{ product.featured_image.alt }}"
+              data-widths="[200,400,600,700,800,900,1000,1200,2048]" data-sizes="auto"
+              data-media-id="{{ product.featured_image.id }}" data-srcset="
+              {{ product.featured_image.src | product_img_url: 'small' }}     100w,
+              {{ product.featured_image.src | product_img_url: 'compact' }}   160w,
+              {{ product.featured_image.src | product_img_url: 'medium' }}    240w,
+              {{ product.featured_image.src | product_img_url: 'large' }}     480w,
+              {{ product.featured_image.src | product_img_url: 'grande' }}    600w,
+              {{ product.featured_image.src | product_img_url: '1024x1024' }} 1024w"
+              srcset=" {{ product.featured_image.src | product_img_url: 'small' }} 100w, {{
+              product.featured_image.src | product_img_url: 'compact' }} 160w, {{ product.featured_image.src |
+              product_img_url: 'medium' }} 240w, {{ product.featured_image.src | product_img_url: 'large' }} 480w, {{
+              product.featured_image.src | product_img_url: 'grande' }} 600w, {{ product.featured_image.src |
+              product_img_url: '1024x1024' }} 1024w" "
+              sizes=" 679px" src="{{ product.featured_image | img_url: '300x300' }}">
+
               {% else %}
               {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
               {% endif %}
@@ -203,14 +218,14 @@
             {% if product.variants.size > 1 %}
             {% for variant in product.variants %}
             {{variant.title}} :
-            You save {{ variant.price | minus: variant.compare_at_price | times: 100.0 | divided_by: variant.price |
-            money_without_currency | times: 100.0 | remove: '.0' }} %
+            <!-- You save {{ variant.price | minus: variant.compare_at_price | times: 100.0 | divided_by: variant.price |
+            money_without_currency | times: 100.0 | remove: '.0' }} % -->
             <br>
             {% endfor %}
             {% else %}
             {% if product.compare_at_price_max > product.price %}
-            You save {{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by:
-            product.compare_at_price_max | money_without_currency | times: 100.0 | remove: '.0'}} %
+            <!-- You save {{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by:
+            product.compare_at_price_max | money_without_currency | times: 100.0 | remove: '.0'}} % -->
             {% endif %}
             {% endif %}
             {% if product.tags.size < 1 %} {% for taglist in product.tags %} <span hidden class="product__tag--list">
