@@ -3,7 +3,6 @@
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
-
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -11,7 +10,6 @@
     }
   }
 {% endstyle  %}
-
 <div class="page-width page-width--narrow section-{{ section.id }}-padding">
   <h1 class="main-page-title page-title h0">
     {{ page.title | escape }}
@@ -20,7 +18,6 @@
     {{ page.content }}
   </div>
 </div>
-
 {% schema %}
 {
   "name": "t:sections.main-page.name",

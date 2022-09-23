@@ -12,8 +12,8 @@
     <div class="customer-account-order-lists">
       <h2> Order history </h2>
       {% paginate customer.orders by 2 %}
-      {% if customer.orders.size > 0  %}
-      {% for order in customer.orders  %}
+      {% if customer.orders.size > 0 %}
+      {% for order in customer.orders %}
       <div class="order-list">
         <div class="order-list-header">
           <div class="order-list-header-data">
@@ -52,34 +52,33 @@
         </div>
         <div class="order-list-data">
           <ul>
-            {% for line_item in order.line_items  %}
+            {% for line_item in order.line_items %}
             <li>
-              {% if line_item.url != blank  %}
+              {% if line_item.url != blank %}
               <a href="{{shop.secure_url}}/{{ line_item.url }}" target="_blank">
                 {% endif %}
-
-                {% if line_item.image != blank  %}
+                {% if line_item.image != blank %}
                 <span>
                   {{ line_item.image | image_url: width: 100, height: 100 | image_tag : alt: line_item.image.alt }}
                 </span>
-                {% else  %}
+                {% else %}
                 {{ 'product-1' | placeholder_svg_tag: 'line-item-image' }}
-                {% endif  %}
-                {% if line_item.url != blank  %}
+                {% endif %}
+                {% if line_item.url != blank %}
               </a>
               {% endif %}
               <span>
                 {{ line_item.title }}
               </span>
             </li>
-            {% endfor  %}
+            {% endfor %}
           </ul>
         </div>
       </div>
-      {% endfor  %}
-      {% else  %}
+      {% endfor %}
+      {% else %}
       <p>{{ 'customer.orders.none' | t }}</p>
-      {% endif  %}
+      {% endif %}
       <div class="pagination--number">
         {{ paginate | default_pagination: next: 'Next', previous: 'Prev' }}
       </div>
@@ -124,7 +123,6 @@
       </address>
       <br>
       <br>
-
       <a href="{{ routes.account_addresses_url }}">
         {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
       </a>

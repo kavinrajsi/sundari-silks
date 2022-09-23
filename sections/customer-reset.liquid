@@ -1,22 +1,17 @@
 {% form 'reset_customer_password' %}
-  {{ form.errors | default_errors }}
-
-  <div class="password">
-    <label for="password">Password</label>
-    <input type="password" name="customer[password]">
-  </div>
-
-  <div class="password_confirm">
-    <label for="password_confirmation">Password confirmation</label>
-    <input type="password" name="customer[password_confirmation]">
-  </div>
-
-  <div class="submit">
-    <input type="submit" value="Reset password">
-  </div>
+{{ form.errors | default_errors }}
+<div class="password">
+  <label for="password">Password</label>
+  <input type="password" name="customer[password]">
+</div>
+<div class="password_confirm">
+  <label for="password_confirmation">Password confirmation</label>
+  <input type="password" name="customer[password_confirmation]">
+</div>
+<div class="submit">
+  <input type="submit" value="Reset password">
+</div>
 {% endform %}
-
-
 <!-- <h1 id="recover" tabindex="-1">
   {{ 'customer.recover_password.title' | t }}
 </h1>
@@ -24,7 +19,6 @@
   <p>
     {{ 'customer.recover_password.subtext' | t }}
   </p>
-
   {% form 'recover_customer_password'  %}
     {% assign recover_success = form.posted_successfully? %}
     <div class="field">
@@ -57,11 +51,9 @@
         {{ form.errors.messages['form'] }}
       </small>
     {% endif  %}
-
     <button>
       {{ 'customer.login_page.submit' | t }}
     </button>
-
     <a href="#login">
       {{ 'customer.login_page.cancel' | t }}
     </a>

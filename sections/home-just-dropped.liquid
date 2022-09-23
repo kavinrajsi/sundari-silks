@@ -1,13 +1,11 @@
 {% assign my_array = section.settings.collection-list | split: "| " %}
 {% assign collect = 0 %}
-
 <div
   style="display: flex; justify-content: space-between; margin-bottom: 28px; max-width: var(--content-width); margin-left: auto; margin-right: auto;">
   <div>
     <h2> {{section.settings.just-dropped-title}} </h2>
     <p> {{section.settings.just-dropped-description}} </p>
   </div>
-
   <div class="tab-buttton">
     {% for item in my_array %}
     <div id="titem_{{forloop.index}}" class="tab {% if forloop.first %} active {% endif %} ">
@@ -16,9 +14,7 @@
     {% endfor %}
   </div>
 </div>
-
 <div class="wrapper">
-
   <main class="main-doc">
     {% for item in my_array %}
     {% assign collect = collections[ item ] %}
@@ -47,16 +43,12 @@
               <a class="quick-view" data-handle="{{ product.handle }}">Quick View</a>
             </div>
           </div>
-
           <div class="product__card--content">
             <a href="{{product.url | within: collection }}" class="product-link">
-
               <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
-
               <div hidden class="product__id">{{ product.id }}</div>
               <div hidden itemprop="brand" class="product__variant--vendor">{{ product.vendor }}</div>
               <div hidden class="product__type"> {{ product.type }} </div>
-
               <div class="product__variant--price">
                 {% if product.price_varies %}
                 <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency
@@ -72,7 +64,6 @@
                 </p>
                 {% endif %}
               </div>
-
               {% if product.variants.size > 1 %}
               {% for variant in product.variants %}
               {{variant.title}} :
@@ -86,12 +77,10 @@
               product.compare_at_price_max | money_without_currency | times: 100.0 | remove: '.0'}} %
               {% endif %}
               {% endif %}
-
               {% if product.tags.size < 1 %} {% for taglist in product.tags %} <span hidden class="product__tag--list">
                 {{ taglist }}, </span>
                 {% endfor %}
                 {% endif %}
-
                 {% for variant in product.variants %}
                 <div hidden class="product__variant--title"> {{ variant.title }} </div>
                 <div hidden class="product__variant--weight"> {{ variant.weight | weight_with_unit : variant.weight_unit
@@ -101,7 +90,6 @@
                 <div hidden class="product__variant--sku"> {{ variant.sku }} </div>
                 <div hidden class="product__variant--barcode"> {{ variant.barcode }} </div>
                 {% endfor %}
-
                 {% if product.variants.size > 1 %}
                 <div class="product__variant--list">
                   {% for variant in product.variants %}
@@ -114,14 +102,10 @@
         </div>
         {% endfor %}
       </div>
-
     </article>
     {% endfor %}
   </main>
 </div>
-
-
-
 
 {% schema %}
 {

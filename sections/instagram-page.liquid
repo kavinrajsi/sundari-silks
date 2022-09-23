@@ -6,45 +6,42 @@
     </div>
   </div>
   <div class="instagram-page-grid section-content">
-    {% for block in section.blocks  %}
-    {% if block.settings.image  %}
+    {% for block in section.blocks %}
+    {% if block.settings.image %}
     <div class="item">
       <a href="{{ block.settings.link }}">
-      {{ block.settings.image | image_url : width: 300 | image_tag : alt: block.settings.image.alt }}
-    </a>
+        {{ block.settings.image | image_url : width: 300 | image_tag : alt: block.settings.image.alt }}
+      </a>
     </div>
-    {% else  %}
+    {% else %}
     <div class="item">
       {{ 'product-2' | placeholder_svg_tag: 'placeholder-svg' }}
     </div>
-    {% endif  %}
+    {% endif %}
     {% endfor %}
   </div>
 </section>
-
-
-
 {% schema %}
 {
-  "name": "Insta Shop Page",
-  "blocks": [
-    {
-      "type": "image",
-      "name": "Instagram Image List",
-      "limit": 32,
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Link"
-        }
-      ]
-    }
-  ]
+"name": "Insta Shop Page",
+"blocks": [
+{
+"type": "image",
+"name": "Instagram Image List",
+"limit": 32,
+"settings": [
+{
+"type": "image_picker",
+"id": "image",
+"label": "Image"
+},
+{
+"type": "url",
+"id": "link",
+"label": "Link"
+}
+]
+}
+]
 }
 {% endschema %}

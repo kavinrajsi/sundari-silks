@@ -13,34 +13,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display&display=swap"
     rel="stylesheet">
 
-  {% if settings.favicon != blank  %}
+  {% if settings.favicon != blank %}
   <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
-  {% endif  %}
+  {% endif %}
 
-  {% unless settings.type_header_font.system? and settings.type_body_font.system?  %}
+  {% unless settings.type_header_font.system? and settings.type_body_font.system? %}
   <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-  {% endunless  %}
+  {% endunless %}
 
   <title>
     {{ page_title }}
-    {% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif  %}
-    {% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif  %}
-    {% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless  %}
+    {% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}
+    {% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}
+    {% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
   </title>
 
   {% if page_description %}
   <meta name="description" content="{{ page_description | escape }}">
   {% endif %}
 
+  {% include 'social-meta-tags' %}
+
   {{ content_for_header }}
 
   {{ '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css' | stylesheet_tag }}
   {{ 'base.css' | asset_url | stylesheet_tag }}
 
-  <script src="//code.jquery.com/jquery-3.4.1.js" ></script>
-  <script src="{{ 'owl.carousel.min.js' | asset_url }}" ></script>
-  <script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js" ></script>
-  <script src="{{ 'quickview.js' | asset_url }}" ></script>
+  <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="{{ 'owl.carousel.min.js' | asset_url }}"></script>
+  <script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+  <script src="{{ 'quickview.js' | asset_url }}"></script>
 
   <script>
     window.mlvedaShopCurrency = "{{ shop.currency }}";
@@ -49,7 +51,7 @@
   </script>
 </head>
 
-<body>
+<body class="template-{{ template | split : '.' | first }}">
   <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -136,7 +138,7 @@
     </symbol>
   </svg>
 
-  {% if request.page_type == 'index'  %}
+  {% if request.page_type == 'index' %}
   {% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
   <script type="application/ld+json">
     {
@@ -151,7 +153,7 @@
       "url": {{ request.origin | append: page.url | json }}
     }
   </script>
-  {% endif  %}
+  {% endif %}
 
   <script type="application/ld+json">
   {
@@ -176,74 +178,76 @@
   }
 </script>
 
+
+
   {% section 'announcement-bar' %}
   {% section 'header' %}
 
   {%- unless template == 'index' or template == 'cart' or template == 'list-collections' or template == '404' -%}
-{%- assign t = template | split: '.' | first -%}
+  {%- assign t = template | split: '.' | first -%}
 
-<nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
-  <ol class="breadcrumbs__list">
-    <li class="breadcrumbs__item">
-      <a class="breadcrumbs__link" href="/">Home</a>
-    </li>
-    {%- case t -%}
+  <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+    <ol class="breadcrumbs__list">
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="/">Home</a>
+      </li>
+      {%- case t -%}
       {%- when 'page' -%}
-        <li class="breadcrumbs__item">
-          <a class="breadcrumbs__link" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
-        </li>
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+      </li>
       {%- when 'product' -%}
-        {%- if collection.url -%}
-          <li class="breadcrumbs__item">
-            {{ collection.title | link_to: collection.url }}
-          </li>
-        {%- endif -%}
-        <li class="breadcrumbs__item">
-          <a class="breadcrumbs__link" href="{{ product.url }}" aria-current="page">{{ product.title }}</a>
-        </li>
+      {%- if collection.url -%}
+      <li class="breadcrumbs__item">
+        {{ collection.title | link_to: collection.url }}
+      </li>
+      {%- endif -%}
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="{{ product.url }}" aria-current="page">{{ product.title }}</a>
+      </li>
       {%- when 'collection' and collection.handle -%}
-        {%- if current_tags -%}
-          <li class="breadcrumbs__item">
-            {{ collection.title | link_to: collection.url }}
-          </li>
-          <li class="breadcrumbs__item">
-            {%- capture tag_url -%}{{ collection.url }}/{{ current_tags | join: "+"}}{%- endcapture -%}
-            <a class="breadcrumbs__link" href="{{ tag_url }}" aria-current="page">{{ current_tags | join: " + "}}</a>
-          </li>
-        {%- else -%}
-          <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link" href="{{ collection.url }}" aria-current="page">{{ collection.title }}</a>
-          </li>
-        {%- endif -%}
-      {%- when 'blog' -%}
-        {%- if current_tags -%}
-          <li class="breadcrumbs__item">
-            {{ blog.title | link_to: blog.url }}
-          </li>
-          <li class="breadcrumbs__item">
-            {%- capture tag_url -%}{{blog.url}}/tagged/{{ current_tags | join: "+" }}{%- endcapture -%}
-            <a class="breadcrumbs__link" href="{{ tag_url }}" aria-current="page">{{ current_tags | join: " + " }}</a>
-          </li>
-        {%- else -%}
-          <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link" href="{{ blog.url }}" aria-current="page">{{ blog.title }}</a>
-          </li>
-        {%- endif -%}
-      {%- when 'article' -%}
-        <li class="breadcrumbs__item">
-          {{ blog.title | link_to: blog.url }}
-        </li>
-        <li class="breadcrumbs__item">
-          <a class="breadcrumbs__link" href="{{ article.url }}" aria-current="page">{{ article.title }}</a>
-        </li>
+      {%- if current_tags -%}
+      <li class="breadcrumbs__item">
+        {{ collection.title | link_to: collection.url }}
+      </li>
+      <li class="breadcrumbs__item">
+        {%- capture tag_url -%}{{ collection.url }}/{{ current_tags | join: "+"}}{%- endcapture -%}
+        <a class="breadcrumbs__link" href="{{ tag_url }}" aria-current="page">{{ current_tags | join: " + "}}</a>
+      </li>
       {%- else -%}
-        <li class="breadcrumbs__item">
-          <a class="breadcrumbs__link" href="{{ request.path }}" aria-current="page">{{ page_title }}</a>
-        </li>
-    {%- endcase -%}
-  </ol>
-</nav>
-{%- endunless -%}
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="{{ collection.url }}" aria-current="page">{{ collection.title }}</a>
+      </li>
+      {%- endif -%}
+      {%- when 'blog' -%}
+      {%- if current_tags -%}
+      <li class="breadcrumbs__item">
+        {{ blog.title | link_to: blog.url }}
+      </li>
+      <li class="breadcrumbs__item">
+        {%- capture tag_url -%}{{blog.url}}/tagged/{{ current_tags | join: "+" }}{%- endcapture -%}
+        <a class="breadcrumbs__link" href="{{ tag_url }}" aria-current="page">{{ current_tags | join: " + " }}</a>
+      </li>
+      {%- else -%}
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="{{ blog.url }}" aria-current="page">{{ blog.title }}</a>
+      </li>
+      {%- endif -%}
+      {%- when 'article' -%}
+      <li class="breadcrumbs__item">
+        {{ blog.title | link_to: blog.url }}
+      </li>
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="{{ article.url }}" aria-current="page">{{ article.title }}</a>
+      </li>
+      {%- else -%}
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="{{ request.path }}" aria-current="page">{{ page_title }}</a>
+      </li>
+      {%- endcase -%}
+    </ol>
+  </nav>
+  {%- endunless -%}
 
 
   <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
@@ -252,8 +256,7 @@
 
   {% section 'footer' %}
 
-
-  <script src="{{ 'global.js' | asset_url }}" ></script>
+  <script src="{{ 'global.js' | asset_url }}"></script>
 </body>
 
 </html>

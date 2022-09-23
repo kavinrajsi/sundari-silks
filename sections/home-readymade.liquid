@@ -5,62 +5,62 @@
       <div class="section-header-content">{{ section.settings.readymade-description }}</div>
     </div>
   </div>
-<div class="section-content collection-readymade">
-  {% for block in section.blocks  %}
-    {% if block.settings.image  %}
+  <div class="section-content collection-readymade">
+    {% for block in section.blocks %}
+    {% if block.settings.image %}
     <div class="collection-item">
       <a class="collection-item-link" href="{{ block.settings.link }}">
-      {{ block.settings.image | image_url : width: 264, height: 290 | image_tag : alt: block.settings.image.alt, class: "collection-item-image" }}
-    </a>
+        {{ block.settings.image | image_url : width: 264, height: 290 | image_tag : alt: block.settings.image.alt,
+        class: "collection-item-image" }}
+      </a>
     </div>
-    {% else  %}
+    {% else %}
     <div class="collection-item">
       <a class="collection-item-image" href="#">
-      {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
-    </a>
+        {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      </a>
     </div>
-    {% endif  %}
-    {% endfor  %}
-</div>
+    {% endif %}
+    {% endfor %}
+  </div>
 </section>
-
 {% schema %}
 {
-  "name": "Ready Made Section",
-  "class": "homepage-section home-page-readymade-section",
-  "tag": "section",
-  "settings": [
-    {
-      "type": "text",
-      "id": "readymade-title",
-      "label": "Section Title",
-      "default": "Ready Made collection"
-    },
-    {
-      "type": "text",
-      "id": "readymade-description",
-      "label": "Section Description",
-      "default": "Styles for every occasion"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "readymade-image",
-      "name": "Readymade Image Section",
-      "limit": 6,
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Image link"
-        }
-      ]
-    }
-  ]
+"name": "Ready Made Section",
+"class": "homepage-section home-page-readymade-section",
+"tag": "section",
+"settings": [
+{
+"type": "text",
+"id": "readymade-title",
+"label": "Section Title",
+"default": "Ready Made collection"
+},
+{
+"type": "text",
+"id": "readymade-description",
+"label": "Section Description",
+"default": "Styles for every occasion"
+}
+],
+"blocks": [
+{
+"type": "readymade-image",
+"name": "Readymade Image Section",
+"limit": 6,
+"settings": [
+{
+"type": "image_picker",
+"id": "image",
+"label": "Image"
+},
+{
+"type": "url",
+"id": "link",
+"label": "Image link"
+}
+]
+}
+]
 }
 {% endschema %}

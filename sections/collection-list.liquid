@@ -1,6 +1,5 @@
 <div class="page-width">
   <h1 class="title title--primary"> collection Page</h1>
-
   {% paginate collections by 24 %}
   <ul class="collection-list grid" role="list">
     {% for collection in collections  %}
@@ -25,11 +24,9 @@
             <h3 class="card__heading">
               {{collection.title}}
             </h3>
-
             <p class="card__caption">
               {{collection.description}}
             </p>
-
           </div>
         </div>
       </div>

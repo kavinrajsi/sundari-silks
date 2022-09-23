@@ -27,7 +27,8 @@
         width: 100%;
         z-index: 98;
         display: none;
-        a {
+        .quick-view {
+          cursor: pointer;
           padding: 16px;
           display: block;
           color: var(--pure-white);

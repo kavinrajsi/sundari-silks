@@ -1,56 +1,5 @@
-<section>
-  <div class="section-header-wrapper justify-content-start">
-    <div class="section-header text-left" style="flex: 1 0 auto">
-      <div class="section-header-title">{{ block.settings.recently-title }}</div>
-      <div class="section-header-content">{{ block.settings.recently-description }}</div>
-
-      <div class="section-header-title"></div>
-      <div class="section-header-content"></div>
-    </div>
-    <a class="section-header-action_link" href="#">
-      View All
-      <svg width="20" height="20">
-        <use href="#link-arrow" />
-      </svg>
-    </a>
-  </div>
-  <div class="section-content">
-    <div class="product-collection-list">
-      {{ block.settings.recently-url }}
-      {{ block.settings.recently-number }}
-    </div>
-  </div>
-</section>
+home recently
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi veniam porro exercitationem explicabo, reprehenderit
+blanditiis ab nostrum vero? Recusandae eaque possimus eum illo dolorem iure eveniet quos itaque pariatur in.
 
 
-{% schema %}
-{
-"name": "Recently Section",
-"class": "section-class",
-"settings": [
-    {
-      "type": "text",
-      "id": "recently-title",
-      "label": "Section Title",
-      "default": "Recently Viewed"
-    },
-    {
-      "type": "text",
-      "id": "recently-description",
-      "label": "Section Description",
-      "default": "Products you fell in love with"
-    },
-    {
-      "type": "url",
-      "id": "recently-url",
-      "label": "Link URL"
-    },
-    {
-      "type": "number",
-      "id": "recently-count",
-      "label": "Product Count",
-      "default": 10
-    }
-]
-}
-{% endschema %}

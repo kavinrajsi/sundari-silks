@@ -1,106 +1,105 @@
 <div class="large-12 columns">
   <div class="owl-carousel owl-theme">
-    {% for block in section.blocks  %}
-    {% if block.settings.image  %}
+    {% for block in section.blocks %}
+    {% if block.settings.image %}
     <div class="item">
       {{ block.settings.image | image_url : width: 1920 | image_tag : alt: block.settings.image.alt }}
     </div>
-    {% else  %}
+    {% else %}
     <div class="item">
       {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
     </div>
-    {% endif  %}
+    {% endif %}
     {% endfor %}
   </div>
 </div>
-
 {% schema %}
 {
-  "name": "Slide Show",
-  "class": "homepage-section",
-  "tag": "section",
-  "settings": [
-    {
-      "type": "select",
-      "id": "layout",
-      "options": [
-        {
-          "value": "full_bleed",
-          "label": "t:sections.slideshow.settings.layout.options__1.label"
-        },
-        {
-          "value": "grid",
-          "label": "t:sections.slideshow.settings.layout.options__2.label"
-        }
-      ],
-      "default": "full_bleed",
-      "label": "t:sections.slideshow.settings.layout.label"
-    },
-    {
-      "type": "select",
-      "id": "slider_visual",
-      "options": [
-        {
-          "value": "dots",
-          "label": "t:sections.slideshow.settings.slider_visual.options__2.label"
-        },
-        {
-          "value": "counter",
-          "label": "t:sections.slideshow.settings.slider_visual.options__1.label"
-        },
-        {
-          "value": "numbers",
-          "label": "t:sections.slideshow.settings.slider_visual.options__3.label"
-        }
-      ],
-      "default": "counter",
-      "label": "t:sections.slideshow.settings.slider_visual.label"
-    },
-    {
-      "type": "range",
-      "id": "change_slides_speed",
-      "min": 3,
-      "max": 9,
-      "step": 2,
-      "unit": "s",
-      "label": "t:sections.slideshow.settings.change_slides_speed.label",
-      "default": 5
-    },
-    {
-      "type": "header",
-      "content": "t:sections.slideshow.settings.accessibility.content"
-    },
-    {
-      "type": "text",
-      "id": "accessibility_info",
-      "label": "t:sections.slideshow.settings.accessibility.label",
-      "info": "t:sections.slideshow.settings.accessibility.info",
-      "default": "Slideshow about our brand"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "slide",
-      "name": "t:sections.slideshow.blocks.slide.name",
-      "limit": 10,
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Desktop Image"
-        },
-        {
-          "type": "image_picker",
-          "id": "mobile_image",
-          "label": "Mobile Image"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Image link"
-        }
-      ]
-    }
-  ]
+"name": "Slide Show",
+"class": "homepage-section",
+"tag": "section",
+"settings": [
+{
+"type": "select",
+"id": "layout",
+"options": [
+{
+"value": "full_bleed",
+"label": "t:sections.slideshow.settings.layout.options__1.label"
+},
+{
+"value": "grid",
+"label": "t:sections.slideshow.settings.layout.options__2.label"
+}
+],
+"default": "full_bleed",
+"label": "t:sections.slideshow.settings.layout.label"
+},
+{
+"type": "select",
+"id": "slider_visual",
+"options": [
+{
+"value": "dots",
+"label": "t:sections.slideshow.settings.slider_visual.options__2.label"
+},
+{
+"value": "counter",
+"label": "t:sections.slideshow.settings.slider_visual.options__1.label"
+},
+{
+"value": "numbers",
+"label": "t:sections.slideshow.settings.slider_visual.options__3.label"
+}
+],
+"default": "counter",
+"label": "t:sections.slideshow.settings.slider_visual.label"
+},
+{
+"type": "range",
+"id": "change_slides_speed",
+"min": 3,
+"max": 9,
+"step": 2,
+"unit": "s",
+"label": "t:sections.slideshow.settings.change_slides_speed.label",
+"default": 5
+},
+{
+"type": "header",
+"content": "t:sections.slideshow.settings.accessibility.content"
+},
+{
+"type": "text",
+"id": "accessibility_info",
+"label": "t:sections.slideshow.settings.accessibility.label",
+"info": "t:sections.slideshow.settings.accessibility.info",
+"default": "Slideshow about our brand"
+}
+],
+"blocks": [
+{
+"type": "slide",
+"name": "t:sections.slideshow.blocks.slide.name",
+"limit": 10,
+"settings": [
+{
+"type": "image_picker",
+"id": "image",
+"label": "Desktop Image"
+},
+{
+"type": "image_picker",
+"id": "mobile_image",
+"label": "Mobile Image"
+},
+{
+"type": "url",
+"id": "link",
+"label": "Image link"
+}
+]
+}
+]
 }
 {% endschema %}

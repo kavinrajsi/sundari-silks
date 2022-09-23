@@ -41,9 +41,7 @@
       <button type="submit">delete</button>
     </form>
   </address>
-
   {% else %}
-
   <address>
     <div itemscope itemtype="https://schema.org/Person">
       <span itemprop="givenName"> {{ customer.first_name }} </span>
@@ -84,7 +82,5 @@
     </form>
   </address>
   {% endif %}
-
-
   {% endfor %}
 </div>

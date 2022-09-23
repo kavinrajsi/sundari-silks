@@ -281,13 +281,9 @@
         "collection-list": "saree | arthirshtam | readymades"
       }
     },
-    "recently": {
-      "type": "home-recently",
+    "recent-products": {
+      "type": "product-recommendations",
       "settings": {
-        "recently-title": "Recently Viewed",
-        "recently-description": "Products you fell in love with",
-        "recently-url": "shopify:\/\/collections\/all",
-        "recently-count": 10
       }
     },
     "blog": {
@@ -313,7 +309,7 @@
     "readymade",
     "collaborate",
     "dropped",
-    "recently",
+    "recent-products",
     "blog",
     "instagram"
   ]
