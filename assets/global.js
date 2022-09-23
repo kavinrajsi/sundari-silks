@@ -25,6 +25,21 @@
     smartSpeed: 550,
   });
 
+  $('.prpdocutSlider').slick();
+
+function slickPause() {
+	$('.prpdocutSlider').slick('slickPause');
+}
+
+slickPause();
+
+$('.prpdocutSlider').mouseover(function() {
+	$(this).slick('slickPlay');
+});
+$('.prpdocutSlider').mouseout(function() {
+	slickPause();
+});
+
   // active/current tab function
   var pages = document.getElementsByClassName("page");
   var tabs = document.getElementsByClassName("tab");

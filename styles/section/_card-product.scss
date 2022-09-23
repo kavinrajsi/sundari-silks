@@ -8,9 +8,7 @@
     gap: 24px;
     grid-template-columns: repeat(3, calc(100% / 12 * 4 - 18px));
   }
-  > * {
-    outline: 1px solid;
-  }
+
 }
 .test--product-card--grid-four {
   margin: 2px 4vw 0;
@@ -25,9 +23,7 @@
   @media (min-width: 1024px) {
     grid-template-columns: repeat(4, calc(100% / 12 * 3 - 18px));
   }
-  > * {
-    outline: 1px solid;
-  }
+
 }
 
 .product {

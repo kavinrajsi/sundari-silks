@@ -1,7 +1,7 @@
 {% assign my_array = section.settings.collection-list | split: "| " %}
 {% assign collect = 0 %}
-<div
-  style="display: flex; justify-content: space-between; margin-bottom: 28px; max-width: var(--content-width); margin-left: auto; margin-right: auto;">
+<div class="home-page">
+<div class="justdropped-header">
   <div>
     <h2> {{section.settings.just-dropped-title}} </h2>
     <p> {{section.settings.just-dropped-description}} </p>
@@ -14,8 +14,7 @@
     {% endfor %}
   </div>
 </div>
-<div class="wrapper">
-  <main class="main-doc">
+<div class="justdropped-content">
     {% for item in my_array %}
     {% assign collect = collections[ item ] %}
     <article class="page {% if forloop.first %} active {% endif %}" id="pitem_{{forloop.index}}">
@@ -104,13 +103,15 @@
       </div>
     </article>
     {% endfor %}
-  </main>
+  </div>
 </div>
+
+
 
 {% schema %}
 {
 "name": "Just Dropped Section",
-"class": "homepage-section",
+"class": "homepage-section homepage-justdropped",
 "tag": "section",
 "settings": [
 {

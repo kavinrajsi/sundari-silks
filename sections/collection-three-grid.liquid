@@ -159,34 +159,41 @@
         {% endunless %}
         {% endcomment %}
         <div class="product__card--img">
-          <a href="{{product.url | within: collection }}" class="product-link">
-            <div class="product__image--wrapper">
+          <a href="{{ product.url | within: collection }}" class="product-link">
+            <div class="product__image--wrapper prpdocutSlider"
+              data-slick='{"autoplay": true, "cssEase": "linear", "slidesToShow": 1, "slidesToScroll": 1, "autoplaySpeed": 1000, "fade": true, "arrows": false, "dots": true, "adaptiveHeight": true }'>
               {% if product.featured_image != blank %}
-              <img loading="lazy" alt="{{ product.featured_image.alt }}"
-                data-widths="[200,400,600,700,800,900,1000,1200,2048]" data-sizes="auto"
-                data-media-id="{{ product.featured_image.id }}" data-srcset="
-                {{ product.featured_image.src | product_img_url: 'small' }}     100w,
-                {{ product.featured_image.src | product_img_url: 'compact' }}   160w,
-                {{ product.featured_image.src | product_img_url: 'medium' }}    240w,
-                {{ product.featured_image.src | product_img_url: 'large' }}     480w,
-                {{ product.featured_image.src | product_img_url: 'grande' }}    600w,
-                {{ product.featured_image.src | product_img_url: '1024x1024' }} 1024w"
-                srcset=" {{ product.featured_image.src | product_img_url: 'small' }} 100w, {{
-                product.featured_image.src | product_img_url: 'compact' }} 160w, {{ product.featured_image.src |
-                product_img_url: 'medium' }} 240w, {{ product.featured_image.src | product_img_url: 'large' }} 480w, {{
-                product.featured_image.src | product_img_url: 'grande' }} 600w, {{ product.featured_image.src |
-                product_img_url: '1024x1024' }} 1024w" "
-                sizes=" 679px" src="{{ product.featured_image | img_url: '300x300' }}">
-
-              {% else %}
-              {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
-              {% endif %}
-              <div class="product__status">
-                {% unless product.available %}
-                <!-- TODO: Sold out chip color -->
-                <span class="product__status-soldout">sold out</span>
-                {% endunless %}
+              <!--  360 x 348 -->
+              <div>
+                <img loading="lazy" alt="{{ product.featured_image.alt }}"
+                  data-widths="[200,400,600,700,800,900,1000,1200,2048]" data-sizes="auto"
+                  data-media-id="{{ product.featured_image.id }}" data-srcset="
+              {{ product.featured_image.src | img_url: 'small' }}     100w,
+              {{ product.featured_image.src | image_url }}   160w,
+              {{ product.featured_image.src | image_url }}    240w,
+              {{ product.featured_image.src | image_url }}     480w,
+              {{ product.featured_image.src | image_url }}    600w,
+              {{ product.featured_image.src | image_url: width: 1024, height: 1024 }} 1024w" srcset=" {{ product.featured_image.src | img_url: 'small' }} 100w, {{
+              product.featured_image.src | image_url }} 160w, {{ product.featured_image.src |
+              image_url }} 240w, {{ product.featured_image.src | image_url }} 480w, {{
+              product.featured_image.src | image_url }} 600w, {{ product.featured_image.src |
+              image_url: width: 1024, height: 1024 }} 1024w" "
+              sizes=" 679px" src="{{ product.featured_image | image_url: width: 300, height: 300 }}">
               </div>
+              {% for image in product.images offset:1 %}
+              <div>
+                <img src="{{ image.src | image_url : width: 400 }}" alt="{{image.alt }}">
+              </div>
+              {% endfor %}
+            </div>
+            {% else %}
+            {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
+            {% endif %}
+            <div class="product__status">
+              {% unless product.available %}
+              <!-- TODO: Sold out chip color -->
+              <span class="product__status-soldout">sold out</span>
+              {% endunless %}
             </div>
           </a>
           <div class="product__card-cta quick-view-button">
