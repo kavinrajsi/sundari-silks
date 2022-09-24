@@ -1,6 +1,6 @@
 <section class="home-page-spotlight-section">
   <div class="spot-light">
-    <div class="section-header-wrapper justify-content-start">
+    <div class="section-header-wrapper">
       <div class="section-header text-left">
         <div class="section-header-title">{{ section.settings.spotlight-title }}</div>
         <div class="section-header-content">
@@ -18,7 +18,7 @@
       <div class="product-collection-list">
         <div class="product-grid">
           {% assign collection = collections[ section.settings.spotlight-collection ] %}
-          {% assign collectionCount = 6 %}
+          {% assign collectionCount = 8 %}
           {% for product in collection.products limit: collectionCount %}
           <div class="product__card">
             <div class="product__card--img">
@@ -45,9 +45,6 @@
             <div class="product__card--content">
               <a href="{{product.url | within: collection }}" class="product-link">
                 <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
-                <div hidden class="product__id">{{ product.id }}</div>
-                <div hidden itemprop="brand" class="product__variant--vendor">{{ product.vendor }}</div>
-                <div hidden class="product__type"> {{ product.type }} </div>
                 <div class="product__variant--price">
                   {% if product.price_varies %}
                   <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency
@@ -63,43 +60,6 @@
                   </p>
                   {% endif %}
                 </div>
-                {% if product.variants.size > 1 %}
-                {% for variant in product.variants %}
-                <span hidden> {{variant.title}} : You save {{ variant.price | minus: variant.compare_at_price | times:
-                  100.0 | divided_by:
-                  variant.price |
-                  money_without_currency | times: 100.0 | remove: '.0' }} %
-                </span>
-                {% endfor %}
-                {% else %}
-                {% if product.compare_at_price_max > product.price %}
-                <span hidden> You save {{ product.compare_at_price_max | minus: product.price | times: 100.0 |
-                  divided_by:
-                  product.compare_at_price_max | money_without_currency | times: 100.0 | remove: '.0'}} % </span>
-                {% endif %}
-                {% endif %}
-                {% if product.tags.size < 1 %} {% for taglist in product.tags %} <span hidden
-                  class="product__tag--list">
-                  {{ taglist }}
-                  </span>
-                  {% endfor %}
-                  {% endif %}
-                  {% for variant in product.variants %}
-                  <div hidden class="product__variant--title"> {{ variant.title }} </div>
-                  <div hidden class="product__variant--weight"> {{ variant.weight | weight_with_unit :
-                    variant.weight_unit }}
-                  </div>
-                  <div hidden class="product__variant--price"> {{ variant.price | money }} </div>
-                  <div hidden class="product__variant--sku"> {{ variant.sku }} </div>
-                  <div hidden class="product__variant--barcode"> {{ variant.barcode }} </div>
-                  {% endfor %}
-                  {% if product.variants.size > 1 %}
-                  <div hidden class="product__variant--list">
-                    {% for variant in product.variants %}
-                    <span hidden class="product__variant--list-name"> {{ variant.title }} </span>
-                    {% endfor %}
-                  </div>
-                  {% endif %}
               </a>
             </div>
           </div>
@@ -110,40 +70,42 @@
     </div>
   </div>
 </section>
+
+
 {% schema %}
 {
-"name": "Spotlight Section",
-"class": "homepage-section",
-"tag": "section",
-"settings": [
-{
-"type": "text",
-"id": "spotlight-title",
-"label": "Section Title",
-"default": "Sundari Spotlight"
-},
-{
-"type": "text",
-"id": "spotlight-description",
-"label": "Section Description",
-"default": "Bringing you our best sellers"
-},
-{
-"type": "collection",
-"id": "spotlight-collection",
-"label": "Collection Name"
-},
-{
-"type": "url",
-"id": "spotlight-url",
-"label": "Link URL"
-},
-{
-"type": "number",
-"id": "spotlight-count",
-"label": "Product Count",
-"default": 3
-}
-]
+  "name": "Spotlight Section",
+  "class": "homepage-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "spotlight-title",
+      "label": "Section Title",
+      "default": "Sundari Spotlight"
+    },
+    {
+      "type": "text",
+      "id": "spotlight-description",
+      "label": "Section Description",
+      "default": "Bringing you our best sellers"
+    },
+    {
+      "type": "collection",
+      "id": "spotlight-collection",
+      "label": "Collection Name"
+    },
+    {
+      "type": "url",
+      "id": "spotlight-url",
+      "label": "Link URL"
+    },
+    {
+      "type": "number",
+      "id": "spotlight-count",
+      "label": "Product Count",
+      "default": 3
+    }
+  ]
 }
 {% endschema %}

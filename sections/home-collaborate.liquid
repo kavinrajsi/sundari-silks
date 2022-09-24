@@ -1,5 +1,4 @@
 <section class="home-page-silver-section">
-  <div class="section-header-wrapper">
     <div class="section-header text-center">
       <div class="section-header-title">
         {{section.settings.collaborate-title}}
@@ -7,7 +6,6 @@
       <div class="section-header-content">
         {{section.settings.collaborate-description}}</div>
     </div>
-  </div>
   <div class="section-content">
     <nav>
       {% for block in section.blocks %}
@@ -26,6 +24,7 @@
 {
 "name": "Collaboration Section",
 "tag": "section",
+"class": "homepage-section",
 "settings": [
 {
 "type": "text",

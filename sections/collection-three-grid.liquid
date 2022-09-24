@@ -168,17 +168,17 @@
                 <img loading="lazy" alt="{{ product.featured_image.alt }}"
                   data-widths="[200,400,600,700,800,900,1000,1200,2048]" data-sizes="auto"
                   data-media-id="{{ product.featured_image.id }}" data-srcset="
-              {{ product.featured_image.src | img_url: 'small' }}     100w,
+              {{ product.featured_image.src | image_url: 'small' }}     100w,
               {{ product.featured_image.src | image_url }}   160w,
               {{ product.featured_image.src | image_url }}    240w,
               {{ product.featured_image.src | image_url }}     480w,
               {{ product.featured_image.src | image_url }}    600w,
-              {{ product.featured_image.src | image_url: width: 1024, height: 1024 }} 1024w" srcset=" {{ product.featured_image.src | img_url: 'small' }} 100w, {{
+              {{ product.featured_image.src | image_url: width: 1024, height: 1024 }} 1024w" srcset=" {{ product.featured_image.src | image_url: 'small' }} 100w, {{
               product.featured_image.src | image_url }} 160w, {{ product.featured_image.src |
               image_url }} 240w, {{ product.featured_image.src | image_url }} 480w, {{
               product.featured_image.src | image_url }} 600w, {{ product.featured_image.src |
-              image_url: width: 1024, height: 1024 }} 1024w" "
-              sizes=" 679px" src="{{ product.featured_image | image_url: width: 300, height: 300 }}">
+              image_url: width: 1024, height: 1024 }} 1024w"
+              sizes=" 679px">
               </div>
               {% for image in product.images offset:1 %}
               <div>

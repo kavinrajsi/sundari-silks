@@ -201,6 +201,119 @@
       </ul>
     </nav>
   </div>
+  <!-- mega menu list -->
+  <ul class="site-nav list--inline {{ nav_alignment }}" id="SiteNav">
+
+    {% for link in linklists[section.settings.main_linklist].links %}
+    {% comment %}
+    Check if third-level nav exists on each parent link.
+    {% endcomment %}
+    {%- assign three_level_nav = false -%}
+    {%- assign child_list_handle = link.title | handleize -%}
+
+    {% if linklists[child_list_handle].links != blank %}
+    {% for childlink in linklists[child_list_handle].links %}
+    {% assign grand_child_list_handle = childlink.title | handleize %}
+    {% if linklists[grand_child_list_handle].links != blank %}
+    {%- assign three_level_nav = true -%}
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+    {% if linklists[child_list_handle].links != blank %}
+    <li
+      class="site-nav--has-dropdown{% if three_level_nav %} site-nav--has-centered-dropdown{% endif %}{% if link.active %} site-nav--active{% endif %}"
+      aria-has-popup="true" aria-controls="SiteNavLabel-{{ child_list_handle }}">
+      <a href="{{ link.url }}" class="site-nav__link site-nav__link--main">
+        {{ link.title }}
+        {% include 'icon-chevron-down' %}
+        <span class="visually-hidden">{{ 'layout.navigation.expand' | t }}</span>
+      </a>
+
+      <div class="site-nav__dropdown" id="SiteNavLabel-{{ child_list_handle }}" aria-expanded="false">
+        <div class="sub-menu-inner-page">
+          <div class="side-bar-menu">
+            <ul class="sidebar-menu-list">
+              {% for childlink in linklists[child_list_handle].links %}
+              {% if childlink.links == blank %}
+              <li class="{% if childlink.active %}site-nav--active{% endif %}"
+                data-id="mega-parent-{{ childlink.handle }}">
+                <a href="{{ childlink.url }}" class="site-nav__link main-bold-title">
+                  {{ childlink.title | escape }}
+                </a>
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          {% assign image_block = false %}
+          {% assign linktitle = link.title | downcase %}
+          {% for block in section.blocks %}
+          {%- assign val = block.settings.mega_link | downcase -%}
+          {% if val == linktitle %}
+          {% if block.settings.menu_enable %}
+          {% assign image_block = true %}
+          {% endif %}
+          {% endif %}
+          {% endfor %}
+          <div class="middle-menu {% if image_block == false %}middle-menu-full{% endif %}">
+            {% for childlink in linklists[child_list_handle].links %}
+            {% if childlink.links != blank %}
+            {% for grandlink in childlink.links %}
+            {% assign valitem = forloop.length %}
+            {% endfor %}
+            <ul class="middle-menu-list {% if valitem >= 15 %}col-2{%endif%}">
+              <p class="" data-id="mega-parent-{{ childlink.handle }}">
+                <span class="site-nav__link main-bold-title">
+                  {{ childlink.title | escape }}
+                </span>
+              </p>
+              {% assign item_count = 1 %}
+              {% for grandlink in childlink.links %}
+              <li class="site-nav__childlist-item">
+                <a href="{{ grandlink.url }}" class="site-nav__child-link">
+                  {{ grandlink.title }}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+            {% endfor %}
+
+          </div>
+          {% if image_block == true %}
+          <div class="image-section mega-list mega-list-logo">
+            {% for block in section.blocks %}
+            {%- assign val = block.settings.mega_link | handleize -%}
+            {% if val == child_list_handle %}
+            {% if block.settings.menu_enable %}
+            {% unless block.settings.link == blank %}<a href="{{ block.settings.link }}">{% endunless %}
+              <div class="img-box">
+                <img src="{{ block.settings.image | img_url: '500x500' }}">
+                <div class="text__section">
+                  {% unless block.settings.title == blank %}<h3>{{ block.settings.title }}</h3>{% endunless %}
+                  {% unless block.settings.subtitle == blank %}<p>{{ block.settings.subtitle }}</p>{% endunless %}
+                </div>
+              </div>
+              {% unless block.settings.link == blank %}
+            </a>{% endunless %}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </li>
+    {% else %}
+    <li {% if link.active %}class="site-nav--active" {% endif %}>
+      <a href="{{ link.url }}" class="site-nav__link site-nav__link--main">{{ link.title }}</a>
+    </li>
+    {% endif %}
+
+    {% endfor %}
+  </ul>
+
 </header>
 {% comment %}
 TODO: Add labels
@@ -215,40 +328,80 @@ TODO: Menu, Sale text color and Image for special occasion
 {% endcomment %}
 {% schema %}
 {
-"name": "t:sections.header.name",
-"class": "section-header",
-"settings": [
-{
-"type": "image_picker",
-"id": "logo",
-"label": "t:sections.header.settings.logo.label"
-},
-{
-"type": "range",
-"id": "logo_width",
-"min": 50,
-"max": 250,
-"step": 10,
-"default": 100,
-"unit": "t:sections.header.settings.logo_width.unit",
-"label": "t:sections.header.settings.logo_width.label"
-},
-{
-"type": "link_list",
-"id": "menu",
-"default": "main-menu",
-"label": "t:sections.header.settings.menu.label"
-},
-{
-"type": "image_picker",
-"id": "image_silk_saree--1",
-"label": "Image #1"
-},
-{
-"type": "image_picker",
-"id": "image_silk_saree--2",
-"label": "Image #2"
-}
-]
+  "name": "t:sections.header.name",
+  "class": "section-header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "t:sections.header.settings.logo.label"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 250,
+      "step": 10,
+      "default": 100,
+      "unit": "t:sections.header.settings.logo_width.unit",
+      "label": "t:sections.header.settings.logo_width.label"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "t:sections.header.settings.menu.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_silk_saree--1",
+      "label": "Image #1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_silk_saree--2",
+      "label": "Image #2"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo_image",
+      "name": "Mega logo",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "menu_enable",
+          "label": "Enable this section",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_link",
+          "label": "Select menu",
+          "default": "1"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Main Link"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Sub title"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

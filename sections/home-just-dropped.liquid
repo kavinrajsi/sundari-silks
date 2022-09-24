@@ -1,23 +1,24 @@
 {% assign my_array = section.settings.collection-list | split: "| " %}
 {% assign collect = 0 %}
-<div class="home-page">
-<div class="justdropped-header">
-  <div>
-    <h2> {{section.settings.just-dropped-title}} </h2>
-    <p> {{section.settings.just-dropped-description}} </p>
-  </div>
-  <div class="tab-buttton">
-    {% for item in my_array %}
-    <div id="titem_{{forloop.index}}" class="tab {% if forloop.first %} active {% endif %} ">
-      {{item}}
+<div class="homepage-justdropped">
+  <div class="section-header-wrapper">
+    <div class="section-header text-left">
+      <div class="section-header-title">{{ section.settings.just-dropped-title }}</div>
+      <div class="section-header-content">{{ section.settings.just-dropped-description }}</div>
     </div>
-    {% endfor %}
+    <div class="tab-buttton">
+      {% for item in my_array %}
+      <div id="titem_{{forloop.index}}" class="tab {% if forloop.first %} active {% endif %} ">
+        {{item}}
+      </div>
+      {% endfor %}
+    </div>
   </div>
-</div>
-<div class="justdropped-content">
+  <div class="homepage-justdropped-content">
+    <!-- TODO: Remove sold ou product from loop -->
     {% for item in my_array %}
     {% assign collect = collections[ item ] %}
-    <article class="page {% if forloop.first %} active {% endif %}" id="pitem_{{forloop.index}}">
+    <div class="justdropped-box {% if forloop.first %} active {% endif %}" id="pitem_{{forloop.index}}">
       <div class="test--product-card--grid-four">
         {% for product in collect.products limit:4 %}
         <div class="product__card">
@@ -45,9 +46,7 @@
           <div class="product__card--content">
             <a href="{{product.url | within: collection }}" class="product-link">
               <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
-              <div hidden class="product__id">{{ product.id }}</div>
-              <div hidden itemprop="brand" class="product__variant--vendor">{{ product.vendor }}</div>
-              <div hidden class="product__type"> {{ product.type }} </div>
+              <!-- TODO: Need to add you save price -->
               <div class="product__variant--price">
                 {% if product.price_varies %}
                 <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency
@@ -63,84 +62,50 @@
                 </p>
                 {% endif %}
               </div>
-              {% if product.variants.size > 1 %}
-              {% for variant in product.variants %}
-              {{variant.title}} :
-              You save {{ variant.price | minus: variant.compare_at_price | times: 100.0 | divided_by: variant.price |
-              money_without_currency | times: 100.0 | remove: '.0' }} %
-              <br>
-              {% endfor %}
-              {% else %}
-              {% if product.compare_at_price_max > product.price %}
-              You save {{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by:
-              product.compare_at_price_max | money_without_currency | times: 100.0 | remove: '.0'}} %
-              {% endif %}
-              {% endif %}
-              {% if product.tags.size < 1 %} {% for taglist in product.tags %} <span hidden class="product__tag--list">
-                {{ taglist }}, </span>
-                {% endfor %}
-                {% endif %}
-                {% for variant in product.variants %}
-                <div hidden class="product__variant--title"> {{ variant.title }} </div>
-                <div hidden class="product__variant--weight"> {{ variant.weight | weight_with_unit : variant.weight_unit
-                  }}
-                </div>
-                <div hidden class="product__variant--price"> {{ variant.price | money }} </div>
-                <div hidden class="product__variant--sku"> {{ variant.sku }} </div>
-                <div hidden class="product__variant--barcode"> {{ variant.barcode }} </div>
-                {% endfor %}
-                {% if product.variants.size > 1 %}
-                <div class="product__variant--list">
-                  {% for variant in product.variants %}
-                  <span class="product__variant--list-name"> {{ variant.title }} </span>
-                  {% endfor %}
-                </div>
-                {% endif %}
             </a>
           </div>
         </div>
         {% endfor %}
       </div>
-    </article>
+    </div>
     {% endfor %}
   </div>
 </div>
 
 
-
 {% schema %}
 {
-"name": "Just Dropped Section",
-"class": "homepage-section homepage-justdropped",
-"tag": "section",
-"settings": [
-{
-"type": "text",
-"id": "just-dropped-title",
-"label": "Section Title",
-"default": "Just Dropped"
-},
-{
-"type": "text",
-"id": "just-dropped-description",
-"label": "Section Description",
-"default": "New arrivals you will love"
-},
-{
-"type": "number",
-"id": "just-dropped-count",
-"label": "Product Count",
-"default": 4
-},
-{
-"type": "text",
-"id": "collection-list",
-"label": "Collection List"
-},
-{
-"type": "paragraph",
-"content": "enter collection name and use | as separator, use only 4 collection"
-}
-]
+  "name": "Just Dropped Section",
+  "class": "homepage-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "just-dropped-title",
+      "label": "Section Title",
+      "default": "Just Dropped"
+    },
+    {
+      "type": "text",
+      "id": "just-dropped-description",
+      "label": "Section Description",
+      "default": "New arrivals you will love"
+    },
+    {
+      "type": "number",
+      "id": "just-dropped-count",
+      "label": "Product Count",
+      "default": 4
+    },
+    {
+      "type": "text",
+      "id": "collection-list",
+      "label": "Collection List"
+    },
+    {
+      "type": "paragraph",
+      "content": "enter collection name and use | as separator, use only 4 collection"
+    }
+  ]
 }
 {% endschema %}

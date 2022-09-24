@@ -1,74 +1,69 @@
-<div class="section-header-wrapper justify-content-center">
-  <div class="section-header">
+<div class="homepage-blogfeed">
+  <div class="section-header text-center">
     <div class="section-header-title">Blogs by Sundari Silks</div>
     <div class="section-header-content">Stories of Fabrics, Styling Tips, Decor Inspiration and more…</div>
   </div>
-</div>
-<div class="section-content">
-  <div class="blog-feed-container">
-    {% if section.settings.blog != blank and section.settings.blog.articles_count > 0 %}
+  <div class="section-content">
+    <div class="blog-feed-container">
+      {% if section.settings.blog != blank and section.settings.blog.articles_count > 0 %}
 
-    {% for article in section.settings.blog.articles limit: 6 %}
-    <div class="blog-feed-card">
-      <div class="article-card-wrapper card-wrapper underline-links-hover">
-        <a href=" {{ article.url }}" class="article-card__image-wrapper card__media">
-          {% if article.image %}
-          {{ article.image | image_url: width: 720 | image_tag: alt:article.image.alt }}
-          {% else %}
-          {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg' }}
-          {% endif %}
-          <h3 class="blog-feed-card-title"> {{ article.title | truncate: 50 | escape }} </h3>
-          <!-- {{ article.author }} -->
-          <!-- <span class="circle-divider">{{ article.published_at | time_tag: format: 'date' }}</span> -->
-          <p class="blog-feed-card-content">
-            {% if article.excerpt.size > 0 %}
-            {{ article.excerpt | strip_html | truncatewords: 120 }}
+      {% for article in section.settings.blog.articles limit: 6 %}
+      <div class="blog-feed-card">
+        <div class="article-card-wrapper card-wrapper underline-links-hover">
+          <a href=" {{ article.url }}" class="article-card__image-wrapper card__media">
+            {% if article.image %}
+            <img src="{{article.image.src | image_url: width:400, height: 400, crop: 'top' }}" alt="{{article.image.alt}}">
+            <!-- {{ article.image | image_url: width: 1800, height: 1000 | image_tag: alt:article.image.alt }} -->
             {% else %}
-            {{ article.content | strip_html | truncatewords: 120 }}
+            {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg' }}
             {% endif %}
-          </p>
-        </a>
+            <h3 class="blog-feed-card-title"> {{ article.title | truncate: 36 | escape }} </h3>
+            <p class="blog-feed-card-content">
+              {% if article.excerpt.size > 0 %}
+              {{ article.excerpt | strip_html | truncate: 148 }}
+              {% else %}
+              {{ article.content | strip_html | truncate: 148 }}
+              {% endif %}
+            </p>
+          </a>
+        </div>
       </div>
-    </div>
-    {% endfor %}
-    {% endif %}
+      {% endfor %}
+      {% endif %}
 
+    </div>
   </div>
 </div>
 
 {% schema %}
 {
-"name": "Blog posts",
-"class": "homepage-section homepage-blogfeed",
-"tag": "section",
-"settings": [
-{
-"type": "text",
-"id": "heading",
-"default": "Blogs by Sundari Silks",
-"label": "Blog Title"
-}, {
-"type": "text",
-"id": "richtext",
-"default": "Stories of Fabrics, Styling Tips, Decor Inspiration and more…",
-"label": "Blog Description"
-},
-{
-"type": "blog",
-"id": "blog",
-"label": "Blog"
-}, {
-"type": "checkbox",
-"id": "blog_show_author",
-"label": "Show author",
-"default": true
-},
-{
-"type": "checkbox",
-"id": "blog_show_date",
-"label": "Show date",
-"default": true
-}
-]
+  "name": "Blog posts",
+  "class": "homepage-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Blogs by Sundari Silks",
+      "label": "Blog Title"
+    },
+    {
+      "type": "text",
+      "id": "richtext",
+      "default": "Stories of Fabrics, Styling Tips, Decor Inspiration and more…",
+      "label": "Blog Description"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_author",
+      "label": "Show author",
+      "default": true
+    }
+  ]
 }
 {% endschema %}
