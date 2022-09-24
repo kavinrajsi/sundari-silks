@@ -19,52 +19,68 @@
     "mlvedaACS_positionTop": "10px",
     "mlvedaACS_supportedCurrencies": "INR USD GBP EUR CAD AUD SGD",
     "mlvedaACS_isCustomized": true,
-    "sections": {
-      "announcement-bar": {
-        "settings": {
-        },
-        "blocks": {
-          "e5b9b3cb-42bb-43bc-adac-0cad652993ae": {
-            "settings": {
-              "link": "",
-              "text": "Announce something here lorm",
-              "announcement-background-color": "#000000",
-              "announcement-text-color": "#ffffff"
-            },
-            "disabled": true,
-            "type": "announcement"
-          }
-        },
-        "type": "announcement-bar",
-        "block_order": [
-          "e5b9b3cb-42bb-43bc-adac-0cad652993ae"
-        ]
-      },
-      "footer": {
-        "settings": {
-        },
-        "type": "footer"
-      },
-      "header": {
-        "settings": {
-          "image_silk_saree--1": "shopify:\/\/shop_images\/kanchipuram-saree-styling-ideas-4.png",
-          "image_silk_saree--2": "shopify:\/\/shop_images\/kanchipuram-saree-styling-ideas-2.png",
-          "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
-          "menu": "main-menu",
-          "logo_width": 120
-        },
-        "type": "header"
-      }
-    },
     "mlvedaACS_hideDecimal": false,
     "mlvedaACS_hoverBackgroundColor": "inherit",
     "mlvedaACS_positionRight": "10px",
-    "content_for_index": [
-
-    ],
     "mlvedaACS_currencyFormat": "money_with_currency_format",
     "mlvedaACS_borderLineColor": "inherit",
     "mlvedaACS_displayFlag": false,
-    "mlvedaACS_borderLook": false
+    "mlvedaACS_borderLook": false,
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "e5b9b3cb-42bb-43bc-adac-0cad652993ae": {
+            "type": "announcement",
+            "disabled": true,
+            "settings": {
+              "text": "Announce something here lorm",
+              "link": "",
+              "announcement-background-color": "#000000",
+              "announcement-text-color": "#ffffff"
+            }
+          }
+        },
+        "block_order": [
+          "e5b9b3cb-42bb-43bc-adac-0cad652993ae"
+        ],
+        "settings": {
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+        }
+      },
+      "header": {
+        "type": "header",
+        "blocks": {
+          "9ec61fc7-ed2a-4490-8411-bf33c7d3eb56": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/a-model-perched-on-a-stool-smiles.jpg",
+              "mega_link": "1",
+              "link": "shopify:\/\/collections\/adidas",
+              "title": "Adidas",
+              "subtitle": "Shoe"
+            }
+          }
+        },
+        "block_order": [
+          "9ec61fc7-ed2a-4490-8411-bf33c7d3eb56"
+        ],
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
+          "logo_width": 120,
+          "menu": "main-menu",
+          "image_silk_saree--1": "shopify:\/\/shop_images\/kanchipuram-saree-styling-ideas-4.png",
+          "image_silk_saree--2": "shopify:\/\/shop_images\/kanchipuram-saree-styling-ideas-2.png"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
   }
 }
