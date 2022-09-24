@@ -65,10 +65,21 @@
               "title": "Adidas",
               "subtitle": "Shoe"
             }
+          },
+          "c37446b7-4fce-4474-9e26-e3348834815e": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": false,
+              "mega_link": "1",
+              "link": "",
+              "title": "",
+              "subtitle": ""
+            }
           }
         },
         "block_order": [
-          "9ec61fc7-ed2a-4490-8411-bf33c7d3eb56"
+          "9ec61fc7-ed2a-4490-8411-bf33c7d3eb56",
+          "c37446b7-4fce-4474-9e26-e3348834815e"
         ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
