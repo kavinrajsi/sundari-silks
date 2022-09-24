@@ -769,13 +769,16 @@ iframe#dummy-chat-button-iframe {
   z-index: 100;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
-  padding: 20px 10px;
-  display: grid;
-  display: none;
-  grid-gap: 24px;
-  grid-template-columns: repeat(6, 200px);
+  grid-template-columns: repeat(6, 1fr);
   width: 100%;
   justify-content: center;
+  grid-gap: 24px;
+  visibility: hidden;
+  padding: 20px 10px;
+  display: grid;
+}
+.header-nav-list-main .menu-level-2.active {
+  visibility: visible;
 }
 .header-nav-list-main .menu-level-2 .menu-level-2-item a {
   text-transform: uppercase;
