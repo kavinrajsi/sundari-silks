@@ -69,11 +69,12 @@
           "c37446b7-4fce-4474-9e26-e3348834815e": {
             "type": "logo_image",
             "settings": {
-              "menu_enable": false,
-              "mega_link": "1",
-              "link": "",
-              "title": "",
-              "subtitle": ""
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/a-person-looks-over-their-shoulder-facing-camera.jpg",
+              "mega_link": "2",
+              "link": "shopify:\/\/collections\/all-kanchipuram",
+              "title": "All Kanchipuram",
+              "subtitle": "Explore"
             }
           }
         },
