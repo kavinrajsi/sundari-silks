@@ -11,6 +11,7 @@
      */
     $(".header-search, .input__close-icon").click(function () {
       $(".header-search-area-wrapper").toggle().toggleClass("active");
+      $("body").toggleClass("header-seachActive");
     });
   });
 

@@ -13,7 +13,7 @@
           <a href="{{ product.url }}" class="predictive-search__item" tabindex="-1">
             {%- if product.featured_media != blank -%}
               <img class="predictive-search__image"
-                src="{{ product.featured_media | img_url: '120x' }}"
+                src="{{ product.featured_media.src | image_url: width: 180, height: 180 }}"
                 alt="{{ product.featured_media.alt }}"
                 width="120"
                 height="{{ 120 | divided_by: product.featured_media.preview_image.aspect_ratio }}"
@@ -34,7 +34,7 @@
       {%- endfor -%}
       <li class="predictive-search__list-item" role="option">
         <button class="predictive-search__item" tabindex="-1">
-          Search for “{{ predictive_search.terms }}”
+          View all “{{ predictive_search.terms }}”
         </button>
       </li>
     </ul>

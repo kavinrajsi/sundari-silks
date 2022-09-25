@@ -8,7 +8,6 @@
     gap: 24px;
     grid-template-columns: repeat(3, calc(100% / 12 * 4 - 18px));
   }
-
 }
 .test--product-card--grid-four {
   margin: 2px 4vw 0;
@@ -23,7 +22,6 @@
   @media (min-width: 1024px) {
     grid-template-columns: repeat(4, calc(100% / 12 * 3 - 18px));
   }
-
 }
 
 .product {
@@ -46,20 +44,31 @@
         opacity: 0.8;
         width: 100%;
         z-index: 98;
-        display: block;
+        display: none;
+        @media (min-width: 768px) {
+          display: none;
+        }
         .quick-view {
           cursor: pointer;
-          padding: 16px;
+          padding: 8px;
           display: block;
           color: var(--pure-white);
           text-align: center;
+          @media (min-width: 992px) {
+            padding: 8px;
+          }
+          @media (min-width: 1140px) {
+            padding: 16px;
+          }
         }
       }
     }
 
     &:hover {
-      div {
-        display: block;
+      @media (min-width: 768px) {
+        .product__card-cta {
+          display: block;
+        }
       }
     }
   }

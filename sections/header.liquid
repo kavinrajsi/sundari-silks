@@ -25,9 +25,11 @@
       {% endif %}
       <div class="header-action-lists">
         <div class="header-menu">
-          <svg width="24" height="24">
-            <use href="#menu" />
-          </svg>
+          <div class="cd-nav-trigger">
+            <svg width="24" height="24">
+              <use href="#menu" />
+            </svg>
+          </div>
         </div>
         <!-- <div class="header-chat">
         <a href="{{ canonical_url }}?chat" class="header__icon" id="cart-icon-bubble">
@@ -78,7 +80,7 @@
   </div>
   <!-- mobile navigation -->
   <nav class="header-nav-list-footer">
-    <div class="header-search">
+    <div class="header-menu">
       <svg width="24" height="24">
         <use href="#menu" />
       </svg>
@@ -127,32 +129,34 @@
   </nav>
   <!-- search area -->
   <div class="header-search-area-wrapper" style="display: none;">
+    <div class="header-search-area-containerWrapper">
     <div class="header-search-area-container">
       <predictive-search>
         <form action="{{ routes.search_url }}" method="get" role="search">
           <div class="predictive-search ">
-          <i class="input__search-icon">
-            <svg width="24" height="24">
-              <use href="#search" />
-            </svg>
-          </i>
-          <label hidden for="Search">Search</label>
-          <input class="input-full" id="Search" type="search" name="q" placeholder="Search products ..." value="{{ search.terms | escape }}" {%- if
-            settings.predictive_search_enabled -%} role="combobox" aria-expanded="false"
-            aria-owns="predictive-search-results-list" aria-controls="predictive-search-results-list"
-            aria-haspopup="listbox" aria-autocomplete="list" autocorrect="off" autocomplete="off" autocapitalize="off"
-            spellcheck="false" {%- endif -%}>
+            <i class="input__search-icon">
+              <svg width="24" height="24">
+                <use href="#search" />
+              </svg>
+            </i>
+            <label hidden for="Search">Search</label>
+            <input class="input-full" id="Search" type="search" name="q" placeholder="Search products ..."
+              value="{{ search.terms | escape }}" {%- if settings.predictive_search_enabled -%} role="combobox"
+              aria-expanded="false" aria-owns="predictive-search-results-list"
+              aria-controls="predictive-search-results-list" aria-haspopup="listbox" aria-autocomplete="list"
+              autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false" {%- endif -%}>
             <i class="input__close-icon">
               <svg width="24" height="24">
                 <use href="#close" />
               </svg>
             </i>
-          <input name="options[prefix]" type="hidden" value="last">
-        </div>
+            <input name="options[prefix]" type="hidden" value="last">
+          </div>
           <div id="predictive-search" tabindex="-1"></div>
         </form>
       </predictive-search>
     </div>
+  </div>
   </div>
   <!-- navigation list -->
   <div class="header-container">
@@ -208,7 +212,39 @@
       </ul>
     </nav>
   </div>
+  <!-- mobile navigation-list -->
+  <div class="cd-overlay"></div>
+  <div class="header-mobile-navigation-list">
+    <nav class="cd-nav">
+      <ul id="cd-primary-nav" class="cd-primary-nav is-fixed nav-is-visible menu">
+        {% for link in section.settings.menu.links %}
+        <li class="{% if link.links.size > 0 %} has-children {% else %} menu-link {% endif %}">
+          <a href="{{ link.url }}">{{ link.title }}</a>
+          {% if link.links.size > 0 %}
+          <ul class="is-hidden cd-secondary-nav menu dropdown-child">
+            {% for child_link in link.links %}
+            <li class="menu-link">
+              <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+              {% if child_link.links.size > 0 %}
+              <ul class="menu dropdown-grandchild">
+                {% for grandchild_link in child_link.links %}
+                <li class="menu-link">
+                  <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
 </header>
+
 {% comment %}
 TODO: Add labels
 hot
@@ -222,80 +258,80 @@ TODO: Menu, Sale text color and Image for special occasion
 {% endcomment %}
 {% schema %}
 {
-"name": "t:sections.header.name",
-"class": "section-header",
-"settings": [
-{
-"type": "image_picker",
-"id": "logo",
-"label": "t:sections.header.settings.logo.label"
-},
-{
-"type": "range",
-"id": "logo_width",
-"min": 50,
-"max": 250,
-"step": 10,
-"default": 100,
-"unit": "t:sections.header.settings.logo_width.unit",
-"label": "t:sections.header.settings.logo_width.label"
-},
-{
-"type": "link_list",
-"id": "menu",
-"default": "main-menu",
-"label": "t:sections.header.settings.menu.label"
-},
-{
-"type": "image_picker",
-"id": "image_silk_saree--1",
-"label": "Image #1"
-},
-{
-"type": "image_picker",
-"id": "image_silk_saree--2",
-"label": "Image #2"
-}
-],
-"blocks": [
-{
-"type": "logo_image",
-"name": "Mega logo",
-"settings": [
-{
-"type": "checkbox",
-"id": "menu_enable",
-"label": "Enable this section",
-"default": true
-},
-{
-"type": "image_picker",
-"id": "image",
-"label": "Image"
-},
-{
-"type": "text",
-"id": "mega_link",
-"label": "Select menu",
-"default": "1"
-},
-{
-"type": "url",
-"id": "link",
-"label": "Main Link"
-},
-{
-"type": "text",
-"id": "title",
-"label": "Title"
-},
-{
-"type": "text",
-"id": "subtitle",
-"label": "Sub title"
-}
-]
-}
-]
+  "name": "t:sections.header.name",
+  "class": "section-header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "t:sections.header.settings.logo.label"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 250,
+      "step": 10,
+      "default": 100,
+      "unit": "t:sections.header.settings.logo_width.unit",
+      "label": "t:sections.header.settings.logo_width.label"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "t:sections.header.settings.menu.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_silk_saree--1",
+      "label": "Image #1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_silk_saree--2",
+      "label": "Image #2"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo_image",
+      "name": "Mega logo",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "menu_enable",
+          "label": "Enable this section",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_link",
+          "label": "Select menu",
+          "default": "1"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Main Link"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Sub title"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
