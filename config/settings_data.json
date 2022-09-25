@@ -210,6 +210,17 @@
               "title": "Girls",
               "subtitle": ""
             }
+          },
+          "a825885a-b299-42ea-a5c5-84ba6100ea8c": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/laughing-kid-boy.jpg",
+              "mega_link": "Boys",
+              "link": "shopify:\/\/collections\/readymades",
+              "title": "Boys",
+              "subtitle": ""
+            }
           }
         },
         "block_order": [
@@ -226,7 +237,8 @@
           "bc806da1-0a86-4b42-8116-d24a243e9b21",
           "3401dc99-bfe7-473f-8619-ab753f5e667a",
           "218b71c4-c7cb-4558-a8a9-d843f6d9f329",
-          "0dc284ce-400a-4c70-b4be-980ee12441ac"
+          "0dc284ce-400a-4c70-b4be-980ee12441ac",
+          "a825885a-b299-42ea-a5c5-84ba6100ea8c"
         ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
