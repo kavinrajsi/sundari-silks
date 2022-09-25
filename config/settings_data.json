@@ -62,9 +62,9 @@
             "settings": {
               "menu_enable": true,
               "image": "shopify:\/\/shop_images\/CuratedCollectionImag-3.png",
-              "mega_link": "1",
-              "link": "shopify:\/\/collections\/adidas",
-              "title": "Adidas",
+              "mega_link": "Saree",
+              "link": "shopify:\/\/collections\/saree",
+              "title": "Venkatagiri Cotton",
               "subtitle": "Explore"
             }
           },
