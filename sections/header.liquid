@@ -128,23 +128,30 @@
   <!-- search area -->
   <div class="header-search-area-wrapper" style="display: none;">
     <div class="header-search-area-container">
-
-      <predictive-search  >
+      <predictive-search>
         <form action="{{ routes.search_url }}" method="get" role="search">
-          <label for="Search">Search</label>
-          <input id="Search" type="search" name="q" value="{{ search.terms | escape }}" {%- if
+          <div class="predictive-search ">
+          <i class="input__search-icon">
+            <svg width="24" height="24">
+              <use href="#search" />
+            </svg>
+          </i>
+          <label hidden for="Search">Search</label>
+          <input class="input-full" id="Search" type="search" name="q" placeholder="Search products ..." value="{{ search.terms | escape }}" {%- if
             settings.predictive_search_enabled -%} role="combobox" aria-expanded="false"
             aria-owns="predictive-search-results-list" aria-controls="predictive-search-results-list"
             aria-haspopup="listbox" aria-autocomplete="list" autocorrect="off" autocomplete="off" autocapitalize="off"
             spellcheck="false" {%- endif -%}>
+            <i class="input__close-icon">
+              <svg width="24" height="24">
+                <use href="#close" />
+              </svg>
+            </i>
           <input name="options[prefix]" type="hidden" value="last">
-
+        </div>
           <div id="predictive-search" tabindex="-1"></div>
         </form>
       </predictive-search>
-
-
-
     </div>
   </div>
   <!-- navigation list -->

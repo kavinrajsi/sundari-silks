@@ -41,11 +41,6 @@
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
   {{ 'base.css' | asset_url | stylesheet_tag }}
 
-  <script src="//code.jquery.com/jquery-3.4.1.js"></script>
-  <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'owl.carousel.min.js' | asset_url }}"></script>
-  <script src="{{ 'quickview.js' | asset_url }}"></script>
-
   <script>
     window.mlvedaShopCurrency = "{{ shop.currency }}";
     window.shopCurrency = "{{ shop.currency }}";
@@ -195,8 +190,33 @@
 
   {% section 'footer' %}
 
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script src="{{ 'global.js' | asset_url }}"></script>
+  <div class="cd-quick-view">
+    <div class="cd-slider-wrapper">
+      <ul class="cd-slider">
+      </ul>
+      <ul class="cd-slider-navigation">
+        <li><a class="cd-next" href="#0">Prev</a></li>
+        <li><a class="cd-prev" href="#0">Next</a></li>
+      </ul>
+    </div>
+    <div class="cd-item-info">
+      <h2></h2>
+      <p></p>
+      <ul class="cd-item-action">
+        <li><button class="add-to-cart">Add to cart</button></li>
+        <li><a href="#0">Learn more</a></li>
+      </ul>
+    </div>
+    <a href="#0" class="cd-close">Close</a>
+  </div>
+
+  <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="{{ 'predictive-search.js' | asset_url }}"  ></script>
+  <script src="{{ 'owl.carousel.min.js' | asset_url }}"  ></script>
+  <script src="{{ 'velocity.min.js' | asset_url }}"  ></script>
+  <script src="{{ 'quick-view-main.js' | asset_url }}"  ></script>
+  <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"  ></script>
+  <script src="{{ 'global.js' | asset_url }}"  ></script>
 </body>
 
 </html>
