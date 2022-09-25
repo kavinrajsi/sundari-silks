@@ -18,9 +18,6 @@
   /**
    * Menu
    */
-
-
-
 $(".menu-level-1-item").on('mouseenter', function () {
   console.log('enter');
   $(this).children('.menu-level-2').addClass("active");

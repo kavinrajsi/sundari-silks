@@ -1,8 +1,5 @@
-
-
-<!-- <footer>
-  <div class="footer-main"
-    style="display: grid; gap: 24px; grid-template-columns: repeat(4, 1fr); max-width: var(--content-width); margin-left: auto; margin-right: auto; justify-content: space-around;">
+<footer>
+  <div class="footer-main">
     <div class="footer-logo">
       <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset" itemprop="url">
         {% if section.settings.logo != blank %}
@@ -19,6 +16,7 @@
       </a>
     </div>
     <div class="footer-link">
+      <h4>Shop</h4>
       <ul class="menu">
         {% for link in linklists.shop.links %}
         <li class="menu-link">
@@ -46,6 +44,7 @@
       </ul>
     </div>
     <div class="footer-link-company">
+      <h4>Company</h4>
       <ul class="menu">
         {% for link in linklists.company.links %}
         <li class="menu-link">
@@ -62,7 +61,7 @@
                   <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
                 </li>
                 {% endfor %}
-              </ul
+              </ul>
               {% endif %}
             </li>
             {% endfor %}
@@ -73,6 +72,44 @@
       </ul>
     </div>
     <div class="footer-help">
+      <h4>Customer Care</h4>
+      <ul>
+        <li>
+          <i>
+            <svg width="24" height="24">
+              <use href="#phone" />
+            </svg>
+            <a href="tel:+919962712299">+91 99627 12299</a>
+          </i>
+        </li>
+        <li>
+          <i>
+            <svg width="24" height="24">
+              <use href="#calendar" />
+            </svg>
+            <span>
+            Monday - Satuday<br>
+            9:00 am to 6:00 pm (IST)
+            </span>
+          </i>
+        </li>
+        <li>
+          <i>
+          <a href="mailto:different@sundarisilks.com">
+
+            <svg width="24" height="24">
+              <use href="#mail" />
+            </svg>
+            <span>
+            different@sundarisilks.com
+          </span>
+        </a>
+          </i>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-help">
+      <h4>Help</h4>
       <ul class="menu">
         {% for link in linklists.help.links %}
         <li class="menu-link">
@@ -103,4 +140,29 @@
   <div class="footer-copyright">
     <p>&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: '/' }}. Built with ❤️ in India</p>
   </div>
-</footer> -->
+</footer>
+
+
+{% schema %}
+{
+"name": "t:sections.header.name",
+"class": "section-header",
+"settings": [
+{
+"type": "image_picker",
+"id": "logo",
+"label": "t:sections.header.settings.logo.label"
+},
+{
+"type": "range",
+"id": "logo_width",
+"min": 50,
+"max": 250,
+"step": 10,
+"default": 100,
+"unit": "t:sections.header.settings.logo_width.unit",
+"label": "t:sections.header.settings.logo_width.label"
+}
+]
+}
+{% endschema %}
