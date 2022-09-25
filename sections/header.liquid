@@ -163,9 +163,12 @@
     <nav class="header-nav-list-main" role="navigation">
       <ul class="menu-level-1">
         {% for link in linklists.main-menu.links %}
-        <li class="menu-level-1-item">
+        <li class="menu-level-1-item {% if link.links.size > 0 %} menu-level-1-item-child {% endif %}">
           <a href="{{ link.url }}" {% if link.active %}aria-current="page" {% endif %}>
             {{ link.title }}
+            {% if link.links.size > 0 %}
+              {% render 'icon-chevron-down' %}
+            {% endif %}
           </a>
           {% if link.links != blank %}
           <ul class="menu-level-2">
