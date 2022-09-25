@@ -218,7 +218,18 @@
               "image": "shopify:\/\/shop_images\/laughing-kid-boy.jpg",
               "mega_link": "Boys",
               "link": "shopify:\/\/collections\/readymades",
-              "title": "Boys",
+              "title": "",
+              "subtitle": ""
+            }
+          },
+          "15e15742-5345-4198-ba4b-2a98c13bfc08": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/baby-girl-feet.jpg",
+              "mega_link": "Infant Wear",
+              "link": "shopify:\/\/products\/3-layer-non-surgical-masks-in-cotton-prints-and-plain-set-of-4",
+              "title": "",
               "subtitle": ""
             }
           }
@@ -238,7 +249,8 @@
           "3401dc99-bfe7-473f-8619-ab753f5e667a",
           "218b71c4-c7cb-4558-a8a9-d843f6d9f329",
           "0dc284ce-400a-4c70-b4be-980ee12441ac",
-          "a825885a-b299-42ea-a5c5-84ba6100ea8c"
+          "a825885a-b299-42ea-a5c5-84ba6100ea8c",
+          "15e15742-5345-4198-ba4b-2a98c13bfc08"
         ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
