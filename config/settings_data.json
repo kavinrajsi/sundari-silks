@@ -133,6 +133,17 @@
               "title": "Anklets \/ Toe Rings",
               "subtitle": ""
             }
+          },
+          "6757033e-547a-49db-b111-6aec43c0ef51": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/persons-hands-hold-the-collar-of-their-sweater.jpg",
+              "mega_link": "Kids Jewellery",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Kids Jewellery",
+              "subtitle": ""
+            }
           }
         },
         "block_order": [
@@ -142,7 +153,8 @@
           "7a42f5b4-6dd8-44e4-aaf9-a4cca16d3985",
           "983fbcfb-efd2-4b72-8014-670919f1d5b1",
           "45a49917-2d4a-4818-a6c7-05e15d8d7934",
-          "012b8059-1c4e-413f-9c85-824914bb2502"
+          "012b8059-1c4e-413f-9c85-824914bb2502",
+          "6757033e-547a-49db-b111-6aec43c0ef51"
         ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
