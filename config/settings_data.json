@@ -100,13 +100,37 @@
               "title": "Earrings",
               "subtitle": ""
             }
+          },
+          "983fbcfb-efd2-4b72-8014-670919f1d5b1": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/blue-and-green-background-with-silver-jewelry.jpg",
+              "mega_link": "1",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Bangles \/ Bracelets",
+              "subtitle": ""
+            }
+          },
+          "45a49917-2d4a-4818-a6c7-05e15d8d7934": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/origami-crane-necklace.jpg",
+              "mega_link": "Rings",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Rings",
+              "subtitle": ""
+            }
           }
         },
         "block_order": [
           "9ec61fc7-ed2a-4490-8411-bf33c7d3eb56",
           "c37446b7-4fce-4474-9e26-e3348834815e",
           "ff5db7c6-de70-4624-b1a1-620865565274",
-          "7a42f5b4-6dd8-44e4-aaf9-a4cca16d3985"
+          "7a42f5b4-6dd8-44e4-aaf9-a4cca16d3985",
+          "983fbcfb-efd2-4b72-8014-670919f1d5b1",
+          "45a49917-2d4a-4818-a6c7-05e15d8d7934"
         ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
