@@ -1,3 +1,5 @@
+grid 3
+
 <div class="collection-page-header">
   <div class="collection-page-header-image text-center image-radius">
     {% if collection.description != blank %}
@@ -148,7 +150,7 @@
   </div>
   <section>
     {% paginate collection.products by 24 %}
-    <div class="test--product-card--grid-four">
+    <div class="test--product-card--grid-three">
       {% for product in collection.products %}
       <div class="product__card">
         <div class="product__card--img">
@@ -160,16 +162,10 @@
                 <img loading="auto" alt="{{ product.featured_image.alt }}" width="328" height="463"
                   src=" {{ product.featured_image.src | image_url: width:672, height:928 }} ">
               </div>
-              {% for image in product.images offset:1 %}
-              <div>
-                <img loading="lazy" alt="{{ image.alt }}" width="328" height="463"
-                  src=" {{ image.src | image_url: width:672, height:928 }} ">
-              </div>
-              {% endfor %}
-            </div>
-            {% else %}
+              {% else %}
             {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
             {% endif %}
+            </div>
             <div class="product__status">
               {% unless product.available %}
               <!-- TODO: Sold out chip color -->

@@ -1,3 +1,4 @@
+grid 4
 <div class="collection-page-header">
   <div class="collection-page-header-image text-center image-radius">
     {% if collection.description != blank %}
@@ -173,10 +174,11 @@
                   src=" {{ image.src | image_url: width:672, height:928 }} ">
               </div>
               {% endfor %}
+
+              {% else %}
+              {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
+              {% endif %}
             </div>
-            {% else %}
-            {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
-            {% endif %}
             <div class="product__status">
               {% unless product.available %}
               <!-- TODO: Sold out chip color -->
