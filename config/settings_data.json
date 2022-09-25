@@ -155,6 +155,17 @@
               "title": "Pendants",
               "subtitle": ""
             }
+          },
+          "bea63853-ebd2-4352-a35d-d3cb27e4be22": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/kanchipuram-saree-styling-ideas-1.png",
+              "mega_link": "Men's Bracelets",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Men's Bracelets",
+              "subtitle": ""
+            }
           }
         },
         "block_order": [
@@ -166,7 +177,8 @@
           "45a49917-2d4a-4818-a6c7-05e15d8d7934",
           "012b8059-1c4e-413f-9c85-824914bb2502",
           "6757033e-547a-49db-b111-6aec43c0ef51",
-          "a737801a-d041-4ea1-a346-7ffdfb9cee58"
+          "a737801a-d041-4ea1-a346-7ffdfb9cee58",
+          "bea63853-ebd2-4352-a35d-d3cb27e4be22"
         ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
