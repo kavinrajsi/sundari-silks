@@ -174,7 +174,7 @@
               "image": "shopify:\/\/shop_images\/model-leaning-against-a-wall-of-lights-atop-red-shag-carpet.jpg",
               "mega_link": "Women",
               "link": "shopify:\/\/collections\/women",
-              "title": "Women",
+              "title": "",
               "subtitle": ""
             }
           },
@@ -186,6 +186,17 @@
               "mega_link": "Men",
               "link": "shopify:\/\/collections\/men",
               "title": "",
+              "subtitle": ""
+            }
+          },
+          "218b71c4-c7cb-4558-a8a9-d843f6d9f329": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/colorful-fabric.jpg",
+              "mega_link": "Fabrics",
+              "link": "shopify:\/\/collections\/all-kanchipuram",
+              "title": "Fabrics",
               "subtitle": ""
             }
           }
@@ -202,7 +213,8 @@
           "a737801a-d041-4ea1-a346-7ffdfb9cee58",
           "bea63853-ebd2-4352-a35d-d3cb27e4be22",
           "bc806da1-0a86-4b42-8116-d24a243e9b21",
-          "3401dc99-bfe7-473f-8619-ab753f5e667a"
+          "3401dc99-bfe7-473f-8619-ab753f5e667a",
+          "218b71c4-c7cb-4558-a8a9-d843f6d9f329"
         ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
