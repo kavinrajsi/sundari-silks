@@ -128,20 +128,23 @@
   <!-- search area -->
   <div class="header-search-area-wrapper" style="display: none;">
     <div class="header-search-area-container">
-      <form class="header-search-area" action="{{ routes.search_url }}">
-        <i class="input__search-icon">
-          <svg width="24" height="24">
-            <use href="#search" />
-          </svg>
-        </i>
-        <input type="search" class="input-full" placeholder="Search for product" name="q"
-          value="{{ search.terms | escape }}" />
-        <i class="input__close-icon">
-          <svg width="24" height="24">
-            <use href="#close" />
-          </svg>
-        </i>
-      </form>
+
+      <predictive-search  >
+        <form action="{{ routes.search_url }}" method="get" role="search">
+          <label for="Search">Search</label>
+          <input id="Search" type="search" name="q" value="{{ search.terms | escape }}" {%- if
+            settings.predictive_search_enabled -%} role="combobox" aria-expanded="false"
+            aria-owns="predictive-search-results-list" aria-controls="predictive-search-results-list"
+            aria-haspopup="listbox" aria-autocomplete="list" autocorrect="off" autocomplete="off" autocapitalize="off"
+            spellcheck="false" {%- endif -%}>
+          <input name="options[prefix]" type="hidden" value="last">
+
+          <div id="predictive-search" tabindex="-1"></div>
+        </form>
+      </predictive-search>
+
+
+
     </div>
   </div>
   <!-- navigation list -->
@@ -212,80 +215,80 @@ TODO: Menu, Sale text color and Image for special occasion
 {% endcomment %}
 {% schema %}
 {
-  "name": "t:sections.header.name",
-  "class": "section-header",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "t:sections.header.settings.logo.label"
-    },
-    {
-      "type": "range",
-      "id": "logo_width",
-      "min": 50,
-      "max": 250,
-      "step": 10,
-      "default": 100,
-      "unit": "t:sections.header.settings.logo_width.unit",
-      "label": "t:sections.header.settings.logo_width.label"
-    },
-    {
-      "type": "link_list",
-      "id": "menu",
-      "default": "main-menu",
-      "label": "t:sections.header.settings.menu.label"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_silk_saree--1",
-      "label": "Image #1"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_silk_saree--2",
-      "label": "Image #2"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "logo_image",
-      "name": "Mega logo",
-      "settings": [
-        {
-          "type": "checkbox",
-          "id": "menu_enable",
-          "label": "Enable this section",
-          "default": true
-        },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "text",
-          "id": "mega_link",
-          "label": "Select menu",
-          "default": "1"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Main Link"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title"
-        },
-        {
-          "type": "text",
-          "id": "subtitle",
-          "label": "Sub title"
-        }
-      ]
-    }
-  ]
+"name": "t:sections.header.name",
+"class": "section-header",
+"settings": [
+{
+"type": "image_picker",
+"id": "logo",
+"label": "t:sections.header.settings.logo.label"
+},
+{
+"type": "range",
+"id": "logo_width",
+"min": 50,
+"max": 250,
+"step": 10,
+"default": 100,
+"unit": "t:sections.header.settings.logo_width.unit",
+"label": "t:sections.header.settings.logo_width.label"
+},
+{
+"type": "link_list",
+"id": "menu",
+"default": "main-menu",
+"label": "t:sections.header.settings.menu.label"
+},
+{
+"type": "image_picker",
+"id": "image_silk_saree--1",
+"label": "Image #1"
+},
+{
+"type": "image_picker",
+"id": "image_silk_saree--2",
+"label": "Image #2"
+}
+],
+"blocks": [
+{
+"type": "logo_image",
+"name": "Mega logo",
+"settings": [
+{
+"type": "checkbox",
+"id": "menu_enable",
+"label": "Enable this section",
+"default": true
+},
+{
+"type": "image_picker",
+"id": "image",
+"label": "Image"
+},
+{
+"type": "text",
+"id": "mega_link",
+"label": "Select menu",
+"default": "1"
+},
+{
+"type": "url",
+"id": "link",
+"label": "Main Link"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Title"
+},
+{
+"type": "text",
+"id": "subtitle",
+"label": "Sub title"
+}
+]
+}
+]
 }
 {% endschema %}

@@ -674,6 +674,7 @@ iframe#dummy-chat-button-iframe {
   text-align: center;
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
+  background-color: var(--pure-white);
 }
 .header-search-area-wrapper .header-search-area {
   position: relative;
