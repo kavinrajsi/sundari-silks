@@ -22,6 +22,7 @@
   position: relative;
   &-container {
     background-color: var(--pure-white);
+    position: relative;
   }
   &-action-list {
     @include content-block-max-center;
@@ -125,10 +126,10 @@
           @media (min-width: 768px) {
             width: 25%;
             padding: 0 14px;
-            &:first-child{
+            &:first-child {
               padding-left: 0;
             }
-            &:last-child{
+            &:last-child {
               padding-right: 0;
             }
           }
@@ -184,7 +185,7 @@
     @include content-block-max-center;
     --border-radius: 2px;
     margin: 0 auto;
-    position: relative;
+    // position: relative;
     display: none;
     @media (min-width: 992px) {
       display: block;
@@ -220,12 +221,6 @@
             right: 0;
             background-color: var(--primary-color);
           }
-        }
-        a[aria-current="page"] {
-          opacity: 1;
-          font-weight: 500;
-          color: var(--primary-color);
-          border-bottom-color: var(--primary-color);
         }
         &:first-child {
           display: none;
@@ -317,6 +312,39 @@
         }
       }
     }
+
+    .second-menu {
+      background-color: var(--pure-white);
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 100%;
+      z-index: 5;
+      visibility: hidden;
+      position: absolute;
+      display: none;
+      border-top: 1px solid var(--border-color);
+      &.active {
+        visibility: visible;
+        display: block;
+      }
+      .menu-level-2 {
+        visibility: visible;
+        max-width: var(--content-width);
+        margin: 0 auto;
+        position: relative;
+      }
+    }
+
+    a[aria-current="page"],
+    .menu-active,
+    .menu-child-active,
+    .active {
+      opacity: 1 !important;
+      font-weight: 500 !important;
+      color: var(--primary-color) !important;
+      // border-bottom-color: var(--primary-color);
+    }
   }
   &-nav-list-footer {
     position: fixed;
@@ -346,10 +374,9 @@
   }
 }
 
-.header-seachActive{
+.header-seachActive {
   overflow: hidden;
 }
-
 
 /* menu */
 

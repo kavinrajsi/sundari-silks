@@ -1,20 +1,25 @@
 @import 'reset';
 @import 'common';
+
 @import 'header';
 @import 'owl-slider/owl.carousel.scss';
 @import 'owl-slider/owl.theme.default.scss';
-
-@import 'section/card-product';;
-@import 'section/quickview';
+@import 'section/common/breadcrumbs';
 @import 'page/home';
 
+@import 'section/collection/collection-header';
+@import 'section/product/card-product';
+@import 'section/product/quickview';
+@import 'section/product/pagination';
 
-// @import 'page/collection';
+@import 'footer';
+
 // @import 'page/login';
 // @import 'page/account';
-// @import 'section/card-collection'
-// @import 'section/breadcrumbs';
-// @import 'section/pagination';
+// @import 'section/card-collection';
 // @import 'section/address';
 // @import 'section/filter';
-@import 'footer';
+
+.slick-dotted.slick-slider{
+  margin-bottom: 0;
+}

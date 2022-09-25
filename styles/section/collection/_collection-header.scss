@@ -31,15 +31,15 @@
 .collection-page-action-list {
   border-top: 1px solid #D4D5D9;
   border-bottom: 1px solid #D4D5D9;
+  justify-content: space-around;
   padding: 12px 0px;
   margin-left: 4vw;
   margin-right: 4vw;
   margin-bottom: 28px;
   display: none;
   @media(min-width: 768px){
-  display: flex;
+  display: none;
   }
-  justify-content: space-around;
   .collection-filter {
     flex: 1 0 auto;
   }
@@ -52,4 +52,9 @@
       padding: 12px 8px;
     }
   }
+}
+
+
+.collection-page-action-active{
+  display: none;
 }

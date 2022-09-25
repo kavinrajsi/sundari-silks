@@ -20,11 +20,13 @@
    */
 $(".menu-level-1-item").on('mouseenter', function () {
   console.log('enter');
-  $(this).children('.menu-level-2').addClass("active");
+  $(this).children('.second-menu').addClass("active");
+  // $(this).children('.menu-level-2').addClass("active");
 });
 $(".menu-level-1-item").on('mouseleave', function () {
   console.log('leave');
-  $(this).children('.menu-level-2').removeClass("active");
+  $(this).children('.second-menu').removeClass("active");
+  // $(this).children('.menu-level-2').removeClass("active");
 });
 
 

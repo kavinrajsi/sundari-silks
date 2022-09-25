@@ -130,85 +130,77 @@
   <!-- search area -->
   <div class="header-search-area-wrapper" style="display: none;">
     <div class="header-search-area-containerWrapper">
-    <div class="header-search-area-container">
-      <predictive-search>
-        <form action="{{ routes.search_url }}" method="get" role="search">
-          <div class="predictive-search ">
-            <i class="input__search-icon">
-              <svg width="24" height="24">
-                <use href="#search" />
-              </svg>
-            </i>
-            <label hidden for="Search">Search</label>
-            <input class="input-full" id="Search" type="search" name="q" placeholder="Search products ..."
-              value="{{ search.terms | escape }}" {%- if settings.predictive_search_enabled -%} role="combobox"
-              aria-expanded="false" aria-owns="predictive-search-results-list"
-              aria-controls="predictive-search-results-list" aria-haspopup="listbox" aria-autocomplete="list"
-              autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false" {%- endif -%}>
-            <i class="input__close-icon">
-              <svg width="24" height="24">
-                <use href="#close" />
-              </svg>
-            </i>
-            <input name="options[prefix]" type="hidden" value="last">
-          </div>
-          <div id="predictive-search" tabindex="-1"></div>
-        </form>
-      </predictive-search>
+      <div class="header-search-area-container">
+        <predictive-search>
+          <form action="{{ routes.search_url }}" method="get" role="search">
+            <div class="predictive-search ">
+              <i class="input__search-icon">
+                <svg width="24" height="24">
+                  <use href="#search" />
+                </svg>
+              </i>
+              <label hidden for="Search">Search</label>
+              <input class="input-full" id="Search" type="search" name="q" placeholder="Search products ..."
+                value="{{ search.terms | escape }}" {%- if settings.predictive_search_enabled -%} role="combobox"
+                aria-expanded="false" aria-owns="predictive-search-results-list"
+                aria-controls="predictive-search-results-list" aria-haspopup="listbox" aria-autocomplete="list"
+                autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false" {%- endif -%}>
+              <i class="input__close-icon">
+                <svg width="24" height="24">
+                  <use href="#close" />
+                </svg>
+              </i>
+              <input name="options[prefix]" type="hidden" value="last">
+            </div>
+            <div id="predictive-search" tabindex="-1"></div>
+          </form>
+        </predictive-search>
+      </div>
     </div>
-  </div>
   </div>
   <!-- navigation list -->
   <div class="header-container">
     <nav class="header-nav-list-main" role="navigation">
       <ul class="menu-level-1">
         {% for link in linklists.main-menu.links %}
-        <li class="menu-level-1-item {% if link.links.size > 0 %} menu-level-1-item-child {% endif %}">
+        <li
+          class="menu-level-1-item {% if link.links.size > 0 %} menu-level-1-item-child {% endif %} {% if link.active %}menu-active{% endif %} {% if link.child_active %}menu-child-active{% endif %}">
           <a href="{{ link.url }}" {% if link.active %}aria-current="page" {% endif %}>
             {{ link.title }}
             {% if link.links.size > 0 %}
-              {% render 'icon-chevron-down' %}
+            {% render 'icon-chevron-down' %}
             {% endif %}
           </a>
           {% if link.links != blank %}
-          <ul class="menu-level-2">
-            {% for child_link in link.links %}
-            <li class="menu-level-2-item">
-              <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page" {% endif %}>
-                {{ child_link.title }}
-              </a>
-              {% if child_link.links != blank %}
-              <ul class="menu-level-3">
-                {% for grandchild_link in child_link.links %}
-                <li class="menu-level-3-item">
-                  <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page" {% endif %}>
-                    {{ grandchild_link.title }}
-                  </a>
-                </li>
-                {% endfor %}
-              </ul>
-              {% endif %}
-            </li>
-            {% endfor %}
-            <li class="menu-level-2-item-image image-one">
-              <a href="#">
-                {{ section.settings.image_silk_saree--1 | image_url : width: section.settings.width | image_tag : class:
-                'try-3d', loading: 'lazy',
-                alt: section.settings.image_silk_saree--1.alt }}
-                <p class="menu-image-title">Kanchipuram Silk</p>
-                <p class="menu-image-link-button">Explore Now</p>
-              </a>
-            </li>
-            <li class="menu-level-2-item-image image-two">
-              <a href="#">
-                {{ section.settings.image_silk_saree--2 | image_url : width: section.settings.width | image_tag : class:
-                'try-3d', loading: 'lazy',
-                alt: section.settings.image_silk_saree--2.alt }}
-                <p class="menu-image-title">Wedding Edit</p>
-                <p class="menu-image-link-button">Explore Now</p>
-              </a>
-            </li>
-          </ul>
+          <div class="second-menu">
+            <ul class="menu-level-2" data-menu-title="{{ link.title | downcase }}">
+              {% for child_link in link.links %}
+              <li class="menu-level-2-item">
+                <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page" {% endif %}>
+                  {% for block in section.blocks %}
+                  {% if child_link.title == block.settings.mega_link %}
+                  <img src="{{ block.settings.image.src | image_url:  width: 500, height: 500 }}" alt="{{ block.settings.image.alt }}">
+                  {% endif %}
+                  {% endfor %}
+                  <br>
+                  <br>
+                  {{child_link.title}}
+                </a>
+                {% if child_link.links != blank %}
+                <ul class="menu-level-3">
+                  {% for grandchild_link in child_link.links %}
+                  <li class="menu-level-3-item">
+                    <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page" {% endif %}>
+                      {{ grandchild_link.title }}
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
           {% endif %}
         </li>
         {% endfor %}
@@ -217,7 +209,7 @@
   </div>
   <!-- mobile navigation-list -->
   <div class="cd-overlay"></div>
-  <div class="header-mobile-navigation-list">
+  <div class="header-mobile-navigation-list" style="display: none;">
     <nav class="cd-nav">
       <ul id="cd-primary-nav" class="cd-primary-nav is-fixed nav-is-visible menu">
         {% for link in section.settings.menu.links %}
@@ -261,80 +253,70 @@ TODO: Menu, Sale text color and Image for special occasion
 {% endcomment %}
 {% schema %}
 {
-  "name": "t:sections.header.name",
-  "class": "section-header",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "t:sections.header.settings.logo.label"
-    },
-    {
-      "type": "range",
-      "id": "logo_width",
-      "min": 50,
-      "max": 250,
-      "step": 10,
-      "default": 100,
-      "unit": "t:sections.header.settings.logo_width.unit",
-      "label": "t:sections.header.settings.logo_width.label"
-    },
-    {
-      "type": "link_list",
-      "id": "menu",
-      "default": "main-menu",
-      "label": "t:sections.header.settings.menu.label"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_silk_saree--1",
-      "label": "Image #1"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_silk_saree--2",
-      "label": "Image #2"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "logo_image",
-      "name": "Mega logo",
-      "settings": [
-        {
-          "type": "checkbox",
-          "id": "menu_enable",
-          "label": "Enable this section",
-          "default": true
-        },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "text",
-          "id": "mega_link",
-          "label": "Select menu",
-          "default": "1"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Main Link"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title"
-        },
-        {
-          "type": "text",
-          "id": "subtitle",
-          "label": "Sub title"
-        }
-      ]
-    }
-  ]
+"name": "t:sections.header.name",
+"class": "section-header",
+"settings": [
+{
+"type": "image_picker",
+"id": "logo",
+"label": "t:sections.header.settings.logo.label"
+},
+{
+"type": "range",
+"id": "logo_width",
+"min": 50,
+"max": 250,
+"step": 10,
+"default": 100,
+"unit": "t:sections.header.settings.logo_width.unit",
+"label": "t:sections.header.settings.logo_width.label"
+},
+{
+"type": "link_list",
+"id": "menu",
+"default": "main-menu",
+"label": "Desktop Menu"
+}
+],
+"blocks": [
+{
+"type": "logo_image",
+"name": "Mega logo",
+"settings": [
+{
+"type": "checkbox",
+"id": "menu_enable",
+"label": "Enable this section",
+"default": true
+},
+{
+"type": "image_picker",
+"id": "image",
+"label": "Image"
+},
+{
+"type": "text",
+"id": "mega_link",
+"label": "Select menu",
+"default": "1"
+},
+{
+"type": "url",
+"id": "link",
+"label": "Main Link"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Title"
+},
+{
+"type": "text",
+"id": "subtitle",
+"label": "Sub title"
+}
+]
+}
+]
 }
 {% endschema %}
