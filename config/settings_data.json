@@ -144,6 +144,17 @@
               "title": "Kids Jewellery",
               "subtitle": ""
             }
+          },
+          "a737801a-d041-4ea1-a346-7ffdfb9cee58": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/CuratedCollectionImage-2.png",
+              "mega_link": "Pendants",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Pendants",
+              "subtitle": ""
+            }
           }
         },
         "block_order": [
@@ -154,7 +165,8 @@
           "983fbcfb-efd2-4b72-8014-670919f1d5b1",
           "45a49917-2d4a-4818-a6c7-05e15d8d7934",
           "012b8059-1c4e-413f-9c85-824914bb2502",
-          "6757033e-547a-49db-b111-6aec43c0ef51"
+          "6757033e-547a-49db-b111-6aec43c0ef51",
+          "a737801a-d041-4ea1-a346-7ffdfb9cee58"
         ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
