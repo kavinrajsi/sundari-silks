@@ -83,10 +83,21 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/persons-hands-hold-the-collar-of-their-sweater.jpg",
-              "mega_link": "3",
-              "link": "shopify:\/\/products\/3-layer-non-surgical-masks-in-cotton-prints-and-plain-set-of-5",
-              "title": "Ready 1",
+              "image": "shopify:\/\/shop_images\/a-hand-holds-silver-paint-brush.jpg",
+              "mega_link": "Necklaces",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Necklaces",
+              "subtitle": ""
+            }
+          },
+          "7a42f5b4-6dd8-44e4-aaf9-a4cca16d3985": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/choker-with-triangle.jpg",
+              "mega_link": "Earrings",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Earrings",
               "subtitle": ""
             }
           }
@@ -94,7 +105,8 @@
         "block_order": [
           "9ec61fc7-ed2a-4490-8411-bf33c7d3eb56",
           "c37446b7-4fce-4474-9e26-e3348834815e",
-          "ff5db7c6-de70-4624-b1a1-620865565274"
+          "ff5db7c6-de70-4624-b1a1-620865565274",
+          "7a42f5b4-6dd8-44e4-aaf9-a4cca16d3985"
         ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
