@@ -1,7 +1,10 @@
 {% assign current_product = product.selected_or_first_available_variant%}
 {% assign product_image = current_product.featured_image | default : product.featured_image %}
-
-
+{% assign product_collection = collection.title | link_to: product_collection.url %}
+{% assign collectProductName = "" %}
+{% unless product_collection == blank %}
+{% assign collectProductName = product_collection %}
+{% endunless %}
 <style>
   table {
     width: 100%;
@@ -24,9 +27,12 @@
   table tbody+tbody {
     border-top: 2px solid #dee2e6;
   }
+
+  .notice-content {
+    display: none;
+  }
 </style>
-
-
+<section>
 <div class="" style="display: flex; justify-content:flex-start">
   <div class="product-image">
     <img src="{{ product_image | image_url: width: 440 }}" alt="{{ product_image.alt }}" id="product-image-main">
@@ -37,37 +43,59 @@
   </div>
   <div class="product-content">
     <h2 class="product-image">{{product.title}}</h2> <br>
-    <p class="product-sku">{{product.sku}}</p> <br>
+    <p claxss="product-sku">
+      {%- assign current_variant = product.selected_or_first_available_variant -%}
+      {% for variant in product.variants %}
+    <div class="product__variant--sku"> {{ variant.sku }} </div>
+    {% endfor %}
+    </p> <br>
     <p class="product-price">{{current_product.price | money_with_currency }}</p><br>
+    <p class="notice-content {% for collection in product.collections%} {{collection.title}} {% endfor %}">
+      Our artisanal silver jewellery collection is currently available for shipment within INDIA.</p>
+      <br>
 
-    {% form 'product', product, class: 'product-form', id:AddToCartForm %}
-    <input type="hidden" class="form-conspanol" name="quantity" id="quantity" value="1" min="1">
-    <button type="submit" {% unless product.available %} disabled="disabled" {% endunless %}>
-      {% if product.available %}
-      <p>Add to Cart</p>
-      {% else %}
-      <p>Sold Out</p>
-      {% endif %}
-    </button>
+     {% form 'product', product %}
+     <div>
+      <label for="proudct-form-size">Size</label>
+      <select name="id" id="product-form-size">
+        {% for variant in product.variants %}
+         <option value="{{ variant.id }}"> {{variant.tile}}</option>
+        {% endfor %}
+      </select>
+      <button type="submit"> Add to cart</button>
+     </div>
+     {% endform %}
 
-    {% endform %}
-
-
-
+    <br>
+    <br>
     {% if product.content != blank %}
-    <h4>Description</h4>
+    <h2>Description</h2>
     <p class="product-description">{{product.content | sspanip_html }}</p> <br>
     {% endif %}
-
-    <p>
+    <br>
+    <br>
+    <h2>
       Size &amp; Fit
+    </h2>
+    <p>
     <ul>
       {% for variant in product.variants %}
-      <li value="{{ variant.id }}"> {{ variant.title }}</li>
+      {% if variant.title == "Default Title" %}
+      <li title="Free Size"
+        style="border: 1px solid; padding: 10px; border-radius: 50%; background: #000; color: white; display: inline-block;">
+        FS </li>
+      {% else %}
+      <li
+        style="border: 1px solid; padding: 10px; border-radius: 50%; background: #000; color: white; display: inline-block;"
+        value="{{ variant.id }}"> {{ variant.title }}</li>
+      {% endif %}
       {% endfor %}
     </ul>
-    </p><br>
-
+    </p>
+    <br>
+    <br>
+    <br>
+    <h2> Specification </h2>
     <ul style="display: flex; gap: 24px; flex-direction: column;">
       <li>
         type: banarasi
@@ -93,16 +121,11 @@
         border : double side
       </li>
     </ul> <br> <br>
-
-
     {{ product.metafields.custom.size_chart }}
     <hr>
-    <p></p>
-
     {% comment %}
     {% assign json_str = product.metafields.custom.size_chart%}
     {% assign json_token = json_str | split: ',' %}
-
     {% for token in json_token %}
     {% if forloop.index == 1 %}
     {% assign res = token | split: ':' %}
@@ -112,15 +135,12 @@
     {% endcapture %}
     {% endif %}
     {% endfor %}
-
     {{ pickup_spot }}
     <hr>
     {% endcomment %}
-
     {% assign suppliers = product.metafields.custom.size_chart.value %}
-
     {% for supplier in suppliers %}
-    <h6>{{supplier.type}}</h6>
+    <h2>{{supplier.type}}</h2>
     <div style="display: flex; justify-content: space-between;">
       {% tablerow dfdf in supplier.value %}
       <ul>
@@ -137,95 +157,15 @@
       {% endtablerow %}
     </div>
     {% endfor %}
-
-
     {% if product.metafields.custom.wash_care_tips.value != blank %}
     <p>Wash Care: {{ product.metafields.custom.wash_care_tips.value }} </p> <br>
     {% endif %}
-
     {% if product.metafields.custom.delivery_shipping.value != blank %}
     <p>Delivery Shipping: {{ product.metafields.custom.delivery_shipping.value }} </p> <br>
     {% endif %}
-
-
     {% if product.metafields.custom.note.value != blank %}
     <p>Note: {{ product.metafields.custom.note.value }} </p> <br>
     {% endif %}
-
-
   </div>
-
 </div>
-
-<script>
-
-  function instantBuy() {
-    var $ = jQuery;
-
-    var formParams = $('form.cart').serialize();
-    $.ajax({
-      url: "/cart/add",
-      type: "post",
-      data: formParams,
-      success: function () {
-        window.location.href = "/checkout";
-      },
-      error: function () {
-      }
-    })
-  }
-</script>
-
-<!-- price varies : <p>{{ product.compare_at_price_varies }}</p> -->
-<!-- image: -->
-<!-- {% for image in product.images %}
-    <p><img src="{{ image.src | product_img_url: "large" }}"></p>
-{% endfor %} -->
-
-<!-- Media -->
-<!-- media code:
-{% for media in product.media %}
-  <code for media>
-{% endfor %}
-media video tag:
-{% for media in product.media %}
-  {% case media.media_type %}
-    {% when 'video' %}
-      <div class="product-video">
-        {{ media | video_tag }}
-      </div>
-  {% endcase %}
-{% endfor %}
-media video tag media:
-{% for media in product.media %}
-  {% case media.media_type %}
-    {% when 'image' %}
-      <div class="product-image">
-        <img src="{{ media | img_url: '100x100'}}" alt="{{ media.alt }}">
-       </div>
-    {% when 'external_video' %}
-      <div class="product-single__media">
-        {{ media | external_video_tag }}
-      </div>
-    {% when 'video' %}
-      <div class="product-single__video">
-        {{ media | video_tag: conspanols: spanue }}
-      </div>
-    {% when 'model' %}
-      <div class="product-single__media">
-        {{ media | model_viewer_tag }}
-      </div>
-    {% else %}
-      <div class="product-single__media">
-        {{ media | media_tag }}
-      </div>
-  {% endcase %}
-{% endfor %} -->
-
-<!-- external video: -->
-
-<!-- Price : <p>{{ product.price }}</p>
-Price max : <p>{{ product.price_max }}</p>
-Price min : <p>{{ product.price_min }}</p>
-Price varies : <p>{{ product.price_varies }}</p>
-Type : <p>{{ product.type }}</p> -->
+</section>

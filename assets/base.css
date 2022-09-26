@@ -1771,6 +1771,9 @@ iframe#dummy-chat-button-iframe {
   display: flex;
   flex-direction: column;
 }
+.product__card .slick-dots li {
+  margin: 0;
+}
 .product__card--img {
   flex: 1 0 auto;
   position: relative;

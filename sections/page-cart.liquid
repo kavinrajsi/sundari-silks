@@ -1,0 +1,29 @@
+<div class="page-cart">
+  <h1 class="page__title"> My Cart </h1>
+<div class="page__decription">
+  <ul>
+    <li>Vanakkam!</li>
+    <li>
+      Payments can now be made via PayPal through Cashfree payment gateway.
+      </li>
+      <li>
+        Kindly note that you can now make payments through both PayPal and Cashfree.
+      </li>
+  </ul>
+</div>
+  <form class="cart_wrapper" action="/cart" method="post">
+    <div class="cart__items cart_block">
+      {% for line_item in cart.items %}
+       {% render 'line-item', line_item: line_item, index: forloop.index %}
+       {% endfor %}
+    </div>
+    <div class="cart__details card__block">
+      <div class="cart__total">
+        <strong class="cart__total-text">Total:</strong>
+        <span class="cart__total-price"> {{ cart.total_price | money }}</span>
+      </div>
+      <button class="button" type="submit"> Update Quantities </button>
+      <button class="button" type="submit" name="checkout"> Checkout </button>
+    </div>
+  </form>
+</div>

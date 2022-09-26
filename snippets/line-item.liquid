@@ -1,0 +1,28 @@
+<div class="line-item">
+  <div class="line-item__left">
+    <div class="lin-item__image-wrapper">
+      <img class="line-item__image" src="{{ line_item | image_url: 'master' }}" alt="{{ line_item.image.alt }}">
+    </div>
+    <div class="line-item__details">
+      <h2 class="line-item__title">
+        {{line_item.product.title}}
+      </h2>
+      {% for option in line_item.options_with_values %}
+      <div class="line-item__option-block">
+        <div class="line-item__option"> {{ option.name }} </div>
+        <div class="line-item__value"> {{ option.value }} </div>
+      </div>
+      {% endfor %}
+      <div class="line-item__price">
+        {{ line_item.price | money }}
+      </div>
+      <div class="line-item_quality">
+        <div class="line-item__quantity-text"> quantity: </div>
+        <input type="text" name="updates[]" size="4" id="updates_{{line_item.id}}" value="{{line_item.quantity}}">
+      </div>
+    </div>
+  </div>
+  <div class="line-item__right">
+    <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="line-item__remove">Remove</a>
+  </div>
+</div>
