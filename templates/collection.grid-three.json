@@ -1,7 +1,9 @@
 {
   "sections": {
     "product-grid": {
-      "type": "page-collection-three-grid"
+      "type": "page-collection-three-grid",
+      "settings": {
+      }
     }
   },
   "order": [
