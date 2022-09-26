@@ -1,5 +1,5 @@
 page collection
-{% assign collection = collections[ section.settings.show_collection ] %}
+{% assign collection = collections[ block.settings.show_collection ] %}
 
 <div class="collection-page-header">
   <div class="collection-page-header-image text-center image-radius">
@@ -20,7 +20,7 @@ page collection
 </div>
 <section>
   <div class="product-grid-list-four">
-    {% for product in collection.products limit:section.settings.show_productcount %}
+    {% for product in collection.products limit:block.settings.show_productcount %}
     {% unless
     section.settings.show_soldout != false
     and
@@ -86,30 +86,35 @@ page collection
 {
 "name": "Main Collection Page",
 "class": "section-random-product",
+"tag": "section",
 "settings": [
-{
-"type": "text",
-"id": "show_collection",
-"label": "Collection Name as per Title in collection page",
-"default": "all"
-},
-{
-"type": "number",
-"id": "show_productcount",
-"label": "How many product need to show",
-"default": 4
-},
-{
-"type": "checkbox",
-"id": "show_soldout",
-"label": "Hide sold out products",
-"default": false
-}
+
 ],
-"presets": [
+"blocks": [
 {
-"name": "Collection to show",
-"category": "product"
+  "type": "readymade-image",
+  "name": "Readymade Image Section",
+  "limit": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "show_collection",
+      "label": "Collection Name as per Title in collection page",
+      "default": "all"
+    },
+    {
+      "type": "number",
+      "id": "show_productcount",
+      "label": "How many product need to show",
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "show_soldout",
+      "label": "Hide sold out products",
+      "default": false
+      }
+  ]
 }
 ]
 }
