@@ -22,20 +22,30 @@
           {% for product in collection.products limit: collectionCount %}
           <div class="product__card">
             <div class="product__card--img">
-              <a href="{{product.url | within: collection }}" class="product-link">
-                <div class="product__image--wrapper">
+              <a href="{{ product.url | within: collection }}" class="product-link">
+                <div class="product__image--wrapper prpdocutSlider"
+                  data-slick='{"autoplay": true, "cssEase": "linear", "slidesToShow": 1, "slidesToScroll": 1, "autoplaySpeed": 1000, "fade": true, "arrows": false, "dots": true, "adaptiveHeight": true }'>
                   {% if product.featured_image != blank %}
-                  {{ product.featured_image | image_url: width: 400, height: 400, crop: 'bottom' | image_tag : class:
-                  'product-img', loading: 'lazy', alt: product.feature_image.alt}}
+                  <div>
+                    <img loading="auto" alt="{{ product.featured_image.alt }}" width="328" height="463"
+                      src=" {{ product.featured_image.src | image_url: width:672, height:928 }} ">
+                  </div>
+                  {% for image in product.images offset:1 %}
+                  <div>
+                    <img loading="lazy" alt="{{ image.alt }}" width="328" height="463"
+                      src=" {{ image.src | image_url: width:672, height:928 }} ">
+                  </div>
+                  {% endfor %}
+
                   {% else %}
                   {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
                   {% endif %}
-                  <div class="product__status">
-                    {% unless product.available %}
-                    <!-- TODO: Sold out chip color -->
-                    <span class="product__status-soldout">sold out</span>
-                    {% endunless %}
-                  </div>
+                </div>
+                <div class="product__status">
+                  {% unless product.available %}
+                  <!-- TODO: Sold out chip color -->
+                  <span class="product__status-soldout">sold out</span>
+                  {% endunless %}
                 </div>
               </a>
               <div class="product__card-cta quick-view-button">
@@ -43,12 +53,12 @@
               </div>
             </div>
             <div class="product__card--content">
-              <a href="{{product.url | within: collection }}" class="product-link">
+              <a href="{{ product.url | within: collection }}" class="product-link">
                 <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
                 <div class="product__variant--price">
                   {% if product.price_varies %}
-                  <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency
-                    }}</p>
+                  <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency }}
+                  </p>
                   {% else %}
                   <p>
                     {% if product.compare_at_price_max > product.price %}
