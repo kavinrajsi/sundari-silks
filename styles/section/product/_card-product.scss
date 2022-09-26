@@ -1,3 +1,5 @@
+
+.product-grid-list-three,
 .test--product-card--grid-three {
   margin: 1px 4vw 0;
   overflow: hidden;
@@ -9,6 +11,7 @@
     grid-template-columns: repeat(3, calc(100% / 12 * 4 - 18px));
   }
 }
+.product-grid-list-four,
 .test--product-card--grid-four {
   margin: 2px 4vw 0;
   overflow: hidden;

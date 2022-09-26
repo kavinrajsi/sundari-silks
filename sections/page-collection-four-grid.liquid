@@ -1,4 +1,4 @@
-grid 3
+page collection four
 
 <div class="collection-page-header">
   <div class="collection-page-header-image text-center image-radius">
@@ -150,9 +150,16 @@ grid 3
   </div>
   <section>
     {% paginate collection.products by 24 %}
-    <div class="product-grid-list-three">
+    <div class="product-grid-list-four">
       {% for product in collection.products %}
       <div class="product__card">
+        {% comment %}
+        {% unless product == empty %}
+        <script type="application/json" id="ProductJson-{{ section.id }}">
+        {{ product_collection | json }}
+      </script>
+        {% endunless %}
+        {% endcomment %}
         <div class="product__card--img">
           <a href="{{ product.url | within: collection }}" class="product-link">
             <div class="product__image--wrapper prpdocutSlider"
@@ -162,9 +169,16 @@ grid 3
                 <img loading="auto" alt="{{ product.featured_image.alt }}" width="328" height="463"
                   src=" {{ product.featured_image.src | image_url: width:672, height:928 }} ">
               </div>
+              {% for image in product.images offset:1 %}
+              <div>
+                <img loading="lazy" alt="{{ image.alt }}" width="328" height="463"
+                  src=" {{ image.src | image_url: width:672, height:928 }} ">
+              </div>
+              {% endfor %}
+
               {% else %}
-            {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
-            {% endif %}
+              {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
+              {% endif %}
             </div>
             <div class="product__status">
               {% unless product.available %}

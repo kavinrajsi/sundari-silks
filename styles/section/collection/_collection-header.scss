@@ -3,7 +3,12 @@
   margin-right: 4vw;
   margin-bottom: 28px;
   &-image {
+    overflow: hidden;
     margin-bottom: 28px;
+    height: 142px;
+    @media(min-width: 768px){
+      height: 280px;
+    }
     img {
       width: auto;
       height: 142px;
