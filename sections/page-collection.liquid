@@ -1,1 +1,106 @@
 page collection
+{% assign collection = collections[ section.settings.show_collection ] %}
+
+<section>
+  <div class="test--product-card--grid">
+    {% for product in collection.products limit:section.settings.show_productcount %}
+    {% unless
+    section.settings.show_soldout != false
+    and
+    product.available != true %}
+    <div class="product__card">
+      {% comment %}
+      {% unless product == empty %}
+      <script type="application/json" id="ProductJson-{{ section.id }}">
+      {{ product_collection | json }}
+    </script>
+      {% endunless %}
+      {% endcomment %}
+      <div class="product__card--img">
+        <a href="{{ product.url | within: collection }}" class="product-link">
+          <div class="product__image--wrapper prpdocutSlider"
+            data-slick='{"autoplay": true, "cssEase": "linear", "slidesToShow": 1, "slidesToScroll": 1, "autoplaySpeed": 1000, "fade": true, "arrows": false, "dots": true, "adaptiveHeight": true }'>
+            {% if product.featured_image != blank %}
+            <div>
+              <img loading="auto" alt="{{ product.featured_image.alt }}" width="328" height="463"
+                src=" {{ product.featured_image.src | image_url: width:672, height:928 }} ">
+            </div>
+            {% for image in product.images offset:1 %}
+            <div>
+              <img loading="lazy" alt="{{ image.alt }}" width="328" height="463"
+                src=" {{ image.src | image_url: width:672, height:928 }} ">
+            </div>
+            {% endfor %}
+
+            {% else %}
+            {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
+            {% endif %}
+          </div>
+          <div class="product__status">
+            {% unless product.available %}
+            <!-- TODO: Sold out chip color -->
+            <span class="product__status-soldout">sold out</span>
+            {% endunless %}
+          </div>
+        </a>
+        <div class="product__card-cta quick-view-button">
+          <a class="quick-view" data-handle="{{ product.handle }}">Quick View</a>
+        </div>
+      </div>
+      <div class="product__card--content">
+        <a href="{{ product.url | within: collection }}" class="product-link">
+          <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
+          <div class="product__variant--price">
+            {% if product.price_varies %}
+            <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency }}
+            </p>
+            {% else %}
+            <p>
+              {% if product.compare_at_price_max > product.price %}
+              <span><s>{{ product.compare_at_price_max | money_with_currency }}</s></span>
+              <span>{{ product.price | money_with_currency }}</span>
+              {% else %}
+              <span>{{ product.price | money_with_currency }}</span>
+              {% endif %}
+            </p>
+            {% endif %}
+          </div>
+        </a>
+      </div>
+    </div>
+    {% endunless %}
+    {% endfor %}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Main Collection Page",
+  "class": "section-random-product",
+  "settings": [
+  {
+    "type": "text",
+    "id": "show_collection",
+    "label": "Collection Name as per Title in collection page",
+    "default": "all"
+  },
+    {
+      "type": "number",
+      "id": "show_productcount",
+      "label": "How many product need to show",
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "show_soldout",
+      "label": "Hide sold out products",
+      "default": false
+    }
+  ],
+  "presets": [
+      {
+          "name": "Collection to show",
+          "category": "product"
+      }
+  ]
+}
+{% endschema %}

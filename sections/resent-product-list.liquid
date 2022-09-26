@@ -1,5 +1,5 @@
 {% assign collection = collections[ section.settings.show_collection ] %}
-{{ 'testproduct.css' | asset_url | stylesheet_tag }}
+
 <section>
   <div class="test--product-card--grid">
     {% for product in collection.products limit:section.settings.show_productcount %}
