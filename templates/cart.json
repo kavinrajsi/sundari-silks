@@ -1,7 +1,9 @@
 {
   "sections": {
     "main": {
-      "type": "page-cart"
+      "type": "page-cart",
+      "settings": {
+      }
     }
   },
   "order": [

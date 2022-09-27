@@ -267,9 +267,7 @@
         "settings": {
           "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
           "logo_width": 120,
-          "menu": "main-menu",
-          "image_silk_saree--1": "shopify:\/\/shop_images\/kanchipuram-saree-styling-ideas-4.png",
-          "image_silk_saree--2": "shopify:\/\/shop_images\/kanchipuram-saree-styling-ideas-2.png"
+          "menu": "main-menu"
         }
       }
     },

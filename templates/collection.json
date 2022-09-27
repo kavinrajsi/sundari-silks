@@ -1,7 +1,31 @@
 {
   "sections": {
     "product-grid": {
-      "type": "page-collection"
+      "type": "page-collection",
+      "blocks": {
+        "6c47f7c5-5804-4a08-bb89-4ee3db4535ce": {
+          "type": "readymade-image",
+          "settings": {
+            "show_collection": "all",
+            "show_productcount": 4,
+            "show_soldout": false
+          }
+        },
+        "413e7861-6efe-489a-b991-efdcaa18e84c": {
+          "type": "readymade-image",
+          "settings": {
+            "show_collection": "saree",
+            "show_productcount": 4,
+            "show_soldout": false
+          }
+        }
+      },
+      "block_order": [
+        "6c47f7c5-5804-4a08-bb89-4ee3db4535ce",
+        "413e7861-6efe-489a-b991-efdcaa18e84c"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
