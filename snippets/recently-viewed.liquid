@@ -20,7 +20,7 @@
       <div id="product-${handle}" class="products"}>
         <div class="image">
           <a href="${url}">
-            <img src="${Shopify.Products.resizeImage(featured_image, "medium")}" />
+            <img class="lazyload" data-sizes="auto" data-src="${Shopify.Products.resizeImage(featured_image, "medium")}" />
           </a>
         </div>
         <div class="details">

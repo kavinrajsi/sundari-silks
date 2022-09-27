@@ -35,10 +35,10 @@
 <section>
 <div class="" style="display: flex; justify-content:flex-start">
   <div class="product-image">
-    <img src="{{ product_image | image_url: width: 440 }}" alt="{{ product_image.alt }}" id="product-image-main">
+    <img class="lazyload" data-sizes="auto" data-src="{{ product_image | image_url: width: 440 }}" alt="{{ product_image.alt }}" id="product-image-main">
     <br>
     {% for image in product.images %}
-    <img src="{{ image.src | image_url : width: 400 }}" alt="{{image.alt }}">
+    <img class="lazyload" data-sizes="auto" data-src="{{ image.src | image_url : width: 400 }}" alt="{{image.alt }}">
     {% endfor %}
   </div>
   <div class="product-content">

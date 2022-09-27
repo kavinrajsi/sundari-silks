@@ -15,7 +15,7 @@
             {% assign collection_image = blank  %}
             {% endif  %}
             <a href="{{ collection.url }}">
-              <img src="{{ collection_image | img_url: '480x' }}" alt="">
+              <img class="lazyload" data-sizes="auto" data-src="{{ collection_image | img_url: '480x' }}" alt="">
             </a>
           </div>
         </div>
