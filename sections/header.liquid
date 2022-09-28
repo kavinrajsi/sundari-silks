@@ -31,13 +31,6 @@
             </svg>
           </div>
         </div>
-        <!-- <div class="header-chat">
-        <a href="{{ canonical_url }}?chat" class="header__icon" id="cart-icon-bubble">
-        <svg width="24" height="24">
-          <use href="#chat" />
-        </svg>
-        </a>
-      </div> -->
         <div class="header-search">
           <svg width="24" height="24">
             <use href="#search" />
@@ -80,7 +73,7 @@
   </div>
   <!-- mobile navigation -->
   <nav class="header-nav-list-footer">
-    <div class="header-menu">
+    <div class="cd-nav-trigger header-menu">
       <svg width="24" height="24">
         <use href="#menu" />
       </svg>
@@ -90,7 +83,7 @@
       <svg width="24" height="24">
         <use href="#heart" />
       </svg>
-      <span>Wishlist</span>
+      <span>Collection</span>
     </div>
     <div class="header-cart">
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
@@ -208,11 +201,9 @@
     </nav>
   </div>
   <!-- mobile navigation-list -->
-  <div class="cd-overlay"></div>
-  <div class="header-mobile-navigation-list" style="display: none;">
-    <nav class="cd-nav">
+  <nav class="header-mobile-navigation-list">
       <ul id="cd-primary-nav" class="cd-primary-nav is-fixed nav-is-visible menu">
-        {% for link in section.settings.menu.links %}
+        {% for link in linklists.mobile-menu.links %}
         <li class="{% if link.links.size > 0 %} has-children {% else %} menu-link {% endif %}">
           <a href="{{ link.url }}">{{ link.title }}</a>
           {% if link.links.size > 0 %}
@@ -237,7 +228,6 @@
         {% endfor %}
       </ul>
     </nav>
-  </div>
 </header>
 
 {% comment %}

@@ -12,7 +12,22 @@
         <div class="article-card-wrapper card-wrapper underline-links-hover">
           <a href=" {{ article.url }}" class="article-card__image-wrapper card__media">
             {% if article.image %}
-            <img class="lazyload" data-sizes="auto" data-src="{{article.image.src | image_url: width:400, height: 400, crop: 'top' }}" alt="{{article.image.alt}}">
+
+
+<img id="Image-{{ article.id }}"
+  class="blur-up responsive-image__image lazyload {{ article_class }}"
+  src="https://cdn.shopify.com/s/files/1/0560/3695/0174/files/pattern-background.png?v=1664355715"
+  data-src="{{article.image.src | image_url: width:404, height: 296, crop: 'top' }}"
+  data-widths="[{{ article.image.width }}]"
+  data-aspectratio="{{ article.image.aspect_ratio }}"
+  data-sizes="auto"
+  data-parent-fit="cover"
+  tabindex="-1"
+  alt="{{ article.image.alt | escape }}"
+
+>
+
+            <!-- <img class="lazyload" data-sizes="auto" data-src="{{article.image.src | image_url: width:404, height: 296, crop: 'top' }}" alt="{{article.image.alt}}"> -->
             <!-- {{ article.image | image_url: width: 1800, height: 1000 | image_tag: alt:article.image.alt }} -->
             {% else %}
             {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg' }}

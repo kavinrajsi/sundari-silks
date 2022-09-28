@@ -13,7 +13,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display&display=swap"
     rel="stylesheet">
 
-  <script src="{{ lazysizes.js | asset_url }}"></script>
+    <script src="{{ 'lazysizes.js' | asset_url }}" async="async"></script>
+    <script src="{{ 'ls.rias.js' | asset_url }}" async="async"></script>
+    <script src="{{ 'ls.bgset.js' | asset_url }}" async="async"></script>
+    <script src="{{ 'ls.blur-up.js' | asset_url }}" async="async"></script>
 
   {% if settings.favicon != blank %}
   <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">

@@ -19,6 +19,7 @@ page collection
 </div>
 <section>
   {{ collection.title }} <br>
+  <br>
   <hr>
 
 
@@ -27,14 +28,9 @@ page collection
   {% if link.title == collection.title %}
 
   {% for child_link in link.links %}
-  {{ child_link.title }} <br>
-  {% assign product_vals = child_link.title | split: '|' %}
-{{product_vals}}
-{{collection.product_vals}}
-  {% for product in collection.product_vals %}
-    i : {{product}}
-  {% endfor %}
-<hr>
+
+  {% assign controllerName =  child_link.title | split: '_' | first | split: ''  %}
+  {% assign controllers = controllers | concat: controllerName %}
 
   {% endfor %}
 
@@ -47,11 +43,17 @@ page collection
   {% endif %}
   {% endfor %}
   {% endfor %}
-<br>
-<br>
-<hr>
-<!-- {{product_vals[0]}} -->
-<hr>
-<br>
-<br>
+  <br>
+  <br>
+  <hr>
+  {{controllers}}
+
+  {% for product in collections[ child_link.title ].products limit:1 %}
+ {{forloop.index}}  {{product.title}}
+
+  {% endfor %}
+
+  <hr>
+  <br>
+  <br>
 </section>

@@ -14,7 +14,10 @@
       $("body").toggleClass("header-seachActive");
     });
   });
-
+  $(".cd-nav-trigger").click(function () {
+    $(".header-mobile-navigation-list").toggle().toggleClass("active");
+    $("body").toggleClass("header-menuActive");
+  });
   /**
    * Menu
    */

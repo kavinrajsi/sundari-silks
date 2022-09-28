@@ -442,6 +442,11 @@ summary::marker {
     0px 3px 14px rgba(0, 0, 0, 0.12), 0px 4px 5px rgba(0, 0, 0, 0.2);
 }
 
+@media screen and (prefers-reduced-motion: reduce) {
+  * {
+    transition: 0.01s !important;
+  }
+}
 *,
 *::before,
 *::after {
@@ -456,7 +461,13 @@ html {
   color: var(--light-black);
   text-align: left;
   -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
 }
 
 body {
@@ -571,6 +582,38 @@ iframe#dummy-chat-button-iframe {
   bottom: initial;
   right: 0;
   width: auto;
+}
+
+.image {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.grid-view-item__image-wrapper .image {
+  position: absolute;
+  top: 0;
+}
+
+.image.lazyload {
+  opacity: 0;
+}
+
+.image-wrapper {
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+.blur-up {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  transition: filter 400ms, -webkit-filter 400ms;
+}
+
+.blur-up.lazyloaded {
+  -webkit-filter: blur(0);
+  filter: blur(0);
 }
 
 .skip-to-content-link {
@@ -961,6 +1004,51 @@ iframe#dummy-chat-button-iframe {
 }
 
 /* menu */
+.header-mobile-navigation-list {
+  display: none;
+}
+.header-mobile-navigation-list.active {
+  display: block;
+  position: fixed;
+  top: 64px;
+  left: 0px;
+  z-index: 5;
+}
+.header-mobile-navigation-list .cd-primary-nav {
+  display: block;
+  padding-left: 24px;
+  padding-bottom: 24px;
+  padding-right: 24px;
+  background-color: var(--pure-white);
+  width: 50vw;
+  height: 100vh;
+  overflow-y: scroll;
+}
+.header-mobile-navigation-list .cd-primary-nav li a {
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--pure-black);
+  padding: 8px 0px;
+}
+.header-mobile-navigation-list .cd-primary-nav li ul {
+  display: none;
+}
+.header-mobile-navigation-list .cd-primary-nav li.has-children:hover ul {
+  height: 100vh;
+  overflow-y: scroll;
+  width: 50vw;
+  display: block;
+  padding-left: 24px;
+  padding-bottom: 24px;
+  padding-right: 24px;
+  background-color: var(--border-color);
+  position: fixed;
+  right: 0;
+  left: 50%;
+  top: 64px;
+  padding-top: 24px;
+}
+
 /*
  *  Owl Carousel - Core
  */
@@ -1464,7 +1552,8 @@ iframe#dummy-chat-button-iframe {
   padding-bottom: 48px;
   background-repeat: no-repeat;
   background-position: top center;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-image: url("https://cdn.shopify.com/s/files/1/0560/3695/0174/files/pattern-background-1.png?v=1664358789");
+  background-repeat: repeat;
 }
 .template-index .homepage-section .home-page-silver-section .section-content nav {
   max-width: var(--content-width);
