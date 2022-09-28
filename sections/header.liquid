@@ -2,6 +2,11 @@
   <!-- header navigation -->
   <div class="header-container">
     <div class="header-action-list">
+      <div class="cd-nav-trigger header-menu">
+        <svg width="24" height="24">
+          <use href="#menu" />
+        </svg>
+      </div>
       {% if request.page_type == 'index' %}
       <h1 class="header-logo header__heading" itemscope itemtype="http://schema.org/Organization">
         {% endif %}
@@ -73,17 +78,17 @@
   </div>
   <!-- mobile navigation -->
   <nav class="header-nav-list-footer">
-    <div class="cd-nav-trigger header-menu">
+    <a href="{{ routes.root_url }}">
       <svg width="24" height="24">
         <use href="#menu" />
       </svg>
-      <span>Menu</span>
-    </div>
+      <span>Home</span>
+    </a>
     <div class="header-wishlist">
       <svg width="24" height="24">
         <use href="#heart" />
       </svg>
-      <span>Collection</span>
+      <span>Categories</span>
     </div>
     <div class="header-cart">
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
