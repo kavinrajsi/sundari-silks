@@ -2,7 +2,7 @@
   <!-- header navigation -->
   <div class="header-container">
     <div class="header-action-list">
-      <div class="cd-nav-trigger header-menu">
+      <div class="cd-nav-trigger menu-menu-trigger">
         <svg width="24" height="24">
           <use href="#menu" />
         </svg>
@@ -31,8 +31,11 @@
       <div class="header-action-lists">
         <div class="header-menu">
           <div class="cd-nav-trigger">
-            <svg width="24" height="24">
+            <svg width="24" height="24" class="burgerMenu active">
               <use href="#menu" />
+            </svg>
+            <svg width="24" height="24" class="closeMenu">
+              <use href="#close" />
             </svg>
           </div>
         </div>
@@ -180,8 +183,6 @@
                   <img src="{{ block.settings.image.src | image_url:  width: 500, height: 500 }}" alt="{{ block.settings.image.alt }}">
                   {% endif %}
                   {% endfor %}
-                  <br>
-                  <br>
                   {{child_link.title}}
                 </a>
                 {% if child_link.links != blank %}
@@ -207,6 +208,7 @@
   </div>
   <!-- mobile navigation-list -->
   <nav class="header-mobile-navigation-list">
+    <div class="Drawer__Container">
       <ul id="cd-primary-nav" class="cd-primary-nav is-fixed nav-is-visible menu">
         {% for link in linklists.mobile-menu.links %}
         <li class="{% if link.links.size > 0 %} has-children {% else %} menu-link {% endif %}">
@@ -232,6 +234,7 @@
         </li>
         {% endfor %}
       </ul>
+    </div>
     </nav>
 </header>
 

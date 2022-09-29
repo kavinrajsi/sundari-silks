@@ -4,12 +4,14 @@
   margin-left: 4vw;
   margin-right: 4vw;
   .spot-light {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: 8px;
     @media (min-width: 768px) {
+      flex-direction: row;
       gap: 24px;
-      grid-template-columns: 240px calc(100% - 240px - 24px);
+      // grid-template-columns: 240px calc(100vw - 240px - 24px);
     }
     .section-header.text-left {
       @media (max-width: 768px) {
