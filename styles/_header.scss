@@ -517,18 +517,31 @@ body {
   overflow: hidden;
 }
 
-.desktopBanner{
+.large-12.columns .owl-carousel .owl-item img.desktopBanner{
   display: none;
 }
-.mobileBanner{
+.large-12.columns .owl-carousel .owl-item img.mobileBanner{
   display: block;
 }
 @media screen and (min-width: 641px){
 
-  .mobileBanner{
+  .large-12.columns .owl-carousel .owl-item img.mobileBanner{
     display: none;
   }
-  .desktopBanner{
+  .large-12.columns .owl-carousel .owl-item img.desktopBanner{
     display: block;
   }
+}
+
+.large-12.columns{
+  .owl-theme .owl-dots .owl-dot span{
+    background: transparent;
+    border: 2px solid var(--border-color);
+  }
+
+  .owl-theme .owl-dots .owl-dot.active span{
+    border-color: var(--secondary-color);
+    background:var(--secondary-color);
+  }
+
 }
