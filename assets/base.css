@@ -636,6 +636,11 @@ iframe#dummy-chat-button-iframe {
   padding: 10px 0px;
 }
 
+body {
+  overflow-y: hidden;
+}
+
+/* header */
 .header {
   position: relative;
 }
@@ -692,6 +697,8 @@ iframe#dummy-chat-button-iframe {
 .header-action-lists .header-currency-price-list {
   line-height: 24px;
 }
+
+/* header search */
 .header-search-area-wrapper {
   background-color: rgba(0, 0, 0, 0.4);
   margin: 0 auto;
@@ -817,6 +824,38 @@ iframe#dummy-chat-button-iframe {
   font-weight: 500;
   letter-spacing: 1px;
 }
+
+/* common footer */
+.header-nav-list-footer {
+  position: fixed;
+  bottom: 120px;
+  left: 0;
+  right: 0;
+  background-color: var(--pure-white);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  display: flex;
+  z-index: 2;
+}
+.header-nav-list-footer > div {
+  padding: 12px 8px;
+  flex: 1 0 auto;
+  text-align: center;
+}
+.header-nav-list-footer > div a {
+  color: initial;
+}
+.header-nav-list-footer > div span {
+  display: block;
+  padding-top: 4px;
+}
+@media (min-width: 576px) {
+  .header-nav-list-footer {
+    display: none;
+  }
+}
+
+/* header desktop menu */
 .header-nav-list-main {
   max-width: var(--content-width);
   margin-left: auto;
@@ -973,82 +1012,16 @@ iframe#dummy-chat-button-iframe {
   font-weight: 500 !important;
   color: var(--primary-color) !important;
 }
-.header-nav-list-footer {
-  position: fixed;
-  bottom: 120px;
-  left: 0;
-  right: 0;
-  background-color: var(--pure-white);
-  border-top-left-radius: var(--border-radius);
-  border-top-right-radius: var(--border-radius);
-  display: flex;
-  z-index: 2;
-}
-.header-nav-list-footer > div {
-  padding: 12px 8px;
-  flex: 1 0 auto;
-  text-align: center;
-}
-.header-nav-list-footer > div a {
-  color: initial;
-}
-.header-nav-list-footer > div span {
-  display: block;
-  padding-top: 4px;
-}
-@media (min-width: 576px) {
-  .header-nav-list-footer {
-    display: none;
-  }
-}
 
-.header-nav-list-main .menu-level-2[data-menu-title=arthirshtam], .header-nav-list-main .menu-level-2[data-menu-title=readymades], .header-nav-list-main .menu-level-2[data-menu-title="decor & accessories"], .header-nav-list-main .menu-level-2[data-menu-title="mumbai collection"] {
-  grid-gap: 16px;
-}
-.header-nav-list-main .menu-level-2[data-menu-title=arthirshtam] .menu-level-2-item > a, .header-nav-list-main .menu-level-2[data-menu-title=readymades] .menu-level-2-item > a, .header-nav-list-main .menu-level-2[data-menu-title="decor & accessories"] .menu-level-2-item > a, .header-nav-list-main .menu-level-2[data-menu-title="mumbai collection"] .menu-level-2-item > a {
-  border-bottom: 0px;
-  padding-bottom: 0px;
-  padding-top: 0px;
-}
-.header-nav-list-main .menu-level-2[data-menu-title=arthirshtam] .menu-level-2-item > a img, .header-nav-list-main .menu-level-2[data-menu-title=readymades] .menu-level-2-item > a img, .header-nav-list-main .menu-level-2[data-menu-title="decor & accessories"] .menu-level-2-item > a img, .header-nav-list-main .menu-level-2[data-menu-title="mumbai collection"] .menu-level-2-item > a img {
-  margin-bottom: 8px;
-  border-radius: var(--border-radius);
-}
-
-.header-nav-list-main .menu-level-2[data-menu-title=saree] .menu-level-2-item:nth-last-child(1) a,
-.header-nav-list-main .menu-level-2[data-menu-title=saree] .menu-level-2-item:nth-last-child(2) a {
-  border-bottom: 0px;
-  padding-bottom: 0px;
-  padding-top: 0px;
-}
-.header-nav-list-main .menu-level-2[data-menu-title=saree] .menu-level-2-item:nth-last-child(1) a img,
-.header-nav-list-main .menu-level-2[data-menu-title=saree] .menu-level-2-item:nth-last-child(2) a img {
-  margin-bottom: 8px;
-  border-radius: var(--border-radius);
-}
-
-.header-menuActive,
-.header-seachActive {
-  overflow: hidden;
-}
-
-.menu-menu-trigger {
+/* header burger icon */
+.header .cd-nav-trigger {
   cursor: pointer;
 }
-@media (min-width: 576px) {
-  .menu-menu-trigger {
-    display: none;
-  }
-}
-
-.cd-nav-trigger {
-  cursor: pointer;
-}
-.cd-nav-trigger svg {
+.header .cd-nav-trigger svg {
   position: relative;
   display: none;
 }
-.cd-nav-trigger svg::before {
+.header .cd-nav-trigger svg::before {
   position: absolute;
   content: "";
   top: -8px;
@@ -1057,11 +1030,11 @@ iframe#dummy-chat-button-iframe {
   bottom: -8px;
   transform: translateZ(0);
 }
-.cd-nav-trigger svg.active {
+.header .cd-nav-trigger svg.active {
   display: block;
 }
 
-/* menu */
+/* header mobile menu */
 .header-mobile-navigation-list {
   display: none;
 }
@@ -1097,8 +1070,7 @@ iframe#dummy-chat-button-iframe {
   overflow-y: auto;
   width: 49%;
   background: #fff;
-  background: #fff;
-  padding: 17.5px 20px;
+  padding: 18px 20px;
 }
 .header-mobile-navigation-list .cd-primary-nav li a {
   display: block;
@@ -1109,25 +1081,14 @@ iframe#dummy-chat-button-iframe {
 }
 .header-mobile-navigation-list .cd-primary-nav li ul {
   display: none;
-  display: none;
   position: fixed;
   right: 0;
   width: 51%;
-  background: #E4E4E4;
+  background: #e4e4e4;
   top: 64px;
   bottom: 0;
   overflow-y: auto;
   padding: 15px 0;
-  -webkit-animation-delay: 0;
-  -webkit-animation-duration: 0.4s;
-  -webkit-animation-name: slideFromleft;
-  -webkit-animation-fill-mode: fowards;
-  -webkit-animation-direction: ease;
-  -moz-animation-delay: 0;
-  -moz-animation-duration: 0.4s;
-  -moz-animation-name: slideFromleft;
-  -moz-animation-fill-mode: fowards;
-  -moz-animation-direction: ease;
   animation-delay: 0;
   animation-duration: 0.4s;
   animation-name: slideFromleft;
@@ -1138,8 +1099,39 @@ iframe#dummy-chat-button-iframe {
   padding-left: 20px;
   padding-right: 20px;
 }
-.header-mobile-navigation-list .cd-primary-nav li.has-children:hover ul {
+.header-mobile-navigation-list .cd-primary-nav li.has-children .active {
   display: block;
+}
+
+/* desktop menu special */
+.header-nav-list-main .menu-level-2[data-menu-title=arthirshtam], .header-nav-list-main .menu-level-2[data-menu-title=readymades], .header-nav-list-main .menu-level-2[data-menu-title="decor & accessories"], .header-nav-list-main .menu-level-2[data-menu-title="mumbai collection"] {
+  grid-gap: 16px;
+}
+.header-nav-list-main .menu-level-2[data-menu-title=arthirshtam] .menu-level-2-item > a, .header-nav-list-main .menu-level-2[data-menu-title=readymades] .menu-level-2-item > a, .header-nav-list-main .menu-level-2[data-menu-title="decor & accessories"] .menu-level-2-item > a, .header-nav-list-main .menu-level-2[data-menu-title="mumbai collection"] .menu-level-2-item > a {
+  border-bottom: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.header-nav-list-main .menu-level-2[data-menu-title=arthirshtam] .menu-level-2-item > a img, .header-nav-list-main .menu-level-2[data-menu-title=readymades] .menu-level-2-item > a img, .header-nav-list-main .menu-level-2[data-menu-title="decor & accessories"] .menu-level-2-item > a img, .header-nav-list-main .menu-level-2[data-menu-title="mumbai collection"] .menu-level-2-item > a img {
+  margin-bottom: 8px;
+  border-radius: var(--border-radius);
+}
+.header-nav-list-main .menu-level-2[data-menu-title=saree] .menu-level-2-item:nth-last-child(1) a,
+.header-nav-list-main .menu-level-2[data-menu-title=saree] .menu-level-2-item:nth-last-child(2) a {
+  border-bottom: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.header-nav-list-main .menu-level-2[data-menu-title=saree] .menu-level-2-item:nth-last-child(1) a img,
+.header-nav-list-main .menu-level-2[data-menu-title=saree] .menu-level-2-item:nth-last-child(2) a img {
+  margin-bottom: 8px;
+  border-radius: var(--border-radius);
+}
+
+/* menu and search active */
+.header-menuActive,
+.header-seachActive {
+  overflow: hidden;
 }
 
 /*

@@ -2,10 +2,15 @@
   <!-- header navigation -->
   <div class="header-container">
     <div class="header-action-list">
-      <div class="cd-nav-trigger menu-menu-trigger">
-        <svg width="24" height="24">
-          <use href="#menu" />
-        </svg>
+      <div class="header-menu">
+        <div class="cd-nav-trigger">
+          <svg width="24" height="24" class="burgerMenu active">
+            <use href="#menu" />
+          </svg>
+          <svg width="24" height="24" class="closeMenu">
+            <use href="#close" />
+          </svg>
+        </div>
       </div>
       {% if request.page_type == 'index' %}
       <h1 class="header-logo header__heading" itemscope itemtype="http://schema.org/Organization">
@@ -29,16 +34,6 @@
       </h1>
       {% endif %}
       <div class="header-action-lists">
-        <div class="header-menu">
-          <div class="cd-nav-trigger">
-            <svg width="24" height="24" class="burgerMenu active">
-              <use href="#menu" />
-            </svg>
-            <svg width="24" height="24" class="closeMenu">
-              <use href="#close" />
-            </svg>
-          </div>
-        </div>
         <div class="header-search">
           <svg width="24" height="24">
             <use href="#search" />

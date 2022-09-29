@@ -18,6 +18,10 @@
     }
   }
 }
+body {
+  overflow-y: hidden;
+}
+/* header */
 .header {
   position: relative;
   &-container {
@@ -66,6 +70,9 @@
       line-height: 24px;
     }
   }
+}
+/* header search */
+.header {
   &-search-area-wrapper {
     background-color: rgba(0, 0, 0, 0.4);
     margin: 0 auto;
@@ -181,6 +188,38 @@
       }
     }
   }
+}
+/* common footer */
+.header {
+  &-nav-list-footer {
+    position: fixed;
+    bottom: 120px;
+    left: 0;
+    right: 0;
+    background-color: var(--pure-white);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    display: flex;
+    z-index: 2;
+    > div {
+      padding: 12px 8px;
+      flex: 1 0 auto;
+      text-align: center;
+      a {
+        color: initial;
+      }
+      span {
+        display: block;
+        padding-top: 4px;
+      }
+    }
+    @media (min-width: 576px) {
+      display: none;
+    }
+  }
+}
+/* header desktop menu */
+.header {
   &-nav-list-main {
     @include content-block-max-center;
     --border-radius: 2px;
@@ -256,7 +295,6 @@
           display: block;
           border-bottom: 1px solid var(--border-color);
         }
-
         &-image {
           a {
             padding: 0px;
@@ -300,12 +338,11 @@
           font-weight: 400;
           word-wrap: break-word;
         }
-        &:last-child a{
+        &:last-child a {
           border-bottom: 0;
         }
       }
     }
-
     .second-menu {
       background-color: var(--pure-white);
       left: 0;
@@ -328,7 +365,6 @@
         position: relative;
       }
     }
-
     a[aria-current="page"],
     .menu-active,
     .menu-child-active,
@@ -338,103 +374,30 @@
       color: var(--primary-color) !important;
     }
   }
-  &-nav-list-footer {
-    position: fixed;
-    bottom: 120px;
-    left: 0;
-    right: 0;
-    background-color: var(--pure-white);
-    border-top-left-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius);
-    display: flex;
-    z-index: 2;
-    > div {
-      padding: 12px 8px;
-      flex: 1 0 auto;
-      text-align: center;
-      a {
-        color: initial;
+}
+/* header burger icon */
+.header {
+  .cd-nav-trigger {
+    cursor: pointer;
+    svg {
+      position: relative;
+      &::before {
+        position: absolute;
+        content: "";
+        top: -8px;
+        right: -12px;
+        left: -12px;
+        bottom: -8px;
+        transform: translateZ(0);
       }
-      span {
-        display: block;
-        padding-top: 4px;
-      }
-    }
-    @media (min-width: 576px) {
       display: none;
-    }
-  }
-}
-
-.header-nav-list-main .menu-level-2 {
-  &[data-menu-title="arthirshtam"],
-  &[data-menu-title="readymades"],
-  &[data-menu-title="decor & accessories"],
-  &[data-menu-title="mumbai collection"],
-   {
-    grid-gap: 16px;
-    .menu-level-2-item > a {
-      border-bottom: 0px;
-      padding-bottom: 0px;
-      padding-top: 0px;
-      img {
-        margin-bottom: 8px;
-        border-radius: var(--border-radius);
+      &.active {
+        display: block;
       }
     }
   }
 }
-
-.header-nav-list-main .menu-level-2 {
-  &[data-menu-title="saree"] {
-    .menu-level-2-item:nth-last-child(1),
-    .menu-level-2-item:nth-last-child(2) {
-      a {
-        border-bottom: 0px;
-        padding-bottom: 0px;
-        padding-top: 0px;
-        img {
-          margin-bottom: 8px;
-          border-radius: var(--border-radius);
-        }
-      }
-    }
-  }
-}
-
-.header-menuActive,
-.header-seachActive {
-  overflow: hidden;
-}
-
-.menu-menu-trigger {
-  cursor: pointer;
-
-  @media (min-width: 576px) {
-    display: none;
-  }
-}
-.cd-nav-trigger{
-  cursor: pointer;
-  svg{
-    position: relative;
-    &::before{
-      position: absolute;
-      content: "";
-      top: -8px;
-      right: -12px;
-      left: -12px;
-      bottom: -8px;
-      transform: translateZ(0);
-    }
-    display: none;
-    &.active{
-      display: block;
-    }
-  }
-}
-
-/* menu */
+/* header mobile menu */
 .header-mobile-navigation-list {
   display: none;
   &.active {
@@ -446,14 +409,15 @@
     max-height: none;
     z-index: 9999999999;
     height: calc(100vh - 64px);
-    transition: transform .5s cubic-bezier(.645,.045,.355,1),visibility .5s cubic-bezier(.645,.045,.355,1);
+    transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1),
+      visibility 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
     box-shadow: none;
     touch-action: manipulation;
     top: auto;
     bottom: 0;
     width: 100%;
-    background: rgba(0,0,0,.5);
-    .Drawer__Container{
+    background: rgba(0, 0, 0, 0.5);
+    .Drawer__Container {
       height: 100%;
       box-shadow: 2px 2px 4px #0000001a;
     }
@@ -470,8 +434,7 @@
     overflow-y: auto;
     width: 49%;
     background: #fff;
-    background: #fff;
-    padding: 17.5px 20px;
+    padding: 18px 20px;
     li {
       a {
         display: block;
@@ -482,44 +445,70 @@
       }
       ul {
         display: none;
-        display: none;
-    position: fixed;
-    right: 0;
-    width: 51%;
-    background: #E4E4E4;
-    top: 64px;
-    bottom: 0;
-    overflow-y: auto;
-    padding: 15px 0;
-    -webkit-animation-delay: 0;
-    -webkit-animation-duration: .4s;
-    -webkit-animation-name: slideFromleft;
-    -webkit-animation-fill-mode: fowards;
-    -webkit-animation-direction: ease;
-    -moz-animation-delay: 0;
-    -moz-animation-duration: .4s;
-    -moz-animation-name: slideFromleft;
-    -moz-animation-fill-mode: fowards;
-    -moz-animation-direction: ease;
-    animation-delay: 0;
-    animation-duration: .4s;
-    animation-name: slideFromleft;
-    animation-fill-mode: fowards;
-    animation-direction: ease;
-    li{
-      a{
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-    }
+        position: fixed;
+        right: 0;
+        width: 51%;
+        background: #e4e4e4;
+        top: 64px;
+        bottom: 0;
+        overflow-y: auto;
+        padding: 15px 0;
+        animation-delay: 0;
+        animation-duration: 0.4s;
+        animation-name: slideFromleft;
+        animation-fill-mode: fowards;
+        animation-direction: ease;
+        li {
+          a {
+            padding-left: 20px;
+            padding-right: 20px;
+          }
+        }
       }
       &.has-children {
-        &:hover {
-          ul {
-            display: block;
-          }
+     .active{
+      display: block;
+     }
+      }
+    }
+  }
+}
+
+/* desktop menu special */
+.header-nav-list-main .menu-level-2 {
+  &[data-menu-title="arthirshtam"],
+  &[data-menu-title="readymades"],
+  &[data-menu-title="decor & accessories"],
+  &[data-menu-title="mumbai collection"] {
+    grid-gap: 16px;
+    .menu-level-2-item > a {
+      border-bottom: 0px;
+      padding-bottom: 0px;
+      padding-top: 0px;
+      img {
+        margin-bottom: 8px;
+        border-radius: var(--border-radius);
+      }
+    }
+  }
+  &[data-menu-title="saree"] {
+    .menu-level-2-item:nth-last-child(1),
+    .menu-level-2-item:nth-last-child(2) {
+      a {
+        border-bottom: 0px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+        img {
+          margin-bottom: 8px;
+          border-radius: var(--border-radius);
         }
       }
     }
   }
+}
+
+/* menu and search active */
+.header-menuActive,
+.header-seachActive {
+  overflow: hidden;
 }

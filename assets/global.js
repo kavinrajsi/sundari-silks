@@ -15,15 +15,20 @@
     });
   });
 
+  /**
+   * Burger menu trigger
+   */
   $(".cd-nav-trigger").click(function () {
     $(".header-mobile-navigation-list").toggle().toggleClass("active");
     $(".burgerMenu").toggle().toggleClass("active");
     $(".closeMenu").toggle().toggleClass("active");
     $("body").toggleClass("header-menuActive");
   });
+
   /**
-   * Menu
+   * Desktop and mobile menu active
    */
+
   $(".menu-level-1-item").on("mouseenter", function () {
     console.log("enter");
     $(this).children(".second-menu").addClass("active");
@@ -33,6 +38,17 @@
     console.log("leave");
     $(this).children(".second-menu").removeClass("active");
     // $(this).children('.menu-level-2').removeClass("active");
+  });
+
+  /* .cd-primary-nav .has-children */
+
+  $(".cd-primary-nav .has-children").on("mouseenter", function () {
+    console.log("enter");
+    $(this).children(".cd-secondary-nav").addClass("active");
+  });
+  $(".cd-primary-nav .has-children").on("mouseleave", function () {
+    console.log("leave");
+    $(this).children(".cd-secondary-nav").removeClass("active");
   });
 
   function init() {
