@@ -50,9 +50,9 @@ body {
       }
       &:first-child {
         margin-left: 0;
-        @media (min-width: 992px) {
-          display: none;
-        }
+        // @media (min-width: 992px) {
+        //   display: none;
+        // }
       }
       &:last-child {
         margin-right: 0;

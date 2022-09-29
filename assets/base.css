@@ -574,7 +574,7 @@ form svg {
 
 #shopify-chat iframe,
 iframe#dummy-chat-button-iframe {
-  bottom: 220px !important;
+  bottom: 70px !important;
 }
 
 .prpdocutSlider .slick-dots {
@@ -673,11 +673,6 @@ body {
 }
 .header-action-lists div[class^=header]:first-child {
   margin-left: 0;
-}
-@media (min-width: 992px) {
-  .header-action-lists div[class^=header]:first-child {
-    display: none;
-  }
 }
 .header-action-lists div[class^=header]:last-child {
   margin-right: 0;
