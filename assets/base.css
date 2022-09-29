@@ -1610,6 +1610,10 @@ body {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+.template-index .homepage-section .home-page-spotlight-section .product-grid .product__card--img img {
+  width: auto;
+  height: auto;
+}
 .template-index .homepage-section .home-page-spotlight-section .section-content a[type=button] {
   display: block;
   text-align: center;

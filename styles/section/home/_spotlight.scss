@@ -10,9 +10,7 @@
     gap: 8px;
     @media (min-width: 768px) {
       flex-direction: row;
-      // flex-wrap: nowrap;
       gap: 24px;
-      // grid-template-columns: 240px calc(100vw - 240px - 24px);
     }
     @media (max-width: 768px) {
       .section-header-action_link {
@@ -47,6 +45,14 @@
     }
     @media (min-width: 1920px) {
       grid-template-columns: repeat(4, 1fr);
+    }
+    .product__card{
+      &--img{
+        img{
+          width: auto;
+          height: auto;
+        }
+       }
     }
   }
   .section-content a[type="button"] {

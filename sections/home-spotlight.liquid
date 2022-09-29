@@ -28,12 +28,12 @@
                   {% if product.featured_image != blank %}
                   <div>
                     <img loading="auto" alt="{{ product.featured_image.alt }}" width="328" height="463"
-                      src=" {{ product.featured_image.src | image_url: width:672, height:928 }} ">
+                      src=" {{ product.featured_image.src | image_url: width:328, height:463 }} ">
                   </div>
                   {% for image in product.images offset:1 %}
                   <div>
                     <img loading="lazy" alt="{{ image.alt }}" width="328" height="463"
-                      src=" {{ image.src | image_url: width:672, height:928 }} ">
+                      src=" {{ image.src | image_url: width:328, height:463 }} ">
                   </div>
                   {% endfor %}
 
