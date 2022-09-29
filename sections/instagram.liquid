@@ -9,13 +9,15 @@
 
   <div class="section-content">
     <div class="instagram__post--wrapper">
-      {% for block in section.blocks offset:4 %}
+      {% for block in section.blocks %}
+      {% if block.settings.image %}
       <div class="instagram__post--image">
         <a href="https://www.instagram.com/sundari_silks/" target="_blank">
           {{ block.settings.image | image_url : width: 264, height: 290 | image_tag : alt: block.settings.image.alt,
             loading: 'lazy', class: "instagram-item-image" }}
         </a>
       </div>
+      {% endif %}
     {% endfor %}
     </div>
   </div>
