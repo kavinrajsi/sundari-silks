@@ -9,26 +9,14 @@
 
   <div class="section-content">
     <div class="instagram__post--wrapper">
+      {% for block in section.blocks offset:4 %}
       <div class="instagram__post--image">
         <a href="https://www.instagram.com/sundari_silks/" target="_blank">
-          <img loading="lazy"  src="https://instagram.fmaa3-2.fna.fbcdn.net/v/t51.2885-15/309211903_627530259082634_2455914003020380434_n.jpg?stp=c0.164.1344.1344a_dst-jpg_e35_s480x480&_nc_ht=instagram.fmaa3-2.fna.fbcdn.net&_nc_cat=102&_nc_ohc=K-7aEDYXIzwAX9U_Cvy&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT-HDu4ueIY_eKO1369jJnIwcisPbCE_MgYmcMqu4rOGrw&oe=633BA44D&_nc_sid=8fd12b" alt="">
+          {{ block.settings.image | image_url : width: 264, height: 290 | image_tag : alt: block.settings.image.alt,
+            loading: 'lazy', class: "instagram-item-image" }}
         </a>
       </div>
-      <div class="instagram__post--image">
-        <a href="https://www.instagram.com/sundari_silks/" target="_blank">
-          <img loading="lazy"  src="https://instagram.fmaa3-2.fna.fbcdn.net/v/t51.2885-15/309172573_438728774799716_7372600169421628203_n.jpg?stp=dst-jpg_e35_p1080x1080&_nc_ht=instagram.fmaa3-2.fna.fbcdn.net&_nc_cat=108&_nc_ohc=GTOt62oYJDcAX9MDmXR&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT9lJ6t90dUNanc1SPMT_m-b9ZHkuoRWkpShYjiA9jf7tw&oe=633C173A&_nc_sid=8fd12b" alt="">
-        </a>
-      </div>
-      <div class="instagram__post--image">
-        <a href="https://www.instagram.com/sundari_silks/" target="_blank">
-          <img loading="lazy"  src="https://instagram.fmaa3-2.fna.fbcdn.net/v/t51.2885-15/308885213_5246264155484547_2057878065932411883_n.jpg?stp=c0.164.1344.1344a_dst-jpg_e35_s480x480&_nc_ht=instagram.fmaa3-2.fna.fbcdn.net&_nc_cat=103&_nc_ohc=H6mYtagcyCAAX9Qx68X&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT-JgMjiwUVJFgHFqAjnq0CMNWgBAnAqwWmQUu3JVYJaMg&oe=633B27C0&_nc_sid=8fd12b" alt="">
-        </a>
-      </div>
-      <div class="instagram__post--image">
-        <a href="https://www.instagram.com/sundari_silks/" target="_blank">
-          <img loading="lazy"  src="https://instagram.fmaa3-2.fna.fbcdn.net/v/t51.2885-15/309357238_110532325036298_676987189447179210_n.jpg?stp=c0.169.1349.1349a_dst-jpg_e35_s480x480&_nc_ht=instagram.fmaa3-2.fna.fbcdn.net&_nc_cat=102&_nc_ohc=G8C8W7fJF_QAX-ZtD5J&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8tPAQCZaPiCnqiFX24YBWoQgeiNwW31QTrl1Vhb3ke4w&oe=633BDF75&_nc_sid=8fd12b" alt="">
-        </a>
-      </div>
+    {% endfor %}
     </div>
   </div>
 </div>
