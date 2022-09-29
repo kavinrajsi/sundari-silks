@@ -14,11 +14,11 @@
         </a>
       </div>
     </div>
-    <div class="section-content">
-      <div class="product-collection-list">
+    <div class="section-content product-collection-list">
+
         <div class="product-grid">
           {% assign collection = collections[ section.settings.spotlight-collection ] %}
-          {% assign collectionCount = 8 %}
+          {% assign collectionCount = 9 %}
           {% for product in collection.products limit: collectionCount %}
           <div class="product__card">
             <div class="product__card--img">
@@ -75,7 +75,7 @@
           </div>
           {% endfor %}
         </div>
-      </div>
+
       <a href="{{section.settings.spotlight-url}}" type="button">View All</a>
     </div>
   </div>
