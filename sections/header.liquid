@@ -2,7 +2,8 @@
   <!-- header navigation -->
   <div class="header-container">
     <div class="header-action-list">
-      <div class="header-menu">
+      <div style="display: flex; align-items: center;">
+      <div style="margin-right: 8px;" class="header-menu">
         <div class="cd-nav-trigger">
           <svg width="24" height="24" class="burgerMenu active">
             <use href="#menu" />
@@ -33,6 +34,7 @@
         {% if request.page_type == 'index' %}
       </h1>
       {% endif %}
+    </div>
       <div class="header-action-lists">
         <div class="header-search">
           <svg width="24" height="24">
