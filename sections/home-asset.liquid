@@ -1,0 +1,66 @@
+<div class="home-assets">
+
+</div>
+
+{% schema %}
+{
+"name": "Assets Section",
+"class": "homepage-section",
+"tag": "section",
+"settings": [
+{
+"type": "text",
+"id": "title",
+"label": "Section Title",
+"default": "Need Assistance?"
+},
+{
+"type": "text",
+"id": "description",
+"label": "Section Description",
+"default": "We are always here to help you! "
+},
+{
+"type": "text",
+"id": "phone_number",
+"label": "Store Phone Number",
+"default": "+91 99627 12299"
+},
+{
+"type": "text",
+"id": "opening_time",
+"label": "Store Opening Time",
+"default": "9:00 am to 6:00 pm (IST) "
+},{
+"type": "text",
+"id": "store_email",
+"label": "Store Email ID",
+"default": "different@sundarisilks.com "
+}
+],
+"blocks": [
+{
+"type": "help-section",
+"name": "Help Section",
+"limit": 3,
+"settings": [
+{
+"type": "image_picker",
+"id": "image",
+"label": "Image"
+},
+{
+"type": "text",
+"id": "text",
+"label": "Image Text"
+},
+{
+"type": "url",
+"id": "link",
+"label": "Image link"
+}
+]
+}
+]
+}
+{% endschema %}
