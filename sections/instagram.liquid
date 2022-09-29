@@ -1,34 +1,64 @@
+<section class="shopify-section homepage-section">
+<div class="instagram-feed">
 
-<section class="instagram-feed">
-  <div class="section-header-wrapper ">
-    <div class="section-header">
+    <div class="section-header text-center">
       <div class="section-header-title">Follow us on Instagram</div>
       <div class="section-header-content">Use #SundariAndYou when you Instagram your favourite Sundari outfits</div>
     </div>
-  </div>
+
   <div class="section-content">
     <div class="instagram__post--wrapper">
       <div class="instagram__post--image">
-        <a href="#">
+        <a href="https://www.instagram.com/sundari_silks/" target="_blank">
           <img loading="lazy"  src="https://instagram.fmaa3-2.fna.fbcdn.net/v/t51.2885-15/309211903_627530259082634_2455914003020380434_n.jpg?stp=c0.164.1344.1344a_dst-jpg_e35_s480x480&_nc_ht=instagram.fmaa3-2.fna.fbcdn.net&_nc_cat=102&_nc_ohc=K-7aEDYXIzwAX9U_Cvy&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT-HDu4ueIY_eKO1369jJnIwcisPbCE_MgYmcMqu4rOGrw&oe=633BA44D&_nc_sid=8fd12b" alt="">
         </a>
       </div>
       <div class="instagram__post--image">
-        <a href="#">
+        <a href="https://www.instagram.com/sundari_silks/" target="_blank">
           <img loading="lazy"  src="https://instagram.fmaa3-2.fna.fbcdn.net/v/t51.2885-15/309172573_438728774799716_7372600169421628203_n.jpg?stp=dst-jpg_e35_p1080x1080&_nc_ht=instagram.fmaa3-2.fna.fbcdn.net&_nc_cat=108&_nc_ohc=GTOt62oYJDcAX9MDmXR&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT9lJ6t90dUNanc1SPMT_m-b9ZHkuoRWkpShYjiA9jf7tw&oe=633C173A&_nc_sid=8fd12b" alt="">
         </a>
       </div>
       <div class="instagram__post--image">
-        <a href="#">
+        <a href="https://www.instagram.com/sundari_silks/" target="_blank">
           <img loading="lazy"  src="https://instagram.fmaa3-2.fna.fbcdn.net/v/t51.2885-15/308885213_5246264155484547_2057878065932411883_n.jpg?stp=c0.164.1344.1344a_dst-jpg_e35_s480x480&_nc_ht=instagram.fmaa3-2.fna.fbcdn.net&_nc_cat=103&_nc_ohc=H6mYtagcyCAAX9Qx68X&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT-JgMjiwUVJFgHFqAjnq0CMNWgBAnAqwWmQUu3JVYJaMg&oe=633B27C0&_nc_sid=8fd12b" alt="">
         </a>
       </div>
       <div class="instagram__post--image">
-        <a href="#">
+        <a href="https://www.instagram.com/sundari_silks/" target="_blank">
           <img loading="lazy"  src="https://instagram.fmaa3-2.fna.fbcdn.net/v/t51.2885-15/309357238_110532325036298_676987189447179210_n.jpg?stp=c0.169.1349.1349a_dst-jpg_e35_s480x480&_nc_ht=instagram.fmaa3-2.fna.fbcdn.net&_nc_cat=102&_nc_ohc=G8C8W7fJF_QAX-ZtD5J&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8tPAQCZaPiCnqiFX24YBWoQgeiNwW31QTrl1Vhb3ke4w&oe=633BDF75&_nc_sid=8fd12b" alt="">
         </a>
       </div>
     </div>
   </div>
-</section>
+</div>
 
+<div id="instagramRoot"></div>
+</section>
+<script>
+  let request = new XMLHttpRequest;
+let  output;
+request.open('GET', 'https://graph.instagram.com/5879946881/media?fields=id,media_type,media_url,username,timestamp&access_token=AQCZPMO7NZEVDiIORKhMvIWytMKLjcVPqAXf98vNl1oS5GQvl4kRLHFR_mjpY3VTFVZ084nAao2pi8GzXNw7wCltNFrJP0yjwCkrekQeW3QcWWlhkrKeu8fVKTm3GRY41_tO0euAmARSjUPSN_moa6ebc7yJ0t6Be6xYLGfk03cAt1EXX27-8l9S-GBl9S7vQv36CMKyvpNXBICB5y72g-_vi5VY0fDul9YyqWiNiyBF1A#_');
+          request.send();
+          request.onload = function () {
+           console.log(JSON.parse(this.response));
+            let restCountries = JSON.parse(this.response);
+            let tryMe = restCountries.data;
+              tryMe.forEach(country => {
+                output = `
+                <div class="col col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-3">
+          <div class="card" style="height: 100%;">`
+         if( (country.media_type) === "VIDEO"){output += ` <video controls>
+           <source src="${country.media_url}">
+           </video>`;
+
+           } else{
+           output += ` <img src="${country.media_url}" alt="${country.id}" class="" >`; }
+           output +=`
+            </div>
+      </div>
+                    `;
+              document.getElementsByClassName("kft-instagram-widget")[0].innerHTML += output;
+document.getElementById("instagramRoot").innerHTML += output;
+          });
+          };
+</script>
