@@ -1875,6 +1875,24 @@ body {
   line-height: 24px;
   color: #6c757d;
 }
+.template-index .homepage-section .instagram__post--wrapper {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 768px) {
+  .template-index .homepage-section .instagram__post--wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.template-index .homepage-section .instagram__post--wrapper a {
+  display: block;
+}
+.template-index .homepage-section .instagram__post--wrapper img {
+  width: 100%;
+}
 
 .collection-page-header {
   margin-left: 4vw;

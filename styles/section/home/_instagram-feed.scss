@@ -1,0 +1,16 @@
+.instagram__post--wrapper{
+  max-width: var(--content-width);
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  @media(min-width: 768px){
+    grid-template-columns: repeat(4, 1fr);
+  }
+  a{
+    display: block;
+  }
+  img{
+    width: 100%;
+  }
+}
