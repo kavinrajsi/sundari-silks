@@ -193,7 +193,7 @@ body {
 .header {
   &-nav-list-footer {
     position: fixed;
-    bottom: 120px;
+    bottom: 0px;
     left: 0;
     right: 0;
     background-color: var(--pure-white);
@@ -378,6 +378,10 @@ body {
 /* header burger icon */
 .header {
   .cd-nav-trigger {
+    display: block;
+    @media(min-width: 992px){
+      display: none;
+    }
     cursor: pointer;
     svg {
       position: relative;
@@ -511,4 +515,20 @@ body {
 .header-menuActive,
 .header-seachActive {
   overflow: hidden;
+}
+
+.desktopBanner{
+  display: none;
+}
+.mobileBanner{
+  display: block;
+}
+@media screen and (min-width: 641px){
+
+  .mobileBanner{
+    display: none;
+  }
+  .desktopBanner{
+    display: block;
+  }
 }

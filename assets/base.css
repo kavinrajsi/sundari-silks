@@ -828,7 +828,7 @@ body {
 /* common footer */
 .header-nav-list-footer {
   position: fixed;
-  bottom: 120px;
+  bottom: 0px;
   left: 0;
   right: 0;
   background-color: var(--pure-white);
@@ -1015,7 +1015,13 @@ body {
 
 /* header burger icon */
 .header .cd-nav-trigger {
+  display: block;
   cursor: pointer;
+}
+@media (min-width: 992px) {
+  .header .cd-nav-trigger {
+    display: none;
+  }
 }
 .header .cd-nav-trigger svg {
   position: relative;
@@ -1134,6 +1140,22 @@ body {
   overflow: hidden;
 }
 
+.desktopBanner {
+  display: none;
+}
+
+.mobileBanner {
+  display: block;
+}
+
+@media screen and (min-width: 641px) {
+  .mobileBanner {
+    display: none;
+  }
+  .desktopBanner {
+    display: block;
+  }
+}
 /*
  *  Owl Carousel - Core
  */

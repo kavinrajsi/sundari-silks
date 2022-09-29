@@ -78,17 +78,21 @@
   </div>
   <!-- mobile navigation -->
   <nav class="header-nav-list-footer">
+    <div class="header-home">
     <a href="{{ routes.root_url }}">
       <svg width="24" height="24">
-        <use href="#menu" />
+        <use href="#home" />
       </svg>
       <span>Home</span>
     </a>
+    </div>
     <div class="header-wishlist">
+      <a href="{{ collection.url }}" class="collection-grid-item__link">
       <svg width="24" height="24">
-        <use href="#heart" />
+        <use href="#grid" />
       </svg>
       <span>Categories</span>
+    </a>
     </div>
     <div class="header-cart">
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
