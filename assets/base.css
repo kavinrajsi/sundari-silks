@@ -1767,13 +1767,7 @@ body {
   font-weight: 500;
   font-size: 16px;
   background-color: transparent;
-  margin-right: 12px;
   cursor: pointer;
-}
-@media (min-width: 768px) {
-  .template-index .homepage-section .homepage-justdropped .tab-buttton .tab {
-    margin-right: 24px;
-  }
 }
 .template-index .homepage-section .homepage-justdropped .tab-buttton .tab:last-child {
   margin-right: 0px;
