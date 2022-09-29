@@ -637,7 +637,7 @@ iframe#dummy-chat-button-iframe {
 }
 
 body {
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 /* header */
