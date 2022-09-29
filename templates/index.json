@@ -7,6 +7,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/sundari-silks-24-banner-desktop_2518x_progressive_png.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Slide-1-mobile.jpg",
             "link": "#"
           }
         },
@@ -14,6 +15,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/sundari-silks-woven-wonder-banner-desktop.png",
+            "mobile_image": "shopify:\/\/shop_images\/Slide-2-mobile.jpg",
             "link": "shopify:\/\/collections\/all-kanchipuram"
           }
         },
@@ -21,6 +23,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/sundari-silks-woven-wonder-two-banner-desktop_2518x_progressive_png.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Slide-1-mobile.jpg",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
         },
@@ -28,6 +31,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/MENS_KURTA-01.png",
+            "mobile_image": "shopify:\/\/shop_images\/Slide-2-mobile.jpg",
             "link": "shopify:\/\/collections\/bandhani"
           }
         },
@@ -35,6 +39,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/sundarisilks-sale-banner-desktop_2518x_progressive_png.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Slide-1-mobile.jpg",
             "link": "shopify:\/\/collections\/all"
           }
         }
@@ -284,6 +289,7 @@
     "recent-products": {
       "type": "product-recommendations",
       "settings": {
+        "show_product_recommendations": false
       }
     },
     "blog": {
@@ -292,8 +298,7 @@
         "heading": "Blogs by Sundari Silks",
         "richtext": "Stories of Fabrics, Styling Tips, Decor Inspiration and more…",
         "blog": "article",
-        "blog_show_author": true,
-        "blog_show_date": true
+        "blog_show_author": true
       }
     },
     "instagram": {
