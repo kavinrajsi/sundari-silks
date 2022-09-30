@@ -3,6 +3,8 @@
     "product-grid": {
       "type": "page-collection-group-grid",
       "settings": {
+        "show_collection": "Saree",
+        "show_productcount": 4
       }
     }
   },
