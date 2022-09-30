@@ -2750,3 +2750,7 @@ footer .footer-copyright a {
     justify-content: space-between;
     align-items: flex-end;
 }
+
+section#shopify-section-template--15971397533854__product-grid{
+  padding: 4vw 0;
+}
