@@ -1,11 +1,11 @@
-{% assign collection = collections[ section.settings.show_collection ] %}
 
 <section>
   <div class="test--product-card--grid">
-    {% for product in collection.products limit:8 %}
 
+    {% for product in collection.products limit:8 %}
+{{show_collection}}
       <div class="product-grid-list-three">
-        {% assign collection = collections[ section.settings.spotlight-collection ] %}
+        {% assign collection = collections[ section.settings.show_collection ] %}
         {% assign collectionCount = 8 %}
         {% for product in collection.products limit: collectionCount %}
         <div class="product__card">
