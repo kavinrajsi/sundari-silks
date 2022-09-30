@@ -1792,7 +1792,6 @@ body {
 }
 @media (min-width: 768px) {
   .template-index .homepage-section .homepage-justdropped .tab-buttton {
-    gap: 24px;
     margin: 0;
   }
 }
@@ -1800,30 +1799,18 @@ body {
   color: rgba(0, 0, 0, 0.8);
   font-family: var(--font-montserrat);
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  background-color: transparent;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  background-color: #f3ece8;
+  color: #4a4a4a;
+  border-radius: 40px;
+  padding: 4px 16px;
   cursor: pointer;
 }
-.template-index .homepage-section .homepage-justdropped .tab-buttton .tab:last-child {
-  margin-right: 0px;
-}
-.template-index .homepage-section .homepage-justdropped .tab-buttton .tab:after {
-  content: none;
-  display: block;
-  margin-top: 8px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
 .template-index .homepage-section .homepage-justdropped .tab-buttton .tab.active {
-  color: var(--primary-color);
-}
-.template-index .homepage-section .homepage-justdropped .tab-buttton .tab.active:after {
-  content: "";
   background-color: var(--primary-color);
+  color: var(--pure-white);
 }
 .template-index .homepage-section .homepage-justdropped .justdropped-box {
   display: none;
@@ -1904,12 +1891,14 @@ body {
   font-size: 20px;
   line-height: 28px;
   margin-bottom: 14px;
+  font-family: var(--font-playfair);
 }
 .template-index .homepage-section .blog-feed-container .blog-feed-card a p {
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
   color: #6c757d;
+  font-family: var(--font-montserrat);
 }
 .template-index .homepage-section .instagram__post--wrapper {
   max-width: var(--content-width);
