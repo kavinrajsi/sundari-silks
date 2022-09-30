@@ -233,17 +233,6 @@
               "subtitle": ""
             }
           },
-          "89f422f5-21c8-4b60-8910-9e40fdbe7736": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/colorful-fabric.jpg",
-              "mega_link": "1",
-              "link": "",
-              "title": "",
-              "subtitle": ""
-            }
-          },
           "92c429f1-06cf-45d6-ae7f-bc1b298b75f3": {
             "type": "logo_image",
             "settings": {
@@ -252,6 +241,39 @@
               "mega_link": "Living Spaces",
               "link": "#",
               "title": "Living Spaces",
+              "subtitle": ""
+            }
+          },
+          "8d6bbc38-40c2-46d2-a363-f855a05e905e": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/customer-in-face-mask-smiles-and-holds-white-shopping-bags.jpg",
+              "mega_link": "Bags",
+              "link": "#",
+              "title": "Bags",
+              "subtitle": ""
+            }
+          },
+          "3b41ef82-241e-437d-9545-f05ac21b20bc": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/interior-decor-shelving-with-ceramic-art.jpg",
+              "mega_link": "Decor",
+              "link": "#",
+              "title": "Decor",
+              "subtitle": ""
+            }
+          },
+          "20802720-32fb-4022-bebc-0f1bddd08987": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/a-greying-tan-pooch-on-a-chaise-longue.jpg",
+              "mega_link": "Accessories",
+              "link": "#",
+              "title": "Accessories",
               "subtitle": ""
             }
           }
@@ -273,8 +295,10 @@
           "0dc284ce-400a-4c70-b4be-980ee12441ac",
           "a825885a-b299-42ea-a5c5-84ba6100ea8c",
           "15e15742-5345-4198-ba4b-2a98c13bfc08",
-          "89f422f5-21c8-4b60-8910-9e40fdbe7736",
-          "92c429f1-06cf-45d6-ae7f-bc1b298b75f3"
+          "92c429f1-06cf-45d6-ae7f-bc1b298b75f3",
+          "8d6bbc38-40c2-46d2-a363-f855a05e905e",
+          "3b41ef82-241e-437d-9545-f05ac21b20bc",
+          "20802720-32fb-4022-bebc-0f1bddd08987"
         ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
