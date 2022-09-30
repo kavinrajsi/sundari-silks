@@ -1,0 +1,41 @@
+{% assign collection = collections[ section.settings.show_collection ] %}
+
+<section>
+  <div class="test--product-card--grid">
+    {% for product in collection.products limit:section.settings.show_productcount %}
+
+    <div class="test--product-card">
+      <a href="{{product.url | within: collection }}" class="product-link">
+        {{ product.featured_image | image_url: width: 400, height: 400, crop: 'bottom' | image_tag : class:
+        'product-image', loading: 'lazy', alt: product.feature_image.alt}}
+        <h2 class="product-title">{{ product.title }}</h2>
+        <p class="product-money"> {{ product.price | money }} </p>
+        {% if  product.available != true %}
+        <span class="product-label-soldout"> sold out </span>
+        {% endif %}
+      </a>
+    </div>
+
+    {% endfor %}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Product per Collection",
+  "class": "section-random-product",
+  "settings": [
+  {
+    "type": "text",
+    "id": "show_collection",
+    "label": "Collection Name as per Title in collection page",
+    "default": "all"
+  },
+    {
+      "type": "number",
+      "id": "show_productcount",
+      "label": "How many product need to show",
+      "default": 4
+    }
+  ]
+}
+{% endschema %}
