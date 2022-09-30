@@ -1,18 +1,23 @@
-
 <section>
-  <div class="test--product-card--grid">
+  <div class="collection-section--title">
+    <h3>
+      {{collection_title}}
+    </h3>
+    <a href={{collection_url}}>Show More</a>
+  </div>
+  <div class="collection-section--group">
+    <div class="test--product-card--grid">
 
-    {% for product in collection.products limit:8 %}
-{{show_collection}}
+      {% for product in collection.products limit:8 %}
       <div class="product-grid-list-three">
-        {% assign collection = collections[ section.settings.show_collection ] %}
+        {% assign collection = collections[ section.settings.collection_name ] %}
         {% assign collectionCount = 8 %}
         {% for product in collection.products limit: collectionCount %}
         <div class="product__card">
           <div class="product__card--img">
             <a href="{{ product.url | within: collection }}" class="product-link">
               <div class="product__image--wrapper">
-                 {% if product.featured_image != blank %}
+                {% if product.featured_image != blank %}
                 <div>
                   <img loading="auto" alt="{{ product.featured_image.alt }}" width="328" height="463"
                     src=" {{ product.featured_image.src | image_url: width:328, height:463 }} ">
@@ -37,7 +42,8 @@
               <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
               <div class="product__variant--price">
                 {% if product.price_varies %}
-                <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency }}
+                <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency
+                  }}
                 </p>
                 {% else %}
                 <p>
@@ -56,26 +62,41 @@
         {% endfor %}
       </div>
 
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
 </section>
 {% schema %}
 {
-  "name": "Product per Collection",
-  "class": "section-random-product",
-  "settings": [
-  {
-    "type": "text",
-    "id": "show_collection",
-    "label": "Collection Name as per Title in collection page",
-    "default": "all"
-  },
-    {
-      "type": "number",
-      "id": "show_productcount",
-      "label": "How many product need to show",
-      "default": 4
-    }
-  ]
+"name": "Collection Page",
+"class": "section-random-product",
+"settings": [
+],
+"blocks": [
+{
+"type": "text",
+"id": "collection_title",
+"label": "Collection Title",
+"default": "all"
+},
+{
+"type": "text",
+"id": "collection_name",
+"label": "Collection Name",
+"default": "all"
+},
+{
+"type": "text",
+"id": "collection_url",
+"label": "Collection URL",
+"default": "all"
+},
+{
+"type": "number",
+"id": "collection_count",
+"label": "How many product need to show",
+"default": 8
+}
+]
 }
 {% endschema %}
