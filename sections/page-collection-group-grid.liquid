@@ -8,7 +8,6 @@
   <div class="collection-section--group">
     <div class="test--product-card--grid">
 
-      {% for product in collection.products limit:8 %}
       <div class="product-grid-list-four">
         {% assign collection = collections[ block.settings.collection_name ] %}
         {% assign collectionCount = 8 %}
@@ -62,7 +61,6 @@
         {% endfor %}
       </div>
 
-      {% endfor %}
     </div>
   </div>
 </section>
