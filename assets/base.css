@@ -1639,6 +1639,9 @@ body {
     overflow: hidden;
   }
 }
+.template-index .homepage-section .home-page-spotlight-section .spot-light .section-content .product-grid-list-three {
+  margin: 0 auto;
+}
 .template-index .homepage-section .home-page-spotlight-section .product-grid .product__card--img img {
   width: auto;
   height: auto;
