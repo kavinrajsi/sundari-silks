@@ -3,10 +3,30 @@
     "product-grid": {
       "type": "page-collection-group-grid",
       "settings": {
+        "show_collection": "Saree",
+        "show_productcount": 4
+      }
+    },
+    "16645431788fab7dc5": {
+      "type": "resent-product-list",
+      "settings": {
+        "show_collection": "Mumbai Collection",
+        "show_productcount": 4,
+        "show_soldout": false
+      }
+    },
+    "1664543194c4639f45": {
+      "type": "resent-product-list",
+      "settings": {
+        "show_collection": "Mumbai Collection",
+        "show_productcount": 4,
+        "show_soldout": false
       }
     }
   },
   "order": [
-    "product-grid"
+    "product-grid",
+    "16645431788fab7dc5",
+    "1664543194c4639f45"
   ]
 }
