@@ -64,37 +64,44 @@
     </div>
   </div>
 </section>
+
 {% schema %}
 {
 "name": "Collection Page",
 "class": "section-random-product",
-"settings": [
-],
+"tag": "section",
 "blocks": [
-{
-"type": "text",
-"id": "collection_title",
-"label": "Collection Title",
-"default": "all"
+    {
+      "type": "collection-image",
+      "name": "Collection Image Section",
+      "limit": 6,
+      "settings": [
+        {
+    "type": "text",
+    "id": "grid_collection_title",
+    "label": "Collection Title",
+    "default": "all"
 },
 {
-"type": "text",
-"id": "collection_name",
-"label": "Collection Name",
-"default": "all"
+    "type": "text",
+    "id": "grid_collection_name",
+    "label": "Collection Name",
+    "default": "all"
 },
 {
-"type": "text",
-"id": "collection_url",
-"label": "Collection URL",
-"default": "all"
+    "type": "text",
+    "id": "grid_collection_url",
+    "label": "Collection URL",
+    "default": "all"
 },
 {
-"type": "number",
-"id": "collection_count",
-"label": "How many product need to show",
-"default": 8
+    "type": "number",
+    "id": "grid_collection_count",
+    "label": "How many product need to show",
+    "default": 8
 }
-]
+      ]
+    }
+  ]
 }
 {% endschema %}
