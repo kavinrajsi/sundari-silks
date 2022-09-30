@@ -1,5 +1,5 @@
 <div class="page-width">
-  <h1 class="title title--primary"> collection Page</h1>
+  <h1 class="title title--primary"> Collection Page</h1>
   {% paginate collections by 24 %}
   <ul class="collection-list grid" role="list">
     {% for collection in collections  %}
@@ -7,15 +7,9 @@
       <div class="card">
         <div class="card__media">
           <div class="media media--transparent media--hover-effect">
-            {% if collection.image  %}
-            {% assign collection_image = collection.image  %}
-            {% elsif collection.products.first and collection.products.first.images != empty  %}
-            {% assign collection_image = collection.products.first.featured_image  %}
-            {% else  %}
-            {% assign collection_image = blank  %}
-            {% endif  %}
+
             <a href="{{ collection.url }}">
-              <img class="lazyload" data-sizes="auto" data-src="{{ collection_image | img_url: '480x' }}" alt="">
+              <img class="lazyload" data-sizes="auto" data-src="{{ collection.image | image_url:  height: '480x' }}" alt="{{collection.image.alt}}">
             </a>
           </div>
         </div>
@@ -24,9 +18,6 @@
             <h3 class="card__heading">
               {{collection.title}}
             </h3>
-            <p class="card__caption">
-              {{collection.description}}
-            </p>
           </div>
         </div>
       </div>

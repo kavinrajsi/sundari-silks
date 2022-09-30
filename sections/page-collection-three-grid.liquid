@@ -164,13 +164,38 @@
               data-slick='{"autoplay": true, "cssEase": "linear", "slidesToShow": 1, "slidesToScroll": 1, "autoplaySpeed": 1000, "fade": true, "arrows": false, "dots": true, "adaptiveHeight": true }'>
               {% if product.featured_image != blank %}
               <div>
-                <img loading="auto" alt="{{ product.featured_image.alt }}" width="328" height="463"
-                  src=" {{ product.featured_image.src | image_url: width:672, height:928 }} ">
+
+
+<img id="Image-{{ product.id }}"
+  class="blur-up responsive-image__image lazyload"
+  src="https://cdn.shopify.com/s/files/1/0560/3695/0174/files/pattern-background.png?v=1664355715"
+  data-src="{{ product.featured_image.src | image_url: width:672, height: 928, crop: 'top' }}"
+  data-widths="[{{ product.featured_image.width }}]"
+  data-aspectratio="{{ product.featured_image.aspect_ratio }}"
+  data-sizes="auto"
+  data-parent-fit="cover"
+  tabindex="-1"
+  loading="auto"
+  alt="{{ product.featured_image.alt | escape }}"
+
+>
               </div>
               {% for image in product.images offset:1 %}
               <div>
-                <img loading="lazy" alt="{{ image.alt }}" width="328" height="463"
-                  src=" {{ image.src | image_url: width:672, height:928 }} ">
+
+<img
+  class="blur-up responsive-image__image lazyload sliderSecondImage"
+  src="https://cdn.shopify.com/s/files/1/0560/3695/0174/files/pattern-background.png?v=1664355715"
+  data-src="{{ image.src | image_url: width:672, height: 928, crop: 'top' }}"
+  data-widths="[{{ image.width }}]"
+  data-aspectratio="{{ image.aspect_ratio }}"
+  data-sizes="auto"
+  data-parent-fit="cover"
+  tabindex="-1"
+  loading="auto"
+  alt="{{ image.alt | escape }}"
+
+>
               </div>
               {% endfor %}
 

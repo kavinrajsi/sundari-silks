@@ -12,6 +12,12 @@
       flex-direction: row;
       gap: 24px;
     }
+    .section-header{
+      text-align: center;
+      @media (min-width: 768px){
+        text-align: left;
+      }
+    }
     @media (max-width: 768px) {
       .section-header-action_link {
         display: none;

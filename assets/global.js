@@ -103,7 +103,11 @@
   /**
    * Product hover slider
    */
-  $(".prpdocutSlider").slick();
+  $(".prpdocutSlider").slick({
+    lazyLoad: 'ondemand',
+    slidesToShow: 1,
+    slidesToScroll: 1
+  });
 
   function slickPause() {
     $(".prpdocutSlider").slick("slickPause");
