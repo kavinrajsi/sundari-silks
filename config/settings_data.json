@@ -19,232 +19,230 @@
     "mlvedaACS_positionTop": "10px",
     "mlvedaACS_supportedCurrencies": "INR USD GBP EUR CAD AUD SGD",
     "mlvedaACS_isCustomized": true,
-    "mlvedaACS_hideDecimal": false,
-    "mlvedaACS_hoverBackgroundColor": "inherit",
-    "mlvedaACS_positionRight": "10px",
-    "mlvedaACS_currencyFormat": "money_with_currency_format",
-    "mlvedaACS_borderLineColor": "inherit",
-    "mlvedaACS_displayFlag": false,
-    "mlvedaACS_borderLook": false,
     "sections": {
       "announcement-bar": {
-        "type": "announcement-bar",
+        "settings": {
+        },
         "blocks": {
           "e5b9b3cb-42bb-43bc-adac-0cad652993ae": {
-            "type": "announcement",
-            "disabled": true,
             "settings": {
-              "text": "Announce something here lorm",
               "link": "",
+              "text": "Announce something here lorm",
               "announcement-background-color": "#000000",
               "announcement-text-color": "#ffffff"
-            }
+            },
+            "disabled": true,
+            "type": "announcement"
           }
         },
+        "type": "announcement-bar",
         "block_order": [
           "e5b9b3cb-42bb-43bc-adac-0cad652993ae"
-        ],
-        "settings": {
-        }
+        ]
       },
       "footer": {
-        "type": "footer",
         "settings": {
           "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
           "logo_width": 100
-        }
+        },
+        "type": "footer"
       },
       "header": {
-        "type": "header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
+          "menu": "main-menu",
+          "logo_width": 120
+        },
         "blocks": {
           "c37446b7-4fce-4474-9e26-e3348834815e": {
-            "type": "logo_image",
             "settings": {
-              "menu_enable": true,
               "image": "shopify:\/\/shop_images\/kanchipuram-saree-styling-ideas-1.png",
+              "menu_enable": true,
+              "subtitle": "Explore",
               "mega_link": "Kanchipura",
               "link": "shopify:\/\/collections\/all-kanchipuram",
-              "title": "All Kanchipuram",
-              "subtitle": "Explore"
-            }
-          },
-          "9ec61fc7-ed2a-4490-8411-bf33c7d3eb56": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/kanchipuram-saree-styling-ideas-2.png",
-              "mega_link": "Wedding Edit",
-              "link": "shopify:\/\/collections\/saree",
-              "title": "Venkatagiri Cotton",
-              "subtitle": "Explore"
-            }
-          },
-          "ff5db7c6-de70-4624-b1a1-620865565274": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/a-hand-holds-silver-paint-brush.jpg",
-              "mega_link": "Necklaces",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Necklaces",
-              "subtitle": ""
-            }
-          },
-          "7a42f5b4-6dd8-44e4-aaf9-a4cca16d3985": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/choker-with-triangle.jpg",
-              "mega_link": "Earrings",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Earrings",
-              "subtitle": ""
-            }
-          },
-          "983fbcfb-efd2-4b72-8014-670919f1d5b1": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/blue-and-green-background-with-silver-jewelry.jpg",
-              "mega_link": "Bangles \/ Bracelets",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Bangles \/ Bracelets",
-              "subtitle": ""
-            }
-          },
-          "45a49917-2d4a-4818-a6c7-05e15d8d7934": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/origami-crane-necklace.jpg",
-              "mega_link": "Rings",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Rings",
-              "subtitle": ""
-            }
+              "title": "All Kanchipuram"
+            },
+            "type": "logo_image"
           },
           "012b8059-1c4e-413f-9c85-824914bb2502": {
-            "type": "logo_image",
             "settings": {
-              "menu_enable": true,
               "image": "shopify:\/\/shop_images\/a-person-looks-over-their-shoulder-facing-camera.jpg",
+              "menu_enable": true,
+              "subtitle": "",
               "mega_link": "Anklets \/ Toe Rings",
               "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Anklets \/ Toe Rings",
-              "subtitle": ""
-            }
-          },
-          "6757033e-547a-49db-b111-6aec43c0ef51": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/persons-hands-hold-the-collar-of-their-sweater.jpg",
-              "mega_link": "Kids Jewellery",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Kids Jewellery",
-              "subtitle": ""
-            }
-          },
-          "a737801a-d041-4ea1-a346-7ffdfb9cee58": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/CuratedCollectionImage-2.png",
-              "mega_link": "Pendants",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Pendants",
-              "subtitle": ""
-            }
-          },
-          "bea63853-ebd2-4352-a35d-d3cb27e4be22": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/kanchipuram-saree-styling-ideas-1.png",
-              "mega_link": "Men's Bracelets",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Men's Bracelets",
-              "subtitle": ""
-            }
-          },
-          "bc806da1-0a86-4b42-8116-d24a243e9b21": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/model-leaning-against-a-wall-of-lights-atop-red-shag-carpet.jpg",
-              "mega_link": "Women",
-              "link": "shopify:\/\/collections\/women",
-              "title": "Women",
-              "subtitle": ""
-            }
-          },
-          "3401dc99-bfe7-473f-8619-ab753f5e667a": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/modern-male-fashion-with-glasses.jpg",
-              "mega_link": "Men",
-              "link": "shopify:\/\/collections\/men",
-              "title": "Men",
-              "subtitle": ""
-            }
-          },
-          "218b71c4-c7cb-4558-a8a9-d843f6d9f329": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/colorful-fabric.jpg",
-              "mega_link": "Fabrics",
-              "link": "shopify:\/\/collections\/all-kanchipuram",
-              "title": "Fabrics",
-              "subtitle": ""
-            }
+              "title": "Anklets \/ Toe Rings"
+            },
+            "type": "logo_image"
           },
           "0dc284ce-400a-4c70-b4be-980ee12441ac": {
-            "type": "logo_image",
             "settings": {
-              "menu_enable": true,
               "image": "shopify:\/\/shop_images\/girl-by-brick-wall.jpg",
+              "menu_enable": true,
+              "subtitle": "",
               "mega_link": "Girls",
               "link": "shopify:\/\/collections\/readymades",
-              "title": "Girls",
-              "subtitle": ""
-            }
+              "title": "Girls"
+            },
+            "type": "logo_image"
           },
           "a825885a-b299-42ea-a5c5-84ba6100ea8c": {
-            "type": "logo_image",
             "settings": {
-              "menu_enable": true,
               "image": "shopify:\/\/shop_images\/laughing-kid-boy.jpg",
+              "menu_enable": true,
+              "subtitle": "",
               "mega_link": "Boys",
               "link": "shopify:\/\/collections\/readymades",
-              "title": "Boys",
-              "subtitle": ""
-            }
-          },
-          "15e15742-5345-4198-ba4b-2a98c13bfc08": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/baby-girl-feet.jpg",
-              "mega_link": "Infant Wear",
-              "link": "shopify:\/\/products\/3-layer-non-surgical-masks-in-cotton-prints-and-plain-set-of-4",
-              "title": "Infant Wear",
-              "subtitle": ""
-            }
+              "title": "Boys"
+            },
+            "type": "logo_image"
           },
           "89f422f5-21c8-4b60-8910-9e40fdbe7736": {
-            "type": "logo_image",
             "settings": {
-              "menu_enable": true,
               "image": "shopify:\/\/shop_images\/colorful-fabric.jpg",
+              "menu_enable": true,
+              "subtitle": "",
               "mega_link": "1",
               "link": "",
-              "title": "",
-              "subtitle": ""
-            }
+              "title": ""
+            },
+            "type": "logo_image"
+          },
+          "9ec61fc7-ed2a-4490-8411-bf33c7d3eb56": {
+            "settings": {
+              "image": "shopify:\/\/shop_images\/kanchipuram-saree-styling-ideas-2.png",
+              "menu_enable": true,
+              "subtitle": "Explore",
+              "mega_link": "Wedding Edit",
+              "link": "shopify:\/\/collections\/saree",
+              "title": "Venkatagiri Cotton"
+            },
+            "type": "logo_image"
+          },
+          "6757033e-547a-49db-b111-6aec43c0ef51": {
+            "settings": {
+              "image": "shopify:\/\/shop_images\/persons-hands-hold-the-collar-of-their-sweater.jpg",
+              "menu_enable": true,
+              "subtitle": "",
+              "mega_link": "Kids Jewellery",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Kids Jewellery"
+            },
+            "type": "logo_image"
+          },
+          "983fbcfb-efd2-4b72-8014-670919f1d5b1": {
+            "settings": {
+              "image": "shopify:\/\/shop_images\/blue-and-green-background-with-silver-jewelry.jpg",
+              "menu_enable": true,
+              "subtitle": "",
+              "mega_link": "Bangles \/ Bracelets",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Bangles \/ Bracelets"
+            },
+            "type": "logo_image"
+          },
+          "bea63853-ebd2-4352-a35d-d3cb27e4be22": {
+            "settings": {
+              "image": "shopify:\/\/shop_images\/kanchipuram-saree-styling-ideas-1.png",
+              "menu_enable": true,
+              "subtitle": "",
+              "mega_link": "Men's Bracelets",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Men's Bracelets"
+            },
+            "type": "logo_image"
+          },
+          "bc806da1-0a86-4b42-8116-d24a243e9b21": {
+            "settings": {
+              "image": "shopify:\/\/shop_images\/model-leaning-against-a-wall-of-lights-atop-red-shag-carpet.jpg",
+              "menu_enable": true,
+              "subtitle": "",
+              "mega_link": "Women",
+              "link": "shopify:\/\/collections\/women",
+              "title": "Women"
+            },
+            "type": "logo_image"
+          },
+          "7a42f5b4-6dd8-44e4-aaf9-a4cca16d3985": {
+            "settings": {
+              "image": "shopify:\/\/shop_images\/choker-with-triangle.jpg",
+              "menu_enable": true,
+              "subtitle": "",
+              "mega_link": "Earrings",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Earrings"
+            },
+            "type": "logo_image"
+          },
+          "3401dc99-bfe7-473f-8619-ab753f5e667a": {
+            "settings": {
+              "image": "shopify:\/\/shop_images\/modern-male-fashion-with-glasses.jpg",
+              "menu_enable": true,
+              "subtitle": "",
+              "mega_link": "Men",
+              "link": "shopify:\/\/collections\/men",
+              "title": "Men"
+            },
+            "type": "logo_image"
+          },
+          "ff5db7c6-de70-4624-b1a1-620865565274": {
+            "settings": {
+              "image": "shopify:\/\/shop_images\/a-hand-holds-silver-paint-brush.jpg",
+              "menu_enable": true,
+              "subtitle": "",
+              "mega_link": "Necklaces",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Necklaces"
+            },
+            "type": "logo_image"
+          },
+          "15e15742-5345-4198-ba4b-2a98c13bfc08": {
+            "settings": {
+              "image": "shopify:\/\/shop_images\/baby-girl-feet.jpg",
+              "menu_enable": true,
+              "subtitle": "",
+              "mega_link": "Infant Wear",
+              "link": "shopify:\/\/products\/3-layer-non-surgical-masks-in-cotton-prints-and-plain-set-of-4",
+              "title": "Infant Wear"
+            },
+            "type": "logo_image"
+          },
+          "45a49917-2d4a-4818-a6c7-05e15d8d7934": {
+            "settings": {
+              "image": "shopify:\/\/shop_images\/origami-crane-necklace.jpg",
+              "menu_enable": true,
+              "subtitle": "",
+              "mega_link": "Rings",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Rings"
+            },
+            "type": "logo_image"
+          },
+          "a737801a-d041-4ea1-a346-7ffdfb9cee58": {
+            "settings": {
+              "image": "shopify:\/\/shop_images\/CuratedCollectionImage-2.png",
+              "menu_enable": true,
+              "subtitle": "",
+              "mega_link": "Pendants",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Pendants"
+            },
+            "type": "logo_image"
+          },
+          "218b71c4-c7cb-4558-a8a9-d843f6d9f329": {
+            "settings": {
+              "image": "shopify:\/\/shop_images\/colorful-fabric.jpg",
+              "menu_enable": true,
+              "subtitle": "",
+              "mega_link": "Fabrics",
+              "link": "shopify:\/\/collections\/all-kanchipuram",
+              "title": "Fabrics"
+            },
+            "type": "logo_image"
           }
         },
+        "type": "header",
         "block_order": [
           "c37446b7-4fce-4474-9e26-e3348834815e",
           "9ec61fc7-ed2a-4490-8411-bf33c7d3eb56",
@@ -263,16 +261,18 @@
           "a825885a-b299-42ea-a5c5-84ba6100ea8c",
           "15e15742-5345-4198-ba4b-2a98c13bfc08",
           "89f422f5-21c8-4b60-8910-9e40fdbe7736"
-        ],
-        "settings": {
-          "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
-          "logo_width": 120,
-          "menu": "main-menu"
-        }
+        ]
       }
     },
+    "mlvedaACS_hideDecimal": false,
+    "mlvedaACS_hoverBackgroundColor": "inherit",
+    "mlvedaACS_positionRight": "10px",
     "content_for_index": [
 
-    ]
+    ],
+    "mlvedaACS_currencyFormat": "money_with_currency_format",
+    "mlvedaACS_borderLineColor": "inherit",
+    "mlvedaACS_displayFlag": false,
+    "mlvedaACS_borderLook": false
   }
 }
