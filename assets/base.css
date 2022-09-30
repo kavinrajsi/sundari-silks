@@ -2096,7 +2096,7 @@ body {
 }
 
 .product-grid-list-eight {
-  overflow-y: scroll;
+  overflow-x: scroll;
   grid-template-columns: repeat(8, calc(25% - 18px));
 }
 
@@ -2759,4 +2759,8 @@ footer .footer-copyright a {
   margin: 0 4vw 14px;
   justify-content: space-between;
   align-items: flex-end;
+}
+
+.shopify-section.section-random-product {
+  padding: 4vw 0;
 }
