@@ -1986,6 +1986,10 @@ body {
   padding: 12px 8px;
 }
 
+.collection-page-action-active {
+  display: none;
+}
+
 .product-grid-list-three,
 .test--product-card--grid-three {
   margin: 1px 4vw 0;
