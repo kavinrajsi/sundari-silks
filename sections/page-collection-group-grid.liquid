@@ -1,16 +1,16 @@
 <section>
   <div class="collection-section--title">
     <h3>
-      {{collection_title}}
+      {{block.settings.collection_title}}
     </h3>
-    <a href={{collection_url}}>Show More</a>
+    <a href="{{block.settings.collection_url}}">Show More</a>
   </div>
   <div class="collection-section--group">
     <div class="test--product-card--grid">
 
       {% for product in collection.products limit:8 %}
       <div class="product-grid-list-three">
-        {% assign collection = collections[ section.settings.collection_name ] %}
+        {% assign collection = collections[ block.settings.collection_name ] %}
         {% assign collectionCount = 8 %}
         {% for product in collection.products limit: collectionCount %}
         <div class="product__card">
