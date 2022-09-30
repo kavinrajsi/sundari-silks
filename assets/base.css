@@ -2736,6 +2736,7 @@ footer .footer-copyright a {
 .slick-dotted.slick-slider {
   margin-bottom: 0;
 }
+<<<<<<< HEAD
 
 .collection-section--title h3 {
   font-size: 24px;
@@ -2751,4 +2752,23 @@ footer .footer-copyright a {
   margin: 0 4vw 14px;
   justify-content: space-between;
   align-items: flex-end;
+=======
+.collection-section--title h3 {
+    font-size: 24px;
+}
+
+.section-random-product section {
+    margin-bottom: 48px;
+}
+
+.collection-section--title {
+    display: flex;
+    margin: 0 4vw 14px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+section#shopify-section-template--15971397533854__product-grid{
+  padding: 4vw 0;
+>>>>>>> 6daefb64fb0898ca2193a3dbc36ef3c6121fcd1f
 }

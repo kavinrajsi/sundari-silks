@@ -1,20 +1,29 @@
 {% for block in section.blocks %}
+<<<<<<< HEAD
   {{ block }}
   {{ block.settings.grid_collection_title }}
   {{ block.settings.grid_collection_name }}
   {{ block.settings.grid_collection_url }}
+=======
+ 
+>>>>>>> 6daefb64fb0898ca2193a3dbc36ef3c6121fcd1f
 <section>
   <div class="collection-section--title">
     <h3>
-      {{block.settings.collection_title}}
+      {{block.settings.grid_collection_title}}
     </h3>
-    <a href="{{block.settings.collection_url}}">Show More</a>
+    <a href="{{block.settings.grid_collection_url}}">Show More</a>
   </div>
   <div class="collection-section--group">
     <div class="test--product-card--grid">
 
+<<<<<<< HEAD
       <div class="product-grid-list-eight">
         {% assign collection = collections[ block.settings.collection_name ] %}
+=======
+      <div class="product-grid-list-four">
+        {% assign collection = collections[ block.settings.grid_collection_name ] %}
+>>>>>>> 6daefb64fb0898ca2193a3dbc36ef3c6121fcd1f
         {% assign collectionCount = 8 %}
         {% for product in collection.products limit: collectionCount %}
         <div class="product__card">
