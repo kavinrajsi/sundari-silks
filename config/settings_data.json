@@ -276,6 +276,17 @@
               "title": "Accessories",
               "subtitle": ""
             }
+          },
+          "8f8423f0-43b3-4fb8-936e-8dab6819c7ab": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/bath-bomb-near-tub.jpg",
+              "mega_link": "Personal Care",
+              "link": "#",
+              "title": "Personal Care",
+              "subtitle": ""
+            }
           }
         },
         "block_order": [
@@ -298,7 +309,8 @@
           "92c429f1-06cf-45d6-ae7f-bc1b298b75f3",
           "8d6bbc38-40c2-46d2-a363-f855a05e905e",
           "3b41ef82-241e-437d-9545-f05ac21b20bc",
-          "20802720-32fb-4022-bebc-0f1bddd08987"
+          "20802720-32fb-4022-bebc-0f1bddd08987",
+          "8f8423f0-43b3-4fb8-936e-8dab6819c7ab"
         ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
