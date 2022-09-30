@@ -22,10 +22,13 @@
         font-weight: 400;
         color: var(--pure-black);
         margin-top: 8px;
-
+margin-left: 18px;
+margin-right: 18px;
         font-size: 14px;
         line-height: 18px;
         @media (min-width: 768px) {
+          margin-left: 0;
+          margin-right: 0;
           font-size: 16px;
           line-height: 20px;
         }
