@@ -1973,11 +1973,6 @@ body {
   margin-bottom: 28px;
   display: none;
 }
-@media (min-width: 768px) {
-  .collection-page-action-list {
-    display: none;
-  }
-}
 .collection-page-action-list .collection-filter {
   flex: 1 0 auto;
 }
@@ -1989,10 +1984,6 @@ body {
 .collection-page-action-list .collection-action-sortyby select {
   cursor: pointer;
   padding: 12px 8px;
-}
-
-.collection-page-action-active {
-  display: none;
 }
 
 .product-grid-list-three,
