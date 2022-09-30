@@ -22,20 +22,12 @@
           <div class="product__card">
             <div class="product__card--img">
               <a href="{{ product.url | within: collection }}" class="product-link">
-                <div class="product__image--wrapper prpdocutSlider"
-                  data-slick='{"autoplay": true, "cssEase": "linear", "slidesToShow": 1, "slidesToScroll": 1, "autoplaySpeed": 1000, "fade": true, "arrows": false, "dots": true, "adaptiveHeight": true }'>
-                  {% if product.featured_image != blank %}
+                <div class="product__image--wrapper">
+                   {% if product.featured_image != blank %}
                   <div>
                     <img loading="auto" alt="{{ product.featured_image.alt }}" width="328" height="463"
                       src=" {{ product.featured_image.src | image_url: width:328, height:463 }} ">
                   </div>
-                  {% for image in product.images offset:1 %}
-                  <div>
-                    <img loading="lazy" alt="{{ image.alt }}" width="328" height="463"
-                      src=" {{ image.src | image_url: width:328, height:463 }} ">
-                  </div>
-                  {% endfor %}
-
                   {% else %}
                   {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
                   {% endif %}
