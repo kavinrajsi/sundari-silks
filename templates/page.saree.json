@@ -2,9 +2,21 @@
   "sections": {
     "product-grid": {
       "type": "page-collection-group-grid",
+      "blocks": {
+        "8e37dc5d-bfe7-493c-9bfe-289b7bda9a2a": {
+          "type": "collection-image",
+          "settings": {
+            "grid_collection_title": "Saree",
+            "grid_collection_name": "all",
+            "grid_collection_url": "all",
+            "grid_collection_count": 8
+          }
+        }
+      },
+      "block_order": [
+        "8e37dc5d-bfe7-493c-9bfe-289b7bda9a2a"
+      ],
       "settings": {
-        "show_collection": "Saree",
-        "show_productcount": 4
       }
     }
   },
