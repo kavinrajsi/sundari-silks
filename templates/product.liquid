@@ -33,139 +33,237 @@
   }
 </style>
 <section>
-<div class="" style="display: flex; justify-content:flex-start">
-  <div class="product-image">
-    <img class="lazyload" data-sizes="auto" data-src="{{ product_image | image_url: width: 440 }}" alt="{{ product_image.alt }}" id="product-image-main">
-    <br>
-    {% for image in product.images %}
-    <img class="lazyload" data-sizes="auto" data-src="{{ image.src | image_url : width: 400 }}" alt="{{image.alt }}">
-    {% endfor %}
-  </div>
-  <div class="product-content">
-    <h2 class="product-image">{{product.title}}</h2> <br>
-    <p claxss="product-sku">
-      {%- assign current_variant = product.selected_or_first_available_variant -%}
-      {% for variant in product.variants %}
-    <div class="product__variant--sku"> {{ variant.sku }} </div>
-    {% endfor %}
-    </p> <br>
-    <p class="product-price">{{current_product.price | money_with_currency }}</p><br>
-    <p class="notice-content {% for collection in product.collections%} {{collection.title}} {% endfor %}">
-      Our artisanal silver jewellery collection is currently available for shipment within INDIA.</p>
+  <div class="" style="display: flex; justify-content:flex-start">
+    <div class="product-image">
+      <img class="lazyload" data-sizes="auto" data-src="{{ product_image | image_url: width: 440 }}"
+        alt="{{ product_image.alt }}" id="product-image-main">
       <br>
-
-     {% form 'product', product %}
-     <div>
-      <label for="proudct-form-size">Size</label>
-      <select name="id" id="product-form-size">
+      {% for image in product.images %}
+      <img class="lazyload" data-sizes="auto" data-src="{{ image.src | image_url : width: 400 }}" alt="{{image.alt }}">
+      {% endfor %}
+    </div>
+    <div class="product-content">
+      <h2 class="product-image">{{product.title}}</h2> <br>
+      <p claxss="product-sku">
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
         {% for variant in product.variants %}
-         <option value="{{ variant.id }}"> {{variant.tile}}</option>
+      <div class="product__variant--sku"> {{ variant.sku }} </div>
+      {% endfor %}
+      </p> <br>
+      <p class="product-price">{{current_product.price | money_with_currency }}</p><br>
+      <p class="notice-content {% for collection in product.collections%} {{collection.title}} {% endfor %}">
+        Our artisanal silver jewellery collection is currently available for shipment within INDIA.</p>
+      <br> {% form 'product', product %}
+      <div>
+        <label for="proudct-form-size">Size</label>
+        <select name="id" id="product-form-size">
+          {% for variant in product.variants %}
+          <option value="{{ variant.id }}"> {{variant.tile}}</option>
+          {% endfor %}
+        </select>
+        <button type="submit"> Add to cart</button>
+      </div>
+      {% endform %} <br>
+      <br>
+      {% if product.content != blank %}
+      <h2>Description</h2>
+      <p class="product-description">{{product.content | sspanip_html }}</p> <br>
+      {% endif %}
+      <br>
+      <br>
+      <h2>
+        Size &amp; Fit
+      </h2>
+      <p>
+      <ul>
+        {% for variant in product.variants %}
+        {% if variant.title == "Default Title" %}
+        <li title="Free Size"
+          style="border: 1px solid; padding: 10px; border-radius: 50%; background: #000; color: white; display: inline-block;">
+          FS </li>
+        {% else %}
+        <li
+          style="border: 1px solid; padding: 10px; border-radius: 50%; background: #000; color: white; display: inline-block;"
+          value="{{ variant.id }}"> {{ variant.title }}</li>
+        {% endif %}
         {% endfor %}
-      </select>
-      <button type="submit"> Add to cart</button>
-     </div>
-     {% endform %}
-
-    <br>
-    <br>
-    {% if product.content != blank %}
-    <h2>Description</h2>
-    <p class="product-description">{{product.content | sspanip_html }}</p> <br>
-    {% endif %}
-    <br>
-    <br>
-    <h2>
-      Size &amp; Fit
-    </h2>
-    <p>
-    <ul>
-      {% for variant in product.variants %}
-      {% if variant.title == "Default Title" %}
-      <li title="Free Size"
-        style="border: 1px solid; padding: 10px; border-radius: 50%; background: #000; color: white; display: inline-block;">
-        FS </li>
-      {% else %}
-      <li
-        style="border: 1px solid; padding: 10px; border-radius: 50%; background: #000; color: white; display: inline-block;"
-        value="{{ variant.id }}"> {{ variant.title }}</li>
+      </ul>
+      </p>
+      <br>
+      <br>
+      <br>
+      <h2> Specification </h2>
+      <ul style="display: flex; gap: 24px; flex-direction: column;">
+        <li>
+          type: banarasi
+        </li>
+        <li>
+          print or pattern type : dimond
+        </li>
+        <li>
+          occasion : office
+        </li>
+        <li>
+          blouse : without blouse
+        </li>
+        <li>
+          body color : purple
+        </li>
+        <li>
+          border color : sly blue
+        </li>
+        <li>
+          pallu color : sky blue</li>
+        <li>
+          border : double side
+        </li>
+      </ul> <br> <br>
+      {{ product.metafields.custom.size_chart }}
+      <hr>
+      {% comment %}
+      {% assign json_str = product.metafields.custom.size_chart%}
+      {% assign json_token = json_str | split: ',' %}
+      {% for token in json_token %}
+      {% if forloop.index == 1 %}
+      {% assign res = token | split: ':' %}
+      {% assign resWithoutQuotes = res[0] | remove: '[{"' %}
+      {% capture pickup_spot %}
+      Your amazing truck pickup spot is: {{ resWithoutQuotes }}
+      {% endcapture %}
       {% endif %}
       {% endfor %}
-    </ul>
-    </p>
-    <br>
-    <br>
-    <br>
-    <h2> Specification </h2>
-    <ul style="display: flex; gap: 24px; flex-direction: column;">
-      <li>
-        type: banarasi
-      </li>
-      <li>
-        print or pattern type : dimond
-      </li>
-      <li>
-        occasion : office
-      </li>
-      <li>
-        blouse : without blouse
-      </li>
-      <li>
-        body color : purple
-      </li>
-      <li>
-        border color : sly blue
-      </li>
-      <li>
-        pallu color : sky blue</li>
-      <li>
-        border : double side
-      </li>
-    </ul> <br> <br>
-    {{ product.metafields.custom.size_chart }}
-    <hr>
-    {% comment %}
-    {% assign json_str = product.metafields.custom.size_chart%}
-    {% assign json_token = json_str | split: ',' %}
-    {% for token in json_token %}
-    {% if forloop.index == 1 %}
-    {% assign res = token | split: ':' %}
-    {% assign resWithoutQuotes = res[0] | remove: '[{"' %}
-    {% capture pickup_spot %}
-    Your amazing truck pickup spot is: {{ resWithoutQuotes }}
-    {% endcapture %}
-    {% endif %}
-    {% endfor %}
-    {{ pickup_spot }}
-    <hr>
-    {% endcomment %}
-    {% assign suppliers = product.metafields.custom.size_chart.value %}
-    {% for supplier in suppliers %}
-    <h2>{{supplier.type}}</h2>
-    <div style="display: flex; justify-content: space-between;">
-      {% tablerow dfdf in supplier.value %}
-      <ul>
-        <li> {{ dfdf.age }}
-          {% tablerow ddf in dfdf.value %}
-          <span>{{ ddf.size }}</span><br>
-          <span> {{ ddf.shoulder }}</span><br>
-          <span> {{ ddf.sleeves }}</span><br>
-          <span> {{ ddf.chest }}</span><br>
-          <span> {{ ddf.height }}</span><br>
-          {% endtablerow %}
-        </li>
-      </ul>
-      {% endtablerow %}
+      {{ pickup_spot }}
+      <hr>
+      [
+      {
+      "type": "Shirts",
+      "value": [
+      {
+      "age": "1 yrs",
+      "value": [
+      {
+      "size": "14",
+      "shoulder": "9 1/2 ",
+      "sleeves": "11 1/2",
+      "chest": "20 1/2",
+      "height": "14 1/2"
+      }
+      ]
+      },
+      {
+      "age": "2 yrs",
+      "value": [
+      {
+      "size": "16",
+      "shoulder": "10 1/2 ",
+      "sleeves": "12 1/2",
+      "chest": "22",
+      "height": "17 1/2"
+      }
+      ]
+      },
+      {
+      "age": "3 yrs",
+      "value": [
+      {
+      "size": "18",
+      "shoulder": "11",
+      "sleeves": "13",
+      "chest": "25",
+      "height": "18 1/2"
+      }
+      ]
+      }
+      ]
+      },
+      {
+      "type": "Pants",
+      "value": [
+      {
+      "age": "4 yrs",
+      "value": [
+      {
+      "size": "14",
+      "shoulder": "9 1/2 ",
+      "sleeves": "11 1/2",
+      "chest": "20 1/2",
+      "height": "14 1/2"
+      }
+      ]
+      },
+      {
+      "age": "5 yrs",
+      "value": [
+      {
+      "size": "16",
+      "shoulder": "10 1/2 ",
+      "sleeves": "12 1/2",
+      "chest": "22",
+      "height": "17 1/2"
+      }
+      ]
+      },
+      {
+      "age": "6 yrs",
+      "value": [
+      {
+      "size": "18",
+      "shoulder": "11",
+      "sleeves": "13",
+      "chest": "25",
+      "height": "18 1/2"
+      }
+      ]
+      }
+      ]
+      }
+      ] {% endcomment %} {% assign suppliers = product.metafields.custom.size_chart.value %}
+      {% for supplier in suppliers %}
+      <h2 class="sizeChatTitle">{{supplier.type}}</h2>
+      <div class="sizeChart">
+        <div class="sizeChartLable">
+          <ul>
+            <li>
+              <span>
+                year
+              </span><span>
+                size
+              </span><span>
+                shoulder
+              </span><span>
+                sleeves
+              </span><span>
+                chest
+              </span><span>
+                height
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div class="sizeChartValue">
+          <ul> {% tablerow dfdf in supplier.value %}
+            <li>{% tablerow ddf in dfdf.value %}<span class="title"> {{ dfdf.age }}</span>
+              <span>{{ ddf.size }}</span>
+              <span> {{ ddf.shoulder }}</span>
+              <span> {{ ddf.sleeves }}</span>
+              <span> {{ ddf.chest }}</span>
+              <span> {{ ddf.height }}</span>
+              {% endtablerow %}
+            </li>
+            {% endtablerow %}
+          </ul>
+        </div>
+      </div>
+      {% endfor %}
+      {% if product.metafields.custom.wash_care_tips.value != blank %}
+      <p>Wash Care: {{ product.metafields.custom.wash_care_tips.value }} </p> <br>
+      {% endif %}
+      {% if product.metafields.custom.delivery_shipping.value != blank %}
+      <p>Delivery Shipping: {{ product.metafields.custom.delivery_shipping.value }} </p> <br>
+      {% endif %}
+      {% if product.metafields.custom.note.value != blank %}
+      <p>Note: {{ product.metafields.custom.note.value }} </p> <br>
+      {% endif %}
     </div>
-    {% endfor %}
-    {% if product.metafields.custom.wash_care_tips.value != blank %}
-    <p>Wash Care: {{ product.metafields.custom.wash_care_tips.value }} </p> <br>
-    {% endif %}
-    {% if product.metafields.custom.delivery_shipping.value != blank %}
-    <p>Delivery Shipping: {{ product.metafields.custom.delivery_shipping.value }} </p> <br>
-    {% endif %}
-    {% if product.metafields.custom.note.value != blank %}
-    <p>Note: {{ product.metafields.custom.note.value }} </p> <br>
-    {% endif %}
   </div>
-</div>
 </section>

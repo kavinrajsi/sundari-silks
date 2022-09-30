@@ -33,19 +33,7 @@
     }
   }
   .product-grid {
-    display: grid;
-    gap: 8px;
-    grid-template-columns: repeat(2, 1fr);
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    @media (min-width: 992px) {
-      gap: 24px;
-      grid-template-columns: repeat(3, calc(100% / 12 * 4 - 24px));
-    }
-    @media (min-width: 1920px) {
-      grid-template-columns: repeat(4, 1fr);
-    }
+
     .product__card{
       &--img{
         img{

@@ -616,6 +616,56 @@ iframe#dummy-chat-button-iframe {
   filter: blur(0);
 }
 
+/*
+
+    [{"type":"Shirts","value":[{"age":"1 yrs","value":[{"size":"14","shoulder":"9 1/2 ","sleeves":"11 1/2","chest":"20 1/2","height":"14 1/2"}]},{"age":"2 yrs","value":[{"size":"16","shoulder":"10 1/2 ","sleeves":"12 1/2","chest":"22","height":"17 1/2"}]},{"age":"3 yrs","value":[{"size":"18","shoulder":"11","sleeves":"13","chest":"25","height":"18 1/2"}]}]},{"type":"Pants","value":[{"age":"4 yrs","value":[{"size":"14","shoulder":"9 1/2 ","sleeves":"11 1/2","chest":"20 1/2","height":"14 1/2"}]},{"age":"5 yrs","value":[{"size":"16","shoulder":"10 1/2 ","sleeves":"12 1/2","chest":"22","height":"17 1/2"}]},{"age":"6 yrs","value":[{"size":"18","shoulder":"11","sleeves":"13","chest":"25","height":"18 1/2"}]}]}]
+
+
+*/
+.sizeChart {
+  display: flex;
+}
+.sizeChart .sizeChartLable {
+  display: flex;
+}
+.sizeChart .sizeChartLable ul li {
+  border: 1px solid var(--border-color);
+}
+.sizeChart .sizeChartLable ul li span {
+  width: 80px;
+  display: block;
+  font-weight: 500;
+  padding: 4px;
+  border-bottom: 1px solid var(--border-color);
+}
+.sizeChart .sizeChartLable ul li span:last-child {
+  border-bottom: 0;
+}
+.sizeChart .sizeChartValue ul {
+  display: flex;
+}
+.sizeChart .sizeChartValue ul li {
+  border: 1px solid var(--border-color);
+}
+.sizeChart .sizeChartValue ul li span {
+  width: 80px;
+  display: block;
+  font-weight: 400;
+  padding: 4px;
+  border-bottom: 1px solid var(--border-color);
+}
+.sizeChart .sizeChartValue ul li span:last-child {
+  border-bottom: 0;
+}
+
+.sizeChatTitle {
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 500;
+  font-family: var(--font-playfair);
+  margin-bottom: 18px;
+}
+
 .skip-to-content-link {
   display: none;
   opacity: 0;
@@ -1587,27 +1637,6 @@ body {
     min-width: calc(100% - 280px);
     flex: 1 0 calc(100% - 280px);
     overflow: hidden;
-  }
-}
-.template-index .homepage-section .home-page-spotlight-section .product-grid {
-  display: grid;
-  gap: 8px;
-  grid-template-columns: repeat(2, 1fr);
-}
-@media (min-width: 768px) {
-  .template-index .homepage-section .home-page-spotlight-section .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 992px) {
-  .template-index .homepage-section .home-page-spotlight-section .product-grid {
-    gap: 24px;
-    grid-template-columns: repeat(3, calc(33.3333333333% - 24px));
-  }
-}
-@media (min-width: 1920px) {
-  .template-index .homepage-section .home-page-spotlight-section .product-grid {
-    grid-template-columns: repeat(4, 1fr);
   }
 }
 .template-index .homepage-section .home-page-spotlight-section .product-grid .product__card--img img {

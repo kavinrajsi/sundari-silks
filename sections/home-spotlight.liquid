@@ -15,10 +15,9 @@
       </div>
     </div>
     <div class="section-content product-collection-list">
-
-        <div class="product-grid">
+        <div class="product-grid-list-three">
           {% assign collection = collections[ section.settings.spotlight-collection ] %}
-          {% assign collectionCount = 9 %}
+          {% assign collectionCount = 6 %}
           {% for product in collection.products limit: collectionCount %}
           <div class="product__card">
             <div class="product__card--img">
