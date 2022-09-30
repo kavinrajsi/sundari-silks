@@ -11,10 +11,20 @@
             "grid_collection_url": "Saree",
             "grid_collection_count": 8
           }
+        },
+        "8a08b00e-a43b-490b-ab29-0d632742e0ab": {
+          "type": "collection-image",
+          "settings": {
+            "grid_collection_title": "Mumbai",
+            "grid_collection_name": "Mumbai",
+            "grid_collection_url": "Mumbai",
+            "grid_collection_count": 8
+          }
         }
       },
       "block_order": [
-        "8e37dc5d-bfe7-493c-9bfe-289b7bda9a2a"
+        "8e37dc5d-bfe7-493c-9bfe-289b7bda9a2a",
+        "8a08b00e-a43b-490b-ab29-0d632742e0ab"
       ],
       "settings": {
       }
