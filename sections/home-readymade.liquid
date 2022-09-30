@@ -12,8 +12,6 @@
       <a class="collection-item-link" href="{{ block.settings.link }}">
         <img class="lazyload" data-sizes="auto" data-src="{{block.settings.image.src | image_url: width:384, height: 384, crop: 'top' }}"
           alt="{{block.settings.image.alt}}">
-        <!-- {{ block.settings.image | image_url : width: 384, height: 384, crop: bottom | image_tag : alt: block.settings.image.alt,
-      class: "collection-item-image" }} -->
       </a>
     </div>
     {% else %}
