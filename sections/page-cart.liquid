@@ -11,6 +11,8 @@
       </li>
   </ul>
 </div>
+
+{%- if cart.item_count > 0 -%}
   <form class="cart_wrapper" action="/cart" method="post">
     <div class="cart__items cart_block">
       {% for line_item in cart.items %}
@@ -18,12 +20,26 @@
        {% endfor %}
     </div>
     <div class="cart__details card__block">
+      <label for="CartNote">  Special Instructions For Seller <br> Add special instructions for your order...</label>
+      <textarea name="note" id="CartNote">{{ cart.note }}</textarea>
+
       <div class="cart__total">
         <strong class="cart__total-text">Total:</strong>
         <span class="cart__total-price"> {{ cart.total_price | money }}</span>
       </div>
-      <button class="button" type="submit"> Update Quantities </button>
+      <p>Shipping charges will be added at checkout.
+      </p>
+      I would like to receive order information on whatsapp
+      <hr>
+      <div>
+      {%- comment -%} <button class="button" type="submit"> Update Quantities </button> {%- endcomment -%}
       <button class="button" type="submit" name="checkout"> Checkout </button>
     </div>
+    </div>
   </form>
+
+  {%- else -%}
+    <p>The cart is empty. <a href="/collections/all">Continue shopping</a></p>
+  {%- endif -%}
 </div>
+

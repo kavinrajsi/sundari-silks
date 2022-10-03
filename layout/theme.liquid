@@ -18,6 +18,9 @@
     <script src="{{ 'ls.bgset.js' | asset_url }}" async="async"></script>
     <script src="{{ 'ls.blur-up.js' | asset_url }}" async="async"></script>
 
+
+    <script src="{{ 'jquery.js' | asset_url }}"></script>
+
   {% if settings.favicon != blank %}
   <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
   {% endif %}
@@ -236,13 +239,113 @@
     <a href="#0" class="cd-close">Close</a>
   </div>
 
-  <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+
   <script src="{{ 'predictive-search.js' | asset_url }}"></script>
   <script src="{{ 'owl.carousel.min.js' | asset_url }}"></script>
   <script src="{{ 'velocity.min.js' | asset_url }}"></script>
   <script src="{{ 'quick-view-main.js' | asset_url }}"></script>
   <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="{{ 'global.js' | asset_url }}"></script>
+  <script>
+
+var cartCount = {{ cart.item_count }};
+$(document)
+    .ready(function() {
+        {% if cart.item_count != 0 %}
+        $('#cart-number')
+            .replaceWith('<a href="/cart" id="cart-number">View cart(' + cartCount + ')</a>');
+        {% endif %}
+        $('.modal--overlay')
+            .on('click', function() {
+                var overlay = $('.modal--overlay');
+                closeModal(overlay);
+            });
+    });
+function addItem(form_id) {
+    $.ajax({
+        type: 'POST',
+        url: '/cart/add.js',
+        dataType: 'json',
+        data: $('#' + form_id)
+            .serialize(),
+        success: addToCartOk,
+        error: addToCartFail
+    });
+}
+function showCart() {
+    $.ajax({
+        type: 'POST',
+        url: '/cart/add.js',
+        dataType: 'json',
+        data: $('#' + form_id)
+            .serialize(),
+        success: addToCartOk,
+        error: addToCartFail
+    });
+}
+function addToCartOk(product) {
+    cartCount++;
+    $('.modal')
+        .html('<span class="close" id="close">✕</span>' + product.title + ' was added to the cart!');
+    $('#cart-number')
+        .replaceWith('<a href="/cart" id="cart-number">View cart(' + cartCount + ')</a>');
+    openModal();
+}
+function addToCartFail(obj, status) {
+    $('.modal')
+        .html('<span class="close" id="close">✕</span> The product you are trying to add is out of stock.');
+    openModal();
+}
+//Modal Actions
+//center modal based on window size
+function centerModal() {
+    var modal = $('.modal.open');
+    var mWidth = modal.outerWidth();
+    var mHeight = modal.outerHeight();
+    var width = $(window)
+        .width();
+    var height = $(window)
+        .height();
+    if ((width % 1) != 0) {
+        width = Math.round(width);
+    }
+    if ((height % 1) != 0) {
+        height = Math.round(height);
+    }
+    var topPos = (height / 2) - (mHeight / 2);
+    var leftPos = (width / 2) - (mWidth / 2);
+    modal.css({top: topPos, left: leftPos});
+}
+//open modal and overlay
+function openModal() {
+    $('.modal')
+        .removeClass('hidden')
+        .addClass('open');
+    $('.modal--overlay')
+        .removeClass('hidden')
+        .addClass('open');
+    $('body')
+        .css('overflow', 'hidden');
+    centerModal();
+}
+//close modal and overlay
+function closeModal(overlay) {
+    $(overlay)
+        .addClass('hidden')
+        .removeClass('open');
+    $('.modal.open')
+        .addClass('hidden')
+        .removeClass('open');
+    $('body')
+        .css('overflow', 'auto');
+}
+
+  </script>
+{% if template contains 'product' %}
+<script>
+Shopify.Products.recordRecentlyViewed();
+</script>
+{% endif %}
 </body>
 
 </html>

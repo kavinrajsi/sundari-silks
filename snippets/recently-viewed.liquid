@@ -1,12 +1,15 @@
-{{ '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js' | script_tag }}
 {{ 'jquery.products.min.js' | asset_url | script_tag }}
+
+
 <div class="clearfix"></div>
-  <div class="product-template__container page-width head-room">
+<section class="head-room">
+  <div class="product-template__container page-width ">
         <aside class="grid">
           <div class="grid__item">
             <div id="recently-viewed-products" class="collection clearfix " >
              <header class="section-header">
               <h2 class="section-header__title border-bottom">Recently Viewed Products</h2>
+              <p class="secton-header__description">Products you fell in love with</p>
              </header>
             </div>
           </div>
@@ -15,25 +18,30 @@
 {% assign grid_item_width = 'small--one-half medium-up--one-quarter' %}
    <div class="grid grid--uniform grid--view-items leg-room">
       {% raw %}
+
       <script id="recently-viewed-product-template"  type="text/x-jquery-tmpl">
-      <div class="grid__item small--one-half medium-up--one-quarter"  itemscope itemtype="http://schema.org/Product" >
-      <div id="product-${handle}" class="products"}>
-        <div class="image">
-          <a href="${url}">
-            <img class="lazyload" data-sizes="auto" data-src="${Shopify.Products.resizeImage(featured_image, "medium")}" />
+      <div class="product-grid-list-four grid__item small--one-half medium-up--one-quarter"  itemscope itemtype="http://schema.org/Product" >
+      <div id="product-${handle}" class="product__card"}>
+        <div class="product__card--img">
+          <a href="${url}" class="product-link">
+            <div class="product__image--wrapper">
+            <img src="${Shopify.Products.resizeImage(featured_image, "medium")}" />
+            </div>
           </a>
         </div>
-        <div class="details">
+        <div class="product__card--content">
           <a href="${url}">
-            <span class="title">${title}</span>
-            <!--Add Price Code-->
+            <h2 class="product__title">${title}</h2>
+            <p class="product__variant--price">${amount} </p>
           </a>
         </div>
       </div>
       </div>
       </script>
       {% endraw %}
+
       <script>
       Shopify.Products.showRecentlyViewed( { howManyToShow:8 } );
       </script>
 	</div>
+</section>

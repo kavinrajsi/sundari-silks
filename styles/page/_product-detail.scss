@@ -1,0 +1,169 @@
+.page-product-detail {
+  display: flex;
+  justify-content: flex-start;
+  .product {
+    &-image {
+    }
+    &-content {
+    }
+    &-title {
+      margin-top: 18px;
+      font-family: "Playfair Display";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 120%;
+      &-secondary {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.85);
+      }
+    }
+    &-sku {
+      margin-top: 8px;
+      color: rgba(0, 0, 0, 0.6);
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+    }
+    &-price {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 29px;
+    }
+    &-notice-content {
+      background: rgba(253, 217, 51, 0.4);
+      border-radius: 4px;
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      color: #000000;
+      padding: 16px;
+    }
+    &-add-to-cart-button {
+      padding: 16px;
+      text-transform: uppercase;
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      color: #ffffff;
+      background: #1d5d31;
+      border: 1px solid #1d5d31;
+      border-radius: 4px;
+    }
+    &-description {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: rgba(0, 0, 0, 0.6);
+    }
+    &-size-free {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #1d5d31;
+      border-radius: 50px;
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      color: #ffffff;
+    }
+    &-detail {
+      // display: grid;
+      // gap: 16px;
+      // grid-template-columns: 1fr 1fr;
+      dl {
+        display: inline-block;
+        margin-bottom: 16px;
+        width: calc(50% - 16px);
+        padding-right: 8px;
+        padding-left: 8px;
+      }
+      dt {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 12px;
+        color: rgba(0, 0, 0, 0.6);
+      }
+      dd {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: rgba(0, 0, 0, 0.85);
+        border-bottom: 1px solid #c3c2c9;
+        padding-bottom: 8px;
+      }
+    }
+    &-common-note {
+      dl {
+        margin-bottom: 16px;
+      }
+      dt {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: #000000;
+      }
+      dd {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+}
+
+.head-room {
+  padding-top: 4vw;
+}
+
+section.grid.head-room{
+  padding-bottom: 4vw;
+}
+
+.section-header__title {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 37px;
+  text-align: center;
+  color: #000000;
+}
+.secton-header__description {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 24px;
+}
+

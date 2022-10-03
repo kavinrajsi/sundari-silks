@@ -11,49 +11,84 @@
     margin-bottom: 1rem;
     color: #212529;
   }
-
   table span th,
   table span span {
     padding: 0.75rem;
     vertical-align: top;
     border-top: 1px solid #dee2e6;
   }
-
   table thead th {
     vertical-align: bottom;
     border-bottom: 2px solid #dee2e6;
   }
-
   table tbody+tbody {
     border-top: 2px solid #dee2e6;
   }
-
   .notice-content {
     display: none;
   }
+  .modal {
+    max-width: 575px;
+    background: white;
+    border: 5px solid #111;
+    padding: 50px 65px;
+    position: fixed;
+    z-index: 1000;
+  }
+  .modal .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .modal--overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  .hidden {
+    display: none;
+  }
 </style>
-<section>
-  <div class="" style="display: flex; justify-content:flex-start">
-    <div class="product-image">
+<section class="page-product-detail">
+  <div class="product-image">
+    <!-- <div class="product-image">
       <img class="lazyload" data-sizes="auto" data-src="{{ product_image | image_url: width: 440 }}"
         alt="{{ product_image.alt }}" id="product-image-main">
-      <br>
       {% for image in product.images %}
       <img class="lazyload" data-sizes="auto" data-src="{{ image.src | image_url : width: 400 }}" alt="{{image.alt }}">
       {% endfor %}
-    </div>
+    </div> -->
     <div class="product-content">
-      <h2 class="product-image">{{product.title}}</h2> <br>
+      <h2 class="product-title">{{product.title}}</h2>
       <p claxss="product-sku">
         {%- assign current_variant = product.selected_or_first_available_variant -%}
         {% for variant in product.variants %}
-      <div class="product__variant--sku"> {{ variant.sku }} </div>
+      <div class="product__variant--sku"> Product Code : {{ variant.sku }} </div>
       {% endfor %}
-      </p> <br>
-      <p class="product-price">{{current_product.price | money_with_currency }}</p><br>
-      <p class="notice-content {% for collection in product.collections%} {{collection.title}} {% endfor %}">
+      </p>
+      <p class="product-price">{{current_product.price | money_with_currency }}</p>
+      <p class="product-notice-content {% for collection in product.collections%} {{collection.title}} {% endfor %}">
         Our artisanal silver jewellery collection is currently available for shipment within INDIA.</p>
-      <br> {% form 'product', product %}
+      <!--product form-->
+      <form action="/cart/add" method="post" enctype="multipart/form-data" id="add-to-cart-{{ product.handle }}">
+        <!--product add to cart-->
+        <button class="single-product__add-to-cart product-add-to-cart-button" type="submit" name="add" data-add-to-cart
+          {% if current_variant.available %}disabled="disabled" {% endif %}
+          onclick="addItem('add-to-cart-{{ product.handle }}'); return false;">
+          <span data-add-to-cart-text>
+            ADD TO CART
+          </span>
+        </button>
+        <!--end product add to cart-->
+      </form>
+      <!--end product form-->
+      {%- comment -%} {% form 'product', product %}
       <div>
         <label for="proudct-form-size">Size</label>
         <select name="id" id="product-form-size">
@@ -63,161 +98,28 @@
         </select>
         <button type="submit"> Add to cart</button>
       </div>
-      {% endform %} <br>
-      <br>
+      {% endform %}
+      {%- endcomment -%}
       {% if product.content != blank %}
-      <h2>Description</h2>
-      <p class="product-description">{{product.content | sspanip_html }}</p> <br>
+      <h2 class="product-title-secondary">Description</h2>
+      <p class="product-description">{{product.content | strip_html }}</p>
       {% endif %}
-      <br>
-      <br>
-      <h2>
+      <h2 class="product-title-secondary">
         Size &amp; Fit
       </h2>
-      <p>
-      <ul>
+      <ul aria-label="size chart">
         {% for variant in product.variants %}
         {% if variant.title == "Default Title" %}
-        <li title="Free Size"
-          style="border: 1px solid; padding: 10px; border-radius: 50%; background: #000; color: white; display: inline-block;">
+        <li title="Free Size" class="product-size-free">
           FS </li>
         {% else %}
-        <li
-          style="border: 1px solid; padding: 10px; border-radius: 50%; background: #000; color: white; display: inline-block;"
+        <li class="product-size-number" title="{{ variant.title }}">
           value="{{ variant.id }}"> {{ variant.title }}</li>
         {% endif %}
         {% endfor %}
       </ul>
-      </p>
-      <br>
-      <br>
-      <br>
-      <h2> Specification </h2>
-      <ul style="display: flex; gap: 24px; flex-direction: column;">
-        <li>
-          type: banarasi
-        </li>
-        <li>
-          print or pattern type : dimond
-        </li>
-        <li>
-          occasion : office
-        </li>
-        <li>
-          blouse : without blouse
-        </li>
-        <li>
-          body color : purple
-        </li>
-        <li>
-          border color : sly blue
-        </li>
-        <li>
-          pallu color : sky blue</li>
-        <li>
-          border : double side
-        </li>
-      </ul> <br> <br>
       {{ product.metafields.custom.size_chart }}
-      <hr>
-      {% comment %}
-      {% assign json_str = product.metafields.custom.size_chart%}
-      {% assign json_token = json_str | split: ',' %}
-      {% for token in json_token %}
-      {% if forloop.index == 1 %}
-      {% assign res = token | split: ':' %}
-      {% assign resWithoutQuotes = res[0] | remove: '[{"' %}
-      {% capture pickup_spot %}
-      Your amazing truck pickup spot is: {{ resWithoutQuotes }}
-      {% endcapture %}
-      {% endif %}
-      {% endfor %}
-      {{ pickup_spot }}
-      <hr>
-      [
-      {
-      "type": "Shirts",
-      "value": [
-      {
-      "age": "1 yrs",
-      "value": [
-      {
-      "size": "14",
-      "shoulder": "9 1/2 ",
-      "sleeves": "11 1/2",
-      "chest": "20 1/2",
-      "height": "14 1/2"
-      }
-      ]
-      },
-      {
-      "age": "2 yrs",
-      "value": [
-      {
-      "size": "16",
-      "shoulder": "10 1/2 ",
-      "sleeves": "12 1/2",
-      "chest": "22",
-      "height": "17 1/2"
-      }
-      ]
-      },
-      {
-      "age": "3 yrs",
-      "value": [
-      {
-      "size": "18",
-      "shoulder": "11",
-      "sleeves": "13",
-      "chest": "25",
-      "height": "18 1/2"
-      }
-      ]
-      }
-      ]
-      },
-      {
-      "type": "Pants",
-      "value": [
-      {
-      "age": "4 yrs",
-      "value": [
-      {
-      "size": "14",
-      "shoulder": "9 1/2 ",
-      "sleeves": "11 1/2",
-      "chest": "20 1/2",
-      "height": "14 1/2"
-      }
-      ]
-      },
-      {
-      "age": "5 yrs",
-      "value": [
-      {
-      "size": "16",
-      "shoulder": "10 1/2 ",
-      "sleeves": "12 1/2",
-      "chest": "22",
-      "height": "17 1/2"
-      }
-      ]
-      },
-      {
-      "age": "6 yrs",
-      "value": [
-      {
-      "size": "18",
-      "shoulder": "11",
-      "sleeves": "13",
-      "chest": "25",
-      "height": "18 1/2"
-      }
-      ]
-      }
-      ]
-      }
-      ] {% endcomment %} {% assign suppliers = product.metafields.custom.size_chart.value %}
+      {% assign suppliers = product.metafields.custom.size_chart.value %}
       {% for supplier in suppliers %}
       <h2 class="sizeChatTitle">{{supplier.type}}</h2>
       <div class="sizeChart">
@@ -255,15 +157,129 @@
         </div>
       </div>
       {% endfor %}
+      <h2 class="product-title-secondary"> Specification </h2>
+      <div class="product-detail">
+        {% if product.metafields.custom.material.value != blank %}
+        <dl>
+          <dt> Material</dt>
+          <dd>{{ product.metafields.custom.material.value }}</dd>
+        </dl>
+        {% endif %}
+        {% if product.metafields.custom.border_color.value != blank %}
+        <dl>
+          <dt>Body Color</dt>
+          <dd>{{ product.metafields.custom.border_color.value }}</dd>
+        </dl>
+        {% endif %}
+        {% if product.metafields.custom.pallu_color.value != blank %}
+        <dl>
+          <dt>Pallu Color</dt>
+          <dd>{{ product.metafields.custom.pallu_color.value }}</dd>
+        </dl>
+        {% endif %}
+        {% if product.metafields.custom.blouse.value != blank %}
+        <dl>
+          <dt> Blouse</dt>
+          <dd>{{ product.metafields.custom.blouse.value }}</dd>
+        </dl>
+        {% endif %}
+        {% if product.metafields.custom.border.value != blank %}
+        <dl>
+          <dt> Border</dt>
+          <dd>{{ product.metafields.custom.border.value }}</dd>
+        </dl>
+        {% endif %}
+        {% if product.metafields.custom.blouse_color.value != blank %}
+        <dl>
+          <dt> Blouse Color</dt>
+          <dd>{{ product.metafields.custom.blouse_color.value }}</dd>
+        </dl>
+        {% endif %}
+        {% if product.metafields.custom.zari.value != blank %}
+        <dl>
+          <dt> Zari</dt>
+          <dd>{{ product.metafields.custom.zari.value }}</dd>
+        </dl>
+        {% endif %}
+        {% if product.metafields.custom.purity.value != blank %}
+        <dl>
+          <dt> Purity </dt>
+          <dd>{{ product.metafields.custom.purity.value }}</dd>
+        </dl>
+        {% endif %}
+        {% if product.metafields.custom.size.value != blank %}
+        <dl>
+          <dt> Size </dt>
+          <dd>{{ product.metafields.custom.size.value }}</dd>
+        </dl>
+        {% endif %}
+        {% if product.metafields.custom.color.value != blank %}
+        <dl>
+          <dt> Color </dt>
+          <dd>{{ product.metafields.custom.color.value }}</dd>
+        </dl>
+        {% endif %}
+        {% if product.metafields.custom.sleeve.value != blank %}
+        <dl>
+          <dt> Sleeve </dt>
+          <dd>{{ product.metafields.custom.sleeve.value }}</dd>
+        </dl>
+        {% endif %}
+        {% if product.metafields.custom.bottom_color.value != blank %}
+        <dl>
+          <dt> Button Color </dt>
+          <dd>{{ product.metafields.custom.bottom_color.value }}</dd>
+        </dl>
+        {% endif %}
+        {% if product.metafields.custom.dupatta.value != blank %}
+        <dl>
+          <dt> Dupatta </dt>
+          <dd>{{ product.metafields.custom.dupatta.value }}</dd>
+        </dl>
+        {% endif %}
+        {% if product.metafields.custom.collar.value != blank %}
+        <dl>
+          <dt> Collar </dt>
+          <dd>{{ product.metafields.custom.collar.value }}</dd>
+        </dl>
+        {% endif %}
+        {% if product.metafields.custom.age.value != blank %}
+        <dl>
+          <dt> Age </dt>
+          <dd>{{ product.metafields.custom.age.value }}</dd>
+        </dl>
+        {% endif %}
+        {% if product.metafields.custom.angavastram.value != blank %}
+        <dl>
+          <dt> Angavastram </dt>
+          <dd>{{ product.metafields.custom.angavastram.value }}</dd>
+        </dl>
+        {% endif %}
+      </div>
+      <div class="product-common-note">
       {% if product.metafields.custom.wash_care_tips.value != blank %}
-      <p>Wash Care: {{ product.metafields.custom.wash_care_tips.value }} </p> <br>
-      {% endif %}
+        <dl>
+          <dt> Wash Care </dt>
+          <dd> {{ product.metafields.custom.wash_care_tips.value }} </dd>
+        </dl>
+        {% endif %}
       {% if product.metafields.custom.delivery_shipping.value != blank %}
-      <p>Delivery Shipping: {{ product.metafields.custom.delivery_shipping.value }} </p> <br>
-      {% endif %}
-      {% if product.metafields.custom.note.value != blank %}
-      <p>Note: {{ product.metafields.custom.note.value }} </p> <br>
-      {% endif %}
+        <dl>
+          <dt> Delivery Shipping </dt>
+          <dd> {{ product.metafields.custom.delivery_shipping.value }} </dd>
+        </dl>
+        {% endif %}
+        {% if product.metafields.custom.note.value != blank %}
+          <dl>
+            <dt> Note </dt>
+            <dd> {{ product.metafields.custom.note.value }} </dd>
+          </dl>
+          {% endif %}
+        </div>
     </div>
   </div>
 </section>
+<div class="modal hidden" id="download-modal"></div>
+<div class="modal--overlay hidden"></div>
+{% include 'recently-viewed' %}
+{% section 'recommended-products' %}

@@ -122,6 +122,9 @@
     slickPause();
   });
 
+
+
   //Functions, Plugins, Etc.. Here
   //(does not wait for DOM READY STATE)
 })(jQuery);
+

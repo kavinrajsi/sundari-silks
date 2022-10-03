@@ -1,0 +1,86 @@
+
+h1.page__title {
+  font-size: 24px;
+  line-height: 31px;
+  letter-spacing: 0em;
+  font-weight: 400;
+  text-align: center;
+  margin: 24px auto;
+}
+
+.page__decription {
+  background: rgba(253, 217, 51, 0.4);
+  border-radius: 4px;
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 24px;
+  li:first-child {
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  li {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+
+form.cart_wrapper {
+	display: flex;
+	max-width: var(--content-width);
+	margin-left: auto;
+	margin-right: auto;
+	justify-content: center;
+	padding: 4vw 0;
+}
+.cart__details.card__block {
+	background-color: #f7f7f8;
+	text-align: left;
+	padding: 25px 20px;
+	button {
+		padding: 0;
+		margin: 0;
+	}
+}
+h2.line-item__title {
+	font-family: 'Playfair Display';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 26px;
+}
+.line-item_quality {
+	display: none;
+}
+.line-item {
+	display: flex;
+}
+.line-item__left {
+	display: flex;
+	img {
+		width: 120;
+		height: 148px;
+		display: inline-block;
+    object-fit: cover;
+    object-position: top;
+    border-radius: var(--border-radius);
+	}
+}
+.line-item__price {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
+	display: flex;
+}
+.line-item__right {
+	a {
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 20px;
+		color: rgba(0, 0, 0, 0.85);
+	}
+}
