@@ -37,6 +37,7 @@
       color: #4a4a4a;
       border-radius: 40px;
       padding: 4px 16px;
+    text-transform: capitalize;
       cursor: pointer;
       &.active {
         background-color: var(--primary-color);

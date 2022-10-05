@@ -9,7 +9,7 @@
     <div class="tab-buttton">
       {% for item in my_array %}
       <div id="titem_{{forloop.index}}" class="tab {% if forloop.first %} active {% endif %} ">
-        {{item}}
+        {{item | downcase | replace: "-", " "}}
       </div>
       {% endfor %}
     </div>

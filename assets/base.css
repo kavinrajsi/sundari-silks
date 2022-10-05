@@ -1902,6 +1902,7 @@ body {
   color: #4a4a4a;
   border-radius: 40px;
   padding: 4px 16px;
+  text-transform: capitalize;
   cursor: pointer;
 }
 .template-index .homepage-section .homepage-justdropped .tab-buttton .tab.active {
@@ -2916,7 +2917,7 @@ body:before {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 120px 0 80px;
+  margin: 60px auto;
 }
 .pagination--number span {
   transition: color 0.2s ease-in-out, opacity 0.2s ease-in-out;
