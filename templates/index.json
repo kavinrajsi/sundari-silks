@@ -359,14 +359,23 @@
           "type": "products",
           "settings": {
             "block_product": "patola-silk-saree-4",
-            "horizontal": 50,
-            "vertical": 50
+            "horizontal": 80,
+            "vertical": 82
+          }
+        },
+        "e4783bb5-2fe9-4b6c-bdbc-2a43e88a9449": {
+          "type": "products",
+          "settings": {
+            "block_product": "allover-diagonal-pattern-multicolor-printed-silk-saree",
+            "horizontal": 29,
+            "vertical": 29
           }
         }
       },
       "block_order": [
         "3232c787-c4c4-4ba0-9f63-b5500afcd6dd",
-        "95e4dc32-830e-4a3c-b477-2f3ad7eae31e"
+        "95e4dc32-830e-4a3c-b477-2f3ad7eae31e",
+        "e4783bb5-2fe9-4b6c-bdbc-2a43e88a9449"
       ],
       "settings": {
         "largeImage": "shopify:\/\/shop_images\/interior-decor-shelving-with-ceramic-art.jpg"
