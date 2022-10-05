@@ -8,25 +8,59 @@
 
 <section class="page-product-detail">
   <div class="product-image">
+
+
+
     <div class="product-images">
 
 
-      <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails">
+      <div class="ImageMe test-gallery">
         <a href="{{ product_image.src | image_url }}">
-          <img class="lazyload" data-sizes="auto" data-src="{{ product_image | image_url: width: 440 }}"
-            alt="{{ product_image.alt }}" id="product-image-main">
-        </a>
+        <img
+        class="global-media-settings global-media-settings--no-shadow{% if variant_image %} product__media-item--variant{% endif %}"
+        srcset="{%- if product_image.width >= 550 -%}{{ product_image | image_url: width: 550 }} 550w,{%- endif -%}
+                {%- if product_image.width >= 1100 -%}{{ product_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                {%- if product_image.width >= 1445 -%}{{ product_image | image_url: width: 1445 }} 1445w,{%- endif -%}
+                {%- if product_image.width >= 1680 -%}{{ product_image | image_url: width: 1680 }} 1680w,{%- endif -%}
+                {%- if product_image.width >= 2048 -%}{{ product_image | image_url: width: 2048 }} 2048w,{%- endif -%}
+                {%- if product_image.width >= 2200 -%}{{ product_image | image_url: width: 2200 }} 2200w,{%- endif -%}
+                {%- if product_image.width >= 2890 -%}{{ product_image | image_url: width: 2890 }} 2890w,{%- endif -%}
+                {%- if product_image.width >= 4096 -%}{{ product_image | image_url: width: 4096 }} 4096w,{%- endif -%}
+                {{ product_image | image_url }} {{ product_image.width }}w"
+        sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+        src="{{ product_image | image_url: width: 1445 }}"
+        alt="{{ media.alt | escape }}"
+        loading="lazy"
+        width="1100"
+        height="{{ 1100 | divided_by: product_image.aspect_ratio | ceil }}"
+        data-media-id="{{ media.id }}"
+      >
+    </a>
+    {% for product_image in product.images %}
+    <a href="http://example.com" style="opacity: 0; width: 0; height: 0;"
+    data-pswp-src="{{ product_image | image_url }}"
+    data-pswp-width="{{ product_image.width }}"
+    data-pswp-height="{{ product_image.height }}"
+    target="_blank">
+    No thumbnail
+  </a>
+  {% endfor %}
       </div>
 
       <ul class="thumbnails">
-        {% for image in product.images offset:1 %}
-        <li>
-          <a href="{{ image.src }}" data-standard="{{ image.src }}">
-            <img class="lazyload" data-sizes="auto" data-src="{{ image.src | image_url : width: 400 }}"
-              alt="{{image.alt }}">
-          </a>
+
+          {% for product_image in product.images %}<li>
+
+            {{ product_image | image_url : width: 160 | image_tag:
+              loading: lazy,
+              width: 160,
+              height: 160,
+              alt: product_image.alt | escape
+              }}
+
         </li>
-        {% endfor %}
+          {% endfor %}
+
 
       </ul>
 
@@ -246,7 +280,6 @@
     </div>
   </div>
 </section>
-<div class="modal hidden" id="download-modal"></div>
-<div class="modal--overlay hidden"></div>
+
 {% include 'recently-viewed' %}
 {% section 'recommended-products' %}

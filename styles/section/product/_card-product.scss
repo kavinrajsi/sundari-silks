@@ -30,7 +30,32 @@
 }
 
 .product-grid-list-eight{
-  overflow-x: scroll;
+  --carousel-padding: calc(24px * 2);
+  overflow-x: auto;
+
+  -webkit-overflow-scrolling: touch;
+  -webkit-scroll-snap-type: x mandatory;
+  -moz-scroll-snap-type: x mandatory;
+  -ms-scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
+  -webkit-transition: color 250ms ease-in-out;
+  transition: color 250ms ease-in-out;
+  -webkit-scrollbar-color: #757575 transparent;
+  -moz-scrollbar-color: #757575 transparent;
+  -ms-scrollbar-color: #757575 transparent;
+  scrollbar-color: #757575 transparent;
+  -webkit-scrollbar-width: thin;
+  -moz-scrollbar-width: thin;
+  -ms-scrollbar-width: thin;
+  scrollbar-width: thin;
+
+  // padding-inline-start: var(--carousel-padding);
+  -webkit-scroll-padding: 0 var(--carousel-padding);
+  -moz-scroll-padding: 0 var(--carousel-padding);
+  -ms-scroll-padding: 0 var(--carousel-padding);
+  scroll-padding: 0 var(--carousel-padding);
+
+
   grid-template-columns: repeat(8, calc(100% / 12 * 3 - 18px));
 }
 

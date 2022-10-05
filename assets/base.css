@@ -454,6 +454,7 @@ summary::marker {
 }
 
 html {
+  scroll-behavior: smooth;
   font-family: var(--font-montserrat);
   font-size: 14px;
   font-weight: 400;
@@ -463,15 +464,63 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: none;
+}
+
+body {
+  font-size: inherit;
+  line-height: inherit;
+  background-color: #fff;
+  background-color: #fef1e1;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: none;
+}
+
+@media screen and (prefers-reduced-motion: reduce), (update: slow) {
+  * {
+    -webkit-animation-duration: 0s !important;
+    animation-duration: 0s !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0s !important;
+    -o-transition-duration: 0s !important;
+    transition-duration: 0s !important;
+  }
+}
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-clip: content-box;
+  border: 5px solid transparent;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 10px;
+}
+
+::-webkit-scrollbar-track {
+  margin-inline-end: 24px;
+  margin-inline-start: 20px;
+  margin: 0 var(--carousel-padding);
 }
 
 img {
   border: 0;
   -ms-interpolation-mode: bicubic;
-}
-
-body {
-  background-color: #fef1e1;
 }
 
 #MainContent {
@@ -617,10 +666,7 @@ iframe#dummy-chat-button-iframe {
 }
 
 /*
-
     [{"type":"Shirts","value":[{"age":"1 yrs","value":[{"size":"14","shoulder":"9 1/2 ","sleeves":"11 1/2","chest":"20 1/2","height":"14 1/2"}]},{"age":"2 yrs","value":[{"size":"16","shoulder":"10 1/2 ","sleeves":"12 1/2","chest":"22","height":"17 1/2"}]},{"age":"3 yrs","value":[{"size":"18","shoulder":"11","sleeves":"13","chest":"25","height":"18 1/2"}]}]},{"type":"Pants","value":[{"age":"4 yrs","value":[{"size":"14","shoulder":"9 1/2 ","sleeves":"11 1/2","chest":"20 1/2","height":"14 1/2"}]},{"age":"5 yrs","value":[{"size":"16","shoulder":"10 1/2 ","sleeves":"12 1/2","chest":"22","height":"17 1/2"}]},{"age":"6 yrs","value":[{"size":"18","shoulder":"11","sleeves":"13","chest":"25","height":"18 1/2"}]}]}]
-
-
 */
 .sizeChart {
   display: flex;
@@ -1286,250 +1332,6 @@ body {
 .large-12.columns .owl-theme .owl-dots .owl-dot.active span {
   border-color: var(--secondary-color);
   background: var(--secondary-color);
-}
-
-/*
- *  Owl Carousel - Core
- */
-.owl-carousel {
-  display: none;
-  width: 100%;
-  -webkit-tap-highlight-color: transparent;
-  /* position relative and z-index fix webkit rendering fonts issue */
-  position: relative;
-  z-index: 1;
-}
-.owl-carousel .owl-stage {
-  position: relative;
-  -ms-touch-action: pan-Y;
-  touch-action: manipulation;
-  -moz-backface-visibility: hidden; /* fix firefox animation glitch */
-}
-.owl-carousel .owl-stage:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-.owl-carousel .owl-stage-outer {
-  position: relative;
-  overflow: hidden;
-  /* fix for flashing background */
-  -webkit-transform: translate3d(0px, 0px, 0px);
-}
-.owl-carousel .owl-wrapper,
-.owl-carousel .owl-item {
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-}
-.owl-carousel .owl-item {
-  position: relative;
-  min-height: 1px;
-  float: left;
-  -webkit-backface-visibility: hidden;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-}
-.owl-carousel .owl-item img {
-  display: block;
-  width: 100%;
-}
-.owl-carousel .owl-nav.disabled,
-.owl-carousel .owl-dots.disabled {
-  display: none;
-}
-.owl-carousel .owl-nav .owl-prev,
-.owl-carousel .owl-nav .owl-next,
-.owl-carousel .owl-dot {
-  cursor: pointer;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.owl-carousel .owl-nav button.owl-prev,
-.owl-carousel .owl-nav button.owl-next,
-.owl-carousel button.owl-dot {
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0 !important;
-  font: inherit;
-}
-.owl-carousel.owl-loaded {
-  display: block;
-}
-.owl-carousel.owl-loading {
-  opacity: 0;
-  display: block;
-}
-.owl-carousel.owl-hidden {
-  opacity: 0;
-}
-.owl-carousel.owl-refresh .owl-item {
-  visibility: hidden;
-}
-.owl-carousel.owl-drag .owl-item {
-  touch-action: pan-y;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.owl-carousel.owl-grab {
-  cursor: move;
-  cursor: grab;
-}
-.owl-carousel.owl-rtl {
-  direction: rtl;
-}
-.owl-carousel.owl-rtl .owl-item {
-  float: right;
-}
-
-/* No Js */
-.no-js .owl-carousel {
-  display: block;
-}
-
-/*
- *  Owl Carousel - Animate Plugin
- */
-.owl-carousel .animated {
-  animation-duration: 1000ms;
-  animation-fill-mode: both;
-}
-.owl-carousel .owl-animated-in {
-  z-index: 0;
-}
-.owl-carousel .owl-animated-out {
-  z-index: 1;
-}
-.owl-carousel .fadeOut {
-  animation-name: fadeOut;
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-/*
- * 	Owl Carousel - Auto Height Plugin
- */
-.owl-height {
-  transition: height 500ms ease-in-out;
-}
-
-/*
- * 	Owl Carousel - Lazy Load Plugin
- */
-.owl-carousel .owl-item {
-  /**
-  	This is introduced due to a bug in IE11 where lazy loading combined with autoheight plugin causes a wrong
-  	calculation of the height of the owl-item that breaks page layouts
-   */
-}
-.owl-carousel .owl-item .owl-lazy {
-  opacity: 0;
-  transition: opacity 400ms ease;
-}
-.owl-carousel .owl-item .owl-lazy[src^=""], .owl-carousel .owl-item .owl-lazy:not([src]) {
-  max-height: 0;
-}
-.owl-carousel .owl-item img.owl-lazy {
-  transform-style: preserve-3d;
-}
-
-/*
- * 	Owl Carousel - Video Plugin
- */
-.owl-carousel .owl-video-wrapper {
-  position: relative;
-  height: 100%;
-  background: #000;
-}
-.owl-carousel .owl-video-play-icon {
-  position: absolute;
-  height: 80px;
-  width: 80px;
-  left: 50%;
-  top: 50%;
-  margin-left: -40px;
-  margin-top: -40px;
-  background: url("owl.video.play.png") no-repeat;
-  cursor: pointer;
-  z-index: 1;
-  -webkit-backface-visibility: hidden;
-  transition: transform 100ms ease;
-}
-.owl-carousel .owl-video-play-icon:hover {
-  transform: scale(1.3, 1.3);
-}
-.owl-carousel .owl-video-playing .owl-video-tn,
-.owl-carousel .owl-video-playing .owl-video-play-icon {
-  display: none;
-}
-.owl-carousel .owl-video-tn {
-  opacity: 0;
-  height: 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  transition: opacity 400ms ease;
-}
-.owl-carousel .owl-video-frame {
-  position: relative;
-  z-index: 1;
-  height: 100%;
-  width: 100%;
-}
-
-/*
- * 	Default theme - Owl Carousel CSS File
- */
-.owl-theme .owl-nav {
-  display: none;
-}
-.owl-theme .owl-nav.disabled + .owl-dots {
-  margin-top: 10px;
-}
-.owl-theme .owl-dots {
-  position: absolute;
-  top: initial;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  -webkit-tap-highlight-color: transparent;
-}
-.owl-theme .owl-dots .owl-dot {
-  display: inline-block;
-  zoom: 1;
-  *display: inline;
-}
-.owl-theme .owl-dots .owl-dot span {
-  width: 10px;
-  height: 10px;
-  margin: 5px 7px;
-  background: #D6D6D6;
-  display: block;
-  -webkit-backface-visibility: visible;
-  transition: opacity 200ms ease;
-  border-radius: 30px;
-}
-.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-  background: #869791;
 }
 
 .breadcrumbs {
@@ -2306,6 +2108,415 @@ h1.title.title--primary {
   margin-top: 8px;
 }
 
+.pswp {
+  --pswp-bg: #000;
+  --pswp-placeholder-bg: #222;
+  --pswp-root-z-index: 100000;
+  --pswp-preloader-color: rgba(79, 79, 79, 0.4);
+  --pswp-preloader-color-secondary: rgba(255, 255, 255, 0.9);
+  /* defined via js:
+  --pswp-transition-duration: 333ms; */
+  --pswp-icon-color: #fff;
+  --pswp-icon-color-secondary: #4f4f4f;
+  --pswp-icon-stroke-color: #4f4f4f;
+  --pswp-icon-stroke-width: 2px;
+  --pswp-error-text-color: var(--pswp-icon-color);
+}
+
+/*
+	Styles for basic PhotoSwipe (pswp) functionality (sliding area, open/close transitions)
+*/
+.pswp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--pswp-root-z-index);
+  display: none;
+  touch-action: none;
+  outline: 0;
+  opacity: 0.003;
+  contain: layout style size;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Prevents focus outline on the root element,
+  (it may be focused initially) */
+.pswp:focus {
+  outline: 0;
+}
+
+.pswp * {
+  box-sizing: border-box;
+}
+
+.pswp img {
+  max-width: none;
+}
+
+.pswp--open {
+  display: block;
+}
+
+.pswp,
+.pswp__bg {
+  transform: translateZ(0);
+  will-change: opacity;
+}
+
+.pswp__bg {
+  opacity: 0.005;
+  background: var(--pswp-bg);
+}
+
+.pswp,
+.pswp__scroll-wrap {
+  overflow: hidden;
+}
+
+.pswp__scroll-wrap,
+.pswp__bg,
+.pswp__container,
+.pswp__item,
+.pswp__content,
+.pswp__img,
+.pswp__zoom-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pswp__img,
+.pswp__zoom-wrap {
+  width: auto;
+  height: auto;
+}
+
+.pswp--click-to-zoom.pswp--zoom-allowed .pswp__img {
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
+  cursor: zoom-in;
+}
+
+.pswp--click-to-zoom.pswp--zoomed-in .pswp__img {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grab;
+}
+
+.pswp--click-to-zoom.pswp--zoomed-in .pswp__img:active {
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: grabbing;
+}
+
+/* :active to override grabbing cursor */
+.pswp--no-mouse-drag.pswp--zoomed-in .pswp__img,
+.pswp--no-mouse-drag.pswp--zoomed-in .pswp__img:active,
+.pswp__img {
+  cursor: -webkit-zoom-out;
+  cursor: -moz-zoom-out;
+  cursor: zoom-out;
+}
+
+/* Prevent selection and tap highlights */
+.pswp__container,
+.pswp__img,
+.pswp__button,
+.pswp__counter {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.pswp__item {
+  /* z-index for fade transition */
+  z-index: 1;
+  overflow: hidden;
+}
+
+.pswp__hidden {
+  display: none !important;
+}
+
+/* Allow to click through pswp__content element, but not its children */
+.pswp__content {
+  pointer-events: none;
+}
+
+.pswp__content > * {
+  pointer-events: auto;
+}
+
+/*
+
+  PhotoSwipe UI
+
+*/
+/*
+	Error message appears when image is not loaded
+	(JS option errorMsg controls markup)
+*/
+.pswp__error-msg-container {
+  display: grid;
+}
+
+.pswp__error-msg {
+  margin: auto;
+  font-size: 1em;
+  line-height: 1;
+  color: var(--pswp-error-text-color);
+}
+
+/*
+class pswp__hide-on-close is applied to elements that
+should hide (for example fade out) when PhotoSwipe is closed
+and show (for example fade in) when PhotoSwipe is opened
+ */
+.pswp .pswp__hide-on-close {
+  opacity: 0.005;
+  will-change: opacity;
+  transition: opacity var(--pswp-transition-duration) cubic-bezier(0.4, 0, 0.22, 1);
+  z-index: 10; /* always overlap slide content */
+  pointer-events: none; /* hidden elements should not be clickable */
+}
+
+/* class pswp--ui-visible is added when opening or closing transition starts */
+.pswp--ui-visible .pswp__hide-on-close {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* <button> styles, including css reset */
+.pswp__button {
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 60px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  opacity: 0.85;
+  -webkit-appearance: none;
+  -webkit-touch-callout: none;
+}
+
+.pswp__button:hover,
+.pswp__button:active,
+.pswp__button:focus {
+  transition: none;
+  padding: 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  opacity: 1;
+}
+
+.pswp__button:disabled {
+  opacity: 0.3;
+  cursor: auto;
+}
+
+.pswp__icn {
+  fill: var(--pswp-icon-color);
+  color: var(--pswp-icon-color-secondary);
+}
+
+.pswp__icn {
+  position: absolute;
+  top: 14px;
+  left: 9px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.pswp__icn-shadow {
+  stroke: var(--pswp-icon-stroke-color);
+  stroke-width: var(--pswp-icon-stroke-width);
+  fill: none;
+}
+
+.pswp__icn:focus {
+  outline: 0;
+}
+
+/*
+	div element that matches size of large image,
+	large image loads on top of it,
+	used when msrc is not provided
+*/
+div.pswp__img--placeholder,
+.pswp__img--with-bg {
+  background: var(--pswp-placeholder-bg);
+}
+
+.pswp__top-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  z-index: 10;
+  /* allow events to pass through top bar itself */
+  pointer-events: none !important;
+}
+
+.pswp__top-bar > * {
+  pointer-events: auto;
+  /* this makes transition significantly more smooth,
+     even though inner elements are not animated */
+  will-change: opacity;
+}
+
+/*
+
+  Close button
+
+*/
+.pswp__button--close {
+  margin-right: 6px;
+}
+
+/*
+
+  Arrow buttons
+
+*/
+.pswp__button--arrow {
+  position: absolute;
+  top: 0;
+  width: 75px;
+  height: 100px;
+  top: 50%;
+  margin-top: -50px;
+}
+
+.pswp__button--arrow:disabled {
+  display: none;
+  cursor: default;
+}
+
+.pswp__button--arrow .pswp__icn {
+  top: 50%;
+  margin-top: -30px;
+  width: 60px;
+  height: 60px;
+  background: none;
+  border-radius: 0;
+}
+
+.pswp--one-slide .pswp__button--arrow {
+  display: none;
+}
+
+/* hide arrows on touch screens */
+.pswp--touch .pswp__button--arrow {
+  visibility: hidden;
+}
+
+/* show arrows only after mouse was used */
+.pswp--has_mouse .pswp__button--arrow {
+  visibility: visible;
+}
+
+.pswp__button--arrow--prev {
+  right: auto;
+  left: 0px;
+}
+
+.pswp__button--arrow--next {
+  right: 0px;
+}
+
+.pswp__button--arrow--next .pswp__icn {
+  left: auto;
+  right: 14px;
+  /* flip horizontally */
+  transform: scale(-1, 1);
+}
+
+/*
+
+  Zoom button
+
+*/
+.pswp__button--zoom {
+  display: none;
+}
+
+.pswp--zoom-allowed .pswp__button--zoom {
+  display: block;
+}
+
+/* "+" => "-" */
+.pswp--zoomed-in .pswp__zoom-icn-bar-v {
+  display: none;
+}
+
+/*
+
+  Loading indicator
+
+*/
+.pswp__preloader {
+  position: relative;
+  overflow: hidden;
+  width: 50px;
+  height: 60px;
+  margin-right: auto;
+}
+
+.pswp__preloader .pswp__icn {
+  opacity: 0;
+  transition: opacity 0.2s linear;
+  animation: pswp-clockwise 600ms linear infinite;
+}
+
+.pswp__preloader--active .pswp__icn {
+  opacity: 0.85;
+}
+
+@keyframes pswp-clockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*
+
+  "1 of 10" counter
+
+*/
+.pswp__counter {
+  height: 30px;
+  margin: 15px 0 0 20px;
+  font-size: 14px;
+  line-height: 30px;
+  color: var(--pswp-icon-color);
+  text-shadow: 1px 1px 3px var(--pswp-icon-color-secondary);
+  opacity: 0.85;
+}
+
+.pswp--one-slide .pswp__counter {
+  display: none;
+}
+
 .collection-page-header {
   margin-left: 4vw;
   margin-right: 4vw;
@@ -2414,7 +2625,27 @@ h1.title.title--primary {
 }
 
 .product-grid-list-eight {
-  overflow-x: scroll;
+  --carousel-padding: calc(24px * 2);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-scroll-snap-type: x mandatory;
+  -moz-scroll-snap-type: x mandatory;
+  -ms-scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
+  -webkit-transition: color 250ms ease-in-out;
+  transition: color 250ms ease-in-out;
+  -webkit-scrollbar-color: #757575 transparent;
+  -moz-scrollbar-color: #757575 transparent;
+  -ms-scrollbar-color: #757575 transparent;
+  scrollbar-color: #757575 transparent;
+  -webkit-scrollbar-width: thin;
+  -moz-scrollbar-width: thin;
+  -ms-scrollbar-width: thin;
+  scrollbar-width: thin;
+  -webkit-scroll-padding: 0 var(--carousel-padding);
+  -moz-scroll-padding: 0 var(--carousel-padding);
+  -ms-scroll-padding: 0 var(--carousel-padding);
+  scroll-padding: 0 var(--carousel-padding);
   grid-template-columns: repeat(8, calc(25% - 18px));
 }
 
@@ -3120,4 +3351,20 @@ footer .footer-copyright a {
 
 .shopify-section.section-random-product {
   padding: 4vw 0;
+}
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4vw 0px;
+}
+.empty-cart a {
+  text-decoration: underline;
+}
+.empty-cart p {
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: normal;
 }

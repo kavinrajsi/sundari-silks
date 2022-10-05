@@ -2,14 +2,13 @@
 @import 'common';
 
 @import 'header';
-@import 'owl-slider/owl.carousel.scss';
-@import 'owl-slider/owl.theme.default.scss';
 @import 'section/common/breadcrumbs';
 @import 'page/home';
 @import 'page/cart';
 @import 'page/product-detail';
 @import 'page/collection';
 
+@import 'section/modal';
 @import 'section/collection/collection-header';
 @import 'section/product/card-product';
 @import 'section/product/quickview';
@@ -87,4 +86,22 @@
 }
 .shopify-section.section-random-product{
   padding: 4vw 0;
+}
+
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4vw 0px;
+  a {
+    text-decoration: underline;
+  }
+  p {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: normal;
+  }
+
 }

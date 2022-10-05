@@ -43,9 +43,8 @@
   {% render 'social-meta-tags' %}
 
   {{ content_for_header }}
-  <!-- Add the slick-theme.css if you want default styling -->
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-  <!-- Add the slick-theme.css if you want default styling -->
+
+  {{ 'slick.css' | asset_url | stylesheet_tag }}
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
   {{ 'base.css' | asset_url | stylesheet_tag }}
 
@@ -242,44 +241,35 @@
 
 
   <script src="{{ 'predictive-search.js' | asset_url }}"></script>
-  <script src="{{ 'owl.carousel.min.js' | asset_url }}"></script>
   <script src="{{ 'velocity.min.js' | asset_url }}"></script>
   <script src="{{ 'quick-view-main.js' | asset_url }}"></script>
-  <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="{{ 'slick.js' | asset_url }}"></script>
   <script src="{{ 'global.js' | asset_url }}"></script>
 
 {% if template contains 'product' %}
 <script src="{{ 'easyzoom.js' | asset_url }}"></script>
-<script>
- 		// Instantiate EasyZoom instances
-     var $easyzoom = $('.easyzoom').easyZoom();
+<script src="{{ 'photoswipe.umd.min.js' | asset_url }}"></script>
+<script src="{{ 'photoswipe-lightbox.umd.min.js' | asset_url }}"></script>
 
-// Setup thumbnails example
-var api1 = $easyzoom.filter('.easyzoom--with-thumbnails').data('easyZoom');
+<script>
+  // Include Lightbox
+  var lightbox = new PhotoSwipeLightbox({
+        gallery: '.test-gallery',
+        children: 'a',
+        showHideAnimationType: 'fade',
+        pswpModule: PhotoSwipe
+      });
+      lightbox.init();
+
 
 $('.thumbnails').on('click', 'a', function(e) {
   var $this = $(this);
-
   e.preventDefault();
-
-  // Use EasyZoom's `swap` method
-  api1.swap($this.data('standard'), $this.attr('href'));
+  console.log($this.data('standard'));
+$this.parents('.product-images').find('.ImageMe a').addClass('ter').attr('href', $this.data('standard'));
+$this.parents('.product-images').find('.ImageMe img').addClass('ter').attr('src', $this.data('standard'));
 });
 
-// Setup toggles example
-var api2 = $easyzoom.filter('.easyzoom--with-toggle').data('easyZoom');
-
-$('.toggle').on('click', function() {
-  var $this = $(this);
-
-  if ($this.data("active") === true) {
-    $this.text("Switch on").data("active", false);
-    api2.teardown();
-  } else {
-    $this.text("Switch off").data("active", true);
-    api2._init();
-  }
-});
 
 
 Shopify.Products.recordRecentlyViewed();

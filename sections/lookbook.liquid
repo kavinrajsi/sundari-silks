@@ -1,0 +1,122 @@
+<section data-section-id="{{ section.id }}" class="mult-product-section">
+  <div class="image-container">
+    <div class="large-image-products">
+      <img src="{{ section.settings.largeImage | img_url: '1000x' }}" alt="">
+      {%- for block in section.blocks -%}
+      <div class="dot {% if forloop.first%}active{% endif %}" data-handle="{{block.settings.block_product}}"
+        style="top: {{block.settings.vertical}}%; left: {{block.settings.horizontal}}%;  "></div>
+      {% endfor %}
+    </div>
+    <div id="product" class="product-container"></div>
+  </div>
+</section>
+
+
+{% javascript %}
+var multi_products = []
+{% for block in section.blocks %}
+
+{% assign product_handle = block.settings.block_product %}
+
+var object = {}
+
+object.handle = "{{product_handle}}"
+object.url = "{{all_products[product_handle].url }}"
+object.price = {{ all_products[product_handle].price | money_without_currency }}
+object.title = "{{ all_products[product_handle].title }}"
+object.image = "{{ all_products[product_handle].featured_image | img_url: '800x' }}"
+
+multi_products.push(object)
+
+{% endfor %}
+{% endjavascript %}
+
+<script>
+  var $product_container = $('#product')
+
+  var initial_product = multi_products[0]
+
+  var initial_product_html = `<div class="product">
+    <img src="${initial_product.image}">
+    <h3>${initial_product.title}</h3>
+    <p>$${initial_product.price}</p>
+    <a class="button" href="${initial_product.url}">Shop this product</a>
+    </div>
+    `
+
+  $product_container.html(initial_product_html)
+
+  $('body').on('click', '.dot', function () {
+    $('.dot').removeClass('active')
+    $(this).addClass('active')
+
+    var handle = $(this).data('handle')
+
+    var this_product = multi_products.filter((product) => {
+      return product.handle === handle
+    })[0]
+
+
+    var product_html = `<div class="product">
+      <img src="${this_product.image}">
+      <h3>${this_product.title}</h3>
+      <p>$${this_product.price}</p>
+      <a class="button" href="${initial_product.url}">Shop this product</a>
+      </div>
+      `
+
+    $product_container.html(product_html)
+  })
+
+</script>
+
+
+{% schema %}
+{
+"name": "Multi Products",
+"settings": [
+{
+"id": "largeImage",
+"type": "image_picker",
+"label": "Large Image"
+}
+],
+"blocks": [
+{
+"type": "products",
+"name": "Products",
+"settings": [
+{
+"type": "product",
+"id": "block_product",
+"label": "Product"
+},
+{
+"type": "range",
+"id": "horizontal",
+"min": 0,
+"max": 100,
+"step": 1,
+"unit": "%",
+"label": "Horizontal Position",
+"default": 50
+},
+{
+"type": "range",
+"id": "vertical",
+"min": 0,
+"max": 100,
+"step": 1,
+"unit": "%",
+"label": "Vertical Position",
+"default": 50
+}
+]
+}
+],
+"presets": [{
+"name": "Multi Products",
+"category": "product"
+}]
+}
+{% endschema %}

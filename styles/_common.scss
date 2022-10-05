@@ -31,20 +31,18 @@
   --shadow-8dp: 0px 8px 10px rgba(0, 0, 0, 0.14),
     0px 3px 14px rgba(0, 0, 0, 0.12), 0px 4px 5px rgba(0, 0, 0, 0.2);
 }
-
 @media screen and (prefers-reduced-motion: reduce) {
   * {
     transition: 0.01s !important;
   }
 }
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-
 html {
+  scroll-behavior: smooth;
   font-family: var(--font-montserrat);
   font-size: 14px;
   font-weight: 400;
@@ -54,41 +52,76 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: none;
 }
-
+body {
+  font-size: inherit;
+  line-height: inherit;
+  background-color: #fff;
+  background-color: #fef1e1;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: none;
+}
+@media screen and (prefers-reduced-motion: reduce), (update: slow) {
+  * {
+    -webkit-animation-duration: 0s !important;
+    animation-duration: 0s !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0s !important;
+    -o-transition-duration: 0s !important;
+    transition-duration: 0s !important;
+  }
+}
+::-webkit-scrollbar {
+  width: 14px;
+}
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+  display: none;
+}
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-clip: content-box;
+  border: 5px solid transparent;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 10px;
+}
+::-webkit-scrollbar-track {
+  margin-inline-end: 24px;
+  margin-inline-start: 20px;
+  margin: 0 var(--carousel-padding);
+}
 img {
   border: 0;
   -ms-interpolation-mode: bicubic;
 }
-
-body {
-  background-color: #fef1e1;
-}
-
 #MainContent {
   position: relative;
   z-index: 1;
 }
-
 .text-center {
   text-align: center;
 }
-
 @mixin content-block-max-center {
   max-width: var(--content-width);
   margin-left: auto;
   margin-right: auto;
 }
-
 .block-center {
   margin-left: auto;
   margin-right: auto;
 }
-
 .image-radius {
   border-radius: 4px;
 }
-
 b,
 strong {
   font-weight: 500;
@@ -97,11 +130,9 @@ em,
 i {
   font-style: italic;
 }
-
 a {
   color: inherit;
 }
-
 // button
 .button,
 button,
@@ -115,7 +146,6 @@ a[type="button"] {
   border-radius: 4px;
   line-height: 1.25;
 }
-
 .button {
   &--primary {
     background: var(--primary-color);
@@ -144,7 +174,6 @@ a[type="button"] {
     }
   }
 }
-
 form {
   // div {
   //   margin-bottom: 28px;
@@ -177,34 +206,28 @@ form {
     height: 24px;
   }
 }
-
 #shopify-chat iframe,
 iframe#dummy-chat-button-iframe {
   bottom: 70px !important;
 }
-
 .prpdocutSlider .slick-dots {
   top: 0;
   bottom: initial;
   right: 0;
   width: auto;
 }
-
 .image {
   display: block;
   margin: 0 auto;
   width: 100%;
 }
-
 .grid-view-item__image-wrapper .image {
   position: absolute;
   top: 0;
 }
-
 .image.lazyload {
   opacity: 0;
 }
-
 .image-wrapper {
   margin: 0 auto;
   position: relative;
@@ -215,17 +238,12 @@ iframe#dummy-chat-button-iframe {
   filter: blur(5px);
   transition: filter 400ms, -webkit-filter 400ms;
 }
-
 .blur-up.lazyloaded {
   -webkit-filter: blur(0);
   filter: blur(0);
 }
-
 /*
-
     [{"type":"Shirts","value":[{"age":"1 yrs","value":[{"size":"14","shoulder":"9 1/2 ","sleeves":"11 1/2","chest":"20 1/2","height":"14 1/2"}]},{"age":"2 yrs","value":[{"size":"16","shoulder":"10 1/2 ","sleeves":"12 1/2","chest":"22","height":"17 1/2"}]},{"age":"3 yrs","value":[{"size":"18","shoulder":"11","sleeves":"13","chest":"25","height":"18 1/2"}]}]},{"type":"Pants","value":[{"age":"4 yrs","value":[{"size":"14","shoulder":"9 1/2 ","sleeves":"11 1/2","chest":"20 1/2","height":"14 1/2"}]},{"age":"5 yrs","value":[{"size":"16","shoulder":"10 1/2 ","sleeves":"12 1/2","chest":"22","height":"17 1/2"}]},{"age":"6 yrs","value":[{"size":"18","shoulder":"11","sleeves":"13","chest":"25","height":"18 1/2"}]}]}]
-
-
 */
 .sizeChart {
   display: flex;
@@ -273,8 +291,6 @@ iframe#dummy-chat-button-iframe {
   font-family: var(--font-playfair);
   margin-bottom: 18px;
 }
-
-
 .cart-count {
   position: absolute;
   top: -10px;
@@ -299,7 +315,6 @@ iframe#dummy-chat-button-iframe {
   text-align: center;
   color: #000000;
 }
-
 a#cart-icon-bubble {
   position: relative;
 }
