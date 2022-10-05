@@ -354,10 +354,19 @@
             "horizontal": 50,
             "vertical": 50
           }
+        },
+        "95e4dc32-830e-4a3c-b477-2f3ad7eae31e": {
+          "type": "products",
+          "settings": {
+            "block_product": "patola-silk-saree-4",
+            "horizontal": 50,
+            "vertical": 50
+          }
         }
       },
       "block_order": [
-        "3232c787-c4c4-4ba0-9f63-b5500afcd6dd"
+        "3232c787-c4c4-4ba0-9f63-b5500afcd6dd",
+        "95e4dc32-830e-4a3c-b477-2f3ad7eae31e"
       ],
       "settings": {
       }
