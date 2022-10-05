@@ -16,7 +16,7 @@
           "type": "collection-image",
           "settings": {
             "grid_collection_title": "Mumbai",
-            "grid_collection_name": "mumbai",
+            "grid_collection_name": "mumbai-collection",
             "grid_collection_url": "shopify:\/\/collections\/mumbai-collection",
             "grid_collection_count": 8
           }
