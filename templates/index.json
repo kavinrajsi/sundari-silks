@@ -343,6 +343,24 @@
         "instagram-title": "Follow us on Instagram",
         "instagram-description": "Use #SundariAndYou when you Instagram your favourite Sundari outfits"
       }
+    },
+    "5c9a7975-a201-4b5e-9c9e-50ec765aeb8b": {
+      "type": "lookbook",
+      "blocks": {
+        "3232c787-c4c4-4ba0-9f63-b5500afcd6dd": {
+          "type": "products",
+          "settings": {
+            "block_product": "patola-silk-saree-12",
+            "horizontal": 50,
+            "vertical": 50
+          }
+        }
+      },
+      "block_order": [
+        "3232c787-c4c4-4ba0-9f63-b5500afcd6dd"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -354,6 +372,7 @@
     "dropped",
     "recent-products",
     "blog",
-    "instagram"
+    "instagram",
+    "5c9a7975-a201-4b5e-9c9e-50ec765aeb8b"
   ]
 }
