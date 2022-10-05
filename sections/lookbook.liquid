@@ -11,26 +11,7 @@
   </div>
 </section>
 
-
-{% javascript %}
-var multi_products = []
-{% for block in section.blocks %}
-
-{% assign product_handle = block.settings.block_product %}
-
-var object = {}
-
-object.handle = "{{product_handle}}"
-object.url = "{{all_products[product_handle].url }}"
-object.price = {{ all_products[product_handle].price | money_without_currency }}
-object.title = "{{ all_products[product_handle].title }}"
-object.image = "{{ all_products[product_handle].featured_image | img_url: '800x' }}"
-
-multi_products.push(object)
-
-{% endfor %}
-{% endjavascript %}
-
+<script src="{{ 'custom-scripts.js' | asset_url }}" defer="defer"></script>
 <script>
   var $product_container = $('#product')
 
