@@ -1,6 +1,7 @@
 .template-index {
   .homepage-section {
-    padding-bottom: 48px;
+    padding-bottom: 60px;
+    padding-bottom: 6.32vw;
 
     .section-header {
       margin-bottom: 32px;
@@ -35,6 +36,11 @@
       }
       .section-header-action_link {
         margin-top: 30px;
+        display: flex;
+        align-items: flex-end;
+        svg {
+          margin-left: 4px;
+        }
       }
     }
 

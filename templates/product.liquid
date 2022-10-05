@@ -5,65 +5,32 @@
 {% unless product_collection == blank %}
 {% assign collectProductName = product_collection %}
 {% endunless %}
-<style>
-  table {
-    width: 100%;
-    margin-bottom: 1rem;
-    color: #212529;
-  }
-  table span th,
-  table span span {
-    padding: 0.75rem;
-    vertical-align: top;
-    border-top: 1px solid #dee2e6;
-  }
-  table thead th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #dee2e6;
-  }
-  table tbody+tbody {
-    border-top: 2px solid #dee2e6;
-  }
-  .notice-content {
-    display: none;
-  }
-  .modal {
-    max-width: 575px;
-    background: white;
-    border: 5px solid #111;
-    padding: 50px 65px;
-    position: fixed;
-    z-index: 1000;
-  }
-  .modal .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  .modal--overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-  .hidden {
-    display: none;
-  }
-</style>
+
 <section class="page-product-detail">
   <div class="product-image">
-    <!-- <div class="product-image">
-      <img class="lazyload" data-sizes="auto" data-src="{{ product_image | image_url: width: 440 }}"
-        alt="{{ product_image.alt }}" id="product-image-main">
-      {% for image in product.images %}
-      <img class="lazyload" data-sizes="auto" data-src="{{ image.src | image_url : width: 400 }}" alt="{{image.alt }}">
-      {% endfor %}
-    </div> -->
+    <div class="product-images">
+
+
+      <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails">
+        <a href="{{ product_image.src | image_url }}">
+          <img class="lazyload" data-sizes="auto" data-src="{{ product_image | image_url: width: 440 }}"
+            alt="{{ product_image.alt }}" id="product-image-main">
+        </a>
+      </div>
+
+      <ul class="thumbnails">
+        {% for image in product.images offset:1 %}
+        <li>
+          <a href="{{ image.src }}" data-standard="{{ image.src }}">
+            <img class="lazyload" data-sizes="auto" data-src="{{ image.src | image_url : width: 400 }}"
+              alt="{{image.alt }}">
+          </a>
+        </li>
+        {% endfor %}
+
+      </ul>
+
+    </div>
     <div class="product-content">
       <h2 class="product-title">{{product.title}}</h2>
       <p claxss="product-sku">
@@ -257,25 +224,25 @@
         {% endif %}
       </div>
       <div class="product-common-note">
-      {% if product.metafields.custom.wash_care_tips.value != blank %}
+        {% if product.metafields.custom.wash_care_tips.value != blank %}
         <dl>
           <dt> Wash Care </dt>
           <dd> {{ product.metafields.custom.wash_care_tips.value }} </dd>
         </dl>
         {% endif %}
-      {% if product.metafields.custom.delivery_shipping.value != blank %}
+        {% if product.metafields.custom.delivery_shipping.value != blank %}
         <dl>
           <dt> Delivery Shipping </dt>
           <dd> {{ product.metafields.custom.delivery_shipping.value }} </dd>
         </dl>
         {% endif %}
         {% if product.metafields.custom.note.value != blank %}
-          <dl>
-            <dt> Note </dt>
-            <dd> {{ product.metafields.custom.note.value }} </dd>
-          </dl>
-          {% endif %}
-        </div>
+        <dl>
+          <dt> Note </dt>
+          <dd> {{ product.metafields.custom.note.value }} </dd>
+        </dl>
+        {% endif %}
+      </div>
     </div>
   </div>
 </section>

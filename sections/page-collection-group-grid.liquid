@@ -1,109 +1,245 @@
-{% for block in section.blocks %}
-
-<section>
-  <div class="collection-section--title">
-    <h3>
-      {{block.settings.grid_collection_title}}
-    </h3>
-    <a href="{{block.settings.grid_collection_url}}">Show More</a>
+<div class="collection-page-header">
+  <div class="collection-page-header-image text-center image-radius">
+    {% if collection.description != blank %}
+    {{ collection | image_url: width: 1920, height: 340 | image_tag : alt: collection.image.alt, class: 'image-radius'
+    }}
+    {% else %}
+    {{ 'lifestyle-2' | placeholder_svg_tag: 'my-custom-class' }}
+    {% endif %}
   </div>
-  <div class="collection-section--group">
-    <div class="test--product-card--grid">
-
-      <div class="product-grid-list-eight">
-        {% assign collection = collections[ block.settings.grid_collection_name ] %}
-        {% assign collectionCount = 8 %}
-        {% for product in collection.products limit: collectionCount %}
-        <div class="product__card">
-          <div class="product__card--img">
-            <a href="{{ product.url | within: collection }}" class="product-link">
-              <div class="product__image--wrapper">
-                {% if product.featured_image != blank %}
-                <div>
-                  <img loading="auto" alt="{{ product.featured_image.alt }}" width="328" height="463"
-                    src=" {{ product.featured_image.src | image_url: width:328, height:463 }} ">
-                </div>
-                {% else %}
-                {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
-                {% endif %}
-              </div>
-              <div class="product__status">
-                {% unless product.available %}
-                <!-- TODO: Sold out chip color -->
-                <span class="product__status-soldout">sold out</span>
-                {% endunless %}
-              </div>
-            </a>
-            <div class="product__card-cta quick-view-button">
-              <a class="quick-view" data-handle="{{ product.handle }}">Quick View</a>
+  <div class="collection-page-description">
+    {% if collection.description != blank %}
+    <p>{{ collection.description }}</p>
+    {% else %}
+    <p> Please add description for the page </p>
+    {% endif %}
+  </div>
+</div>
+<div class="section-{{ section.id }}-padding">
+  <div class="collection-page-action-list">
+    <div class="collection-filter">
+      <!-- Filter code -->
+      <form class="filter-form">
+        {% for filter in collection.filters %}
+        <details class="filter-group">
+          <summary class="filter-group-summary">
+            <div>
+              <span>{{ filter.label }}</span>
+              {% if filter.active_values.size > 0 %}
+              <span>({{ filter.active_values.size }})</span>
+              {% endif %}
             </div>
-          </div>
-          <div class="product__card--content">
-            <a href="{{ product.url | within: collection }}" class="product-link">
-              <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
-              <div class="product__variant--price">
-                {% if product.price_varies %}
-                <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency
-                  }}
-                </p>
-                {% else %}
-                <p>
-                  {% if product.compare_at_price_max > product.price %}
-                  <span><s>{{ product.compare_at_price_max | money_with_currency }}</s></span>
-                  <span>{{ product.price | money_with_currency }}</span>
-                  {% else %}
-                  <span>{{ product.price | money_with_currency }}</span>
-                  {% endif %}
-                </p>
-                {% endif %}
+          </summary>
+          <div class="filter-group-display">
+            {% comment %}
+            <div class="filter-group-display__header">
+              <span class="filter-group-display__header-selected">{{ filter.active_values.size }} selected</span>
+              {% if filter.active_values.size > 0 %}
+              <a href="{{ filter.url_to_remove }}" class="filter-group-display__header-reset">Reset</a>
+              {% endif %}
+            </div>
+            {% endcomment %}
+            {% case filter.type %}
+            {% when 'boolean' or 'list' %}
+            <ul class="filter-group-display__list">
+              {% for filter_value in filter.values %}
+              <li class="filter-group-display__list-item">
+                <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
+                  <input type="checkbox" name="{{ filter_value.param_name }}" value="{{ filter_value.value }}"
+                    id="Filter-{{ filter.param_name }}-{{ forloop.index }}" {% if filter_value.active %}checked{%- endif
+                    %} {% if filter_value.count==0 and filter_value.active==false %}disabled{% endif %}>
+                  <span>
+                    {{ filter_value.label }}
+                  </span>
+                </label>
+              </li>
+              {% endfor %}
+            </ul>
+            <div class="filter-group-display__submit">
+              <input type="submit" value="Apply">
+            </div>
+            {% when 'price_range' %}
+            <div class="filter-group-display__price-range">
+              <div class="filter-group-display__price-range-from">
+                <span>{{ cart.currency.symbol }}</span>
+                <input name="{{ filter.min_value.param_name }}" id="Filter-{{ filter.min_value.param_name }}" {% if
+                  filter.min_value.value %}
+                  value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}" {% endif %}
+                  type="number" placeholder="0" min="0"
+                  max="{{ filter.range_max | money_without_currency | replace: ',', '' }}">
+                <label for="Filter-{{ filter.min_value.param_name }}">From</label>
               </div>
-            </a>
+              <div class="filter-group-display__price-range-to">
+                <span>{{ cart.currency.symbol }}</span>
+                <input name="{{ filter.max_value.param_name }}" id="Filter-{{ filter.max_value.param_name }}" {% if
+                  filter.max_value.value %}
+                  value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}" {% endif %}
+                  type="number" placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}" min="0"
+                  max="{{ filter.range_max | money_without_currency | replace: ',', '' }}">
+                <label for="Filter-{{ filter.max_value.param_name }}">To</label>
+              </div>
+            </div>
+            <div class="filter-group-display__submit">
+              <input type="submit" value="Apply">
+            </div>
+            {% endcase %}
           </div>
-        </div>
+        </details>
         {% endfor %}
-      </div>
-
+      </form>
+      <!-- Filter code -->
+    </div>
+    <div class="collection-action-sortyby">
+      Sort By:
+      <select id="sort-by">
+        {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+        {% for option in collection.sort_options %}
+        <option value="{{ option.value }}" {% if option.value==sort_by %}selected="selected" {% endif %}>
+          {{ option.name }}
+        </option>
+        {% endfor %}
+      </select>
+      <script>
+        Shopify.queryParams = {};
+        // Preserve existing query parameters
+        if (location.search.length) {
+          var params = location.search.substr(1).split('&');
+          for (var i = 0; i < params.length; i++) {
+            var keyValue = params[i].split('=');
+            if (keyValue.length) {
+              Shopify.queryParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+            }
+          }
+        }
+        // Update sort_by query parameter on select change
+        document.querySelector('#sort-by').addEventListener('change', function (e) {
+          var value = e.target.value;
+          Shopify.queryParams.sort_by = value;
+          location.search = new URLSearchParams(Shopify.queryParams).toString();
+        });
+      </script>
     </div>
   </div>
-</section>
-{% endfor %}
+  <div class="collection-page-action-active">
+    <div class="active-filters">
+      <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}" class="active-filters__clear">Clear all</a>
+      {% for filter in collection.filters %}
+      {% if filter.type == "price_range" %}
+      {% if filter.min_value.value != nil or filter.max_value.value != nil %}
+      <a class="active-filters__remove-filter" href="{{ filter.url_to_remove }}">
+        {% assign min_value = filter.min_value.value | default: 0 %}
+        {% assign max_value = filter.max_value.value | default: filter.range_max %}
+        {{ min_value | money }} - {{ max_value | money }}
+        <i class="icon-close">X</i>
+      </a>
+      {% endif %}
+      {% else %}
+      {% for filter_value in filter.active_values %}
+      <a class="active-filters__remove-filter" href="{{ filter_value.url_to_remove }}">
+        <span class="active-filters__remove-filter-value">
+          {{ filter.label }}: {{ filter_value.label }}
+        </span>
+        <i class="active-filters__remove-filter-closeIcon">X</i>
+      </a>
+      {% endfor %}
+      {% endif- %}
+      {% endfor %}
+    </div>
+  </div>
+  <section>
+    {% paginate collection.products by 24 %}
+    <div class="product-grid-list-three">
+      {% for product in collection.products %}
+      <div class="product__card">
+        {% comment %}
+        {% unless product == empty %}
+        <script type="application/json" id="ProductJson-{{ section.id }}">
+        {{ product_collection | json }}
+      </script>
+        {% endunless %}
+        {% endcomment %}
+        <div class="product__card--img">
+          <a href="{{ product.url | within: collection }}" class="product-link">
+            <div class="product__image--wrapper prpdocutSlider"
+              data-slick='{"autoplay": true, "cssEase": "linear", "slidesToShow": 1, "slidesToScroll": 1, "autoplaySpeed": 1000, "fade": true, "arrows": false, "dots": true, "adaptiveHeight": true }'>
+              {% if product.featured_image != blank %}
+              <div>
 
-{% schema %}
-{
-"name": "Collection Page",
-"class": "section-random-product",
-"tag": "section",
-"blocks": [
-{
-      "type": "collection-image",
-      "name": "Collection Image Section",
-      "limit": 6,
-      "settings": [
-        {
-    "type": "text",
-    "id": "grid_collection_title",
-    "label": "Collection Title",
-    "default": "all"
-},
-{
-    "type": "collection",
-    "id": "grid_collection_name",
-    "label": "Collection Name"
-},
-{
-    "type": "url",
-    "id": "grid_collection_url",
-    "label": "Collection URL"
-},
-{
-    "type": "number",
-    "id": "grid_collection_count",
-    "label": "How many product need to show",
-    "default": 8
-}
-      ]
-    }
-  ]
-}
-{% endschema %}
 
+<img id="Image-{{ product.id }}"
+  class="blur-up responsive-image__image lazyload"
+  src="https://cdn.shopify.com/s/files/1/0560/3695/0174/files/pattern-background.png?v=1664355715"
+  data-src="{{ product.featured_image.src | image_url: width:672, height: 928, crop: 'top' }}"
+  data-widths="[{{ product.featured_image.width }}]"
+  data-aspectratio="{{ product.featured_image.aspect_ratio }}"
+  data-sizes="auto"
+  data-parent-fit="cover"
+  tabindex="-1"
+  loading="auto"
+  alt="{{ product.featured_image.alt | escape }}"
+
+>
+              </div>
+              {% for image in product.images offset:1 %}
+              <div>
+
+<img
+  class="blur-up responsive-image__image lazyload sliderSecondImage"
+  src="https://cdn.shopify.com/s/files/1/0560/3695/0174/files/pattern-background.png?v=1664355715"
+  data-src="{{ image.src | image_url: width:672, height: 928, crop: 'top' }}"
+  data-widths="[{{ image.width }}]"
+  data-aspectratio="{{ image.aspect_ratio }}"
+  data-sizes="auto"
+  data-parent-fit="cover"
+  tabindex="-1"
+  loading="auto"
+  alt="{{ image.alt | escape }}"
+
+>
+              </div>
+              {% endfor %}
+
+              {% else %}
+              {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
+              {% endif %}
+            </div>
+            <div class="product__status">
+              {% unless product.available %}
+              <!-- TODO: Sold out chip color -->
+              <span class="product__status-soldout">sold out</span>
+              {% endunless %}
+            </div>
+          </a>
+          <div class="product__card-cta quick-view-button">
+            <a class="quick-view" data-handle="{{ product.handle }}">Quick View</a>
+          </div>
+        </div>
+        <div class="product__card--content">
+          <a href="{{ product.url | within: collection }}" class="product-link">
+            <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
+            <div class="product__variant--price">
+              {% if product.price_varies %}
+              <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency }}
+              </p>
+              {% else %}
+              <p>
+                {% if product.compare_at_price_max > product.price %}
+                <span><s>{{ product.compare_at_price_max | money_with_currency }}</s></span>
+                <span>{{ product.price | money_with_currency }}</span>
+                {% else %}
+                <span>{{ product.price | money_with_currency }}</span>
+                {% endif %}
+              </p>
+              {% endif %}
+            </div>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="pagination--number">
+      {{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
+    </div>
+    {% endpaginate %}
+  </section>
+</div>

@@ -154,7 +154,27 @@
               </i>
               <input name="options[prefix]" type="hidden" value="last">
             </div>
-            <div id="predictive-search" tabindex="-1"></div>
+            <div id="predictive-search" tabindex="-1">
+              <ul class="predictive-content">
+                <li>
+                  <svg width="24" height="24">
+                    <use href="#trending" />
+                  </svg>
+                  <b>Trending Search</b></li>
+                <li>
+                  <a href="/collections/all-kanchipuram">ikat saree</a>
+                </li>
+                <li>
+                  <a href="/collections/all-kanchipuram">Kanchipuram silk saree</a>
+                </li>
+                <li>
+                  <a href="/collections/organza-silk">Organza silk sarees</a>
+                </li>
+                <li>
+                  <a href="/pages/saree">Silk </a>
+                </li>
+              </ul>
+            </div>
           </form>
         </predictive-search>
       </div>
@@ -213,7 +233,7 @@
       <ul id="cd-primary-nav" class="cd-primary-nav is-fixed nav-is-visible menu">
         {% for link in linklists.mobile-menu.links %}
         <li class="{% if link.links.size > 0 %} has-children {% else %} menu-link {% endif %}">
-          <a href="{{ link.url }}">{{ link.title }}</a>
+          <a href="javascript:void(0);">{{ link.title }} {% render 'icon-chevron-right' %}</a>
           {% if link.links.size > 0 %}
           <ul class="is-hidden cd-secondary-nav menu dropdown-child">
             {% for child_link in link.links %}

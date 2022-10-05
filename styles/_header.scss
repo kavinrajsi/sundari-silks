@@ -119,6 +119,35 @@ body {
           right: 8px;
         }
       }
+      #predictive-search{
+
+        /* pre data */
+
+        .predictive-content {
+          li {
+            display: block;
+            text-align: left;
+            margin: 8px 24px;
+            a {
+              display: block;
+              text-align: left;
+              padding-left: 8px;
+              padding-right: 8px;
+              padding-top: 4px;
+              padding-bottom: 8px;
+              border-bottom: 1px solid var(--border-color);
+            }
+            b {
+              padding-left: 8px;
+            }
+            &:last-child {
+              a {
+                border-bottom: 0;
+              }
+            }
+          }
+        }
+      }
       #predictive-search-results-list {
         padding: 8px;
         display: flex;
@@ -276,7 +305,6 @@ body {
       z-index: 100;
       border-bottom-left-radius: 4px;
       border-bottom-right-radius: 4px;
-      grid-template-columns: repeat(6, 1fr);
       width: 100%;
       justify-content: center;
       grid-gap: 24px;
@@ -370,16 +398,32 @@ body {
     .menu-child-active,
     .active {
       opacity: 1 !important;
-      font-weight: 500 !important;
-      color: var(--primary-color) !important;
+      // font-weight: 500 !important;
+      // color: var(--primary-color) !important;
     }
   }
 }
+
+.menu-level-2[data-menu-title="saree"],
+.menu-level-2[data-menu-title="readymades"] {
+  grid-template-columns: repeat(6, 1fr);
+}
+.menu-level-2[data-menu-title="arthirshtam"] {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.menu-level-2[data-menu-title="decor & accessories"] {
+  grid-template-columns: repeat(5, 1fr);
+}
+.menu-level-2[data-menu-title="mumbai collection"] {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 /* header burger icon */
 .header {
   .cd-nav-trigger {
     display: block;
-    @media(min-width: 992px){
+    @media (min-width: 992px) {
       display: none;
     }
     cursor: pointer;
@@ -438,14 +482,22 @@ body {
     overflow-y: auto;
     width: 49%;
     background: #fff;
-    padding: 18px 20px;
+    padding: 18px 18px;
     li {
       a {
         display: block;
-        font-size: 14px;
+        font-size: 13px;
         line-height: 24px;
         color: var(--pure-black);
         padding: 8px 0px;
+        padding: 8px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--border-color);
+      }
+      &:last-child a{
+        border-bottom: 0;
       }
       ul {
         display: none;
@@ -464,15 +516,15 @@ body {
         animation-direction: ease;
         li {
           a {
-            padding-left: 20px;
-            padding-right: 20px;
+           padding: 8px;
+           margin: 8px;
           }
         }
       }
       &.has-children {
-     .active{
-      display: block;
-     }
+        .active {
+          display: block;
+        }
       }
     }
   }
@@ -517,31 +569,32 @@ body {
   overflow: hidden;
 }
 
-.large-12.columns .owl-carousel .owl-item img.desktopBanner{
+.large-12.columns img {
+  width: 100%;
+}
+.large-12.columns img.desktopBanner {
   display: none;
 }
-.large-12.columns .owl-carousel .owl-item img.mobileBanner{
+.large-12.columns img.mobileBanner {
   display: block;
 }
-@media screen and (min-width: 641px){
-
-  .large-12.columns .owl-carousel .owl-item img.mobileBanner{
+@media screen and (min-width: 641px) {
+  .large-12.columns img.mobileBanner {
     display: none;
   }
-  .large-12.columns .owl-carousel .owl-item img.desktopBanner{
+  .large-12.columns img.desktopBanner {
     display: block;
   }
 }
 
-.large-12.columns{
-  .owl-theme .owl-dots .owl-dot span{
+.large-12.columns {
+  .owl-theme .owl-dots .owl-dot span {
     background: transparent;
     border: 2px solid var(--border-color);
   }
 
-  .owl-theme .owl-dots .owl-dot.active span{
+  .owl-theme .owl-dots .owl-dot.active span {
     border-color: var(--secondary-color);
-    background:var(--secondary-color);
+    background: var(--secondary-color);
   }
-
 }

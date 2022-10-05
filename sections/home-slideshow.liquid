@@ -1,9 +1,11 @@
 <div class="large-12 columns">
-  <div class="owl-carousel owl-theme">
+  <div class="slider single-item" data-slick='{"autoplay": true, "cssEase": "linear", "slidesToShow": 1, "slidesToScroll": 1, "autoplaySpeed": 1000, "fade": true, "arrows": false, "dots": true, "adaptiveHeight": true }'>
+
     {% for block in section.blocks %}
     {% if block.settings.image %}
     <div class="item">
-      {{ block.settings.image | image_url : width: 1920 | image_tag : alt: block.settings.image.alt, class: 'desktopBanner' }}
+      <!-- 1920 × 950 px 1280 × 633 px -->
+      {{ block.settings.image | image_url :  height: 632 | image_tag : alt: block.settings.image.alt, class: 'desktopBanner' }}
       {{ block.settings.mobile_image | image_url : height: 800 | image_tag : alt: block.settings.mobile_image.alt, class: 'mobileBanner'}}
     </div>
     {% else %}

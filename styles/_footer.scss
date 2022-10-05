@@ -4,9 +4,9 @@
 
 footer {
   background: rgba(245, 222, 201, 0.36);
-  padding-top: 48px;
-  padding-bottom: 78px;
+  padding-bottom: 68px;
   @media (min-width: 576px) {
+    padding-top: 48px;
     padding-bottom: 0;
   }
   .footer-main {
@@ -14,12 +14,13 @@ footer {
     margin-left: auto;
     margin-right: auto;
     justify-content: space-around;
-    display: grid;
+    display: none;
     gap: 28px 8px;
     grid-template-columns: repeat(1, 1fr);
     padding: 0px 8px;
 
     @media (min-width: 576px) {
+      display: grid;
       .footer-logo {
         grid-column: 1 / span 2;
       }

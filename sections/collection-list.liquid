@@ -2,30 +2,30 @@
   <h1 class="title title--primary"> Collection Page</h1>
   {% paginate collections by 24 %}
   <ul class="collection-list grid" role="list">
-    {% for collection in collections  %}
+    {% for collection in collections %}
     <li class="collection-list__item grid__item">
       <div class="card">
-        <div class="card__media">
-          <div class="media media--transparent media--hover-effect">
-
-            <a href="{{ collection.url }}">
-              <img class="lazyload" data-sizes="auto" data-src="{{ collection.image | image_url:  height: '480x' }}" alt="{{collection.image.alt}}">
-            </a>
-          </div>
+        <div class="card__image">
+          <a href="{{ collection.url }}">
+            {% if collection.metafields.custom.collection_secondary_image.value != blank %}
+            {{ collection.metafields.custom.collection_secondary_image.value | image_url: width: 500, height: 500,
+            crop: 'top' | image_tag: alt: collection.title }}
+            {% else %}
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'custom-class' }}
+            {% endif %}
+          </a>
         </div>
         <div class="card__content">
-          <div class="card__information">
-            <h3 class="card__heading">
-              {{collection.title}}
-            </h3>
-          </div>
+          <h3 class="card__heading">
+            {{collection.title}}
+          </h3>
         </div>
       </div>
     </li>
-    {% endfor  %}
+    {% endfor %}
   </ul>
- <div class="pagination--number">
-      {{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
-    </div>
-    {% endpaginate %}
+  <div class="pagination--number">
+    {{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
+  </div>
+  {% endpaginate %}
 </div>

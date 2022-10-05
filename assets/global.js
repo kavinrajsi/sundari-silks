@@ -55,18 +55,18 @@
   /**
    * Home page owl slider
    */
-  jQuery(".owl-carousel").owlCarousel({
-    loop: true,
-    margin: 10,
-    responsiveClass: true,
-    center: true,
-    items: 1,
-    nav: true,
-    autoplay: true,
-    autoplayTimeout: 1000,
-    autoplayHoverPause: true,
-    smartSpeed: 200,
-  });
+  // jQuery(".owl-carousel").owlCarousel({
+  //   loop: true,
+  //   margin: 10,
+  //   responsiveClass: true,
+  //   center: true,
+  //   items: 1,
+  //   nav: true,
+  //   autoplay: true,
+  //   autoplayTimeout: 1000,
+  //   autoplayHoverPause: true,
+  //   smartSpeed: 200,
+  // });
 
   /**
    * Home page tab section
@@ -103,6 +103,8 @@
   /**
    * Product hover slider
    */
+  $(".slider.single-item").slick({});
+
   $(".prpdocutSlider").slick({
     lazyLoad: 'ondemand',
     slidesToShow: 1,

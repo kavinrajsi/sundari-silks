@@ -160,6 +160,7 @@
       </path>
     </symbol>
 
+    <symbol id="trending" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trending-up"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></symbol>
     <symbol id="home" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></symbol>
 <symbol id="grid" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></symbol>
 </svg>
@@ -246,103 +247,41 @@
   <script src="{{ 'quick-view-main.js' | asset_url }}"></script>
   <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="{{ 'global.js' | asset_url }}"></script>
-  <script>
 
-var cartCount = {{ cart.item_count }};
-$(document)
-    .ready(function() {
-        {% if cart.item_count != 0 %}
-        $('#cart-number')
-            .replaceWith('<a href="/cart" id="cart-number">View cart(' + cartCount + ')</a>');
-        {% endif %}
-        $('.modal--overlay')
-            .on('click', function() {
-                var overlay = $('.modal--overlay');
-                closeModal(overlay);
-            });
-    });
-function addItem(form_id) {
-    $.ajax({
-        type: 'POST',
-        url: '/cart/add.js',
-        dataType: 'json',
-        data: $('#' + form_id)
-            .serialize(),
-        success: addToCartOk,
-        error: addToCartFail
-    });
-}
-function showCart() {
-    $.ajax({
-        type: 'POST',
-        url: '/cart/add.js',
-        dataType: 'json',
-        data: $('#' + form_id)
-            .serialize(),
-        success: addToCartOk,
-        error: addToCartFail
-    });
-}
-function addToCartOk(product) {
-    cartCount++;
-    $('.modal')
-        .html('<span class="close" id="close">✕</span>' + product.title + ' was added to the cart!');
-    $('#cart-number')
-        .replaceWith('<a href="/cart" id="cart-number">View cart(' + cartCount + ')</a>');
-    openModal();
-}
-function addToCartFail(obj, status) {
-    $('.modal')
-        .html('<span class="close" id="close">✕</span> The product you are trying to add is out of stock.');
-    openModal();
-}
-//Modal Actions
-//center modal based on window size
-function centerModal() {
-    var modal = $('.modal.open');
-    var mWidth = modal.outerWidth();
-    var mHeight = modal.outerHeight();
-    var width = $(window)
-        .width();
-    var height = $(window)
-        .height();
-    if ((width % 1) != 0) {
-        width = Math.round(width);
-    }
-    if ((height % 1) != 0) {
-        height = Math.round(height);
-    }
-    var topPos = (height / 2) - (mHeight / 2);
-    var leftPos = (width / 2) - (mWidth / 2);
-    modal.css({top: topPos, left: leftPos});
-}
-//open modal and overlay
-function openModal() {
-    $('.modal')
-        .removeClass('hidden')
-        .addClass('open');
-    $('.modal--overlay')
-        .removeClass('hidden')
-        .addClass('open');
-    $('body')
-        .css('overflow', 'hidden');
-    centerModal();
-}
-//close modal and overlay
-function closeModal(overlay) {
-    $(overlay)
-        .addClass('hidden')
-        .removeClass('open');
-    $('.modal.open')
-        .addClass('hidden')
-        .removeClass('open');
-    $('body')
-        .css('overflow', 'auto');
-}
-
-  </script>
 {% if template contains 'product' %}
+<script src="{{ 'easyzoom.js' | asset_url }}"></script>
 <script>
+ 		// Instantiate EasyZoom instances
+     var $easyzoom = $('.easyzoom').easyZoom();
+
+// Setup thumbnails example
+var api1 = $easyzoom.filter('.easyzoom--with-thumbnails').data('easyZoom');
+
+$('.thumbnails').on('click', 'a', function(e) {
+  var $this = $(this);
+
+  e.preventDefault();
+
+  // Use EasyZoom's `swap` method
+  api1.swap($this.data('standard'), $this.attr('href'));
+});
+
+// Setup toggles example
+var api2 = $easyzoom.filter('.easyzoom--with-toggle').data('easyZoom');
+
+$('.toggle').on('click', function() {
+  var $this = $(this);
+
+  if ($this.data("active") === true) {
+    $this.text("Switch on").data("active", false);
+    api2.teardown();
+  } else {
+    $this.text("Switch off").data("active", true);
+    api2._init();
+  }
+});
+
+
 Shopify.Products.recordRecentlyViewed();
 </script>
 {% endif %}
