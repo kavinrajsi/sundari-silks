@@ -283,13 +283,13 @@
         "just-dropped-title": "Just Dropped",
         "just-dropped-description": "New arrivals you will love",
         "just-dropped-count": 4,
-        "collection-list": "saree | arthirshtam | readymades"
+        "collection-list": "saree | kanchipuram-half-fine-zari | readymades"
       }
     },
     "recent-products": {
       "type": "product-recommendations",
       "settings": {
-        "show_product_recommendations": false
+        "show_product_recommendations": true
       }
     },
     "blog": {
