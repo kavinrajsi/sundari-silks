@@ -2,6 +2,7 @@
   padding-top: 60px;
   padding-bottom: 60px;
   background-color: #e8e8e1;
+  background: rgba(245, 222, 201, 0.36);
 }
 .blog-feed-container {
   display: grid;
@@ -34,14 +35,14 @@
     }
   }
   @media (min-width: 1140px) {
-    grid-template-columns: repeat(5, 1fr);
-
     .blog-feed-card:nth-last-child(2) {
-      display: block;
+      display: none;
     }
   }
   @media (min-width: 1920px) {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+
+    .blog-feed-card:nth-last-child(2),
     .blog-feed-card:nth-last-child(1) {
       display: block;
     }

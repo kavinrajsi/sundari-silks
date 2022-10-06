@@ -1,24 +1,9 @@
 {% assign collection = collections[ section.settings.show_collection ] %}
 
 <section>
-  <div class="test--product-card--grid">
-    {% for product in collection.products limit:section.settings.show_productcount %}
-    {% unless
-    section.settings.show_soldout != false
-    and
-    product.available != true %}
-    <div class="test--product-card">
-      <a href="{{product.url | within: collection }}" class="product-link">
-        {{ product.featured_image | image_url: width: 400, height: 400, crop: 'bottom' | image_tag : class:
-        'product-image', loading: 'lazy', alt: product.feature_image.alt}}
-        <h2 class="product-title">{{ product.title }}</h2>
-        <p class="product-money"> {{ product.price | money }} </p>
-        {% if  product.available != true %}
-        <span class="product-label-soldout"> sold out </span>
-        {% endif %}
-      </a>
-    </div>
-    {% endunless %}
+  <div class="product-grid-list-four">
+    {% for product in collection.products limit:4 %}
+      {% render 'product-card', product:product %}
     {% endfor %}
   </div>
 </section>

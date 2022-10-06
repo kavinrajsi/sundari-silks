@@ -16,11 +16,13 @@
 
 @import "footer";
 
-// @import 'page/login';
-// @import 'page/account';
-// @import 'section/card-collection';
-// @import 'section/address';
-// @import 'section/filter';
+@import 'page/login';
+@import 'page/account';
+@import 'section/card-collection';
+@import 'section/address';
+@import 'section/filter';
+
+
 /* Shrink wrap strategy 1 */
 
 .product-images {
@@ -91,7 +93,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 4vw 0px;
+  margin: 4vw auto;
+  background-color: transparent;
   a {
     text-decoration: underline;
   }
@@ -99,6 +102,20 @@
     margin-top: 16px;
     font-size: 16px;
     line-height: normal;
+  }
+}
+
+
+.page-404{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  margin-bottom: 4vw;
+  .page__decription{
+    background-color: transparent;
+    text-align: center;
   }
 }
 

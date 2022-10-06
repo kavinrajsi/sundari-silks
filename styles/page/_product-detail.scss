@@ -1,34 +1,83 @@
 .page-product-detail {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 32px 4vw;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    padding: 0;
+    margin: 40px auto;
+  }
+  max-width: var(--content-width);
   .product {
-    &-image {
+    &-images {
+      display: flex;
+      flex-direction: column-reverse;
+      @media (min-width: 768px) {
+        flex-direction: row;
+        flex: 1 0 60%;
+        max-width: 60%;
+      }
+      .product-images-thumbnails {
+        @media (min-width: 768px) {
+          margin-right: 24px;
+        }
+        li {
+          margin-top: 8px;
+          margin-right: 8px;
+          margin-bottom: 8px;
+          @media (min-width: 768px) {
+            margin-top: 0px;
+            margin-right: 0px;
+          }
+          img {
+            width: 80px;
+            height: 80px;
+            @media (min-width: 768px) {
+            }
+            border-radius: var(--border-radius);
+          }
+        }
+      }
     }
     &-content {
+      padding: 32px 4vw;
+      @media (min-width: 768px) {
+        flex: 1 0 40%;
+        max-width: 40%;
+        padding: 0 0 0 32px;
+        padding-left: 32px;
+      }
     }
     &-title {
-      margin-top: 18px;
+      // margin-top: 18px;
       font-family: "Playfair Display";
       font-style: normal;
       font-weight: 500;
       font-size: 30px;
       line-height: 120%;
+      font-size: var(--font-h3);
       &-secondary {
         font-family: "Montserrat";
         font-style: normal;
-        font-weight: 500;
+        font-weight: 400;
         font-size: 20px;
+        font-size: var(--font-h5);
+        margin-bottom: 12px;
         line-height: 24px;
         color: rgba(0, 0, 0, 0.85);
       }
     }
-    &-sku {
-      margin-top: 8px;
+    &-sku span {
+      display: block;
+      margin-top: 0;
+      margin-bottom: 12px;
       color: rgba(0, 0, 0, 0.6);
       font-family: "Montserrat";
       font-style: normal;
       font-weight: 400;
       font-size: 16px;
+      font-size: var(--font-12);
       line-height: 150%;
     }
     &-price {
@@ -37,6 +86,8 @@
       font-weight: 500;
       font-size: 24px;
       line-height: 29px;
+      font-size: var(--font-h4);
+      margin-bottom: 18px;
     }
     &-notice-content {
       display: none;
@@ -45,31 +96,42 @@
       font-family: "Montserrat";
       font-style: normal;
       font-weight: 500;
-      font-size: 16px;
-      line-height: 150%;
+      font-size: 14px;
+      line-height: 124%;
       color: #000000;
       padding: 16px;
     }
     &-add-to-cart-button {
-      padding: 16px;
+      width: 100%;
+      margin: 18px 0;
+      color: var(--pure-white);
+      position: relative;
+      display: inline-block;
+      padding: 14px 28px;
+      line-height: normal;
+      border: 1px solid var(--primary-color);
+      border-radius: var(--border-radius);
       text-transform: uppercase;
-      font-family: "Montserrat";
-      font-style: normal;
-      font-weight: 500;
       font-size: 16px;
-      line-height: 150%;
-      color: #ffffff;
-      background: #1d5d31;
-      border: 1px solid #1d5d31;
-      border-radius: 4px;
+      text-align: center;
+      letter-spacing: 2px;
+      font-family: var(--font-playfair);
+      font-weight: 500;
+      font-style: normal;
+      background-color: var(--primary-color);
+      transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),
+        border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+      z-index: 1;
+      -webkit-tap-highlight-color: initial;
     }
     &-description {
       font-family: "Montserrat";
       font-style: normal;
       font-weight: 400;
-      font-size: 16px;
+      font-size: 14px;
       line-height: 150%;
       color: rgba(0, 0, 0, 0.6);
+      margin-bottom: 18px;
     }
     &-size-free {
       width: 40px;
@@ -78,6 +140,7 @@
       justify-content: center;
       align-items: center;
       background: #1d5d31;
+      opacity: 0.7;
       border-radius: 50px;
       font-family: "Montserrat";
       font-style: normal;
@@ -119,22 +182,29 @@
     &-common-note {
       dl {
         margin-bottom: 16px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border-color);
+        &:last-child {
+          border-bottom: 0;
+        }
       }
       dt {
         font-family: "Montserrat";
         font-style: normal;
-        font-weight: 500;
+        font-weight: 400;
         font-size: 20px;
+        font-size: var(--font-h5);
+        margin-bottom: 12px;
         line-height: 24px;
-        color: #000000;
+        color: rgba(0, 0, 0, 0.86);
       }
       dd {
         font-family: "Montserrat";
         font-style: normal;
         font-weight: 400;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 150%;
-        color: rgba(0, 0, 0, 0.6);
+        color: rgba(0, 0, 0, 0.74);
       }
     }
   }
@@ -144,7 +214,7 @@
   padding-top: 4vw;
 }
 
-section.grid.head-room{
+section.grid.head-room {
   padding-bottom: 4vw;
 }
 
@@ -167,4 +237,3 @@ section.grid.head-room{
   color: #000000;
   margin-bottom: 24px;
 }
-

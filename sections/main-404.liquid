@@ -1,13 +1,13 @@
-<div class="template-404 page-width page-margin center">
-<h1 class="title">
-  {{ section.settings.no-found-title }}
-</h1>
+<div class="page-404">
+<h1 class="page__title"> {{ section.settings.no-found-title }}  </h1>
+<div class="page__decription empty-404">
 <p>
   {{ section.settings.not-found-content }}
 </p>
 <a href="{{ routes.all_products_collection_url }}" type="button" class="button">
   {{ section.settings.not-found-cta }}
 </a>
+</div>
 </div>
 {% schema %}
 {
