@@ -200,6 +200,21 @@
       }
     });
 
+// Modal for product detail page
+// Quick & dirty toggle to demonstrate modal toggle behavior
+$('.modal-toggle').on('click', function(e) {
+  e.preventDefault();
+  $('.modal').toggleClass('is-visible');
+  $('body').toggleClass('modalScroll');
+});
+
+$('.modal-size-toggle').on('click', function(e) {
+  e.preventDefault();
+  $('.modal-size').toggleClass('is-visible');
+  $('body').toggleClass('modalScroll');
+});
+
+
   //Functions, Plugins, Etc.. Here
   //(does not wait for DOM READY STATE)
 })(jQuery);

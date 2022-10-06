@@ -18,48 +18,54 @@ Member can pay the payment through online as well as showroom. But Member could 
 
 [
   {
-    "type": "Shirts",
+    "type": "Top",
     "value": [
       {
-        "age": "1 yrs",
+        "age": "38",
         "value": [
           {
-            "size": "14",
-            "shoulder": "9 1/2 ",
-            "sleeves": "11 1/2",
-            "chest": "20 1/2",
-            "height": "14 1/2"
+            "size": "M",
+            "shoulder": "15 1/4 ",
+            "sleeves": "16 1/2",
+            "chest": "40",
+            "height": "45 1/2",
+            "waist": "39",
+            "hip": 41 1/2",
           }
         ]
       },
       {
-        "age": "2 yrs",
+        "age": "40",
         "value": [
           {
-            "size": "16",
-            "shoulder": "10 1/2 ",
-            "sleeves": "12 1/2",
-            "chest": "22",
-            "height": "17 1/2"
+            "size": "L",
+            "shoulder": "16 1/4 ",
+            "sleeves": "17 1/2",
+            "chest": "42",
+            "height": "46 1/2",
+            "waist": "40",
+            "hip": 43 1/2",
           }
         ]
       },
       {
-        "age": "3 yrs",
+        "age": "40",
         "value": [
           {
-            "size": "18",
-            "shoulder": "11",
-            "sleeves": "13",
-            "chest": "25",
-            "height": "18 1/2"
+            "size": "XL",
+            "shoulder": "16 1/4 ",
+            "sleeves": "17 1/2",
+            "chest": "42",
+            "height": "46 1/2",
+            "waist": "40",
+            "hip": 43 1/2",
           }
         ]
       }
     ]
   },
   {
-    "type": "Pants",
+    "type": "Bottom",
     "value": [
       {
         "age": "4 yrs",
