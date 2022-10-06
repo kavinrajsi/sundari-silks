@@ -151,6 +151,23 @@
       line-height: 18px;
       color: #ffffff;
     }
+    &-size-number{
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background: #1d5d31;
+      opacity: .7;
+      border-radius: 50px;
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      color: #fff;
+      margin-right: 8px;
+    }
     &-detail {
       // display: grid;
       // gap: 16px;
