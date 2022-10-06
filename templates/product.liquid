@@ -13,53 +13,37 @@
 
     <div class="product-images">
 
-
       <div class="ImageMe test-gallery">
-        <a href="{{ product_image.src | image_url }}">
-        <img
-        class="global-media-settings global-media-settings--no-shadow{% if variant_image %} product__media-item--variant{% endif %}"
-        srcset="{%- if product_image.width >= 550 -%}{{ product_image | image_url: width: 550 }} 550w,{%- endif -%}
-                {%- if product_image.width >= 1100 -%}{{ product_image | image_url: width: 1100 }} 1100w,{%- endif -%}
-                {%- if product_image.width >= 1445 -%}{{ product_image | image_url: width: 1445 }} 1445w,{%- endif -%}
-                {%- if product_image.width >= 1680 -%}{{ product_image | image_url: width: 1680 }} 1680w,{%- endif -%}
-                {%- if product_image.width >= 2048 -%}{{ product_image | image_url: width: 2048 }} 2048w,{%- endif -%}
-                {%- if product_image.width >= 2200 -%}{{ product_image | image_url: width: 2200 }} 2200w,{%- endif -%}
-                {%- if product_image.width >= 2890 -%}{{ product_image | image_url: width: 2890 }} 2890w,{%- endif -%}
-                {%- if product_image.width >= 4096 -%}{{ product_image | image_url: width: 4096 }} 4096w,{%- endif -%}
-                {{ product_image | image_url }} {{ product_image.width }}w"
-        sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
-        src="{{ product_image | image_url: width: 1445 }}"
-        alt="{{ media.alt | escape }}"
-        loading="lazy"
-        width="1100"
-        height="{{ 1100 | divided_by: product_image.aspect_ratio | ceil }}"
-        data-media-id="{{ media.id }}"
-      >
-    </a>
-    {% for product_image in product.images %}
-    <a href="http://example.com" style="opacity: 0; width: 0; height: 0;"
-    data-pswp-src="{{ product_image | image_url }}"
-    data-pswp-width="{{ product_image.width }}"
-    data-pswp-height="{{ product_image.height }}"
-    target="_blank">
-    No thumbnail
-  </a>
-  {% endfor %}
+        <a href="{{ product_image.src | image_url }}" data-pswp-width="{{ product_image.width }}"
+          data-pswp-height="{{ product_image.height }}">
+          <img
+            class="global-media-settings global-media-settings--no-shadow{% if variant_image %} product__media-item--variant{% endif %}"
+            src="{{ product_image.src | image_url }}" alt="{{ media.alt | escape }}" loading="lazy"
+            data-media-id="{{ media.id }}">
+        </a>
+        {% for product_image in product.images offset:1 %}
+        <a href="{{ product_image.src | image_url }}" style="opacity: 0; width: 0; height: 0;"
+          data-pswp-src="{{ product_image | image_url }}" data-pswp-width="{{ product_image.width }}"
+          data-pswp-height="{{ product_image.height }}" target="_blank">
+          &nbsp;
+        </a>
+        {% endfor %}
       </div>
 
       <ul class="thumbnails">
 
-          {% for product_image in product.images %}<li>
-
+        {% for product_image in product.images %}<li>
+          <a href="{{ product_image.src | image_url }}" data-pswp-width="{{ product_image.width }}"
+            data-pswp-height="{{ product_image.height }}">
             {{ product_image | image_url : width: 160 | image_tag:
-              loading: lazy,
-              width: 160,
-              height: 160,
-              alt: product_image.alt | escape
-              }}
-
+            loading: lazy,
+            width: 160,
+            height: 160,
+            alt: product_image.alt | escape
+            }}
+          </a>
         </li>
-          {% endfor %}
+        {% endfor %}
 
 
       </ul>
@@ -77,19 +61,7 @@
       <p class="product-notice-content {% for collection in product.collections%} {{collection.title}} {% endfor %}">
         Our artisanal silver jewellery collection is currently available for shipment within INDIA.</p>
       <!--product form-->
-      <form action="/cart/add" method="post" enctype="multipart/form-data" id="add-to-cart-{{ product.handle }}">
-        <!--product add to cart-->
-        <button class="single-product__add-to-cart product-add-to-cart-button" type="submit" name="add" data-add-to-cart
-          {% if current_variant.available %}disabled="disabled" {% endif %}
-          onclick="addItem('add-to-cart-{{ product.handle }}'); return false;">
-          <span data-add-to-cart-text>
-            ADD TO CART
-          </span>
-        </button>
-        <!--end product add to cart-->
-      </form>
-      <!--end product form-->
-      {%- comment -%} {% form 'product', product %}
+      {% form 'product', product %}
       <div>
         <label for="proudct-form-size">Size</label>
         <select name="id" id="product-form-size">
@@ -97,10 +69,28 @@
           <option value="{{ variant.id }}"> {{variant.tile}}</option>
           {% endfor %}
         </select>
-        <button type="submit"> Add to cart</button>
+        {% assign not_in_cart = true %}
+        {% for item in cart.items %}
+        {% if item.product.id == product.id %}
+        {% assign not_in_cart = false %}
+        {% break %}
+        {% endif %}
+        {% endfor %}
+
+        {% if not_in_cart %}
+
+        <button type="submit"> {% unless current_variant.available %}
+          {{ 'products.product.sold_out' | t }}
+          {% else %}
+          Buy Now
+          {% endunless %}
+        </button>
+        {% else %}
+        <a href="/cart" class="btn btn--full btn--status ">View Cart</a>
+        {% endif %}
       </div>
       {% endform %}
-      {%- endcomment -%}
+      <!--end product form-->
       {% if product.content != blank %}
       <h2 class="product-title-secondary">Description</h2>
       <p class="product-description">{{product.content | strip_html }}</p>

@@ -11,11 +11,11 @@
   </div>
 </section>
 
-<script src="{{ 'custom-scripts.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'custom-scripts.js' | asset_url }}"></script>
 <script>
-  var $product_container = $('#product')
+  var $product_container = $('#product');
 
-  var initial_product = multi_products[0]
+  var initial_product = multi_products[0];
 
   var initial_product_html = `<div class="product">
     <img src="${initial_product.image}">
@@ -23,19 +23,19 @@
     <p>$${initial_product.price}</p>
     <a class="button" href="${initial_product.url}">Shop this product</a>
     </div>
-    `
+    `;
 
-  $product_container.html(initial_product_html)
+  $product_container.html(initial_product_html);
 
   $('body').on('click', '.dot', function () {
     $('.dot').removeClass('active')
     $(this).addClass('active')
 
-    var handle = $(this).data('handle')
-
+    var handle = $(this).data('handle');
+    console.log(handle);
     var this_product = multi_products.filter((product) => {
       return product.handle === handle
-    })[0]
+    })[0];
 
 
     var product_html = `<div class="product">
@@ -44,9 +44,9 @@
       <p>$${this_product.price}</p>
       <a class="button" href="${initial_product.url}">Shop this product</a>
       </div>
-      `
+      `;
 
-    $product_container.html(product_html)
+    $product_container.html(product_html);
   })
 
 </script>

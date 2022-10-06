@@ -1951,6 +1951,7 @@ h2.line-item__title {
   line-height: 29px;
 }
 .page-product-detail .product-notice-content {
+  display: none;
   background: rgba(253, 217, 51, 0.4);
   border-radius: 4px;
   font-family: "Montserrat";
@@ -3367,4 +3368,31 @@ footer .footer-copyright a {
   margin-top: 16px;
   font-size: 16px;
   line-height: normal;
+}
+
+.large-image-products {
+  position: relative;
+  width: 100%;
+}
+.large-image-products img {
+  width: 100%;
+}
+.large-image-products .dot {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--pure-white);
+}
+.large-image-products .dot.active {
+  cursor: pointer;
+  background-color: var(--secondary-color);
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
 }

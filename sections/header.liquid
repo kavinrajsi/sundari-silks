@@ -47,7 +47,7 @@
           </svg>
         </div>
         <div class="header-cart">
-          <a href="{{ routes.cart_url }}" class="" id="cart-number cart-icon-bubble">
+          <a href="{{ routes.cart_url }}" class="" id="cart-icon-bubble">
             <svg width="24" height="24">
               <use xlink:href="#bag" />
             </svg>
@@ -95,16 +95,15 @@
     </a>
     </div>
     <div class="header-cart">
-      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+      <a href="{{ routes.cart_url }}" class="" id="cart-icon-bubble">
         <svg width="24" height="24">
           <use xlink:href="#bag" />
         </svg>
-        <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         {% if cart != empty %}
         <div class="cart-count">
           {% if cart.item_count < 100 %} <span aria-hidden="true">{{ cart.item_count }}</span>
             {% endif %}
-            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+            <!-- <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span> -->
         </div>
         {% endif %}
       </a>
