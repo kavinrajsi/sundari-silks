@@ -1959,6 +1959,12 @@ h2.line-item__title {
   height: 80px;
   border-radius: var(--border-radius);
 }
+@media (min-width: 768px) {
+  .page-product-detail .product-images .product-images-thumbnails li img {
+    width: auto;
+    height: auto;
+  }
+}
 .page-product-detail .product-content {
   padding: 32px 4vw;
 }
