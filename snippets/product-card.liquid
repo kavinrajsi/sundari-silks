@@ -1,9 +1,8 @@
-
 {% comment %}
-  Renders a product card
-  Accepts:
-  Usage:
-  {% render 'product-card', show_vendor: section.settings.show_vendor %}
+Renders a product card
+Accepts:
+Usage:
+{% render 'product-card', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
 
 
@@ -56,6 +55,7 @@
         </p>
         {% endif %}
       </div>
+      {%- comment -%}
       {% if product.variants.size > 1 %}
       {% for variant in product.variants %}
       {{variant.title}} :
@@ -69,10 +69,12 @@
       product.compare_at_price_max | money_without_currency | times: 100.0 | remove: '.0'}} %
       {% endif %}
       {% endif %}
+      {%- endcomment -%}
       {% if product.tags.size < 1 %} {% for taglist in product.tags %} <span hidden class="product__tag--list">
         {{ taglist }}, </span>
         {% endfor %}
         {% endif %}
+
         {% for variant in product.variants %}
         <div hidden class="product__variant--title"> {{ variant.title }} </div>
         <div hidden class="product__variant--weight"> {{ variant.weight | weight_with_unit : variant.weight_unit }}

@@ -62,12 +62,11 @@
       </h2>
       <ul aria-label="size chart">
         {% for variant in product.variants %}
-        {% if variant.title == "Default Title" %}
+        {% if variant.title == "Default Title" or "Free Size" %}
         <li title="Free Size" class="product-size-free">
           FS </li>
         {% else %}
-        <li class="product-size-number" title="{{ variant.title }}">
-          value="{{ variant.id }}"> {{ variant.title }}</li>
+        <li class="product-size-number" title="{{ variant.title }}" data-id-value="{{ variant.id }}"> {{ variant.title }}</li>
         {% endif %}
         {% endfor %}
       </ul>
