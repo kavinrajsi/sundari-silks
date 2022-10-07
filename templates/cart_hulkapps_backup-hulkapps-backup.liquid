@@ -34,7 +34,7 @@
                                 </div>
                             </div>
                             {%- for item in cart.items -%}
-                                <div class="py-20 border-bottom">
+                                <div  data-hulkapps-lineitem class="py-20 border-bottom">
                                     <div class="row d-flex align-items-center flex-column flex-sm-row">
                                         <div class="col-sm-5 col-lg-4 col-xl-7 d-flex align-items-center mb-20 mb-sm-0">
                                             <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="mr-20">
@@ -61,6 +61,7 @@
                                                     {%- endif -%}
                                                     {%- assign property_size = item.properties | size -%}
                                                     {%- if property_size > 0 -%}
+<span data-hulkapps-line-properties>
                                                         {%- for p in item.properties -%}
                                                           {%- unless p.last == blank -%}
                                                             {%- if p.last contains '/uploads/' -%}
@@ -82,19 +83,21 @@
                                                             {%- endif -%}
                                                           {%- endunless -%}
                                                         {%- endfor -%}
+</span>
+
                                                     {%- endif -%}
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-7 col-lg-8 col-xl-5">
                                             <div class="row d-flex align-items-center">
-                                                <div class="col col-sm-4 col-lg-4">
+                                                <div  data-hulkapps-ci-price data-key='{{item.key}}' class="col col-sm-4 col-lg-4">
                                                     {% render 'product-get-price' with price: item.price compare_at_price: item.original_price %}
                                                 </div>
                                                 <div class="col col-sm-4 col-lg-4">
                                                     <input type="number" class="mb-0 text-center text-sm-left" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="1">
                                                 </div>
-                                                <div class="col col-sm-4 col-lg-4 text-right">
+                                                <div  data-hulkapps-line-price data-key='{{item.key}}' class="col col-sm-4 col-lg-4 text-right">
                                                     {% render 'product-get-price' with price: item.line_price compare_at_price: null %}
                                                 </div>
                                             </div>
@@ -183,7 +186,7 @@
                             </div>
                             <div class="pt-15">
                                 <h5 class="mb-5">{{ 'cart.general.subtotal' | t }}</h5>
-                                <h3 class="mb-5"><span class='hulkapps-cart-original-total'>{{ cart.total_price | money }}</span></h3>
+                                <h3  data-hulkapps-cart-total class="mb-5"><span class='hulkapps-cart-original-total'>{{ cart.total_price | money }}</span></h3>
                                 {%- if cart.total_discounts > 0 -%}
                                     <div class="d-flex align-items-baseline flex-wrap">
                                         <h5 class="mb-5 mr-10">{{ 'cart.general.savings' | t }}</h5>

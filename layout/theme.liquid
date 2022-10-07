@@ -53,7 +53,7 @@
     window.shopCurrency = "{{ shop.currency }}";
     window.supported_currencies = "{{ settings.mlvedaACS_supportedCurrencies }}";
   </script>
-</head>
+{% include 'hulk_po_vd.liquid' %}</head>
 
 <body class="template-{{ template | split : '.' | first }}">
   <!--[if IE]>
