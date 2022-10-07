@@ -1,0 +1,74 @@
+{% include 'global-variables' %}
+<div class="page">
+    <div class="rte">
+      {% include 'parse-for-icons' content: page.content %}
+      <div class="container-fluid">
+	<div class="row image-banner">
+      <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundarisilks-export-landing-page-mobile.png?v=1625745076" class="m-auto section-img img-fluid mobile">
+      <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundarisilks-export-landing-page-tablet.png?v=1625745076" class="m-auto section-img img-fluid tablet">
+      <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundarisilks-export-landing-page-desktop.png?v=1625745076" class="m-auto section-img img-fluid desktop">
+    </div>
+</div>
+<div class="container">
+	<div class="row justify-content-center about-one-three">
+		<div class="col-md-5 align-self-center">
+			<div class="content-wrap">
+				<h2 class="h3 font-play font-weight-700i font-size-22">Are you a designer looking to source high quality fabric?</h3>
+				<p class="font1-regular">With our decades of experience in the textile industry, we supply fabrics specific to your needs by employing various embellishment techniques. Our in-house printing, embroidery and stone-work specialists, come up with an abundance of experience and expertise, ensuring everything is tailor-made to your needs, specifications and occasion. </p>
+			</div>
+		</div>
+	</div>
+<div class="row justify-content-center thread-two-trigger">
+	<div class="col-md-6 col-lg-6 qd-order-2-767">
+		<div class="section-img-wrap text-left row">
+          <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundarisilks-vintage-vogue-1.png?v=1625746981" class="col-6 section-img img-fluid" />
+          <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundarisilks-vintage-vogue-2.png?v=1625746981" class="col-6 section-img img-fluid" /> </div>
+	</div>
+	<div class="col-md-6 col-lg-4 offset-lg-1 align-self-center">
+		<div class="content-wrap">
+			<h2 class="h3 font-play font-weight-700i font-size-22">Vintage Vogue</h3>
+			<p class="font1-regular"> It was a delightful experience for us as a brand to be a part of <strong>The 5th Walking
+Hand-in-Hand event</strong>, a yearly fashion showcase conducted by the CDS Art Foundation, Ahmedabad. We showcased the timeless Kanchipuram weaves in a new avatar, by weaving together a melodious harmony of two contrasting worlds of classic and contemporary. </p>
+		</div>
+	</div>
+</div>
+<div class="row justify-content-center thread-two-trigger">
+	<div class="col-md-6 col-lg-4 align-self-center order-change-mobile">
+		<div class="content-wrap">
+			<h2 class="h3 font-play font-weight-700i font-size-22">Naushad Ali x Sundari Silks</h3>
+			<p class="font1-regular">Magnificence met minimalism when we collaborated with fashion designer Naushad Ali. Ali. An intriguing interplay between plush patterns and fabrics, this luxe casual men's wear collection is a mirage of charm, comfort and class. </p>
+		</div>
+	</div>
+	<div class="col-md-6 col-lg-6 offset-lg-1 ">
+		<div class="section-img-wrap text-right row align-items-center">
+          <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundarisilks-naushad-ali-1.png?v=1625746981" class="col-6 section-img img-fluid" />
+          <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundarisilks-naushad-ali-2.png?v=1625746981" class="col-6 section-img img-fluid" /> </div>
+	</div>
+</div>
+ 
+<div class="row justify-content-center">
+<div class="col-12 col-md-5 m-auto">
+	<h2 class="h3">Let’s Collaborate!</h2>
+	<p class="fs-lg">If you are interested in working with us, please fill the form below and let us bring your dream creations to life!</p>
+  {%- if form.posted_successfully? -%}
+	<p class="form-success">{{ 'contact.form.post_success' | t }}</p>
+  {%- endif -%}
+  {% form 'contact' %}
+	<label for="ContactFormName" class="label-required">{{ 'contact.form.name_title' | t }}</label>
+	<input type="text" name="contact[name]" id="ContactFormName" placeholder="{{ 'contact.form.name_placeholder' | t }}" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}" required="required">
+	<label for="ContactFormPhone">{{ 'contact.form.phone_title' | t }}</label>
+	<input type="tel" class="form-control" name="contact[phone]" id="ContactFormPhone" placeholder="{{ 'contact.form.phone_placeholder' | t }}" value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+	<label for="ContactFormEmail" class="label-required">{{ 'contact.form.email_title' | t }}</label>
+	<input type="email" name="contact[email]" id="ContactFormEmail" placeholder="{{ 'contact.form.email_placeholder' | t }}" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" spellcheck="false" autocomplete="off" autocapitalize="off" required="required">
+    <label for="ContactFormurl" class="label-required removeSt">URL</label>
+	<input type="text" class="form-control" name="contact[url]" id="ContactFormurl" placeholder="Please Enter Your URL" value="{{ customer.url }}">
+  <div class="pt-10">
+		<button type="submit" class="btn btn--secondary"><i class="mr-5">{% render 'icon-theme-196' %}</i>{{ 'contact.form.send' | t }}</button>
+	</div>
+  {% endform %}
+  </div>
+    </div>
+  </div> 
+</div>
+</div>
+

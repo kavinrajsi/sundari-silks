@@ -1,0 +1,9 @@
+{% include 'breadcrumbs' %}
+<div class="container mb-60">
+  <h1 class="h3 mt-30 text-center">{{ page.title }}</h1>
+  <div class="rte">
+    {% include 'parse-for-icons' content: page.content %}
+  </div>
+  {% section 'faqs' %}
+</div>
+

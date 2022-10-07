@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="text-center mt-40 mt-lg-80"><h1>Products</h1></div>
+    <h3>Grid</h3>
+    <div class="row mb-60">
+        {%- for product in collections['all'].products limit: 4 -%}
+            <div class="col-6 col-md-4 col-lg-3">
+                {% include 'product-collection' %}
+            </div>
+        {%- endfor -%}
+    </div>
+    <h3>Grid mobile single centered</h3>
+    <div class="row mb-60 products-view-centered-xs products-view-centered-sm">
+        {%- for product in collections['all'].products limit: 4 -%}
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                {% include 'product-collection' %}
+            </div>
+        {%- endfor -%}
+    </div>
+    <h3>List</h3>
+    <div class="row mb-60 products-view-list-lg products-view-list-xl">
+        {%- for product in collections['all'].products limit: 4 -%}
+            <div class="col-6 col-md-4 col-lg-12">
+                {% include 'product-collection' %}
+            </div>
+        {%- endfor -%}
+    </div>
+    <h3>List mobile single centered</h3>
+    <div class="row mb-60 products-view-centered-xs products-view-centered-sm products-view-list-lg products-view-list-xl">
+        {%- for product in collections['all'].products limit: 4 -%}
+            <div class="col-12 col-sm-6 col-md-4 col-lg-12">
+                {% include 'product-collection' %}
+            </div>
+        {%- endfor -%}
+    </div>
+    <h3>Search</h3>
+    <div class="row mb-60">
+        {%- for product in collections['all'].products limit: 6 -%}
+            <div class="col-12 col-lg-2">
+                {% include 'product-search' %}
+            </div>
+        {%- endfor -%}
+    </div>
+    <h3>Cart</h3>
+    <div class="row mb-60">
+        {%- for item in cart.items limit: 6 -%}
+            <div class="col-12">
+                {% include 'product-cart' %}
+            </div>
+        {%- endfor -%}
+    </div>
+    <h3>Featured</h3>
+    <div class="row mb-60">
+        {%- for product in collections['all'].products limit: 4 -%}
+            <div class="col-12">
+                {% include 'product-featured' %}
+            </div>
+        {%- endfor -%}
+    </div>
+</div>
