@@ -11,6 +11,9 @@
      */
     $(".header-search, .input__close-icon").click(function () {
       $(".header-search-area-wrapper").toggle().toggleClass("active");
+      $(".header-mobile-navigation-list").hide().removeClass("active");
+      $(".closeMenu").hide().removeClass("active");
+      $(".burgerMenu").show().addClass("active");
       $("body").toggleClass("header-seachActive");
     });
   });
