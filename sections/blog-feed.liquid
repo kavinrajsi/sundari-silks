@@ -7,7 +7,7 @@
     <div class="blog-feed-container">
       {% if section.settings.blog != blank and section.settings.blog.articles_count > 0 %}
 
-      {% for article in section.settings.blog.articles limit: 6 %}
+      {% for article in section.settings.blog.articles limit: 5 %}
       <div class="blog-feed-card">
         <div class="article-card-wrapper card-wrapper underline-links-hover">
           <a href=" {{ article.url }}" class="article-card__image-wrapper card__media">
