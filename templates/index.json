@@ -13,6 +13,7 @@
         },
         "3fbd7fec-f97f-434e-9f56-1ddc4581978e": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/sundari-silks-woven-wonder-banner-desktop.png",
             "mobile_image": "shopify:\/\/shop_images\/Slide-2-mobile.jpg",
@@ -21,6 +22,7 @@
         },
         "46a12e3e-d35a-4136-8a28-c0579f4c7632": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/sundari-silks-woven-wonder-two-banner-desktop_2518x_progressive_png.jpg",
             "mobile_image": "shopify:\/\/shop_images\/Slide-1-mobile.jpg",
@@ -29,6 +31,7 @@
         },
         "fecc7f60-c73d-45cf-a288-751c8ddfcdaa": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/MENS_KURTA-01.png",
             "mobile_image": "shopify:\/\/shop_images\/Slide-2-mobile.jpg",
@@ -38,8 +41,8 @@
         "4eb1bd1d-68c5-4d8e-b2ab-6d39049d3077": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sundarisilks-sale-banner-desktop_2518x_progressive_png.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/Slide-1-mobile.jpg",
+            "image": "shopify:\/\/shop_images\/aarke-HP-1.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/aarke-HP-Mobile-1.jpg",
             "link": "shopify:\/\/collections\/all"
           }
         }
