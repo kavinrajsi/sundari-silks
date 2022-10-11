@@ -1,5 +1,7 @@
 {
   "current": {
+    "header_text_font": "playfair_display_n4",
+    "body_text_font": "montserrat_n4",
     "favicon": "shopify:\/\/shop_images\/favicon.png",
     "mlvedaACS_roundDecimal": false,
     "mlvedaACS_positionLeft": "10px",
