@@ -1,4 +1,6 @@
 
+{{line_item | json }}
+
 <div  data-hulkapps-lineitem class="line-item">
 {%- comment -%}
 image
@@ -18,43 +20,28 @@ price remove
 </div>
 <div class="line-item__details">
   <h2 class="line-item__title">
-    {{line_item.product.title}}
+    {{line_item.product.title}} <hr>
+    {{line_item.variant_id}} <hr>
+    {{line_item.id}} <hr>
+    {{line_item.product_id}} <hr>
   </h2>
   {%- unless line_item.variant.title contains 'Default' -%}
-    <p>{{ item.variant.title }}</p>
+    <p>{{ line_item.variant.title }}</p>
   {%- endunless -%}
-  {%- assign property_size = item.properties | size -%}
-  {%- if property_size > 0 -%}
-    <ul>
-      {%- for p in item.properties -%}
-        {%- assign first_character_in_key = p.first | truncate: 1, '' -%}
-        {%- unless p.last == blank or first_character_in_key == '_' -%}
-          <li>
-            {{ p.first }}:
-            {%- if p.last contains '/uploads/' -%}
-              <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
-            {%- else -%}
-              {{ p.last }}
-            {%- endif -%}
-          </li>
-        {%- endunless -%}
-      {%- endfor -%}
-    </ul>
-  {%- endif -%}
-{%- comment -%}
+
+
   {% for option in line_item.options_with_values %}
     <div class="line-item__option-block">
       <div class="line-item__option"> {{ option.name }} </div>
       <div class="line-item__value"> {{ option.value }} </div>
     </div>
     {% endfor %}
-  {%- endcomment -%}
 </div>
 <div class="line-item__right">
   <div  data-hulkapps-ci-price data-key='{{line_item.key}}' class="line-item__price">
     {{ line_item.price | money }}
   </div>
-  <a aria-label="Remove {{ line_item.variant.title }}" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
+  <a aria-label="Remove {{ line_item.variant.title }}" href="/cart/change?line={{index}}&amp;quantity=0">
     <svg width="24" height="24">
       <use href="#trash" />
     </svg>
