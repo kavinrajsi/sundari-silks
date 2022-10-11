@@ -1,3 +1,70 @@
 [
-
+  {
+    "name": "theme_info",
+    "theme_name": "vintage",
+    "theme_version": "0.1.0",
+    "theme_author": "Kavinraj",
+    "theme_documentation_url": "https:\/\/sikavinraj.me\/contact\/",
+    "theme_support_url": "https:\/\/github.com\/kavinrajsi\/boomer"
+  },
+  {
+    "name": "Navigation Bar Colors Settings",
+    "settings": [
+      {
+        "type": "color",
+        "id": "navbar_color",
+        "label": "NavBar Background Color",
+        "default": "#fff"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Heading Font Styles"
+      },
+      {
+        "type": "font_picker",
+        "id": "header_text_font",
+        "label": "Font",
+        "default": "mono"
+      },
+      {
+        "type": "header",
+        "content": "Body Font Styles"
+      },
+      {
+        "type": "font_picker",
+        "id": "body_text_font",
+        "label": "Font",
+        "default": "mono"
+      },
+      {
+        "type": "header",
+        "content": "Body Font Size"
+      },
+      {
+        "type": "range",
+        "id": "body_font_size",
+        "label": "Font Size",
+        "default": 16,
+        "unit": "px",
+        "min": 13,
+        "max": 18,
+        "step": 1
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      }
+    ]
+  }
 ]

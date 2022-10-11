@@ -1,5 +1,8 @@
 {
   "current": {
+    "header_text_font": "playfair_display_n4",
+    "body_text_font": "montserrat_n4",
+    "favicon": "shopify:\/\/shop_images\/favicon.png",
     "mlvedaACS_roundDecimal": false,
     "mlvedaACS_positionLeft": "10px",
     "mlvedaACS_defaultCurrency": "INR",
@@ -68,39 +71,6 @@
               "subtitle": "Explore"
             }
           },
-          "012b8059-1c4e-413f-9c85-824914bb2502": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/ankles.png",
-              "mega_link": "Anklets \/ Toe Rings",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Anklets \/ Toe Rings",
-              "subtitle": ""
-            }
-          },
-          "0dc284ce-400a-4c70-b4be-980ee12441ac": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/girl-by-brick-wall.jpg",
-              "mega_link": "Girls",
-              "link": "shopify:\/\/collections\/readymades",
-              "title": "Girls",
-              "subtitle": ""
-            }
-          },
-          "a825885a-b299-42ea-a5c5-84ba6100ea8c": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/laughing-kid-boy.jpg",
-              "mega_link": "Boys",
-              "link": "shopify:\/\/collections\/readymades",
-              "title": "Boys",
-              "subtitle": ""
-            }
-          },
           "9ec61fc7-ed2a-4490-8411-bf33c7d3eb56": {
             "type": "logo_image",
             "settings": {
@@ -112,14 +82,25 @@
               "subtitle": "Explore"
             }
           },
-          "6757033e-547a-49db-b111-6aec43c0ef51": {
+          "ff5db7c6-de70-4624-b1a1-620865565274": {
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/kids.png",
-              "mega_link": "Kids Jewellery",
+              "image": "shopify:\/\/shop_images\/necklaces.png",
+              "mega_link": "Necklaces",
               "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Kids Jewellery",
+              "title": "Necklaces",
+              "subtitle": ""
+            }
+          },
+          "7a42f5b4-6dd8-44e4-aaf9-a4cca16d3985": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/earring.png",
+              "mega_link": "Earrings",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Earrings",
               "subtitle": ""
             }
           },
@@ -134,25 +115,47 @@
               "subtitle": ""
             }
           },
-          "3b41ef82-241e-437d-9545-f05ac21b20bc": {
+          "45a49917-2d4a-4818-a6c7-05e15d8d7934": {
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/interior-decor-shelving-with-ceramic-art.jpg",
-              "mega_link": "Decor",
-              "link": "#",
-              "title": "Decor",
+              "image": "shopify:\/\/shop_images\/rings.png",
+              "mega_link": "Rings",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Rings",
               "subtitle": ""
             }
           },
-          "20802720-32fb-4022-bebc-0f1bddd08987": {
+          "012b8059-1c4e-413f-9c85-824914bb2502": {
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/a-greying-tan-pooch-on-a-chaise-longue.jpg",
-              "mega_link": "Accessories",
-              "link": "#",
-              "title": "Accessories",
+              "image": "shopify:\/\/shop_images\/ankles.png",
+              "mega_link": "Anklets \/ Toe Rings",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Anklets \/ Toe Rings",
+              "subtitle": ""
+            }
+          },
+          "6757033e-547a-49db-b111-6aec43c0ef51": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/kids.png",
+              "mega_link": "Kids Jewellery",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Kids Jewellery",
+              "subtitle": ""
+            }
+          },
+          "a737801a-d041-4ea1-a346-7ffdfb9cee58": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/CuratedCollectionImage-2.png",
+              "mega_link": "Pendants",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Pendants",
               "subtitle": ""
             }
           },
@@ -178,28 +181,6 @@
               "subtitle": ""
             }
           },
-          "8f8423f0-43b3-4fb8-936e-8dab6819c7ab": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/bath-bomb-near-tub.jpg",
-              "mega_link": "Personal Care",
-              "link": "#",
-              "title": "Personal Care",
-              "subtitle": ""
-            }
-          },
-          "7a42f5b4-6dd8-44e4-aaf9-a4cca16d3985": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/earring.png",
-              "mega_link": "Earrings",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Earrings",
-              "subtitle": ""
-            }
-          },
           "3401dc99-bfe7-473f-8619-ab753f5e667a": {
             "type": "logo_image",
             "settings": {
@@ -208,61 +189,6 @@
               "mega_link": "Men",
               "link": "shopify:\/\/collections\/men",
               "title": "Men",
-              "subtitle": ""
-            }
-          },
-          "ff5db7c6-de70-4624-b1a1-620865565274": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/necklaces.png",
-              "mega_link": "Necklaces",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Necklaces",
-              "subtitle": ""
-            }
-          },
-          "15e15742-5345-4198-ba4b-2a98c13bfc08": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/baby-girl-feet.jpg",
-              "mega_link": "Infant Wears",
-              "link": "shopify:\/\/products\/3-layer-non-surgical-masks-in-cotton-prints-and-plain-set-of-4",
-              "title": "Infant Wears",
-              "subtitle": ""
-            }
-          },
-          "45a49917-2d4a-4818-a6c7-05e15d8d7934": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/rings.png",
-              "mega_link": "Rings",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Rings",
-              "subtitle": ""
-            }
-          },
-          "92c429f1-06cf-45d6-ae7f-bc1b298b75f3": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/bedroom-bed-with-brown-throw-pillows.jpg",
-              "mega_link": "Living Spaces",
-              "link": "#",
-              "title": "Living Spaces",
-              "subtitle": ""
-            }
-          },
-          "a737801a-d041-4ea1-a346-7ffdfb9cee58": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/CuratedCollectionImage-2.png",
-              "mega_link": "Pendants",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Pendants",
               "subtitle": ""
             }
           },
@@ -277,6 +203,50 @@
               "subtitle": ""
             }
           },
+          "0dc284ce-400a-4c70-b4be-980ee12441ac": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/girl-by-brick-wall.jpg",
+              "mega_link": "Girls",
+              "link": "shopify:\/\/collections\/readymades",
+              "title": "Girls",
+              "subtitle": ""
+            }
+          },
+          "a825885a-b299-42ea-a5c5-84ba6100ea8c": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/laughing-kid-boy.jpg",
+              "mega_link": "Boys",
+              "link": "shopify:\/\/collections\/readymades",
+              "title": "Boys",
+              "subtitle": ""
+            }
+          },
+          "15e15742-5345-4198-ba4b-2a98c13bfc08": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/baby-girl-feet.jpg",
+              "mega_link": "Infant Wears",
+              "link": "shopify:\/\/products\/3-layer-non-surgical-masks-in-cotton-prints-and-plain-set-of-4",
+              "title": "Infant Wears",
+              "subtitle": ""
+            }
+          },
+          "92c429f1-06cf-45d6-ae7f-bc1b298b75f3": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/bedroom-bed-with-brown-throw-pillows.jpg",
+              "mega_link": "Living Spaces",
+              "link": "#",
+              "title": "Living Spaces",
+              "subtitle": ""
+            }
+          },
           "8d6bbc38-40c2-46d2-a363-f855a05e905e": {
             "type": "logo_image",
             "settings": {
@@ -285,6 +255,39 @@
               "mega_link": "Bags",
               "link": "#",
               "title": "Bags",
+              "subtitle": ""
+            }
+          },
+          "3b41ef82-241e-437d-9545-f05ac21b20bc": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/interior-decor-shelving-with-ceramic-art.jpg",
+              "mega_link": "Decor",
+              "link": "#",
+              "title": "Decor",
+              "subtitle": ""
+            }
+          },
+          "20802720-32fb-4022-bebc-0f1bddd08987": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/a-greying-tan-pooch-on-a-chaise-longue.jpg",
+              "mega_link": "Accessories",
+              "link": "#",
+              "title": "Accessories",
+              "subtitle": ""
+            }
+          },
+          "8f8423f0-43b3-4fb8-936e-8dab6819c7ab": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/bath-bomb-near-tub.jpg",
+              "mega_link": "Personal Care",
+              "link": "#",
+              "title": "Personal Care",
               "subtitle": ""
             }
           }
@@ -321,6 +324,20 @@
     },
     "content_for_index": [
 
-    ]
+    ],
+    "blocks": {
+      "10042746950867549768": {
+        "type": "shopify:\/\/apps\/hulk-product-options\/blocks\/app-embed\/380168ef-9475-4244-a291-f66b189208b5",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "3294164036280357830": {
+        "type": "shopify:\/\/apps\/mlv-auto-currency-switcher\/blocks\/mlveda-currencies-head\/92ab730f-097e-4571-b27c-3f449e098ca3",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   }
 }

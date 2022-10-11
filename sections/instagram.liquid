@@ -26,32 +26,32 @@
 <div id="instagramRoot"></div>
 
 <script>
-  let request = new XMLHttpRequest;
-let  output;
-request.open('GET', 'https://graph.instagram.com/5879946881/media?fields=id,media_type,media_url,username,timestamp&access_token=AQCZPMO7NZEVDiIORKhMvIWytMKLjcVPqAXf98vNl1oS5GQvl4kRLHFR_mjpY3VTFVZ084nAao2pi8GzXNw7wCltNFrJP0yjwCkrekQeW3QcWWlhkrKeu8fVKTm3GRY41_tO0euAmARSjUPSN_moa6ebc7yJ0t6Be6xYLGfk03cAt1EXX27-8l9S-GBl9S7vQv36CMKyvpNXBICB5y72g-_vi5VY0fDul9YyqWiNiyBF1A#_');
-          request.send();
-          request.onload = function () {
-           console.log(JSON.parse(this.response));
-            let restCountries = JSON.parse(this.response);
-            let tryMe = restCountries.data;
-              tryMe.forEach(country => {
-                output = `
-                <div class="col col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-3">
-          <div class="card" style="height: 100%;">`
-         if( (country.media_type) === "VIDEO"){output += ` <video controls>
-           <source src="${country.media_url}">
-           </video>`;
+//   let request = new XMLHttpRequest;
+// let  output;
+// request.open('GET', 'https://graph.instagram.com/5879946881/media?fields=id,media_type,media_url,username,timestamp&access_token=AQCZPMO7NZEVDiIORKhMvIWytMKLjcVPqAXf98vNl1oS5GQvl4kRLHFR_mjpY3VTFVZ084nAao2pi8GzXNw7wCltNFrJP0yjwCkrekQeW3QcWWlhkrKeu8fVKTm3GRY41_tO0euAmARSjUPSN_moa6ebc7yJ0t6Be6xYLGfk03cAt1EXX27-8l9S-GBl9S7vQv36CMKyvpNXBICB5y72g-_vi5VY0fDul9YyqWiNiyBF1A#_');
+//           request.send();
+//           request.onload = function () {
+//            console.log(JSON.parse(this.response));
+//             let restCountries = JSON.parse(this.response);
+//             let tryMe = restCountries.data;
+//               tryMe.forEach(country => {
+//                 output = `
+//                 <div class="col col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-3">
+//           <div class="card" style="height: 100%;">`
+//          if( (country.media_type) === "VIDEO"){output += ` <video controls>
+//            <source src="${country.media_url}">
+//            </video>`;
 
-           } else{
-           output += ` <img src="${country.media_url}" alt="${country.id}" class="" >`; }
-           output +=`
-            </div>
-      </div>
-                    `;
-              document.getElementsByClassName("kft-instagram-widget")[0].innerHTML += output;
-document.getElementById("instagramRoot").innerHTML += output;
-          });
-          };
+//            } else{
+//            output += ` <img src="${country.media_url}" alt="${country.id}" class="" >`; }
+//            output +=`
+//             </div>
+//       </div>
+//                     `;
+//               document.getElementsByClassName("kft-instagram-widget")[0].innerHTML += output;
+// document.getElementById("instagramRoot").innerHTML += output;
+//           });
+//           };
 </script>
 
 
