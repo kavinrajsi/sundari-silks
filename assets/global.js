@@ -203,20 +203,19 @@
       }
     });
 
-// Modal for product detail page
-// Quick & dirty toggle to demonstrate modal toggle behavior
-$('.modal-toggle').on('click', function(e) {
-  e.preventDefault();
-  $('.modal').toggleClass('is-visible');
-  $('body').toggleClass('modalScroll');
-});
+  // Modal for product detail page
+  // Quick & dirty toggle to demonstrate modal toggle behavior
+  $(".modal-toggle").on("click", function (e) {
+    e.preventDefault();
+    $(".modal").toggleClass("is-visible");
+    $("body").toggleClass("modalScroll");
+  });
 
-$('.modal-size-toggle').on('click', function(e) {
-  e.preventDefault();
-  $('.modal-size').toggleClass('is-visible');
-  $('body').toggleClass('modalScroll');
-});
-
+  $(".modal-size-toggle").on("click", function (e) {
+    e.preventDefault();
+    $(".modal-size").toggleClass("is-visible");
+    $("body").toggleClass("modalScroll");
+  });
 
   //Functions, Plugins, Etc.. Here
   //(does not wait for DOM READY STATE)
@@ -225,16 +224,68 @@ $('.modal-size-toggle').on('click', function(e) {
 if (document.getElementById("recover") != null) {
   document.getElementById("recover").addEventListener("click", function (e) {
     console.log("recover password");
-      document.getElementById("recover-form").classList.replace("d-none", "d-block");
-      document.getElementById("login-froms").classList.replace("d-block", "d-none");
+    document
+      .getElementById("recover-form")
+      .classList.replace("d-none", "d-block");
+    document
+      .getElementById("login-froms")
+      .classList.replace("d-block", "d-none");
   });
 }
 
 if (document.getElementById("login") != null) {
   document.getElementById("login").addEventListener("click", function (e) {
     console.log("login action");
-    document.getElementById("login-froms").classList.replace("d-none", "d-block");
-    document.getElementById("recover-form").classList.replace("d-block", "d-none");
+    document
+      .getElementById("login-froms")
+      .classList.replace("d-none", "d-block");
+    document
+      .getElementById("recover-form")
+      .classList.replace("d-block", "d-none");
   });
 }
 
+$(window).scroll(function () {
+  var sticky = $("#wrap"),
+    scroll = $(window).scrollTop();
+
+  if (scroll >= 100) sticky.addClass("fixed");
+  else sticky.removeClass("fixed");
+});
+
+let cartBtn = document.querySelector(".line-item__right a");
+const form = document.querySelector("cart_wrapper");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (cartBtn.getAttribute("data-variant-id")) {
+    removeItem();
+  } else {
+    addItem();
+  }
+});
+function removeItem() {
+  let variantId = cartBtn.getAttribute("data-variant-id");
+  $.ajax({
+    type: "POST",
+    url: "/cart/change.js",
+    dataType: "json",
+    data: {
+      id: parseFloat(variantId),
+      quantity: 0,
+    },
+  }).then((data) => {
+    cartBtn.textContent = "Add to cart";
+    cartBtn.removeAttribute("data-variant-id");
+  });
+}
+function addItem() {
+  $.ajax({
+    type: "POST",
+    url: "/cart/add.js",
+    dataType: "json",
+    data: $("#" + "YOUR FORM ID").serialize(),
+  }).then((data) => {
+    cartBtn.textContent = "Remove from cart";
+    cartBtn.setAttribute("data-variant-id", data.variant_id);
+  });
+}

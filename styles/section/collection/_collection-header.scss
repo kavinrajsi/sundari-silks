@@ -41,7 +41,7 @@
   margin-left: 4vw;
   margin-right: 4vw;
   margin-bottom: 28px;
-  display: none;
+  display: flex;
   @media(min-width: 768px){
   // display: none;
   }
@@ -59,7 +59,3 @@
   }
 }
 
-
-.collection-page-action-active{
-  display: none;
-}

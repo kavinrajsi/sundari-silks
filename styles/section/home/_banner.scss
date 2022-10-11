@@ -1,3 +1,22 @@
-.large-12.column {
-  padding-bottom: 48px;
+.large-12.columns {
+  // padding-bottom: 48px;
+  .slick-dots{
+    bottom: 10px;
+    li{
+      button:before{
+        width: 24px;
+        height: 24px;
+        opacity: 1;
+        // border: 1px solid var(--pure-black);
+        // color: transparent;
+      }
+    }
+    li.slick-active{
+      button:before{
+        // border: 1px solid var(--secondary-color);
+        color: var(--secondary-color);
+        opacity: 1;
+      }
+    }
+  }
 }

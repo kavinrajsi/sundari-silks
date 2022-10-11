@@ -97,15 +97,103 @@
     </p>
 
     <!-- Blouse end -->
+
+    <ul aria-label="size chart">
+      {% for variant in product.variants %}
+      {% if variant.title == "Default Title" %}
+      <li title="Free Size" class="product-size-free">
+        FS </li>
+      {% elsif variant.title == "Free Size" %}
+      <li title="Free Size" class="product-size-free">
+        FS </li>
+      {% else %}
+      <li class="product-size-number" title="{{ variant.title }}" data-id-value="{{ variant.id }}"> {{ variant.title
+        }}</li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <!-- {{ product.metafields.custom.size_chart }} -->
+    <div class="modal">
+      <div class="modal-overlay modal-toggle"></div>
+      <div class="modal-wrapper modal-transition">
+        <div class="modal-header">
+          <button class="modal-close modal-toggle"><svg class="icon-close icon" viewBox="0 0 24 24">
+              <use xlink:href="#close"></use>
+            </svg></button>
+          <h2 class="modal-heading">Size Chart and Measurement Guide </h2>
+        </div>
+        <div class="modal-body">
+          <div class="modal-content">
+            <div class="size-data">
+              {% assign suppliers = product.metafields.custom.size_chart.value %}
+              {% for supplier in suppliers %}
+              <h2 class="sizeChatTitle">{{supplier.type}}</h2>
+              <div class="sizeChart">
+                <div class="sizeChartLable">
+                  <table>
+                    <tr>
+                      <td>
+                        year
+                      </td>
+                      <td>
+                        size
+                      </td>
+                      <td>
+                        shoulder
+                      </td>
+                      <td>
+                        sleeves
+                      </td>
+                      <td>
+                        chest
+                      </td>
+                      <td>
+                        height
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="sizeChartValue">
+                  {% for dfdf in supplier.value %}
+                  <!-- {{ dfdf | json }} -->
+                  {{ dfdf[0] }}
+                  {% endfor %}
+                  <table>
+                    {% for dfdf in supplier.value %}
+                    <tr>
+                      {% for ddf in dfdf.value %}
+                      <td> {{ dfdf.age }}</td>
+                      <td>{{ ddf.size }}</td>
+                      <td> {{ ddf.shoulder }}</td>
+                      <td> {{ ddf.sleeves }}</td>
+                      <td> {{ ddf.chest }}</td>
+                      <td> {{ ddf.height }}</td>
+                      {% endfor %}
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            <div class="size-data-image">
+              <!-- <img width="538" height="538" loading="lazy"  src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundarisilks-how-to-{{ collection.title | remove:"/" | remove: " " }}.jpg" /> -->
+              <img width="538" height="538" loading="lazy"
+                src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundarisilks-how-to-Shirts.jpg?" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!--product form-->
-    {% form 'product', product %}
+    {% form 'product', product,
+    id: product_form_id,
+    class: 'form',
+    novalidate: 'novalidate',
+    data-type: 'add-to-cart-form' %}
     <div>
-      {%- comment -%} <label for="proudct-form-size">Size</label>
-      <select name="id" id="product-form-size">
-        {% for variant in product.variants %}
-        <option value="{{ variant.id }}"> {{variant.tile}}</option>
-        {% endfor %}
-      </select> {%- endcomment -%}
+
       <h2 for="proudct-form-size" class="product-title-secondary product-size-area">
         Size &amp; Fit
 
@@ -131,102 +219,13 @@
         </nav>
 
       </h2>
-      <ul aria-label="size chart">
-        {% for variant in product.variants %}
-        {% if variant.title == "Default Title" %}
-        <li title="Free Size" class="product-size-free">
-          FS </li>
-        {% elsif variant.title == "Free Size" %}
-        <li title="Free Size" class="product-size-free">
-          FS </li>
-        {% else %}
-        <li class="product-size-number" title="{{ variant.title }}" data-id-value="{{ variant.id }}"> {{ variant.title
-          }}</li>
-        {% endif %}
-        {% endfor %}
-      </ul>
 
-
-      <!-- {{ product.metafields.custom.size_chart }} -->
-
-
-
-      <div class="modal">
-        <div class="modal-overlay modal-toggle"></div>
-        <div class="modal-wrapper modal-transition">
-          <div class="modal-header">
-            <button class="modal-close modal-toggle"><svg class="icon-close icon" viewBox="0 0 24 24">
-                <use xlink:href="#close"></use>
-              </svg></button>
-            <h2 class="modal-heading">Size Chart and Measurement Guide </h2>
-          </div>
-          <div class="modal-body">
-            <div class="modal-content">
-              <div class="size-data">
-                {% assign suppliers = product.metafields.custom.size_chart.value %}
-                {% for supplier in suppliers %}
-                <h2 class="sizeChatTitle">{{supplier.type}}</h2>
-                <div class="sizeChart">
-                  <div class="sizeChartLable">
-                    <table>
-                      <tr>
-                        <td>
-                          year
-                        </td>
-                        <td>
-                          size
-                        </td>
-                        <td>
-                          shoulder
-                        </td>
-                        <td>
-                          sleeves
-                        </td>
-                        <td>
-                          chest
-                        </td>
-                        <td>
-                          height
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="sizeChartValue">
-                    {% for dfdf in supplier.value %}
-                    <!-- {{ dfdf | json }} -->
-                    {{ dfdf[0] }}
-                    {% endfor %}
-                    <table>
-                      {% for dfdf in supplier.value %}
-                      <tr>
-                        {% for ddf in dfdf.value %}
-                        <td> {{ dfdf.age }}</td>
-                        <td>{{ ddf.size }}</td>
-                        <td> {{ ddf.shoulder }}</td>
-                        <td> {{ ddf.sleeves }}</td>
-                        <td> {{ ddf.chest }}</td>
-                        <td> {{ ddf.height }}</td>
-                        {% endfor %}
-                      </tr>
-                      {% endfor %}
-                    </table>
-                  </div>
-                </div>
-                {% endfor %}
-              </div>
-              <div class="size-data-image">
-                <!-- <img width="538" height="538" loading="lazy"  src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundarisilks-how-to-{{ collection.title | remove:"/" | remove: " " }}.jpg" /> -->
-                <img width="538" height="538" loading="lazy"
-                  src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundarisilks-how-to-Shirts.jpg?" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-
+      <input
+      type="hidden"
+      name="id"
+      value="{{ product.selected_or_first_available_variant.id }}"
+      disabled
+    >
       {% assign not_in_cart = true %}
       {% for item in cart.items %}
       {% if item.product.id == product.id %}
@@ -234,20 +233,33 @@
       {% break %}
       {% endif %}
       {% endfor %}
+
       {% if not_in_cart %}
+      <!-- <label for="proudct-form-size">Size</label>
+      <select name="id" id="product-form-size">
+        {% for variant in product.variants %}
+        <option value="{{ variant.id }}"> {{variant.tile}}</option>
+        {% endfor %}
+      </select> -->
       <div class="product-action-buttons">
-        <button class="product-add-to-cart-button" type="submit"> {% unless current_variant.available %}
-          Sold Out
-          {% else %}
-          Buy Now
-          {% endunless %}
+        <button class="product-add-to-cart-button" type="submit">
+          {%- if product.selected_or_first_available_variant.available -%}
+                         ADD TO CART
+                          {%- else -%}
+                        SOLD OUT
+                          {%- endif -%}
         </button>
         {% else %}
-        <a href="/cart" class="btn btn--full btn--status ">View Cart</a>
+        <a href="/cart" class="product-add-to-cart-button">
+          <svg width="24" height="24">
+            <use xlink:href="#bag" />
+          </svg>
+          View Cart</a>
         {% endif %}
       </div>
     </div>
     {% endform %}
+
     <!--end product form-->
     {% if product.content != blank %}
     <h2 class="product-title-secondary">Description</h2>

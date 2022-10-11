@@ -1,13 +1,30 @@
 .home-page-silver-section {
+  border-top: 8px solid #dbae40;
   padding-top: 48px;
   padding-bottom: 48px;
   background-repeat: no-repeat;
   background-position: top center;
-  // background-color: rgba($color: #000000, $alpha: 0.4);
-  background-image: url('https://cdn.shopify.com/s/files/1/0560/3695/0174/files/pattern-background-1.png?v=1664358789');
+  background-image: url('https://cdn.shopify.com/s/files/1/0560/3695/0174/files/collection-pattern-bg.png'), url('https://cdn.shopify.com/s/files/1/0560/3695/0174/files/collection-pattern.png');
   background-repeat: repeat;
+  position: relative;
+  &::before,
+  &::after{
+    content: "";
+    display: block;
+    width: 84px;
+    height: 84px;
+    background: url('https://cdn.shopify.com/s/files/1/0560/3695/0174/files/collection-frame.png');
+    position: absolute;
+    top: 0px;
+  }
 
-
+  &::after{
+    left: 0;
+  }
+  &::before{
+    right: 0;
+    transform: rotate(90deg);
+  }
   .section-content {
     nav {
       @include content-block-max-center;
