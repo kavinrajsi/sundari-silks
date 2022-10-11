@@ -1,11 +1,11 @@
 [
   {
-    "name": "Boomer",
-    "theme_name": "Vintage",
-    "theme_version": "1.0.0",
-    "theme_documentation_url": "https://sundarisilks.com",
+    "name": "theme_info",
+    "theme_name": "vintage",
+    "theme_version": "0.1.0",
     "theme_author": "Kavinraj",
-    "theme_support_email": "sikavinraj@gmail.com"
+    "theme_documentation_url": "https:\/\/sikavinraj.me\/contact\/",
+    "theme_support_url": "https:\/\/github.com\/kavinrajsi\/boomer"
   },
   {
     "name": "Navigation Bar Colors Settings",
