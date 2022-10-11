@@ -7,7 +7,9 @@
 {% unless product_collection == blank %}
 {% assign collectProductName = product_collection %}
 {% endunless %}
+
 {% assign coeid = "" %}
+
 <section class="page-product-detail">
   <div class="product-images">
     <ul class="product-images-thumbnails">
@@ -52,19 +54,53 @@
     {% endif %}
     <p class="product-price">{{current_product.price | money_with_currency }}</p>
     <p class="product-notice-content {% for collection in product.collections%} {{collection.title}} {% endfor %}">
-      Our artisanal silver jewellery collection is currently available for shipment within INDIA.</p>
+      Our artisanal silver jewellery collection is currently available for shipment within INDIA.
+    </p>
 
+   <!-- TODO: Begin -- Need to add link this for size chart -->
+   <div hidden>
+    {% assign text = product | json %}
+    {% assign objArr = text | split: ',' %}
+    {% assign keyArr = ''%}
+    {% assign valArr = ''%}
+
+    {% for obj in objArr %}
+    {% assign key = obj | split: ':' | first %}
+    {% assign value = obj | split: ':' | last %}
+    {% assign keyArr = keyArr| append: ',' | append: key %}
+    {% assign valArr = valArr| append: ',' | append: value %}
+    {% endfor %}
+
+    {% assign keyArr = keyArr | remove_first: ',' | remove: '{'  | remove: '"' | split: ',' %}
+    {% assign valArr = valArr | remove_first: ',' | remove: '}'  | remove: '"' | split: ',' %}
+
+    {% for obj in objArr %}
+    {{keyArr[forloop.index0]}} :{{valArr[forloop.index0]}}
+    <br />
+    {% endfor %}
+    <hr>
+
+  {{ product.variants | json }}
+  </div>
+
+   <!-- TODO: END --  Need to add link this for size chart -->
 
 
     <!--product form-->
     {% form 'product', product, class:"product-form", id:"AddToCartForm" %}
-          <p>{{ current_product.price | money_with_currency }}</p>
+    <p>{{ current_product.price | money_with_currency }}</p>
 
-          {%- unless product.has_only_default_variant -%}
+ <select name="id">
+  {%- for variant in product.variants -%}
+    <option selected="selected" value="{{ variant.id }}"> {{ variant.title }}</option>
+  {%- endfor -%}
+</select>
+<hr>
+{%- unless product.has_only_default_variant -%}
   {%- for option in product.options_with_values -%}
 
 
-      <fieldset id="ProductSelect-option-{{ forloop.index0 }}" name="{{ option.name | handleize }}">
+      <fieldset id="ProductSelect-option-{{ forloop.index0 }}" name="id">
         <legend>
           {{ option.name | escape }}
         </legend>
@@ -79,15 +115,14 @@
           {%- endif -%}
 
           <input type="radio"
-            {% if option.selected_value == value %}  checked="checked"{% endif %}
+            {% if option.selected_value == value %} checked="checked"{% endif %}
             {% unless variant_label_state %} disabled="disabled"{% endunless %}
             value="{{ value | escape }}"
             data-index="option{{ forloop.index }}"
             name="{{ option.name | handleize }}"
             id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
-
           <label for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
-            {{coeid}}/{{ value | escape }}
+            {{ value | escape }}
           </label>
         {%- endfor -%}
       </fieldset>
@@ -95,58 +130,28 @@
 
   {%- endfor -%}
 {%- endunless -%}
+<hr>
 
+<div class="mb-3" >
+  <label for="Quantity" class="form-label">Quantity</label>
+  <input type="number" class="form-control" name="quantity" id="Quantity" value="1" max="1">
+</div>
 
-          <!-- <div class="mb-3">
-            <label for="productSelect" class="form-label">Size</label>
-            <select name="id" id="productSelect" class="form-select">
+<hr>
+<button type="submit" name="add" id="AddToCard" class="product-add-to-cart-button" {% unless product.available %} disabled="disabled"{% endunless %}>
+  {%- if product.available -%}
+    Add to Cart
+  {%- else -%}
+    Sold Out
+  {%- endif -%}
+</button>
 
-              {% for variant in product.variants %}
-                {% if variant.available %}
-                  <option value="{{ variant.id }}">
-                    {{ variant.title }} {{variant.id}}
-                  </option>
-                {% else %}
-                  <option value="{{ variant.id }}" disabled="disabled">
-                    {{ variant.title }}
-                  </option>
-                {% endif %}
-
-              {% endfor %}
-            </select>
-          </div> -->
-
-          <div class="mb-3">
-            <label for="Quantity" class="form-label">Quantity</label>
-            <input type="number" class="form-control" name="quantity" id="Quantity" value="1" min="1">
-          </div>
-
-          {% assign not_in_cart = true %}
-          {% for item in cart.items %}
-          {{item | json }}
-          <hr>
-        1: {{item.variant.id}}
-      <hr>
-        2: {{coeid}}
-          {% if item.variant.id == variant.id %}
-          {% assign not_in_cart = false %}
-          {% break %}
-          {% endif %}
-          {% endfor %}
-          {% if not_in_cart %}
-          <button type="submit" name="add" id="AddToCard" class="product-add-to-cart-button" >
-            Buy Now
-          </button>
-          {% else %}
-          <a href="/cart" class="btn btn--full btn--status ">View Cart</a>
-          {% endif %}
-
-          {% if section.settings.dynamic_buttons_checkbox == true %}
-              {{ form | payment_button }}
-          {% endif %}
-
+{{ form | payment_button }}
 
 {% endform %}
+
+
+
     <!--end product form-->
 
 
@@ -231,7 +236,9 @@
     {% endif %}
 
 
+    {% if product.metafields.custom.material.value != blank %}
     <h2 class="product-title-secondary"> Specification </h2>
+    {% endif %}
     <div class="product-detail">
       {% if product.metafields.custom.material.value != blank %}
       <dl>
@@ -390,8 +397,10 @@
   }
   </script>
 
-{%- comment -%} {% include 'recently-viewed' %} {%- endcomment -%}
+{%- comment -%}
+{% include 'recently-viewed' %}
 {% section 'recommended-products' %}
+{%- endcomment -%}
 
 
 <script language="Javascript" type="text/javascript">
