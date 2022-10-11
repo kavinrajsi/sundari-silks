@@ -1611,7 +1611,7 @@ body {
   padding-bottom: 48px;
   background-repeat: no-repeat;
   background-position: top center;
-  background-image: url("https://cdn.shopify.com/s/files/1/0560/3695/0174/files/pattern-background-1.png?v=1664358789");
+  background-color: rgba(0, 0, 0, 0.4);
   background-repeat: repeat;
 }
 .template-index .homepage-section .home-page-silver-section .section-content nav {
