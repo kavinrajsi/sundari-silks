@@ -225,9 +225,43 @@
   </main>
   {% section 'footer' %}
 
+
+  <div class="modal fade" id="productInfoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <img class="img-fluid" src="" id="productInfoImg" alt="">
+            </div>
+            <div class="col-12 col-md-6">
+              <h1 id="productInfoTitle"></h1>
+              <h3 id="productInfoPrice"></h3>
+              <p id="productInfoDescription"></p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <form action="#" id="addToCartForm" class="row">
+            <select name="id" id="modalItemID" class="form-select col-auto">
+            </select>
+            <input type="number" name="quantity" value="1" id="modalItemQuantity" min="1" class="col-auto">
+            <button type="submit" class="btn btn-success col-auto">Add to cart</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <script src="{{ 'predictive-search.js' | asset_url }}"></script>
   <script src="{{ 'slick.js' | asset_url }}"></script>
   <script src="{{ 'global.js' | asset_url }}"></script>
+  <script src="{{ 'bootstrap.min.js' | asset_url }}"></script>
+  <script src="{{ 'quick-view-main.js' | asset_url }}"></script>
 
   {% if template contains 'product' %}
   <script src="{{ 'photoswipe.umd.min.js' | asset_url }}"></script>

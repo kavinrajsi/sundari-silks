@@ -35,7 +35,7 @@
               </div>
             </a>
             <div class="product__card-cta quick-view-button">
-              <a class="quick-view" data-handle="{{ product.handle }}">Quick View</a>
+              <a  href="javascript:void(0)" id="productInfoAnchor" class="quick-view" product-handle="{{ product.handle }}" product-price="{{ product.price | money_without_trailing_zeros }}" >Quick View</a>
             </div>
           </div>
           <div class="product__card--content">
