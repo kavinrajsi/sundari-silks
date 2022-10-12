@@ -56,6 +56,9 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: none;
   text-rendering: optimizeLegibility;
+  width: 100%;
+  height: 100%;
+
 }
 body {
   font-size: inherit;
@@ -67,6 +70,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: none;
   text-rendering: optimizeLegibility;
+  width: 100%;
+  height: 100%;
+
+}
+.fullpage{
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
 }
 @media screen and (prefers-reduced-motion: reduce), (update: slow) {
   * {
@@ -135,7 +147,6 @@ i {
 a {
   color: inherit;
 }
-// button
 .button,
 button,
 a[type="button"] {

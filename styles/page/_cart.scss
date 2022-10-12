@@ -11,16 +11,23 @@ h1.page__title {
 .page__decription {
   background: rgba(253, 217, 51, 0.4);
   border-radius: 4px;
-  max-width: 60%;
+  max-width: 620px;
   margin: 0 auto;
   padding: 24px;
   li:first-child {
     font-weight: 500;
     margin-bottom: 8px;
+    border-bottom: 0;
   }
   li {
     font-size: 14px;
     line-height: 24px;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+    &:last-child{
+      border-bottom: 0;
+    }
   }
 }
 
