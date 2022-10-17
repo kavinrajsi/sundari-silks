@@ -8,11 +8,12 @@
       <button class="drawer__close" data-drawer-close aria-label="Close Drawer"></button>
     </div>
     <div class="drawer__content" id="cart__drawer">
-      <div id="cart__drawer_items">
-      </div>
+      <ul id="cart__drawer_items">
+      </ul>
       <div style="margin-top: 50px">
         <h4>Total: <span id="cart__total_price"></span></h4>
-        <a id="cart__checkout_btn" href="/checkout" class="btn btn--has-icon-after cart__continue-btn" style="width:100%;">Proceed Checkout</a>
+        <a id="cart__checkout_btn" href="/checkout" class="btn btn--has-icon-after cart__continue-btn"
+          style="width:100%;">Proceed Checkout</a>
       </div>
     </div>
   </div>
@@ -21,23 +22,20 @@
 
 <script>
   fetch('/cart.js')
-  .then((resp) => resp.json())
-  .then((data) => {
-
-    console.log(document.getElementById('cart__drawer_items'));
-
-
-    if(data.items.length > 0) {
-        data.items.forEach(function(product, index) {
-          document.getElementById('cart__drawer_items').innerHTML = '<img src="' + product.featured_image.url + '" alt="' + product.featured_image.alt + '"><h5>' + product.title + '</h5><p>' + product.quantity + ' x ' + '</p>';
+    .then((resp) => resp.json())
+    .then((data) => {
+      let daad = '';
+      if (data.items.length > 0) {
+        data.items.forEach(function (product, index) {
+          daad += '<li><img src="' + product.featured_image.url + '" alt="' + product.featured_image.alt + '"><h5>' + product.title + '</h5><p>' + product.quantity + ' x ' + '</p><p><span>' + product.price + '</span></p><p><a href="/cart/change?line='+ index +'&amp;quantity=0">Remove Item</span></p></li>';
         });
-    } else {
-      document.getElementById('cart__drawer_items').innerHTML = '<p>Cart is empty</p>';
-      document.getElementById('drawer_checkout_btn').setAttribute('disabled', 'disabled');
-      document.getElementById('drawer_checkout_btn').style.pointerEvents = 'none';
-    }
+        document.getElementById('cart__drawer_items').innerHTML = daad;
+      } else {
+        document.getElementById('cart__drawer_items').innerHTML = '<p>Cart is empty</p>';
+        document.getElementById('drawer_checkout_btn').setAttribute('disabled', 'disabled');
+        document.getElementById('drawer_checkout_btn').style.pointerEvents = 'none';
+      }
+      document.getElementById('cart__total_price').innerHTML = '<p><span>' + data.total_price + '</span></p>';
 
-    // document.getElementById('drawer_total_amount').innerHTML = .Currency.formatMoney(data.total_price, theme.moneyFormat);
-
-  });
+    });
 </script>

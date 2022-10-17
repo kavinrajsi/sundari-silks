@@ -313,7 +313,7 @@
     padding-inline-start: 40px;
   }
 
-  ol{
+  ol {
     display: block;
     list-style-type: decimal;
     margin-block-start: 1em;
@@ -328,37 +328,36 @@
     text-align: -webkit-match-parent;
   }
 
-b,strong{
+  b,
+  strong {
+    font-weight: bold;
+  }
 
-  font-weight: bold;
+  i,
+  em {
+    font-style: italic;
+  }
+
+  mark {
+    background-color: mark;
+    color: marktext;
+  }
+  small {
+    font-size: smaller;
+  }
+  del {
+    text-decoration: line-through;
+  }
+  ins {
+    text-decoration: underline;
+  }
+  sub {
+    vertical-align: sub;
+    font-size: smaller;
+  }
+  sup {
+    vertical-align: super;
+    font-size: smaller;
+  }
 }
 
-i,em{
-  font-style: italic;
-
-}
-
-mark{
-  background-color: mark;
-  color: marktext;
-}
-small{
-  font-size: smaller;
-
-}
-del{
-  text-decoration: line-through;
-}
-ins{
-  text-decoration: underline;
-}
-sub{
-  vertical-align: sub;
-  font-size: smaller;
-}
-sup{
-  vertical-align: super;
-  font-size: smaller;
-}
-
-}

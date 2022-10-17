@@ -7,7 +7,7 @@
     "mlvedaACS_positionLeft": "10px",
     "mlvedaACS_defaultCurrency": "INR",
     "mlvedaACS_textColor": "inherit",
-    "mlvedaACS_autoSwitch": false,
+    "mlvedaACS_autoSwitch": true,
     "mlvedaACS_flagStyle": "circle",
     "mlvedaACS_isMessageDisplay": true,
     "mlvedaACS_positionBottom": "10px",
@@ -27,7 +27,7 @@
     "mlvedaACS_positionRight": "10px",
     "mlvedaACS_currencyFormat": "money_with_currency_format",
     "mlvedaACS_borderLineColor": "inherit",
-    "mlvedaACS_displayFlag": false,
+    "mlvedaACS_displayFlag": true,
     "mlvedaACS_borderLook": false,
     "sections": {
       "announcement-bar": {

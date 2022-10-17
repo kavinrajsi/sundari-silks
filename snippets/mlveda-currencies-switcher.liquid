@@ -15,8 +15,8 @@
 select#currencies {
 background-repeat: no-repeat;
       background-position: right center;
-      
-    
+
+
 }
 .nice-select.open .list {
 max-height: 250px;
@@ -63,7 +63,7 @@ outline:none;border: 0;
 }
 */
 }
- 
+
 .pick_currency .nice-select {
     border: 0 !important;
 }
@@ -117,7 +117,7 @@ position: fixed !important;
    right: unset !important;
   bottom: {{ settings.mlvedaACS_positionBottom }} !important;
   left: {{ settings.mlvedaACS_positionLeft}} !important;
- 
+
 }
 {% endif %}
 
@@ -147,7 +147,7 @@ position: fixed !important;
   right: {{settings.mlvedaACS_positionRight}} !important;
   bottom: {{settings.mlvedaACS_positionBottom}} !important;
    left: unset !important;
- 
+
 }
 {% endif %}
 
@@ -174,7 +174,7 @@ position: fixed !important;
   right: {{settings.mlvedaACS_positionRight}} !important;
    bottom: unset !important;
    left: unset !important;
- 
+
 }
 {% endif %}
 
@@ -202,7 +202,7 @@ position: fixed !important;
    right: unset !important;
    bottom: unset !important;
   left: {{settings.mlvedaACS_positionLeft}} !important;
- 
+
 }
 {% endif %}
 
@@ -235,9 +235,9 @@ if(typeof(Currency) == 'undefined' || !Currency.hasOwnProperty("rates")){
 	script.async = true;
     script.src = "//cdn.shopify.com/s/javascripts/currencies.js";
     document.getElementsByTagName('head')[0].appendChild(script);
-  
+
 }
-  
+
   var some_interval = setInterval(function(){
 			//console.log("hellooooooo");
             		if(typeof(Currency) != 'undefined' || Currency.hasOwnProperty("rates")){
@@ -257,25 +257,25 @@ $acs(document).ready(function() {
 {% else %}
  <script>
 $acs(document).ready(function() {
-	$acs('body').append(mlvedasw);   
+	$acs('body').append(mlvedasw);
 });
 $acs('document').ready(function(){
    $acs("body").addClass("mlvedaMobileFilter");
    lastScroll = 0;
-$acs(window).on('scroll',function() {    
+$acs(window).on('scroll',function() {
    var scroll = $acs(window).scrollTop();
 // console.log(scroll);
    if(lastScroll - scroll > 0) {
        $acs("body").addClass("mlvedaMobileFilter");
    console.log("add");
-     
+
    } else {
      //console.log("remove");
      if($acs( "body" ).hasClass( "mlvedaMobileFilter" )){
       $acs("body").removeClass("mlvedaMobileFilter");
-     
+
      }
-     
+
    }
    lastScroll = scroll;
 });
@@ -288,7 +288,7 @@ $acs(window).on('scroll',function() {
 /*
    .pick_currency{
      display:none !important;
-     
+
    }
    .mlvedaMobileFilter .pick_currency{
      display:block !important;

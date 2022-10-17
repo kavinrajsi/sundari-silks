@@ -259,8 +259,6 @@
     </div>
   </div>
 
-
-
   <script src="{{ 'predictive-search.js' | asset_url }}"></script>
   <script src="{{ 'slick.js' | asset_url }}"></script>
   <script src="{{ 'global.js' | asset_url }}"></script>
@@ -296,5 +294,14 @@
   </script>
   {% endif %}
   </section>
+  <script>
+      $(document).ready(function(e) {
+    let mes = $('.pick_currency.mldesk');
+    let mes1 = $('.header-currency-price-list');
+    console.log(mes);
+    mes1.append(mes);
+      });
+
+  </script>
 </body>
 </html>
