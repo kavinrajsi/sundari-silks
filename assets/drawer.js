@@ -86,4 +86,3 @@ var drawer = function () {
 };
 
 drawer();
-Code language: JavaScript (javascript)
