@@ -1453,13 +1453,12 @@ body {
   opacity: 1;
 }
 .template-index .homepage-section .home-page-curated-section .collection-saree {
-  max-width: var(--content-width);
-  margin-left: auto;
-  margin-right: auto;
   display: grid;
   justify-content: center;
   gap: 8px;
   margin: 0 8px;
+  margin-left: 4vw;
+  margin-right: 4vw;
   grid-template-columns: repeat(2, 1fr);
 }
 @media (min-width: 768px) {
@@ -1502,9 +1501,8 @@ body {
 @media (min-width: 768px) {
   .template-index .homepage-section .home-page-curated-section .collection-readymade {
     display: grid;
-    max-width: var(--content-width);
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 4vw;
+    margin-right: 4vw;
   }
 }
 .template-index .homepage-section .section-content .collection-item {

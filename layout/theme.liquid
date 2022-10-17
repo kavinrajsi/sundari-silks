@@ -46,6 +46,7 @@
 
   {{ 'slick.css' | asset_url | stylesheet_tag }}
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  {{ 'drawer.css' | asset_url | stylesheet_tag }}
   {{ 'base.css' | asset_url | stylesheet_tag }}
 
   <script>
@@ -226,6 +227,7 @@
   </main>
   {% section 'footer' %}
 
+  {% section 'drawer' %}
 
   <div class="modal fade" id="productInfoModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -260,6 +262,7 @@
 
   <script src="{{ 'predictive-search.js' | asset_url }}"></script>
   <script src="{{ 'slick.js' | asset_url }}"></script>
+  <script src="{{ 'drawer.js' | asset_url }}"></script>
   <script src="{{ 'global.js' | asset_url }}"></script>
   <script src="{{ 'bootstrap.min.js' | asset_url }}"></script>
   <script src="{{ 'quick-view-main.js' | asset_url }}"></script>
