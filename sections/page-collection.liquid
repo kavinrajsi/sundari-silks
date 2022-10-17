@@ -1,13 +1,9 @@
-page collection
+<!-- page collection -->
 
 <div class="collection-page-header">
   <div class="collection-page-header-image text-center image-radius">
-    {% if collection.description != blank %}
     {{ collection | image_url: width: 1920, height: 340 | image_tag : alt: collection.image.alt, class: 'image-radius'
     }}
-    {% else %}
-    {{ 'lifestyle-2' | placeholder_svg_tag: 'my-custom-class' }}
-    {% endif %}
   </div>
   <div class="collection-page-description">
     {% if collection.description != blank %}
