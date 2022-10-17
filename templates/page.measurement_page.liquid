@@ -2,7 +2,7 @@
   //console.log(window.location.href);
 </script>
 {% if customer.id %}
-{% include 'global-variables' %}
+<!-- {% include 'global-variables' %} -->
 <div class="page">
   {% include 'breadcrumbs' %}
   {{ 'measurement-bootstrap.css' | asset_url | stylesheet_tag }}
@@ -19,21 +19,21 @@
       <div class="container-measurement">
         <div class="row">
           <div id="account-edit" style="margin-right: auto; margin-left: auto; ">
-<!-- 
+<!--
 <div class="">
   <div class="" style="">
     <h3>Vanakkam!</h3>
 <p>Kindly note that we are unable to process requests for blouse stitching due to a technical glitch in the website.
-  If you are unable to place an order for blouse stitching, pico and falls please send the following details to <a href="mailto:different@sundarisilks.com" target="_blank">different@sundarisilks.com</a> or <a href="tel:+919962712299" target="_blank">+91 9962712299</a>. 
+  If you are unable to place an order for blouse stitching, pico and falls please send the following details to <a href="mailto:different@sundarisilks.com" target="_blank">different@sundarisilks.com</a> or <a href="tel:+919962712299" target="_blank">+91 9962712299</a>.
     </p><p>
-    You can also click here to fill the measurement form 
+    You can also click here to fill the measurement form
     <a href="https://bit.ly/3g49mZC" target="_blank">https://bit.ly/3g49mZC</a>.</p>
 <p>1) Product code of the products you would like to avail the stitching services</p>
 <p>2) Specify the add-ons you will require: Blouse stitching, pico and falls</p>
     <p>We'll send you the pricing, along with a measurement form to fill and a payment link.</p>
     <p>We apologize for the inconvenience caused.</p>
   </div>
-</div> 
+</div>
 -->
             <div id="measurement-header-content" class="col-md-12 col-sm-12 home-section pb-20">
               <div class="row">
@@ -819,10 +819,10 @@
     </div>
   </div>
 </div>
- 
+
 
 <script language="javascript" type="text/javascript">
-  
+
 
   var baseURL = 'https://c2nlh9c23c.execute-api.ap-south-1.amazonaws.com/prod';
 
@@ -840,8 +840,8 @@
 
   var addMeasurementClick = 0;
 
-  console.log(customerId); 
-  
+  console.log(customerId);
+
   var measureBd = [
     { "id": "1", "bd_name": "Embroidery Design", "blouse_design_name": "embroidered-blouse", "blouse_design_value": "embroidered-blouse", "blouse_design_image_name": "blouse_designs-embroidered-blouse.png" },
     { "id": "2", "bd_name": "Plain - No Embroidery", "blouse_design_name": "plain-blouse", "blouse_design_value": "plain-blouse", "blouse_design_image_name": "blouse-designs-plain-blouse.png" },
@@ -1109,15 +1109,15 @@
   console.log(location.pathname);
   // On page load hiding measurement section
   measurementSection$.hide();
-  
- // console.log(baseURL+'/customer/'+customerId); 
+
+ // console.log(baseURL+'/customer/'+customerId);
 
   // load exisint data -- it will fail
   //   $.ajax({
 //     url: baseURL + '/customer/' + customerId,
 //     crossDomain: true,
 //     success: function (data) {
-      
+
 //           console.log(data);
 //       if (!data || !Object.keys(data).length) {
 //         // metafields are not there
@@ -1152,9 +1152,9 @@
 //         console.log("HttpRequest: " + XMLHttpRequest);
 //         console.log(JSON.stringify(XMLHttpRequest));
 //         console.log("Status: " + textStatus);
-//         console.log("Error: " + errorThrown); 
-//         console.log("Data: " + data); 
-//     }  
+//         console.log("Error: " + errorThrown);
+//         console.log("Data: " + data);
+//     }
 //   });
 
       // if no measurement in server as per ajax value
@@ -1501,18 +1501,18 @@
     var temp_str = str.split("_").join(" ");
     temp_str = str.split("-").join(" ");
     return temp_str;
-  } 
+  }
     $('#sleeveless').change(function(e) { // radio changed
         // Print entered value in a div box
          console.log('changes' + e);
-    }); 
+    });
 
   $( "#proceedToMeasurements" ).click(function(e)  {
      console.log('change' + e);
       if ($('#sleeveless').is(':checked') == true){
     console.log('check');
     $('#sleeve_length, #sleeve_circumference').remove();
-  }else{	
+  }else{
     console.log('not check');
     console.log(($("#sleeve_length").length));
     console.log(($("#sleeve_circumference").length));
@@ -1522,12 +1522,12 @@
     }
   }
   });
-  
-// $('#typesOfSleeves').bind('DOMSubtreeModified', function(e) { 
+
+// $('#typesOfSleeves').bind('DOMSubtreeModified', function(e) {
 //     console.log('change' + e);
 
 //     });
-  
+
   $('#message_submit').on('click', function (event) {
     console.log('click');
 //   	if (addMeasurementClick == 1) {
@@ -1542,7 +1542,7 @@
         event.preventDefault();
 
        if (!measurement['title']) {
-         
+
         console.log('addMeasurementClick =1 title if');
         $('.title_error_text').show();
         $('.title_error_text').text('Please give name for measurement');
@@ -1551,7 +1551,7 @@
 
 
       if (measurementList.find(m => m.title === measurement['title'].trim())) {
-        
+
         console.log('addMeasurementClick =1 title already exists');
     	$('.title_error_text').show();
     	$('.title_error_text').text('Measurement title already exists');
@@ -1602,21 +1602,21 @@
 //   async function updateMeasurement() {
 //     let url = baseURL + '/customer';
 //     let method;
-     
+
 //     console.log('d');
 //     console.log(url);
 //     console.log(measurementList);
-    
+
 //     if (!!measurementMetafield) {
 //       url = url + '/metafields/' + measurementMetafield['id'];
 //       method = "PUT";
-      
+
 //     console.log('if');
 //     console.log(method);
 //     } else {
 //       url = url + '/' + customerId;
 //       method = "POST";
-      
+
 //     console.log('else');
 //     console.log(method);
 //     }
@@ -1629,16 +1629,16 @@
 //       },
 //       body: JSON.stringify(encodeMeasurement(measurementList))
 //     });
-    
+
 //     console.log(measurementList);
 //     console.log(result);
-    
+
 //     if (method === 'POST') {
-      
+
 //     console.log(result);
 //       // need measurementmetafield for furthure update
 //       measurementMetafield = result.json();
-      
+
 //     console.log(measurementMetafield);
 //     }
 
@@ -1691,11 +1691,11 @@
 
     let productLocation = window.location.search.substr(window.location.search.lastIndexOf('products/')).split('/') || [];
     let showSelectOption = false;
-    
+
     if (productLocation.length > 1) {
   	  showSelectOption = !!productLocation[1];
     }
-    
+
     setTimeout(() => {
       if (!showSelectOption) {
   	    $(".select_measurement_btn").remove();
@@ -1718,7 +1718,7 @@
     $("#embroidery").addClass('active');
     measurementSection$.hide();
   }
-  
+
   function encodeMeasurement(list) {
     let updatedMeasurementList = [];
     for (let i = 0; i < list.length; i++) {
@@ -1786,8 +1786,8 @@
 
 
 </script>
- 
-{% else %} 
+
+{% else %}
 <script>
   var prevURL = window.location.href;
   console.log(prevURL);
