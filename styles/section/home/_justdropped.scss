@@ -17,14 +17,18 @@
     margin-right: 4vw;
   }
   .tab-buttton {
+    overflow-x: scroll;
     display: flex;
     text-align: center;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     gap: 12px;
-    margin: 0 14px 14px;
+    margin: 0 8px 8px;
     @media (min-width: 768px) {
+      overflow: hidden;
+      justify-content: center;
       margin: 0;
+      margin: 0 14px 14px;
     }
     .tab {
       color: rgba(0, 0, 0, 0.8);
@@ -36,7 +40,13 @@
       background-color: #f3ece8;
       color: #4a4a4a;
       border-radius: 40px;
+      padding: 4px 8px;
+      flex: 1 0 auto;
+
+    @media (min-width: 768px) {
+      flex: initial;
       padding: 4px 16px;
+    }
     text-transform: capitalize;
       cursor: pointer;
       &.active {

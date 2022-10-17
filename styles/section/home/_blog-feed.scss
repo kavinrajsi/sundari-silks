@@ -35,14 +35,17 @@
     }
   }
   @media (min-width: 1140px) {
+
     .blog-feed-card:nth-last-child(2) {
+      display: block;
+    }
+    .blog-feed-card:nth-last-child(1) {
       display: none;
     }
   }
   @media (min-width: 1920px) {
     grid-template-columns: repeat(5, 1fr);
 
-    .blog-feed-card:nth-last-child(2),
     .blog-feed-card:nth-last-child(1) {
       display: block;
     }

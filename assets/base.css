@@ -1660,6 +1660,7 @@ body {
   background-repeat: no-repeat;
   background-position: top center;
   background-color: rgba(0, 0, 0, 0.4);
+  background-image: url(https://cdn.shopify.com/s/files/1/0560/3695/0174/files/collection-pattern-bg.png?v=1665427144);
   background-repeat: repeat;
   position: relative;
 }
@@ -1747,16 +1748,20 @@ body {
   }
 }
 .template-index .homepage-section .homepage-justdropped .tab-buttton {
+  overflow-x: scroll;
   display: flex;
   text-align: center;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   gap: 12px;
-  margin: 0 14px 14px;
+  margin: 0 8px 8px;
 }
 @media (min-width: 768px) {
   .template-index .homepage-section .homepage-justdropped .tab-buttton {
+    overflow: hidden;
+    justify-content: center;
     margin: 0;
+    margin: 0 14px 14px;
   }
 }
 .template-index .homepage-section .homepage-justdropped .tab-buttton .tab {
@@ -1769,9 +1774,16 @@ body {
   background-color: #f3ece8;
   color: #4a4a4a;
   border-radius: 40px;
-  padding: 4px 16px;
+  padding: 4px 8px;
+  flex: 1 0 auto;
   text-transform: capitalize;
   cursor: pointer;
+}
+@media (min-width: 768px) {
+  .template-index .homepage-section .homepage-justdropped .tab-buttton .tab {
+    flex: initial;
+    padding: 4px 16px;
+  }
 }
 .template-index .homepage-section .homepage-justdropped .tab-buttton .tab.active {
   background-color: var(--primary-color);
@@ -1830,6 +1842,9 @@ body {
 }
 @media (min-width: 1140px) {
   .template-index .homepage-section .blog-feed-container .blog-feed-card:nth-last-child(2) {
+    display: block;
+  }
+  .template-index .homepage-section .blog-feed-container .blog-feed-card:nth-last-child(1) {
     display: none;
   }
 }
@@ -1837,8 +1852,7 @@ body {
   .template-index .homepage-section .blog-feed-container {
     grid-template-columns: repeat(5, 1fr);
   }
-  .template-index .homepage-section .blog-feed-container .blog-feed-card:nth-last-child(2),
-.template-index .homepage-section .blog-feed-container .blog-feed-card:nth-last-child(1) {
+  .template-index .homepage-section .blog-feed-container .blog-feed-card:nth-last-child(1) {
     display: block;
   }
 }
