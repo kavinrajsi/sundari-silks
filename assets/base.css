@@ -3839,6 +3839,8 @@ form.filter-form .active-filters {
   max-width: 896px;
   margin-right: auto;
   margin-left: auto;
+  padding-top: 4vw;
+  padding-bottom: 4vw;
   padding-right: 24px !important;
   padding-left: 24px !important;
 }
