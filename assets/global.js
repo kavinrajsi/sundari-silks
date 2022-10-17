@@ -252,22 +252,3 @@ $(window).scroll(function () {
   if (scroll >= 100) sticky.addClass("fixed");
   else sticky.removeClass("fixed");
 });
-
-
-fetch('/cart.js')
-.then((resp) => resp.json())
-.then((data) => {
-
-  if(data.items.length > 0) {
-      data.items.forEach(function(product, index) {
-        document.getElementById('cart__drawer_items').innerHTML = '<img src="' + product.featured_image.url + '" alt="' + product.featured_image.alt + '"><h5>' + product.title + '</h5><p>' + product.quantity + ' x ' + theme.Currency.formatMoney(product.line_price, theme.moneyFormat) + '</p>';
-      });
-  } else {
-    document.getElementById('cart__drawer_items').innerHTML = '<p>Cart is empty</p>';
-    document.getElementById('drawer_checkout_btn').setAttribute('disabled', 'disabled');
-    document.getElementById('drawer_checkout_btn').style.pointerEvents = 'none';
-  }
-
-  document.getElementById('drawer_total_amount').innerHTML = theme.Currency.formatMoney(data.total_price, theme.moneyFormat);
-
-});
