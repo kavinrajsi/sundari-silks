@@ -260,10 +260,10 @@ fetch('/cart.js')
 
   if(data.items.length > 0) {
       data.items.forEach(function(product, index) {
-        document.getElementById('drawer_cart_items').innerHTML = '<img src="' + product.featured_image.url + '" alt="' + product.featured_image.alt + '"><h5>' + product.title + '</h5><p>' + product.quantity + ' x ' + theme.Currency.formatMoney(product.line_price, theme.moneyFormat) + '</p>';
+        document.getElementById('cart__drawer_items').innerHTML = '<img src="' + product.featured_image.url + '" alt="' + product.featured_image.alt + '"><h5>' + product.title + '</h5><p>' + product.quantity + ' x ' + theme.Currency.formatMoney(product.line_price, theme.moneyFormat) + '</p>';
       });
   } else {
-    document.getElementById('drawer_cart_items').innerHTML = '<p>Cart is empty</p>';
+    document.getElementById('cart__drawer_items').innerHTML = '<p>Cart is empty</p>';
     document.getElementById('drawer_checkout_btn').setAttribute('disabled', 'disabled');
     document.getElementById('drawer_checkout_btn').style.pointerEvents = 'none';
   }
