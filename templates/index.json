@@ -5,7 +5,6 @@
       "blocks": {
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/aarke-HP-1.jpg",
             "mobile_image": "shopify:\/\/shop_images\/aarke-HP-Mobile-1.jpg",
@@ -16,7 +15,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/sundari-silks-woven-wonder-banner-desktop.png",
-            "mobile_image": "shopify:\/\/shop_images\/Slide-2-mobile.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/aarke-HP-Mobile-1.jpg",
             "link": "shopify:\/\/collections\/all-kanchipuram"
           }
         },
@@ -24,7 +23,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/sundari-silks-woven-wonder-two-banner-desktop_2518x_progressive_png.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/Slide-1-mobile.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/aarke-HP-Mobile-1.jpg",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
         },
@@ -32,16 +31,8 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/MENS_KURTA-01.png",
-            "mobile_image": "shopify:\/\/shop_images\/Slide-2-mobile.jpg",
-            "link": "shopify:\/\/collections\/bandhani"
-          }
-        },
-        "4eb1bd1d-68c5-4d8e-b2ab-6d39049d3077": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/aarke-HP-1.jpg",
             "mobile_image": "shopify:\/\/shop_images\/aarke-HP-Mobile-1.jpg",
-            "link": "shopify:\/\/collections\/all"
+            "link": "shopify:\/\/collections\/bandhani"
           }
         }
       },
@@ -49,8 +40,7 @@
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b",
         "3fbd7fec-f97f-434e-9f56-1ddc4581978e",
         "46a12e3e-d35a-4136-8a28-c0579f4c7632",
-        "fecc7f60-c73d-45cf-a288-751c8ddfcdaa",
-        "4eb1bd1d-68c5-4d8e-b2ab-6d39049d3077"
+        "fecc7f60-c73d-45cf-a288-751c8ddfcdaa"
       ],
       "settings": {
         "layout": "full_bleed",
