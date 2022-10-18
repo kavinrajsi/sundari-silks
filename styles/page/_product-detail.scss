@@ -19,7 +19,9 @@
         max-width: 60%;
       }
       .product-images-thumbnails {
+        display: flex;
         @media (min-width: 768px) {
+          display: inline-block;
           margin-right: 24px;
         }
         li {
@@ -347,17 +349,17 @@ section.grid.head-room {
     cursor: pointer;
   }
 
-  .modal-body{
+  .modal-body {
     width: 100%;
   }
-  .modal-content{
+  .modal-content {
     display: flex;
-    .size-data{
-    padding-right: 8px;
-    border-right: 1px solid var(--border-color);
-    margin-right: 8px;
+    .size-data {
+      padding-right: 8px;
+      border-right: 1px solid var(--border-color);
+      margin-right: 8px;
     }
-    .size-data-image{
+    .size-data-image {
       padding-left: 8px;
     }
   }
@@ -386,18 +388,39 @@ table {
   tbody + tbody {
     border-top: 2px solid #dee2e6;
   }
-
 }
 
-.sizeChart{
-  display: flex; flex-direction: column;
-  .sizeChartLable{
-    ul{
-    display: flex; flex-direction: row;
-    li{
-
-    }
+.sizeChart {
+  display: flex;
+  flex-direction: column;
+  .sizeChartLable {
+    ul {
+      display: flex;
+      flex-direction: row;
+      li {
+      }
     }
   }
 }
 
+.shopify-payment-button__button--unbranded {
+  color: #1d5d31;
+  border: 1px solid #1d5d31;
+  background: transparent;
+
+  &:hover:not([disabled]),
+  &:hover {
+    color: var(--black);
+    border-color: var(--secondary-color);
+    background: var(--secondary-color);
+  }
+}
+
+.product-add-to-cart-button {
+  font-family: "Montserrat", sans-serif !important;
+  &:hover {
+    color: var(--black);
+    border-color: var(--secondary-color);
+    background: var(--secondary-color);
+  }
+}

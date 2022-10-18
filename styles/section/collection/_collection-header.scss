@@ -42,8 +42,9 @@
   margin-right: 4vw;
   margin-bottom: 28px;
   display: flex;
+  display: none;
   @media(min-width: 768px){
-  // display: none;
+  display: none;
   }
   .collection-filter {
     flex: 1 0 auto;
@@ -59,3 +60,6 @@
   }
 }
 
+.collection-page-action-active{
+  display: none;
+}
