@@ -2466,6 +2466,10 @@ table tbody + tbody {
   padding-left: 24px;
 }
 
+.product-form {
+  margin-bottom: 24px;
+}
+
 h1.title.title--primary {
   font-weight: 500;
   font-family: var(--font-playfair);

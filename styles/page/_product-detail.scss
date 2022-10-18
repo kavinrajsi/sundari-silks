@@ -1,4 +1,5 @@
 .page-product-detail {
+
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -456,4 +457,8 @@ table {
 
 .line-item__details{
   padding-left: 24px;
+}
+
+.product-form{
+  margin-bottom: 24px;
 }
