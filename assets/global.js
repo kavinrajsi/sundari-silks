@@ -51,11 +51,13 @@
 
   $(".menu-level-1-item").on("mouseenter", function () {
     console.log("enter");
+    $("body").addClass("header-menuActive");
     $(this).children(".second-menu").addClass("active");
     // $(this).children('.menu-level-2').addClass("active");
   });
   $(".menu-level-1-item").on("mouseleave", function () {
     console.log("leave");
+    $("body").removeClass("header-menuActive");
     $(this).children(".second-menu").removeClass("active");
     // $(this).children('.menu-level-2').removeClass("active");
   });

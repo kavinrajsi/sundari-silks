@@ -1,12 +1,13 @@
-
 .product-grid-list-three,
 .test--product-card--grid-three {
-  margin: 1px 4vw 0;
+  // width: calc(100% - 8px);
+  // padding: 1px 8px 0;
   overflow: hidden;
   display: grid;
   gap: 8px;
   grid-template-columns: repeat(2, 1fr);
   @media (min-width: 768px) {
+    padding: 1px 4vw 0;
     gap: 24px;
     grid-template-columns: repeat(3, calc(100% / 12 * 4 - 18px));
   }
@@ -15,12 +16,14 @@
 .product-grid-list-eight,
 .product-grid-list-four,
 .test--product-card--grid-four {
-  margin: 2px 4vw 0;
+  // width: calc(100% - 8px);
+  // padding: 1px 8px 0;
   overflow: hidden;
   display: grid;
   gap: 8px;
   grid-template-columns: repeat(2, 1fr);
   @media (min-width: 768px) {
+    padding: 1px 4vw 0;
     gap: 24px;
     grid-template-columns: repeat(4, calc(100% / 12 * 4 - 18px));
   }
@@ -29,7 +32,7 @@
   }
 }
 
-.product-grid-list-eight{
+.product-grid-list-eight {
   --carousel-padding: calc(24px * 2);
   overflow-x: auto;
 
@@ -55,14 +58,13 @@
   -ms-scroll-padding: 0 var(--carousel-padding);
   scroll-padding: 0 var(--carousel-padding);
 
-
   grid-template-columns: repeat(8, calc(100% / 12 * 3 - 18px));
 }
 
 .product {
   &__card {
-    .slick-dots{
-      li{
+    .slick-dots {
+      li {
         margin: 0;
       }
     }
@@ -145,16 +147,33 @@
 
   &__title {
     margin-top: 8px;
-    font-size: 16px;
-    line-height: 24px;
     letter-spacing: 1px;
     font-family: var(--font-playfair);
     color: var(--pure-black);
     font-feature-settings: "pnum" on, "lnum" on;
-
     text-overflow: ellipsis;
     overflow: hidden;
-    height: 28px;
+
+    width: 140px;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    margin: 0 5px 0 5px;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000;
+
+    height: 18px;
+    font-size: 14px;
+    line-height: normal;
+    @media (min-width: 768px) {
+      height: 28px;
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 
   &__price-list {
@@ -169,7 +188,7 @@
 
   &__variant {
     &--list {
-      margin-top: 8px;
+      // margin-top: 8px;
       color: var(--black);
       &-name:not(:last-child) {
         margin-right: 8px;
@@ -182,11 +201,22 @@
     &--price,
     &--sku,
     &--barcode {
-      margin-top: 8px;
+      // margin-top: 8px;
       color: var(--light-black);
       font-family: var(--font-montserrat);
     }
   }
+}
 
+body:not(.template-index) {
+  .header-nav-list-footer {
+    display: none;
+  }
+}
 
+.template-collection .collection-page-action-active + section {
+  margin: 0 4px;
+}
+.product__variant--price{
+  font-size: 13px;
 }

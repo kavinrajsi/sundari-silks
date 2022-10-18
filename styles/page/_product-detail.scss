@@ -446,6 +446,18 @@ table {
   resize: none;
   min-height: 60px;
   border-radius: 4px;
-  margin-top: 24px !important;
   margin-bottom: 24px !important;
+}
+
+.cart__details.card__block label{
+  font-size: 16px;
+}
+
+.line-item__details{
+  padding-left: 24px;
+}
+
+.header-nav-list-main .second-menu .menu-level-2{
+  overflow-y: scroll;
+  height: calc(100% - 111px);
 }

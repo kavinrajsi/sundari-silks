@@ -4,9 +4,10 @@
   margin-bottom: 28px;
   &-image {
     overflow: hidden;
-    margin-bottom: 28px;
+    margin-bottom: 12px;
     height: 142px;
     @media(min-width: 768px){
+      margin-bottom: 28px;
       height: 280px;
     }
     img {
@@ -27,9 +28,13 @@
     font-family: var(--font-montserrat);
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 150%;
     color: var(--pure-black);
+    @media(min-width: 768px){
+      font-size: 16px;
+      line-height: 150%;
+    }
   }
 }
 
@@ -62,4 +67,38 @@
 
 .collection-page-action-active{
   display: none;
+}
+
+.mobileFilter{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  background-color: var(--pure-white);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding: 18px;
+  width: calc(100%);
+  display: flex;
+  @media(min-width: 768px){
+    display: none;
+  }
+  div{
+    svg{
+
+    width: 20px;
+    min-width: 20px;
+    min-height: 20px;
+      display: inline-block;
+      margin-right: 4px;
+    }
+    font-size: 16px;
+    line-height: normal;
+    flex: 1 0 auto;
+    text-align: center;
+    &:first-child{
+      border-right: 1px solid var(--border-color);
+  }
+  }
 }

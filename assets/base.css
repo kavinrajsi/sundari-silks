@@ -2450,8 +2450,20 @@ table tbody + tbody {
   resize: none;
   min-height: 60px;
   border-radius: 4px;
-  margin-top: 24px !important;
   margin-bottom: 24px !important;
+}
+
+.cart__details.card__block label {
+  font-size: 16px;
+}
+
+.line-item__details {
+  padding-left: 24px;
+}
+
+.header-nav-list-main .second-menu .menu-level-2 {
+  overflow-y: scroll;
+  height: calc(100% - 111px);
 }
 
 h1.title.title--primary {
@@ -2907,11 +2919,12 @@ div.pswp__img--placeholder,
 }
 .collection-page-header-image {
   overflow: hidden;
-  margin-bottom: 28px;
+  margin-bottom: 12px;
   height: 142px;
 }
 @media (min-width: 768px) {
   .collection-page-header-image {
+    margin-bottom: 28px;
     height: 280px;
   }
 }
@@ -2934,9 +2947,15 @@ div.pswp__img--placeholder,
   font-family: var(--font-montserrat);
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 150%;
   color: var(--pure-black);
+}
+@media (min-width: 768px) {
+  .collection-page-header p {
+    font-size: 16px;
+    line-height: 150%;
+  }
 }
 
 .collection-page-action-list {
@@ -2972,9 +2991,43 @@ div.pswp__img--placeholder,
   display: none;
 }
 
+.mobileFilter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  background-color: var(--pure-white);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding: 18px;
+  width: 100%;
+  display: flex;
+}
+@media (min-width: 768px) {
+  .mobileFilter {
+    display: none;
+  }
+}
+.mobileFilter div {
+  font-size: 16px;
+  line-height: normal;
+  flex: 1 0 auto;
+  text-align: center;
+}
+.mobileFilter div svg {
+  width: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  display: inline-block;
+  margin-right: 4px;
+}
+.mobileFilter div:first-child {
+  border-right: 1px solid var(--border-color);
+}
+
 .product-grid-list-three,
 .test--product-card--grid-three {
-  margin: 1px 4vw 0;
   overflow: hidden;
   display: grid;
   gap: 8px;
@@ -2983,6 +3036,7 @@ div.pswp__img--placeholder,
 @media (min-width: 768px) {
   .product-grid-list-three,
 .test--product-card--grid-three {
+    padding: 1px 4vw 0;
     gap: 24px;
     grid-template-columns: repeat(3, calc(33.3333333333% - 18px));
   }
@@ -2991,7 +3045,6 @@ div.pswp__img--placeholder,
 .product-grid-list-eight,
 .product-grid-list-four,
 .test--product-card--grid-four {
-  margin: 2px 4vw 0;
   overflow: hidden;
   display: grid;
   gap: 8px;
@@ -3001,6 +3054,7 @@ div.pswp__img--placeholder,
   .product-grid-list-eight,
 .product-grid-list-four,
 .test--product-card--grid-four {
+    padding: 1px 4vw 0;
     gap: 24px;
     grid-template-columns: repeat(4, calc(33.3333333333% - 18px));
   }
@@ -3121,15 +3175,33 @@ div.pswp__img--placeholder,
 }
 .product__title {
   margin-top: 8px;
-  font-size: 16px;
-  line-height: 24px;
   letter-spacing: 1px;
   font-family: var(--font-playfair);
   color: var(--pure-black);
   font-feature-settings: "pnum" on, "lnum" on;
   text-overflow: ellipsis;
   overflow: hidden;
-  height: 28px;
+  width: 140px;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  margin: 0 5px 0 5px;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #000;
+  height: 18px;
+  font-size: 14px;
+  line-height: normal;
+}
+@media (min-width: 768px) {
+  .product__title {
+    height: 28px;
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 .product__price-list {
   color: var(--black);
@@ -3141,16 +3213,26 @@ div.pswp__img--placeholder,
   font-feature-settings: "pnum" on, "lnum" on;
 }
 .product__variant--list {
-  margin-top: 8px;
   color: var(--black);
 }
 .product__variant--list-name:not(:last-child) {
   margin-right: 8px;
 }
 .product__variant--vendor, .product__variant--title, .product__variant--weight, .product__variant--price, .product__variant--sku, .product__variant--barcode {
-  margin-top: 8px;
   color: var(--light-black);
   font-family: var(--font-montserrat);
+}
+
+body:not(.template-index) .header-nav-list-footer {
+  display: none;
+}
+
+.template-collection .collection-page-action-active + section {
+  margin: 0 4px;
+}
+
+.product__variant--price {
+  font-size: 13px;
 }
 
 .modal-open {
