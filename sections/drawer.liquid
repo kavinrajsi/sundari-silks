@@ -40,7 +40,7 @@
         document.getElementById('drawer_checkout_btn').setAttribute('disabled', 'disabled');
         document.getElementById('drawer_checkout_btn').style.pointerEvents = 'none';
       }
-      document.getElementById('cart__total_price').innerHTML = '<p><span class="money" data-currency-inr="'+data.currency+'.'+Shopify.formatMoney(data.total_price)+'">'+ data.currency +'.'+ Shopify.formatMoney(data.total_price) + '</span></p>';
+      document.getElementById('cart__total_price').innerHTML = '<p><span class="money" data-currency-inr="'+data.currency+'.'+Shopify.formatMoney(data.total_price)+'">'+ data.currency +'. '+ Shopify.formatMoney(data.total_price) + '</span></p>';
 
     });
 </script>
