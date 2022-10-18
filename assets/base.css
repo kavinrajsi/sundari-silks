@@ -3097,6 +3097,7 @@ div.pswp__img--placeholder,
 }
 
 .product__card {
+  overflow: hidden;
   margin: 1px;
   display: flex;
   flex-direction: column;
