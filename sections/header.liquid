@@ -234,7 +234,8 @@
       <ul id="cd-primary-nav" class="cd-primary-nav is-fixed nav-is-visible menu">
         {% for link in linklists.mobile-menu.links %}
         <li class="{% if link.links.size > 0 %} has-children {% else %} menu-link {% endif %}">
-          <a href="javascript:void(0);">{{ link.title }} {% render 'icon-chevron-right' %}</a>
+          <a href="{% if link.links.size > 0 %}javascript:void(0);{% else %}{{ link.url }}{% endif %}">{{ link.title }}
+            {% if link.links.size > 0 %} {% render 'icon-chevron-right' %}{% endif %}</a>
           {% if link.links.size > 0 %}
           <ul class="is-hidden cd-secondary-nav menu dropdown-child">
             {% for child_link in link.links %}
