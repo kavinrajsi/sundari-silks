@@ -3,17 +3,21 @@
   <div class="drawer__wrapper">
     <div class="drawer__header">
       <div class="drawer__title">
-        Continue Shopping
+        Cart
       </div>
       <button class="drawer__close" data-drawer-close aria-label="Close Drawer"></button>
     </div>
     <div class="drawer__content" id="cart__drawer">
       <ul id="cart__drawer_items">
       </ul>
-      <div style="margin-top: 50px">
-        <h4>Total: <span id="cart__total_price"></span></h4>
+      <div class="drawer__footer">
         <a id="cart__checkout_btn" href="/checkout" class="btn btn--has-icon-after cart__continue-btn"
-          style="width:100%;">Proceed Checkout</a>
+          style="width:100%;">
+          <span class="button-text">
+            Proceed Checkout &nbsp;&nbsp;
+          </span>
+          <span id="cart__total_price"></span>
+        </a>
       </div>
     </div>
   </div>
@@ -25,9 +29,10 @@
     .then((resp) => resp.json())
     .then((data) => {
       let daad = '';
+      let index = 1;
       if (data.items.length > 0) {
         data.items.forEach(function (product, index) {
-          daad += '<li><img src="' + product.featured_image.url + '" alt="' + product.featured_image.alt + '"><h5>' + product.title + '</h5><p>' + product.quantity + ' x ' + '</p><p><span>' + product.price + '</span></p><p><a href="/cart/change?line='+ index +'&amp;quantity=0">Remove Item</span></p></li>';
+          daad += '<li><div class="cart__item"><div class="card__item-image"><img src="' + product.featured_image.url + '" alt="' + product.featured_image.alt + '"></div><div class="card__item-content"><h5>' + product.title + '</h5><p class="productPrice">' + product.quantity + ' x ' + '<span class="money"  data-currency-inr="'+data.currency+'.'+Shopify.formatMoney(product.price)+'">' + Shopify.formatMoney(product.price) + '</span></p><p class="removeCta"><a href="/cart/change?line=' + index + '&amp;quantity=0"><svg width="16" height="16"> <use href="#trash-mini" /> </svg> Remove</a></p></div></div></li>';
         });
         document.getElementById('cart__drawer_items').innerHTML = daad;
       } else {
@@ -35,7 +40,7 @@
         document.getElementById('drawer_checkout_btn').setAttribute('disabled', 'disabled');
         document.getElementById('drawer_checkout_btn').style.pointerEvents = 'none';
       }
-      document.getElementById('cart__total_price').innerHTML = '<p><span>' + data.total_price + '</span></p>';
+      document.getElementById('cart__total_price').innerHTML = '<p><span class="money" data-currency-inr="'+data.currency+'.'+Shopify.formatMoney(data.total_price)+'">'+ data.currency +'.'+ Shopify.formatMoney(data.total_price) + '</span></p>';
 
     });
 </script>

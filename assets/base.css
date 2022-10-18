@@ -1467,6 +1467,11 @@ body {
 .template-index .homepage-section .large-12.columns .slick-dots {
   bottom: 10px;
 }
+@media (max-width: 768px) {
+  .template-index .homepage-section .large-12.columns .slick-dots li {
+    margin: 0;
+  }
+}
 .template-index .homepage-section .large-12.columns .slick-dots li button:before {
   width: 24px;
   height: 24px;
@@ -3765,7 +3770,7 @@ form.filter-form .active-filters {
 }
 
 .drawer__header {
-  padding: 1.5rem;
+  padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -3810,7 +3815,7 @@ form.filter-form .active-filters {
   overflow-y: auto;
   height: 100%;
   flex-grow: 1;
-  padding: 1.5rem;
+  padding: 16px;
 }
 
 .drawer.is-active {
@@ -3844,6 +3849,61 @@ form.filter-form .active-filters {
   user-select: none;
 }
 
+#cart__drawer_items .cart__item {
+  display: flex;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+#cart__drawer_items .cart__item h5 {
+  font-size: 14px;
+}
+#cart__drawer_items .cart__item .productPrice {
+  color: #282b30;
+  font-size: 11px;
+  margin: 8px 0px;
+}
+#cart__drawer_items .cart__item .removeCta {
+  color: #282b30;
+  font-size: 11px;
+}
+#cart__drawer_items .cart__item .card__item-image {
+  margin-right: 15px;
+  width: 60px;
+  min-width: 60px;
+  aspect-ratio: 1;
+}
+
+.drawer__footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 24px 8px;
+  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.1607843137);
+}
+
+.cart__continue-btn {
+  font-size: 11px;
+  padding: 14px 20px !important;
+  color: #000;
+  background-color: var(--secondary-color);
+  font-weight: 400;
+  font-style: normal;
+  transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  z-index: 1;
+  -webkit-tap-highlight-color: initial;
+  text-align: center;
+  line-height: normal;
+  border: 1px solid transparent;
+  border-radius: 0;
+  text-transform: uppercase;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* Shrink wrap strategy 1 */
 .product-images {
   position: relative;
