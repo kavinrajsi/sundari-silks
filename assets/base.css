@@ -1692,6 +1692,16 @@ body {
   overflow: scroll;
   grid-template-columns: repeat(6, 138px);
   justify-content: flex-start;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+}
+.template-index .homepage-section .home-page-silver-section .section-content nav::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.template-index .homepage-section .home-page-silver-section .section-content nav::-webkit-scrollbar-thumb {
+  border: 0px solid transparent;
+  border-radius: 12px;
 }
 @media (min-width: 768px) {
   .template-index .homepage-section .home-page-silver-section .section-content nav {
@@ -1749,15 +1759,28 @@ body {
 }
 .template-index .homepage-section .homepage-justdropped .tab-buttton {
   overflow-x: scroll;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   display: flex;
   text-align: center;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 12px;
   margin: 0 8px 8px;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+}
+.template-index .homepage-section .homepage-justdropped .tab-buttton::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.template-index .homepage-section .homepage-justdropped .tab-buttton::-webkit-scrollbar-thumb {
+  border: 0px solid transparent;
+  border-radius: 12px;
 }
 @media (min-width: 768px) {
   .template-index .homepage-section .homepage-justdropped .tab-buttton {
+    padding-bottom: 0;
     overflow: hidden;
     justify-content: center;
     margin: 0;
@@ -4145,4 +4168,8 @@ form.filter-form .active-filters {
 .shopify-policy__container sup {
   vertical-align: super;
   font-size: smaller;
+}
+
+.realated-product {
+  padding-bottom: 4vw;
 }

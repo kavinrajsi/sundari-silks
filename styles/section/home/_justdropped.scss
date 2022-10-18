@@ -18,13 +18,26 @@
   }
   .tab-buttton {
     overflow-x: scroll;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     display: flex;
     text-align: center;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 12px;
     margin: 0 8px 8px;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border: 0px solid transparent;
+      border-radius: 12px;
+    }
     @media (min-width: 768px) {
+      padding-bottom: 0;
       overflow: hidden;
       justify-content: center;
       margin: 0;
@@ -43,11 +56,11 @@
       padding: 4px 8px;
       flex: 1 0 auto;
 
-    @media (min-width: 768px) {
-      flex: initial;
-      padding: 4px 16px;
-    }
-    text-transform: capitalize;
+      @media (min-width: 768px) {
+        flex: initial;
+        padding: 4px 16px;
+      }
+      text-transform: capitalize;
       cursor: pointer;
       &.active {
         background-color: var(--primary-color);

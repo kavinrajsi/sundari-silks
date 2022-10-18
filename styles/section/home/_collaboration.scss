@@ -37,6 +37,16 @@
       overflow: scroll;
       grid-template-columns: repeat(6, 138px);
       justify-content: flex-start;
+      padding-bottom: 8px;
+      scrollbar-width: thin;
+      &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+      }
+      &::-webkit-scrollbar-thumb {
+        border: 0px solid transparent;
+        border-radius: 12px;
+      }
       @media (min-width: 768px) {
         justify-content: center;
         gap: 16px;

@@ -1,7 +1,7 @@
-<div class="container">
-  <section id="product_recommendation" class="row content-justify-center my-5">
-    <div class="text-center"><h1>You may also like this</h1></div>
-    <div id="product_recommendation_body" class="row">
+<div class="container realated-product">
+  <section id="product_recommendation" class="content-justify-center">
+    <h1 class="text-center page__title">Related Products</h1>
+    <div id="product_recommendation_body" class="test--product-card--grid-four">
 
     </div>
   </section>
@@ -19,16 +19,16 @@
       products.forEach(function(product, index) {
         var card;
 
-        card = '<div class="col-3 g-2">';
-        card += '<div class="card" style="width: 18rem;">';
+        card = '<div class="product__card">';
+        card += '<a href="' + product.url + '">';
 
         if(product.images.length > 0) {
           card += '<img class="card-img-top" src="' + product.images[0] + '">';
         }
 
-        card += '<div class="card-body">';
-        card += '<h3><a href="' + product.url + '">' + product.title + '</a></h3>';
-        card += '</div></div></div>';
+        card += '<div class="product__card--content">';
+        card += '<h3 class="product__title">' + product.title + '</h3>';
+        card += '</div></a></div>';
 
         productRecommendationBody.innerHTML += card;
       });
