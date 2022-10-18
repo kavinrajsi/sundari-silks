@@ -46,6 +46,7 @@
     }
     &-content {
       padding: 32px 4vw;
+      padding: 28px 0;
       @media (min-width: 768px) {
         flex: 1 0 40%;
         max-width: 40%;
@@ -424,9 +425,9 @@ table {
     background: var(--secondary-color);
   }
 }
-
-
-
+.shopify-payment-button__more-options{
+  display: none;
+}
 
 .page-cart-atbutton{
   font-family: "Montserrat", sans-serif !important;
@@ -455,9 +456,4 @@ table {
 
 .line-item__details{
   padding-left: 24px;
-}
-
-.header-nav-list-main .second-menu .menu-level-2{
-  overflow-y: scroll;
-  height: calc(100% - 111px);
 }

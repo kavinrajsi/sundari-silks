@@ -208,7 +208,7 @@
   }
 }
 
-body:not(.template-index) {
+body:not(.template-index):not(.template-product) {
   .header-nav-list-footer {
     display: none;
   }
@@ -219,4 +219,11 @@ body:not(.template-index) {
 }
 .product__variant--price{
   font-size: 13px;
+}
+
+body{
+  padding-bottom: 80px;
+  @media(min-width: 768px){
+    padding-bottom: 0;
+  }
 }
