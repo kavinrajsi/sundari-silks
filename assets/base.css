@@ -1831,44 +1831,30 @@ body {
   display: grid;
   margin-bottom: 28px;
   gap: 8px;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(5, 200px);
   margin-left: 4vw;
   margin-right: 4vw;
-}
-.template-index .homepage-section .blog-feed-container .blog-feed-card:nth-last-child(3),
-.template-index .homepage-section .blog-feed-container .blog-feed-card:nth-last-child(2),
-.template-index .homepage-section .blog-feed-container .blog-feed-card:nth-last-child(1) {
-  display: none;
-}
-@media (min-width: 576px) {
-  .template-index .homepage-section .blog-feed-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .template-index .homepage-section .blog-feed-container .blog-feed-card:nth-last-child(3) {
-    display: block;
-  }
+  overflow-x: scroll;
 }
 @media (min-width: 768px) {
   .template-index .homepage-section .blog-feed-container {
+    overflow: hidden;
     gap: 16px;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .template-index .homepage-section .blog-feed-container .blog-feed-card:nth-last-child(1),
+.template-index .homepage-section .blog-feed-container .blog-feed-card:nth-last-child(2) {
+    display: none;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1140px) {
   .template-index .homepage-section .blog-feed-container {
     gap: 24px;
     grid-template-columns: repeat(4, 1fr);
   }
-  .template-index .homepage-section .blog-feed-container .blog-feed-card:nth-last-child(3) {
+  .template-index .homepage-section .blog-feed-container .blog-feed-card:nth-last-child(2),
+.template-index .homepage-section .blog-feed-container .blog-feed-card:nth-last-child(3) {
     display: block;
-  }
-}
-@media (min-width: 1140px) {
-  .template-index .homepage-section .blog-feed-container .blog-feed-card:nth-last-child(2) {
-    display: block;
-  }
-  .template-index .homepage-section .blog-feed-container .blog-feed-card:nth-last-child(1) {
-    display: none;
   }
 }
 @media (min-width: 1920px) {
@@ -1910,11 +1896,12 @@ body {
   max-width: var(--content-width);
   margin: 0 4vw;
   display: grid;
-  gap: 24px;
+  gap: 8px;
   grid-template-columns: repeat(2, 1fr);
 }
 @media (min-width: 768px) {
   .template-index .homepage-section .instagram__post--wrapper {
+    gap: 24px;
     margin: 0 auto;
     grid-template-columns: repeat(4, 1fr);
   }
