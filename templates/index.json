@@ -398,6 +398,7 @@
       ],
       "settings": {
         "largeImage": "shopify:\/\/shop_images\/shopthelook-image.png",
+        "smallImage": "shopify:\/\/shop_images\/style-guide-mobile.png",
         "headingText": "Shop the Look",
         "paragraphText": "Find the perfect look for any occasion with our latest style guides"
       }
