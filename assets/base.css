@@ -1843,6 +1843,7 @@ body {
 }
 @media (min-width: 768px) {
   .template-index .homepage-section .blog-feed-container {
+    margin-bottom: 0;
     overflow: hidden;
     gap: 16px;
     grid-template-columns: repeat(3, 1fr);
