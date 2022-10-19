@@ -140,16 +140,6 @@
         "curated-description": "Styles for every occasion"
       }
     },
-    "spotlight": {
-      "type": "home-spotlight",
-      "settings": {
-        "spotlight-title": "Sundari Spotlight",
-        "spotlight-description": "Bringing you our best sellers",
-        "spotlight-collection": "all-kanchipuram",
-        "spotlight-url": "shopify:\/\/collections\/adidas",
-        "spotlight-count": 6
-      }
-    },
     "5c9a7975-a201-4b5e-9c9e-50ec765aeb8b": {
       "type": "lookbook",
       "blocks": {
@@ -213,9 +203,28 @@
         "paragraphText": "Find the perfect look for any occasion with our latest style guides"
       }
     },
+    "spotlight": {
+      "type": "home-spotlight",
+      "settings": {
+        "spotlight-title": "Sundari Spotlight",
+        "spotlight-description": "Bringing you our best sellers",
+        "spotlight-collection": "all-kanchipuram",
+        "spotlight-url": "shopify:\/\/collections\/adidas",
+        "spotlight-count": 6
+      }
+    },
     "infobox": {
       "type": "home-infoxbox",
       "settings": {
+      }
+    },
+    "dropped": {
+      "type": "home-just-dropped",
+      "settings": {
+        "just-dropped-title": "Just Dropped",
+        "just-dropped-description": "New arrivals you will love",
+        "just-dropped-count": 4,
+        "collection-list": "andhra-cotton | kanchipuram-half-fine-zari | readymades"
       }
     },
     "readymade": {
@@ -340,15 +349,6 @@
         "collaborate-border-color": "#dbae40"
       }
     },
-    "dropped": {
-      "type": "home-just-dropped",
-      "settings": {
-        "just-dropped-title": "Just Dropped",
-        "just-dropped-description": "New arrivals you will love",
-        "just-dropped-count": 4,
-        "collection-list": "andhra-cotton | kanchipuram-half-fine-zari | readymades"
-      }
-    },
     "vs": {
       "type": "home-virtualshopping",
       "settings": {
@@ -417,12 +417,12 @@
   "order": [
     "slideshow",
     "curated",
-    "spotlight",
     "5c9a7975-a201-4b5e-9c9e-50ec765aeb8b",
+    "spotlight",
     "infobox",
+    "dropped",
     "readymade",
     "collaborate",
-    "dropped",
     "vs",
     "recent-products",
     "blog",
