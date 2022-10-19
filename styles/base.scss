@@ -364,3 +364,12 @@
 .realated-product{
   padding-bottom: 4vw;
 }
+
+
+
+.template-index .homepage-section.home-page-readymade-section{
+  display: block !important;
+  @media (min-width: 768px) {
+    display: none !important;
+  }
+}
