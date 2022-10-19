@@ -4402,3 +4402,21 @@ form.filter-form .active-filters {
     display: none !important;
   }
 }
+
+.product__card--content {
+  position: relative;
+}
+
+h2.product__title {
+  position: unset;
+  text-align: left;
+}
+
+h2.product__title:after {
+  content: "...";
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #000;
+  background: #fef1e1;
+}
