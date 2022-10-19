@@ -4425,3 +4425,7 @@ h2.product__title:after {
   overflow-y: scroll;
   max-height: calc(100vh - 112px);
 }
+
+#productInfoAnchor {
+  display: none;
+}
