@@ -4529,9 +4529,10 @@ h2.product__title:after {
 }
 
 .information-boxs {
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
   display: grid;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   grid-template-columns: 1fr;
   border-top: 1px solid #92cddc;
