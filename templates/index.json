@@ -374,7 +374,9 @@
         "e4783bb5-2fe9-4b6c-bdbc-2a43e88a9449"
       ],
       "settings": {
-        "largeImage": "shopify:\/\/shop_images\/shopthelook-image.png"
+        "largeImage": "shopify:\/\/shop_images\/shopthelook-image.png",
+        "headingText": "Shop the Look",
+        "paragraphText": "Find the perfect look for any occasion with our latest style guides"
       }
     }
   },
