@@ -34,6 +34,12 @@
 }
 
 /* mobile */
+.home-page-readymade-section{
+  display: block;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
 .home-page-readymade-section {
   display: block;
   @media (min-width: 768px) {

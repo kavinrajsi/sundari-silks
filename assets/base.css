@@ -1651,6 +1651,14 @@ body {
     display: none;
   }
 }
+.template-index .homepage-section .home-page-readymade-section {
+  display: block;
+}
+@media (min-width: 768px) {
+  .template-index .homepage-section .home-page-readymade-section {
+    display: none;
+  }
+}
 .template-index .homepage-section .home-page-readymade-section .collection-readymade {
   display: grid;
 }
