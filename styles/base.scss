@@ -390,3 +390,7 @@ h2.product__title:after {
   background: #fef1e1;
 }
 
+.header-nav-list-main .second-menu .menu-level-2{
+  overflow-y: scroll;
+  max-height: calc(100vh - 116px);
+}
