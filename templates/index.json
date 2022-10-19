@@ -150,6 +150,69 @@
         "spotlight-count": 6
       }
     },
+    "5c9a7975-a201-4b5e-9c9e-50ec765aeb8b": {
+      "type": "lookbook",
+      "blocks": {
+        "3232c787-c4c4-4ba0-9f63-b5500afcd6dd": {
+          "type": "products",
+          "settings": {
+            "block_product": "patola-silk-saree-12",
+            "horizontal": 36,
+            "productURL": "shopify:\/\/products\/patola-silk-saree-12",
+            "vertical": 63
+          }
+        },
+        "95e4dc32-830e-4a3c-b477-2f3ad7eae31e": {
+          "type": "products",
+          "settings": {
+            "block_product": "patola-silk-saree-4",
+            "horizontal": 75,
+            "productURL": "shopify:\/\/products\/patola-silk-saree-4",
+            "vertical": 60
+          }
+        },
+        "e4783bb5-2fe9-4b6c-bdbc-2a43e88a9449": {
+          "type": "products",
+          "settings": {
+            "block_product": "allover-diagonal-pattern-multicolor-printed-silk-saree",
+            "horizontal": 20,
+            "productURL": "shopify:\/\/products\/allover-diagonal-pattern-multicolor-printed-silk-saree",
+            "vertical": 30
+          }
+        },
+        "81b42d1d-7a80-4102-b680-1fb093819fa0": {
+          "type": "products",
+          "settings": {
+            "block_product": "pavadai-sattai-material-14",
+            "horizontal": 54,
+            "productURL": "shopify:\/\/products\/pavadai-sattai-material-14",
+            "vertical": 42
+          }
+        },
+        "eb378a92-787d-4f41-a0aa-9eae3711dadb": {
+          "type": "products",
+          "settings": {
+            "block_product": "allover-diagonal-zari-design-baby-pink-kanchipuram-silk",
+            "horizontal": 58,
+            "productURL": "shopify:\/\/products\/allover-diagonal-zari-design-baby-pink-kanchipuram-silk",
+            "vertical": 83
+          }
+        }
+      },
+      "block_order": [
+        "3232c787-c4c4-4ba0-9f63-b5500afcd6dd",
+        "95e4dc32-830e-4a3c-b477-2f3ad7eae31e",
+        "e4783bb5-2fe9-4b6c-bdbc-2a43e88a9449",
+        "81b42d1d-7a80-4102-b680-1fb093819fa0",
+        "eb378a92-787d-4f41-a0aa-9eae3711dadb"
+      ],
+      "settings": {
+        "largeImage": "shopify:\/\/shop_images\/shopthelook-image.png",
+        "smallImage": "shopify:\/\/shop_images\/style-guide-mobile.png",
+        "headingText": "Shop the Look",
+        "paragraphText": "Find the perfect look for any occasion with our latest style guides"
+      }
+    },
     "readymade": {
       "type": "home-readymade",
       "blocks": {
@@ -339,81 +402,18 @@
         "instagram-title": "Follow us on Instagram",
         "instagram-description": "Use #SundariAndYou when you Instagram your favourite Sundari outfits"
       }
-    },
-    "5c9a7975-a201-4b5e-9c9e-50ec765aeb8b": {
-      "type": "lookbook",
-      "blocks": {
-        "3232c787-c4c4-4ba0-9f63-b5500afcd6dd": {
-          "type": "products",
-          "settings": {
-            "block_product": "patola-silk-saree-12",
-            "horizontal": 36,
-            "productURL": "shopify:\/\/products\/patola-silk-saree-12",
-            "vertical": 63
-          }
-        },
-        "95e4dc32-830e-4a3c-b477-2f3ad7eae31e": {
-          "type": "products",
-          "settings": {
-            "block_product": "patola-silk-saree-4",
-            "horizontal": 75,
-            "productURL": "shopify:\/\/products\/patola-silk-saree-4",
-            "vertical": 60
-          }
-        },
-        "e4783bb5-2fe9-4b6c-bdbc-2a43e88a9449": {
-          "type": "products",
-          "settings": {
-            "block_product": "allover-diagonal-pattern-multicolor-printed-silk-saree",
-            "horizontal": 20,
-            "productURL": "shopify:\/\/products\/allover-diagonal-pattern-multicolor-printed-silk-saree",
-            "vertical": 30
-          }
-        },
-        "81b42d1d-7a80-4102-b680-1fb093819fa0": {
-          "type": "products",
-          "settings": {
-            "block_product": "pavadai-sattai-material-14",
-            "horizontal": 54,
-            "productURL": "shopify:\/\/products\/pavadai-sattai-material-14",
-            "vertical": 42
-          }
-        },
-        "eb378a92-787d-4f41-a0aa-9eae3711dadb": {
-          "type": "products",
-          "settings": {
-            "block_product": "allover-diagonal-zari-design-baby-pink-kanchipuram-silk",
-            "horizontal": 58,
-            "productURL": "shopify:\/\/products\/allover-diagonal-zari-design-baby-pink-kanchipuram-silk",
-            "vertical": 83
-          }
-        }
-      },
-      "block_order": [
-        "3232c787-c4c4-4ba0-9f63-b5500afcd6dd",
-        "95e4dc32-830e-4a3c-b477-2f3ad7eae31e",
-        "e4783bb5-2fe9-4b6c-bdbc-2a43e88a9449",
-        "81b42d1d-7a80-4102-b680-1fb093819fa0",
-        "eb378a92-787d-4f41-a0aa-9eae3711dadb"
-      ],
-      "settings": {
-        "largeImage": "shopify:\/\/shop_images\/shopthelook-image.png",
-        "smallImage": "shopify:\/\/shop_images\/style-guide-mobile.png",
-        "headingText": "Shop the Look",
-        "paragraphText": "Find the perfect look for any occasion with our latest style guides"
-      }
     }
   },
   "order": [
     "slideshow",
     "curated",
     "spotlight",
+    "5c9a7975-a201-4b5e-9c9e-50ec765aeb8b",
     "readymade",
     "collaborate",
     "dropped",
     "recent-products",
     "blog",
-    "instagram",
-    "5c9a7975-a201-4b5e-9c9e-50ec765aeb8b"
+    "instagram"
   ]
 }
