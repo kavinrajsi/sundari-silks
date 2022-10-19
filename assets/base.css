@@ -4546,6 +4546,8 @@ h2.product__title:after {
   .information-boxs {
     grid-gap: 15px;
     grid-template-columns: repeat(3, 1fr);
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 .information-box {
