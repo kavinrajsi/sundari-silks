@@ -342,13 +342,13 @@
     },
     "5c9a7975-a201-4b5e-9c9e-50ec765aeb8b": {
       "type": "lookbook",
-      "disabled": true,
       "blocks": {
         "3232c787-c4c4-4ba0-9f63-b5500afcd6dd": {
           "type": "products",
           "settings": {
             "block_product": "patola-silk-saree-12",
             "horizontal": 36,
+            "productURL": "shopify:\/\/products\/patola-silk-saree-12",
             "vertical": 63
           }
         },
@@ -357,6 +357,7 @@
           "settings": {
             "block_product": "patola-silk-saree-4",
             "horizontal": 75,
+            "productURL": "shopify:\/\/products\/patola-silk-saree-4",
             "vertical": 60
           }
         },
@@ -365,6 +366,7 @@
           "settings": {
             "block_product": "allover-diagonal-pattern-multicolor-printed-silk-saree",
             "horizontal": 20,
+            "productURL": "shopify:\/\/products\/allover-diagonal-pattern-multicolor-printed-silk-saree",
             "vertical": 30
           }
         },
@@ -373,6 +375,7 @@
           "settings": {
             "block_product": "pavadai-sattai-material-14",
             "horizontal": 54,
+            "productURL": "shopify:\/\/products\/pavadai-sattai-material-14",
             "vertical": 42
           }
         },
@@ -381,6 +384,7 @@
           "settings": {
             "block_product": "allover-diagonal-zari-design-baby-pink-kanchipuram-silk",
             "horizontal": 58,
+            "productURL": "shopify:\/\/products\/allover-diagonal-zari-design-baby-pink-kanchipuram-silk",
             "vertical": 83
           }
         }
