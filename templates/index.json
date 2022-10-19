@@ -402,6 +402,9 @@
         "instagram-title": "Follow us on Instagram",
         "instagram-description": "Use #SundariAndYou when you Instagram your favourite Sundari outfits"
       }
+    },
+    "vs": {
+      "type": "virtualshopping"
     }
   },
   "order": [
@@ -414,6 +417,7 @@
     "dropped",
     "recent-products",
     "blog",
+    "vs",
     "instagram"
   ]
 }
