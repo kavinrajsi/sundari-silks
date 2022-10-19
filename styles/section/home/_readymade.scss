@@ -34,12 +34,6 @@
 }
 
 /* mobile */
-.home-page-readymade-section{
-  display: block;
-  @media (min-width: 768px) {
-    display: none;
-  }
-}
 .home-page-readymade-section {
   display: block;
   @media (min-width: 768px) {
@@ -51,5 +45,13 @@
   img {
     width: 100%;
     height: 100%;
+  }
+}
+
+
+.template-index .homepage-section.home-page-readymade-section{
+  display: block;
+  @media (min-width: 768px) {
+    display: none;
   }
 }
