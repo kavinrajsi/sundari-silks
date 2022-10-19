@@ -483,7 +483,7 @@ h2.product__title:after {
 }
 
 
-.sundarisilks .information-boxs {
+ .information-boxs {
   display: grid;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -495,12 +495,12 @@ h2.product__title:after {
   margin-bottom: 35px;
 }
 @media (min-width: 600px) {
-  .sundarisilks .information-boxs {
+   .information-boxs {
     grid-gap: 15px;
     grid-template-columns: repeat(3, 1fr);
   }
 }
-.sundarisilks .information-box {
+ .information-box {
   height: 100%;
   text-align: center;
   margin-bottom: 0px;
@@ -510,15 +510,15 @@ h2.product__title:after {
   padding-right: 10px;
 }
 @media (min-width: 600px) {
-  .sundarisilks .information-box {
+   .information-box {
     border-bottom: 0;
     border-right: 1px solid #b6dde7;
   }
 }
-.sundarisilks .information-box:last-child {
+ .information-box:last-child {
   border: 0;
 }
-.sundarisilks .information-box h6 {
+ .information-box h6 {
   font-family: "Playfair Display", serif;
   font-size: 21px;
   line-height: 24px;
@@ -527,7 +527,7 @@ h2.product__title:after {
   color: #880216;
   text-align: center;
 }
-.sundarisilks .information-box p {
+ .information-box p {
   font-family: "Montserrat", sans-serif;
   margin-bottom: 0px;
   font-size: 15px;
@@ -536,15 +536,15 @@ h2.product__title:after {
   color: #880216;
   text-align: center;
 }
-.sundarisilks .information-box p br {
+ .information-box p br {
   display: none;
 }
 @media (min-width: 992px) {
-  .sundarisilks .information-box p br {
+   .information-box p br {
     display: block;
   }
 }
-.sundarisilks .information-box p:hover a {
+ .information-box p:hover a {
   color: #6ebcd0;
   color: #880216;
 }
