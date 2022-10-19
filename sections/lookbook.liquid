@@ -1,4 +1,12 @@
 <section data-section-id="{{ section.id }}" class="mult-product-section">
+  <div class="section-header-wrapper">
+    <div class="section-header text-left">
+      <div class="section-header-title">{{ section.settings.headingText }}</div>
+      <div class="section-header-content">
+        <p>{{ section.settings.paragraphText }}</p>
+      </div>
+    </div>
+  </div>
   <div class="image-container">
     <div class="large-image-products">
       <img src="{{ section.settings.largeImage | img_url: '1000x' }}" alt="">
