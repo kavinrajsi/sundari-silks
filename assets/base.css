@@ -4601,3 +4601,8 @@ h2.product__title:after {
   color: #6ebcd0;
   color: #880216;
 }
+
+div#shopify-section-template--15962710442142__vs .homepage-section,
+section#shopify-section-template--15962710442142__collaborate .homepage-section {
+  padding-bottom: 0;
+}
