@@ -405,6 +405,9 @@
     },
     "vs": {
       "type": "home-virtualshopping"
+    },
+    "infobox": {
+      "type": "home-infobox"
     }
   },
   "order": [
@@ -418,6 +421,7 @@
     "recent-products",
     "blog",
     "vs",
+    "infobox",
     "instagram"
   ]
 }
