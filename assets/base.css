@@ -1916,6 +1916,7 @@ body {
 }
 .template-index .homepage-section .instagram__post--wrapper img {
   width: 100%;
+  border-radius: 4px;
 }
 
 h1.page__title {
