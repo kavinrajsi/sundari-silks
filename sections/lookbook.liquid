@@ -17,6 +17,15 @@
       </a>
       {% endfor %}
     </div>
+    <div class="small-image-products">
+      <img src="{{ section.settings.smallImage | img_url: '1000x' }}" alt="">
+      {%- for block in section.blocks -%}
+      <a href="{{ block.settings.productURL }}">
+      <div class="dot {% if forloop.first%}active{% endif %}" data-handle="{{block.settings.block_product}}"
+        style="top: {{block.settings.vertical}}%; left: {{block.settings.horizontal}}%;  "></div>
+      </a>
+      {% endfor %}
+    </div>
     <div id="product" class="product-container"></div>
   </div>
 </section>
