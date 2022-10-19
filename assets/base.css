@@ -4174,13 +4174,16 @@ form.filter-form .active-filters {
   text-align: center;
 }
 
+.small-image-products,
 .large-image-products {
   position: relative;
   width: 100%;
 }
+.small-image-products img,
 .large-image-products img {
   width: 100%;
 }
+.small-image-products .dot,
 .large-image-products .dot {
   position: absolute;
   width: 18px;
@@ -4188,6 +4191,7 @@ form.filter-form .active-filters {
   border-radius: 50%;
   background-color: var(--pure-white);
 }
+.small-image-products .dot.active,
 .large-image-products .dot.active {
   cursor: pointer;
   background-color: var(--secondary-color);
