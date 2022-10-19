@@ -213,6 +213,11 @@
         "paragraphText": "Find the perfect look for any occasion with our latest style guides"
       }
     },
+    "infobox": {
+      "type": "home-infoxbox",
+      "settings": {
+      }
+    },
     "readymade": {
       "type": "home-readymade",
       "blocks": {
@@ -344,6 +349,11 @@
         "collection-list": "andhra-cotton | kanchipuram-half-fine-zari | readymades"
       }
     },
+    "vs": {
+      "type": "home-virtualshopping",
+      "settings": {
+      }
+    },
     "recent-products": {
       "type": "product-recommendations",
       "disabled": true,
@@ -402,12 +412,6 @@
         "instagram-title": "Follow us on Instagram",
         "instagram-description": "Use #SundariAndYou when you Instagram your favourite Sundari outfits"
       }
-    },
-    "vs": {
-      "type": "home-virtualshopping"
-    },
-    "infobox": {
-      "type": "home-infoxbox"
     }
   },
   "order": [
@@ -415,13 +419,13 @@
     "curated",
     "spotlight",
     "5c9a7975-a201-4b5e-9c9e-50ec765aeb8b",
+    "infobox",
     "readymade",
     "collaborate",
     "dropped",
+    "vs",
     "recent-products",
     "blog",
-    "vs",
-    "infobox",
     "instagram"
   ]
 }
