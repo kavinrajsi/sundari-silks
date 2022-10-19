@@ -218,6 +218,69 @@
       "settings": {
       }
     },
+    "collaborate": {
+      "type": "home-collaborate",
+      "blocks": {
+        "fa5013d1-6109-4c81-b660-98dc29a81ca3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/necklaces.png",
+            "link": "shopify:\/\/collections\/arthirshtam"
+          }
+        },
+        "d6761f47-65a7-4751-a264-d641de9efe16": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/earring.png",
+            "link": "shopify:\/\/collections\/arthirshtam"
+          }
+        },
+        "1e37576d-42fe-4d66-82b1-6882c6871ee0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bangles.png",
+            "link": "shopify:\/\/collections\/arthirshtam"
+          }
+        },
+        "54899026-3d9a-4f11-9ab5-b580fea1ccfa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/rings.png",
+            "link": "shopify:\/\/collections\/arthirshtam"
+          }
+        },
+        "889bfcee-afdc-446a-86cc-1bbbe3960f1f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/kids.png",
+            "link": "shopify:\/\/collections\/arthirshtam"
+          }
+        },
+        "9068c96d-920d-469e-a7d3-606ae4828e4e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ankles.png",
+            "link": "shopify:\/\/collections\/arthirshtam"
+          }
+        }
+      },
+      "block_order": [
+        "fa5013d1-6109-4c81-b660-98dc29a81ca3",
+        "d6761f47-65a7-4751-a264-d641de9efe16",
+        "1e37576d-42fe-4d66-82b1-6882c6871ee0",
+        "54899026-3d9a-4f11-9ab5-b580fea1ccfa",
+        "889bfcee-afdc-446a-86cc-1bbbe3960f1f",
+        "9068c96d-920d-469e-a7d3-606ae4828e4e"
+      ],
+      "settings": {
+        "collaborate-title": "Athirshtam Jewellery",
+        "collaborate-description": "An eclectic silver jewellery collection embedded with cultural and contemporary nuances",
+        "collaborate-background": "shopify:\/\/shop_images\/collection-pattern-bg.png",
+        "collaborate-background-pattern": "shopify:\/\/shop_images\/collection-pattern.png",
+        "collaborate-background-edge": "shopify:\/\/shop_images\/collection-frame.png",
+        "collaborate-border-color": "#dbae40"
+      }
+    },
     "dropped": {
       "type": "home-just-dropped",
       "settings": {
@@ -284,69 +347,6 @@
       "settings": {
         "readymade-title": "Ready Made collection",
         "readymade-description": "Styles for every occasion"
-      }
-    },
-    "collaborate": {
-      "type": "home-collaborate",
-      "blocks": {
-        "fa5013d1-6109-4c81-b660-98dc29a81ca3": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/necklaces.png",
-            "link": "shopify:\/\/collections\/arthirshtam"
-          }
-        },
-        "d6761f47-65a7-4751-a264-d641de9efe16": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/earring.png",
-            "link": "shopify:\/\/collections\/arthirshtam"
-          }
-        },
-        "1e37576d-42fe-4d66-82b1-6882c6871ee0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/bangles.png",
-            "link": "shopify:\/\/collections\/arthirshtam"
-          }
-        },
-        "54899026-3d9a-4f11-9ab5-b580fea1ccfa": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/rings.png",
-            "link": "shopify:\/\/collections\/arthirshtam"
-          }
-        },
-        "889bfcee-afdc-446a-86cc-1bbbe3960f1f": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/kids.png",
-            "link": "shopify:\/\/collections\/arthirshtam"
-          }
-        },
-        "9068c96d-920d-469e-a7d3-606ae4828e4e": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/ankles.png",
-            "link": "shopify:\/\/collections\/arthirshtam"
-          }
-        }
-      },
-      "block_order": [
-        "fa5013d1-6109-4c81-b660-98dc29a81ca3",
-        "d6761f47-65a7-4751-a264-d641de9efe16",
-        "1e37576d-42fe-4d66-82b1-6882c6871ee0",
-        "54899026-3d9a-4f11-9ab5-b580fea1ccfa",
-        "889bfcee-afdc-446a-86cc-1bbbe3960f1f",
-        "9068c96d-920d-469e-a7d3-606ae4828e4e"
-      ],
-      "settings": {
-        "collaborate-title": "Athirshtam Jewellery",
-        "collaborate-description": "An eclectic silver jewellery collection embedded with cultural and contemporary nuances",
-        "collaborate-background": "shopify:\/\/shop_images\/collection-pattern-bg.png",
-        "collaborate-background-pattern": "shopify:\/\/shop_images\/collection-pattern.png",
-        "collaborate-background-edge": "shopify:\/\/shop_images\/collection-frame.png",
-        "collaborate-border-color": "#dbae40"
       }
     },
     "vs": {
@@ -420,9 +420,9 @@
     "5c9a7975-a201-4b5e-9c9e-50ec765aeb8b",
     "spotlight",
     "infobox",
+    "collaborate",
     "dropped",
     "readymade",
-    "collaborate",
     "vs",
     "recent-products",
     "blog",
