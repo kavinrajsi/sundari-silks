@@ -4197,6 +4197,24 @@ form.filter-form .active-filters {
   background-color: var(--secondary-color);
 }
 
+.small-image-products {
+  display: block;
+}
+@media (min-width: 768px) {
+  .small-image-products {
+    display: none;
+  }
+}
+
+.large-image-products {
+  display: none;
+}
+@media (min-width: 768px) {
+  .large-image-products {
+    display: block;
+  }
+}
+
 .d-none {
   display: none;
 }
