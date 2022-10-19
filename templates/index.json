@@ -347,24 +347,24 @@
           "type": "products",
           "settings": {
             "block_product": "patola-silk-saree-12",
-            "horizontal": 50,
-            "vertical": 50
+            "horizontal": 36,
+            "vertical": 63
           }
         },
         "95e4dc32-830e-4a3c-b477-2f3ad7eae31e": {
           "type": "products",
           "settings": {
             "block_product": "patola-silk-saree-4",
-            "horizontal": 80,
-            "vertical": 82
+            "horizontal": 75,
+            "vertical": 60
           }
         },
         "e4783bb5-2fe9-4b6c-bdbc-2a43e88a9449": {
           "type": "products",
           "settings": {
             "block_product": "allover-diagonal-pattern-multicolor-printed-silk-saree",
-            "horizontal": 29,
-            "vertical": 29
+            "horizontal": 20,
+            "vertical": 30
           }
         }
       },
