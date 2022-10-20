@@ -27,9 +27,71 @@
       },
       {
         "type": "font_picker",
-        "id": "header_text_font",
-        "label": "Font",
-        "default": "mono"
+        "id": "type_header_font",
+        "default": "assistant_n4",
+        "label": "Heading 1",
+        "info": "Header Font Info"
+      },
+      {
+        "type": "range",
+        "id": "heading_scale",
+        "min": 100,
+        "max": 150,
+        "step": 5,
+        "unit": "%",
+        "label": "Header Font Size",
+        "default": 100
+      },
+      {
+        "type": "font_picker",
+        "id": "type_header_font2",
+        "default": "assistant_n4",
+        "label": "Heading 2",
+        "info": "Header Font Info"
+      },
+      {
+        "type": "range",
+        "id": "heading_scale_font2",
+        "min": 100,
+        "max": 150,
+        "step": 5,
+        "unit": "%",
+        "label": "Header Font Size",
+        "default": 100
+      },
+      {
+        "type": "font_picker",
+        "id": "type_header_font3",
+        "default": "assistant_n4",
+        "label": "Heading 3",
+        "info": "Header Font Info"
+      },
+      {
+        "type": "range",
+        "id": "heading_scale_font3",
+        "min": 100,
+        "max": 150,
+        "step": 5,
+        "unit": "%",
+        "label": "Header Font Size",
+        "default": 100
+      },
+      {
+        "type": "font_picker",
+        "id": "type_header_font4",
+        "default": "assistant_n4",
+        "label": "Heading 2",
+        "info": "Header Font Info"
+      },
+      {
+        "type": "range",
+        "id": "heading_scale_font4",
+        "min": 100,
+        "max": 150,
+        "step": 5,
+        "unit": "%",
+        "label": "Header Font Size",
+        "default": 100
       },
       {
         "type": "header",
