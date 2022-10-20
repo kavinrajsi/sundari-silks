@@ -1515,13 +1515,6 @@ body {
   object-position: top;
 }
 @media (min-width: 768px) {
-  .template-index .homepage-section .home-page-curated-section .collection-saree .collection-item .collection-item-image {
-    aspect-ratio: auto;
-    object-fit: unset;
-    object-position: unset;
-  }
-}
-@media (min-width: 768px) {
   .template-index .homepage-section .home-page-curated-section .collection-saree .collection-item:last-child {
     display: none;
   }

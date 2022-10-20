@@ -40,9 +40,9 @@
           object-fit: cover;
           object-position: top;
           @media (min-width: 768px) {
-            aspect-ratio: auto;
-            object-fit: unset;
-            object-position: unset;
+            // aspect-ratio: auto;
+            // object-fit: unset;
+            // object-position: unset;
           }
         }
         @media (min-width: 768px) {
