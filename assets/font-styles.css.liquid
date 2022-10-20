@@ -22,14 +22,26 @@ body {
 }
 
 :root { font-size: #{--min_font}px; }
+
 // This part is a little bit ugly, I will explain what is going on in a blog post soon.
 @media (min-width: #{--min_width}px) and (max-width: #{--max_width}px){
   :root {
     font-size: calc( #{--min_font}px + (#{--max_font} - #{--min_font}) * ( (100vw - #{--min_width}px) / ( #{--max_width} - #{--min_width}) ));
   }
 }
+
 @media (min-width: #{--max_width}px){
    :root {
      font-size: #{--max_font}px;
    }
+   h1{
+    font-size: #{--max_font}px;
+   }
 }
+
+html {
+  font-size: calc(2vw + 10px);
+  padding: 1em;
+  line-height: 1.5;
+}
+
