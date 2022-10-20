@@ -1,6 +1,7 @@
 {
  "name" : "Sundari Silks",
- "start_url": "/?home=true",
+ "short_name" : "SS",
+ "start_url": "/",
  "icons": [],
  "theme_color": "#000",
  "background_color": "#fff",
