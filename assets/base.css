@@ -637,6 +637,7 @@ form svg {
 #shopify-chat iframe,
 iframe#dummy-chat-button-iframe {
   bottom: 70px !important;
+  display: none !important;
 }
 
 .prpdocutSlider .slick-dots {
@@ -816,13 +817,13 @@ body {
   margin-right: 0;
 }
 .header-action-lists .header-menu,
-.header-action-lists .header-cart,
+.header-action-lists .header-currency-price-list,
 .header-action-lists .header-account {
   display: none;
 }
 @media (min-width: 576px) {
   .header-action-lists .header-menu,
-.header-action-lists .header-cart,
+.header-action-lists .header-currency-price-list,
 .header-action-lists .header-account {
     display: block;
   }
@@ -1416,7 +1417,7 @@ body {
 }
 
 body {
-  font-family: "Playfair Display", serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 img {
@@ -1485,6 +1486,7 @@ img {
 }
 .template-index .virtual-store-details p strong,
 .template-index .section-header-title {
+  font-family: "Playfair Display", serif;
   font-size: 28px;
   line-height: normal;
   margin-bottom: 8px;
@@ -1678,8 +1680,19 @@ img {
   margin-right: 8px;
 }
 
-.header-nav-list-footer {
-  display: none;
+.header-nav-list-footer > div.header-price svg {
+  width: 24px;
+  height: 24px;
+}
+.header-nav-list-footer > div.header-price a {
+  position: static !important;
+  padding: 0;
+  margin: 0;
+}
+.header-nav-list-footer > div.header-price a select#currencies,
+.header-nav-list-footer > div.header-price a select#currencies1 {
+  padding: 0;
+  text-align: center;
 }
 
 h1.page__title {

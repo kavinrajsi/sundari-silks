@@ -234,7 +234,7 @@
 // }
 
 body {
-  font-family: "Playfair Display", serif;
+  font-family: "Montserrat", sans-serif;
 }
 img {
   border-radius: var(--border-radius);
@@ -283,6 +283,7 @@ img {
 
   .virtual-store-details p strong,
   .section-header-title {
+    font-family: "Playfair Display", serif;
     font-size: 28px;
     line-height: normal;
     margin-bottom: 8px;
@@ -496,5 +497,22 @@ img {
 }
 
 .header-nav-list-footer {
-  display: none;
+  // display: grid;
+  // grid-template-columns: repeat(4, 1fr);
+  > div.header-price {
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+    a {
+      position: static !important;
+      padding: 0;
+      margin: 0;
+      select#currencies,
+      select#currencies1 {
+        padding: 0;
+        text-align: center;
+      }
+    }
+  }
 }
