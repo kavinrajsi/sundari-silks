@@ -51,24 +51,56 @@
   assign home-description-size-min = settings.home_description_font_size_min
   assign home-description-size-max = settings.home_description_font_size_max
   %}
-
+{% comment %}
   {% style %}
   html{
   font-size: 16px;
   }
 
+  .virtual-store-details p strong,
   .template-index .homepage-section .section-header .section-header-title{
-  //font-size: clamp({{home-title-size-min}}rem, 4.2vw, {{home-title-size-max}}rem);
-  //line-height: normal;
+  font-size: clamp({{home-title-size-min}}rem, 4.2vw, {{home-title-size-max}}rem);
+  line-height: normal;
+  font-weight: 500;
+  padding-left: 14px;
+  padding-right: 14px;
   }
 
-  .template-index .homepage-section .section-header .section-header-content{
-  // font-size: clamp({{home-description-size-min}}px, 2.2vw, {{home-description-size-max}}px);
-  //line-height: normal;
+  .template-index .homepage-section .section-header{
+  margin-bottom: 0;
   }
+
+  .virtual-store-details p,
+  .template-index .homepage-section .section-header .section-header-content{
+  font-size: clamp({{home-description-size-min}}rem, 4.2vw, {{home-description-size-max}}rem);
+  text-align: center;
+  line-height: normal;
+  line-height: 24px;
+  padding-top: 0;
+  margin-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 8px;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-bottom: 14px;
+  }
+
+  @media(min-width: 768px){
+    .template-index .homepage-section .section-header .section-header-content{
+    padding-bottom: 28px;
+    }
+    }
 
   .template-index .homepage-section{
-  // padding-bottom: clamp(40px, 4.2vw, 80px);
+  padding-bottom: clamp(48px, 4.2vw, 96px);
+  }
+
+  .virtual-store-details{
+    padding: 28px 0;
+    margin: 0 auto;
   }
 
   .product__title{
@@ -76,6 +108,7 @@
   }
 
   {% endstyle %}
+  {% endcomment %}
 
   <script>
     window.mlvedaShopCurrency = "{{ shop.currency }}";
