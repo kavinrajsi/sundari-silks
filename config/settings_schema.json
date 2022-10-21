@@ -5,7 +5,7 @@
     "theme_version": "0.1.0",
     "theme_author": "Kavinraj",
     "theme_documentation_url": "https:\/\/sikavinraj.me\/contact\/",
-    "theme_support_url": "https:\/\/github.com\/kavinrajsi\/boomer"
+    "theme_support_email": "sikavinraj@gmail.com"
   },
   {
     "name": "Navigation Bar Colors Settings",
@@ -22,32 +22,26 @@
     "name": "Typography",
     "settings": [
       {
-        "type": "header",
-        "content": "Heading Font Styles"
-      },
-      {
         "type": "font_picker",
         "id": "type_header_font",
-        "default": "assistant_n4",
-        "label": "Heading 1",
-        "info": "Header Font Info"
+        "default": "playfair_display_n7",
+        "label": "Heading 1"
       },
       {
         "type": "range",
-        "id": "heading_scale",
+        "id": "heading_scale_font1",
         "min": 100,
         "max": 150,
         "step": 5,
         "unit": "%",
-        "label": "Header Font Size",
+        "label": "Header 1 Font Size",
         "default": 100
       },
       {
         "type": "font_picker",
         "id": "type_header_font2",
-        "default": "assistant_n4",
-        "label": "Heading 2",
-        "info": "Header Font Info"
+        "default": "playfair_display_n7",
+        "label": "Heading 2"
       },
       {
         "type": "range",
@@ -56,15 +50,14 @@
         "max": 150,
         "step": 5,
         "unit": "%",
-        "label": "Header Font Size",
+        "label": "Header 2 Font Size",
         "default": 100
       },
       {
         "type": "font_picker",
         "id": "type_header_font3",
-        "default": "assistant_n4",
-        "label": "Heading 3",
-        "info": "Header Font Info"
+        "default": "playfair_display_n7",
+        "label": "Heading 3"
       },
       {
         "type": "range",
@@ -73,15 +66,14 @@
         "max": 150,
         "step": 5,
         "unit": "%",
-        "label": "Header Font Size",
+        "label": "Header 3 Font Size",
         "default": 100
       },
       {
         "type": "font_picker",
         "id": "type_header_font4",
-        "default": "assistant_n4",
-        "label": "Heading 2",
-        "info": "Header Font Info"
+        "default": "playfair_display_n7",
+        "label": "Heading 4"
       },
       {
         "type": "range",
@@ -90,27 +82,53 @@
         "max": 150,
         "step": 5,
         "unit": "%",
-        "label": "Header Font Size",
+        "label": "Header 4 Font Size",
         "default": 100
-      },
-      {
-        "type": "header",
-        "content": "Body Font Styles"
       },
       {
         "type": "font_picker",
         "id": "body_text_font",
-        "label": "Font",
-        "default": "mono"
-      },
-      {
-        "type": "header",
-        "content": "Body Font Size"
+        "label": "Body Font",
+        "default": "montserrat_n4"
       },
       {
         "type": "range",
         "id": "body_font_size",
-        "label": "Font Size",
+        "label": "Body Font Size",
+        "default": 16,
+        "unit": "px",
+        "min": 13,
+        "max": 18,
+        "step": 1
+      },
+      {
+        "type": "header",
+        "content": "Home Page Font Size"
+      },
+      {
+        "type": "range",
+        "id": "home_title_font_size",
+        "label": "Home page section title size",
+        "default": 16,
+        "unit": "px",
+        "min": 13,
+        "max": 18,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "home_description_font_size",
+        "label": "Home page section description size",
+        "default": 16,
+        "unit": "px",
+        "min": 13,
+        "max": 18,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "home_button_font_size",
+        "label": "Home page section view all button size",
         "default": 16,
         "unit": "px",
         "min": 13,

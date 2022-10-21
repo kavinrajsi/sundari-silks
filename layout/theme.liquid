@@ -45,7 +45,11 @@
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
   {{ 'base.css' | asset_url | stylesheet_tag }}
 
-
+  <style>
+    html{
+      font-size: 16px;
+    }
+  </style>
   <script>
     window.mlvedaShopCurrency = "{{ shop.currency }}";
     window.shopCurrency = "{{ shop.currency }}";
