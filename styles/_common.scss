@@ -58,7 +58,6 @@ html {
   text-rendering: optimizeLegibility;
   width: 100%;
   height: 100%;
-
 }
 body {
   font-size: inherit;
@@ -72,9 +71,12 @@ body {
   text-rendering: optimizeLegibility;
   width: 100%;
   height: 100%;
-
+  padding-bottom: 80px;
+  @media (min-width: 768px) {
+    padding-bottom: 0;
+  }
 }
-.fullpage{
+.fullpage {
   min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -224,111 +226,112 @@ iframe#dummy-chat-button-iframe {
   bottom: 70px !important;
   display: none !important;
 }
-.prpdocutSlider .slick-dots {
-  top: 0;
-  bottom: initial;
-  right: 0;
-  width: auto;
-}
-.image {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-}
-.grid-view-item__image-wrapper .image {
-  position: absolute;
-  top: 0;
-}
-.image.lazyload {
-  opacity: 0;
-}
-.image-wrapper {
-  margin: 0 auto;
-  position: relative;
-  width: 100%;
-}
-.blur-up {
-  -webkit-filter: blur(5px);
-  filter: blur(5px);
-  transition: filter 400ms, -webkit-filter 400ms;
-}
-.blur-up.lazyloaded {
-  -webkit-filter: blur(0);
-  filter: blur(0);
-}
-/*
-    [{"type":"Shirts","value":[{"age":"1 yrs","value":[{"size":"14","shoulder":"9 1/2 ","sleeves":"11 1/2","chest":"20 1/2","height":"14 1/2"}]},{"age":"2 yrs","value":[{"size":"16","shoulder":"10 1/2 ","sleeves":"12 1/2","chest":"22","height":"17 1/2"}]},{"age":"3 yrs","value":[{"size":"18","shoulder":"11","sleeves":"13","chest":"25","height":"18 1/2"}]}]},{"type":"Pants","value":[{"age":"4 yrs","value":[{"size":"14","shoulder":"9 1/2 ","sleeves":"11 1/2","chest":"20 1/2","height":"14 1/2"}]},{"age":"5 yrs","value":[{"size":"16","shoulder":"10 1/2 ","sleeves":"12 1/2","chest":"22","height":"17 1/2"}]},{"age":"6 yrs","value":[{"size":"18","shoulder":"11","sleeves":"13","chest":"25","height":"18 1/2"}]}]}]
-*/
-.sizeChart {
-  display: flex;
-  .sizeChartLable {
-    display: flex;
-    ul {
-      li {
-        border: 1px solid var(--border-color);
-        span {
-          width: 80px;
-          display: block;
-          font-weight: 500;
-          padding: 4px;
-          border-bottom: 1px solid var(--border-color);
-          &:last-child {
-            border-bottom: 0;
-          }
-        }
-      }
-    }
-  }
-  .sizeChartValue {
-    ul {
-      display: flex;
-      li {
-        border: 1px solid var(--border-color);
-        span {
-          width: 80px;
-          display: block;
-          font-weight: 400;
-          padding: 4px;
-          border-bottom: 1px solid var(--border-color);
-          &:last-child {
-            border-bottom: 0;
-          }
-        }
-      }
-    }
-  }
-}
-.sizeChatTitle {
-  font-size: 24px;
-  line-height: 1.4;
-  font-weight: 500;
-  font-family: var(--font-playfair);
-  margin-bottom: 18px;
-}
-.cart-count {
-  position: absolute;
-  top: -10px;
-  right: 2px;
-  width: 20px;
-  height: 20px;
-  text-align: center;
-  line-height: 20px;
-  border-radius: 100%;
-  color: var(--pure-white);
-  background: #fdd933;
-  border: 1px solid #fdd933;
-  transition: all 0.3s ease-in-out;
-  font-family: var(--font-montserrat);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #000000;
-}
-a#cart-icon-bubble {
-  position: relative;
-}
+
+// .prpdocutSlider .slick-dots {
+//   top: 0;
+//   bottom: initial;
+//   right: 0;
+//   width: auto;
+// }
+// .image {
+//   display: block;
+//   margin: 0 auto;
+//   width: 100%;
+// }
+// .grid-view-item__image-wrapper .image {
+//   position: absolute;
+//   top: 0;
+// }
+// .image.lazyload {
+//   opacity: 0;
+// }
+// .image-wrapper {
+//   margin: 0 auto;
+//   position: relative;
+//   width: 100%;
+// }
+// .blur-up {
+//   -webkit-filter: blur(5px);
+//   filter: blur(5px);
+//   transition: filter 400ms, -webkit-filter 400ms;
+// }
+// .blur-up.lazyloaded {
+//   -webkit-filter: blur(0);
+//   filter: blur(0);
+// }
+// /*
+//     [{"type":"Shirts","value":[{"age":"1 yrs","value":[{"size":"14","shoulder":"9 1/2 ","sleeves":"11 1/2","chest":"20 1/2","height":"14 1/2"}]},{"age":"2 yrs","value":[{"size":"16","shoulder":"10 1/2 ","sleeves":"12 1/2","chest":"22","height":"17 1/2"}]},{"age":"3 yrs","value":[{"size":"18","shoulder":"11","sleeves":"13","chest":"25","height":"18 1/2"}]}]},{"type":"Pants","value":[{"age":"4 yrs","value":[{"size":"14","shoulder":"9 1/2 ","sleeves":"11 1/2","chest":"20 1/2","height":"14 1/2"}]},{"age":"5 yrs","value":[{"size":"16","shoulder":"10 1/2 ","sleeves":"12 1/2","chest":"22","height":"17 1/2"}]},{"age":"6 yrs","value":[{"size":"18","shoulder":"11","sleeves":"13","chest":"25","height":"18 1/2"}]}]}]
+// */
+// .sizeChart {
+//   display: flex;
+//   .sizeChartLable {
+//     display: flex;
+//     ul {
+//       li {
+//         border: 1px solid var(--border-color);
+//         span {
+//           width: 80px;
+//           display: block;
+//           font-weight: 500;
+//           padding: 4px;
+//           border-bottom: 1px solid var(--border-color);
+//           &:last-child {
+//             border-bottom: 0;
+//           }
+//         }
+//       }
+//     }
+//   }
+//   .sizeChartValue {
+//     ul {
+//       display: flex;
+//       li {
+//         border: 1px solid var(--border-color);
+//         span {
+//           width: 80px;
+//           display: block;
+//           font-weight: 400;
+//           padding: 4px;
+//           border-bottom: 1px solid var(--border-color);
+//           &:last-child {
+//             border-bottom: 0;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+// .sizeChatTitle {
+//   font-size: 24px;
+//   line-height: 1.4;
+//   font-weight: 500;
+//   font-family: var(--font-playfair);
+//   margin-bottom: 18px;
+// }
+// .cart-count {
+//   position: absolute;
+//   top: -10px;
+//   right: 2px;
+//   width: 20px;
+//   height: 20px;
+//   text-align: center;
+//   line-height: 20px;
+//   border-radius: 100%;
+//   color: var(--pure-white);
+//   background: #fdd933;
+//   border: 1px solid #fdd933;
+//   transition: all 0.3s ease-in-out;
+//   font-family: var(--font-montserrat);
+//   font-style: normal;
+//   font-weight: 400;
+//   font-size: 10px;
+//   line-height: 12px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   text-align: center;
+//   color: #000000;
+// }
+// a#cart-icon-bubble {
+//   position: relative;
+// }
