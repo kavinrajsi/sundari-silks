@@ -4473,7 +4473,7 @@ h2.product__title:after {
   border-radius: 4px;
   z-index: 2;
   max-width: 692px;
-  padding: 4vw;
+  padding: 44px 74px;
   align-items: center;
   margin: 0 auto;
 }
@@ -4505,11 +4505,11 @@ h2.product__title:after {
 }
 
 .virtual-store-details .button-wrapper a {
-  border: 1px solid #1d5d31;
+  border: 1px solid #1D5D31;
   box-sizing: border-box;
   border-radius: 4px;
   padding: 16px;
-  background: #1d5d31;
+  background: #1D5D31;
   color: #fff;
   /*margin-right: 16px;*/
 }
@@ -4546,44 +4546,21 @@ h2.product__title:after {
 .information-box {
   height: 100%;
   text-align: center;
-  padding: 10px 0;
-  margin: 0 10px;
-  position: relative;
-}
-.information-box:after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background-color: #92cddc;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  margin-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 @media (min-width: 600px) {
   .information-box {
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
     border-bottom: 0;
     border-right: 1px solid #b6dde7;
-  }
-  .information-box:after {
-    content: none;
   }
 }
 .information-box:last-child {
   border: 0;
-}
-.information-box:last-child:after {
-  content: none;
 }
 
 .information-box h6 {
@@ -4620,49 +4597,6 @@ h2.product__title:after {
   color: #880216;
 }
 
-.template-index #shopify-section-template--15962710442142__collaborate,
 .template-index #shopify-section-template--15962710442142__vs .homepage-section {
   padding-bottom: 0;
-}
-
-.virtual-store-details p {
-  text-align: center;
-  font-family: var(--font-montserrat);
-  font-style: normal;
-  font-weight: 400;
-  color: var(--pure-black);
-  margin-top: 8px;
-  margin-left: 18px;
-  margin-right: 18px;
-  font-size: 14px;
-  line-height: 18px;
-}
-.virtual-store-details p strong {
-  font-family: var(--font-playfair);
-  font-style: normal;
-  font-weight: 500;
-  color: #000000;
-  font-size: 24px;
-  line-height: 30px;
-}
-@media (min-width: 768px) {
-  .virtual-store-details p strong {
-    font-size: 28px;
-    line-height: 38px;
-  }
-}
-@media (min-width: 768px) {
-  .virtual-store-details p {
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 16px;
-    line-height: 20px;
-  }
-}
-
-.virtual-store-image img {
-  margin: 0 auto;
-  text-align: center;
-  display: block;
-  object-fit: cover;
 }
