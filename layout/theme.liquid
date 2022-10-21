@@ -35,7 +35,7 @@
   <script src="{{ 'ls.bgset.js' | asset_url }}" async="async"></script>
   <script src="{{ 'ls.blur-up.js' | asset_url }}" async="async"></script>
 
-  <script src="{{ 'jquery.js' | asset_url }}" async="async"></script>
+  <script src="{{ 'jquery.js' | asset_url }}"></script>
   <script src="{{ 'drawer.js' | asset_url }}" async="async"></script>
   <script src="{{ 'shopify-money.js' | asset_url }}" async="async"></script>
 
@@ -45,11 +45,38 @@
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
   {{ 'base.css' | asset_url | stylesheet_tag }}
 
-  <style>
-    html{
-      font-size: 16px;
-    }
-  </style>
+  {%- liquid
+  assign home-title-size-min = settings.home_title_font_size_min
+  assign home-title-size-max = settings.home_title_font_size_max
+  assign home-description-size-min = settings.home_description_font_size_min
+  assign home-description-size-max = settings.home_description_font_size_max
+  %}
+
+  {% style %}
+  html{
+  font-size: 16px;
+  }
+
+  .template-index .homepage-section .section-header .section-header-title{
+  //font-size: clamp({{home-title-size-min}}rem, 4.2vw, {{home-title-size-max}}rem);
+  //line-height: normal;
+  }
+
+  .template-index .homepage-section .section-header .section-header-content{
+  // font-size: clamp({{home-description-size-min}}px, 2.2vw, {{home-description-size-max}}px);
+  //line-height: normal;
+  }
+
+  .template-index .homepage-section{
+  // padding-bottom: clamp(40px, 4.2vw, 80px);
+  }
+
+  .product__title{
+
+  }
+
+  {% endstyle %}
+
   <script>
     window.mlvedaShopCurrency = "{{ shop.currency }}";
     window.shopCurrency = "{{ shop.currency }}";
@@ -204,31 +231,31 @@
       },
       "url": {{ request.origin | append: page.url | json }}
     }
-  </script>
+    </script>
     {% endif %}
 
     <script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "Organization",
-    "name": {{ shop.name | json }},
-    {% if section.settings.logo %}
-      "logo": {{ section.settings.logo | image_url: width: section.settings.logo.width | prepend: "https:" | json }},
-    {% endif %}
-    "sameAs": [
-      {{ settings.social_twitter_link | json }},
-      {{ settings.social_facebook_link | json }},
-      {{ settings.social_pinterest_link | json }},
-      {{ settings.social_instagram_link | json }},
-      {{ settings.social_tiktok_link | json }},
-      {{ settings.social_tumblr_link | json }},
-      {{ settings.social_snapchat_link | json }},
-      {{ settings.social_youtube_link | json }},
-      {{ settings.social_vimeo_link | json }}
-    ],
-    "url": {{ request.origin | append: page.url | json }}
-  }
-</script>
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": {{ shop.name | json }},
+        {% if section.settings.logo %}
+          "logo": {{ section.settings.logo | image_url: width: section.settings.logo.width | prepend: "https:" | json }},
+        {% endif %}
+        "sameAs": [
+          {{ settings.social_twitter_link | json }},
+          {{ settings.social_facebook_link | json }},
+          {{ settings.social_pinterest_link | json }},
+          {{ settings.social_instagram_link | json }},
+          {{ settings.social_tiktok_link | json }},
+          {{ settings.social_tumblr_link | json }},
+          {{ settings.social_snapchat_link | json }},
+          {{ settings.social_youtube_link | json }},
+          {{ settings.social_vimeo_link | json }}
+        ],
+        "url": {{ request.origin | append: page.url | json }}
+      }
+    </script>
 
     {% section 'announcement-bar' %}
     {% section 'header' %}
@@ -312,11 +339,6 @@
       console.log(mes);
       mes1.append(mes);
     });
-  </script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js');
-    }
   </script>
 </body>
 
