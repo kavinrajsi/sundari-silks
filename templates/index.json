@@ -350,11 +350,6 @@
         "readymade-description": "Styles for every occasion"
       }
     },
-    "vs": {
-      "type": "home-virtualshopping",
-      "settings": {
-      }
-    },
     "recent-products": {
       "type": "product-recommendations",
       "disabled": true,
@@ -369,6 +364,11 @@
         "richtext": "Stories of Fabrics, Styling Tips, Decor Inspiration and more…",
         "blog": "article",
         "blog_show_author": true
+      }
+    },
+    "vs": {
+      "type": "home-virtualshopping",
+      "settings": {
       }
     },
     "instagram": {
@@ -424,9 +424,9 @@
     "collaborate",
     "dropped",
     "readymade",
-    "vs",
     "recent-products",
     "blog",
+    "vs",
     "instagram"
   ]
 }
