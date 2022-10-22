@@ -36,7 +36,7 @@ img {
     border-radius: 0;
   }
 
-  .homepage-section:not(#shopify-section-template--15933089480862__instagram) {
+  .homepage-section {
     padding-bottom: 40px;
     @media (min-width: 768px) {
       padding-bottom: 80px;
@@ -189,15 +189,20 @@ img {
   }
 
   .home-page-silver-section {
-    border-top: 8px solid #dbae40;
-    padding-top: 48px;
-    padding-bottom: 48px;
     background-repeat: no-repeat;
     background-position: top center;
     background-color: rgba($color: #000000, $alpha: 0.4);
     background-image: url(https://cdn.shopify.com/s/files/1/0560/3695/0174/files/collection-pattern-bg.png?v=1665427144);
     background-repeat: repeat;
     position: relative;
+    border-top: 4px solid #dbae40;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    @media (min-width: 768px) {
+      border-top: 8px solid #dbae40;
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
     &::before,
     &::after {
       content: "";
@@ -223,9 +228,11 @@ img {
     .section-content {
       padding-right: 0;
       overflow-x: scroll;
+      padding-top:  12px;
       @media (min-width: 1120px) {
         padding-right: var(--gap);
         overflow: hidden;
+        padding-top: 24px;
       }
     }
     nav {
@@ -252,6 +259,20 @@ img {
 
   .homepage-justdropped {
     overflow-x: hidden;
+    .section-header-wrapper {
+      @media (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 16px;
+        .section-header {
+          margin-bottom: 0 !important;
+        }
+        .section-header-content {
+          margin-bottom: 0;
+        }
+      }
+    }
     .tab-buttton {
       overflow-x: scroll;
       display: inline-flex;
@@ -259,6 +280,9 @@ img {
       margin: 0 auto;
       padding-left: 16px;
       padding-right: 16px;
+      @media (min-width: 768px) {
+        margin: 0;
+      }
       .tab {
         flex: 1 0 auto;
         border: 1px solid var(--border-color);
@@ -296,15 +320,19 @@ img {
 
   .virtual-store-image {
     position: relative;
+    margin: 0 auto;
     .virtual-store-details-wrapper {
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
+
+      @media (min-width: 768px) {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
     }
   }
   .virtual-store-details {
@@ -345,11 +373,35 @@ img {
     }
     .blog-feed-container {
       display: grid;
-      gap: 8px;
+      gap: var(--gap);
       grid-template-columns: repeat(5, 224px);
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .blog-feed-card:nth-child(5) {
+        @media (min-width: 768px) {
+          display: none;
+        }
+      }
       .blog-feed-card-title {
+        font-family: var(--font-playfair);
+        font-size: 20px;
+        line-height: 1.5;
+        padding-top: 4px;
+        height: 38px;
+        overflow: hidden;
+        @media (min-width: 768px) {
+          padding-top: 8px;
+        }
       }
       .blog-feed-card-content {
+        font-family: var(--font-montserrat);
+        font-size: 14px;
+        line-height: 1.5;
+        @media (min-width: 768xp) {
+          font-size: 16px;
+        }
       }
       .blog-feed-card:last-child {
         padding-right: 8px;
@@ -361,12 +413,34 @@ img {
     .section-content {
       padding-right: 0;
       overflow-x: scroll;
+
+      @media (min-width: 768px) {
+        padding-right: var(--gap);
+        overflow-x: hidden;
+        max-width: 1140px;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
     .instagram__post--wrapper {
       display: grid;
-      gap: 8px;
-      grid-template-columns: repeat(4, 104px);
+      gap: var(--gap);
+      grid-template-columns: repeat(4, 208px);
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
       .instagram__post--image {
+        a {
+          display: block;
+        }
+        img {
+          @media (min-width: 768px) {
+            width: 100%;
+          }
+        }
+
         &:last-child img {
           margin-right: 8px;
         }
@@ -429,7 +503,9 @@ img {
   .product__title {
     font-size: 16px;
     line-height: 24px;
+    padding-top: 4px;
     @media (min-width: 768px) {
+      padding-top: 8px;
       font-size: 16px;
     }
     white-space: nowrap;
