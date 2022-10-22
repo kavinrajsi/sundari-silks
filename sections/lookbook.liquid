@@ -9,7 +9,7 @@
   </div>
   <div class="image-container">
     <div class="large-image-products">
-      <img src="{{ section.settings.largeImage | img_url: '1000x' }}" alt="">
+      <img src="{{ section.settings.largeImage | img_url: '1140x' }}" alt="">
       {%- for block in section.blocks -%}
       <a href="{{ block.settings.productURL }}">
       <div class="dot {% if forloop.first%}active{% endif %}" data-handle="{{block.settings.block_product}}"

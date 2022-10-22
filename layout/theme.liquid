@@ -11,6 +11,10 @@
   <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
   {% endif %}
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap" rel="stylesheet">
+
   <title>
     {{ page_title }}
     {% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}
