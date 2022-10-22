@@ -227,7 +227,7 @@ img {
     .section-content {
       padding-right: 0;
       overflow-x: scroll;
-      padding-top:  12px;
+      padding-top: 12px;
       @media (min-width: 1120px) {
         padding-right: var(--gap);
         overflow: hidden;
@@ -392,6 +392,11 @@ img {
         overflow: hidden;
         @media (min-width: 768px) {
           padding-top: 8px;
+          display: inline-block;
+          white-space: nowrap;
+          overflow: hidden !important;
+          text-overflow: ellipsis;
+          width: 261px;
         }
       }
       .blog-feed-card-content {
