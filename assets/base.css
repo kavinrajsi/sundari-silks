@@ -1364,10 +1364,10 @@ img {
 }
 @media (min-width: 768px) {
   .template-index .homepage-section {
-    padding-bottom: 80px;
+    padding-bottom: 58px;
   }
 }
-@media (min-width: 1281px) {
+@media (min-width: 1280px) {
   .template-index .homepage-section {
     max-width: 1140px;
     margin: 0 auto;
@@ -1425,7 +1425,7 @@ img {
   .template-index .virtual-store-details p,
 .template-index .section-header-content {
     font-size: 18px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
 }
 .template-index .collection-saree {

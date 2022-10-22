@@ -39,9 +39,9 @@ img {
   .homepage-section {
     padding-bottom: 40px;
     @media (min-width: 768px) {
-      padding-bottom: 80px;
+      padding-bottom: 58px;
     }
-    @media (min-width: 1281px) {
+    @media (min-width: 1280px) {
       max-width: 1140px;
       margin: 0 auto;
     }
@@ -83,7 +83,6 @@ img {
     margin-bottom: 0;
     @media (min-width: 768px) {
       font-size: 30px;
-      // margin-bottom: 0.5rem;
     }
   }
 
@@ -96,7 +95,7 @@ img {
     line-height: 22px;
     @media (min-width: 768px) {
       font-size: 18px;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
   }
 
