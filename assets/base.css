@@ -1897,13 +1897,13 @@ img {
   section#shopify-section-template--15913952542878__blog,
 section#shopify-section-template--15913952542878__instagram {
     background: url(https://cdn.shopify.com/s/files/1/0560/3695/0174/files/collection-pattern-bg.png?v=1665427144) no-repeat top center;
-    padding-bottom: 58px;
+    padding-top: 58px;
   }
 }
 @media (max-width: 768px) {
   section#shopify-section-template--15913952542878__blog,
 section#shopify-section-template--15913952542878__instagram {
-    padding-bottom: 40px;
+    padding-top: 40px;
   }
 }
 h1.page__title {
