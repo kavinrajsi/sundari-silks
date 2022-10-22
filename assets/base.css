@@ -1850,8 +1850,13 @@ img {
   }
 }
 .product__card .product__variant--price {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 24px;
+}
+@media (min-width: 768px) {
+  .product__card .product__variant--price {
+    font-size: 14px;
+  }
 }
 
 .header-nav-list-footer > div span {

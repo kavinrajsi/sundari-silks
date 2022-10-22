@@ -517,7 +517,10 @@ img {
     text-overflow: ellipsis;
   }
   .product__variant--price {
-    font-size: 14px;
+    font-size: 13px;
+    @media (min-width: 768px) {
+      font-size: 14px;
+    }
     line-height: 24px;
   }
 }
