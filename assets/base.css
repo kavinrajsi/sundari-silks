@@ -1367,7 +1367,7 @@ img {
     padding-bottom: 80px;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1281px) {
   .template-index .homepage-section {
     max-width: 1140px;
     margin: 0 auto;
