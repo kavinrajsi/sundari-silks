@@ -29,6 +29,7 @@
         },
         "fecc7f60-c73d-45cf-a288-751c8ddfcdaa": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/MENS_KURTA-01.png",
             "mobile_image": "shopify:\/\/shop_images\/aarke-HP-Mobile-1.jpg",
