@@ -5,21 +5,21 @@
     {% for collection in collections %}
     <li class="collection-list__item grid__item">
       <div class="card">
-        <div class="card__image">
-          <a href="{{ collection.url }}">
-            {% if collection.metafields.custom.collection_secondary_image.value != blank %}
-            {{ collection.metafields.custom.collection_secondary_image.value | image_url: width: 500, height: 500,
-            crop: 'top' | image_tag: alt: collection.title }}
-            {% else %}
-            {{ 'lifestyle-1' | placeholder_svg_tag: 'custom-class' }}
-            {% endif %}
-          </a>
-        </div>
-        <div class="card__content">
-          <h3 class="card__heading">
-            {{collection.title}}
-          </h3>
-        </div>
+        <a href="{{ collection.url }}">
+          <div class="card_image">
+              {% if collection.metafields.custom.collection_secondary_image.value != blank %}
+              {{ collection.metafields.custom.collection_secondary_image.value | image_url: height: "x450",
+              crop: 'top' | image_tag: alt: collection.title }}
+              {% else %}
+              <img src="https://cdn.shopify.com/s/files/1/0560/3695/0174/files/collection-image_x450.png?v=1666460450" alt="">
+              {% endif %}
+          </div>
+          <div class="card__content">
+              <h3 class="card__heading">
+                  {{collection.title}}
+              </h3>
+          </div>
+      </a>
       </div>
     </li>
     {% endfor %}
