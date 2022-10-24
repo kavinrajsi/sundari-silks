@@ -61,7 +61,7 @@
                                                     {%- endif -%}
                                                     {%- assign property_size = item.properties | size -%}
                                                     {%- if property_size > 0 -%}
-<span  data-hulkapps-line-properties data-hulkapps-line-properties>
+<span  data-hulkapps-line-properties  data-hulkapps-line-properties  data-hulkapps-line-properties data-hulkapps-line-properties>
                                                         {%- for p in item.properties -%}
                                                           {%- unless p.last == blank -%}
                                                             {%- if p.last contains '/uploads/' -%}
@@ -85,6 +85,8 @@
                                                         {%- endfor -%}
 </span>
 <button type='button' style='display: none;' class='edit_cart_option btn btn--primary button' data-product_id='{{item.product_id}}' data-key='{{item.key}}' data-variant_id='{{item.variant_id}}' data-quantity='{{item.quantity}}'>Edit Options</button>
+
+
 
                                                     {%- endif -%}
                                                 </div>

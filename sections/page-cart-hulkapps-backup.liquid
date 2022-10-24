@@ -25,15 +25,14 @@
 
       <div class="cart__total">
         <strong class="cart__total-text">Total:</strong>
-        <span class="cart__total-price"> {{ cart.total_price | money }}</span>
+        <span  data-hulkapps-cart-total class="cart__total-price"> {{ cart.total_price | money }}</span>
       </div>
       <p>Shipping charges will be added at checkout.
       </p>
-      I would like to receive order information on whatsapp
-      <hr>
+      <!-- I would like to receive order information on whatsapp -->
       <div>
       {%- comment -%} <button class="button" type="submit"> Update Quantities </button> {%- endcomment -%}
-      <button class="button" type="submit" name="checkout"> Checkout </button>
+      <button class="button page-cart-atbutton" type="submit" name="checkout"> Checkout </button>
     </div>
     </div>
   </form>
@@ -46,4 +45,3 @@
   </div>
   {%- endif -%}
 </div>
-
