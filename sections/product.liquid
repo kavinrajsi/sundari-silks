@@ -57,97 +57,137 @@
       Our artisanal silver jewellery collection is currently available for shipment within INDIA.
     </p>
 
-   <!-- TODO: Begin -- Need to add link this for size chart -->
-   <div hidden>
-    {% assign text = product | json %}
-    {% assign objArr = text | split: ',' %}
-    {% assign keyArr = ''%}
-    {% assign valArr = ''%}
+    <!-- TODO: Begin -- Need to add link this for size chart -->
+    <div hidden>
+      {% assign text = product | json %}
+      {% assign objArr = text | split: ',' %}
+      {% assign keyArr = ''%}
+      {% assign valArr = ''%}
 
-    {% for obj in objArr %}
-    {% assign key = obj | split: ':' | first %}
-    {% assign value = obj | split: ':' | last %}
-    {% assign keyArr = keyArr| append: ',' | append: key %}
-    {% assign valArr = valArr| append: ',' | append: value %}
-    {% endfor %}
+      {% for obj in objArr %}
+      {% assign key = obj | split: ':' | first %}
+      {% assign value = obj | split: ':' | last %}
+      {% assign keyArr = keyArr| append: ',' | append: key %}
+      {% assign valArr = valArr| append: ',' | append: value %}
+      {% endfor %}
 
-    {% assign keyArr = keyArr | remove_first: ',' | remove: '{'  | remove: '"' | split: ',' %}
-    {% assign valArr = valArr | remove_first: ',' | remove: '}'  | remove: '"' | split: ',' %}
+      {% assign keyArr = keyArr | remove_first: ',' | remove: '{' | remove: '"' | split: ',' %}
+      {% assign valArr = valArr | remove_first: ',' | remove: '}' | remove: '"' | split: ',' %}
 
-    {% for obj in objArr %}
-    {{keyArr[forloop.index0]}} :{{valArr[forloop.index0]}}
-    <br />
-    {% endfor %}
+      {% for obj in objArr %}
+      {{keyArr[forloop.index0]}} :{{valArr[forloop.index0]}}
+      <br />
+      {% endfor %}
 
 
-  {{ product.variants | json }}
-  </div>
+      {{ product.variants | json }}
+    </div>
 
-   <!-- TODO: END --  Need to add link this for size chart -->
+    <!-- TODO: END --  Need to add link this for size chart -->
 
 
     <!--product form-->
     {% form 'product', product, class:"product-form", id:"AddToCartForm" %}
     <p>{{ current_product.price | money_with_currency }}</p>
 
- <select name="id">
-  {%- for variant in product.variants -%}
-    <option selected="selected" value="{{ variant.id }}"> {{ variant.title }}</option>
-  {%- endfor -%}
-</select>
+    <select name="id">
+      {%- for variant in product.variants -%}
+      <option selected="selected" value="{{ variant.id }}"> {{ variant.title }}</option>
+      {%- endfor -%}
+    </select>
 
-{%- unless product.has_only_default_variant -%}
-  {%- for option in product.options_with_values -%}
-
-
-      <fieldset id="ProductSelect-option-{{ forloop.index0 }}" name="id">
-        <legend>
-          {{ option.name | escape }}
-        </legend>
-        {%- for value in option.values -%}
-          <!-- Check to see if there's a product size option. If there is a size, check to see if there's any availble for purchase. If not, set the variat control in a "disabled" state. -->
-          {%- assign variant_label_state = true -%}
-
-          {%- if product.options.size == 1 -%}
-            {%- unless product.variants[forloop.index0].available -%}
-              {%- assign variant_label_state = false -%}
-            {%- endunless -%}
-          {%- endif -%}
-
-          <input type="radio"
-            {% if option.selected_value == value %} checked="checked"{% endif %}
-            {% unless variant_label_state %} disabled="disabled"{% endunless %}
-            value="{{ value | escape }}"
-            data-index="option{{ forloop.index }}"
-            name="{{ option.name | handleize }}"
-            id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
-          <label for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
-            {{ value | escape }}
-          </label>
-        {%- endfor -%}
-      </fieldset>
+    {%- unless product.has_only_default_variant -%}
+    {%- for option in product.options_with_values -%}
 
 
-  {%- endfor -%}
-{%- endunless -%}
+    <fieldset id="ProductSelect-option-{{ forloop.index0 }}" name="id">
+      <legend>
+        {{ option.name | escape }}
+      </legend>
+      {%- for value in option.values -%}
+      <!-- Check to see if there's a product size option. If there is a size, check to see if there's any availble for purchase. If not, set the variat control in a "disabled" state. -->
+      {%- assign variant_label_state = true -%}
 
-<div class="mb-3" hidden >
-  <label for="Quantity" class="form-label">Quantity</label>
-  <input type="number" class="form-control" name="quantity" id="Quantity" value="1" max="1">
-</div>
+      {%- if product.options.size == 1 -%}
+      {%- unless product.variants[forloop.index0].available -%}
+      {%- assign variant_label_state = false -%}
+      {%- endunless -%}
+      {%- endif -%}
+
+      <input type="radio" {% if option.selected_value==value %} checked="checked" {% endif %} {% unless
+        variant_label_state %} disabled="disabled" {% endunless %} value="{{ value | escape }}"
+        data-index="option{{ forloop.index }}" name="{{ option.name | handleize }}"
+        id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
+      <label for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
+        {{ value | escape }}
+      </label>
+      {%- endfor -%}
+    </fieldset>
 
 
-<button type="submit" name="add" id="AddToCard" class="product-add-to-cart-button" {% unless product.available %} disabled="disabled"{% endunless %}>
-  {%- if product.available -%}
-    Add to Cart
-  {%- else -%}
-    Sold Out
-  {%- endif -%}
-</button>
+    {%- endfor -%}
+    {%- endunless -%}
 
-{{ form | payment_button }}
+    <div class="mb-3" hidden>
+      <label for="Quantity" class="form-label">Quantity</label>
+      <input type="number" class="form-control" name="quantity" id="Quantity" value="1" max="1">
+    </div>
 
-{% endform %}
+<!-- check the data -->
+    {% assign with_blouse = true %}
+    {% for tag in product.tags %}
+    {% if tag == "With Blouse" %}
+    {% assign with_blouse = false %}
+    {% break %}
+    {% endif %}
+    {% endfor %}
+<!-- if data true -->
+    {% if with_blouse %}
+    <div class="blouse-stitching hide" id="hulkapps_custom_options_{{ product.id }}"> </div>
+    {% else %}
+    <div class="blouse-stitching" id="hulkapps_custom_options_{{ product.id }}"> </div>
+    {% endif %}
+
+    {% if product.type == "Sarees" %}
+    <div class="note measurement-select" style="padding: 5px;margin-bottom: 10px;font-size: 14px;">
+      To revise your blouse measurements, please go back to “Add measurements” and make the changes.
+    </div>
+    {% endif %}
+
+
+    <div id="login-link" class="hide" style="padding: 0 5px;margin-bottom: 10px;font-size: 14px;">Please <a
+        style="color: #880216;" href="/account/login?checkout_url={{shop.url}}{{product.url}}"
+        id="addMeasurementLinkLogin">Login</a> to add measurement. Kindly provide measurement details for blouse
+      stitching before adding this product to the cart.</div>
+    <div id="add-measurement-link" class="hide" style="padding: 0 5px;margin-bottom: 10px;font-size: 14px;">Please add
+      measurement <a
+        style="color: #fff !important; display: inline-block; padding: 2px 4px; background-color: #880216; border-radius: 5px;"
+        href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}" id="addMeasurementLink">Add</a></div>
+    <div class="measurement-select hide" style="padding: 0 5px; margin-bottom: 10px;">
+      <label id="select-measurement-title" for="select-measurement">Select Measurement:</label>
+      <select id="select-measurement" style="width:100%">
+        <option value="">Select</option>
+      </select>
+      <!-- <div id="add-measurement-link-select" style="padding: 0 5px;margin-bottom: 10px;font-size: 14px;">
+<a style="color: #880216;" href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}"><strong>Add new measurement</strong>
+</a>
+</div> -->
+    </div>
+    <p id="measurement-data" class="line-item-property__field hide">
+    </p>
+
+    <button type="submit" name="add" id="AddToCard" class="product-add-to-cart-button" {% unless product.available %}
+      disabled="disabled" {% endunless %}>
+      {%- if product.available -%}
+      Add to Cart
+      {%- else -%}
+      Sold Out
+      {%- endif -%}
+    </button>
+
+    {{ form | payment_button }}
+
+    {% endform %}
 
 
 
