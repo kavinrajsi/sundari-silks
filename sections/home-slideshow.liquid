@@ -4,7 +4,7 @@
     {% for block in section.blocks %}
     {% if block.settings.image %}
     <div class="item">
-      {{ block.settings.image | image_url :  width: 1920, height: 600 | image_tag : alt: block.settings.image.alt, class: 'desktopBanner' }}
+      {{ block.settings.image | image_url :  width: 2560, height: 800 | image_tag : alt: block.settings.image.alt, class: 'desktopBanner' }}
       {{ block.settings.mobile_image | image_url : height: "338x", crop: "top" | image_tag : alt: block.settings.mobile_image.alt, class: 'mobileBanner'}}
     </div>
     {% else %}

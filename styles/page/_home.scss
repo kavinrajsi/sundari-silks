@@ -43,7 +43,11 @@ img {
     }
     @media (min-width: 1280px) {
       // max-width: 1140px;
-      margin: 0 var(--gap);
+      // margin: 0 var(--gap);
+    }
+
+    .slick-slide{
+      height: 70vh;
     }
 
   }
