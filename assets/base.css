@@ -1371,6 +1371,12 @@ img {
     padding-bottom: 58px;
   }
 }
+@media (min-width: 1280px) {
+  .template-index .homepage-section {
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+}
 .template-index .section-header:not(#shopify-section-header, #shopify-section-footer),
 .template-index .section-content,
 .template-index .homepage-justdropped-content,
