@@ -42,9 +42,10 @@ img {
       padding-bottom: 58px;
     }
     @media (min-width: 1280px) {
-      max-width: 1140px;
-      margin: 0 auto;
+      // max-width: 1140px;
+      margin: 0 var(--gap);
     }
+
   }
 
   .section-header:not(#shopify-section-header, #shopify-section-footer),
@@ -182,10 +183,7 @@ img {
     }
   }
 
-  #shopify-section-template--15933089480862__infobox,
-  .info-box {
-    display: none;
-  }
+
 
   .home-page-silver-section {
     background-repeat: no-repeat;
@@ -299,7 +297,6 @@ img {
       }
     }
     .justdropped-box {
-      display: none;
       &.active {
         display: block;
       }
@@ -308,7 +305,6 @@ img {
 
   .home-page-readymade-section {
     @media (min-width: 768px) {
-      display: none;
     }
     .collection-readymade {
       display: grid;
