@@ -7,22 +7,14 @@
     <div class="blog-feed-container">
       {% if section.settings.blog != blank and section.settings.blog.articles_count > 0 %}
 
-      {% for article in section.settings.blog.articles limit: 5 %}
+      {% for article in section.settings.blog.articles limit: 4 %}
       <div class="blog-feed-card">
-        <div class="article-card-wrapper card-wrapper underline-links-hover">
-          <a href=" {{ article.url }}" class="article-card__image-wrapper card__media">
+        <div class="blog-feed-card-wrapper">
+          <a href=" {{ article.url }}" class="blog-feed-card-link">
             {% if article.image %}
-
-
-<img id="Image-{{ article.id }}"
-  class="{{ article_class }}"
-  src="{{article.image.src | image_url: width:404, height: 296, crop: 'top' }}"
-  alt="{{ article.image.alt | escape }}"
-
->
-
-            <!-- <img class="lazyload" data-sizes="auto" data-src="{{article.image.src | image_url: width:404, height: 296, crop: 'top' }}" alt="{{article.image.alt}}"> -->
-            <!-- {{ article.image | image_url: width: 1800, height: 1000 | image_tag: alt:article.image.alt }} -->
+            <img id="Image-{{ article.id }}" loading="auto" class="{{ article_class }} blog-feed-card-image"
+              src="{{article.image.src | image_url: width:404, height: 296, crop: 'top' }}"
+              alt="{{ article.image.alt | escape }}">
             {% else %}
             {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg' }}
             {% endif %}
@@ -46,33 +38,33 @@
 
 {% schema %}
 {
-  "name": "Blog posts",
-  "class": "homepage-section",
-  "tag": "section",
-  "settings": [
-    {
-      "type": "text",
-      "id": "heading",
-      "default": "Blogs by Sundari Silks",
-      "label": "Blog Title"
-    },
-    {
-      "type": "text",
-      "id": "richtext",
-      "default": "Stories of Fabrics, Styling Tips, Decor Inspiration and more…",
-      "label": "Blog Description"
-    },
-    {
-      "type": "blog",
-      "id": "blog",
-      "label": "Blog"
-    },
-    {
-      "type": "checkbox",
-      "id": "blog_show_author",
-      "label": "Show author",
-      "default": true
-    }
-  ]
+"name": "Blog posts",
+"class": "homepage-section",
+"tag": "section",
+"settings": [
+{
+"type": "text",
+"id": "heading",
+"default": "Blogs by Sundari Silks",
+"label": "Blog Title"
+},
+{
+"type": "text",
+"id": "richtext",
+"default": "Stories of Fabrics, Styling Tips, Decor Inspiration and more…",
+"label": "Blog Description"
+},
+{
+"type": "blog",
+"id": "blog",
+"label": "Blog"
+},
+{
+"type": "checkbox",
+"id": "blog_show_author",
+"label": "Show author",
+"default": true
+}
+]
 }
 {% endschema %}

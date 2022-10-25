@@ -125,8 +125,8 @@
       font-weight: 500;
       font-style: normal;
       background-color: var(--primary-color);
-      transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-        border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+      // transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),
+        // border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
       z-index: 1;
       -webkit-tap-highlight-color: initial;
     }

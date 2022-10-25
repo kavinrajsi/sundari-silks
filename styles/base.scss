@@ -1,7 +1,18 @@
+@import "interpolate";
+
 @import "reset";
 @import "common";
 
 @import "header";
+
+
+body {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+}
+main img {
+  border-radius: var(--border-radius);
+}
 
 @import "section/common/breadcrumbs";
 @import "page/home";

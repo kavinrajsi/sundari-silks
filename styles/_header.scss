@@ -482,8 +482,8 @@ body {
     max-height: none;
     z-index: 9999999999;
     height: calc(100vh - 64px);
-    transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1),
-      visibility 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    // transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1),
+      // visibility 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
     box-shadow: none;
     touch-action: manipulation;
     // top: auto;

@@ -15,8 +15,8 @@ Usage:
   {% endunless %}
   {% endcomment %}
   <div class="product__card--img">
-    <a href="{{product.url | within: collection }}" class="product-link">
-      <div class="product__image--wrapper">
+    <a href="{{product.url | within: collection }}" class="product__card--link">
+      <div class="product__card--image--wrapper">
         {% if product.featured_image != blank %}
         {{ product.featured_image | image_url: width: 400, height: 400, crop: 'bottom' | image_tag : class:
         'product-img', loading: 'lazy', alt: product.feature_image.alt}}
@@ -36,7 +36,7 @@ Usage:
     </div>
   </div>
   <div class="product__card--content">
-    <a href="{{product.url | within: collection }}" class="product-link">
+    <a href="{{product.url | within: collection }}" class="product__card--link">
       <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
       <div hidden class="product__id">{{ product.id }}</div>
       <div hidden itemprop="brand" class="product__variant--vendor">{{ product.vendor }}</div>
