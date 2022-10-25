@@ -43,9 +43,9 @@ img {
 
   .homepage-section {
     padding-bottom: 40px;
-    @media (min-width: 768px) {
-      padding-bottom: 58px;
-    }
+    // @media (min-width: 768px) {
+    //   padding-bottom: 58px;
+    // }
     @media (min-width: 1280px) {
       max-width: var(--largewidth);
       margin: 0 auto;

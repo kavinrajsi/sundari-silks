@@ -1367,11 +1367,6 @@ img {
 .template-index .homepage-section {
   padding-bottom: 40px;
 }
-@media (min-width: 768px) {
-  .template-index .homepage-section {
-    padding-bottom: 58px;
-  }
-}
 @media (min-width: 1280px) {
   .template-index .homepage-section {
     max-width: var(--largewidth);
