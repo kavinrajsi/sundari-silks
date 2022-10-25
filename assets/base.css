@@ -1368,7 +1368,7 @@ img {
   }
 }
 .template-index .homepage-section .slick-slide {
-  height: calc(100vh - 120px - 180px);
+  height: calc(100vh - 260px);
 }
 .template-index .section-header:not(#shopify-section-header, #shopify-section-footer),
 .template-index .section-content,
