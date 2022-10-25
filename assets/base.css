@@ -1356,11 +1356,12 @@ img {
   color: var(--secondary-color);
   opacity: 1;
 }
+.template-index .large-12.columns {
+  max-width: 1800px;
+  margin: 0 auto;
+}
 .template-index .large-12.columns img {
   border-radius: 0;
-  height: calc(100vh - 260px);
-  object-fit: cover;
-  object-position: top center;
 }
 .template-index .homepage-section {
   padding-bottom: 40px;
@@ -1369,9 +1370,6 @@ img {
   .template-index .homepage-section {
     padding-bottom: 58px;
   }
-}
-.template-index .homepage-section .slick-slide {
-  height: calc(100vh - 260px);
 }
 .template-index .section-header:not(#shopify-section-header, #shopify-section-footer),
 .template-index .section-content,

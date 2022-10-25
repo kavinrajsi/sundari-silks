@@ -32,11 +32,15 @@ img {
 .template-index {
   @import "../section/home/banner";
 
-  .large-12.columns img {
-    border-radius: 0;
-    height: calc(100vh - 260px);
-    object-fit: cover;
-    object-position: top center;
+  .large-12.columns {
+    // height: calc(100vh - 260px);
+    // object-fit: cover;
+    // object-position: top center;
+    max-width: 1800px;
+    margin: 0 auto;
+    img{
+      border-radius: 0;
+    }
   }
 
   .homepage-section {
@@ -50,7 +54,7 @@ img {
     }
 
     .slick-slide{
-      height: calc(100vh - 260px);
+      // height: calc(100vh - 260px);
     }
 
   }
