@@ -3,6 +3,14 @@
     "slideshow": {
       "type": "home-slideshow",
       "blocks": {
+        "35b4fc5f-06f8-4348-87da-b405b7b97cdf": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/youtube-banner-size-guide.webp",
+            "mobile_image": "shopify:\/\/shop_images\/youtube-banner-size-guide_8729f5fd-7eba-4ef1-a790-9258d1b9cbea.webp",
+            "link": ""
+          }
+        },
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b": {
           "type": "slide",
           "settings": {
@@ -29,6 +37,7 @@
         }
       },
       "block_order": [
+        "35b4fc5f-06f8-4348-87da-b405b7b97cdf",
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b",
         "3fbd7fec-f97f-434e-9f56-1ddc4581978e",
         "46a12e3e-d35a-4136-8a28-c0579f4c7632"
