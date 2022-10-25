@@ -300,18 +300,21 @@
         "e4653ca2-9d0a-4e89-979c-9c1b932897db": {
           "type": "readymade-image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/sundari-silk-curated-collection-oct-soft-silk.png",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
         "558c4938-63b0-436c-bb48-95f4396e958e": {
           "type": "readymade-image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/sundari-silk-curated-collection-july-tussar-silk.png",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
         "0fa2d46d-88b9-4852-a880-4e28e17aedab": {
           "type": "readymade-image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/sundari-silk-curated-collection-oct-kanchipuram-silk.png",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
