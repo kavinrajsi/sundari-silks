@@ -321,12 +321,14 @@
         "6c0d8e0e-f040-459b-9a2a-ea4be141c0d6": {
           "type": "readymade-image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/TRUI-3D.png",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
         "d024e20d-b890-4a5d-b3a1-680f7f65694c": {
           "type": "readymade-image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/sundari-silks-showroom.png",
             "link": "shopify:\/\/collections\/readymades"
           }
         }
