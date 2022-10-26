@@ -13,7 +13,7 @@
       {%- for block in section.blocks -%}
       <a href="{{ block.settings.productURL }}">
         <div class="dot {% if forloop.first%}active{% endif %}" data-handle="{{block.settings.block_product}}"
-          style="top: {{block.settings.vertical}}%; left: {{block.settings.horizontal}}%; --tooltip-color: {{section.settings.normalColor}}; "></div>
+          style="top: {{block.settings.vertical}}%; left: {{block.settings.horizontal}}%; background-color: {{section.settings.normalColor}}; "></div>
       </a>
       {% endfor %}
     </div>
@@ -22,7 +22,7 @@
       {%- for block in section.blocks -%}
       <a href="{{ block.settings.productURL }}">
         <div class="dot {% if forloop.first%}active{% endif %}" data-handle="{{block.settings.block_product}}"
-          style="top: {{block.settings.mobileVertical}}%; left: {{block.settings.mobileHorizontal}}%; --tooltip-color: {{section.settings.normalColor}}; "></div>
+          style="top: {{block.settings.mobileVertical}}%; left: {{block.settings.mobileHorizontal}}%; background-color: {{section.settings.normalColor}}; "></div>
       </a>
       {% endfor %}
     </div>

@@ -340,7 +340,7 @@ $desktop: 1024px;
       width: 18px;
       height: 18px;
       border-radius: 50%;
-      background-color: var(--tooltip-color);
+      // background-color: var(--tooltip-color);
       &.active {
         cursor: pointer;
       }

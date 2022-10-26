@@ -1,11 +1,12 @@
-<section class="home-page-silver-section">
-    <div class="section-header text-center">
-      <div class="section-header-title">
-        {{section.settings.collaborate-title}}
-      </div>
-      <div class="section-header-content">
-        {{section.settings.collaborate-description}}</div>
+<section class="home-page-silver-section"
+  style="background-image: url({{section.settings.collaborate-background-pattern | image_url }}), url({{section.settings.collaborate-background | image_url }}); --toolColor: {{section.settings.collaborate-border-color}}">
+  <div class="section-header text-center">
+    <div class="section-header-title">
+      {{section.settings.collaborate-title}}
     </div>
+    <div class="section-header-content">
+      {{section.settings.collaborate-description}}</div>
+  </div>
   <div class="section-content">
     <nav>
       {% for block in section.blocks %}
@@ -44,20 +45,20 @@
 "label": "Background"
 },
 {
-  "type": "image_picker",
-  "id": "collaborate-background-pattern",
-  "label": "Background Pattern"
-  },
-  {
-    "type": "image_picker",
-    "id": "collaborate-background-edge",
-    "label": "Background Edge"
-    },
+"type": "image_picker",
+"id": "collaborate-background-pattern",
+"label": "Background Pattern"
+},
 {
-  "type": "color",
-  "id": "collaborate-border-color",
-  "label": "Border Color"
-  }
+"type": "image_picker",
+"id": "collaborate-background-edge",
+"label": "Background Edge"
+},
+{
+"type": "color",
+"id": "collaborate-border-color",
+"label": "Border Color"
+}
 ],
 "blocks": [
 {
@@ -69,6 +70,10 @@
 "type": "image_picker",
 "id": "image",
 "label": "Image"
+},{
+"type": "text",
+"id": "text",
+"label": "Text"
 },
 {
 "type": "url",

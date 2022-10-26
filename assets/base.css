@@ -1645,7 +1645,6 @@ section.shopify-section.homepage-section.home-page-readymade-section,
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background-color: var(--tooltip-color);
 }
 .lookbook-product-section .small-image-products .dot.active,
 .lookbook-product-section .large-image-products .dot.active {
