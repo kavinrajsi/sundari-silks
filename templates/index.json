@@ -234,7 +234,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/necklaces.png",
-            "contentTitle": "",
+            "contentTitle": "Necklaces",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
         },
@@ -242,7 +242,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/earring.png",
-            "contentTitle": "",
+            "contentTitle": "Earring",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
         },
