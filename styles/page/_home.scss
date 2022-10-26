@@ -496,8 +496,13 @@ $desktop: 1024px;
       img {
         border-radius: 50%;
       }
+      .section-Name {
+        opacity: 0;
+        height: 0;
+      }
       &:hover {
         .section-Name {
+          opacity: 1;
           position: absolute;
           top: 0;
           bottom: 0;

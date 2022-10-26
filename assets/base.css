@@ -1816,7 +1816,12 @@ section.shopify-section.homepage-section.home-page-readymade-section,
 .home-page-silver-section nav a img {
   border-radius: 50%;
 }
+.home-page-silver-section nav a .section-Name {
+  opacity: 0;
+  height: 0;
+}
 .home-page-silver-section nav a:hover .section-Name {
+  opacity: 1;
   position: absolute;
   top: 0;
   bottom: 0;
