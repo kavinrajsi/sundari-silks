@@ -351,7 +351,7 @@
       },
       {
         "type": "range",
-        "id": "home-section-title-space--mobile",
+        "id": "home-section-title-space-mobile",
         "label": "Section title space in 📱",
         "min": 8,
         "max": 120,
@@ -361,7 +361,7 @@
       },
       {
         "type": "range",
-        "id": "home-section-title-space--tablet",
+        "id": "home-section-title-space-tablet",
         "label": "Section title space in tablet",
         "min": 8,
         "max": 120,
@@ -371,7 +371,7 @@
       },
       {
         "type": "range",
-        "id": "home-section-title-space--largetablet",
+        "id": "home-section-title-space-largetablet",
         "label": "Section title space in large tablet",
         "min": 8,
         "max": 120,
@@ -381,7 +381,7 @@
       },
       {
         "type": "range",
-        "id": "home-section-title-space--desktop",
+        "id": "home-section-title-space-desktop",
         "label": "Section title space in 💻",
         "min": 8,
         "max": 120,
@@ -391,7 +391,7 @@
       },
       {
         "type": "range",
-        "id": "home-section-title-space--large-largedesktop",
+        "id": "home-section-title-space-large-largedesktop",
         "label": "Section title space in 🖥️",
         "min": 8,
         "max": 120,
@@ -459,7 +459,7 @@
       },
       {
         "type": "range",
-        "id": "home-section-secondary-title-space--mobile",
+        "id": "home-section-secondary-title-space-mobile",
         "label": "Section Secondary Title space in 📱",
         "min": 8,
         "max": 120,
@@ -469,7 +469,7 @@
       },
       {
         "type": "range",
-        "id": "home-section-secondary-title-space--tablet",
+        "id": "home-section-secondary-title-space-tablet",
         "label": "Section Secondary Title space in tablet",
         "min": 8,
         "max": 120,
@@ -479,7 +479,7 @@
       },
       {
         "type": "range",
-        "id": "home-section-secondary-title-space--largetablet",
+        "id": "home-section-secondary-title-space-largetablet",
         "label": "Section Secondary Title space in large tablet",
         "min": 8,
         "max": 120,
@@ -489,7 +489,7 @@
       },
       {
         "type": "range",
-        "id": "home-section-secondary-title-space--desktop",
+        "id": "home-section-secondary-title-space-desktop",
         "label": "Section Secondary Title space in 💻",
         "min": 8,
         "max": 120,
@@ -499,7 +499,7 @@
       },
       {
         "type": "range",
-        "id": "home-section-secondary-title-space--large-largedesktop",
+        "id": "home-section-secondary-title-space-largedesktop",
         "label": "Section Secondary Title space in 🖥️",
         "min": 8,
         "max": 120,

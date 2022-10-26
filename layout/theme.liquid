@@ -13,7 +13,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap"
+    rel="stylesheet">
 
   <title>
     {{ page_title }}
@@ -49,70 +50,102 @@
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
   {{ 'base.css' | asset_url | stylesheet_tag }}
 
-  {%- liquid
-  assign home-title-size-min = settings.home_title_font_size_min
-  assign home-title-size-max = settings.home_title_font_size_max
-  assign home-description-size-min = settings.home_description_font_size_min
-  assign home-description-size-max = settings.home_description_font_size_max
-  %}
-{% comment %}
+
   {% style %}
-  html{
-  font-size: 16px;
+  :root {
+  --gap: {{settings.product-gap-mobile}};
+  --section-space: {{settings.section-gap-mobile}};
+  --home-section-space: {{settings.section-gap-mobile}};
+  --home-section-title: {{settings.home-section-gap-mobile}};
+  --home-section-title-space: {{settings.home-section-title-mobile}};
+  --section-secondary-title: {{settings.home-section-secondary-title-mobile}};
+  --section-secondary-title-space: {{settings.home-section-secondary-title-space-mobile}};
+  --section-button: {{settings.home-section-secondary-title-mobile}};
+  --curated-collection-title: 24px;
+  --curated-collection-smallTitle: 16px;
+  --card-product-title: 14px;
+  --card-product-price: 14px;
+  --blog-feed-title: 14px;
+  --blog-feed-content: 14px;
   }
 
-  .virtual-store-details p strong,
-  .template-index .homepage-section .section-header .section-header-title{
-  font-size: clamp({{home-title-size-min}}rem, 4.2vw, {{home-title-size-max}}rem);
-  line-height: normal;
-  font-weight: 500;
-  padding-left: 14px;
-  padding-right: 14px;
+  @media (min-width: $tablet) {
+    :root {
+      --gap: {{settings.product-gap-tablet}};
+      --section-space: {{settings.section-gap-tablet}};
+      --home-section-space: {{settings.section-gap-tablet}};
+      --home-section-title: {{settings.home-section-gap-tablet}};
+      --home-section-title-space: {{settings.home-section-title-tablet}};
+      --section-secondary-title: {{settings.home-section-secondary-title-tablet}};
+      --section-secondary-title-space: {{settings.home-section-secondary-title-space-tablet}};
+      --section-button: {{settings.home-section-secondary-title-tablet}};
+      --curated-collection-title: 24px;
+      --curated-collection-smallTitle: 16px;
+      --card-product-title: 14px;
+      --card-product-price: 14px;
+      --blog-feed-title: 14px;
+      --blog-feed-content: 14px;
+      }
   }
 
-  .template-index .homepage-section .section-header{
-  margin-bottom: 0;
+  @media (min-width: $ptablet) {
+    :root {
+      --gap: {{settings.product-gap-largetablet}};
+      --section-space: {{settings.section-gap-largetablet}};
+      --home-section-space: {{settings.section-gap-largetablet}};
+      --home-section-title: {{settings.home-section-gap-largetablet}};
+      --home-section-title-space: {{settings.home-section-title-largetablet}};
+      --section-secondary-title: {{settings.home-section-secondary-title-largetablet}};
+      --section-secondary-title-space: {{settings.home-section-secondary-title-space-largetablet}};
+      --section-button: {{settings.home-section-secondary-title-largetablet}};
+      --curated-collection-title: 24px;
+      --curated-collection-smallTitle: 16px;
+      --card-product-title: 14px;
+      --card-product-price: 14px;
+      --blog-feed-title: 14px;
+      --blog-feed-content: 14px;
+      }
   }
 
-  .virtual-store-details p,
-  .template-index .homepage-section .section-header .section-header-content{
-  font-size: clamp({{home-description-size-min}}rem, 4.2vw, {{home-description-size-max}}rem);
-  text-align: center;
-  line-height: normal;
-  line-height: 24px;
-  padding-top: 0;
-  margin-top: 0;
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 8px;
-  padding-left: 14px;
-  padding-right: 14px;
-  padding-bottom: 14px;
+  @media (min-width: $desktop) {
+    :root {
+      --gap: {{settings.product-gap-desktop}};
+      --section-space: {{settings.section-gap-desktop}};
+      --home-section-space: {{settings.section-gap-desktop}};
+      --home-section-title: {{settings.home-section-gap-desktop}};
+      --home-section-title-space: {{settings.home-section-title-desktop}};
+      --section-secondary-title: {{settings.home-section-secondary-title-desktop}};
+      --section-secondary-title-space: {{settings.home-section-secondary-title-space-desktop}};
+      --section-button: {{settings.home-section-secondary-title-desktop}};
+      --curated-collection-title: 24px;
+      --curated-collection-smallTitle: 16px;
+      --card-product-title: 14px;
+      --card-product-price: 14px;
+      --blog-feed-title: 14px;
+      --blog-feed-content: 14px;
+      }
   }
 
-  @media(min-width: 768px){
-    .template-index .homepage-section .section-header .section-header-content{
-    padding-bottom: 28px;
-    }
-    }
-
-  .template-index .homepage-section{
-  padding-bottom: clamp(48px, 4.2vw, 96px);
-  }
-
-  .virtual-store-details{
-    padding: 28px 0;
-    margin: 0 auto;
-  }
-
-  .product__title{
-
+  @media (min-width: $desktopL) {
+    :root {
+      --gap: {{settings.product-gap-largedesktop}};
+      --section-space: {{settings.section-gap-largedesktop}};
+      --home-section-space: {{settings.section-gap-largedesktop}};
+      --home-section-title: {{settings.home-section-gap-largedesktop}};
+      --home-section-title-space: {{settings.home-section-title-largedesktop}};
+      --section-secondary-title: {{settings.home-section-secondary-title-largedesktop}};
+      --section-secondary-title-space: {{settings.home-section-secondary-title-space-largedesktop}};
+      --section-button: {{settings.home-section-secondary-title-largedesktop}};
+      --curated-collection-title: 24px;
+      --curated-collection-smallTitle: 16px;
+      --card-product-title: 14px;
+      --card-product-price: 14px;
+      --blog-feed-title: 14px;
+      --blog-feed-content: 14px;
+      }
   }
 
   {% endstyle %}
-  {% endcomment %}
 
   <script>
     window.mlvedaShopCurrency = "{{ shop.currency }}";
