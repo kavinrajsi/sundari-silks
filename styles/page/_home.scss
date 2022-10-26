@@ -1,29 +1,29 @@
 :root {
-  --gap: 8px;
+  --Ngap: 8px;
 }
 @media (min-width: 576px) {
   :root {
-    --gap: 16px;
+    --Ngap: 16px;
   }
 }
 @media (min-width: 768px) {
   :root {
-    --gap: 24px;
+    --Ngap: 24px;
   }
 }
 @media (min-width: 992px) {
   :root {
-    --gap: 24px;
+    --Ngap: 24px;
   }
 }
 @media (min-width: 1200px) {
   :root {
-    --gap: 32px;
+    --Ngap: 32px;
   }
 }
 @media (min-width: 1364px) {
   :root {
-    --gap: 32px;
+    --Ngap: 32px;
   }
 }
 
@@ -125,7 +125,7 @@ $desktop: 1024px;
 
 .display-card-grid {
   display: grid;
-  gap: var(--gap);
+  gap: var(--Ngap);
 }
 
 [data-mobile-count="2"] {
@@ -196,9 +196,10 @@ $desktop: 1024px;
 @import "../section/home/banner";
 
 .homepage-section {
-  @include interpolate("padding-bottom", $mobile, 40px, $desktop, 50px);
-  padding-left: var(--gap);
-  padding-right: var(--gap);
+  // @include interpolate("padding-bottom", $mobile, 40px, $desktop, 50px);
+  padding-bottom: var(--home-section-space);
+  padding-left: var(--Ngap);
+  padding-right: var(--Ngap);
   @media (min-width: 1364px) {
   padding-left: 60px;
   padding-right: 60px;
@@ -210,15 +211,14 @@ $desktop: 1024px;
   font-family: "Playfair Display", serif;
   font-weight: 500;
   line-height: 1.2222222222;
-  font-size: 24px;
-  @media (min-width: 768px) {
-    margin-bottom: 16px;
-    // @include interpolate("font-size", $mobile, 30px, $desktop, 36px);
-    font-size: clamp(30px, 4vw, 36px);
-  }
-  @media (min-width: 1364px) {
-    font-size: 48px;
-  }
+  font-size: var(--home-section-title);
+  // @media (min-width: 768px) {
+  //   margin-bottom: 16px;
+  //   // @include interpolate("font-size", $mobile, 30px, $desktop, 36px);
+  // }
+  // @media (min-width: 1364px) {
+  //   font-size: 48px;
+  // }
 }
 
 .section-header-action_link,
@@ -227,14 +227,15 @@ $desktop: 1024px;
   line-height: 1.6;
   line-height: 22px;
   padding-bottom: 12px;
-  font-size: 14px;
-  @media (min-width: 768px) {
-    @include interpolate("font-size", $mobile, 14px, $desktop, 20px);
-    @include interpolate("padding-bottom", $mobile, 14px, $desktop, 28px);
-    @media (min-width: 1364px) {
-      font-size: 26px;
-    }
-  }
+  font-size: var(--home-section-secondary-title);
+  padding-bottom: var(--home-section-secondary-title-space);
+  // @media (min-width: 768px) {
+  //   // @include interpolate("font-size", $mobile, 14px, $desktop, 20px);
+  //   @include interpolate("padding-bottom", $mobile, 14px, $desktop, 28px);
+  //   @media (min-width: 1364px) {
+  //     // font-size: 26px;
+  //   }
+  // }
 }
 
 .section-header-action_link {
@@ -248,7 +249,7 @@ $desktop: 1024px;
 .collection-saree,
 .collection-readymade {
   display: grid;
-  gap: var(--gap);
+  gap: var(--Ngap);
   grid-template-columns: repeat(2, 1fr);
   @media (min-width: 992px) {
     grid-template-columns: repeat(4, 1fr);
@@ -307,7 +308,7 @@ $desktop: 1024px;
   display: none;
   @media (min-width: 992px) {
     display: grid;
-    margin-top: var(--gap);
+    margin-top: var(--Ngap);
     grid-template-columns: repeat(6, 1fr);
   }
 }
@@ -379,7 +380,7 @@ $desktop: 1024px;
       }
     }
     @media (min-width: 768px) {
-      padding-right: var(--gap);
+      padding-right: var(--Ngap);
       .section-header {
         text-align: left;
       }
@@ -460,21 +461,21 @@ $desktop: 1024px;
     overflow-x: scroll;
     padding-top: 12px;
     @media (min-width: 1120px) {
-      padding-right: var(--gap);
+      padding-right: var(--Ngap);
       overflow: hidden;
       padding-top: 24px;
     }
   }
   nav {
     display: flex;
-    gap: var(--gap);
+    gap: var(--Ngap);
 
     @media (min-width: 768px) {
-      gap: var(--gap);
+      gap: var(--Ngap);
       justify-content: center;
     }
     @media (min-width: 1120px) {
-      gap: var(--gap);
+      gap: var(--Ngap);
       justify-content: center;
     }
     a {
@@ -564,7 +565,7 @@ $desktop: 1024px;
 .homepage-blogfeed {
   .blog-feed-container {
     display: grid;
-    gap: var(--gap);
+    gap: var(--Ngap);
     overflow-x: scroll;
     grid-template-columns: repeat(4, 208px);
 
@@ -677,7 +678,7 @@ $desktop: 1024px;
   }
   .instagram__post--wrapper {
     display: grid;
-    gap: var(--gap);
+    gap: var(--Ngap);
     grid-template-columns: repeat(6, 208px);
     overflow-x: scroll;
 

@@ -283,7 +283,7 @@
       },
       {
         "type": "range",
-        "id": "home-section-gap-large-largedesktop",
+        "id": "home-section-gap-largedesktop",
         "label": "Section space in 🖥️",
         "min": 8,
         "max": 120,
@@ -337,7 +337,7 @@
       },
       {
         "type": "range",
-        "id": "home-section-title-large-largedesktop",
+        "id": "home-section-title-largedesktop",
         "label": "Section title in 🖥️",
         "min": 8,
         "max": 120,
@@ -391,7 +391,7 @@
       },
       {
         "type": "range",
-        "id": "home-section-title-space-large-largedesktop",
+        "id": "home-section-title-space-largedesktop",
         "label": "Section title space in 🖥️",
         "min": 8,
         "max": 120,
@@ -445,7 +445,7 @@
       },
       {
         "type": "range",
-        "id": "home-section-secondary-title-large-largedesktop",
+        "id": "home-section-secondary-title-largedesktop",
         "label": "Section Secondary Title in 🖥️",
         "min": 8,
         "max": 120,
