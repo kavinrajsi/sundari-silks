@@ -22,7 +22,7 @@
       {%- for block in section.blocks -%}
       <a href="{{ block.settings.productURL }}">
       <div class="dot {% if forloop.first%}active{% endif %}" data-handle="{{block.settings.block_product}}"
-        style="top: {{block.settings.vertical}}%; left: {{block.settings.horizontal}}%;  "></div>
+        style="top: {{block.settings.mobileVertical}}%; left: {{block.settings.mobileHorizontal}}%;  "></div>
       </a>
       {% endfor %}
     </div>
@@ -110,6 +110,11 @@
 "label": "Product"
 },
 {
+"type": "url",
+"id": "productURL",
+"label": "Product URL"
+},
+{
 "type": "range",
 "id": "horizontal",
 "min": 0,
@@ -120,11 +125,6 @@
 "default": 50
 },
 {
-"type": "url",
-"id": "productURL",
-"label": "Product URL"
-},
-{
 "type": "range",
 "id": "vertical",
 "min": 0,
@@ -133,7 +133,27 @@
 "unit": "%",
 "label": "Vertical Position",
 "default": 50
-}
+},
+{
+  "type": "range",
+  "id": "mobileHorizontal",
+  "min": 0,
+  "max": 100,
+  "step": 1,
+  "unit": "%",
+  "label": "Horizontal Position",
+  "default": 50
+  },
+  {
+  "type": "range",
+  "id": "mobileVertical",
+  "min": 0,
+  "max": 100,
+  "step": 1,
+  "unit": "%",
+  "label": "Vertical Position",
+  "default": 50
+  }
 ]
 }
 ]
