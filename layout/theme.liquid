@@ -55,11 +55,15 @@
   :root {
   --gap: {{settings.product-gap-mobile}}px;
   --section-space: {{settings.section-gap-mobile}}px;
+
   --home-section-space: {{settings.home-section-gap-mobile}}px;
-  --home-section-title: {{settings.home-section-gap-mobile}}px;
-  --home-section-title-space: {{settings.home-section-title-mobile}}px;
+
+  --home-section-title: {{settings.home-section-title-mobile}}px;
+  --home-section-title-space: {{settings.home-section-title-space-mobile}}px;
+
   --home-section-secondary-title: {{settings.home-section-secondary-title-mobile}}px;
   --home-section-secondary-title-space: {{settings.home-section-secondary-title-space-mobile}}px;
+
   --section-button: {{settings.home-section-secondary-title-mobile}}px;
   --curated-collection-title: 24px;
   --curated-collection-smallTitle: 16px;
@@ -70,79 +74,95 @@
   }
 
   @media (min-width: 768px) {
-    :root {
-      --gap: {{settings.product-gap-tablet}}px;
-      --section-space: {{settings.section-gap-tablet}}px;
-      --home-section-space: {{settings.home-section-gap-tablet}}px;
-      --home-section-title: {{settings.home-section-gap-tablet}}px;
-      --home-section-title-space: {{settings.home-section-title-tablet}}px;
-      --home-section-secondary-title: {{settings.home-section-secondary-title-tablet}}px;
-      --home-section-secondary-title-space: {{settings.home-section-secondary-title-space-tablet}}px;
-      --section-button: {{settings.home-section-secondary-title-tablet}}px;
-      --curated-collection-title: 24px;
-      --curated-collection-smallTitle: 16px;
-      --card-product-title: 14px;
-      --card-product-price: 14px;
-      --blog-feed-title: 14px;
-      --blog-feed-content: 14px;
-      }
+  :root {
+  --gap: {{settings.product-gap-tablet}}px;
+  --section-space: {{settings.section-gap-tablet}}px;
+
+  --home-section-space: {{settings.home-section-gap-tablet}}px;
+
+  --home-section-title: {{settings.home-section-title-tablet}}px;
+  --home-section-title-space: {{settings.home-section-title-space-tablet}}px;
+
+  --home-section-secondary-title: {{settings.home-section-secondary-title-tablet}}px;
+  --home-section-secondary-title-space: {{settings.home-section-secondary-title-space-tablet}}px;
+
+  --section-button: {{settings.home-section-secondary-title-tablet}}px;
+  --curated-collection-title: 24px;
+  --curated-collection-smallTitle: 16px;
+  --card-product-title: 14px;
+  --card-product-price: 14px;
+  --blog-feed-title: 14px;
+  --blog-feed-content: 14px;
+  }
   }
 
   @media (min-width: 992px) {
-    :root {
-      --gap: {{settings.product-gap-largetablet}}px;
-      --section-space: {{settings.section-gap-largetablet}}px;
-      --home-section-space: {{settings.home-section-gap-largetablet}}px;
-      --home-section-title: {{settings.home-section-gap-largetablet}}px;
-      --home-section-title-space: {{settings.home-section-title-largetablet}}px;
-      --home-section-secondary-title: {{settings.home-section-secondary-title-largetablet}}px;
-      --home-section-secondary-title-space: {{settings.home-section-secondary-title-space-largetablet}}px;
-      --section-button: {{settings.home-section-secondary-title-largetablet}}px;
-      --curated-collection-title: 24px;
-      --curated-collection-smallTitle: 16px;
-      --card-product-title: 14px;
-      --card-product-price: 14px;
-      --blog-feed-title: 14px;
-      --blog-feed-content: 14px;
-      }
+  :root {
+  --gap: {{settings.product-gap-largetablet}}px;
+  --section-space: {{settings.section-gap-largetablet}}px;
+
+  --home-section-space: {{settings.home-section-gap-largetablet}}px;
+
+  --home-section-title: {{settings.home-section-title-largetablet}}px;
+  --home-section-title-space: {{settings.home-section-title-space-largetablet}}px;
+
+  --home-section-secondary-title: {{settings.home-section-secondary-title-largetablet}}px;
+  --home-section-secondary-title-space: {{settings.home-section-secondary-title-space-largetablet}}px;
+
+  --section-button: {{settings.home-section-secondary-title-largetablet}}px;
+  --curated-collection-title: 24px;
+  --curated-collection-smallTitle: 16px;
+  --card-product-title: 14px;
+  --card-product-price: 14px;
+  --blog-feed-title: 14px;
+  --blog-feed-content: 14px;
+  }
   }
 
   @media (min-width: 1024px) {
-    :root {
-      --gap: {{settings.product-gap-desktop}}px;
-      --section-space: {{settings.section-gap-desktop}}px;
-      --home-section-space: {{settings.home-section-gap-desktop}}px;
-      --home-section-title: {{settings.home-section-gap-desktop}}px;
-      --home-section-title-space: {{settings.home-section-title-desktop}}px;
-      --home-section-secondary-title: {{settings.home-section-secondary-title-desktop}}px;
-      --home-section-secondary-title-space: {{settings.home-section-secondary-title-space-desktop}}px;
-      --section-button: {{settings.home-section-secondary-title-desktop}}px;
-      --curated-collection-title: 24px;
-      --curated-collection-smallTitle: 16px;
-      --card-product-title: 14px;
-      --card-product-price: 14px;
-      --blog-feed-title: 14px;
-      --blog-feed-content: 14px;
-      }
+  :root {
+  --gap: {{settings.product-gap-desktop}}px;
+  --section-space: {{settings.section-gap-desktop}}px;
+
+  --home-section-space: {{settings.home-section-gap-desktop}}px;
+
+  --home-section-title: {{settings.home-section-title-desktop}}px;
+  --home-section-title-space: {{settings.home-section-title-space-desktop}}px;
+
+  --home-section-secondary-title: {{settings.home-section-secondary-title-desktop}}px;
+  --home-section-secondary-title-space: {{settings.home-section-secondary-title-space-desktop}}px;
+
+  --section-button: {{settings.home-section-secondary-title-desktop}}px;
+  --curated-collection-title: 24px;
+  --curated-collection-smallTitle: 16px;
+  --card-product-title: 14px;
+  --card-product-price: 14px;
+  --blog-feed-title: 14px;
+  --blog-feed-content: 14px;
+  }
   }
 
   @media (min-width: 1364px) {
-    :root {
-      --gap: {{settings.product-gap-largedesktop}}px;
-      --section-space: {{settings.section-gap-largedesktop}}px;
-      --home-section-space: {{settings.home-section-gap-largedesktop}}px;
-      --home-section-title: {{settings.home-section-gap-largedesktop}}px;
-      --home-section-title-space: {{settings.home-section-title-largedesktop}}px;
-      --home-section-secondary-title: {{settings.home-section-secondary-title-largedesktop}}px;
-      --home-section-secondary-title-space: {{settings.home-section-secondary-title-space-largedesktop}}px;
-      --section-button: {{settings.home-section-secondary-title-largedesktop}}px;
-      --curated-collection-title: 24px;
-      --curated-collection-smallTitle: 16px;
-      --card-product-title: 14px;
-      --card-product-price: 14px;
-      --blog-feed-title: 14px;
-      --blog-feed-content: 14px;
-      }
+  :root {
+  --gap: {{settings.product-gap-largedesktop}}px;
+  --section-space: {{settings.section-gap-largedesktop}}px;
+
+  --home-section-space: {{settings.home-section-gap-largedesktop}}px;
+
+  --home-section-title: {{settings.home-section-title-largedesktop}}px;
+  --home-section-title-space: {{settings.home-section-title-space-largedesktop}}px;
+
+  --home-section-secondary-title: {{settings.home-section-secondary-title-largedesktop}}px;
+  --home-section-secondary-title-space: {{settings.home-section-secondary-title-space-largedesktop}}px;
+
+  --section-button: {{settings.home-section-secondary-title-largedesktop}}px;
+  --curated-collection-title: 24px;
+  --curated-collection-smallTitle: 16px;
+  --card-product-title: 14px;
+  --card-product-price: 14px;
+  --blog-feed-title: 14px;
+  --blog-feed-content: 14px;
+  }
   }
 
   {% endstyle %}
