@@ -7,7 +7,7 @@
       </div>
     </div>
   </div>
-  <div class="image-container">
+  <div class="image-container" data-active-color="{{section.settings.activeColor}}" data-normal-color="{{section.settings.normalColor}}">
     <div class="large-image-products">
       <img src="{{ section.settings.largeImage | image_url: width: 1380, height: 480 }}" alt="">
       {%- for block in section.blocks -%}
