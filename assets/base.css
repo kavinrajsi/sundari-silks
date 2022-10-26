@@ -1641,7 +1641,6 @@ section.shopify-section.homepage-section.home-page-readymade-section,
 }
 .lookbook-product-section .small-image-products .dot,
 .lookbook-product-section .large-image-products .dot {
-  display: none;
   position: absolute;
   width: 18px;
   height: 18px;
