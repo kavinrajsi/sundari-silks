@@ -1434,7 +1434,7 @@ main img {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   [data-desktop-count="2"] {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1474,7 +1474,7 @@ main img {
     display: block;
   }
 }
-@media (min-width: 1200px) and (min-width: 1440px) {
+@media (min-width: 1024px) and (min-width: 1440px) {
   [data-desktop-count="6"] {
     grid-template-columns: repeat(6, 1fr);
   }
@@ -1508,10 +1508,10 @@ main img {
 }
 @media screen and (min-width: 576px) {
   .homepage-section {
-    padding-bottom: calc(1.6025641026vw + 30.7692307692px);
+    padding-bottom: calc(2.2321428571vw + 27.1428571429px);
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .homepage-section {
     padding-bottom: 50px;
   }
@@ -1534,10 +1534,10 @@ main img {
 @media screen and (min-width: 768px) and (min-width: 576px) {
   .virtual-store-details p strong,
 .section-header-title {
-    font-size: calc(0.9615384615vw + 24.4615384615px);
+    font-size: calc(1.3392857143vw + 22.2857142857px);
   }
 }
-@media screen and (min-width: 768px) and (min-width: 1200px) {
+@media screen and (min-width: 768px) and (min-width: 1024px) {
   .virtual-store-details p strong,
 .section-header-title {
     font-size: 36px;
@@ -1571,10 +1571,10 @@ main img {
   .section-header-action_link,
 .virtual-store-details p,
 .section-header-content {
-    font-size: calc(0.3205128205vw + 16.1538461538px);
+    font-size: calc(0.4464285714vw + 15.4285714286px);
   }
 }
-@media screen and (min-width: 768px) and (min-width: 1200px) {
+@media screen and (min-width: 768px) and (min-width: 1024px) {
   .section-header-action_link,
 .virtual-store-details p,
 .section-header-content {
@@ -1588,7 +1588,7 @@ main img {
     padding-bottom: calc(0vw + 18px);
   }
 }
-@media screen and (min-width: 768px) and (min-width: 1200px) {
+@media screen and (min-width: 768px) and (min-width: 1024px) {
   .section-header-action_link,
 .virtual-store-details p,
 .section-header-content {
