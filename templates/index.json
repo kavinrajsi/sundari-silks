@@ -258,7 +258,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/rings.png",
-            "contentTitle": "",
+            "contentTitle": "Rings",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
         },
@@ -266,7 +266,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/kids.png",
-            "contentTitle": "",
+            "contentTitle": "Kids",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
         },
@@ -274,7 +274,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/ankles.png",
-            "contentTitle": "",
+            "contentTitle": "Ankles",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
         }
