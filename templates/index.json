@@ -306,7 +306,8 @@
         "cf647e91-dbe8-4021-a7d9-a66254345f5b": {
           "type": "readymade-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sundari-silk-curated-collection-oct-mysore-silk.png",
+            "image": "shopify:\/\/shop_images\/Women-01.png",
+            "text": "Women",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -314,6 +315,7 @@
           "type": "readymade-image",
           "settings": {
             "image": "shopify:\/\/shop_images\/sundari-silk-curated-collection-oct-soft-silk.png",
+            "text": "",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -321,6 +323,7 @@
           "type": "readymade-image",
           "settings": {
             "image": "shopify:\/\/shop_images\/sundari-silk-curated-collection-july-tussar-silk.png",
+            "text": "",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -328,6 +331,7 @@
           "type": "readymade-image",
           "settings": {
             "image": "shopify:\/\/shop_images\/sundari-silk-curated-collection-oct-kanchipuram-silk.png",
+            "text": "",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -335,6 +339,7 @@
           "type": "readymade-image",
           "settings": {
             "image": "shopify:\/\/shop_images\/TRUI-3D.png",
+            "text": "",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -342,6 +347,7 @@
           "type": "readymade-image",
           "settings": {
             "image": "shopify:\/\/shop_images\/sundari-silks-showroom.png",
+            "text": "",
             "link": "shopify:\/\/collections\/readymades"
           }
         }
