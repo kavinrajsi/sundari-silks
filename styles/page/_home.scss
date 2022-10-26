@@ -641,12 +641,24 @@ $desktop: 1200px;
   .instagram__post--wrapper {
     display: grid;
     gap: var(--gap);
-    grid-template-columns: repeat(4, 208px);
+    grid-template-columns: repeat(6, 208px);
     overflow-x: scroll;
 
     @media (min-width: 768px) {
       grid-template-columns: repeat(4, 1fr);
       overflow: hidden;
+      .instagram__post--image:nth-last-child(1),
+      .instagram__post--image:nth-last-child(2){
+        display: none;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(6, 1fr);
+      .instagram__post--image:nth-last-child(1),
+      .instagram__post--image:nth-last-child(2){
+        display: block;
+      }
     }
 
     .instagram__post--image {
