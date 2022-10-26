@@ -1543,7 +1543,7 @@ main img {
     font-size: 36px;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1364px) {
   .virtual-store-details p strong,
 .section-header-title {
     font-size: 48px;
@@ -1595,7 +1595,7 @@ main img {
     padding-bottom: 18px;
   }
 }
-@media (min-width: 768px) and (min-width: 1400px) {
+@media (min-width: 768px) and (min-width: 1364px) {
   .section-header-action_link,
 .virtual-store-details p,
 .section-header-content {

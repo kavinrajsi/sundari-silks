@@ -229,7 +229,7 @@ $desktop: 1200px;
   @media (min-width: 768px) {
     @include interpolate("font-size", $mobile, 30px, $desktop, 36px);
   }
-  @media (min-width: 1400px) {
+  @media (min-width: 1364px) {
     font-size: 48px;
   }
 }
@@ -245,7 +245,7 @@ $desktop: 1200px;
   @media (min-width: 768px) {
     @include interpolate("font-size", $mobile, 18px, $desktop, 20px);
     @include interpolate("padding-bottom", $mobile, 18px, $desktop, 18px);
-    @media (min-width: 1400px) {
+    @media (min-width: 1364px) {
       font-size: 26px;
     }
   }
