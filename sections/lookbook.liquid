@@ -12,8 +12,8 @@
       <img src="{{ section.settings.largeImage | image_url: width: 1380, height: 480 }}" alt="">
       {%- for block in section.blocks -%}
       <a href="{{ block.settings.productURL }}">
-        <div class="dot {% if forloop.first%}active{% endif %}" data-handle="{{block.settings.block_product}}" style="--tooltip-color: {{section.settings.normalColor}};"
-          style="top: {{block.settings.vertical}}%; left: {{block.settings.horizontal}}%;  "></div>
+        <div class="dot {% if forloop.first%}active{% endif %}" data-handle="{{block.settings.block_product}}"
+          style="top: {{block.settings.vertical}}%; left: {{block.settings.horizontal}}%; --tooltip-color: {{section.settings.normalColor}}; "></div>
       </a>
       {% endfor %}
     </div>
@@ -21,8 +21,8 @@
       <img src="{{ section.settings.smallImage | img_url: '1000x' }}" alt="">
       {%- for block in section.blocks -%}
       <a href="{{ block.settings.productURL }}">
-        <div class="dot {% if forloop.first%}active{% endif %}" data-handle="{{block.settings.block_product}}" style="--tooltip-color: {{section.settings.normalColor}};"
-          style="top: {{block.settings.mobileVertical}}%; left: {{block.settings.mobileHorizontal}}%;  "></div>
+        <div class="dot {% if forloop.first%}active{% endif %}" data-handle="{{block.settings.block_product}}"
+          style="top: {{block.settings.mobileVertical}}%; left: {{block.settings.mobileHorizontal}}%; --tooltip-color: {{section.settings.normalColor}}; "></div>
       </a>
       {% endfor %}
     </div>
