@@ -19,8 +19,8 @@
     {% for item in my_array %}
     {% assign collect = collections[ item ] %}
     <div class="justdropped-box {% if forloop.first %} active {% endif %}" id="pitem_{{forloop.index}}">
-      <div class="test--product-card--grid-four">
-        {% for product in collect.products limit:4 %}
+      <div class="test--product-card--grid-four  display-card-grid" data-mobile-count="2" data-laptop-count="4" data-desktop-count="6">
+        {% for product in collect.products limit: 6 %}
         {% render 'product-card', product:product %}
         {% endfor %}
       </div>
