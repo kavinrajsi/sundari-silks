@@ -1534,10 +1534,16 @@ main img {
 @media screen and (min-width: 768px) and (min-width: 576px) {
   .virtual-store-details p strong,
 .section-header-title {
-    font-size: calc(2.8846153846vw + 13.3846153846px);
+    font-size: calc(0.9615384615vw + 24.4615384615px);
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1200px) {
+  .virtual-store-details p strong,
+.section-header-title {
+    font-size: 36px;
+  }
+}
+@media (min-width: 1400px) {
   .virtual-store-details p strong,
 .section-header-title {
     font-size: 48px;
@@ -1550,6 +1556,7 @@ main img {
   font-family: var(--font-montserrat);
   line-height: 1.6;
   line-height: 22px;
+  padding-bottom: 12px;
   font-size: 14px;
 }
 @media (min-width: 768px) {
@@ -1578,14 +1585,21 @@ main img {
   .section-header-action_link,
 .virtual-store-details p,
 .section-header-content {
-    padding-bottom: calc(1.2820512821vw + 10.6153846154px);
+    padding-bottom: calc(0vw + 18px);
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1200px) {
   .section-header-action_link,
 .virtual-store-details p,
 .section-header-content {
-    padding-bottom: 26px;
+    padding-bottom: 18px;
+  }
+}
+@media (min-width: 768px) and (min-width: 1400px) {
+  .section-header-action_link,
+.virtual-store-details p,
+.section-header-content {
+    font-size: 26px;
   }
 }
 

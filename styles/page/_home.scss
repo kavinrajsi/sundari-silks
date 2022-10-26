@@ -227,7 +227,10 @@ $desktop: 1200px;
   margin-bottom: 0;
   font-size: 24px;
   @media (min-width: 768px) {
-    @include interpolate("font-size", $mobile, 30px, $desktop, 48px);
+    @include interpolate("font-size", $mobile, 30px, $desktop, 36px);
+  }
+  @media (min-width: 1400px) {
+    font-size: 48px;
   }
 }
 
@@ -237,10 +240,14 @@ $desktop: 1200px;
   font-family: var(--font-montserrat);
   line-height: 1.6;
   line-height: 22px;
+  padding-bottom: 12px;
   font-size: 14px;
   @media (min-width: 768px) {
     @include interpolate("font-size", $mobile, 18px, $desktop, 20px);
-    @include interpolate("padding-bottom", $mobile, 18px, $desktop, 26px);
+    @include interpolate("padding-bottom", $mobile, 18px, $desktop, 18px);
+    @media (min-width: 1400px) {
+      font-size: 26px;
+    }
   }
 }
 
