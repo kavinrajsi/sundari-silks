@@ -14,7 +14,7 @@
         block.settings.image.alt,
         loading: 'lazy', class: "collection-item-image" }}
         <div class="collection-item-name">
-          <div class="collection-item-title"> Kanchipuram Silk Saree</div>
+          <div class="collection-item-title"> {{block.settings.heading}} </div>
           <div class="collection-title-subtitle">Explore</div>
         </div>
       </a>
@@ -81,7 +81,11 @@
 "type": "image_picker",
 "id": "image",
 "label": "Image"
-},
+},{
+  "type": "text",
+  "id": "heading",
+  "label": "Text"
+  },
 {
 "type": "url",
 "id": "link",
