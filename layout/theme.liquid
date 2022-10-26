@@ -51,17 +51,16 @@
   {{ 'base.css' | asset_url | stylesheet_tag }}
 
 
-  {% comment %}
   {% style %}
   :root {
-  --gap: {{settings.product-gap-mobile}};
-  --section-space: {{settings.section-gap-mobile}};
-  --home-section-space: {{settings.home-section-gap-mobile}};
-  --home-section-title: {{settings.home-section-gap-mobile}};
-  --home-section-title-space: {{settings.home-section-title-mobile}};
-  --section-secondary-title: {{settings.home-section-secondary-title-mobile}};
-  --section-secondary-title-space: {{settings.home-section-secondary-title-space-mobile}};
-  --section-button: {{settings.home-section-secondary-title-mobile}};
+  --gap: {{settings.product-gap-mobile}}px;
+  --section-space: {{settings.section-gap-mobile}}px;
+  --home-section-space: {{settings.home-section-gap-mobile}}px;
+  --home-section-title: {{settings.home-section-gap-mobile}}px;
+  --home-section-title-space: {{settings.home-section-title-mobile}}px;
+  --home-section-secondary-title: {{settings.home-section-secondary-title-mobile}}px;
+  --home-section-secondary-title-space: {{settings.home-section-secondary-title-space-mobile}}px;
+  --section-button: {{settings.home-section-secondary-title-mobile}}px;
   --curated-collection-title: 24px;
   --curated-collection-smallTitle: 16px;
   --card-product-title: 14px;
@@ -72,14 +71,14 @@
 
   @media (min-width: $tablet) {
     :root {
-      --gap: {{settings.product-gap-tablet}};
-      --section-space: {{settings.section-gap-tablet}};
-      --home-section-space: {{settings.home-section-gap-tablet}};
-      --home-section-title: {{settings.home-section-gap-tablet}};
-      --home-section-title-space: {{settings.home-section-title-tablet}};
-      --section-secondary-title: {{settings.home-section-secondary-title-tablet}};
-      --section-secondary-title-space: {{settings.home-section-secondary-title-space-tablet}};
-      --section-button: {{settings.home-section-secondary-title-tablet}};
+      --gap: {{settings.product-gap-tablet}}px;
+      --section-space: {{settings.section-gap-tablet}}px;
+      --home-section-space: {{settings.home-section-gap-tablet}}px;
+      --home-section-title: {{settings.home-section-gap-tablet}}px;
+      --home-section-title-space: {{settings.home-section-title-tablet}}px;
+      --home-section-secondary-title: {{settings.home-section-secondary-title-tablet}}px;
+      --home-section-secondary-title-space: {{settings.home-section-secondary-title-space-tablet}}px;
+      --section-button: {{settings.home-section-secondary-title-tablet}}px;
       --curated-collection-title: 24px;
       --curated-collection-smallTitle: 16px;
       --card-product-title: 14px;
@@ -91,14 +90,14 @@
 
   @media (min-width: $ptablet) {
     :root {
-      --gap: {{settings.product-gap-largetablet}};
-      --section-space: {{settings.section-gap-largetablet}};
-      --home-section-space: {{settings.home-section-gap-largetablet}};
-      --home-section-title: {{settings.home-section-gap-largetablet}};
-      --home-section-title-space: {{settings.home-section-title-largetablet}};
-      --section-secondary-title: {{settings.home-section-secondary-title-largetablet}};
-      --section-secondary-title-space: {{settings.home-section-secondary-title-space-largetablet}};
-      --section-button: {{settings.home-section-secondary-title-largetablet}};
+      --gap: {{settings.product-gap-largetablet}}px;
+      --section-space: {{settings.section-gap-largetablet}}px;
+      --home-section-space: {{settings.home-section-gap-largetablet}}px;
+      --home-section-title: {{settings.home-section-gap-largetablet}}px;
+      --home-section-title-space: {{settings.home-section-title-largetablet}}px;
+      --home-section-secondary-title: {{settings.home-section-secondary-title-largetablet}}px;
+      --home-section-secondary-title-space: {{settings.home-section-secondary-title-space-largetablet}}px;
+      --section-button: {{settings.home-section-secondary-title-largetablet}}px;
       --curated-collection-title: 24px;
       --curated-collection-smallTitle: 16px;
       --card-product-title: 14px;
@@ -110,14 +109,14 @@
 
   @media (min-width: $desktop) {
     :root {
-      --gap: {{settings.product-gap-desktop}};
-      --section-space: {{settings.section-gap-desktop}};
-      --home-section-space: {{settings.home-section-gap-desktop}};
-      --home-section-title: {{settings.home-section-gap-desktop}};
-      --home-section-title-space: {{settings.home-section-title-desktop}};
-      --section-secondary-title: {{settings.home-section-secondary-title-desktop}};
-      --section-secondary-title-space: {{settings.home-section-secondary-title-space-desktop}};
-      --section-button: {{settings.home-section-secondary-title-desktop}};
+      --gap: {{settings.product-gap-desktop}}px;
+      --section-space: {{settings.section-gap-desktop}}px;
+      --home-section-space: {{settings.home-section-gap-desktop}}px;
+      --home-section-title: {{settings.home-section-gap-desktop}}px;
+      --home-section-title-space: {{settings.home-section-title-desktop}}px;
+      --home-section-secondary-title: {{settings.home-section-secondary-title-desktop}}px;
+      --home-section-secondary-title-space: {{settings.home-section-secondary-title-space-desktop}}px;
+      --section-button: {{settings.home-section-secondary-title-desktop}}px;
       --curated-collection-title: 24px;
       --curated-collection-smallTitle: 16px;
       --card-product-title: 14px;
@@ -129,14 +128,14 @@
 
   @media (min-width: $desktopL) {
     :root {
-      --gap: {{settings.product-gap-largedesktop}};
-      --section-space: {{settings.section-gap-largedesktop}};
-      --home-section-space: {{settings.home-section-gap-largedesktop}};
-      --home-section-title: {{settings.home-section-gap-largedesktop}};
-      --home-section-title-space: {{settings.home-section-title-largedesktop}};
-      --section-secondary-title: {{settings.home-section-secondary-title-largedesktop}};
-      --section-secondary-title-space: {{settings.home-section-secondary-title-space-largedesktop}};
-      --section-button: {{settings.home-section-secondary-title-largedesktop}};
+      --gap: {{settings.product-gap-largedesktop}}px;
+      --section-space: {{settings.section-gap-largedesktop}}px;
+      --home-section-space: {{settings.home-section-gap-largedesktop}}px;
+      --home-section-title: {{settings.home-section-gap-largedesktop}}px;
+      --home-section-title-space: {{settings.home-section-title-largedesktop}}px;
+      --home-section-secondary-title: {{settings.home-section-secondary-title-largedesktop}}px;
+      --home-section-secondary-title-space: {{settings.home-section-secondary-title-space-largedesktop}}px;
+      --section-button: {{settings.home-section-secondary-title-largedesktop}}px;
       --curated-collection-title: 24px;
       --curated-collection-smallTitle: 16px;
       --card-product-title: 14px;
@@ -147,7 +146,6 @@
   }
 
   {% endstyle %}
-  {% endcomment %}
 
   <script>
     window.mlvedaShopCurrency = "{{ shop.currency }}";
