@@ -7,8 +7,6 @@
           "type": "slide",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/youtube-banner-size-guide.webp",
-            "mobile_image": "shopify:\/\/shop_images\/youtube-banner-size-guide.webp",
             "link": ""
           }
         },
@@ -88,42 +86,48 @@
         "b8f50da7-dab7-470a-9316-30bf31b01a5a": {
           "type": "readymade-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/curated-collection-1.jpg",
+            "image": "shopify:\/\/shop_images\/Women-01.png",
+            "heading": "Women",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
         "af64ae0e-b0ce-44f1-9174-96c976588b5f": {
           "type": "readymade-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/curated-collection-2.jpg",
+            "image": "shopify:\/\/shop_images\/Mens-01.png",
+            "heading": "Men",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
         "3df7725e-d735-4aca-a28b-46a8340b3ab5": {
           "type": "readymade-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/curated-collection-3.jpg",
+            "image": "shopify:\/\/shop_images\/girls_model-01.png",
+            "heading": "Girls",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
         "b64e9a81-ca1c-4151-bcdd-5de5dcabd06b": {
           "type": "readymade-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/curated-collection-4.jpg",
+            "image": "shopify:\/\/shop_images\/boys_model-01.png",
+            "heading": "Boys",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
         "a71593b3-0ca8-4b76-bbe5-8de06e41635c": {
           "type": "readymade-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sundari-silks-product-room.png",
+            "image": "shopify:\/\/shop_images\/FABRIC-01.png",
+            "heading": "Fabric",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
         "341a96da-ba85-4fdf-9220-c3a94a04920d": {
           "type": "readymade-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sundari-silks-showroom.png",
+            "image": "shopify:\/\/shop_images\/INFANT-01.png",
+            "heading": "Infant",
             "link": "shopify:\/\/collections\/readymades"
           }
         }
