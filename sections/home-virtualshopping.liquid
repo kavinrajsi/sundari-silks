@@ -1,6 +1,46 @@
 <section class="shopify-section homepage-section">
   <section class="virtualshopping">
-    <img src="https://cdn.shopify.com/s/files/1/0560/3695/0174/files/VIRUAL_SHOPPING_FINAL-05.png?v=1666809896" alt="" class="desktop" >
-    <img src="https://cdn.shopify.com/s/files/1/0560/3695/0174/files/VIRTUAL_SHOPPING_FINAL-04.png?v=1666809891" alt="" class="mobile" >
+    <a href="{{ section.settings.url }}">
+      <img src="{{ section.settings.virtual-shopping-desktop }}" alt="" class="desktop">
+      <img src="{{ section.settings.virtual-shopping-mobile }}" alt="" class="mobile">
+    </a>
   </section>
 </section>
+
+
+{% schema %}
+{
+"name": "Virtual Shopping",
+"class": "homepage-virtual-shopping",
+"tag": "section",
+"settings": [
+{
+"type": "text",
+"id": "spotlight-title",
+"label": "Section Title",
+"default": "The Virtual Store Of Exquisite Products"
+},
+{
+"type": "text",
+"id": "spotlight-description",
+"label": "Section Description",
+"default": "Shop our collection from the comfort of your home"
+},
+{
+"type": "image",
+"id": "virtual-shopping-mobile",
+"label": "Virtual Image for Mobile"
+},
+{
+"type": "image",
+"id": "virtual-shopping-desktop",
+"label": "Virtual Image for Desktop"
+},
+{
+"type": "url",
+"id": "virtual-shopping-url",
+"label": "Link URL"
+}
+]
+}
+{% endschema %}
