@@ -7,12 +7,12 @@
       </div>
     </div>
   </div>
-  <div class="image-container" data-active-color="{{section.settings.activeColor}}" data-normal-color="{{section.settings.normalColor}}">
+  <div class="image-container">
     <div class="large-image-products">
       <img src="{{ section.settings.largeImage | image_url: width: 1380, height: 480 }}" alt="">
       {%- for block in section.blocks -%}
       <a href="{{ block.settings.productURL }}">
-        <div class="dot {% if forloop.first%}active{% endif %}" data-handle="{{block.settings.block_product}}"
+        <div class="dot {% if forloop.first%}active{% endif %}" data-handle="{{block.settings.block_product}}" style="--tooltip-color: {{section.settings.normalColor}};"
           style="top: {{block.settings.vertical}}%; left: {{block.settings.horizontal}}%;  "></div>
       </a>
       {% endfor %}
@@ -21,7 +21,7 @@
       <img src="{{ section.settings.smallImage | img_url: '1000x' }}" alt="">
       {%- for block in section.blocks -%}
       <a href="{{ block.settings.productURL }}">
-        <div class="dot {% if forloop.first%}active{% endif %}" data-handle="{{block.settings.block_product}}"
+        <div class="dot {% if forloop.first%}active{% endif %}" data-handle="{{block.settings.block_product}}" style="--tooltip-color: {{section.settings.normalColor}};"
           style="top: {{block.settings.mobileVertical}}%; left: {{block.settings.mobileHorizontal}}%;  "></div>
       </a>
       {% endfor %}
@@ -51,10 +51,10 @@
 "type": "color",
 "label": "Active Color"
 },{
-  "id": "normalColor",
-  "type": "color",
-  "label": "Normal Color"
-  },
+"id": "normalColor",
+"type": "color",
+"label": "Normal Color"
+},
 {
 "id": "headingText",
 "type": "text",
