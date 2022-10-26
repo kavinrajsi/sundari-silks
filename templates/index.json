@@ -216,6 +216,7 @@
     },
     "infobox": {
       "type": "home-infoxbox",
+      "disabled": true,
       "settings": {
       }
     },
