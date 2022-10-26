@@ -3,13 +3,6 @@
     "slideshow": {
       "type": "home-slideshow",
       "blocks": {
-        "35b4fc5f-06f8-4348-87da-b405b7b97cdf": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "link": ""
-          }
-        },
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b": {
           "type": "slide",
           "settings": {
@@ -36,7 +29,6 @@
         }
       },
       "block_order": [
-        "35b4fc5f-06f8-4348-87da-b405b7b97cdf",
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b",
         "3fbd7fec-f97f-434e-9f56-1ddc4581978e",
         "46a12e3e-d35a-4136-8a28-c0579f4c7632"
@@ -149,7 +141,7 @@
         "curated-description": "Styles for every occasion"
       }
     },
-    "shopLook": {
+    "5c9a7975-a201-4b5e-9c9e-50ec765aeb8b": {
       "type": "lookbook",
       "blocks": {
         "3232c787-c4c4-4ba0-9f63-b5500afcd6dd": {
@@ -220,6 +212,12 @@
         "spotlight-collection": "all-kanchipuram",
         "spotlight-url": "shopify:\/\/collections\/adidas",
         "spotlight-count": 6
+      }
+    },
+    "infobox": {
+      "type": "home-infoxbox",
+      "disabled": true,
+      "settings": {
       }
     },
     "collaborate": {
@@ -359,6 +357,13 @@
         "readymade-description": "Styles for every occasion"
       }
     },
+    "recent-products": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true
+      }
+    },
     "blog": {
       "type": "blog-feed",
       "settings": {
@@ -436,11 +441,13 @@
   "order": [
     "slideshow",
     "curated",
-    "shopLook",
+    "5c9a7975-a201-4b5e-9c9e-50ec765aeb8b",
     "spotlight",
+    "infobox",
     "collaborate",
     "dropped",
     "readymade",
+    "recent-products",
     "blog",
     "vs",
     "instagram"
