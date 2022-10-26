@@ -10,8 +10,13 @@
     {% if block.settings.image %}
     <div class="collection-item">
       <a class="collection-item-link" href="{{ block.settings.link }}">
-        {{ block.settings.image | image_url : width: 360, height: 608, crop: "top" | image_tag : alt: block.settings.image.alt,
+        {{ block.settings.image | image_url : width: 360, height: 608, crop: "top" | image_tag : alt:
+        block.settings.image.alt,
         loading: 'lazy', class: "collection-item-image" }}
+        <div class="collection-item-name">
+          <div class="collection-item-title"> Kanchipuram Silk Saree</div>
+          <div class="collection-title-subtitle">Explore</div>
+        </div>
       </a>
     </div>
     {% else %}
@@ -28,8 +33,13 @@
     {% if block.settings.image %}
     <div class="collection-item">
       <a class="collection-item-link" href="{{ block.settings.link }}">
-        {{ block.settings.image | image_url : width: 264, height: 290, crop: "top" | image_tag : alt: block.settings.image.alt,
+        {{ block.settings.image | image_url : width: 264, height: 290, crop: "top" | image_tag : alt:
+        block.settings.image.alt,
         loading: 'lazy', class: "collection-item-image" }}
+        <div class="collection-item-name">
+          <div class="collection-item-title"> Kanchipuram Silk Saree</div>
+          <div class="collection-title-subtitle">Explore</div>
+        </div>
       </a>
     </div>
     {% else %}

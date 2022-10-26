@@ -107,48 +107,6 @@
       },
       {
         "type": "number",
-        "id": "home_title_font_size_min",
-        "label": "Home page section title min size before 512px",
-        "default": 1
-      },
-      {
-        "type": "number",
-        "id": "home_title_font_size_max",
-        "label": "Home page section title max size after 512px",
-        "default": 1
-      },
-      {
-        "type": "number",
-        "id": "home_description_font_size_min",
-        "label": "Home page section description min size before 512px",
-        "default": 1
-      },
-      {
-        "type": "number",
-        "id": "home_description_font_size_max",
-        "label": "Home page section description max size after 512px",
-        "default": 1
-      },
-      {
-        "type": "number",
-        "id": "home_button_font_size_min",
-        "label": "Home page section view all button min size before 512px",
-        "default": 1
-      },
-      {
-        "type": "number",
-        "id": "home_button_font_size_max",
-        "label": "Home page section view all button max size before 512px",
-        "default": 1
-      },
-      {
-        "type": "number",
-        "id": "product_title_size_min",
-        "label": "Product title font size min before 512px",
-        "default": 1
-      },
-      {
-        "type": "number",
         "id": "product_title_size_max",
         "label": "Product title font size max after 512px",
         "default": 1
