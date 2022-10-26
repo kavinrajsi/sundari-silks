@@ -1,7 +1,11 @@
 {
   "current": {
-    "body_text_font": "montserrat_n4",
     "favicon": "shopify:\/\/shop_images\/favicon.png",
+    "body_text_font": "montserrat_n4",
+    "home-section-gap-tablet": 12,
+    "home-section-gap-largetablet": 14,
+    "home-section-gap-desktop": 12,
+    "home-section-gap-large-largedesktop": 58,
     "header_text_font": "playfair_display_n4",
     "mlvedaACS_roundDecimal": false,
     "mlvedaACS_positionLeft": "10px",
@@ -64,7 +68,6 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/kanchipuram-saree-styling-ideas-1.png",
               "mega_link": "Kanchipuram",
               "link": "shopify:\/\/collections\/all-kanchipuram",
               "title": "All Kanchipuram",
@@ -75,7 +78,6 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/kanchipuram-saree-styling-ideas-2.png",
               "mega_link": "Wedding Edit",
               "link": "shopify:\/\/collections\/saree",
               "title": "Venkatagiri Cotton",
@@ -152,7 +154,6 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/CuratedCollectionImage-2.png",
               "mega_link": "Pendants",
               "link": "shopify:\/\/collections\/arthirshtam",
               "title": "Pendants",
@@ -163,7 +164,6 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/kanchipuram-saree-styling-ideas-1.png",
               "mega_link": "Men's Bracelets",
               "link": "shopify:\/\/collections\/arthirshtam",
               "title": "Men's Bracelets",
@@ -174,7 +174,6 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/model-leaning-against-a-wall-of-lights-atop-red-shag-carpet.jpg",
               "mega_link": "Women",
               "link": "shopify:\/\/collections\/women",
               "title": "Women",
@@ -185,7 +184,6 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/modern-male-fashion-with-glasses.jpg",
               "mega_link": "Men",
               "link": "shopify:\/\/collections\/men",
               "title": "Men",
@@ -196,7 +194,6 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/colorful-fabric.jpg",
               "mega_link": "Fabrics",
               "link": "shopify:\/\/collections\/all-kanchipuram",
               "title": "Fabrics",
@@ -207,7 +204,6 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/girl-by-brick-wall.jpg",
               "mega_link": "Girls",
               "link": "shopify:\/\/collections\/readymades",
               "title": "Girls",
@@ -218,7 +214,6 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/laughing-kid-boy.jpg",
               "mega_link": "Boys",
               "link": "shopify:\/\/collections\/readymades",
               "title": "Boys",
@@ -229,7 +224,6 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/baby-girl-feet.jpg",
               "mega_link": "Infant Wears",
               "link": "shopify:\/\/products\/3-layer-non-surgical-masks-in-cotton-prints-and-plain-set-of-4",
               "title": "Infant Wears",
@@ -319,6 +313,11 @@
           "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
           "logo_width": 120,
           "menu": "main-menu"
+        }
+      },
+      "drawer": {
+        "type": "drawer",
+        "settings": {
         }
       }
     },
