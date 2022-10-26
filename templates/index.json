@@ -149,7 +149,7 @@
         "curated-description": "Styles for every occasion"
       }
     },
-    "5c9a7975-a201-4b5e-9c9e-50ec765aeb8b": {
+    "shopLook": {
       "type": "lookbook",
       "blocks": {
         "3232c787-c4c4-4ba0-9f63-b5500afcd6dd": {
@@ -359,13 +359,6 @@
         "readymade-description": "Styles for every occasion"
       }
     },
-    "recent-products": {
-      "type": "product-recommendations",
-      "disabled": true,
-      "settings": {
-        "show_product_recommendations": true
-      }
-    },
     "blog": {
       "type": "blog-feed",
       "settings": {
@@ -443,12 +436,11 @@
   "order": [
     "slideshow",
     "curated",
-    "5c9a7975-a201-4b5e-9c9e-50ec765aeb8b",
+    "shopLook",
     "spotlight",
     "collaborate",
     "dropped",
     "readymade",
-    "recent-products",
     "blog",
     "vs",
     "instagram"
