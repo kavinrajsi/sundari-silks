@@ -275,7 +275,7 @@ $desktop: 1024px;
     left: 0;
     right: 0;
     bottom: 0px;
-    background-color: rgba(15,15,15, 0.6);
+    background: linear-gradient(180deg, rgba(15,15,15, 0.4), rgba(15,15,15, 0.8));
     color: #fff;
     padding: 12px 8px;
     border-bottom-left-radius: var(--border-radius);
@@ -288,6 +288,7 @@ $desktop: 1024px;
       line-height: normal;
       text-align: center;
       color: #ffffff;
+      margin-bottom: 4px;
     }
     .collection-title-subtitle {
       font-family: "Montserrat";
@@ -318,7 +319,7 @@ $desktop: 1024px;
 
   .small-image-products,
   .large-image-products {
-    background-color: rgba($color: #000000, $alpha: 0.1);
+    // background-color: rgba($color: #000000, $alpha: 0.1);
     position: relative;
     text-align: center;
     width: 100%;
@@ -587,10 +588,10 @@ $desktop: 1024px;
     }
     .blog-feed-card-title {
       font-family: var(--font-playfair);
-      font-size: 20px;
+      font-size: 22px;
       line-height: 1.5;
       padding-top: 4px;
-      height: 38px;
+      height: 46px;
       overflow: hidden;
       @media (min-width: 768px) {
         padding-top: 8px;
