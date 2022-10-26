@@ -212,7 +212,7 @@
         "largeImage": "shopify:\/\/shop_images\/WhatsApp_Image_2022-10-26_at_10.28.08_PM.jpg",
         "smallImage": "shopify:\/\/shop_images\/WhatsApp_Image_2022-10-26_at_10.28.07_PM.jpg",
         "activeColor": "#000000",
-        "normalColor": "#fff",
+        "normalColor": "#ffffff",
         "headingText": "Shop the Look",
         "paragraphText": "Find the perfect look for any occasion with our latest style guides"
       }
@@ -234,6 +234,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/necklaces.png",
+            "text": "Necklaces",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
         },
@@ -241,6 +242,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/earring.png",
+            "text": "Earring",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
         },
@@ -248,6 +250,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/bangles.png",
+            "text": "Bangles",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
         },
@@ -255,6 +258,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/rings.png",
+            "text": "Rings",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
         },
@@ -262,6 +266,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/kids.png",
+            "text": "Kids",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
         },
@@ -269,6 +274,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/ankles.png",
+            "text": "Ankles",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
         }
