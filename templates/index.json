@@ -222,12 +222,6 @@
         "spotlight-count": 6
       }
     },
-    "infobox": {
-      "type": "home-infoxbox",
-      "disabled": true,
-      "settings": {
-      }
-    },
     "collaborate": {
       "type": "home-collaborate",
       "blocks": {
@@ -451,7 +445,6 @@
     "curated",
     "5c9a7975-a201-4b5e-9c9e-50ec765aeb8b",
     "spotlight",
-    "infobox",
     "collaborate",
     "dropped",
     "readymade",
