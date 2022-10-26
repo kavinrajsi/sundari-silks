@@ -1517,7 +1517,6 @@ main img {
   }
 }
 
-.virtual-store-details p strong,
 .section-header-title {
   font-family: "Playfair Display", serif;
   font-weight: 500;
@@ -1526,32 +1525,27 @@ main img {
   font-size: 24px;
 }
 @media (min-width: 768px) {
-  .virtual-store-details p strong,
-.section-header-title {
+  .section-header-title {
     font-size: 30px;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 576px) {
-  .virtual-store-details p strong,
-.section-header-title {
+  .section-header-title {
     font-size: calc(1.3392857143vw + 22.2857142857px);
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
-  .virtual-store-details p strong,
-.section-header-title {
+  .section-header-title {
     font-size: 36px;
   }
 }
 @media (min-width: 1364px) {
-  .virtual-store-details p strong,
-.section-header-title {
+  .section-header-title {
     font-size: 48px;
   }
 }
 
 .section-header-action_link,
-.virtual-store-details p,
 .section-header-content {
   font-family: var(--font-montserrat);
   line-height: 1.6;
@@ -1561,7 +1555,6 @@ main img {
 }
 @media (min-width: 768px) {
   .section-header-action_link,
-.virtual-store-details p,
 .section-header-content {
     font-size: 18px;
     padding-bottom: 18px;
@@ -1569,35 +1562,30 @@ main img {
 }
 @media screen and (min-width: 768px) and (min-width: 576px) {
   .section-header-action_link,
-.virtual-store-details p,
 .section-header-content {
     font-size: calc(0.4464285714vw + 15.4285714286px);
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
   .section-header-action_link,
-.virtual-store-details p,
 .section-header-content {
     font-size: 20px;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 576px) {
   .section-header-action_link,
-.virtual-store-details p,
 .section-header-content {
     padding-bottom: calc(0vw + 18px);
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
   .section-header-action_link,
-.virtual-store-details p,
 .section-header-content {
     padding-bottom: 18px;
   }
 }
 @media (min-width: 768px) and (min-width: 1364px) {
   .section-header-action_link,
-.virtual-store-details p,
 .section-header-content {
     font-size: 26px;
   }
