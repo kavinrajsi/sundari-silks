@@ -95,21 +95,21 @@
         "af64ae0e-b0ce-44f1-9174-96c976588b5f": {
           "type": "readymade-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sundari-silk-curated-collection-oct-kanchipuram-silk.png",
+            "image": "shopify:\/\/shop_images\/curated-collection-2.jpg",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
         "3df7725e-d735-4aca-a28b-46a8340b3ab5": {
           "type": "readymade-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sundari-silk-curated-collection-oct-soft-silk.png",
+            "image": "shopify:\/\/shop_images\/curated-collection-3.jpg",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
         "b64e9a81-ca1c-4151-bcdd-5de5dcabd06b": {
           "type": "readymade-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sundari-silk-curated-collection-oct-mysore-silk.png",
+            "image": "shopify:\/\/shop_images\/curated-collection-4.jpg",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
