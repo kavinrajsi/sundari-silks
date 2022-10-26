@@ -491,9 +491,20 @@ $desktop: 1024px;
       @media (min-width: 1200px) {
         flex: 0 0 auto;
         gap: 24px;
+        position: relative;
       }
       img {
         border-radius: 50%;
+      }
+      &:hover {
+        .section-Name {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          border-radius: 50%;
+        }
       }
       &:last-child img {
         margin-right: 14px;

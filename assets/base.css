@@ -1810,9 +1810,18 @@ section.shopify-section.homepage-section.home-page-readymade-section,
   .home-page-silver-section nav a {
     flex: 0 0 auto;
     gap: 24px;
+    position: relative;
   }
 }
 .home-page-silver-section nav a img {
+  border-radius: 50%;
+}
+.home-page-silver-section nav a:hover .section-Name {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   border-radius: 50%;
 }
 .home-page-silver-section nav a:last-child img {

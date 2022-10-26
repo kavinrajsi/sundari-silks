@@ -4,7 +4,7 @@
     <div class="section-header-title">
       {{section.settings.collaborate-title}}
     </div>
-    <div class="section-header-content" style="background-color: {{section.settings.collaborate-hover-color}} ">
+    <div class="section-header-content">
       {{section.settings.collaborate-description}}</div>
   </div>
   <div class="section-content">
@@ -13,7 +13,7 @@
       {% if block.settings.image != blank %}
       <a href="{{block.settings.url}}">
         {{ block.settings.image | image_url : width: 168, height: 168 | image_tag : alt: block.settings.image.alt }}
-        <div class="section-Name">
+        <div class="section-Name" style="background: {{section.settings.collaborate-hover-color}} ">
           {{block.settings.contentTitle}}
         </div>
       </a>
