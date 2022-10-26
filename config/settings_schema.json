@@ -147,7 +147,7 @@
       {
         "type": "range",
         "id": "section-gap-largetablet",
-        "label": "Section space in tablet",
+        "label": "Section space in large tablet",
         "min": 8,
         "max": 120,
         "step": 2,
@@ -185,7 +185,7 @@
       {
         "type": "range",
         "id": "product-gap-mobile",
-        "label": "Grid gap mobile",
+        "label": "Grid gap 📱",
         "min": 8,
         "max": 48,
         "step": 2,
@@ -215,7 +215,7 @@
       {
         "type": "range",
         "id": "product-gap-desktop",
-        "label": "Grid gap desktop",
+        "label": "Grid gap 💻",
         "min": 8,
         "max": 48,
         "step": 2,
@@ -225,7 +225,7 @@
       {
         "type": "range",
         "id": "product-gap-largedesktop",
-        "label": "Grid gap large desktop",
+        "label": "Grid gap large 🖥️",
         "min": 8,
         "max": 120,
         "step": 2,
@@ -233,21 +233,274 @@
         "default": 8
       }
     ]
-  },{
+  },
+  {
     "name": "Home Page",
     "settings": [
       {
         "type": "header",
-        "content": "Common value for home page"
-      },
-      {
-        "type": "paragraph",
         "content": "Space between section in site"
       },
       {
         "type": "range",
-        "id": "section-gap",
-        "label": "Section space in mobile",
+        "id": "home-section-gap-mobile",
+        "label": "Section space in 📱",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "home-section-gap-tablet",
+        "label": "Section space in tablet",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "home-section-gap-largetablet",
+        "label": "Section space in large tablet",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "home-section-gap-desktop",
+        "label": "Section space in 💻",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "home-section-gap-large-largedesktop",
+        "label": "Section space in 🖥️",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "header",
+        "content": "Section title"
+      },
+      {
+        "type": "range",
+        "id": "home-section-title-mobile",
+        "label": "Section title in 📱",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "home-section-title-tablet",
+        "label": "Section title in tablet",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "home-section-title-largetablet",
+        "label": "Section title in large tablet",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "home-section-title-desktop",
+        "label": "Section title in 💻",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "home-section-title-large-largedesktop",
+        "label": "Section title in 🖥️",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "header",
+        "content": "Section title space"
+      },
+      {
+        "type": "range",
+        "id": "home-section-title-space--mobile",
+        "label": "Section title space in 📱",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "home-section-title-space--tablet",
+        "label": "Section title space in tablet",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "home-section-title-space--largetablet",
+        "label": "Section title space in large tablet",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "home-section-title-space--desktop",
+        "label": "Section title space in 💻",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "home-section-title-space--large-largedesktop",
+        "label": "Section title space in 🖥️",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "header",
+        "content": "Section Secondary Title"
+      },
+      {
+        "type": "range",
+        "id": "home-section-secondary-title-mobile",
+        "label": "Section Secondary Title in 📱",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "home-section-secondary-title-tablet",
+        "label": "Section Secondary Title in tablet",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "home-section-secondary-title-largetablet",
+        "label": "Section Secondary Title in large tablet",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "home-section-secondary-title-desktop",
+        "label": "Section Secondary Title in 💻",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "home-section-secondary-title-large-largedesktop",
+        "label": "Section Secondary Title in 🖥️",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "header",
+        "content": "Section Secondary Title space"
+      },
+      {
+        "type": "range",
+        "id": "home-section-secondary-title-space--mobile",
+        "label": "Section Secondary Title space in 📱",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "home-section-secondary-title-space--tablet",
+        "label": "Section Secondary Title space in tablet",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "home-section-secondary-title-space--largetablet",
+        "label": "Section Secondary Title space in large tablet",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "home-section-secondary-title-space--desktop",
+        "label": "Section Secondary Title space in 💻",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "home-section-secondary-title-space--large-largedesktop",
+        "label": "Section Secondary Title space in 🖥️",
         "min": 8,
         "max": 120,
         "step": 2,
