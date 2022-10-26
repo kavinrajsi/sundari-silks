@@ -2,6 +2,10 @@
   "current": {
     "favicon": "shopify:\/\/shop_images\/favicon.png",
     "body_text_font": "montserrat_n4",
+    "section-gap-tablet": 12,
+    "section-gap-largetablet": 18,
+    "section-gap-desktop": 24,
+    "section-gap-largedesktop": 24,
     "home-section-gap-tablet": 12,
     "home-section-gap-largetablet": 14,
     "home-section-gap-desktop": 12,
