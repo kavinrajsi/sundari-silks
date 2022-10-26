@@ -1823,6 +1823,13 @@ section.shopify-section.homepage-section.home-page-readymade-section,
   left: 0;
   right: 0;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  width: 168px;
+  height: 168px;
+  font-size: 20px;
 }
 .home-page-silver-section nav a:last-child img {
   margin-right: 14px;

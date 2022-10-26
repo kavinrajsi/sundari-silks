@@ -504,6 +504,13 @@ $desktop: 1024px;
           left: 0;
           right: 0;
           border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          width: 168px;
+          height: 168px;
+          font-size: 20px;
         }
       }
       &:last-child img {
