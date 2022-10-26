@@ -57,6 +57,7 @@
           "type": "collection-image",
           "settings": {
             "image": "shopify:\/\/shop_images\/curated-collection-1.jpg",
+            "heading": "Kanchipuram Silk",
             "link": "shopify:\/\/collections\/all-kanchipuram"
           }
         },
@@ -64,6 +65,7 @@
           "type": "collection-image",
           "settings": {
             "image": "shopify:\/\/shop_images\/curated-collection-2.jpg",
+            "heading": "Soft Silk",
             "link": "shopify:\/\/collections\/kanchipuram-wedding-edit"
           }
         },
@@ -71,6 +73,7 @@
           "type": "collection-image",
           "settings": {
             "image": "shopify:\/\/shop_images\/curated-collection-3.jpg",
+            "heading": "Printed Silk",
             "link": "shopify:\/\/collections\/kanchipuram-zari-and-thread-work"
           }
         },
@@ -78,6 +81,7 @@
           "type": "collection-image",
           "settings": {
             "image": "shopify:\/\/shop_images\/curated-collection-4.jpg",
+            "heading": "Mysore Silk",
             "link": "shopify:\/\/collections\/kanchipuram-half-fine-zari"
           }
         },
