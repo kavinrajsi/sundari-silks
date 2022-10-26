@@ -234,7 +234,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/necklaces.png",
-            "text": "Necklaces",
+            "contentTitle": "",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
         },
@@ -242,7 +242,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/earring.png",
-            "text": "Earring",
+            "contentTitle": "",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
         },
@@ -250,7 +250,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/bangles.png",
-            "text": "Bangles",
+            "contentTitle": "",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
         },
@@ -258,7 +258,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/rings.png",
-            "text": "Rings",
+            "contentTitle": "",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
         },
@@ -266,7 +266,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/kids.png",
-            "text": "Kids",
+            "contentTitle": "",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
         },
@@ -274,7 +274,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/ankles.png",
-            "text": "Ankles",
+            "contentTitle": "",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
         }
@@ -292,7 +292,8 @@
         "collaborate-description": "An eclectic silver jewellery collection embedded with cultural and contemporary nuances",
         "collaborate-background": "shopify:\/\/shop_images\/collection-pattern-bg.png",
         "collaborate-background-edge": "shopify:\/\/shop_images\/collection-frame.png",
-        "collaborate-border-color": "#dbae40"
+        "collaborate-border-color": "#dbae40",
+        "collaborate-hover-color": "#49194f"
       }
     },
     "dropped": {
