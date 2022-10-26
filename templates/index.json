@@ -210,6 +210,8 @@
       "settings": {
         "largeImage": "shopify:\/\/shop_images\/WhatsApp_Image_2022-10-26_at_10.28.08_PM.jpg",
         "smallImage": "shopify:\/\/shop_images\/WhatsApp_Image_2022-10-26_at_10.28.07_PM.jpg",
+        "activeColor": "#000000",
+        "normalColor": "#fff",
         "headingText": "Shop the Look",
         "paragraphText": "Find the perfect look for any occasion with our latest style guides"
       }
