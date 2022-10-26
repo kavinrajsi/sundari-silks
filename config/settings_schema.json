@@ -8,6 +8,16 @@
     "theme_support_email": "sikavinraj@gmail.com"
   },
   {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      }
+    ]
+  },
+  {
     "name": "Navigation Bar Colors Settings",
     "settings": [
       {
@@ -100,26 +110,149 @@
         "min": 13,
         "max": 18,
         "step": 1
-      },
-      {
-        "type": "header",
-        "content": "Home Page Font Size"
-      },
-      {
-        "type": "number",
-        "id": "product_title_size_max",
-        "label": "Product title font size max after 512px",
-        "default": 1
       }
     ]
   },
   {
-    "name": "Favicon",
+    "name": "Gutter",
     "settings": [
       {
-        "type": "image_picker",
-        "id": "favicon",
-        "label": "Favicon"
+        "type": "header",
+        "content": "Between Section"
+      },
+      {
+        "type": "paragraph",
+        "content": "Space between section in site"
+      },
+      {
+        "type": "range",
+        "id": "section-gap-mobile",
+        "label": "Section space in 📱",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "section-gap-tablet",
+        "label": "Section space in tablet",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "section-gap-largetablet",
+        "label": "Section space in tablet",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "section-gap-desktop",
+        "label": "Section space in 💻",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "section-gap-largedesktop",
+        "label": "Section space in 🖥️",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "header",
+        "content": "Between Product"
+      },
+      {
+        "type": "paragraph",
+        "content": "Space between card in product page and section"
+      },
+      {
+        "type": "range",
+        "id": "product-gap-mobile",
+        "label": "Grid gap mobile",
+        "min": 8,
+        "max": 48,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "product-gap-tablet",
+        "label": "Grid gap tablet",
+        "min": 8,
+        "max": 48,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "product-gap-largetablet",
+        "label": "Grid gap large tablet",
+        "min": 8,
+        "max": 48,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "product-gap-desktop",
+        "label": "Grid gap desktop",
+        "min": 8,
+        "max": 48,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "product-gap-largedesktop",
+        "label": "Grid gap large desktop",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
+      }
+    ]
+  },{
+    "name": "Home Page",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Common value for home page"
+      },
+      {
+        "type": "paragraph",
+        "content": "Space between section in site"
+      },
+      {
+        "type": "range",
+        "id": "section-gap",
+        "label": "Section space in mobile",
+        "min": 8,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 8
       }
     ]
   }
