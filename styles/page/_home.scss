@@ -247,7 +247,7 @@ $desktop: 1200px;
 .section-header-action_link {
   display: none;
   @media (min-width: 768px) {
-  display: flex;
+    display: flex;
   }
 }
 
@@ -342,22 +342,25 @@ $desktop: 1200px;
 
   .section-header-wrapper {
     flex: 1 0 auto;
-    .section-header{
+    .section-header {
       text-align: center;
     }
     @media (min-width: $ptablet) {
       flex: 1 0 408px;
-      .section-header{
+      .section-header {
         text-align: left;
       }
     }
     @media (min-width: 768px) {
       padding-right: var(--gap);
+      .section-header {
+        text-align: left;
+      }
     }
   }
 
   .product-grid-list-three {
-    .product__card{
+    .product__card {
       display: none;
     }
     .product__card:nth-child(1),
@@ -365,8 +368,13 @@ $desktop: 1200px;
     .product__card:nth-child(3),
     .product__card:nth-child(4),
     .product__card:nth-child(5),
-    .product__card:nth-child(6){
+    .product__card:nth-child(6) {
       display: block;
+    }
+    @media (min-width: 1200px) {
+      .product__card {
+        display: block;
+      }
     }
     + a {
       border: 1px solid var(--primary-color);
@@ -376,7 +384,7 @@ $desktop: 1200px;
       margin: 8px auto;
       max-width: 288px;
       @media (min-width: 768px) {
-      display: none;
+        display: none;
       }
     }
   }
@@ -445,7 +453,7 @@ $desktop: 1200px;
     a {
       flex: 1 0 33.3333%;
       display: inline-block;
-      @media (min-width: 992px) {
+      @media (min-width: 768px) {
         flex: 1 0 auto;
         gap: 24px;
       }
@@ -467,12 +475,16 @@ $desktop: 1200px;
 .homepage-justdropped {
   overflow-x: hidden;
   .section-header-wrapper {
+    .section-header {
+      text-align: center;
+    }
     @media (min-width: 768px) {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
       margin-bottom: 16px;
       .section-header {
+        text-align: left;
         margin-bottom: 0 !important;
       }
       .section-header-content {
@@ -488,12 +500,17 @@ $desktop: 1200px;
     margin: 0 auto;
     padding-left: 16px;
     padding-right: 16px;
+    width: 100%;
     @media (min-width: 768px) {
       margin: 0;
+      width: auto;
     }
     .tab {
       cursor: pointer;
+      flex: 0 0 auto;
+      @media (min-width: 768px) {
       flex: 1 0 auto;
+      }
       border: 1px solid var(--border-color);
       background-color: var(--border-color);
       font-size: 14px;
@@ -536,8 +553,8 @@ $desktop: 1200px;
       grid-template-columns: repeat(auto-fit, minmax(218px, 1fr));
     }
 
-    .blog-feed-card-link{
-    width: 100%;
+    .blog-feed-card-link {
+      width: 100%;
     }
     .blog-feed-card-image {
       width: 100%;

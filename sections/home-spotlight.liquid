@@ -15,9 +15,9 @@
       </div>
     </div>
     <div class="section-content product-collection-list">
-        <div class="product-grid-list-three display-card-grid"  data-mobile-count="2" data-tablet-count="3" data-laptop-count="3" data-desktop-count="4">
+        <div class="product-grid-list-three display-card-grid"  data-mobile-count="2" data-tablet-count="2" data-laptop-count="4" data-desktop-count="4">
           {% assign collection = collections[ section.settings.spotlight-collection ] %}
-          {% assign collectionCount = 12 %}
+          {% assign collectionCount = 8 %}
           {% for product in collection.products limit: collectionCount %}
           {% render 'product-card', product:product %}
           {% endfor %}

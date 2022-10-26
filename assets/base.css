@@ -1715,6 +1715,9 @@ main img {
   .spot-light .section-header-wrapper {
     padding-right: var(--gap);
   }
+  .spot-light .section-header-wrapper .section-header {
+    text-align: left;
+  }
 }
 .spot-light .product-grid-list-three .product__card {
   display: none;
@@ -1726,6 +1729,11 @@ main img {
 .spot-light .product-grid-list-three .product__card:nth-child(5),
 .spot-light .product-grid-list-three .product__card:nth-child(6) {
   display: block;
+}
+@media (min-width: 1200px) {
+  .spot-light .product-grid-list-three .product__card {
+    display: block;
+  }
 }
 .spot-light .product-grid-list-three + a {
   border: 1px solid var(--primary-color);
@@ -1813,7 +1821,7 @@ main img {
   flex: 1 0 33.3333%;
   display: inline-block;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .home-page-silver-section nav a {
     flex: 1 0 auto;
     gap: 24px;
@@ -1835,6 +1843,9 @@ main img {
 .homepage-justdropped {
   overflow-x: hidden;
 }
+.homepage-justdropped .section-header-wrapper .section-header {
+  text-align: center;
+}
 @media (min-width: 768px) {
   .homepage-justdropped .section-header-wrapper {
     display: flex;
@@ -1843,6 +1854,7 @@ main img {
     margin-bottom: 16px;
   }
   .homepage-justdropped .section-header-wrapper .section-header {
+    text-align: left;
     margin-bottom: 0 !important;
   }
   .homepage-justdropped .section-header-wrapper .section-header-content {
@@ -1857,15 +1869,17 @@ main img {
   margin: 0 auto;
   padding-left: 16px;
   padding-right: 16px;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .homepage-justdropped .tab-buttton {
     margin: 0;
+    width: auto;
   }
 }
 .homepage-justdropped .tab-buttton .tab {
   cursor: pointer;
-  flex: 1 0 auto;
+  flex: 0 0 auto;
   border: 1px solid var(--border-color);
   background-color: var(--border-color);
   font-size: 14px;
@@ -1873,6 +1887,11 @@ main img {
   padding: 4px 12px;
   border-radius: 40px;
   text-transform: capitalize;
+}
+@media (min-width: 768px) {
+  .homepage-justdropped .tab-buttton .tab {
+    flex: 1 0 auto;
+  }
 }
 .homepage-justdropped .tab-buttton .tab.active {
   border-color: var(--primary-color);
