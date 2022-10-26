@@ -1955,45 +1955,25 @@ section.shopify-section.homepage-section.home-page-readymade-section,
   }
 }
 
-.virtualshopping .wrapper {
-  display: grid;
-  background: repeat url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/12005/grid.png);
-  grid-gap: 10px;
-  grid-template-columns: repeat(6, 150px);
-  grid-template-rows: repeat(4, 150px);
-  background-color: #fff;
-  color: #444;
-  justify-content: center;
+.virtualshopping .desktop {
+  display: none;
+  margin: 0 auto;
 }
-.virtualshopping .a {
-  grid-column: 1/3;
-  grid-row: 1/3;
-  align-self: stretch;
+.virtualshopping .mobile {
+  display: block;
+  margin: 0 auto;
 }
-.virtualshopping .b {
-  grid-column: 3/5;
-  grid-row: 1/2;
-  align-self: center;
-  font-size: 30px;
-}
-@media screen and (min-width: 576px) {
-  .virtualshopping .b {
-    font-size: calc(4.3269230769vw + 5.0769230769px);
+@media (min-width: 768px) {
+  .virtualshopping .mobile {
+    display: none;
+    margin: 0 auto;
+  }
+  .virtualshopping .desktop {
+    display: block;
+    margin: 0 auto;
   }
 }
-@media screen and (min-width: 992px) {
-  .virtualshopping .b {
-    font-size: 48px;
-  }
-}
-.virtualshopping .c {
-  grid-column: 3/5;
-  grid-row: 2/3;
-}
-.virtualshopping .d {
-  grid-column: 1/3;
-  grid-row: 1/3;
-}
+
 .instagram-feed .section-content {
   margin-left: auto;
   margin-right: auto;
