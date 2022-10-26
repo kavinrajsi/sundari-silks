@@ -51,6 +51,7 @@
   {{ 'base.css' | asset_url | stylesheet_tag }}
 
 
+  {% comment %}
   {% style %}
   :root {
   --gap: {{settings.product-gap-mobile}};
@@ -146,6 +147,7 @@
   }
 
   {% endstyle %}
+  {% endcomment %}
 
   <script>
     window.mlvedaShopCurrency = "{{ shop.currency }}";

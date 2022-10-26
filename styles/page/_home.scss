@@ -1,3 +1,4 @@
+
 $mobileM: 375px;
 $mobileL: 425px;
 $mobile: 576px;
@@ -7,6 +8,111 @@ $desktop: 1200px;
 $desktopL: 1364px;
 
 
+:root {
+  --gap: 8px;
+  --section-space: 40px;
+  --section-title: 24px;
+  --section-title-space: 24px;
+  --section-secondary-title: 14px;
+  --section-secondary-title-space: 14px;
+  --section-button: 14px;
+  --curated-collection-title: 24px;
+  --curated-collection-smallTitle: 16px;
+  --card-product-title: 14px;
+  --card-product-price: 14px;
+  --blog-feed-title: 14px;
+  --blog-feed-content: 14px;
+}
+
+@media (min-width: 576px) {
+  :root {
+    --gap: 16px;
+    --section-space: 40px;
+    --section-title: 24px;
+    --section-title-space: 24px;
+    --section-secondary-title: 14px;
+    --section-secondary-title-space: 14px;
+    --section-button: 14px;
+    --curated-collection-title: 24px;
+    --curated-collection-smallTitle: 16px;
+    --card-product-title: 14px;
+    --card-product-price: 14px;
+    --blog-feed-title: 14px;
+    --blog-feed-content: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gap: 24px;
+    --section-space: 40px;
+    --section-title: 24px;
+    --section-title-space: 24px;
+    --section-secondary-title: 14px;
+    --section-secondary-title-space: 14px;
+    --section-button: 14px;
+    --curated-collection-title: 24px;
+    --curated-collection-smallTitle: 16px;
+    --card-product-title: 14px;
+    --card-product-price: 14px;
+    --blog-feed-title: 14px;
+    --blog-feed-content: 14px;
+  }
+}
+
+@media (min-width: 992px) {
+  :root {
+    --gap: 24px;
+    --section-space: 40px;
+    --section-title: 24px;
+    --section-title-space: 24px;
+    --section-secondary-title: 14px;
+    --section-secondary-title-space: 14px;
+    --section-button: 14px;
+    --curated-collection-title: 24px;
+    --curated-collection-smallTitle: 16px;
+    --card-product-title: 14px;
+    --card-product-price: 14px;
+    --blog-feed-title: 14px;
+    --blog-feed-content: 14px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --gap: 32px;
+    --section-space: 40px;
+    --section-title: 24px;
+    --section-title-space: 24px;
+    --section-secondary-title: 14px;
+    --section-secondary-title-space: 14px;
+    --section-button: 14px;
+    --curated-collection-title: 24px;
+    --curated-collection-smallTitle: 16px;
+    --card-product-title: 14px;
+    --card-product-price: 14px;
+    --blog-feed-title: 14px;
+    --blog-feed-content: 14px;
+  }
+}
+
+@media (min-width: 1364px) {
+  :root {
+    --gap: 32px;
+    --section-space: 40px;
+    --section-title: 24px;
+    --section-title-space: 24px;
+    --section-secondary-title: 14px;
+    --section-secondary-title-space: 14px;
+    --section-button: 14px;
+    --curated-collection-title: 24px;
+    --curated-collection-smallTitle: 16px;
+    --card-product-title: 14px;
+    --card-product-price: 14px;
+    --blog-feed-title: 14px;
+    --blog-feed-content: 14px;
+  }
+}
 
 [data-mobile-count="1"] {
   grid-template-columns: repeat(1, 1fr);
@@ -36,36 +142,6 @@ $desktopL: 1364px;
 }
 
 @media (min-width: $ptablet) {
-  [data-desktop-count="2"] {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  [data-desktop-count="3"] {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  [data-desktop-count="4"] {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  [data-desktop-count="5"] {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-
-@media (min-width: $desktop) {
-  [data-desktop-count="2"] {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  [data-desktop-count="3"] {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  [data-desktop-count="4"] {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  [data-desktop-count="5"] {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-
-@media (min-width: $desktopL) {
   [data-desktop-count="2"] {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -267,7 +343,7 @@ section.shopify-section.homepage-section.home-page-readymade-section,
       font-weight: 700;
       font-size: 24px;
       line-height: normal;
-      margin-bottom: 4px;
+      margin-bottom: ;
       text-align: center;
       color: #ffffff;
     }
