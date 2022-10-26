@@ -12,8 +12,8 @@
       <img src="{{ section.settings.largeImage | image_url: width: 1380, height: 480 }}" alt="">
       {%- for block in section.blocks -%}
       <a href="{{ block.settings.productURL }}">
-      <div class="dot {% if forloop.first%}active{% endif %}" data-handle="{{block.settings.block_product}}"
-        style="top: {{block.settings.vertical}}%; left: {{block.settings.horizontal}}%;  "></div>
+        <div class="dot {% if forloop.first%}active{% endif %}" data-handle="{{block.settings.block_product}}"
+          style="top: {{block.settings.vertical}}%; left: {{block.settings.horizontal}}%;  "></div>
       </a>
       {% endfor %}
     </div>
@@ -21,57 +21,14 @@
       <img src="{{ section.settings.smallImage | img_url: '1000x' }}" alt="">
       {%- for block in section.blocks -%}
       <a href="{{ block.settings.productURL }}">
-      <div class="dot {% if forloop.first%}active{% endif %}" data-handle="{{block.settings.block_product}}"
-        style="top: {{block.settings.mobileVertical}}%; left: {{block.settings.mobileHorizontal}}%;  "></div>
+        <div class="dot {% if forloop.first%}active{% endif %}" data-handle="{{block.settings.block_product}}"
+          style="top: {{block.settings.mobileVertical}}%; left: {{block.settings.mobileHorizontal}}%;  "></div>
       </a>
       {% endfor %}
     </div>
     <div id="product" class="product-container"></div>
   </div>
 </section>
-
-<script src="{{ 'custom-scripts.js' | asset_url }}"></script>
-<script>
-  console.log('product');
-  var $product_container = $('#product');
-  var initial_product = multi_products[0];
-  console.log(initial_product);
-
-  var initial_product_html = `<div class="product">
-    <img src="${initial_product.image}">
-    <h3>${initial_product.title}</h3>
-    <p>${initial_product.price}</p>
-    <a class="button" href="${initial_product.url}">Shop this product</a>
-    </div>`;
-
-  $product_container.html(initial_product_html);
-
-  $('body').on('click', '.dot', function () {
-    $('.dot').removeClass('active')
-    $(this).addClass('active')
-
-    var handle = $(this).data('handle');
-    console.log(handle);
-
-    var this_product = multi_products.filter((product) => {
-      return product.handle === handle
-    })[0];
-
-
-    console.log('product after body');
-    var product_html = `<div class="product">
-      <img src="${this_product.image}">
-      <h3>${this_product.title}</h3>
-      <p>${this_product.price}</p>
-      <a class="button" href="${initial_product.url}">Shop this product</a>
-      </div>
-      `;
-
-    $product_container.html(product_html);
-  })
-
-</script>
-
 
 {% schema %}
 {
@@ -85,15 +42,25 @@
 "label": "Large Image"
 },
 {
-  "id": "smallImage",
-  "type": "image_picker",
-  "label": "Small Image"
+"id": "smallImage",
+"type": "image_picker",
+"label": "Small Image"
+},
+{
+"id": "activeColor",
+"type": "color",
+"label": "Active Color"
+},{
+  "id": "normalColor",
+  "type": "color",
+  "label": "Normal Color"
   },
 {
 "id": "headingText",
 "type": "text",
 "label": "Heading Text"
-},{
+},
+{
 "id": "paragraphText",
 "type": "text",
 "label": "Paragraph Text"
@@ -135,25 +102,25 @@
 "default": 50
 },
 {
-  "type": "range",
-  "id": "mobileHorizontal",
-  "min": 0,
-  "max": 100,
-  "step": 1,
-  "unit": "%",
-  "label": "Mobile Horizontal Position",
-  "default": 50
-  },
-  {
-  "type": "range",
-  "id": "mobileVertical",
-  "min": 0,
-  "max": 100,
-  "step": 1,
-  "unit": "%",
-  "label": "Mobile Vertical Position",
-  "default": 50
-  }
+"type": "range",
+"id": "mobileHorizontal",
+"min": 0,
+"max": 100,
+"step": 1,
+"unit": "%",
+"label": "Mobile Horizontal Position",
+"default": 50
+},
+{
+"type": "range",
+"id": "mobileVertical",
+"min": 0,
+"max": 100,
+"step": 1,
+"unit": "%",
+"label": "Mobile Vertical Position",
+"default": 50
+}
 ]
 }
 ]
