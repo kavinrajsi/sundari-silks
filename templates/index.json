@@ -148,45 +148,55 @@
           "type": "products",
           "settings": {
             "block_product": "patola-silk-saree-12",
-            "horizontal": 36,
             "productURL": "shopify:\/\/products\/patola-silk-saree-12",
-            "vertical": 63
+            "horizontal": 14,
+            "vertical": 47,
+            "mobileHorizontal": 50,
+            "mobileVertical": 50
           }
         },
         "95e4dc32-830e-4a3c-b477-2f3ad7eae31e": {
           "type": "products",
           "settings": {
             "block_product": "patola-silk-saree-4",
-            "horizontal": 75,
             "productURL": "shopify:\/\/products\/patola-silk-saree-4",
-            "vertical": 60
+            "horizontal": 75,
+            "vertical": 60,
+            "mobileHorizontal": 50,
+            "mobileVertical": 50
           }
         },
         "e4783bb5-2fe9-4b6c-bdbc-2a43e88a9449": {
           "type": "products",
           "settings": {
             "block_product": "allover-diagonal-pattern-multicolor-printed-silk-saree",
-            "horizontal": 20,
             "productURL": "shopify:\/\/products\/allover-diagonal-pattern-multicolor-printed-silk-saree",
-            "vertical": 30
+            "horizontal": 20,
+            "vertical": 30,
+            "mobileHorizontal": 50,
+            "mobileVertical": 50
           }
         },
         "81b42d1d-7a80-4102-b680-1fb093819fa0": {
           "type": "products",
           "settings": {
             "block_product": "pavadai-sattai-material-14",
-            "horizontal": 54,
             "productURL": "shopify:\/\/products\/pavadai-sattai-material-14",
-            "vertical": 42
+            "horizontal": 54,
+            "vertical": 42,
+            "mobileHorizontal": 50,
+            "mobileVertical": 50
           }
         },
         "eb378a92-787d-4f41-a0aa-9eae3711dadb": {
           "type": "products",
           "settings": {
             "block_product": "allover-diagonal-zari-design-baby-pink-kanchipuram-silk",
-            "horizontal": 58,
             "productURL": "shopify:\/\/products\/allover-diagonal-zari-design-baby-pink-kanchipuram-silk",
-            "vertical": 83
+            "horizontal": 58,
+            "vertical": 83,
+            "mobileHorizontal": 50,
+            "mobileVertical": 50
           }
         }
       },
