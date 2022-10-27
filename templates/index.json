@@ -101,7 +101,7 @@
         "3df7725e-d735-4aca-a28b-46a8340b3ab5": {
           "type": "readymade-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/girls-01.png",
+            "image": "shopify:\/\/shop_images\/girls-01_1.png",
             "heading": "Girls",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 98.561%, rgba(0, 0, 0, 1) 100%)",
             "link": "shopify:\/\/collections\/readymades"
