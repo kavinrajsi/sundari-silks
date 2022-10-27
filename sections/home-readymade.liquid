@@ -13,7 +13,7 @@
         <img class="lazyload" data-sizes="auto"
           data-src="{{block.settings.image.src | image_url: width:384, height: 384, crop: 'top' }}"
           alt="{{block.settings.image.alt}}">
-        <div class="collection-item-name">
+        <div class="collection-item-name" style="background-color: {{block.settings.background}};">
           <div class="collection-item-title"> {{block.settings.text}} </div>
         </div>
       </a>
