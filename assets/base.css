@@ -1182,7 +1182,7 @@ body {
   position: fixed;
   right: 0;
   width: 51%;
-  background: #e4e4e4;
+  background: #fff;
   top: 64px;
   bottom: 0;
   overflow-y: auto;
@@ -2071,9 +2071,7 @@ section#shopify-section-template--15933089480862__slideshow.shopify-section.home
     display: block;
     margin: 0 auto;
     object-fit: contain;
-    width: 100%;
     text-align: center;
-    height: 680px;
   }
 }
 h1.page__title {
