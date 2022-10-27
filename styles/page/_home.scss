@@ -1,29 +1,35 @@
 :root {
   --Ngap: 8px;
+  --Mgap: -8px;
 }
 @media (min-width: 576px) {
   :root {
     --Ngap: 16px;
+    --Mgap: -16px;
   }
 }
 @media (min-width: 768px) {
   :root {
     --Ngap: 24px;
+    --Mgap: -24px;
   }
 }
 @media (min-width: 992px) {
   :root {
     --Ngap: 24px;
+    --Mgap: -24px;
   }
 }
 @media (min-width: 1200px) {
   :root {
     --Ngap: 24px;
+    --Mgap: -24px;
   }
 }
 @media (min-width: 1364px) {
   :root {
     --Ngap: 32px;
+    --Mgap: -32px;
   }
 }
 
@@ -196,7 +202,6 @@ $desktop: 1024px;
 @import "../section/home/banner";
 
 .homepage-section {
-  // @include interpolate("padding-bottom", $mobile, 40px, $desktop, 50px);
   padding-bottom: var(--home-section-space);
   padding-left: var(--Ngap);
   padding-right: var(--Ngap);
@@ -212,13 +217,9 @@ $desktop: 1024px;
   font-weight: 500;
   line-height: 1.2222222222;
   font-size: var(--home-section-title);
-  // @media (min-width: 768px) {
-  //   margin-bottom: 16px;
-  //   // @include interpolate("font-size", $mobile, 30px, $desktop, 36px);
-  // }
-  // @media (min-width: 1364px) {
-  //   font-size: 48px;
-  // }
+  @media (min-width: 768px) {
+  margin-bottom: 8px;
+}
 }
 
 .section-header-action_link,
@@ -229,13 +230,12 @@ $desktop: 1024px;
   padding-bottom: 12px;
   font-size: var(--home-section-secondary-title);
   padding-bottom: var(--home-section-secondary-title-space);
-  // @media (min-width: 768px) {
-  //   // @include interpolate("font-size", $mobile, 14px, $desktop, 20px);
-  //   @include interpolate("padding-bottom", $mobile, 14px, $desktop, 28px);
-  //   @media (min-width: 1364px) {
-  //     // font-size: 26px;
-  //   }
-  // }
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width: 768px) {
+    max-width: initial;
+  }
 }
 
 .section-header-action_link {
@@ -289,10 +289,10 @@ $desktop: 1024px;
       font-family: "Playfair Display";
       font-style: normal;
       font-size: 14px;
-      @media(min-width: 768px){
+      @media (min-width: 768px) {
         font-size: 18px;
       }
-      @media(min-width: 1364px){
+      @media (min-width: 1364px) {
         font-size: 20px;
       }
       line-height: normal;
@@ -428,6 +428,8 @@ $desktop: 1024px;
 
 // silver
 .home-page-silver-section {
+  margin-left: var(--Mgap);
+  margin-right: var(--Mgap);
   background-repeat: no-repeat;
   background-position: top center;
   background-color: rgba($color: #000000, $alpha: 0.4);
@@ -465,11 +467,10 @@ $desktop: 1024px;
     transform: rotate(90deg);
   }
   .section-content {
-    padding-right: 0;
+    overflow: hidden;
     overflow-x: scroll;
     padding-top: 12px;
     @media (min-width: 1120px) {
-      padding-right: var(--Ngap);
       overflow: hidden;
       padding-top: 24px;
     }
@@ -477,10 +478,11 @@ $desktop: 1024px;
   nav {
     display: flex;
     gap: var(--Ngap);
+    justify-content: flex-start;
+    grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
 
     @media (min-width: 768px) {
       gap: var(--Ngap);
-      justify-content: center;
     }
     @media (min-width: 1120px) {
       gap: var(--Ngap);
@@ -488,6 +490,8 @@ $desktop: 1024px;
     }
     a {
       flex: 1 0 33.3333%;
+      flex: 1 0 auto;
+      border-radius: 50%;
       display: inline-block;
       @media (min-width: 768px) {
         flex: 1 0 auto;
@@ -502,29 +506,49 @@ $desktop: 1024px;
         border-radius: 50%;
       }
       .section-Name {
-        opacity: 0;
-        height: 0;
-      }
-      &:hover {
-        .section-Name {
-          opacity: 1;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: #fff;
-          width: 168px;
-          height: 168px;
-          font-size: 20px;
+        display: none;
+        @media (min-width: 1200px) {
+          display: block;
+          opacity: 0;
+          height: 0;
         }
       }
-      &:last-child img {
-        margin-right: 14px;
+
+      &:hover {
+        @media (min-width: 1200px) {
+          .section-Name {
+            opacity: 1;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            width: 168px;
+            height: 168px;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    a:first-child {
+      padding-left: var(--Ngap);
+    }
+    a:last-child {
+      padding-right: var(--Ngap);
+    }
+
+    @media (min-width: 1120px) {
+      a:first-child {
+        padding-left: 0;
+      }
+      a:last-child {
+        padding-right: 0;
       }
     }
   }
@@ -573,6 +597,7 @@ $desktop: 1024px;
       border: 1px solid #f3ece8;
       background-color: #f3ece8;
       font-size: 14px;
+      font-size: var(--home-section-secondary-title);
       line-height: normal;
       padding: 4px 12px;
       border-radius: 40px;
@@ -730,22 +755,22 @@ section#shopify-section-template--15933089480862__slideshow.shopify-section.home
   img {
     border-radius: 0;
     &.desktopBanner {
+      object-fit: cover;
+      aspect-ratio: 1457/455;
       // height: calc(100vh - 420px);
       @media (orientation: portrait) {
         // height: auto;
       }
-      // object-fit: cover;
     }
   }
 }
 
-
-@media (min-width: 768px){
-  .virtualshopping a{
+@media (min-width: 768px) {
+  .virtualshopping a {
     text-align: center;
     display: block;
   }
-  .image-area{
+  .image-area {
     justify-content: center;
     align-items: center;
     display: block;
@@ -753,17 +778,17 @@ section#shopify-section-template--15933089480862__slideshow.shopify-section.home
     margin: 0 auto;
     width: 100%;
   }
-.virtualshopping .desktop {
+  .virtualshopping .desktop {
     display: block;
     margin: 0 auto;
     object-fit: contain;
     // width: 100%;
     text-align: center;
     // height: 680px;
-}}
+  }
+}
 
-
-.homepageBanner{
+.homepageBanner {
   padding-left: 0;
   padding-right: 0;
 }

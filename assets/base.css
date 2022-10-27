@@ -1317,31 +1317,37 @@ main img {
 
 :root {
   --Ngap: 8px;
+  --Mgap: -8px;
 }
 
 @media (min-width: 576px) {
   :root {
     --Ngap: 16px;
+    --Mgap: -16px;
   }
 }
 @media (min-width: 768px) {
   :root {
     --Ngap: 24px;
+    --Mgap: -24px;
   }
 }
 @media (min-width: 992px) {
   :root {
     --Ngap: 24px;
+    --Mgap: -24px;
   }
 }
 @media (min-width: 1200px) {
   :root {
     --Ngap: 24px;
+    --Mgap: -24px;
   }
 }
 @media (min-width: 1364px) {
   :root {
     --Ngap: 32px;
+    --Mgap: -32px;
   }
 }
 section.shopify-section.homepage-section.home-page-readymade-section,
@@ -1523,6 +1529,11 @@ section.shopify-section.homepage-section.home-page-readymade-section,
   line-height: 1.2222222222;
   font-size: var(--home-section-title);
 }
+@media (min-width: 768px) {
+  .section-header-title {
+    margin-bottom: 8px;
+  }
+}
 
 .section-header-action_link,
 .section-header-content {
@@ -1532,6 +1543,15 @@ section.shopify-section.homepage-section.home-page-readymade-section,
   padding-bottom: 12px;
   font-size: var(--home-section-secondary-title);
   padding-bottom: var(--home-section-secondary-title-space);
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .section-header-action_link,
+.section-header-content {
+    max-width: initial;
+  }
 }
 
 .section-header-action_link {
@@ -1740,6 +1760,8 @@ section.shopify-section.homepage-section.home-page-readymade-section,
 }
 
 .home-page-silver-section {
+  margin-left: var(--Mgap);
+  margin-right: var(--Mgap);
   background-repeat: no-repeat;
   background-position: top center;
   background-color: rgba(0, 0, 0, 0.4);
@@ -1780,13 +1802,12 @@ section.shopify-section.homepage-section.home-page-readymade-section,
   transform: rotate(90deg);
 }
 .home-page-silver-section .section-content {
-  padding-right: 0;
+  overflow: hidden;
   overflow-x: scroll;
   padding-top: 12px;
 }
 @media (min-width: 1120px) {
   .home-page-silver-section .section-content {
-    padding-right: var(--Ngap);
     overflow: hidden;
     padding-top: 24px;
   }
@@ -1794,11 +1815,12 @@ section.shopify-section.homepage-section.home-page-readymade-section,
 .home-page-silver-section nav {
   display: flex;
   gap: var(--Ngap);
+  justify-content: flex-start;
+  grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
 }
 @media (min-width: 768px) {
   .home-page-silver-section nav {
     gap: var(--Ngap);
-    justify-content: center;
   }
 }
 @media (min-width: 1120px) {
@@ -1809,6 +1831,8 @@ section.shopify-section.homepage-section.home-page-readymade-section,
 }
 .home-page-silver-section nav a {
   flex: 1 0 33.3333%;
+  flex: 1 0 auto;
+  border-radius: 50%;
   display: inline-block;
 }
 @media (min-width: 768px) {
@@ -1828,27 +1852,46 @@ section.shopify-section.homepage-section.home-page-readymade-section,
   border-radius: 50%;
 }
 .home-page-silver-section nav a .section-Name {
-  opacity: 0;
-  height: 0;
+  display: none;
 }
-.home-page-silver-section nav a:hover .section-Name {
-  opacity: 1;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  width: 168px;
-  height: 168px;
-  font-size: 20px;
+@media (min-width: 1200px) {
+  .home-page-silver-section nav a .section-Name {
+    display: block;
+    opacity: 0;
+    height: 0;
+  }
 }
-.home-page-silver-section nav a:last-child img {
-  margin-right: 14px;
+@media (min-width: 1200px) {
+  .home-page-silver-section nav a:hover .section-Name {
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    width: 168px;
+    height: 168px;
+    font-size: 20px;
+  }
+}
+.home-page-silver-section nav a:first-child {
+  padding-left: var(--Ngap);
+}
+.home-page-silver-section nav a:last-child {
+  padding-right: var(--Ngap);
+}
+@media (min-width: 1120px) {
+  .home-page-silver-section nav a:first-child {
+    padding-left: 0;
+  }
+  .home-page-silver-section nav a:last-child {
+    padding-right: 0;
+  }
 }
 
 .homepage-justdropped {
@@ -1894,6 +1937,7 @@ section.shopify-section.homepage-section.home-page-readymade-section,
   border: 1px solid #f3ece8;
   background-color: #f3ece8;
   font-size: 14px;
+  font-size: var(--home-section-secondary-title);
   line-height: normal;
   padding: 4px 12px;
   border-radius: 40px;
@@ -2053,6 +2097,10 @@ section#shopify-section-template--15933089480862__slideshow.shopify-section.home
 }
 .large-12.columns img {
   border-radius: 0;
+}
+.large-12.columns img.desktopBanner {
+  object-fit: cover;
+  aspect-ratio: 1457/455;
 }
 @media (min-width: 768px) {
   .virtualshopping a {
