@@ -403,6 +403,11 @@
       "settings": {
       }
     },
+    "vss": {
+      "type": "home-video",
+      "settings": {
+      }
+    },
     "instagram": {
       "type": "instagram",
       "blocks": {
@@ -474,6 +479,7 @@
     "recent-products",
     "blog",
     "vs",
+    "vss",
     "instagram"
   ]
 }

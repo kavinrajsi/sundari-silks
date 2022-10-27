@@ -1,0 +1,52 @@
+<section class="shopify-section homepage-section">
+  <section class="virtualshopping" style="background: #e8e7cf;">
+    <a href="{{ section.settings.url }}">
+      <img src="{{ section.settings.virtual-shopping-desktop }}" alt="" class="desktop">
+      <img src="{{ section.settings.virtual-shopping-mobile }}" alt="" class="mobile">
+    </a>
+  </section>
+</section>
+
+
+{% schema %}
+{
+  "name": "Virtual Shopping",
+  "class": "homepage-virtual-shopping",
+  "tag": "section",
+  "settings": [
+  {
+  "type": "text",
+  "id": "spotlight-title",
+  "label": "Section Title",
+  "default": "The Virtual Store Of Exquisite Products"
+  },
+  {
+  "type": "text",
+  "id": "spotlight-description",
+  "label": "Section Description",
+  "default": "Shop our collection from the comfort of your home"
+  },
+  {
+  "type": "text",
+  "id": "spotlight-button",
+  "label": "Section Button",
+  "default": "Book an Appointment"
+  },
+  {
+  "type": "image_picker",
+  "id": "virtual-shopping-mobile",
+  "label": "Virtual Image for Mobile"
+  },
+  {
+  "type": "image_picker",
+  "id": "virtual-shopping-desktop",
+  "label": "Virtual Image for Desktop"
+  },
+  {
+  "type": "url",
+  "id": "virtual-shopping-url",
+  "label": "Link URL"
+  }
+  ]
+  }
+{% endschema %}
