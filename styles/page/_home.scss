@@ -211,6 +211,25 @@ $desktop: 1024px;
   }
 }
 
+.homepageBanner {
+  padding-left: 0;
+  padding-right: 0;
+  .large-12.columns {
+    margin: 0 auto !important;
+    img {
+      border-radius: 0;
+      &.desktopBanner {
+        object-fit: cover;
+        aspect-ratio: 1457/455;
+        // height: calc(100vh - 420px);
+        @media (orientation: portrait) {
+          // height: auto;
+        }
+      }
+    }
+  }
+}
+
 // title
 .section-header-title {
   font-family: "Playfair Display", serif;
@@ -218,8 +237,8 @@ $desktop: 1024px;
   line-height: 1.2222222222;
   font-size: var(--home-section-title);
   @media (min-width: 768px) {
-  margin-bottom: 8px;
-}
+    margin-bottom: 8px;
+  }
 }
 
 .section-header-action_link,
@@ -684,23 +703,81 @@ $desktop: 1024px;
 
 // store idea
 .virtualshopping {
-  .desktop {
-    display: none;
-    margin: 0 auto;
+  margin-left: var(--Mgap);
+  margin-right: var(--Mgap);
+  a {
+    padding: var(--gap);
+    padding-top: 24px;
+    padding-bottom: 24px;
+    text-align: center;
+    display: flex;
+    gap: var(--gap);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: 768px) {
+      padding: 0;
+      padding-top: 48px;
+      padding-bottom: 48px;
+      flex-direction: row;
+    }
   }
-  .mobile {
+  .image-area {
+    justify-content: center;
+    align-items: center;
     display: block;
-    margin: 0 auto;
+    text-align: center;
+    @media (min-width: 768px) {
+      margin: 0;
+      text-align: left;
+      img {
+        max-height: 600px;
+      }
+    }
   }
-  @media (min-width: 768px) {
-    .mobile {
-      display: none;
-      margin: 0 auto;
+  .content-area {
+    --gap: 24px;
+    flex-direction: column;
+    gap: var(--gap);
+    max-width: 80%;
+    justify-content: center;
+    text-align: center;
+    @media (min-width: 768px) {
+      text-align: left;
+      justify-content: flex-start;
+      max-width: 560px;
     }
-    .desktop {
-      display: block;
-      margin: 0 auto;
+  }
+  .content-area h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    line-height: 1.2222222222;
+    font-size: var(--home-section-title);
+    color: var(--pure-white);
+    @media (min-width: 768px) {
+      margin-bottom: 8px;
+      text-align: left;
     }
+  }
+  .content-area p {
+    font-family: var(--font-montserrat);
+    line-height: 1.6;
+    line-height: 22px;
+    font-size: var(--home-section-secondary-title);
+    padding-bottom: var(--home-section-secondary-title-space);
+    color: var(--pure-white);
+    @media (min-width: 768px) {
+      max-width: initial;
+      text-align: left;
+    }
+  }
+
+  .content-area span {
+    padding: 12px 16px;
+    border: 1px solid var(--pure-white);
+    border-radius: var(--border-radius);
+    color: #fff;
+    display: inline-block;
   }
 }
 
@@ -744,52 +821,4 @@ $desktop: 1024px;
       }
     }
   }
-}
-
-section#shopify-section-template--15933089480862__slideshow.shopify-section.homepage-section {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-.large-12.columns {
-  // max-width: var(--largewidth);
-  margin: 0 auto !important;
-  img {
-    border-radius: 0;
-    &.desktopBanner {
-      object-fit: cover;
-      aspect-ratio: 1457/455;
-      // height: calc(100vh - 420px);
-      @media (orientation: portrait) {
-        // height: auto;
-      }
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  .virtualshopping a {
-    text-align: center;
-    display: block;
-  }
-  .image-area {
-    justify-content: center;
-    align-items: center;
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-    width: 100%;
-  }
-  .virtualshopping .desktop {
-    display: block;
-    margin: 0 auto;
-    object-fit: contain;
-    // width: 100%;
-    text-align: center;
-    // height: 680px;
-  }
-}
-
-.homepageBanner {
-  padding-left: 0;
-  padding-right: 0;
 }
