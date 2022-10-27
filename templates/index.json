@@ -92,7 +92,7 @@
         "af64ae0e-b0ce-44f1-9174-96c976588b5f": {
           "type": "readymade-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Mens-01.png",
+            "image": "shopify:\/\/shop_images\/Mens-01_eb96fdbb-5dde-4923-8b2c-c815ec8b6bcb.png",
             "heading": "Men",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(108, 72, 30, 0.5) 100%)",
             "link": "shopify:\/\/collections\/readymades"
@@ -101,7 +101,7 @@
         "3df7725e-d735-4aca-a28b-46a8340b3ab5": {
           "type": "readymade-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/girls-01_1.png",
+            "image": "shopify:\/\/shop_images\/girls-01_2.png",
             "heading": "Girls",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 98.561%, rgba(0, 0, 0, 1) 100%)",
             "link": "shopify:\/\/collections\/readymades"
@@ -110,7 +110,7 @@
         "b64e9a81-ca1c-4151-bcdd-5de5dcabd06b": {
           "type": "readymade-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/boys_model-01_5e9793dd-7e74-4258-b8f8-2af5c47af58c.png",
+            "image": "shopify:\/\/shop_images\/boys_model-01_1.png",
             "heading": "Boys",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
             "link": "shopify:\/\/collections\/readymades"
@@ -408,19 +408,20 @@
         "spotlight-title": "The Virtual Store Of Exquisite Products",
         "spotlight-description": "Shop our collection from the comfort of your home",
         "spotlight-button": "Book an Appointment",
-        "vsvirtual-shopping-mobile": "shopify:\/\/shop_images\/vs-mobile-image-1.png",
-        "vsvirtual-shopping-desktop": "shopify:\/\/shop_images\/vs-desktop-image-1.png",
+        "vsvirtual-shopping-mobile": "shopify:\/\/shop_images\/VIRTUAL_SHOPPING_FINAL-10.png",
+        "vsvirtual-shopping-desktop": "shopify:\/\/shop_images\/VIRUAL_SHOPPING_FINAL-09.png",
         "virtual-shopping-url": ""
       }
     },
     "vss": {
       "type": "home-video",
+      "disabled": true,
       "settings": {
         "spotlight-title": "The Virtual Store Of Exquisite Products",
         "spotlight-description": "Shop our collection from the comfort of your home",
         "spotlight-button": "Book an Appointment",
-        "virtual-shopping-mobile": "shopify:\/\/shop_images\/vs-desktop-image-1.png",
-        "virtual-shopping-desktop": "shopify:\/\/shop_images\/vs-mobile-image-1.png",
+        "virtual-shopping-mobile": "shopify:\/\/shop_images\/VIRTUAL_SHOPPING_FINAL-10.png",
+        "virtual-shopping-desktop": "shopify:\/\/shop_images\/VIRUAL_SHOPPING_FINAL-09.png",
         "virtual-shopping-url": ""
       }
     },
