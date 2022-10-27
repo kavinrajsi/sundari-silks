@@ -1406,7 +1406,18 @@ section.shopify-section.homepage-section.home-page-readymade-section,
 .product__card--img, .product__card--link {
   display: block;
 }
+.product__card--img.lazyload, .product__card--link.lazyload {
+  opacity: 0;
+}
+.product__card--image--wrapper {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
 .product__card--image--wrapper img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
   width: 100%;
 }
 .product__card-cta {

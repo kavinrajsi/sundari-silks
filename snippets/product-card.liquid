@@ -18,7 +18,10 @@ Usage:
     <a href="{{product.url | within: collection }}" class="product__card--link">
       <div class="product__card--image--wrapper">
         {% if product.featured_image != blank %}
-        <img id="Image-{{ image.id }}" class="blur-up responsive-image__image lazyload" src="{{ product.featured_image | image_url }}" alt="{{ product.feature_image.alt }}">
+        <img loading="lazy" id="Image-{{ image.id }}" class="blur-up responsive-image__image lazyload"
+          src="{{ product.featured_image | img_url: 'large' }}" data-src="{{ product.featured_image | img_url: 'large'  }}"
+          data-aspectratio="{{ product.featured_image.aspect_ratio }}" data-sizes="auto" tabindex="-1"
+          alt="{{ product.feature_image.alt }}">
         {% comment %}
         <!-- {{ product.featured_image | image_url: width: 400, height: 400 | image_tag : class:
         'product-img', loading: 'lazy', alt: product.feature_image.alt}} -->
@@ -35,7 +38,8 @@ Usage:
       </div>
     </a>
     <div class="product__card-cta quick-view-button">
-      <a  href="javascript:void(0)"  id="productInfoAnchor" class="quick-view" product-handle="{{ product.handle }}" product-price="{{ product.price | money_without_trailing_zeros }}" >Quick View</a>
+      <a href="javascript:void(0)" id="productInfoAnchor" class="quick-view" product-handle="{{ product.handle }}"
+        product-price="{{ product.price | money_without_trailing_zeros }}">Quick View</a>
     </div>
   </div>
   <div class="product__card--content">

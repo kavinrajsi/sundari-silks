@@ -86,9 +86,18 @@ section.shopify-section.homepage-section.home-page-readymade-section,
   &--img,
   &--link {
     display: block;
+    &.lazyload {
+      opacity: 0;
+    }
   }
   &--image--wrapper {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
     img {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
       width: 100%;
     }
   }
