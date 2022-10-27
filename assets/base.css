@@ -2084,10 +2084,21 @@ section.shopify-section.homepage-section.home-page-readymade-section,
 }
 @media (min-width: 768px) {
   .virtualshopping a {
+    --gap: 30px;
     padding: 0;
     padding-top: 48px;
     padding-bottom: 48px;
     flex-direction: row;
+  }
+}
+@media (min-width: 992px) {
+  .virtualshopping a {
+    --gap: 60px;
+  }
+}
+@media (min-width: 1200px) {
+  .virtualshopping a {
+    --gap: 120px;
   }
 }
 .virtualshopping .image-area {
@@ -2096,12 +2107,16 @@ section.shopify-section.homepage-section.home-page-readymade-section,
   display: block;
   text-align: center;
 }
+.virtualshopping .image-area img {
+  margin-left: 8px;
+}
 @media (min-width: 768px) {
   .virtualshopping .image-area {
     margin: 0;
     text-align: left;
   }
   .virtualshopping .image-area img {
+    margin-left: 0;
     max-height: 600px;
   }
 }

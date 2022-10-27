@@ -725,10 +725,18 @@ $desktop: 1024px;
     justify-content: center;
     align-items: center;
     @media (min-width: 768px) {
+      --gap: 30px;
       padding: 0;
       padding-top: 48px;
       padding-bottom: 48px;
       flex-direction: row;
+    }
+
+    @media (min-width: 992px) {
+      --gap: 60px;
+    }
+    @media (min-width: 1200px) {
+      --gap: 120px;
     }
   }
   .image-area {
@@ -736,10 +744,14 @@ $desktop: 1024px;
     align-items: center;
     display: block;
     text-align: center;
+    img{
+      margin-left: 8px;
+    }
     @media (min-width: 768px) {
       margin: 0;
       text-align: left;
       img {
+        margin-left: 0;
         max-height: 600px;
       }
     }
