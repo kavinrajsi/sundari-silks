@@ -1862,7 +1862,7 @@ section.shopify-section.homepage-section.home-page-readymade-section,
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 16px;
+    padding-bottom: var(--home-section-secondary-title-space);
   }
   .homepage-justdropped .section-header-wrapper .section-header {
     text-align: left;

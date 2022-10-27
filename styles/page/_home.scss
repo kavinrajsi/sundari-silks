@@ -541,7 +541,7 @@ $desktop: 1024px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      margin-bottom: 16px;
+      padding-bottom: var(--home-section-secondary-title-space);
       .section-header {
         text-align: left;
         margin-bottom: 0 !important;
