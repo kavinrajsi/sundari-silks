@@ -2074,6 +2074,11 @@ section#shopify-section-template--15933089480862__slideshow.shopify-section.home
     text-align: center;
   }
 }
+.homepageBanner {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 h1.page__title {
   font-size: 24px;
   line-height: 31px;
