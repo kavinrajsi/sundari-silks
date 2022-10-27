@@ -6,7 +6,7 @@
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/WEB_BANNER_-_SAREES-01.png",
+            "image": "shopify:\/\/shop_images\/WEB_BANNER_-_SAREES-01-spafe-are.png",
             "mobile_image": "shopify:\/\/shop_images\/banner-1-mobile.png",
             "link": "shopify:\/\/collections\/all-collections"
           }
@@ -14,7 +14,7 @@
         "3fbd7fec-f97f-434e-9f56-1ddc4581978e": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/banner-2-desktop.png",
+            "image": "shopify:\/\/shop_images\/WEB_BANNER_-_READYMADES_reduced_height-02.png",
             "mobile_image": "shopify:\/\/shop_images\/banner-2-mobile.png",
             "link": "shopify:\/\/collections\/all-kanchipuram"
           }
@@ -49,6 +49,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/curated-collection-1.jpg",
             "heading": "Kanchipuram Silk",
+            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%)",
             "link": "shopify:\/\/collections\/all-kanchipuram"
           }
         },
@@ -57,6 +58,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/curated-collection-2.jpg",
             "heading": "Soft Silk",
+            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%)",
             "link": "shopify:\/\/collections\/kanchipuram-wedding-edit"
           }
         },
@@ -65,6 +67,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/curated-collection-3.jpg",
             "heading": "Printed Silk",
+            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%)",
             "link": "shopify:\/\/collections\/kanchipuram-zari-and-thread-work"
           }
         },
@@ -73,6 +76,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/curated-collection-4.jpg",
             "heading": "Mysore Silk",
+            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%)",
             "link": "shopify:\/\/collections\/kanchipuram-half-fine-zari"
           }
         },
@@ -81,7 +85,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Women-01.png",
             "heading": "Women",
-            "background": "linear-gradient(180deg, rgba(226, 8, 8, 1), rgba(0, 0, 0, 1) 100%)",
+            "background": "linear-gradient(180deg, rgba(39, 2, 2, 0), rgba(0, 0, 0, 0), rgba(125, 55, 55, 1) 100%)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -90,7 +94,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Mens-01.png",
             "heading": "Men",
-            "background": "linear-gradient(#ffffff, #000000)",
+            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -99,7 +103,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/girls_model-01.png",
             "heading": "Girls",
-            "background": "linear-gradient(180deg, rgba(247, 32, 32, 1), rgba(0, 0, 0, 1) 100%)",
+            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -108,7 +112,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/boys_model-01.png",
             "heading": "Boys",
-            "background": "linear-gradient(#ffffff, #000000)",
+            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -117,7 +121,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/FABRIC-01.png",
             "heading": "Fabric",
-            "background": "linear-gradient(#ffffff, #000000)",
+            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -126,7 +130,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/INFANT-01.png",
             "heading": "Infant",
-            "background": "linear-gradient(#ffffff, #000000)",
+            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%)",
             "link": "shopify:\/\/collections\/readymades"
           }
         }
@@ -401,11 +405,23 @@
     "vs": {
       "type": "home-virtualshopping",
       "settings": {
+        "spotlight-title": "The Virtual Store Of Exquisite Products",
+        "spotlight-description": "Shop our collection from the comfort of your home",
+        "spotlight-button": "Book an Appointment",
+        "vsvirtual-shopping-mobile": "shopify:\/\/shop_images\/vs-mobile-image-1.png",
+        "vsvirtual-shopping-desktop": "shopify:\/\/shop_images\/vs-desktop-image-1.png",
+        "virtual-shopping-url": ""
       }
     },
     "vss": {
       "type": "home-video",
       "settings": {
+        "spotlight-title": "The Virtual Store Of Exquisite Products",
+        "spotlight-description": "Shop our collection from the comfort of your home",
+        "spotlight-button": "Book an Appointment",
+        "virtual-shopping-mobile": "shopify:\/\/shop_images\/vs-desktop-image-1.png",
+        "virtual-shopping-desktop": "shopify:\/\/shop_images\/vs-mobile-image-1.png",
+        "virtual-shopping-url": ""
       }
     },
     "instagram": {
