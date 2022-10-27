@@ -1994,17 +1994,18 @@ section.shopify-section.homepage-section.home-page-readymade-section,
   font-size: 22px;
   line-height: 1.5;
   padding-top: 4px;
-  height: 46px;
+  height: 38px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  width: 100%;
   overflow: hidden;
 }
 @media (min-width: 768px) {
   .homepage-blogfeed .blog-feed-container .blog-feed-card-title {
+    height: 46px;
     padding-top: 8px;
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden !important;
-    text-overflow: ellipsis;
-    width: 100%;
   }
 }
 .homepage-blogfeed .blog-feed-container .blog-feed-card-content {

@@ -649,15 +649,16 @@ $desktop: 1024px;
       font-size: 22px;
       line-height: 1.5;
       padding-top: 4px;
-      height: 46px;
+      height: 38px;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden !important;
+      text-overflow: ellipsis;
+      width: 100%;
       overflow: hidden;
       @media (min-width: 768px) {
+        height: 46px;
         padding-top: 8px;
-        display: inline-block;
-        white-space: nowrap;
-        overflow: hidden !important;
-        text-overflow: ellipsis;
-        width: 100%;
       }
     }
     .blog-feed-card-content {
