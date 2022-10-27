@@ -408,13 +408,14 @@
         "spotlight-title": "The Virtual Store Of Exquisite Products",
         "spotlight-description": "Shop our collection from the comfort of your home",
         "spotlight-button": "Book an Appointment",
-        "vsvirtual-shopping-mobile": "shopify:\/\/shop_images\/VIRTUAL_SHOPPING_FINAL-04.png",
-        "vsvirtual-shopping-desktop": "shopify:\/\/shop_images\/VIRUAL_SHOPPING_FINAL-05.png",
+        "vsvirtual-shopping-mobile": "shopify:\/\/shop_images\/VIRTUAL_SHOPPING_FINAL-10.png",
+        "vsvirtual-shopping-desktop": "shopify:\/\/shop_images\/VIRUAL_SHOPPING_FINAL-09.png",
         "virtual-shopping-url": ""
       }
     },
     "vss": {
       "type": "home-video",
+      "disabled": true,
       "settings": {
         "spotlight-title": "The Virtual Store Of Exquisite Products",
         "spotlight-description": "Shop our collection from the comfort of your home",
