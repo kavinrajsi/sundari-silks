@@ -730,11 +730,11 @@ section#shopify-section-template--15933089480862__slideshow.shopify-section.home
   img {
     border-radius: 0;
     &.desktopBanner {
-      height: calc(100vh - 420px);
+      // height: calc(100vh - 420px);
       @media (orientation: portrait) {
-        height: auto;
+        // height: auto;
       }
-      object-fit: cover;
+      // object-fit: cover;
     }
   }
 }

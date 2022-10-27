@@ -2054,16 +2054,6 @@ section#shopify-section-template--15933089480862__slideshow.shopify-section.home
 .large-12.columns img {
   border-radius: 0;
 }
-.large-12.columns img.desktopBanner {
-  height: calc(100vh - 420px);
-  object-fit: cover;
-}
-@media (orientation: portrait) {
-  .large-12.columns img.desktopBanner {
-    height: auto;
-  }
-}
-
 h1.page__title {
   font-size: 24px;
   line-height: 31px;
