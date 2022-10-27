@@ -18,7 +18,7 @@ Usage:
     <a href="{{product.url | within: collection }}" class="product__card--link">
       <div class="product__card--image--wrapper">
         {% if product.featured_image != blank %}
-        <img src="{{ product.featured_image | image_url }}" alt="">
+        <img id="Image-{{ image.id }}" class="blur-up responsive-image__image lazyload" src="{{ product.featured_image | image_url }}" alt="{{ product.feature_image.alt }}">
         {% comment %}
         <!-- {{ product.featured_image | image_url: width: 400, height: 400 | image_tag : class:
         'product-img', loading: 'lazy', alt: product.feature_image.alt}} -->

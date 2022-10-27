@@ -646,6 +646,17 @@ iframe#dummy-chat-button-iframe {
   display: none !important;
 }
 
+.blur-up {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  transition: filter 400ms, -webkit-filter 400ms;
+}
+
+.blur-up.lazyloaded {
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
+
 .skip-to-content-link {
   display: none;
   opacity: 0;
