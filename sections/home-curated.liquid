@@ -15,7 +15,6 @@
         loading: 'lazy', class: "collection-item-image" }}
         <div class="collection-item-name">
           <div class="collection-item-title"> {{block.settings.heading}} </div>
-          <div class="collection-title-subtitle">Explore</div>
         </div>
       </a>
     </div>
@@ -38,7 +37,6 @@
         loading: 'lazy', class: "collection-item-image" }}
         <div class="collection-item-name">
           <div class="collection-item-title"> {{block.settings.heading}} </div>
-          <div class="collection-title-subtitle">Explore</div>
         </div>
       </a>
     </div>
@@ -82,10 +80,10 @@
 "id": "image",
 "label": "Image"
 },{
-  "type": "text",
-  "id": "heading",
-  "label": "Text"
-  },
+"type": "text",
+"id": "heading",
+"label": "Text"
+},
 {
 "type": "url",
 "id": "link",
@@ -103,10 +101,16 @@
 "id": "image",
 "label": "Image"
 },{
-  "type": "text",
-  "id": "heading",
-  "label": "Text"
-  },
+"type": "text",
+"id": "heading",
+"label": "Text"
+},
+{
+"type": "color_background",
+"id": "background",
+"label": "Background color for title",
+"default": "linear-gradient(#ffffff, #000000)"
+},
 {
 "type": "url",
 "id": "link",
