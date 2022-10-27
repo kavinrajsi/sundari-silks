@@ -419,6 +419,8 @@
         "spotlight-title": "The Virtual Store Of Exquisite Products",
         "spotlight-description": "Shop our collection from the comfort of your home",
         "spotlight-button": "Book an Appointment",
+        "virtual-shopping-mobile": "shopify:\/\/shop_images\/vs-desktop-image-1.png",
+        "virtual-shopping-desktop": "shopify:\/\/shop_images\/vs-mobile-image-1.png",
         "virtual-shopping-url": ""
       }
     },
