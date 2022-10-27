@@ -1336,7 +1336,7 @@ main img {
 }
 @media (min-width: 1200px) {
   :root {
-    --Ngap: 32px;
+    --Ngap: 24px;
   }
 }
 @media (min-width: 1364px) {
@@ -1593,19 +1593,30 @@ section.shopify-section.homepage-section.home-page-readymade-section,
 .collection-readymade .collection-item-name .collection-item-title {
   font-family: "Playfair Display";
   font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
+  font-size: 14px;
   line-height: normal;
   text-align: center;
   color: #ffffff;
   margin-bottom: 4px;
+}
+@media (min-width: 768px) {
+  .collection-saree .collection-item-name .collection-item-title,
+.collection-readymade .collection-item-name .collection-item-title {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1364px) {
+  .collection-saree .collection-item-name .collection-item-title,
+.collection-readymade .collection-item-name .collection-item-title {
+    font-size: 20px;
+  }
 }
 .collection-saree .collection-item-name .collection-title-subtitle,
 .collection-readymade .collection-item-name .collection-title-subtitle {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 14px;
   line-height: normal;
   text-align: center;
   text-transform: capitalize;

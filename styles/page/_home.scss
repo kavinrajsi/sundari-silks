@@ -18,7 +18,7 @@
 }
 @media (min-width: 1200px) {
   :root {
-    --Ngap: 32px;
+    --Ngap: 24px;
   }
 }
 @media (min-width: 1364px) {
@@ -288,8 +288,13 @@ $desktop: 1024px;
     .collection-item-title {
       font-family: "Playfair Display";
       font-style: normal;
-      font-weight: 700;
-      font-size: 24px;
+      font-size: 14px;
+      @media(min-width: 768px){
+        font-size: 18px;
+      }
+      @media(min-width: 1364px){
+        font-size: 20px;
+      }
       line-height: normal;
       text-align: center;
       color: #ffffff;
@@ -299,7 +304,7 @@ $desktop: 1024px;
       font-family: "Montserrat";
       font-style: normal;
       font-weight: 400;
-      font-size: 18px;
+      font-size: 14px;
       line-height: normal;
       text-align: center;
       text-transform: capitalize;
