@@ -738,3 +738,25 @@ section#shopify-section-template--15933089480862__slideshow.shopify-section.home
     }
   }
 }
+
+
+@media (min-width: 768px){
+  .virtualshopping a{
+    text-align: center;
+  }
+  .image-area{
+    justify-content: center;
+    align-items: center;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+  }
+.virtualshopping .desktop {
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+    width: 100%;
+    text-align: center;
+    height: 680px;
+}}

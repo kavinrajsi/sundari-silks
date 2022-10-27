@@ -18,7 +18,7 @@ Usage:
     <a href="{{product.url | within: collection }}" class="product__card--link">
       <div class="product__card--image--wrapper">
         {% if product.featured_image != blank %}
-        {{ product.featured_image | image_url: width: 400, height: 400, crop: 'bottom' | image_tag : class:
+        {{ product.featured_image | image_url: width: 400, height: 400 | image_tag : class:
         'product-img', loading: 'lazy', alt: product.feature_image.alt}}
         {% else %}
         {{ 'product-1' | placeholder_svg_tag: 'product-img' }}

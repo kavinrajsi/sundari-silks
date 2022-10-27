@@ -2054,6 +2054,27 @@ section#shopify-section-template--15933089480862__slideshow.shopify-section.home
 .large-12.columns img {
   border-radius: 0;
 }
+@media (min-width: 768px) {
+  .virtualshopping a {
+    text-align: center;
+  }
+  .image-area {
+    justify-content: center;
+    align-items: center;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .virtualshopping .desktop {
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+    width: 100%;
+    text-align: center;
+    height: 680px;
+  }
+}
 h1.page__title {
   font-size: 24px;
   line-height: 31px;
