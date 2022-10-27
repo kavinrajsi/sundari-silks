@@ -49,6 +49,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/curated-collection-1.jpg",
             "heading": "Kanchipuram Silk",
+            "background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(0, 0, 0, 1) 100%)",
             "link": "shopify:\/\/collections\/all-kanchipuram"
           }
         },
@@ -57,6 +58,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/curated-collection-2.jpg",
             "heading": "Soft Silk",
+            "background": "linear-gradient(#ffffff, #000000)",
             "link": "shopify:\/\/collections\/kanchipuram-wedding-edit"
           }
         },
@@ -65,6 +67,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/curated-collection-3.jpg",
             "heading": "Printed Silk",
+            "background": "linear-gradient(#ffffff, #000000)",
             "link": "shopify:\/\/collections\/kanchipuram-zari-and-thread-work"
           }
         },
@@ -73,6 +76,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/curated-collection-4.jpg",
             "heading": "Mysore Silk",
+            "background": "linear-gradient(#ffffff, #000000)",
             "link": "shopify:\/\/collections\/kanchipuram-half-fine-zari"
           }
         },
@@ -401,11 +405,20 @@
     "vs": {
       "type": "home-virtualshopping",
       "settings": {
+        "spotlight-title": "The Virtual Store Of Exquisite Products",
+        "spotlight-description": "Shop our collection from the comfort of your home",
+        "spotlight-button": "Book an Appointment",
+        "vsvirtual-shopping-mobile": "shopify:\/\/shop_images\/vs-mobile-image-1.png",
+        "virtual-shopping-url": ""
       }
     },
     "vss": {
       "type": "home-video",
       "settings": {
+        "spotlight-title": "The Virtual Store Of Exquisite Products",
+        "spotlight-description": "Shop our collection from the comfort of your home",
+        "spotlight-button": "Book an Appointment",
+        "virtual-shopping-url": ""
       }
     },
     "instagram": {
