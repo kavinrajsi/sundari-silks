@@ -81,6 +81,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Women-01.png",
             "heading": "Women",
+            "background": "linear-gradient(#ffffff, #000000)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -89,6 +90,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Mens-01.png",
             "heading": "Men",
+            "background": "linear-gradient(#ffffff, #000000)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -97,6 +99,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/girls_model-01.png",
             "heading": "Girls",
+            "background": "linear-gradient(180deg, rgba(247, 32, 32, 1), rgba(0, 0, 0, 1) 100%)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -105,6 +108,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/boys_model-01.png",
             "heading": "Boys",
+            "background": "linear-gradient(#ffffff, #000000)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -113,6 +117,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/FABRIC-01.png",
             "heading": "Fabric",
+            "background": "linear-gradient(#ffffff, #000000)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -121,6 +126,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/INFANT-01.png",
             "heading": "Infant",
+            "background": "linear-gradient(#ffffff, #000000)",
             "link": "shopify:\/\/collections\/readymades"
           }
         }
@@ -313,6 +319,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Women-01.png",
             "text": "Women",
+            "background": "linear-gradient(#ffffff, #000000)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -321,6 +328,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Mens-01.png",
             "text": "Men",
+            "background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(0, 0, 0, 1) 100%)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -329,6 +337,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/girls_model-01.png",
             "text": "Girls",
+            "background": "linear-gradient(#ffffff, #000000)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -337,6 +346,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/boys_model-01.png",
             "text": "Boys",
+            "background": "linear-gradient(#ffffff, #000000)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -345,6 +355,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/FABRIC-01.png",
             "text": "Fabric",
+            "background": "linear-gradient(#ffffff, #000000)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -353,6 +364,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/INFANT-01.png",
             "text": "Infant",
+            "background": "linear-gradient(#ffffff, #000000)",
             "link": "shopify:\/\/collections\/readymades"
           }
         }
