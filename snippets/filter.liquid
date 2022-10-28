@@ -133,7 +133,7 @@
         d="M19.292 1.871c.169 0 .315.063.439.186a.601.601 0 0 1 .186.439v2.5a.657.657 0 0 1-.039.225.499.499 0 0 1-.117.186l-5.469 6.074v6.641a.582.582 0 0 1-.078.293.823.823 0 0 1-.195.234l-3.75 2.5c-.052.026-.107.049-.166.068a.603.603 0 0 1-.479-.05c-.104-.052-.186-.127-.244-.225s-.088-.205-.088-.322v-9.14L3.823 5.406a.491.491 0 0 1-.117-.186.648.648 0 0 1-.039-.224v-2.5a.6.6 0 0 1 .186-.439.604.604 0 0 1 .439-.186h15zm-.625 2.89v-1.64H4.917v1.641l5.469 6.074a.507.507 0 0 1 .117.186.653.653 0 0 1 .039.225v8.203l2.5-1.66v-6.543c0-.078.013-.152.039-.225a.515.515 0 0 1 .117-.186l5.469-6.075z">
       </path>
     </svg>
-    <select id="sort-by">
+    <select id="sort-byFitlerMobile">
       {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
 
       {% for option in collection.sort_options %}
@@ -163,6 +163,14 @@
 
   // Update sort_by query parameter on select change
   document.querySelector('#sort-by').addEventListener('change', function (e) {
+    var value = e.target.value;
+
+    Shopify.queryParams.sort_by = value;
+    location.search = new URLSearchParams(Shopify.queryParams).toString();
+  });
+
+  // Update sort_by query parameter on select change
+  document.querySelector('#sort-byFitlerMobile').addEventListener('change', function (e) {
     var value = e.target.value;
 
     Shopify.queryParams.sort_by = value;
