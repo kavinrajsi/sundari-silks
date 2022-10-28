@@ -329,12 +329,7 @@ body:not(.template-index) {
 }
 
 .collection-readymade {
-  display: none;
-  @media (min-width: 992px) {
-    display: grid;
-    margin-top: var(--Ngap);
     grid-template-columns: repeat(6, 1fr);
-  }
 }
 
 // shopthelook

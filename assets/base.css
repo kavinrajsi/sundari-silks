@@ -1607,14 +1607,7 @@ body:not(.template-index) .header-nav-list-footer {
 }
 
 .collection-readymade {
-  display: none;
-}
-@media (min-width: 992px) {
-  .collection-readymade {
-    display: grid;
-    margin-top: var(--Ngap);
-    grid-template-columns: repeat(6, 1fr);
-  }
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .lookbook-product-section {
