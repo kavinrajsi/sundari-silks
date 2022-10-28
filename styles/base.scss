@@ -4,7 +4,7 @@
 
 @import "common/common";
 @import "common/header";
-@import "section/common/breadcrumbs";
+@import "common/breadcrumbs";
 
 @import "page/home";
 @import "page/collection";
@@ -15,6 +15,8 @@
 @import "common/quickview";
 @import "common/modal-Image";
 @import "page/cart";
+@import "page/login";
+@import "page/account";
 @import "page/blog";
 @import "common/footer";
 
@@ -30,58 +32,53 @@ iframe#dummy-chat-button-iframe {
 }
 
 
-// /* Shrink wrap strategy 1 */
+/* Shrink wrap strategy 1 */
 
-// .product-images {
-//   position: relative;
-//   overflow: hidden;
-// }
+.product-images {
+  position: relative;
+  overflow: hidden;
+}
 
-// /* Shrink wrap strategy 2 */
-// .easyzoom {
-//   display: inline-block;
-//   position: relative;
-//   *display: inline;
-//   *zoom: 1;
-//   &.easyzoom.is-ready img {
-//     cursor: crosshair;
-//   }
-//   img {
-//     display: block;
-//     vertical-align: bottom;
-//   }
-// }
+/* Shrink wrap strategy 2 */
+.easyzoom {
+  display: inline-block;
+  position: relative;
+  *display: inline;
+  *zoom: 1;
+  &.easyzoom.is-ready img {
+    cursor: crosshair;
+  }
+  img {
+    display: block;
+    vertical-align: bottom;
+  }
+}
 
-// .thumbnails {
-//   overflow: hidden;
-//   margin: 1em 0;
-//   padding: 0;
-//   text-align: center;
-//   li {
-//     display: inline-block;
-//     width: 140px;
-//     margin: 0 5px;
-//     img {
-//       display: block;
-//       min-width: 100%;
-//       max-width: 100%;
-//     }
-//   }
-// }
+.thumbnails {
+  overflow: hidden;
+  margin: 1em 0;
+  padding: 0;
+  text-align: center;
+  li {
+    display: inline-block;
+    width: 140px;
+    margin: 0 5px;
+    img {
+      display: block;
+      min-width: 100%;
+      max-width: 100%;
+    }
+  }
+}
 
-// .sliderSecondImage {
-//   display: none;
-// }
-// .slick-dotted.slick-slider {
-//   margin-bottom: 0;
-// }
+.sliderSecondImage {
+  display: none;
+}
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
 
 
-// @import "page/product-detail";
-// @import "section/collection/collection-header";
-// @import "section/product/card-product";
-// @import "page/login";
-// @import "page/account";
 // @import "section/card-collection";
 // @import "section/address";
 // @import "section/filter";
