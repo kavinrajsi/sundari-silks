@@ -355,7 +355,6 @@
     </main>
     {% section 'footer' %}
 
-
     <div class="modal fade" id="productInfoModal" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
@@ -371,18 +370,18 @@
               </div>
               <div class="col-12 col-md-6">
                 <div class="modalDescription">
-                <p class="modalDescription-Title" id="productInfoTitle"></p>
-                <p class="modalDescription-Description" id="productInfoDescription"></p>
-                <p class="modalDescription-Price" id="productInfoPrice"></p>
-                <form action="#" id="addToCartForm" class="row">
-                  <select name="id" id="modalItemID" class="form-select col-auto">
-                  </select>
-                  <br>
-                  <input type="number" name="quantity" value="1" id="modalItemQuantity" min="1" class="col-auto">
-                  <br>
-                  <button type="submit" class="btn btn-success col-auto">Add to cart</button>
-                </form>
-              </div>
+                  <p class="modalDescription-Title" id="productInfoTitle"></p>
+                  <p class="modalDescription-Description" id="productInfoDescription"></p>
+                  <p class="modalDescription-Price" id="productInfoPrice"></p>
+                  <form action="#" id="addToCartForm" class="row">
+                    <select name="id" id="modalItemID" class="form-select col-auto">
+                    </select>
+                    <br>
+                    <input type="number" name="quantity" value="1" id="modalItemQuantity" min="1" class="col-auto">
+                    <br>
+                    <button type="submit" class="btn btn-success col-auto">Add to cart</button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
@@ -390,43 +389,24 @@
       </div>
     </div>
 
-    <script src="{{ 'predictive-search.js' | asset_url }}"></script>
-    <script src="{{ 'slick.js' | asset_url }}"></script>
-    <script src="{{ 'global.js' | asset_url }}"></script>
-    <!-- added for quick view -->
-    <script src="{{ 'facets.js' | asset_url }}"></script>
-    <script src="{{ 'bootstrap.min.js' | asset_url }}"></script>
-    <script src="{{ 'quick-view-main.js' | asset_url }}"></script>
-
-
-    {% if template contains 'product' %}
-    <script src="{{ 'photoswipe.umd.min.js' | asset_url }}"></script>
-    <script src="{{ 'photoswipe-lightbox.umd.min.js' | asset_url }}"></script>
-
-    <script>
-      // Include Lightbox
-      var lightbox = new PhotoSwipeLightbox({
-        gallery: '.test-gallery',
-        children: 'a',
-        showHideAnimationType: 'fade',
-        pswpModule: PhotoSwipe
-      });
-      lightbox.init();
-
-      $('.product-images-thumbnails').on('click', 'a', function (e) {
-        var $this = $(this);
-        e.preventDefault();
-        console.log($this.attr('href'));
-        $this.parents('.product-images').find('.ImageMe a').addClass('ter').attr('href', $this.attr('href'));
-        $this.parents('.product-images').find('.ImageMe a').addClass('ter').data('pswp-width', $this.data('pswp-width'));
-        $this.parents('.product-images').find('.ImageMe a').addClass('ter').data('pswp-height', $this.data('pswp-height'));
-        $this.parents('.product-images').find('.ImageMe img').addClass('ter').attr('src', $this.attr('href'));
-      });
-
-    // Shopify.Products.recordRecentlyViewed();
-    </script>
-    {% endif %}
   </section>
+
+  <script src="{{ 'predictive-search.js' | asset_url }}"></script>
+  <script src="{{ 'slick.js' | asset_url }}"></script>
+  <script src="{{ 'filter.js' | asset_url }}"></script>
+  <script src="{{ 'bootstrap.min.js' | asset_url }}"></script>
+  <script src="{{ 'quick-view-main.js' | asset_url }}"></script>
+  <script src="{{ 'global.js' | asset_url }}"></script>
+
+  {% if template contains 'product' %}
+  <script src="{{ 'photoswipe.umd.min.js' | asset_url }}"></script>
+  <script src="{{ 'photoswipe-lightbox.umd.min.js' | asset_url }}"></script>
+  <script src="{{ 'photoswipe-control.js' | asset_url }}"></script>
+  {% endif %}
+
+  <script>
+      // Shopify.Products.recordRecentlyViewed();
+  </script>
   <script>
     $(document).ready(function (e) {
       let mes = $('.pick_currency.mldesk');
@@ -434,17 +414,8 @@
       console.log(mes);
       mes1.append(mes);
     });
+  </script>
 
-  </script>
-  <script>
-    function debounce(func, timeout = 300) {
-      let timer;
-      return (...args) => {
-        clearTimeout(timer);
-        timer = setTimeout(() => { func.apply(this, args); }, timeout);
-      };
-    }
-  </script>
 </body>
 
 </html>

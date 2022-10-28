@@ -286,12 +286,13 @@ body {
       text-align: center;
       .menu-level-1-item {
         display: inline-block;
+        padding: 0 5px;
         a {
           font-size: 13px;
           line-height: 14px;
           padding: 14px 8px;
           @media (min-width: 1100px) {
-            padding: 14px 10px;
+            padding: 14px 5px;
           }
           color: var(--pure-black);
           position: relative;
@@ -332,7 +333,7 @@ body {
       border-bottom-right-radius: 4px;
       width: 100%;
       justify-content: center;
-      grid-gap: 24px;
+      grid-gap: 14px;
       visibility: hidden;
       padding: 20px 10px;
       display: grid;
@@ -347,6 +348,9 @@ body {
           text-align: left;
           display: block;
           border-bottom: 1px solid var(--border-color);
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 1.5;
         }
         &-image {
           a {
@@ -380,8 +384,8 @@ body {
       .menu-level-3-item {
         a {
           text-transform: initial;
-          padding-left: 0;
-          padding-right: 0;
+          padding-left: 5px;
+          padding-right: 5px;
           margin-bottom: 5px;
           margin-top: 5px;
           padding-top: 0;
@@ -390,6 +394,11 @@ body {
           line-height: 24px;
           font-weight: 400;
           word-wrap: break-word;
+          border-bottom: 0;
+          border-radius: 2px;
+          &:hover{
+            background-color: #f4f4f4;
+          }
         }
         &:last-child a {
           border-bottom: 0;
@@ -594,32 +603,22 @@ body {
   overflow: hidden;
 }
 
-.large-12.columns img {
-  width: 100%;
-}
-.large-12.columns img.desktopBanner {
-  display: none;
-}
-.large-12.columns img.mobileBanner {
-  display: block;
-}
-@media screen and (min-width: 641px) {
-  .large-12.columns img.mobileBanner {
-    display: none;
-  }
-  .large-12.columns img.desktopBanner {
-    display: block;
-  }
+.cart-count {
+  display: flex;
+  background: var(--secondary-color);
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  text-align: center;
+  color: var(--pure-black);
+  position: absolute;
+  top: -10px;
+  z-index: 5;
+  width: 22px;
+  height: 22px;
+  left: 11px;
 }
 
-.large-12.columns {
-  .owl-theme .owl-dots .owl-dot span {
-    background: transparent;
-    border: 2px solid var(--border-color);
-  }
-
-  .owl-theme .owl-dots .owl-dot.active span {
-    border-color: var(--secondary-color);
-    background: var(--secondary-color);
-  }
+.header-cart {
+  position: relative;
 }
