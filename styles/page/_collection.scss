@@ -1,34 +1,6 @@
-.collection-page-action-list {
-  border-top: 1px solid #d4d5d9;
-  border-bottom: 1px solid #d4d5d9;
-  justify-content: space-around;
-  padding: 12px 0px;
-  margin-left: 4vw;
-  margin-right: 4vw;
-  margin-bottom: 28px;
-  display: flex;
-  display: none;
-  @media (min-width: 768px) {
-    display: none;
-  }
-  .collection-filter {
-    flex: 1 0 auto;
-  }
-  .collection-action-sortyby {
-    padding-right: 20px;
-    font-size: 14px;
-    line-height: 1.25;
-    select {
-      cursor: pointer;
-      padding: 12px 8px;
-    }
-  }
-}
-
 .collection-page-action-active {
   display: none;
 }
-
 
 .template-collection {
   .collection-page-header {
