@@ -10,56 +10,11 @@
   <div class="collection-section--group">
     <div class="test--product-card--grid">
 
-      <div class="product-grid-list-eight">
+      <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="3" collection-list-desktop="4">
         {% assign collection = collections[ block.settings.grid_collection_name ] %}
         {% assign collectionCount = 8 %}
         {% for product in collection.products limit: collectionCount %}
-        <div class="product__card">
-          <div class="product__card--img">
-            <a href="{{ product.url | within: collection }}" class="product-link">
-              <div class="product__image--wrapper">
-                {% if product.featured_image != blank %}
-                <div>
-                  <img loading="auto" alt="{{ product.featured_image.alt }}" width="328" height="463"
-                    src=" {{ product.featured_image.src | image_url: width:328, height:463 }} ">
-                </div>
-                {% else %}
-                {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
-                {% endif %}
-              </div>
-              <div class="product__status">
-                {% unless product.available %}
-                <!-- TODO: Sold out chip color -->
-                <span class="product__status-soldout">sold out</span>
-                {% endunless %}
-              </div>
-            </a>
-            <div class="product__card-cta quick-view-button">
-              <a  href="javascript:void(0)" id="productInfoAnchor" class="quick-view" product-handle="{{ product.handle }}" product-price="{{ product.price | money_without_trailing_zeros }}" >Quick View</a>
-            </div>
-          </div>
-          <div class="product__card--content">
-            <a href="{{ product.url | within: collection }}" class="product-link">
-              <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
-              <div class="product__variant--price">
-                {% if product.price_varies %}
-                <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency
-                  }}
-                </p>
-                {% else %}
-                <p>
-                  {% if product.compare_at_price_max > product.price %}
-                  <span><s>{{ product.compare_at_price_max | money_with_currency }}</s></span>
-                  <span>{{ product.price | money_with_currency }}</span>
-                  {% else %}
-                  <span>{{ product.price | money_with_currency }}</span>
-                  {% endif %}
-                </p>
-                {% endif %}
-              </div>
-            </a>
-          </div>
-        </div>
+        {% render 'product-card', product:product %}
         {% endfor %}
       </div>
 
