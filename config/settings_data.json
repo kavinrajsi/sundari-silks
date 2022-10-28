@@ -93,6 +93,7 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-kanchipuram_374x_progressive_png.jpg",
               "mega_link": "Kanchipuram",
               "link": "shopify:\/\/collections\/all-kanchipuram",
               "title": "All Kanchipuram",
@@ -103,6 +104,7 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-kanchipuram-wedding-edit_340x_progressive_png.jpg",
               "mega_link": "Wedding Edit",
               "link": "shopify:\/\/collections\/saree",
               "title": "Venkatagiri Cotton",
