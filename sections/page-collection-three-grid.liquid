@@ -159,7 +159,7 @@ Filter By</div>
   </div>
   <section>
     {% paginate collection.products by 24 %}
-    <div class="product-grid-list-three">
+    <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="3" collection-list-desktop="3">
       {% for product in collection.products %}
       {% render 'product-card', product:product %}
       {% endfor %}
