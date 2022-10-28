@@ -321,9 +321,9 @@
         "cf647e91-dbe8-4021-a7d9-a66254345f5b": {
           "type": "readymade-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Women-01.png",
+            "image": "shopify:\/\/shop_images\/women-01_51d485a8-ca49-40f7-a36d-705f4b747e76.png",
             "text": "Women",
-            "background": "linear-gradient(#ffffff, #000000)",
+            "background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(39, 2, 2, 0), rgba(39, 10, 4, 0), rgba(39, 17, 6, 0) 54.317%, rgba(39, 23, 7, 0) 56.115%)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
