@@ -323,7 +323,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/women-01_51d485a8-ca49-40f7-a36d-705f4b747e76.png",
             "text": "Women",
-            "background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(39, 2, 2, 0), rgba(39, 10, 4, 0), rgba(39, 17, 6, 0) 54.317%, rgba(39, 23, 7, 0) 56.115%)",
+            "background": "linear-gradient(180deg, rgba(39, 2, 2, 0), rgba(156, 116, 70, 0.5) 100%)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
