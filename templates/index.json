@@ -152,6 +152,77 @@
         "curated-description": "Styles for every occasion"
       }
     },
+    "readymade": {
+      "type": "home-readymade",
+      "blocks": {
+        "cf647e91-dbe8-4021-a7d9-a66254345f5b": {
+          "type": "readymade-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/women-01_51d485a8-ca49-40f7-a36d-705f4b747e76.png",
+            "text": "Women",
+            "background": "linear-gradient(180deg, rgba(39, 2, 2, 0), rgba(156, 116, 70, 0.5) 100%)",
+            "link": "shopify:\/\/collections\/readymades"
+          }
+        },
+        "e4653ca2-9d0a-4e89-979c-9c1b932897db": {
+          "type": "readymade-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mens-01.png",
+            "text": "Men",
+            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(108, 72, 30, 0.5) 100%)",
+            "link": "shopify:\/\/collections\/readymades"
+          }
+        },
+        "558c4938-63b0-436c-bb48-95f4396e958e": {
+          "type": "readymade-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/girls_model-01.png",
+            "text": "Girls",
+            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
+            "link": "shopify:\/\/collections\/readymades"
+          }
+        },
+        "0fa2d46d-88b9-4852-a880-4e28e17aedab": {
+          "type": "readymade-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/boys_model-01.png",
+            "text": "Boys",
+            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
+            "link": "shopify:\/\/collections\/readymades"
+          }
+        },
+        "6c0d8e0e-f040-459b-9a2a-ea4be141c0d6": {
+          "type": "readymade-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FABRIC-01.png",
+            "text": "Fabric",
+            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
+            "link": "shopify:\/\/collections\/readymades"
+          }
+        },
+        "d024e20d-b890-4a5d-b3a1-680f7f65694c": {
+          "type": "readymade-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/INFANT-01.png",
+            "text": "Infant",
+            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
+            "link": "shopify:\/\/collections\/readymades"
+          }
+        }
+      },
+      "block_order": [
+        "cf647e91-dbe8-4021-a7d9-a66254345f5b",
+        "e4653ca2-9d0a-4e89-979c-9c1b932897db",
+        "558c4938-63b0-436c-bb48-95f4396e958e",
+        "0fa2d46d-88b9-4852-a880-4e28e17aedab",
+        "6c0d8e0e-f040-459b-9a2a-ea4be141c0d6",
+        "d024e20d-b890-4a5d-b3a1-680f7f65694c"
+      ],
+      "settings": {
+        "readymade-title": "Ready Made collection",
+        "readymade-description": "Styles for every occasion"
+      }
+    },
     "lookbookArea": {
       "type": "lookbook",
       "blocks": {
@@ -315,77 +386,6 @@
         "collection-list": "andhra-cotton | kanchipuram-half-fine-zari | readymades"
       }
     },
-    "readymade": {
-      "type": "home-readymade",
-      "blocks": {
-        "cf647e91-dbe8-4021-a7d9-a66254345f5b": {
-          "type": "readymade-image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/women-01_51d485a8-ca49-40f7-a36d-705f4b747e76.png",
-            "text": "Women",
-            "background": "linear-gradient(180deg, rgba(39, 2, 2, 0), rgba(156, 116, 70, 0.5) 100%)",
-            "link": "shopify:\/\/collections\/readymades"
-          }
-        },
-        "e4653ca2-9d0a-4e89-979c-9c1b932897db": {
-          "type": "readymade-image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Mens-01.png",
-            "text": "Men",
-            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(108, 72, 30, 0.5) 100%)",
-            "link": "shopify:\/\/collections\/readymades"
-          }
-        },
-        "558c4938-63b0-436c-bb48-95f4396e958e": {
-          "type": "readymade-image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/girls_model-01.png",
-            "text": "Girls",
-            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
-            "link": "shopify:\/\/collections\/readymades"
-          }
-        },
-        "0fa2d46d-88b9-4852-a880-4e28e17aedab": {
-          "type": "readymade-image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/boys_model-01.png",
-            "text": "Boys",
-            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
-            "link": "shopify:\/\/collections\/readymades"
-          }
-        },
-        "6c0d8e0e-f040-459b-9a2a-ea4be141c0d6": {
-          "type": "readymade-image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/FABRIC-01.png",
-            "text": "Fabric",
-            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
-            "link": "shopify:\/\/collections\/readymades"
-          }
-        },
-        "d024e20d-b890-4a5d-b3a1-680f7f65694c": {
-          "type": "readymade-image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/INFANT-01.png",
-            "text": "Infant",
-            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
-            "link": "shopify:\/\/collections\/readymades"
-          }
-        }
-      },
-      "block_order": [
-        "cf647e91-dbe8-4021-a7d9-a66254345f5b",
-        "e4653ca2-9d0a-4e89-979c-9c1b932897db",
-        "558c4938-63b0-436c-bb48-95f4396e958e",
-        "0fa2d46d-88b9-4852-a880-4e28e17aedab",
-        "6c0d8e0e-f040-459b-9a2a-ea4be141c0d6",
-        "d024e20d-b890-4a5d-b3a1-680f7f65694c"
-      ],
-      "settings": {
-        "readymade-title": "Ready Made collection",
-        "readymade-description": "Styles for every occasion"
-      }
-    },
     "recent-products": {
       "type": "product-recommendations",
       "disabled": true,
@@ -488,11 +488,11 @@
   "order": [
     "slideshow",
     "curated",
+    "readymade",
     "lookbookArea",
     "spotlight",
     "collaborate",
     "dropped",
-    "readymade",
     "recent-products",
     "blog",
     "vs",
