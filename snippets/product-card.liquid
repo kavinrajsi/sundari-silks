@@ -31,10 +31,10 @@ Usage:
         {% else %}
         {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
         {% endif %}
-        <div class="product__status">
+        <div class="product__card--status">
           {% unless product.available %}
           <!-- TODO: Sold out chip color -->
-          <span class="product__status-soldout">sold out</span>
+          <span class="product__card--status-soldout">sold out</span>
           {% endunless %}
         </div>
       </div>

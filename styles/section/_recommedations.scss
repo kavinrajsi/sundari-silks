@@ -1,12 +1,6 @@
-
 .product-recommendations-detail {
   padding-bottom: var(--home-section-space);
-  padding-left: var(--Ngap);
-  padding-right: var(--Ngap);
-  @media (min-width: 1364px) {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
+
   > h2 {
     text-align: center;
     font-family: "Playfair Display", serif;
@@ -14,5 +8,11 @@
     line-height: 1.2222222222;
     font-size: var(--home-section-title);
     padding-bottom: var(--home-section-secondary-title-space);
+    padding-left: var(--Ngap);
+    padding-right: var(--Ngap);
+    @media (min-width: 1364px) {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
   }
 }
