@@ -332,7 +332,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Mens-01.png",
             "text": "Men",
-            "background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(0, 0, 0, 1) 100%)",
+            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(108, 72, 30, 0.5) 100%)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -341,7 +341,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/girls_model-01.png",
             "text": "Girls",
-            "background": "linear-gradient(#ffffff, #000000)",
+            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -350,7 +350,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/boys_model-01.png",
             "text": "Boys",
-            "background": "linear-gradient(#ffffff, #000000)",
+            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -359,7 +359,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/FABRIC-01.png",
             "text": "Fabric",
-            "background": "linear-gradient(#ffffff, #000000)",
+            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
             "link": "shopify:\/\/collections\/readymades"
           }
         },
@@ -368,7 +368,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/INFANT-01.png",
             "text": "Infant",
-            "background": "linear-gradient(#ffffff, #000000)",
+            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
             "link": "shopify:\/\/collections\/readymades"
           }
         }
