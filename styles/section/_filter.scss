@@ -139,3 +139,38 @@ form.filter-form {
     }
   }
 }
+
+
+
+.mobileFilter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  background-color: var(--pure-white);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding: 18px;
+  width: calc(100%);
+  display: flex;
+  @media (min-width: 1024px) {
+    display: none;
+  }
+  div {
+    svg {
+      width: 20px;
+      min-width: 20px;
+      min-height: 20px;
+      display: inline-block;
+      margin-right: 4px;
+    }
+    font-size: 16px;
+    line-height: normal;
+    flex: 1 0 auto;
+    text-align: center;
+    &:first-child {
+      border-right: 1px solid var(--border-color);
+    }
+  }
+}

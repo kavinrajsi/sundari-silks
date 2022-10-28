@@ -1,40 +1,6 @@
-:root {
-  --Ngap: 8px;
-  --Mgap: -8px;
-}
-@media (min-width: 576px) {
-  :root {
-    --Ngap: 16px;
-    --Mgap: -16px;
-  }
-}
-@media (min-width: 768px) {
-  :root {
-    --Ngap: 24px;
-    --Mgap: -24px;
-  }
-}
-@media (min-width: 992px) {
-  :root {
-    --Ngap: 24px;
-    --Mgap: -24px;
-  }
-}
-@media (min-width: 1200px) {
-  :root {
-    --Ngap: 24px;
-    --Mgap: -24px;
-  }
-}
-@media (min-width: 1364px) {
-  :root {
-    --Ngap: 32px;
-    --Mgap: -32px;
-  }
-}
-
 
 // Footer
+body.template-index{
 .header-nav-list-footer {
   > div span {
     font-weight: 400;
@@ -72,6 +38,15 @@
     }
   }
 }
+}
+
+
+body:not(.template-index){
+.header-nav-list-footer{
+  display: none;
+}
+}
+
 
 // product card
 .product__card {
@@ -105,6 +80,7 @@
   // content
   &--content {
     .product__title {
+      text-align: left;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -126,12 +102,6 @@
   }
 }
 
-$mobileM: 375px;
-$mobileL: 425px;
-$mobile: 576px;
-$tablet: 768px;
-$ptablet: 992px;
-$desktop: 1024px;
 
 .display-card-grid {
   display: grid;
@@ -202,9 +172,6 @@ $desktop: 1024px;
   }
 }
 
-// banner
-@import "../section/home/banner";
-
 .homepage-section {
   padding-bottom: var(--home-section-space);
   padding-left: var(--Ngap);
@@ -225,9 +192,24 @@ $desktop: 1024px;
       &.desktopBanner {
         object-fit: cover;
         aspect-ratio: 1457/455;
-        // height: calc(100vh - 420px);
-        @media (orientation: portrait) {
-          // height: auto;
+      }
+    }
+    .slick-dots {
+      bottom: 10px;
+      li {
+        @media (max-width: 768px) {
+          margin: 0;
+        }
+        button:before {
+          width: 24px;
+          height: 24px;
+          opacity: 1;
+        }
+      }
+      li.slick-active {
+        button:before {
+          color: var(--secondary-color);
+          opacity: 1;
         }
       }
     }
@@ -739,7 +721,7 @@ $desktop: 1024px;
     align-items: center;
     display: block;
     text-align: center;
-    img{
+    img {
       margin-left: 8px;
     }
     @media (min-width: 768px) {

@@ -1,0 +1,216 @@
+
+.shopify-policy__container {
+  max-width: 896px;
+  margin-right: auto;
+  margin-left: auto;
+
+  padding-top: 4vw;
+  padding-bottom: 4vw;
+
+  padding-right: 24px !important;
+  padding-left: 24px !important;
+  @media (min-width: 768px) {
+    padding-right: 32px !important;
+    padding-left: 32px !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+  }
+
+  pre,
+  code,
+  kbd,
+  samp {
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
+    font-size: 1em;
+  }
+
+  pre {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    overflow: auto;
+  }
+
+  figure {
+    margin: 0 0 1rem;
+  }
+
+  img {
+    vertical-align: middle;
+    border-style: none;
+  }
+
+  svg {
+    overflow: hidden;
+    vertical-align: middle;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  caption {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    color: #6c757d;
+    text-align: left;
+    caption-side: bottom;
+  }
+
+  th {
+    text-align: inherit;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  h1,
+  .h1 {
+    font-size: 2.5rem;
+  }
+
+  h2,
+  .h2 {
+    font-size: 2rem;
+  }
+
+  h3,
+  .h3 {
+    font-size: 1.75rem;
+  }
+
+  h4,
+  .h4 {
+    font-size: 1.5rem;
+  }
+
+  h5,
+  .h5 {
+    font-size: 1.25rem;
+  }
+
+  h6,
+  .h6 {
+    font-size: 1rem;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+  hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  blockquote {
+    margin: 0 0 1rem;
+  }
+  img {
+    vertical-align: middle;
+    border-style: none;
+    max-width: 100%;
+    height: auto;
+  }
+
+  ol ol,
+  ul ul,
+  ol ul,
+  ul ol {
+    margin-bottom: 0;
+  }
+  ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+  }
+
+  ol {
+    display: block;
+    list-style-type: decimal;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+  }
+
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+  }
+
+  b,
+  strong {
+    font-weight: bold;
+  }
+
+  i,
+  em {
+    font-style: italic;
+  }
+
+  mark {
+    background-color: mark;
+    color: marktext;
+  }
+  small {
+    font-size: smaller;
+  }
+  del {
+    text-decoration: line-through;
+  }
+  ins {
+    text-decoration: underline;
+  }
+  sub {
+    vertical-align: sub;
+    font-size: smaller;
+  }
+  sup {
+    vertical-align: super;
+    font-size: smaller;
+  }
+}

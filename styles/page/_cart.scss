@@ -32,6 +32,25 @@ h1.page__title {
 }
 
 
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4vw auto;
+  background-color: transparent;
+  a {
+    text-decoration: underline;
+  }
+  p {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: normal;
+  }
+}
+
+
+
 form.cart_wrapper {
 	display: flex;
 	max-width: var(--content-width);
