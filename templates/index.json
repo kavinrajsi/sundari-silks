@@ -82,6 +82,7 @@
         },
         "b8f50da7-dab7-470a-9316-30bf31b01a5a": {
           "type": "readymade-image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/women-01_51d485a8-ca49-40f7-a36d-705f4b747e76.png",
             "heading": "Women",
@@ -91,6 +92,7 @@
         },
         "af64ae0e-b0ce-44f1-9174-96c976588b5f": {
           "type": "readymade-image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Mens-01_eb96fdbb-5dde-4923-8b2c-c815ec8b6bcb.png",
             "heading": "Men",
@@ -100,6 +102,7 @@
         },
         "3df7725e-d735-4aca-a28b-46a8340b3ab5": {
           "type": "readymade-image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/girls-01_2.png",
             "heading": "Girls",
@@ -109,6 +112,7 @@
         },
         "b64e9a81-ca1c-4151-bcdd-5de5dcabd06b": {
           "type": "readymade-image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/boys_model-01_1.png",
             "heading": "Boys",
@@ -118,6 +122,7 @@
         },
         "a71593b3-0ca8-4b76-bbe5-8de06e41635c": {
           "type": "readymade-image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/FABRIC-01.png",
             "heading": "Fabric",
@@ -127,6 +132,7 @@
         },
         "341a96da-ba85-4fdf-9220-c3a94a04920d": {
           "type": "readymade-image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/INFANT-01.png",
             "heading": "Infant",
