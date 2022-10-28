@@ -133,7 +133,7 @@
       <input type="number" class="form-control" name="quantity" id="Quantity" value="1" max="1">
     </div>
 
-<!-- check the data -->
+    <!-- check the data -->
     {% assign with_blouse = true %}
     {% for tag in product.tags %}
     {% if tag == "With Blouse" %}
@@ -141,7 +141,7 @@
     {% break %}
     {% endif %}
     {% endfor %}
-<!-- if data true -->
+    <!-- if data true -->
     {% if with_blouse %}
     <div class="blouse-stitching hide" id="hulkapps_custom_options_{{ product.id }}"> </div>
     {% else %}
@@ -435,12 +435,6 @@
     ]
   }
   </script>
-
-{%- comment -%}
-{% include 'recently-viewed' %}
-{% section 'recommended-products' %}
-{%- endcomment -%}
-
 
 <script language="Javascript" type="text/javascript">
   var myProduct = {{ product | json}};

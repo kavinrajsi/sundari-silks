@@ -4184,6 +4184,26 @@ form.filter-form .active-filters {
   justify-content: center;
   border-radius: 4px;
 }
+.product-recommendations-detail {
+  padding-bottom: var(--home-section-space);
+  padding-left: var(--Ngap);
+  padding-right: var(--Ngap);
+}
+@media (min-width: 1364px) {
+  .product-recommendations-detail {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+.product-recommendations-detail h2 {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  line-height: 1.2222222222;
+  font-size: var(--home-section-title);
+  padding-bottom: var(--home-section-secondary-title-space);
+}
+
 /* Shrink wrap strategy 1 */
 .product-images {
   position: relative;

@@ -5,7 +5,7 @@
 
 @import "header";
 
-a{
+a {
   cursor: pointer;
 }
 body {
@@ -36,6 +36,25 @@ main img {
 @import "section/address";
 @import "section/filter";
 @import "section/common/drawer";
+
+.product-recommendations-detail {
+  padding-bottom: var(--home-section-space);
+  padding-left: var(--Ngap);
+  padding-right: var(--Ngap);
+  @media (min-width: 1364px) {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  h2 {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    line-height: 1.2222222222;
+    font-size: var(--home-section-title);
+  padding-bottom: var(--home-section-secondary-title-space);
+  }
+}
+
 
 /* Shrink wrap strategy 1 */
 
@@ -82,7 +101,6 @@ main img {
 .slick-dotted.slick-slider {
   margin-bottom: 0;
 }
-
 
 .empty-cart {
   display: flex;
