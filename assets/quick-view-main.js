@@ -52,39 +52,39 @@ if(productInfoAnchors.length > 0) {
     });
 }
 
-// var modalAddToCartForm = document.querySelector("#addToCartForm");
+var modalAddToCartForm = document.querySelector("#addToCartForm");
 
-// if( modalAddToCartForm != null ) {
-//     modalAddToCartForm.addEventListener("submit", function(e) {
-//         e.preventDefault();
+if( modalAddToCartForm != null ) {
+    modalAddToCartForm.addEventListener("submit", function(e) {
+        e.preventDefault();
 
-//         let formData = {
-//             'items': [
-//                 {
-//                     'id': document.getElementById("modalItemID").value,
-//                     'quantity': document.getElementById("modalItemQuantity").value
-//                 }
-//             ]
-//         };
+        let formData = {
+            'items': [
+                {
+                    'id': document.getElementById("modalItemID").value,
+                    'quantity': document.getElementById("modalItemQuantity").value
+                }
+            ]
+        };
 
-//         fetch('/cart/add.js', {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             },
-//             body: JSON.stringify(formData)
-//         })
-//         .then((resp) => {
-//             return resp.json();
-//         })
-//         .then((data) => {
-//             // update_cart();
-//         })
-//         .catch((err) => {
-//             console.error('Error: ' + err);
-//         })
-//     });
-// }
+        fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then((resp) => {
+            return resp.json();
+        })
+        .then((data) => {
+            // update_cart();
+        })
+        .catch((err) => {
+            console.error('Error: ' + err);
+        })
+    });
+}
 
 // document.addEventListener('DOMContentLoaded', function() {
 //     update_cart();

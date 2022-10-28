@@ -1,7 +1,7 @@
 {% assign collection = collections[ section.settings.show_collection ] %}
 
 <section>
-  <div class="product-grid-list-four">
+  <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="3" collection-list-desktop="4">
     {% for product in collection.products limit:4 %}
       {% render 'product-card', product:product %}
     {% endfor %}

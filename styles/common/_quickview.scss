@@ -155,9 +155,9 @@
 
 .modal-body {
   position: relative;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  padding: 1rem;
+  // -ms-flex: 1 1 auto;
+  // flex: 1 1 auto;
+  // padding: 1rem;
 }
 
 .modal-footer {
@@ -226,12 +226,15 @@
 
 .row {
   display: flex;
+  flex-wrap: wrap;
   .col-md-6 {
     flex: 1 0 50%;
   }
   .modalDescription {
+    @media(min-width: 768px){
     margin-left: 45px;
     margin-right: 45px;
+    }
     overflow-y: scroll;
 
     &-Title {

@@ -3099,9 +3099,6 @@ table tbody + tbody {
 
 .modal-body {
   position: relative;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  padding: 1rem;
 }
 
 .modal-footer {
@@ -3167,14 +3164,19 @@ table tbody + tbody {
 }
 .row {
   display: flex;
+  flex-wrap: wrap;
 }
 .row .col-md-6 {
   flex: 1 0 50%;
 }
 .row .modalDescription {
-  margin-left: 45px;
-  margin-right: 45px;
   overflow-y: scroll;
+}
+@media (min-width: 768px) {
+  .row .modalDescription {
+    margin-left: 45px;
+    margin-right: 45px;
+  }
 }
 .row .modalDescription-Title {
   margin-bottom: 22px;
@@ -3225,6 +3227,158 @@ table tbody + tbody {
   right: 0;
 }
 
+.drawer {
+  display: none;
+}
+
+.drawer__header {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.drawer__close {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%0A%3Csvg width='15px' height='16px' viewBox='0 0 15 16' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='2.-Menu' transform='translate(-15.000000, -13.000000)' stroke='%23000000'%3E%3Cg id='Group' transform='translate(15.000000, 13.521000)'%3E%3Cpath d='M0,0.479000129 L15,14.2971819' id='Path-3'%3E%3C/path%3E%3Cpath d='M0,14.7761821 L15,-1.24344979e-14' id='Path-3'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  width: 15px;
+  height: 15px;
+}
+
+.drawer__wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 500px;
+  z-index: 10999;
+  overflow: auto;
+  transition: transform 0.3s;
+  will-change: transform;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  -webkit-transform: translateX(103%);
+  transform: translateX(103%);
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0 2px 6px #777;
+}
+@media (min-width: 500px) {
+  .drawer__wrapper {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+}
+
+.drawer__content {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+  flex-grow: 1;
+  padding: 16px;
+  padding-bottom: 92px;
+}
+
+.drawer.is-active {
+  display: block;
+}
+
+.drawer.is-visible .drawer__wrapper {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.drawer.is-visible .drawer__overlay {
+  opacity: 0.5;
+}
+
+.drawer__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 200;
+  opacity: 0;
+  transition: opacity 0.3s;
+  will-change: opacity;
+  background-color: #000;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#cart__drawer_items .cart__item {
+  display: flex;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+#cart__drawer_items .cart__item img {
+  border-radius: 2px;
+}
+#cart__drawer_items .cart__item h5 {
+  font-size: 14px;
+}
+#cart__drawer_items .cart__item .productPrice {
+  color: #282b30;
+  font-size: 11px;
+  margin: 8px 0px;
+}
+#cart__drawer_items .cart__item .removeCta {
+  color: #282b30;
+  font-size: 11px;
+}
+#cart__drawer_items .cart__item .card__item-image {
+  margin-right: 15px;
+  width: 60px;
+  min-width: 60px;
+  aspect-ratio: 1;
+}
+#cart__drawer_items li:last-child .cart__item {
+  border-bottom: 0;
+}
+
+.drawer__footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 24px 8px;
+  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.1607843137);
+}
+
+.cart__continue-btn {
+  font-size: 11px;
+  padding: 14px 20px !important;
+  color: #000;
+  background-color: var(--secondary-color);
+  font-weight: 400;
+  font-style: normal;
+  z-index: 1;
+  -webkit-tap-highlight-color: initial;
+  text-align: center;
+  line-height: normal;
+  border: 1px solid transparent;
+  border-radius: 0;
+  text-transform: uppercase;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
 .pswp {
   --pswp-bg: #000;
   --pswp-placeholder-bg: #222;
@@ -3967,11 +4121,6 @@ footer .footer-copyright {
 }
 footer .footer-copyright a {
   color: inherit;
-}
-
-.modal,
-.drawer {
-  display: none;
 }
 
 #shopify-chat iframe,

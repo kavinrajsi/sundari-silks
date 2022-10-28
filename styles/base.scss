@@ -13,17 +13,13 @@
 @import "section/pagination";
 @import "section/recommedations";
 @import "common/quickview";
+@import "common/drawer";
 @import "common/modal-Image";
 @import "page/cart";
 @import "page/login";
 @import "page/account";
 @import "page/blog";
 @import "common/footer";
-
-.modal,
-.drawer{
-  display: none;
-}
 
 #shopify-chat iframe,
 iframe#dummy-chat-button-iframe {
