@@ -1,11 +1,18 @@
 {
   "sections": {
-      "template": {
-          "type": "product"
-      },
-      "product-recommendation": {
-          "type": "product-recommendations"
+    "template": {
+      "type": "product",
+      "settings": {
       }
+    },
+    "product-recommendation": {
+      "type": "product-recommendations",
+      "settings": {
+      }
+    }
   },
-  "order": ["template","product-recommendation"]
+  "order": [
+    "template",
+    "product-recommendation"
+  ]
 }
