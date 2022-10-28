@@ -2267,7 +2267,7 @@ body:not(.template-index) .header-nav-list-footer {
 
 .meFilter {
   position: relative;
-  display: flex;
+  display: none;
   justify-content: space-between;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
@@ -2275,6 +2275,11 @@ body:not(.template-index) .header-nav-list-footer {
   margin-left: var(--Ngap);
   margin-right: var(--Ngap);
   padding: 14px 6px;
+}
+@media (min-width: 768px) {
+  .meFilter {
+    display: flex;
+  }
 }
 @media (min-width: 1364px) {
   .meFilter {
