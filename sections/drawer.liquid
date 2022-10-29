@@ -5,57 +5,93 @@
       <div class="drawer__title">
         Mini Bag
         <span>
-          {{ cart.item_count }} item(s) in bag
+          <span class="cart-item-count"> {{ cart.item_count }} </span> item(s) in bag
         </span>
       </div>
       <button class="drawer__close" data-drawer-close aria-label="Close Drawer"></button>
     </div>
     <div class="drawer__content" id="cart__drawer">
-
-      <div class="cart-popup" id="cartPopup">
+      <div class="cart-popup">
         <form action="/cart" method="post" novalidate>
           <div class="cartpopup-body ">
             {% for item in cart.items %}
             <div class="cartpopup-item ">
               <div class="cartpopup-item-image">
                 <a href="{{ item.url | within: collection }}">
-                  <img class="img-fluid d-block" src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
+                  <img
+                  loading="lazy"
+                  class="blur-up responsive-image__image lazyload cart-item__image"
+                  src="{{ item.image | image_url: width: 300, format: 'pjpg' }}"
+                  data-src="{{ item.image | image_url: width: 300, format: 'pjpg' }}"
+                  data-aspectratio="{{ item.image.aspect_ratio }}"
+                  alt="{{ item.image.alt | escape }}"
+                  data-sizes="auto"
+                  tabindex="-1" data-parent-fit="cover"
+                  loading="lazy"
+                  width="150"
+                  height="150"
+                >
                 </a>
               </div>
               <div class="cartpopup-item-content ">
                 <h5><a href="{{ item.url | within: collection }}">{{ item.product.title }}</a></h5>
-                <span class="variant">{{ item.variant.title }}</span>
                 <span class="price">{{ item.price | money }}</span>
-                <div class="quantity-box">
+                <span class="variant">
+                  {%- for option in item.options_with_values -%}
+                  <dl class="option">
+                    <dt>{{ option.name }}: </dt>
+                    <dd>{{ option.value }}</dd>
+                  </dl>
+                {%- endfor -%}
+                  </span>
+                <span class="quantity-box" hidden>
                   <button class="quantity-button qminus" role="button" type="button"
-                    data-variant="{{ item.variant.id }}"><i class="fal fa-minus"></i></button>
-                  <input class="quantity-input" type="number" disabled name="updates[]" id="updates_{{ item.key }}"
+                    data-variant="{{ item.variant.id }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                      class="feather feather-minus-circle">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="8" y1="12" x2="16" y2="12"></line>
+                    </svg>
+                  </button>
+                  <input class="quantity-input" type="number"  name="updates[]" id="updates_{{ item.key }}"
                     value="{{ item.quantity }}" min="1" />
                   <button class="quantity-button qplus" role="button" type="button"
-                    data-variant="{{ item.variant.id }}"><i class="fal fa-plus"></i></button>
-                </div>
-                <div class="">
+                    data-variant="{{ item.variant.id }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                      class="feather feather-plus-circle">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="16"></line>
+                      <line x1="8" y1="12" x2="16" y2="12"></line>
+                    </svg>
+                  </button>
+                </span>
+                <span class="delete">
                   <a class="remove" data-variant="{{ item.variant.id }}"
-                    href="/cart/change?line={{ forloop.index }}&amp;quantity=0">Remove</a>
-                </div>
+                    href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
+                    <svg width="16" height="16">
+                      <use href="#trash-mini" />
+                    </svg>
+                    Remove</a>
+                  </span>
               </div>
             </div>
             <!-- Each item -->
             {% endfor %}
           </div>
-          <div class="cartpopup-footer ">
-            <div class="cartpopup-total  align-items-center justify-content-between">
-              <span>Total</span>
-              <span class="price">{{ cart.total_price | money }}</span>
-            </div>
-            <div class="cartpopup-buttons  justify-content-between">
-              <button class="cartpopup-button" type="submit" name="checkout">Checkout</button>
-              <a class="cartpopup-button-alter" href="{{ routes.cart_url }}">Your Cart</a>
-            </div>
-          </div>
         </form>
       </div>
-
+    </div>
+    <div class="drawer__footer">
+      <div class="cartpopup-total">
+        <span>Total</span>
+        <span class="price">{{ cart.total_price | money }}</span>
+      </div>
+      <div class="cartpopup-buttons">
+        <!-- <button class="cartpopup-button" type="submit" name="checkout">Checkout</button> -->
+        <a class="cartpopup-button-alter" href="{{ routes.cart_url }}">Your Cart</a>
+      </div>
     </div>
   </div>
 </section>
@@ -87,7 +123,7 @@
             //If there are items in cart
             if (item_count > 0) {
               // cart count
-              $('.cart-item-count span').text(item_count);
+              $('.cart-item-count').text(item_count);
 
               // mini cart data
               $('.cart-popup').attr('id', 'cartPopup');
@@ -157,6 +193,7 @@
   });
 
   $('.cart-popup .cartpopup-body ').on('click', '.quantity-button.qminus', function () {
+    console.log('minus');
     if ($(this).next().val() > 1) {
       var quantityItem = $(this).next().val(+$(this).next().val() - 1);
     }
@@ -178,9 +215,9 @@
           success: function (cart) {
             var item_count = cart['item_count'];
             var total_price = cart['total_price'] / 100;
-
+            console.log(item_count);
             if (item_count > 0) {
-              $('.cart-item-count span').text(item_count);
+              $('.cart-item-count').text(item_count);
 
               // mini cart data
               $('.cart-popup').attr('id', 'cartPopup');
@@ -193,6 +230,7 @@
   });
 
   $('.cart-popup .cartpopup-body').on('click', '.quantity-button.qplus', function () {
+    console.log('olus');
     $(this).prev().val(+$(this).prev().val() + 1);
     var vId = $(this).attr("data-variant");
     var quantityVal = $(this).prev().val();
@@ -212,9 +250,9 @@
           success: function (cart) {
             var item_count = cart['item_count'];
             var total_price = cart['total_price'] / 100;
-
+            console.log(item_count);
             if (item_count > 0) {
-              $('.cart-item-count span').text(item_count);
+              $('.cart-item-count').text(item_count);
 
               // mini cart data
               $('.cart-popup').attr('id', 'cartPopup');
@@ -253,7 +291,7 @@
             console.log(item_count);
             if (item_count > 0) {
 
-              $('.cart-item-count span').text(item_count);
+              $('.cart-item-count').text(item_count);
 
               // mini cart data
               // $('.cart-popup').attr('id','cartPopup'); don't know why I need
