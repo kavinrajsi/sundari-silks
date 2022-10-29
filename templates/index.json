@@ -431,6 +431,10 @@
         "virtual-shopping-url": ""
       }
     },
+    "homeCurated2": {
+      "type": "home-curated-tw0",
+      "disabled": true
+    },
     "instagram": {
       "type": "instagram",
       "blocks": {
@@ -503,6 +507,7 @@
     "blog",
     "vs",
     "vss",
+    "homeCurated2",
     "instagram"
   ]
 }
