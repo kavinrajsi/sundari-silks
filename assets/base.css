@@ -1388,8 +1388,10 @@ body:not(.template-index) .header-nav-list-footer {
     font-size: 14px;
   }
 }
-.product__card:hover .product__card-cta.quick-view-button {
-  bottom: 0;
+@media (hover: hover) {
+  .product__card:hover .product__card-cta.quick-view-button {
+    bottom: 0;
+  }
 }
 
 .display-card-grid {
@@ -1607,7 +1609,17 @@ body:not(.template-index) .header-nav-list-footer {
 }
 
 .collection-readymade {
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 992px) {
+  .collection-readymade {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .collection-readymade {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
 .lookbook-product-section {

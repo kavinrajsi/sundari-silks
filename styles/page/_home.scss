@@ -124,10 +124,12 @@ body:not(.template-index) {
     }
   }
 
+  @media (hover: hover) {
   &:hover {
     .product__card-cta.quick-view-button {
       bottom: 0;
     }
+  }
   }
 }
 
@@ -329,7 +331,13 @@ body:not(.template-index) {
 }
 
 .collection-readymade {
+  grid-template-columns: repeat(2, 1fr);
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (min-width: 1024px) {
     grid-template-columns: repeat(6, 1fr);
+  }
 }
 
 // shopthelook
