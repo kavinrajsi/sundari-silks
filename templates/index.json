@@ -433,7 +433,10 @@
     },
     "homeCurated2": {
       "type": "home-curated-two",
-      "disabled": true
+      "settings": {
+        "curated-title": "Curated collection",
+        "curated-description": "Styles for every occasion"
+      }
     },
     "instagram": {
       "type": "instagram",
