@@ -35,9 +35,6 @@
           {%- endfor -%}
         </ul>
 
-        <div class="filter-group-display__submit">
-          <input type="submit" value="Apply">
-        </div>
         {%- when 'price_range' -%}
         <div class="filter-group-display__price-range">
           <div class="filter-group-display__price-range-from">
@@ -71,6 +68,10 @@
       </div>
     </details>
     {%- endfor -%}
+
+    <div class="filter-group-display__submit">
+      <input type="submit" value="Apply">
+    </div>
   </form>
   <select id="sort-by">
     {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
@@ -148,6 +149,17 @@
 
 </div>
 <script>
+  $('input').on('change', function() {
+
+    var filterKey = this.checked ? this.name : '';
+    var filterValue = this.checked ? this.value : '';
+    console.log(filterKey+'='+filterValue.split(' ').join('+'));
+    var url   = new URL(window.location.href);
+    let params = new URLSearchParams(url.search);
+    params.append("'"+filterKey+"'",filterValue);
+    console.log(params.toString());
+});
+
   Shopify.queryParams = {};
 
   // Preserve existing query parameters

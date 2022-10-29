@@ -166,7 +166,11 @@
   }
 
   {% endstyle %}
-
+  <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    if (Shopify.designMode) {
+      document.documentElement.classList.add('shopify-design-mode');
+    }
+    </script>
   <script>
     window.mlvedaShopCurrency = "{{ shop.currency }}";
     window.shopCurrency = "{{ shop.currency }}";
@@ -178,8 +182,11 @@
 <body class="template-{{ template | split : '.' | first }}">
 
   {% section 'drawer' %}
+  {% section 'announcement-bar' %}
+  {% section 'header' %}
+  {% render 'breadcrumb' %}
 
-  <section class="fullpage">
+  <section class="fullpage" role="main" tabindex="-1">
     <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -347,10 +354,7 @@
       }
     </script>
 
-    {% section 'announcement-bar' %}
-    {% section 'header' %}
-    {% render 'breadcrumb' %}
-    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+    <main id="MainContent" class="content-for-layout focus-none" >
       {{ content_for_layout }}
     </main>
     {% section 'footer' %}
@@ -393,11 +397,10 @@
 
   <script src="{{ 'predictive-search.js' | asset_url }}"></script>
   <script src="{{ 'slick.js' | asset_url }}"></script>
-  <script src="{{ 'filter.js' | asset_url }}"></script>
   <script src="{{ 'bootstrap.min.js' | asset_url }}"></script>
   <script src="{{ 'quick-view-main.js' | asset_url }}"></script>
   <script src="{{ 'global.js' | asset_url }}"></script>
-
+  <script src="{{ 'filter.js' | asset_url }}"></script>
   {% if template contains 'product' %}
   <script src="{{ 'photoswipe.umd.min.js' | asset_url }}"></script>
   <script src="{{ 'photoswipe-lightbox.umd.min.js' | asset_url }}"></script>

@@ -19,7 +19,7 @@
 </div>
 
 <div class="fixedElement section-{{ section.id }}-padding">
-  {% render 'filter', results: collection, enable_filtering: true, enable_sorting: true, filter_type: 'vertical' %}
+  {% render 'filter' %}
   <section>
     {% paginate collection.products by 27 %}
     <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="3" collection-list-desktop="4">

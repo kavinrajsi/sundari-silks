@@ -180,7 +180,7 @@
       <ul class="menu-level-1">
         {% for link in linklists.main-menu.links %}
         <li
-          class="menu-level-1-item {% if link.links.size > 0 %} menu-level-1-item-child {% endif %} {% if link.active %}menu-active{% endif %} {% if link.child_active %}menu-child-active{% endif %}">
+          class="menu-level-1-item {% if link.links.size > 0 %} menu-level-1-item-child {% endif %} {% if link.active %}menu-active{% endif %} {% if link.child_active %}menu-child-active{% endif %} ">
           <a href="{{ link.url }}" {% if link.active %}aria-current="page" {% endif %}>
             {{ link.title }}
             {% if link.links.size > 0 %}
@@ -195,7 +195,9 @@
                 <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page" {% endif %}>
                   {% for block in section.blocks %}
                   {% if child_link.title == block.settings.mega_link %}
-                  <img src="{{ block.settings.image.src | image_url:  width: 500, height: 500 }}" alt="{{ block.settings.image.alt }}">
+                  {% if block.settings.image.src != blank %}
+                    <img src="{{ block.settings.image.src | image_url:  width: 500, height: 500 }}" alt="{{ block.settings.image.alt }}">
+                  {% endif %}
                   {% endif %}
                   {% endfor %}
                   {{child_link.title}}

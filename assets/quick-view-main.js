@@ -1,14 +1,4 @@
-// if( document.getElementById('sort_by') != null ) {
-//   document.querySelector('#sort_by').addEventListener('change', function(e) {
-//       var url = new URL(window.location.href);
-//       url.searchParams.set('sort_by', e.currentTarget.value);
-
-//       window.location = url.href;
-//   });
-// }
-
 var productInfoAnchors = document.querySelectorAll("#productInfoAnchor");
-
 var productModal;
 
 if( document.getElementById('productInfoModal') != null ) {
@@ -86,9 +76,9 @@ if( modalAddToCartForm != null ) {
     });
 }
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     update_cart();
-// });
+document.addEventListener('DOMContentLoaded', function() {
+    // update_cart();
+});
 
 // function update_cart() {
 //     fetch('/cart.js')
