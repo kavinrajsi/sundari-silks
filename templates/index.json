@@ -158,6 +158,13 @@
         "curated-description": "Styles for every occasion"
       }
     },
+    "homeCurated2": {
+      "type": "home-curated-two",
+      "settings": {
+        "curated-title": "Curated collection",
+        "curated-description": "Styles for every occasion"
+      }
+    },
     "readymade": {
       "type": "home-readymade",
       "blocks": {
@@ -431,13 +438,6 @@
         "virtual-shopping-url": ""
       }
     },
-    "homeCurated2": {
-      "type": "home-curated-two",
-      "settings": {
-        "curated-title": "Curated collection",
-        "curated-description": "Styles for every occasion"
-      }
-    },
     "instagram": {
       "type": "instagram",
       "blocks": {
@@ -501,6 +501,7 @@
   "order": [
     "slideshow",
     "curated",
+    "homeCurated2",
     "readymade",
     "lookbookArea",
     "spotlight",
@@ -510,7 +511,6 @@
     "blog",
     "vs",
     "vss",
-    "homeCurated2",
     "instagram"
   ]
 }
