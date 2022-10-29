@@ -23,6 +23,11 @@ body {
 }
 /* header */
 .header {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  right: 0;
+  width: 100%;
   position: relative;
   &-container {
     background-color: var(--pure-white);

@@ -4,33 +4,31 @@
     <div class="drawer__header">
       <div class="drawer__title">
         Mini Bag
-        <span>
+        <i>
           <span class="cart-item-count"> {{ cart.item_count }} </span> item(s) in bag
-        </span>
+        </i>
       </div>
       <button class="drawer__close" data-drawer-close aria-label="Close Drawer"></button>
     </div>
     <div class="drawer__content" id="cart__drawer">
+
+      <div class="cart-item-no" {% if cart.item_count> 0 %} hidden {% endif %} >
+        Your shopping bag is empty.
+      </div>
+
       <div class="cart-popup">
         <form action="/cart" method="post" novalidate>
-          <div class="cartpopup-body ">
+          <div class="cartpopup-body " id="cart__drawer_items">
+
             {% for item in cart.items %}
             <div class="cartpopup-item ">
               <div class="cartpopup-item-image">
                 <a href="{{ item.url | within: collection }}">
-                  <img
-                  loading="lazy"
-                  class="blur-up responsive-image__image lazyload cart-item__image"
-                  src="{{ item.image | image_url: width: 300, format: 'pjpg' }}"
-                  data-src="{{ item.image | image_url: width: 300, format: 'pjpg' }}"
-                  data-aspectratio="{{ item.image.aspect_ratio }}"
-                  alt="{{ item.image.alt | escape }}"
-                  data-sizes="auto"
-                  tabindex="-1" data-parent-fit="cover"
-                  loading="lazy"
-                  width="150"
-                  height="150"
-                >
+                  <img loading="lazy" class="blur-up responsive-image__image lazyload cart-item__image"
+                    src="{{ item.image | image_url: width: 300, format: 'pjpg' }}"
+                    data-src="{{ item.image | image_url: width: 300, format: 'pjpg' }}"
+                    data-aspectratio="{{ item.image.aspect_ratio }}" alt="{{ item.image.alt | escape }}"
+                    data-sizes="auto" tabindex="-1" data-parent-fit="cover" loading="lazy" width="150" height="150">
                 </a>
               </div>
               <div class="cartpopup-item-content ">
@@ -42,8 +40,8 @@
                     <dt>{{ option.name }}: </dt>
                     <dd>{{ option.value }}</dd>
                   </dl>
-                {%- endfor -%}
-                  </span>
+                  {%- endfor -%}
+                </span>
                 <span class="quantity-box" hidden>
                   <button class="quantity-button qminus" role="button" type="button"
                     data-variant="{{ item.variant.id }}">
@@ -54,7 +52,7 @@
                       <line x1="8" y1="12" x2="16" y2="12"></line>
                     </svg>
                   </button>
-                  <input class="quantity-input" type="number"  name="updates[]" id="updates_{{ item.key }}"
+                  <input class="quantity-input" type="number" name="updates[]" id="updates_{{ item.key }}"
                     value="{{ item.quantity }}" min="1" />
                   <button class="quantity-button qplus" role="button" type="button"
                     data-variant="{{ item.variant.id }}">
@@ -74,7 +72,7 @@
                       <use href="#trash-mini" />
                     </svg>
                     Remove</a>
-                  </span>
+                </span>
               </div>
             </div>
             <!-- Each item -->
@@ -98,6 +96,8 @@
 
 
 <script>
+
+
 
   $('.varients-item').on('click', function () {
     var obj = $(this);
@@ -265,7 +265,7 @@
   });
 
   // remove
-  $('.cart-popup .cartpopup-body').on('click', '.cartpopup-item .remove', function (e) {
+  $('.removeCta, .cart-popup .cartpopup-body').on('click', '.cartpopup-item .remove', function (e) {
     var obj = $(this);
     e.preventDefault();
     e.stopPropagation();
@@ -288,19 +288,21 @@
 
             var item_count = cart['item_count'];
             var total_price = cart['total_price'] / 100;
-            console.log(item_count);
-            if (item_count > 0) {
 
-              $('.cart-item-count').text(item_count);
+            $('.cart-count').text(item_count);
+            $('.cart-count').text(item_count);
 
-              // mini cart data
-              // $('.cart-popup').attr('id','cartPopup'); don't know why I need
-              $('.cartpopup-total .price').html('<span class="price"><span class="money" data-currency-inr="' + total_price.toFixed(2) + '">' + total_price.toFixed(2) + '</span></span> ');
-
-              // Remove item
-              $(obj).parents('.cartpopup-item').remove();
+            if (item_count == 0) {
+              $('.cart-item-no').removeAttr('hidden');
+              $('.cart-count').attr('hidden', 'hidden');
             }
-            // need to working on product option
+            $('.cart-item-count').text(item_count);
+
+            // mini cart data
+            $('.cartpopup-total .price').html('<span class="price"><span class="money" data-currency-inr="' + total_price.toFixed(2) + '">' + total_price.toFixed(2) + '</span></span> ');
+
+            // Remove item
+            $(obj).parents('.cartpopup-item').remove();
 
           }
         });
