@@ -13,8 +13,6 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap"
-    rel="stylesheet">
 
   <title>
     {{ page_title }}
@@ -35,19 +33,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <script src="{{ 'lazysizes.js' | asset_url }}" async="async"></script>
-  <script src="{{ 'ls.rias.js' | asset_url }}" async="async"></script>
-  <script src="{{ 'ls.bgset.js' | asset_url }}" async="async"></script>
-  <script src="{{ 'ls.blur-up.js' | asset_url }}" async="async"></script>
+  <script src="{{ 'lazysizes.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'ls.rias.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'ls.bgset.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'ls.blur-up.js' | asset_url }}" defer="defer"></script>
 
-  <script src="{{ 'jquery.js' | asset_url }}"></script>
-  <script src="{{ 'shopify-money.js' | asset_url }}" async="async"></script>
-  <script src="{{ 'drawer.js' | asset_url }}" async="async"></script>
-
+  <script src="{{ 'jquery.js' | asset_url }}" defer="defer"></script>
   {{ content_for_header }}
 
+
+  {% if template contains 'index' %}
   {{ 'slick.css' | asset_url | stylesheet_tag }}
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  {% endif %}
   {{ 'base.css' | asset_url | stylesheet_tag }}
 
 
@@ -170,7 +168,7 @@
     if (Shopify.designMode) {
       document.documentElement.classList.add('shopify-design-mode');
     }
-    </script>
+  </script>
   <script>
     window.mlvedaShopCurrency = "{{ shop.currency }}";
     window.shopCurrency = "{{ shop.currency }}";
@@ -354,7 +352,7 @@
       }
     </script>
 
-    <main id="MainContent" class="content-for-layout focus-none" >
+    <main id="MainContent" class="content-for-layout focus-none">
       {{ content_for_layout }}
     </main>
     {% section 'footer' %}
@@ -381,7 +379,8 @@
                     <select name="id" id="modalItemID" class="form-select col-auto">
                     </select>
 
-                    <input hidden type="number" name="quantity" value="1" id="modalItemQuantity" min="1" max="1" class="col-auto">
+                    <input hidden type="number" name="quantity" value="1" id="modalItemQuantity" min="1" max="1"
+                      class="col-auto">
 
                     <button type="submit" class="btn btn-success col-auto">Add to cart</button>
                   </form>
@@ -395,27 +394,42 @@
 
   </section>
 
-  <script src="{{ 'predictive-search.js' | asset_url }}"></script>
-  <script src="{{ 'slick.js' | asset_url }}"></script>
-  <script src="{{ 'bootstrap.min.js' | asset_url }}"></script>
-  <script src="{{ 'quick-view-main.js' | asset_url }}"></script>
-  <script src="{{ 'global.js' | asset_url }}"></script>
-  <script src="{{ 'filter.js' | asset_url }}"></script>
-  {% if template contains 'product' %}
-  <script src="{{ 'photoswipe.umd.min.js' | asset_url }}"></script>
-  <script src="{{ 'photoswipe-lightbox.umd.min.js' | asset_url }}"></script>
-  <script src="{{ 'photoswipe-control.js' | asset_url }}"></script>
-  {% endif %}
 
-  <script>
-      // Shopify.Products.recordRecentlyViewed();
+  {% if template contains 'index' %}
+  <script src="{{ 'slick.js' | asset_url }}" defer></script>
+  <script defer>
+    (function ($) {
+      console.log("slick slider functions");
+      $(function () {
+        console.log("slick slider load");
+        //document.ready
+        //DOM READY code here
+        $(".slider.single-item").slick({});
+      });
+    });
   </script>
-  <script>
-    $(document).ready(function (e) {
+  {% endif %}
+  <script defer src="{{ 'shopify-money.js' | asset_url }}"></script>
+  <script defer src="{{ 'predictive-search.js' | asset_url }}"></script>
+  <script defer src="{{ 'drawer.js' | asset_url }}"></script>
+  <script defer src="{{ 'bootstrap.min.js' | asset_url }}"></script>
+  <script defer src="{{ 'quick-view-main.js' | asset_url }}"></script>
+  <script defer src="{{ 'filter.js' | asset_url }}"></script>
+  {% if template contains 'product' %}
+  <script defer src="{{ 'photoswipe.umd.min.js' | asset_url }}"></script>
+  <script defer src="{{ 'photoswipe-lightbox.umd.min.js' | asset_url }}"></script>
+  <script defer src="{{ 'photoswipe-control.js' | asset_url }}"></script>
+  {% endif %}
+  <script defer src="{{ 'global.js' | asset_url }}"></script>
+  <script defer>
+  (function ($) {
+      console.log("slick slider functions");
+      $(function () {
       let mes = $('.pick_currency.mldesk');
       let mes1 = $('.header-currency-price-list');
       console.log(mes);
       mes1.append(mes);
+    });
     });
   </script>
 

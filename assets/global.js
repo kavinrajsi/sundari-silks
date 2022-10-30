@@ -108,29 +108,6 @@
     currentPage.classList.add("active");
   }
 
-  /**
-   * Product hover slider
-   */
-  $(".slider.single-item").slick({});
-
-  $(".prpdocutSlider").slick({
-    lazyLoad: "ondemand",
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  });
-
-  function slickPause() {
-    $(".prpdocutSlider").slick("slickPause");
-  }
-
-  slickPause();
-
-  $(".prpdocutSlider").mouseover(function () {
-    $(this).slick("slickPlay");
-  });
-  $(".prpdocutSlider").mouseout(function () {
-    slickPause();
-  });
 
   // scroll
   // Scroll to specific values
