@@ -56,7 +56,7 @@
 
       .filter-group {
         flex: 1 0 50%;
-        max-width: 50%;
+        min-width: 50%;
         border-right: 1px solid var(--border-color);
         summary {
           cursor: pointer;
@@ -73,10 +73,10 @@
 
       .filter-group-display {
         flex: 1 0 50%;
-        max-width: 50%;
+        min-width: 50%;
         position: absolute;
         top: 0;
-        right: 0;
+        left: 50%;
         max-height: 230px;
         overflow-y: scroll;
 
@@ -98,6 +98,34 @@
         font-size: 16px;
         line-height: 1.5;
         width: 100%;
+      }
+    }
+    .filter--footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 16px;
+      text-align: center;
+      .filter-group-display__submit input {
+        margin-top: 12px;
+        font-size: 12px;
+        padding: 14px 20px !important;
+        color: var(--pure-black);
+        background-color: var(--secondary-color);
+        font-weight: 400;
+        font-style: normal;
+        z-index: 1;
+        -webkit-tap-highlight-color: initial;
+        text-align: center;
+        line-height: normal;
+        border: 1px solid transparent;
+        border-radius: 0;
+        text-transform: uppercase;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
       }
     }
   }
@@ -179,4 +207,8 @@
       background: transparent;
     }
   }
+}
+
+body.hidden {
+  overflow: hidden;
 }
