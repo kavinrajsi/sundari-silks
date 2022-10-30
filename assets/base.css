@@ -2848,7 +2848,10 @@ table tbody + tbody {
 }
 .meFilter .fitler--wrapper {
   position: fixed;
+  margin: 0 auto;
+  left: 0;
   right: 0;
+  bottom: 0;
   bottom: 0;
   width: 100%;
   height: 70vh;
@@ -2864,8 +2867,7 @@ table tbody + tbody {
   transform: translateY(103%);
   -webkit-overflow-scrolling: touch;
   box-shadow: 0 2px 6px #777;
-  border-top-left-radius: var(--border-radius);
-  border-top-right-radius: var(--border-radius);
+  border-radius: var(--border-radius);
 }
 .meFilter .fitler--wrapper .filter--header {
   display: flex;
@@ -2884,8 +2886,12 @@ table tbody + tbody {
 }
 .meFilter .fitler--wrapper form.filter-form .filter-group summary {
   cursor: pointer;
+}
+.meFilter .fitler--wrapper form.filter-form .filter-group summary div {
   padding: 8px;
-  margin-bottom: 0px;
+}
+.meFilter .fitler--wrapper form.filter-form .filter-group summary div span + span {
+  margin-left: 4px;
 }
 .meFilter .fitler--wrapper form.filter-form .filter-group:last-child summary {
   border-right: 0;
@@ -2904,6 +2910,143 @@ table tbody + tbody {
   display: block;
   padding: 8px;
   text-align: left;
+}
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox],
+.meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=radio] {
+    --active: #fdd933;
+    --active-inner: #fff;
+    --focus: 2px rgba(39, 94, 254, .3);
+    --border: #BBC1E1;
+    --border-hover: #275EFE;
+    --background: #fff;
+    --disabled: #F6F8FF;
+    --disabled-inner: #E1E6F9;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 21px;
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid var(--bc, var(--border));
+    background: var(--b, var(--background));
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox]:after,
+.meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=radio]:after {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute;
+    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox]:checked,
+.meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=radio]:checked {
+    --b: var(--active);
+    --bc: var(--active);
+    --d-o: .3s;
+    --d-t: .6s;
+    --d-t-e: cubic-bezier(.2, .85, .32, 1.2);
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox]:disabled,
+.meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=radio]:disabled {
+    --b: var(--disabled);
+    cursor: not-allowed;
+    opacity: 0.9;
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox]:disabled:checked,
+.meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=radio]:disabled:checked {
+    --b: var(--disabled-inner);
+    --bc: var(--border);
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox]:disabled + label,
+.meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=radio]:disabled + label {
+    cursor: not-allowed;
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox]:hover:not(:checked):not(:disabled),
+.meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=radio]:hover:not(:checked):not(:disabled) {
+    --bc: var(--border-hover);
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox]:focus,
+.meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=radio]:focus {
+    box-shadow: 0 0 0 var(--focus);
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox]:not(.switch),
+.meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=radio]:not(.switch) {
+    width: 21px;
+    margin-right: 8px;
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox]:not(.switch):after,
+.meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=radio]:not(.switch):after {
+    opacity: var(--o, 0);
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox]:not(.switch):checked,
+.meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=radio]:not(.switch):checked {
+    --o: 1;
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox] + label,
+.meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=radio] + label {
+    font-size: 14px;
+    line-height: 21px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    margin-left: 4px;
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox]:not(.switch) {
+    border-radius: 7px;
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox]:not(.switch):after {
+    width: 5px;
+    height: 9px;
+    border: 2px solid var(--active-inner);
+    border-top: 0;
+    border-left: 0;
+    left: 7px;
+    top: 4px;
+    transform: rotate(var(--r, 20deg));
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox]:not(.switch):checked {
+    --r: 43deg;
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox].switch {
+    width: 38px;
+    border-radius: 11px;
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox].switch:after {
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: var(--ab, var(--border));
+    transform: translateX(var(--x, 0));
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox].switch:checked {
+    --ab: var(--active-inner);
+    --x: 17px;
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox].switch:disabled:not(:checked):after {
+    opacity: 0.6;
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=radio] {
+    border-radius: 50%;
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=radio]:after {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background: var(--active-inner);
+    opacity: 0;
+    transform: scale(var(--s, 0.7));
+  }
+  .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=radio]:checked {
+    --s: .5;
+  }
 }
 .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input {
   padding-right: 4px;
@@ -2998,9 +3141,19 @@ table tbody + tbody {
   bottom: 0;
   z-index: 5;
   width: 100%;
+  border-radius: var(--border-radius);
   background: var(--pure-white);
+  max-width: 420px;
+  left: 0;
+  right: 0;
+}
+@media (min-width: 768px) {
+  .meFitlerMobile {
+    margin: 0 auto 18px;
+  }
 }
 .meFitlerMobile div {
+  cursor: pointer;
   padding: 18px 8px;
   flex: 1 0 50%;
   text-align: center;
@@ -3013,6 +3166,7 @@ table tbody + tbody {
 .meFitlerMobile div svg {
   width: 18px;
   height: 18px;
+  margin-right: 4px;
 }
 .meFitlerMobile div.mobileFilterSortBy {
   border-left: 1px solid var(--border-color);
