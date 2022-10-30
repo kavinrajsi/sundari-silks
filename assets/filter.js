@@ -12,3 +12,9 @@ details.forEach((targetDetail) => {
     });
   });
 });
+
+
+$("#filterButton, #filterClose").click(function () {
+  $(".meFilter").toggle();
+  $(".meFilter").toggleClass('is-visible');
+});

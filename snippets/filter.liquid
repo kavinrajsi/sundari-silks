@@ -1,4 +1,14 @@
-<div class="meFilter">
+<div class="meFilter" style="display: none;">
+  <div class="filer--overlay" tabindex="-1"></div>
+  <div class="fitler--wrapper">
+  <div class="filter--header">
+    Filter
+    <button class="filter__close" id="filterClose">
+      <svg class="icon-close icon" viewBox="0 0 24 24">
+        <use xlink:href="#close"></use>
+      </svg>
+    </button>
+  </div>
   <form class="filter-form">
     {%- for filter in collection.filters -%}
     <details class="filter-group">
@@ -73,15 +83,6 @@
       <input type="submit" value="Apply">
     </div>
   </form>
-  <select id="sort-by">
-    {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
-
-    {% for option in collection.sort_options %}
-    <option value="{{ option.value }}" {% if option.value==sort_by %}selected="selected" {% endif %}>
-      {{ option.name }}
-    </option>
-    {% endfor %}
-  </select>
 </div>
 <div class="meFilter-active">
   <form class="filter-form">
@@ -113,9 +114,10 @@
 
   </form>
 </div>
+</div>
 
 <div class="meFitlerMobile">
-  <div>
+  <div id="filterButton">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
       stroke-linecap="round" stroke-linejoin="round" class="feather feather-sliders">
       <line x1="4" y1="21" x2="4" y2="14"></line>
@@ -149,16 +151,7 @@
 
 </div>
 <script>
-  $('input').on('change', function() {
 
-    var filterKey = this.checked ? this.name : '';
-    var filterValue = this.checked ? this.value : '';
-    console.log(filterKey+'='+filterValue.split(' ').join('+'));
-    var url   = new URL(window.location.href);
-    let params = new URLSearchParams(url.search);
-    params.append("'"+filterKey+"'",filterValue);
-    console.log(params.toString());
-});
 
   Shopify.queryParams = {};
 

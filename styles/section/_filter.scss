@@ -1,78 +1,107 @@
 .meFilter {
-  position: relative;
-  display: none;
-  @media (min-width: 768px) {
-    display: flex;
-  }
-  justify-content: space-between;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-  margin-bottom: 40px;
-  margin-left: var(--Ngap);
-  margin-right: var(--Ngap);
-  padding: 14px 6px;
-  @media (min-width: 1364px) {
-    margin-left: 60px;
-    margin-right: 60px;
-  }
-  & > form.filter-form {
+  .filer--overlay {
     position: fixed;
-    right: 0;
     top: 0;
-    height: 100vh;
-    background: red;
-    z-index: 8;
-    flex-direction: column;
-    width: 300px;
-    padding: 20px 0;
-    flex: 1 0 auto;
-    display: none;
-    .filter-group {
-      summary {
-        cursor: pointer;
-        padding: 16px 16px;
-        margin-bottom: 0px;
-        border-bottom: 1px solid var(--border-color);
-      }
-      &:last-child {
-        summary {
-          border-right: 0;
-          margin-right: 0;
-        }
-      }
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+    opacity: 0;
+    transition: opacity 0.3s;
+    will-change: opacity;
+    background-color: var(--pure-black);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  &.is-visible {
+    .filer--overlay {
+      opacity: 0.5;
     }
+    .fitler--wrapper {
+      transform: translateX(0);
+    }
+  }
+  .fitler--wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 420px;
+    z-index: 10999;
+    overflow: auto;
+    transition: transform 0.3s;
+    will-change: transform;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    -webkit-transform: translateX(103%);
+    transform: translateX(103%);
+    -webkit-overflow-scrolling: touch;
+    box-shadow: 0 2px 6px #777;
 
-    .filter-group-display {
-      z-index: 5;
-      margin: 12px auto 0;
+    .filter--header {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 8px 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    form.filter-form {
+      // display: flex;
+      // flex-direction: column;
       position: relative;
-      background: var(--border-color);
-      padding: 12px 8px;
-      max-height: 230px;
-      overflow-y: scroll;
 
-      .filter-group-display__header {
-        display: none;
-      }
-
-      .filter-group-display__list {
-        li {
-          display: block;
+      .filter-group {
+        flex: 1 0 50%;
+        max-width: 50%;
+        border-right: 1px solid var(--border-color);
+        summary {
+          cursor: pointer;
           padding: 8px;
-          text-align: left;
-          input {
-            padding-right: 4px;
+          margin-bottom: 0px;
+        }
+        &:last-child {
+          summary {
+            border-right: 0;
+            margin-right: 0;
           }
         }
       }
-    }
 
-    .filter-group-display__submit input {
-      margin: 16px 0 0;
-      padding: 16px 16px;
-      font-size: 16px;
-      line-height: 1.5;
-      width: 100%;
+      .filter-group-display {
+        background-color: red;
+        flex: 1 0 50%;
+        max-width: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        max-height: 230px;
+        overflow-y: scroll;
+
+        .filter-group-display__list {
+          li {
+            display: block;
+            padding: 8px;
+            text-align: left;
+            input {
+              padding-right: 4px;
+            }
+          }
+        }
+      }
+
+      .filter-group-display__submit input {
+        margin: 16px 0 0;
+        padding: 16px 16px;
+        font-size: 16px;
+        line-height: 1.5;
+        width: 100%;
+      }
     }
   }
 }
