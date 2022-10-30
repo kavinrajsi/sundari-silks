@@ -19,6 +19,7 @@
           {{ product_image | image_url : width: 160 | image_tag:
           width: 160,
           height: 160,
+          loading: "lazy",
           alt: product_image.alt | escape
           }}
         </a>

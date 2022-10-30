@@ -1,3 +1,7 @@
+{%- liquid
+assign header_font = settings.type_header_font
+assign body_font = settings.body_text_font
+%}
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
 
@@ -11,8 +15,6 @@
   <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
   {% endif %}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <title>
     {{ page_title }}
@@ -28,10 +30,14 @@
   {% render 'social-meta-tags' %}
 
   <link rel="canonical" href="{{ canonical_url }}">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
   <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="preload" as="font" href="{{ header_font | font_url }}" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="{{ body_font | font_url }}" type="font/woff2" crossorigin>
 
   <script src="{{ 'lazysizes.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'ls.rias.js' | asset_url }}" defer="defer"></script>
@@ -50,6 +56,9 @@
 
 
   {% style %}
+  {{ header_font | font_face: font_display: 'swap' }}
+  {{ body_font | font_face: font_display: 'swap' }}
+
   :root {
   --gap: {{settings.product-gap-mobile}}px;
   --section-space: {{settings.section-gap-mobile}}px;
@@ -179,18 +188,18 @@
 
 <body class="template-{{ template | split : '.' | first }}">
 
-  {% section 'drawer' %}
-  {% section 'announcement-bar' %}
-  {% section 'header' %}
-  {% render 'breadcrumb' %}
+  <section class="fullpage" role="main" tabindex="-1" autofocus>
+    {% section 'drawer' %}
+    {% section 'announcement-bar' %}
+    {% section 'header' %}
+    {% render 'breadcrumb' %}
 
-  <section class="fullpage" role="main" tabindex="-1">
     <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <a class="skip-to-content-link button visually-hidden" href="#MainContent">
+    <!-- <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
-    </a>
+    </a> -->
     <svg style="display:none">
       <symbol id="search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
         stroke-linejoin="round" class="feather feather-search">
@@ -357,7 +366,7 @@
     </main>
     {% section 'footer' %}
 
-    <div class="modal fade" id="productInfoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="productInfoModal">
       <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
           <div class="modal-body">
@@ -408,17 +417,6 @@
   <script defer src="{{ 'photoswipe-control.js' | asset_url }}"></script>
   {% endif %}
   <script defer src="{{ 'global.js' | asset_url }}"></script>
-  <script defer>
-  (function ($) {
-      console.log("slick slider functions");
-      $(function () {
-      let mes = $('.pick_currency.mldesk');
-      let mes1 = $('.header-currency-price-list');
-      console.log(mes);
-      mes1.append(mes);
-    });
-    });
-  </script>
 
 </body>
 

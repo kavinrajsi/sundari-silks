@@ -10,7 +10,7 @@
     {% if block.settings.image %}
     <div class="item">
       <a href="{{ block.settings.link }}">
-        {{ block.settings.image | image_url : width: 300 | image_tag : alt: block.settings.image.alt }}
+        {{ block.settings.image | image_url : width: 300 | image_tag : alt: block.settings.image.alt, loading: "lazy" }}
       </a>
     </div>
     {% else %}

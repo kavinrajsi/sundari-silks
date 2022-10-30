@@ -5,6 +5,12 @@
     console.log("document ready");
     //document.ready
     //DOM READY code here
+
+    let mes = $('.pick_currency.mldesk');
+    let mes1 = $('.header-currency-price-list');
+    // console.log(mes);
+    mes1.html(mes);
+
     $(".slider.single-item").slick({});
     /**
      *  Header bar search
