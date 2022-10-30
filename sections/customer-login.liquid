@@ -114,7 +114,7 @@
 
   <div class="customer-login-image">
     {% if section.settings.custom_form_image != blank %}
-    {{ section.settings.custom_form_image | image_url: width: 720, height: 400 | image_tag : loading: 'lazy', alt:
+    {{ section.settings.custom_form_image | image_url: width: 720, height: 400, format: 'pjpg' | image_tag : loading: 'lazy', alt:
     section.settings.custom_form_image.alt }}
     {% else %}
     {{ 'image' | placeholder_svg_tag }}

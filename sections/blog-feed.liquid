@@ -13,7 +13,7 @@
           <a href=" {{ article.url }}" class="blog-feed-card-link">
             {% if article.image %}
             <img id="Image-{{ article.id }}" loading="auto" class="{{ article_class }} blog-feed-card-image"
-              src="{{article.image.src | image_url: width:404, height: 296, crop: 'top' }}"
+              src="{{article.image.src | image_url: width:404, height: 296, crop: 'top', format: 'pjpg' }}"
               alt="{{ article.image.alt | escape }}">
             {% else %}
             {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg' }}

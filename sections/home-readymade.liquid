@@ -11,7 +11,7 @@
     <div class="collection-item">
       <a class="collection-item-link" href="{{ block.settings.link }}">
         <img class="lazyload" data-sizes="auto"
-          data-src="{{block.settings.image.src | image_url: width:384, height: 384, crop: 'top' }}"
+          data-src="{{block.settings.image.src | image_url: width:384, height: 384, crop: 'top', format: 'pjpg' }}"
           alt="{{block.settings.image.alt}}">
         <div class="collection-item-name" style="background: {{block.settings.background}};">
           <div class="collection-item-title"> {{block.settings.text}} </div>

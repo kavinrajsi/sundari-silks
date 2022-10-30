@@ -20,7 +20,7 @@
           {% if section.settings.logo != blank %}
           {% assign logo_alt = section.settings.logo.alt | default: shop.name | escape %}
           {% assign logo_height = section.settings.logo_width | divided_by: section.settings.logo.aspect_ratio %}
-          {{ section.settings.logo | image_url: width: section.settings.width | image_tag:
+          {{ section.settings.logo | image_url: width: section.settings.width, format: 'pjpg' | image_tag:
           class: 'header__heading-logo',
           widths: '50, 100, 150, 200, 250, 300, 400, 500',
           height: logo_height,
@@ -197,7 +197,7 @@
                   {% for block in section.blocks %}
                   {% if child_link.title == block.settings.mega_link %}
                   {% if block.settings.image.src != blank %}
-                    <img loading="lazy" src="{{ block.settings.image.src | image_url:  width: 500, height: 500 }}" alt="{{ block.settings.image.alt }}">
+                    <img loading="lazy" src="{{ block.settings.image.src | image_url:  width: 500, height: 500, format: 'pjpg' }}" alt="{{ block.settings.image.alt }}">
                   {% endif %}
                   {% endif %}
                   {% endfor %}

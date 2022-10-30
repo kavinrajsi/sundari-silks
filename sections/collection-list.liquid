@@ -9,7 +9,7 @@
           <div class="card_image">
               {% if collection.metafields.custom.collection_secondary_image.value != blank %}
               {{ collection.metafields.custom.collection_secondary_image.value | image_url: height: "x450",
-              crop: 'top' | image_tag: alt: collection.title }}
+              crop: 'top', format: 'pjpg' | image_tag: alt: collection.title }}
               {% else %}
               <img src="https://cdn.shopify.com/s/files/1/0560/3695/0174/files/collection-image_x450.png?v=1666460450" alt="">
               {% endif %}
