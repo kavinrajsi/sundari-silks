@@ -5,7 +5,7 @@
     console.log("document ready");
     //document.ready
     //DOM READY code here
-
+    $(".slider.single-item").slick({});
     /**
      *  Header bar search
      */
@@ -210,11 +210,3 @@ if (document.getElementById("login") != null) {
       .classList.replace("d-block", "d-none");
   });
 }
-
-$(window).scroll(function () {
-  var sticky = $("#wrap"),
-    scroll = $(window).scrollTop();
-
-  if (scroll >= 100) sticky.addClass("fixed");
-  else sticky.removeClass("fixed");
-});
