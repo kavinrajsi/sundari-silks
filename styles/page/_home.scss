@@ -229,6 +229,9 @@ body:not(.template-index) {
         aspect-ratio: 1457/455;
       }
     }
+    .slick-dotted.slick-slider{
+      margin-bottom: 0;
+    }
     .slick-dots {
       bottom: 10px;
       li {

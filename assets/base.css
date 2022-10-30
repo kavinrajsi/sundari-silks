@@ -1483,6 +1483,9 @@ body:not(.template-index) .header-nav-list-footer {
     display: block;
   }
 }
+.homepageBanner .large-12.columns .slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
 .homepageBanner .large-12.columns .slick-dots {
   bottom: 10px;
 }
@@ -2876,7 +2879,6 @@ table tbody + tbody {
   bottom: 0;
   bottom: 0;
   width: 100%;
-  height: 70vh;
   max-width: 420px;
   z-index: 10999;
   overflow: auto;
@@ -2897,12 +2899,16 @@ table tbody + tbody {
   padding: 16px 8px 8px;
   margin-bottom: 8px;
   border-bottom: 1px solid var(--border-color);
+  font-size: 18px;
+  font-weight: 500;
 }
 .meFilter .fitler--wrapper form.filter-form {
   position: relative;
 }
 .meFilter .fitler--wrapper form.filter-form .filter-group {
+  overflow: hidden;
   flex: 1 0 50%;
+  max-width: 50%;
   min-width: 50%;
   border-right: 1px solid var(--border-color);
 }
@@ -2910,14 +2916,18 @@ table tbody + tbody {
   cursor: pointer;
 }
 .meFilter .fitler--wrapper form.filter-form .filter-group summary div {
+  font-size: 16px;
   padding: 8px;
+  border-bottom: 1px solid var(--border-color);
 }
 .meFilter .fitler--wrapper form.filter-form .filter-group summary div span + span {
   margin-left: 4px;
 }
-.meFilter .fitler--wrapper form.filter-form .filter-group:last-child summary {
-  border-right: 0;
-  margin-right: 0;
+.meFilter .fitler--wrapper form.filter-form .filter-group summary:hover div {
+  background-color: var(--secondary-color);
+}
+.meFilter .fitler--wrapper form.filter-form .filter-group[open] summary {
+  background-color: var(--secondary-color);
 }
 .meFilter .fitler--wrapper form.filter-form .filter-group-display {
   flex: 1 0 50%;
@@ -2925,7 +2935,6 @@ table tbody + tbody {
   position: absolute;
   top: 0;
   left: 50%;
-  max-height: 230px;
   overflow-y: scroll;
 }
 .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li {
@@ -2938,12 +2947,12 @@ table tbody + tbody {
 .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=radio] {
     --active: #fdd933;
     --active-inner: #fff;
-    --focus: 2px rgba(39, 94, 254, .3);
-    --border: #BBC1E1;
-    --border-hover: #275EFE;
+    --focus: 2px rgba(39, 94, 254, 0.3);
+    --border: #bbc1e1;
+    --border-hover: #275efe;
     --background: #fff;
-    --disabled: #F6F8FF;
-    --disabled-inner: #E1E6F9;
+    --disabled: #f6f8ff;
+    --disabled-inner: #e1e6f9;
     -webkit-appearance: none;
     -moz-appearance: none;
     height: 21px;
@@ -2970,9 +2979,9 @@ table tbody + tbody {
 .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=radio]:checked {
     --b: var(--active);
     --bc: var(--active);
-    --d-o: .3s;
-    --d-t: .6s;
-    --d-t-e: cubic-bezier(.2, .85, .32, 1.2);
+    --d-o: 0.3s;
+    --d-t: 0.6s;
+    --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
   }
   .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox]:disabled,
 .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=radio]:disabled {
@@ -3067,35 +3076,26 @@ table tbody + tbody {
     transform: scale(var(--s, 0.7));
   }
   .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=radio]:checked {
-    --s: .5;
+    --s: 0.5;
   }
 }
 .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input {
   padding-right: 4px;
 }
-.meFilter .fitler--wrapper form.filter-form .filter-group-display__submit input {
-  margin: 16px 0 0;
-  padding: 16px 16px;
-  font-size: 16px;
-  line-height: 1.5;
-  width: 100%;
-}
 .meFilter .fitler--wrapper .filter--footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
   padding: 16px;
   text-align: center;
 }
 .meFilter .fitler--wrapper .filter--footer .filter-group-display__submit input {
-  margin-top: 12px;
-  font-size: 12px;
+  font-size: 16px;
   padding: 14px 20px !important;
   color: var(--pure-black);
   background-color: var(--secondary-color);
   font-weight: 400;
   font-style: normal;
-  z-index: 1;
   -webkit-tap-highlight-color: initial;
   text-align: center;
   line-height: normal;

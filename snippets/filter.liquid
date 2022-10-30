@@ -3,15 +3,15 @@
   <div class="fitler--wrapper">
     <div class="filter--header">
       Filter
-      //
-      <div class="filter-group-display__header">
+
+      <!-- <div class="filter-group-display__header">
         <span class="filter-group-display__header-selected">{{ filter.active_values.size }} selected</span>
 
         {%- if filter.active_values.size > 0 -%}
         <a href="{{ filter.url_to_remove }}" class="filter-group-display__header-reset">Reset</a>
         {%- endif -%}
-      </div>
-      //
+      </div> -->
+
       <button class="filter__close" id="filterClose">
         <svg class="icon-close icon" viewBox="0 0 24 24">
           <use xlink:href="#close"></use>
@@ -42,6 +42,9 @@
             <li class="filter-group-display__list-item">
               <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
                 <input type="checkbox" name="{{ filter_value.param_name }}" value="{{ filter_value.value }}"
+                {% if filter_value.param_name contains "color" %}
+                  data-color="{{ filter_value.value }}" style="background:{{filter_value.value | downcase | remove:" " }}"
+                  {% endif %}
                   id="Filter-{{ filter.param_name }}-{{ forloop.index }}" {% if filter_value.active -%}checked{%- endif
                   %} {% if filter_value.count==0 and filter_value.active==false -%}disabled{%- endif %}>{{
                 filter_value.label
@@ -146,7 +149,7 @@
         d="M19.292 1.871c.169 0 .315.063.439.186a.601.601 0 0 1 .186.439v2.5a.657.657 0 0 1-.039.225.499.499 0 0 1-.117.186l-5.469 6.074v6.641a.582.582 0 0 1-.078.293.823.823 0 0 1-.195.234l-3.75 2.5c-.052.026-.107.049-.166.068a.603.603 0 0 1-.479-.05c-.104-.052-.186-.127-.244-.225s-.088-.205-.088-.322v-9.14L3.823 5.406a.491.491 0 0 1-.117-.186.648.648 0 0 1-.039-.224v-2.5a.6.6 0 0 1 .186-.439.604.604 0 0 1 .439-.186h15zm-.625 2.89v-1.64H4.917v1.641l5.469 6.074a.507.507 0 0 1 .117.186.653.653 0 0 1 .039.225v8.203l2.5-1.66v-6.543c0-.078.013-.152.039-.225a.515.515 0 0 1 .117-.186l5.469-6.075z">
       </path>
     </svg>
-    <select id="sort-byFitlerMobile">
+    <select id="sort-by">
       {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
 
       {% for option in collection.sort_options %}
