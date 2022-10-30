@@ -4,16 +4,8 @@ Accepts:
 Usage:
 {% render 'product-card', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
-
 {% if product.available %}
 <div class="product__card">
-  {% comment %}
-  {% unless product == empty %}
-  <script type="application/json" id="ProductJson-{{ section.id }}">
-        {{ product_collection | json }}
-      </script>
-  {% endunless %}
-  {% endcomment %}
   <div class="product__card--img">
     <a href="{{ product.url | within: collection }}" class="product__card--link">
       <div class="product__card--image--wrapper">
@@ -26,8 +18,6 @@ Usage:
           data-widths="[540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]" data-sizes="auto" tabindex="-1"
           data-parent-fit="cover" alt="{{ product.feature_image.alt }}">
         {% comment %}
-        <!-- {{ product.featured_image | image_url: width: 400, height: 400 | image_tag : class:
-        'product-img', loading: 'lazy', alt: product.feature_image.alt}} -->
         {% endcomment %}
         {% else %}
         {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
@@ -48,9 +38,6 @@ Usage:
   <div class="product__card--content">
     <a href="{{ product.url | within: collection }}" class="product__card--link">
       <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
-      <div hidden class="product__id">{{ product.id }}</div>
-      <div hidden itemprop="brand" class="product__variant--vendor">{{ product.vendor }}</div>
-      <div hidden class="product__type"> {{ product.type }} </div>
       <div class="product__variant--price">
         {% if product.price_varies %}
         <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency }}</p>
@@ -65,53 +52,18 @@ Usage:
         </p>
         {% endif %}
       </div>
-      {%- comment -%}
-      {% if product.variants.size > 1 %}
-      {% for variant in product.variants %}
-      {{variant.title}} :
-      You save {{ variant.price | minus: variant.compare_at_price | times: 100.0 | divided_by: variant.price |
-      money_without_currency | times: 100.0 | remove: '.0' }} %
-      <br>
-      {% endfor %}
-      {% else %}
-      {% if product.compare_at_price_max > product.price %}
-      You save {{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by:
-      product.compare_at_price_max | money_without_currency | times: 100.0 | remove: '.0'}} %
-      {% endif %}
-      {% endif %}
-      {%- endcomment -%}
-      {% if product.tags.size < 1 %} {% for taglist in product.tags %} <span hidden class="product__tag--list">
-        {{ taglist }}, </span>
-        {% endfor %}
-        {% endif %}
-
-        {% for variant in product.variants %}
-        <div hidden class="product__variant--title"> {{ variant.title }} </div>
-        <div hidden class="product__variant--weight"> {{ variant.weight | weight_with_unit : variant.weight_unit }}
-        </div>
-        <div hidden class="product__variant--price"> {{ variant.price | money }} </div>
-        <div hidden class="product__variant--sku"> {{ variant.sku }} </div>
-        <div hidden class="product__variant--barcode"> {{ variant.barcode }} </div>
-        {% endfor %}
         {% if product.variants.size > 1 %}
         <div class="product__variant--list">
+          <span class="product__variant--list-title">
+            {{product.options }} :
+          </span>
           {% for variant in product.variants %}
+          {% if variant.inventory_quantity == 0 %} <s>  {% endif %}
           <span class="product__variant--list-name"> {{ variant.title }} </span>
+          {% if variant.inventory_quantity == 0 %} </s>  {% endif %}
           {% endfor %}
         </div>
         {% endif %}
-        {% comment %}
-        TODO: Need show separate the variant list
-        {% if customer and customer.tags contains 'admin' %}
-        {% for variant in product.variants %}
-        <div class="product__variant--buybutton">
-          <button style="background: blue; color: red; padding: 8px;" onclick="Shopify.addItem('{{ variant.id }}', 1)">
-            {{ variant.title }} -- button
-          </button>
-        </div>
-        {% endfor %}
-        {% endif %}
-        {% endcomment %}
     </a>
   </div>
 </div>
