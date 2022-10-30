@@ -1380,6 +1380,27 @@ body:not(.template-index) .header-nav-list-footer {
     font-size: 14px;
   }
 }
+.product__card--content .product__variant--list {
+  font-family: "Montserrat", "sans-serif";
+  display: inline;
+  color: #191919;
+  line-height: 25px;
+}
+.product__card--content .product__variant--list .product__variant--list-name {
+  font-family: "Montserrat", "sans-serif";
+  display: inline;
+  padding: 0px;
+  color: #191919;
+  line-height: 25px;
+}
+.product__card--content .product__variant--list .product__variant--list-name:not(:last-child):after {
+  content: ",";
+  display: inline-block;
+}
+.product__card--content .product__variant--list .product__variant--list-name s {
+  text-decoration: line-through;
+  color: #b3b3b3;
+}
 @media (hover: hover) {
   .product__card:hover .product__card-cta.quick-view-button {
     bottom: 0;

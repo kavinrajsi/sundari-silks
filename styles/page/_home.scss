@@ -122,6 +122,29 @@ body:not(.template-index) {
         font-size: 14px;
       }
     }
+    .product__variant--list {
+      font-family: "Montserrat", "sans-serif";
+      display: inline;
+      color: #191919;
+      line-height: 25px;
+      .product__variant--list-name {
+        font-family: "Montserrat", "sans-serif";
+        display: inline;
+        padding: 0px;
+        color: #191919;
+        line-height: 25px;
+        &:not(:last-child) {
+          &:after {
+            content: ",";
+            display: inline-block;
+          }
+        }
+        s {
+          text-decoration: line-through;
+          color: #b3b3b3;
+        }
+      }
+    }
   }
 
   @media (hover: hover) {
@@ -854,16 +877,16 @@ body:not(.template-index) {
   display: grid;
   gap: var(--Ngap);
   grid-template-columns: 1fr;
-  @media(min-width: 768px){
-  grid-template-columns: 1fr 1fr;
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
   }
   .occR {
     display: grid;
     gap: var(--Ngap);
     grid-template-columns: 1fr 1fr;
-    @media(min-width: 768px){
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
   .obWrap {
     overflow: hidden;
@@ -883,8 +906,8 @@ body:not(.template-index) {
       position: relative;
       border-radius: var(--border-radius);
       padding: 30px 30px 30px 30px;
-      @media(min-width: 768px){
-      height: 404px;
+      @media (min-width: 768px) {
+        height: 404px;
       }
       &.ob1 {
         height: calc(100% - 58px - 58px);
@@ -922,8 +945,7 @@ body:not(.template-index) {
   }
 }
 
-
-.loader{
+.loader {
   width: 24px;
   height: 24px;
 }
