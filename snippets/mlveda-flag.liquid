@@ -1,5 +1,4 @@
 {% if settings.mlvedaACS_enable %}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <script>
 /*
@@ -21,7 +20,7 @@
 /*  jQuery Nice Select - v1.0
     https://github.com/hernansartorio/jquery-nice-select
     Made by HernÃ¡n Sartorio  */
- 
+
 (function($acs) {
 
   $acs.fn.niceSelect = function() {
@@ -32,19 +31,19 @@
     // Create custom markup
     this.each(function() {
       var select = $acs(this);
-      
+
       if (!select.next().hasClass('nice-select')) {
         select.after('<div class="nice-select' +
           (' ' + select.attr('class') || '') +
           (select.attr('disabled') ? ' disabled' : '" tabindex="0') +
           '"><span class="current"></span><ul class="list"></ul></div><i class="fa fa-angle-down mldarrow"></i>');
-        
+
         var dropdown = select.next();
         var options = select.find('option');
         var selected = select.find('option:selected');
-        
+
         dropdown.find('.current').html(selected.data('display') || selected.text());
-        
+
         options.each(function() {
           var display = $acs(this).data('display');
           dropdown.find('ul').append('<li class="option' +
@@ -56,21 +55,21 @@
         });
       }
     });
-    
+
     /* Event listeners */
-    
+
     // Unbind existing events in case that the plugin has been initialized before
     $acs(document).off('.nice_select');
-    
+
     // Open/close
     $acs(document).on('click.nice_select', '.nice-select', function(event) {
       var dropdown = $acs(this);
-      
+
       $acs('.nice-select').not(dropdown).removeClass('open');
       dropdown.toggleClass('open');
-      
+
       if (dropdown.hasClass('open')) {
-        dropdown.find('.option');  
+        dropdown.find('.option');
         dropdown.find('.focus').removeClass('focus');
         dropdown.find('.selected').addClass('focus');
           $acs(".mldarrow").removeClass("fa-angle-down");
@@ -81,46 +80,46 @@
     $acs(".mldarrow").addClass("fa-angle-down");
       }
     });
-    
+
     // Close when clicking outside
     $acs(document).on('click.nice_select', function(event) {
       if ($acs(event.target).closest('.nice-select').length === 0) {
-        $acs('.nice-select').removeClass('open').find('.option'); 
+        $acs('.nice-select').removeClass('open').find('.option');
           $acs(".mldarrow").removeClass("fa-angle-up");
     $acs(".mldarrow").addClass("fa-angle-down");
       }
     });
-    
+
 
 //For mldarrow click
      $acs('.mldarrow').on('click', function(event) {
 		$acs(this).parent().find('.nice-select').click();
       // console.log("arrow clicked");
                 event.stopImmediatePropagation();
-       
+
      });
 
     // Option click
     $acs(document).on('click.nice_select', '.nice-select .option:not(.disabled)', function(event) {
       var option = $acs(this);
       var dropdown = option.closest('.nice-select');
-      
+
       dropdown.find('.selected').removeClass('selected');
       option.addClass('selected');
-      
+
       var text = option.data('display') || option.text();
       dropdown.find('.current').text(text);
    //   dropdown.find('.current-flags').css("background","url("+flaglink+text.toLowerCase()+".png) left center no-repeat");
 //       dropdown.find('.current-flags').css("background-size","20px 15px");
-      
+
       dropdown.prev('select').val(option.data('value')).trigger('change');
     });
 
     // Keyboard events
-    $acs(document).on('keydown.nice_select', '.nice-select', function(event) {    
+    $acs(document).on('keydown.nice_select', '.nice-select', function(event) {
       var dropdown = $acs(this);
       var focused_option = $acs(dropdown.find('.focus') || dropdown.find('.list .option.selected'));
-      
+
       // Space or Enter
       if (event.keyCode == 32 || event.keyCode == 13) {
         if (dropdown.hasClass('open')) {
@@ -216,10 +215,10 @@ mlflag1 = true;
 
 
 $acs(document).ready(function($acs) {
-		 
+
 		 // Positions
-		 
-		 
+
+
 		 $acs("#currency").blur(function(){
 			var currencyText =  $acs(this).val();
 			console.log(currencyText);
@@ -233,14 +232,14 @@ $acs(document).ready(function($acs) {
 			}
 		 });
 		///////////////////////
-		 
+
 		 $acs('#alignment input').on('change', function() {
 		   var FloatValue = ($acs('input[name=align]:checked', '#alignment').val());
-		   $acs(".switchContainer").css("float", FloatValue ); 
+		   $acs(".switchContainer").css("float", FloatValue );
 		});
 
 		////////////////////////////////
-		
+
 		 $acs("#hMargin").blur(function(){
 			var hMarginValue =  parseInt($acs(this).val());
 			$acs(".switchContainer").css("margin-left", hMarginValue );
@@ -253,9 +252,9 @@ $acs(document).ready(function($acs) {
 				$acs(".switchContainer").css("margin-right", hMarginValue )
 			}
 		 });
-		 
+
 		 ////////////////////////////////
-		 
+
 		 $acs("#vMargin").blur(function(){
 			var vMarginValue =  parseInt($acs(this).val());
 			$acs(".switchContainer").css("margin-top", vMarginValue )
@@ -268,9 +267,9 @@ $acs(document).ready(function($acs) {
 				$acs(".switchContainer").css("margin-bottom", vMarginValue )
 			}
 		 });
-		 
+
 		 ////////////////////////////////
-		 
+
 		 $acs("#dropHeight").blur(function(){
 			var HeightValue =  parseInt($acs(this).val());
 			$acs(".nice-select").css("height", HeightValue )
@@ -283,9 +282,9 @@ $acs(document).ready(function($acs) {
 				$acs(".nice-select").css("line-height", HeightValue + "px")
 			}
 		 });
-		 
+
 		 ////////////////////////////////
-		 
+
 		 $acs("#dropWidth").blur(function(){
 			var WidthValue =  parseInt($acs(this).val());
 			$acs(".nice-select").css("width", WidthValue );
@@ -298,11 +297,11 @@ $acs(document).ready(function($acs) {
 				$acs(".nice-select .list").css("width", WidthValue )
 			}
 		 });
-		 
-		 
+
+
 		 ////////////////////////////////
-		  
-		  
+
+
 		 $acs("#dropFont").blur(function(){
 			var FontValue =  parseInt($acs(this).val());
 			$acs(".nice-select.switch").css("font-size", FontValue );
@@ -313,65 +312,65 @@ $acs(document).ready(function($acs) {
 				$acs(".nice-select.switch").css("font-size", FontValue );
 			}
 		 });
-		 
-		 
-		 
+
+
+
 		 // Styles
-		 
+
 		 $acs('#borderContainer input').on('change', function() {
 		   var borderValue = ($acs('input[name=border]:checked', '#borderContainer').val());
 		   $acs(".nice-select.switch").css("border", borderValue );
 		   $acs(".nice-select ul.list").css("border", borderValue );
-		   $acs(".nice-select ul.list li").css("border", borderValue ); 
+		   $acs(".nice-select ul.list li").css("border", borderValue );
 		});
-		
-		
+
+
 		$acs('#flagContainer input').on('change', function() {
 		   var flagValue = ($acs('input[name=flag]:checked', '#flagContainer').val());
 		   console.log(flagValue);
-		   $acs(".flags").css("display", flagValue ); 
+		   $acs(".flags").css("display", flagValue );
 		});
-		
+
 		$acs('#transContainer input').on('change', function() {
 		   var transValue = ($acs('input[name=transparentCol]:checked', '#transContainer').val());
 		   $acs(".nice-select").css("background-color", transValue );
-		   $acs(".nice-select").css("border", "0px solid #e8e8e8" ); 
+		   $acs(".nice-select").css("border", "0px solid #e8e8e8" );
 			if ($acs('#trans2').is(':checked')) {
-				$acs(".nice-select").css("border", "1px solid #e8e8e8" ); 
+				$acs(".nice-select").css("border", "1px solid #e8e8e8" );
 			}
 		});
-		
+
 		$acs('#displayContainer input').on('change', function() {
 		   var displayValue = ($acs('input[name=displayBox]:checked', '#displayContainer').val());
-		   $acs(".switchContainer").css("display", displayValue ); 
+		   $acs(".switchContainer").css("display", displayValue );
 		});
-		 
-		 
+
+
 		 // Colors
-		 
-		 
+
+
 		 $acs("#txtColor").blur(function(){
 			var txtColorVale =  $acs(this).val();
 			$acs(".nice-select").css("color", txtColorVale );
 			$acs(".nice-select ul li").css("color", txtColorVale );
 			 $acs( "<style type='text/css'>.nice-select:after { border-color: " + txtColorVale + "; }</style>" ).appendTo( "head" )
 		 });
-		 
-		 
+
+
 		 $acs("#bgColor").blur(function(e){
 			var bgColorVale =  $acs(this).val();
 			$acs(".nice-select").css("background-color", bgColorVale );
 			$acs(".nice-select .option").css("background-color", bgColorVale );
-			
+
 		 });
-		 
+
 		$acs("#brdrColor").blur(function(e){
 			var brdrColorVale =  $acs(this).val();
 			$acs(".nice-select").css("border-color", brdrColorVale );
 			$acs(".nice-select .option").css("border-color", brdrColorVale );
 			$acs(".nice-select .list").css("border-color", brdrColorVale );
 		 });
-mlflag2 = true;		 
+mlflag2 = true;
 }($acs));
 
 
@@ -829,7 +828,7 @@ mlflag2 = true;
   font-size: 12px;
   height: 30px;
   width:90px;
-  line-height: 30px; 
+  line-height: 30px;
   display:inline-block;
   }
 .nice-select.switch:after {
@@ -878,13 +877,13 @@ mlflag2 = true;
   padding-left: 5px;
   padding-right: 5px;
   text-align: left;
-  transition: all 0.2s; 
+  transition: all 0.2s;
   float: left !important;
   border-left: 0px !important;
     border-top: 0px !important;
     border-right: 0px !important;
   width: 90px !important;
-  
+
 }
   .nice-select .option:last-child{ border-bottom:0 none}
 .nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus {
@@ -897,7 +896,7 @@ mlflag2 = true;
 .nice-select.switch .flags{ position:relative; top:50%; margin-top:-7px}
 
 .mldarrow:hover{
-	cursor: pointer !important; 
+	cursor: pointer !important;
   }
 
 </style>
