@@ -42,7 +42,7 @@
             <li class="filter-group-display__list-item">
               <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
                 <input type="checkbox" name="{{ filter_value.param_name }}" value="{{ filter_value.value }}"
-                {% if filter_value.param_name contains "color" %}
+                {% if filter_value.param_name contains "color" or filter_value.param_name contains "Color" %}
                   data-color="{{ filter_value.value }}" style="background:{{filter_value.value | downcase | remove:" " }}"
                   {% endif %}
                   id="Filter-{{ filter.param_name }}-{{ forloop.index }}" {% if filter_value.active -%}checked{%- endif

@@ -1,22 +1,15 @@
 {% assign current_product = product.selected_or_first_available_variant %}
 {% assign product_image = current_product.featured_image | default: product.featured_image %}
-
 {% assign product_collection = collection.title | link_to: product_collection.url %}
 {% assign collectProductName = "" %}
-
 {% unless product_collection == blank %}
 {% assign collectProductName = product_collection %}
 {% endunless %}
-
 {% assign coeid = "" %}
-
-
 {% for product_image in product.images %}
 <link rel="preload" as="image" href="{{ product_image.src | image_url }}">
 <link rel="prefetch" href="{{ product_image.src | image_url }}">
 {% endfor %}
-
-
 <section class="page-product-detail">
   <div class="product-images">
     <ul class="product-images-thumbnails">
@@ -62,79 +55,99 @@
     </div>
     {% endif %}
     <p class="product-price">{{current_product.price | money_with_currency }}</p>
-
     <p class="product-notice-content {% for collection in product.collections%} {{collection.title}} {% endfor %}">
       Our artisanal silver jewellery collection is currently available for shipment within INDIA.
     </p>
-
     <!-- TODO: Begin -- Need to add link this for size chart -->
     <div hidden>
       {% assign text = product | json %}
       {% assign objArr = text | split: ',' %}
       {% assign keyArr = ''%}
       {% assign valArr = ''%}
-
       {% for obj in objArr %}
       {% assign key = obj | split: ':' | first %}
       {% assign value = obj | split: ':' | last %}
       {% assign keyArr = keyArr| append: ',' | append: key %}
       {% assign valArr = valArr| append: ',' | append: value %}
       {% endfor %}
-
       {% assign keyArr = keyArr | remove_first: ',' | remove: '{' | remove: '"' | split: ',' %}
       {% assign valArr = valArr | remove_first: ',' | remove: '}' | remove: '"' | split: ',' %}
-
       {% for obj in objArr %}
       {{keyArr[forloop.index0]}} :{{valArr[forloop.index0]}}
       <br />
       {% endfor %}
-
-
-      {{ product.variants | json }}
     </div>
-
     <!-- TODO: END --  Need to add link this for size chart -->
-
-
     <!--product form-->
     {% form 'product', product, class:"product-form", id:"AddToCartForm" %}
-
     {%- unless product.has_only_default_variant -%}
     {%- for option in product.options_with_values -%}
-
-
-    <fieldset id="ProductSelect-option-{{ forloop.index0 }}" name="id">
+    <fieldset class="product-variant-fielset" id="ProductSelect-option-{{ forloop.index0 }}"
+      name="{{ option.name | handleize }}">
       <legend>
         {{ option.name | escape }}
+        {% if option.name contains "Size" or option.name contains "size" %}
+        <span>
+          <nav class="product-guide-line">
+            <div class="modal-toggle" id="measurement-guide" data-target="#MeasurementGuide" data-toggle="modal">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" fill="none" viewBox="0 0 18 24">
+                <g clip-path="url(#clip0_3_2)">
+                  <path fill="#000"
+                    d="M5.717 24L.023 20.713 11.97.022l5.693 3.287L5.717 24zm-5.1-3.445l4.94 2.852L17.07 3.467 12.128.616.617 20.555z">
+                  </path>
+                  <path fill="#000"
+                    d="M1.998 17.727l.217-.376 1.516.875-.218.376-1.515-.875zm.962-1.666l.218-.377 3.174 1.833-.217.376-3.175-1.832zm.963-1.667l.217-.376 1.587.916-.217.376-1.587-.916zm.962-1.667l.217-.376 1.587.917-.217.376-1.587-.917zm.962-1.666l.217-.376 1.587.916-.217.376-1.587-.916zm.962-1.666l.217-.376 3.175 1.832-.218.376L6.81 9.395zm1.134-1.667l.217-.376 1.443.833-.217.376-1.443-.833zm.961-1.667l.218-.376 1.443.833-.218.376-1.443-.833zm.963-1.666l.217-.376 1.443.833-.217.376-1.443-.833zm.962-1.666l.217-.377 3.175 1.833-.218.376L10.83 2.73z">
+                  </path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_3_2">
+                    <path fill="#fff" d="M0 0h17.674v24H0z"></path>
+                  </clipPath>
+                </defs>
+              </svg>
+              Size Guidelines
+            </div>
+          </nav>
+        </span>
+        {% endif %}
       </legend>
       {%- for value in option.values -%}
       <!-- Check to see if there's a product size option. If there is a size, check to see if there's any availble for purchase. If not, set the variat control in a "disabled" state. -->
       {%- assign variant_label_state = true -%}
-
       {%- if product.options.size == 1 -%}
       {%- unless product.variants[forloop.index0].available -%}
       {%- assign variant_label_state = false -%}
       {%- endunless -%}
       {%- endif -%}
-
-      <input type="radio" {% if option.selected_value==value %} checked="checked" {% endif %} {% unless
-        variant_label_state %} disabled="disabled" {% endunless %} value="{{ value | escape }}"
-        data-index="option{{ forloop.index }}" name="{{ option.name | handleize }}"
-        id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
-      <label for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
+      {% assign inputStyle = '' %}
+      {% if option.name contains "Color" or option.name contains "color" or option.name contains "Size" or option.name
+      contains "size" %}
+      {% assign inputStyle = "input-radio-label-circle" %}
+      {% else %}
+      {% assign inputStyle = "input-radio-label-chip" %}
+      {% endif %}
+      <label class="{{inputStyle}}" {% if option.name contains "Color" or option.name contains "color" %}
+        data-color="{{ value }}" style="text-indent: -9999px; background:{{value | downcase | escape | remove:" " }}" {%
+        endif %} for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
+        <input type="radio" {% if option.selected_value==value %} checked="checked" {% endif %} {% unless
+          variant_label_state %} disabled="disabled" {% endunless %} value="{{ value | escape }}"
+          data-index="option{{ forloop.index }}" name="{{ option.name | handleize }}"
+          id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
+        {% if value == 'Free Size' %}
+        FS
+        {% else %}
         {{ value | escape }}
+        {% endif %}
       </label>
       {%- endfor -%}
     </fieldset>
-
-
     {%- endfor -%}
     {%- endunless -%}
-
     <div class="mb-3" hidden>
       <label for="Quantity" class="form-label">Quantity</label>
       <input type="number" class="form-control" name="quantity" id="Quantity" value="1" max="1">
     </div>
+    <!-- blouse stitching area -->
 
     <!-- check the data -->
     {% assign with_blouse = true %}
@@ -157,28 +170,29 @@
     </div>
     {% endif %}
 
-
-    <div id="login-link" class="hide" style="padding: 0 5px;margin-bottom: 10px;font-size: 14px;">Please <a
-        style="color: #880216;" href="/account/login?checkout_url={{shop.url}}{{product.url}}"
-        id="addMeasurementLinkLogin">Login</a> to add measurement. Kindly provide measurement details for blouse
+    <div id="login-link" class="hide" style="">Please <a style="color: var(--primary-color);"
+        href="/account/login?checkout_url={{shop.url}}{{product.url}}" id="addMeasurementLinkLogin">Login</a> to add
+      measurement. Kindly provide measurement details for blouse
       stitching before adding this product to the cart.</div>
-    <div id="add-measurement-link" class="hide" style="padding: 0 5px;margin-bottom: 10px;font-size: 14px;">Please add
+    <div id="add-measurement-link" class="hide" style="">Please add
       measurement <a
-        style="color: #fff !important; display: inline-block; padding: 2px 4px; background-color: #880216; border-radius: 5px;"
+        style="color: #fff !important; display: inline-block; padding: 2px 4px; background-color: var(--primary-color); border-radius: 5px;"
         href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}" id="addMeasurementLink">Add</a></div>
     <div class="measurement-select hide" style="padding: 0 5px; margin-bottom: 10px;">
       <label id="select-measurement-title" for="select-measurement">Select Measurement:</label>
       <select id="select-measurement" style="width:100%">
         <option value="">Select</option>
       </select>
-      <!-- <div id="add-measurement-link-select" style="padding: 0 5px;margin-bottom: 10px;font-size: 14px;">
-<a style="color: #880216;" href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}"><strong>Add new measurement</strong>
-</a>
-</div> -->
+      <div id="add-measurement-link-select" style="padding: 0 5px;margin-bottom: 10px;font-size: 14px;">
+        <a style="color: var(--primary-color);" href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}"><strong>Add new
+            measurement</strong>
+        </a>
+      </div>
     </div>
     <p id="measurement-data" class="line-item-property__field hide">
     </p>
 
+    <!-- blouse stitching area -->
     <button type="submit" name="add" id="AddToCard" class="product-add-to-cart-button" {% unless product.available %}
       disabled="disabled" {% endunless %}>
       {%- if product.available -%}
@@ -187,17 +201,13 @@
       Sold Out
       {%- endif -%}
     </button>
-
     {{ form | payment_button }}
-
     {% endform %}
-
-
-
     <!--end product form-->
 
 
-    <div class="modal">
+    <!-- Size Guide modal -->
+    <div class="size-chart-modal modal">
       <div class="modal-overlay modal-toggle"></div>
       <div class="modal-wrapper modal-transition">
         <div class="modal-header">
@@ -270,17 +280,15 @@
       </div>
     </div>
 
-
-
     {% if product.content != blank %}
     <h2 class="product-title-secondary">Description</h2>
     <p class="product-description">{{product.content | strip_html }}</p>
     {% endif %}
 
-
-    {% if product.metafields.custom.material.value != blank %}
+    {% if product.metafields.custom.note.value != blank %}
     <h2 class="product-title-secondary"> Specification </h2>
     {% endif %}
+
     <div class="product-detail">
       {% if product.metafields.custom.material.value != blank %}
       <dl>
@@ -401,7 +409,6 @@
     </div>
   </div>
 </section>
-
 <script type="application/ld+json">
   {
     "@context": "http://schema.org/",
@@ -438,13 +445,10 @@
     ]
   }
   </script>
-
 <script language="Javascript" type="text/javascript">
   var myProduct = {{ product | json}};
   var customTags = myProduct.tags;
-
   document.addEventListener('readystatechange', event => {
-
     // When HTML/DOM elements are ready:
     if (event.target.readyState === "interactive") {
       console.log("dom interactive");
@@ -467,7 +471,6 @@
       }
     }
   });
-
   $(".blouse-stitching").on('change', function (e) {
     console.log('blouse stitching');
     var blouseStiching;
@@ -479,9 +482,7 @@
     var blouseStichingData = $("select[name='properties[Alankara Blouse Stitching]'] :selected").attr("data-conditional-value");
     console.log("blouse select index :" + index);
     console.log("blouse select blouseStiching :" + blouseStiching);
-
     $("#add-measurement-link").addClass("hide");
-
     // -- find the customer if logged in or not --/
     // if blouse stitching index is greater then 1
     if (index > 0) {
@@ -493,15 +494,12 @@
       $(".shopify-payment-button__button").prop('disabled', false);
       console.log('index > 0 else remove class else');
     }
-
     // don't know how this function works but need to check how this work to show please add measurement <ADD> btn
     var currentTypeMeasurements = measurementArray.filter(v => v.type === measurementType[index]) || [];
     console.log(currentTypeMeasurements);
     if (index && !currentTypeMeasurements.length) {
       console.log(index, currentTypeMeasurements, currentTypeMeasurements.length);
-
       $("#add-measurement-link").removeClass("hide");
-
       //$(".measurement-select").addClass("hide");
       $(".hulkapps_submit_cart").prop('disabled', true);
       $(".shopify-payment-button__button").prop('disabled', true);
@@ -515,7 +513,6 @@
       console.log('index && currentTypeMeasurements length else');
     }
   });
-
   // add measurement link btn select function
   $('#addMeasurementLink').click(function () { setProductValues(); });
   function setProductValues() {
@@ -539,14 +536,11 @@
     console.log(localStorage);
     console.log(localStorage.setItem);
   }
-
   // if we have measurement id in url
   $(window).on('load', function () {
     console.log('value from measurement page');
-
     // if we have measurement id in the url
     if (window.location.search.includes("?measurement_id=")) {
-
       console.log(window.location);
       var queryString = window.location.search;
       console.log(queryString);
@@ -555,7 +549,6 @@
       console.log(productURLb);
       console.log(JSON.parse(localStorage.getItem('selectedProductValues')));
       var productValues = JSON.parse(localStorage.getItem('selectedProductValues'));
-
       // check the product id in localstorage
       if (productValues != null || productValues != undefined) {
         console.log('checking prodcut value not null in localstorage if ');
@@ -566,7 +559,6 @@
           if (!!productValues['quantity']) {
             $('input[name="quantity"]')[0].value = productValues['quantity'];
           }
-
           // check the pico fall if we added previously
           if (Object.keys(productValues).includes('picoFallsOption')) {
             console.log('object key productValue picoFallsOption');
@@ -590,7 +582,6 @@
             console.log(measurmentType);
             console.log('.hulkapps_check_option > input');
           }
-
           // conver and load data in hidden input
           // enable the select option
           // $(".measurement-select").removeClass("hide");
@@ -602,7 +593,6 @@
             measurementValues += `<div class="col-6"><label for="${k.keyLabel}">${k.keyLabel}</label><input readonly type="text" name="properties[${k.keyLabel}]" value="${k.valueLabel}"></div>`;
           });
           measurementValues += `</div>`;
-
           console.log('timeout 4000');
           $("#measurement-data").empty().append(measurementValues);
           $('#select-measurement')[0].value = JSON.stringify(selectedMeasurement);
@@ -613,19 +603,15 @@
         } else {
           console.log('URL id not matching with localstorage');
         }
-
       } else {
         console.log('checking prodcut value not null in localstorage else ');
       }
-
-
     } else {
       console.log(window.location);
       console.log('no value from measurement page');
     }
   });
 </script>
-
 <script>
   function encodeMeasurement(list) {
     console.log('encodeMeasurement');
@@ -650,7 +636,6 @@
     }
     return updatedMeasurementList;
   }
-
   function capitalizeTheFirstLetterOfEachWord(words) {
     console.log('capitalizeTheFirstLetterOfEachWord');
     var separateWord = words.toLowerCase().split(' ');
