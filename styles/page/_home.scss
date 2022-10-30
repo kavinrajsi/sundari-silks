@@ -852,13 +852,18 @@ body:not(.template-index) {
 .curatedCollection-two {
   min-width: 260px;
   display: grid;
-  gap: 24px;
+  gap: var(--Ngap);
+  grid-template-columns: 1fr;
+  @media(min-width: 768px){
   grid-template-columns: 1fr 1fr;
-
+  }
   .occR {
     display: grid;
-    gap: 24px;
+    gap: var(--Ngap);
+    grid-template-columns: 1fr 1fr;
+    @media(min-width: 768px){
     grid-template-columns: 1fr 1fr 1fr;
+  }
   }
   .obWrap {
     overflow: hidden;
@@ -878,9 +883,9 @@ body:not(.template-index) {
       position: relative;
       border-radius: var(--border-radius);
       padding: 30px 30px 30px 30px;
+      @media(min-width: 768px){
       height: 404px;
-      // height: 404px;
-      // min-width: 288px;
+      }
       &.ob1 {
         height: calc(100% - 58px - 58px);
       }
