@@ -2844,15 +2844,14 @@ table tbody + tbody {
   opacity: 0.5;
 }
 .meFilter.is-visible .fitler--wrapper {
-  transform: translateX(0);
+  transform: translateY(0);
 }
 .meFilter .fitler--wrapper {
   position: fixed;
-  top: 0;
   right: 0;
   bottom: 0;
-  height: 100%;
   width: 100%;
+  height: calc(100vh - 60px);
   max-width: 420px;
   z-index: 10999;
   overflow: auto;
@@ -2861,10 +2860,12 @@ table tbody + tbody {
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  -webkit-transform: translateX(103%);
-  transform: translateX(103%);
+  -webkit-transform: translateY(103%);
+  transform: translateY(103%);
   -webkit-overflow-scrolling: touch;
   box-shadow: 0 2px 6px #777;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
 }
 .meFilter .fitler--wrapper .filter--header {
   display: flex;
@@ -2891,7 +2892,6 @@ table tbody + tbody {
   margin-right: 0;
 }
 .meFilter .fitler--wrapper form.filter-form .filter-group-display {
-  background-color: red;
   flex: 1 0 50%;
   max-width: 50%;
   position: absolute;
