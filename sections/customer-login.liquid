@@ -10,7 +10,7 @@
     {% form 'customer_login', novalidate: 'novalidate' %}
     <!-- success -->
     {% if recover_success == true %}
-    <h3 class="form__message" tabindex="-1" autofocus>
+    <h3 class="form__message"   autofocus>
       <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 13 13">
         <path
           d="M6.5 12.35C9.73087 12.35 12.35 9.73086 12.35 6.5C12.35 3.26913 9.73087 0.65 6.5 0.65C3.26913 0.65 0.65 3.26913 0.65 6.5C0.65 9.73086 3.26913 12.35 6.5 12.35Z"
@@ -24,7 +24,7 @@
     <!-- success end -->
     <!-- error -->
     {% if form.errors %}
-    <h2 class="form__message" tabindex="-1" autofocus>
+    <h2 class="form__message"   autofocus>
       <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>
       <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 13 13">
         <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2" />
@@ -65,7 +65,7 @@
 </div>
 
 <div id="recover-form" class="d-none">
-  <h1  tabindex="-1">
+  <h1   >
     {{ 'customer.recover_password.title' | t }}
   </h1>
   <p>

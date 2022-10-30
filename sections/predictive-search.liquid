@@ -10,7 +10,7 @@
     <ul id="predictive-search-results-list" class="predictive-search__results-list" role="listbox" aria-labelledby="predictive-search-products">
       {%- for product in predictive_search.resources.products -%}
         <li class="predictive-search__list-item" role="option">
-          <a href="{{ product.url }}" class="predictive-search__item" tabindex="-1">
+          <a href="{{ product.url }}" class="predictive-search__item"  >
             {%- if product.featured_media != blank -%}
               <img class="predictive-search__image"
               loading="lazy"
@@ -34,7 +34,7 @@
         </li>
       {%- endfor -%}
       <li class="predictive-search__list-item" role="option">
-        <button class="predictive-search__item" tabindex="-1">
+        <button class="predictive-search__item"  >
           View all “{{ predictive_search.terms }}”
         </button>
       </li>

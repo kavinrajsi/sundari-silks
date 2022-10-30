@@ -1,5 +1,5 @@
 <section class="drawer" id="drawer-name" data-drawer-target>
-  <div class="drawer__overlay" data-drawer-close tabindex="-1"></div>
+  <div class="drawer__overlay" data-drawer-close  ></div>
   <div class="drawer__wrapper">
     <div class="drawer__header">
       <div class="drawer__title">
@@ -28,7 +28,7 @@
                     src="{{ item.image | image_url: width: 300, format: 'pjpg' }}"
                     data-src="{{ item.image | image_url: width: 300, format: 'pjpg' }}"
                     data-aspectratio="{{ item.image.aspect_ratio }}" alt="{{ item.image.alt | escape }}"
-                    data-sizes="auto" tabindex="-1" data-parent-fit="cover" loading="lazy" width="150" height="150">
+                    data-sizes="auto"   data-parent-fit="cover" loading="lazy" width="150" height="150">
                 </a>
               </div>
               <div class="cartpopup-item-content ">

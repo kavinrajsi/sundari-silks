@@ -151,9 +151,6 @@ assign body_font = settings.body_text_font
   <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-  <a class="skip-to-content-link button visually-hidden" href="#MainContent">
-    {{ "accessibility.skip_to_text" | t }}
-  </a>
   <svg style="display:none">
     <symbol id="search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
       stroke-linejoin="round" class="feather feather-search">
@@ -311,9 +308,9 @@ assign body_font = settings.body_text_font
         "url": {{ request.origin | append: page.url | json }}
       }
     </script>
-  <section class="fullpage" role="main" tabindex="-1" autofocus>
+  <section class="fullpage" role="main">
     {% section 'header' %}
-    <main id="MainContent" class="content-for-layout focus-none">
+    <main class="content-for-layout">
       {% render 'breadcrumb' %}
       {{ content_for_layout }}
     </main>
