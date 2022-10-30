@@ -2851,7 +2851,7 @@ table tbody + tbody {
   right: 0;
   bottom: 0;
   width: 100%;
-  height: calc(100vh - 60px);
+  height: 70vh;
   max-width: 420px;
   z-index: 10999;
   overflow: auto;
