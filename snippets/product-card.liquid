@@ -15,12 +15,19 @@ Usage:
   {% endunless %}
   {% endcomment %}
   <div class="product__card--img">
-    <a href="{{product.url | within: collection }}" class="product__card--link">
+    <a href="{{ product.url | within: collection }}" class="product__card--link">
       <div class="product__card--image--wrapper">
         {% if product.featured_image != blank %}
+        <!-- [200,400,600,700,800,900,1000,1200] -->
         <img loading="lazy" id="Image-{{ image.id }}" class="blur-up responsive-image__image lazyload"
-          src="{{ product.featured_image | img_url: 'large',  format: 'pjpg'}}"
-          data-src="{{ product.featured_image | img_url: 'large',  format: 'pjpg'  }}"
+          src="{{ product.featured_image | image_url: width: '480x', format: 'pjpg' }}"
+          srcset="
+      {% if image.width > 640 %}{{ image.src | img_url: '640x' }} 640w{% endif %}
+      {% if image.width > 720 %},{{ image.src | img_url: '720x' }} 720w{% endif %}
+      {% if image.width > 900 %},{{ image.src | img_url: '900x' }} 900w{% endif %}
+      "      sizes="(min-width: 960px) 450px, (min-width: 720px) 50vw, 100vw"
+
+          data-src="{{ product.featured_image | image_url: width: '600x', height: 300, format: 'pjpg' }}"
           data-aspectratio="{{ product.featured_image.aspect_ratio }}"
           data-widths="[540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]" data-sizes="auto" tabindex="-1"
           data-parent-fit="cover" alt="{{ product.feature_image.alt }}">
@@ -45,7 +52,7 @@ Usage:
     </div>
   </div>
   <div class="product__card--content">
-    <a href="{{product.url | within: collection }}" class="product__card--link">
+    <a href="{{ product.url | within: collection }}" class="product__card--link">
       <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
       <div hidden class="product__id">{{ product.id }}</div>
       <div hidden itemprop="brand" class="product__variant--vendor">{{ product.vendor }}</div>
