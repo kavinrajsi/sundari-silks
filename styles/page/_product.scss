@@ -108,6 +108,14 @@
       line-height: 124%;
       color: #000000;
       padding: 16px;
+      &.Arthirshtam{
+        display: block;
+      }
+      &.India,
+      &.in,
+      &.IN{
+        display: block;
+      }
     }
     &-add-to-cart-button {
       width: 100%;

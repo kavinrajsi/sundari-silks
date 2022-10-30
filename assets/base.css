@@ -2513,6 +2513,12 @@ svg.icon {
   color: #000000;
   padding: 16px;
 }
+.page-product-detail .product-notice-content.Arthirshtam {
+  display: block;
+}
+.page-product-detail .product-notice-content.India, .page-product-detail .product-notice-content.in, .page-product-detail .product-notice-content.IN {
+  display: block;
+}
 .page-product-detail .product-add-to-cart-button {
   width: 100%;
   margin: 18px 0;

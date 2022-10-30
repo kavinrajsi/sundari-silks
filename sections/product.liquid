@@ -10,10 +10,18 @@
 
 {% assign coeid = "" %}
 
+
+{% for product_image in product.images %}
+<link rel="preload" as="image" href="{{ product_image.src | image_url }}">
+<link rel="prefetch" href="{{ product_image.src | image_url }}">
+{% endfor %}
+
+
 <section class="page-product-detail">
   <div class="product-images">
     <ul class="product-images-thumbnails">
-      {% for product_image in product.images %}<li>
+      {% for product_image in product.images %}
+      <li>
         <a href="{{ product_image.src | image_url }}" data-pswp-width="{{ product_image.width }}"
           data-pswp-height="{{ product_image.height }}">
           {{ product_image | image_url : width: 160 | image_tag:
@@ -54,6 +62,7 @@
     </div>
     {% endif %}
     <p class="product-price">{{current_product.price | money_with_currency }}</p>
+
     <p class="product-notice-content {% for collection in product.collections%} {{collection.title}} {% endfor %}">
       Our artisanal silver jewellery collection is currently available for shipment within INDIA.
     </p>
@@ -89,13 +98,6 @@
 
     <!--product form-->
     {% form 'product', product, class:"product-form", id:"AddToCartForm" %}
-    <p>{{ current_product.price | money_with_currency }}</p>
-
-    <select name="id">
-      {%- for variant in product.variants -%}
-      <option selected="selected" value="{{ variant.id }}"> {{ variant.title }}</option>
-      {%- endfor -%}
-    </select>
 
     {%- unless product.has_only_default_variant -%}
     {%- for option in product.options_with_values -%}
