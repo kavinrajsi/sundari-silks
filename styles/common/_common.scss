@@ -7,6 +7,29 @@ $ptablet: 992px;
 $desktop: 1024px;
 $ldesktop: 1364px;
 
+$z-index: (
+  drawer : 21,
+  drawer_overlay : 20,
+  cart: 19,
+  cart_overlay: 18,
+  filter: 17,
+  filter_overlay: 16,
+  quickview: 15,
+  quickview_overlay: 14,
+  product: 13,
+  product_size-chart: 12,
+  header: 11,
+  header_cart_icon:  10
+);
+
+@function z-index($key) {
+  @return map-get($z-index, $key);
+}
+
+@mixin z-index($key) {
+  z-index: z-index($key);
+}
+
 :root {
   --mobile: 576px;
   --tablet: 768px;
@@ -138,6 +161,9 @@ html {
 }
 
 body {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
   font-size: inherit;
   line-height: inherit;
   background-color: #fef1e1;
@@ -148,43 +174,34 @@ body {
   text-rendering: optimizeLegibility;
   width: 100%;
   height: 100%;
+  padding-top: 64px;
   padding-bottom: 80px;
   @media (min-width: 768px) {
+    padding-top: 112px;
     padding-bottom: 0;
   }
 }
 
 .fullpage {
-  min-height: 100%;
+  height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%;
 }
 
-img {
-  border: 0;
-  -ms-interpolation-mode: bicubic;
-}
 #MainContent {
   position: relative;
   z-index: 1;
 }
+
 .text-center {
   text-align: center;
-}
-
-@mixin content-block-max-center {
-  max-width: var(--content-width);
-  margin-left: auto;
-  margin-right: auto;
 }
 .block-center {
   margin-left: auto;
   margin-right: auto;
 }
-.image-radius {
-  border-radius: 4px;
-}
+
 b,
 strong {
   font-weight: 500;
@@ -198,10 +215,6 @@ a {
   cursor: pointer;
 }
 
-body {
-  font-size: 1rem;
-  font-family: "Montserrat", sans-serif;
-}
 main img {
   border-radius: var(--border-radius);
 }
@@ -223,178 +236,3 @@ main img {
 .d-block {
   display: block;
 }
-
-// .prpdocutSlider .slick-dots {
-//   top: 0;
-//   bottom: initial;
-//   right: 0;
-//   width: auto;
-// }
-// .image {
-//   display: block;
-//   margin: 0 auto;
-//   width: 100%;
-// }
-// .grid-view-item__image-wrapper .image {
-//   position: absolute;
-//   top: 0;
-// }
-// .image.lazyload {
-//   opacity: 0;
-// }
-// .image-wrapper {
-//   margin: 0 auto;
-//   position: relative;
-//   width: 100%;
-// }
-
-// /*
-//     [{"type":"Shirts","value":[{"age":"1 yrs","value":[{"size":"14","shoulder":"9 1/2 ","sleeves":"11 1/2","chest":"20 1/2","height":"14 1/2"}]},{"age":"2 yrs","value":[{"size":"16","shoulder":"10 1/2 ","sleeves":"12 1/2","chest":"22","height":"17 1/2"}]},{"age":"3 yrs","value":[{"size":"18","shoulder":"11","sleeves":"13","chest":"25","height":"18 1/2"}]}]},{"type":"Pants","value":[{"age":"4 yrs","value":[{"size":"14","shoulder":"9 1/2 ","sleeves":"11 1/2","chest":"20 1/2","height":"14 1/2"}]},{"age":"5 yrs","value":[{"size":"16","shoulder":"10 1/2 ","sleeves":"12 1/2","chest":"22","height":"17 1/2"}]},{"age":"6 yrs","value":[{"size":"18","shoulder":"11","sleeves":"13","chest":"25","height":"18 1/2"}]}]}]
-// */
-// .sizeChart {
-//   display: flex;
-//   .sizeChartLable {
-//     display: flex;
-//     ul {
-//       li {
-//         border: 1px solid var(--border-color);
-//         span {
-//           width: 80px;
-//           display: block;
-//           font-weight: 500;
-//           padding: 4px;
-//           border-bottom: 1px solid var(--border-color);
-//           &:last-child {
-//             border-bottom: 0;
-//           }
-//         }
-//       }
-//     }
-//   }
-//   .sizeChartValue {
-//     ul {
-//       display: flex;
-//       li {
-//         border: 1px solid var(--border-color);
-//         span {
-//           width: 80px;
-//           display: block;
-//           font-weight: 400;
-//           padding: 4px;
-//           border-bottom: 1px solid var(--border-color);
-//           &:last-child {
-//             border-bottom: 0;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-// .sizeChatTitle {
-//   font-size: 24px;
-//   line-height: 1.4;
-//   font-weight: 500;
-//   font-family: var(--font-playfair);
-//   margin-bottom: 18px;
-// }
-// .cart-count {
-//   position: absolute;
-//   top: -10px;
-//   right: 2px;
-//   width: 20px;
-//   height: 20px;
-//   text-align: center;
-//   line-height: 20px;
-//   border-radius: 100%;
-//   color: var(--pure-white);
-//   background: #fdd933;
-//   border: 1px solid #fdd933;
-//   transition: all 0.3s ease-in-out;
-//   font-family: var(--font-montserrat);
-//   font-style: normal;
-//   font-weight: 400;
-//   font-size: 10px;
-//   line-height: 12px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   text-align: center;
-//   color: #000000;
-// }
-// a#cart-icon-bubble {
-//   position: relative;
-// }
-
-
-// .button,
-// button,
-// a[type="button"] {
-//   border: 0;
-//   outline: 0;
-//   font-size: var(--font-button);
-//   font-weight: 500;
-//   font-family: var(--font-montserrat);
-//   padding: 8px 16px;
-//   border-radius: 4px;
-//   line-height: 1.25;
-// }
-// .button {
-//   &--primary {
-//     background: var(--primary-color);
-//     color: var(--pure-white);
-//     transition: all 0.2s ease-in;
-//     &:hover,
-//     &:focus {
-//       background: transparent;
-//       color: var(--primary-color);
-//     }
-//     &:focus {
-//       outline: 1px solid var(--primary-color);
-//     }
-//   }
-//   &--ghost {
-//     background: transparent;
-//     color: var(--primary-color);
-//     transition: all 0.2s ease-in;
-//     &:hover,
-//     &:focus {
-//       background: var(--primary-color);
-//       color: var(--pure-white);
-//     }
-//     &:focus {
-//       outline: 1px solid var(--primary-color);
-//     }
-//   }
-// }
-// form {
-//   // div {
-//   //   margin-bottom: 28px;
-//   // }
-//   label {
-//     margin-bottom: 8px;
-//     font-family: "Montserrat";
-//     font-style: normal;
-//     font-weight: 400;
-//     font-size: 16px;
-//     line-height: 20px;
-//     color: #000000;
-//   }
-//   input {
-//     outline: 0px;
-//     border: 0px;
-//     padding: 12px 16px;
-//     background: #ffffff;
-//     border-radius: 4px;
-//     font-family: "Montserrat";
-//     font-style: normal;
-//     font-weight: 400;
-//     font-size: 16px;
-//     line-height: 24px;
-//     display: block;
-//     width: 100%;
-//   }
-//   svg {
-//     width: 24px;
-//     height: 24px;
-//   }
-// }

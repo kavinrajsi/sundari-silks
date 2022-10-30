@@ -18,17 +18,23 @@
     }
   }
 }
-body {
-  overflow-x: hidden;
+
+@mixin content-block-max-center {
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
 }
+
+
 /* header */
 .header {
+  z-index: 4;
   position: fixed;
   top: 0px;
   left: 0;
   right: 0;
   width: 100%;
-  position: relative;
+  // position: relative;
   &-container {
     background-color: var(--pure-white);
     position: relative;
