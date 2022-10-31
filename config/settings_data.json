@@ -1,6 +1,7 @@
 {
   "current": {
     "favicon": "shopify:\/\/shop_images\/favicon.png",
+    "type_header_font": "playfair_display_n4",
     "body_text_font": "montserrat_n4",
     "section-gap-tablet": 16,
     "section-gap-largetablet": 16,
@@ -344,6 +345,11 @@
       },
       "drawer": {
         "type": "drawer",
+        "settings": {
+        }
+      },
+      "quickview-modal": {
+        "type": "quickview-modal",
         "settings": {
         }
       }
