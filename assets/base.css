@@ -554,7 +554,7 @@ body {
   height: 100%;
   padding-top: 64px;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   body {
     padding-top: 112px;
     padding-bottom: 0;
@@ -740,12 +740,17 @@ main img {
 }
 .header-search-area-wrapper .header-search-area-containerWrapper {
   background-color: var(--pure-white);
-  padding: 54px 2vw;
+  padding: var(--Ngap) 2vw;
   position: absolute;
-  top: 112px;
   width: 100%;
   left: 0;
   right: 0;
+  top: 62px;
+}
+@media (min-width: 992px) {
+  .header-search-area-wrapper .header-search-area-containerWrapper {
+    top: 110px;
+  }
 }
 .header-search-area-wrapper .header-search-area-container {
   text-align: center;
@@ -764,11 +769,17 @@ main img {
 }
 .header-search-area-wrapper .header-search-area-container .predictive-search input {
   border-radius: var(--border-radius);
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 10px 40px;
   width: calc(100% - 40px);
+}
+@media (min-width: 992px) {
+  .header-search-area-wrapper .header-search-area-container .predictive-search input {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: calc(100% - 40px);
+  }
 }
 .header-search-area-wrapper .header-search-area-container .predictive-search .input__search-icon {
   position: absolute;

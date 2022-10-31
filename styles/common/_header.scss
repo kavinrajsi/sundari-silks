@@ -126,12 +126,15 @@
     }
     .header-search-area-containerWrapper {
       background-color: var(--pure-white);
-      padding: 54px 2vw;
+      padding: var(--Ngap) 2vw;
       position: absolute;
-      top: 112px;
       width: 100%;
       left: 0;
       right: 0;
+      top: 62px;
+      @media(min-width: 992px){
+      top: 110px;
+      }
     }
     .header-search-area-container {
       text-align: center;
@@ -146,11 +149,15 @@
         border-bottom: 1px solid var(--border-color);
         input {
           border-radius: var(--border-radius);
+          padding: 10px 40px;
+          width: calc(100% - 40px);
+          @media (min-width: 992px) {
           padding-left: 40px;
           padding-right: 40px;
           padding-top: 20px;
           padding-bottom: 20px;
           width: calc(100% - 40px);
+          }
         }
         .input__search-icon {
           position: absolute;
