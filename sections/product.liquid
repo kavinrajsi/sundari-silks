@@ -66,12 +66,14 @@
     </p>
     <!--product form-->
     {%- form 'product', product, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
-    <!-- {{ product.variants | json }} -->
+    <!--
+    {{ product.variants | json }}
     {{ product.variants[0].id }}
     {{ product.variants[1].id }}
     {{ product.variants[2].id }}
     {{ product.variants[3].id }}
     {{ product.variants[4].id }}
+    -->
     {%- unless product.has_only_default_variant -%}
     {%- for option in product.options_with_values -%}
     <label for="ProductSelect-option-{{ forloop.index0 }}">
@@ -193,7 +195,7 @@
     </p>
 
     <!-- blouse stitching area -->
-    <div class="mb-3">
+    <div class="mb-3" hidden>
       <input type="number" class="form-control" name="quantity" id="quantity" value="1" min="1" max="1">
       <input type="text" name="id" value="{{ product.selected_or_first_available_variant.id }}" {% if
         product.selected_or_first_available_variant.available==false %}disabled{% endif %}>
@@ -220,7 +222,7 @@
           {%- endif -%}
         </span>
       </button>
-      {{ form | payment_button }}
+      <!-- {{ form | payment_button }} -->
       {% else %}
       <a href="/cart" class="product-form__viewcart button product-add-to-cart-button">View Cart</a>
       {% endif %}

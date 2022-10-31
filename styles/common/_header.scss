@@ -110,7 +110,7 @@
 /* header search */
 .header {
   &-search-area-wrapper {
-    background-color: rgba(0, 0, 0, 0.4);
+    /* background-color: rgba(0, 0, 0, 0.4); */
     margin: 0 auto;
     // padding-top: 16px;
     position: absolute;
@@ -127,6 +127,11 @@
     .header-search-area-containerWrapper {
       background-color: var(--pure-white);
       padding: 54px 2vw;
+      position: absolute;
+      top: 112px;
+      width: 100%;
+      left: 0;
+      right: 0;
     }
     .header-search-area-container {
       text-align: center;
@@ -143,6 +148,8 @@
           border-radius: var(--border-radius);
           padding-left: 40px;
           padding-right: 40px;
+          padding-top: 20px;
+          padding-bottom: 20px;
           width: calc(100% - 40px);
         }
         .input__search-icon {

@@ -108,6 +108,7 @@
       line-height: 124%;
       color: #000000;
       padding: 16px;
+      margin-bottom: 16px;
       &.Arthirshtam {
         display: block;
       }
@@ -483,11 +484,17 @@
   }
   .toast-body {
     display: flex;
-    gap: 24px;
+    gap: 8px;
   }
   .btn-close {
     position: absolute;
     top: 4px;
     right: 4px;
   }
+}
+
+.page-product-detail .product-add-to-cart-button{
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: var(--pure-black)
 }

@@ -78,7 +78,7 @@
           cart_list.push(
           '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">'+
           '<div class="toast-body" >'+
-          '<img src="'+pushData.featured_image.url+'&width=48&height=64" alt="'+ pushData.featured_image.alt+'" width="48" height="64">'+
+          '<img src="'+pushData.featured_image.url+'&width=48" alt="'+ pushData.featured_image.alt+'" width="48" height="64">'+
            '<div>'+
             '<p>'+pushData.title+' is added to bag  </p>'+
           '</div>'+
@@ -89,9 +89,9 @@
             '</button>'+
           '</div>'+
         '</div>');
-        $('.productToaster').html(cart_list.join(''));
-$('.product-form__buttons .product-form__viewcart').removeAttr('hidden');
-$('.product-form__buttons button').attr("hidden",true);
+        $('.productToaster').html(cart_list.join('')).delay(2000).fadeOut('slow');
+        $('.product-form__buttons .product-form__viewcart').removeAttr('hidden');
+        $('.product-form__buttons button').attr("hidden",true);
 
           update_cart();
           // $.getJSON("/cart.js", function (cart) {
