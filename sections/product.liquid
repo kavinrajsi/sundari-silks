@@ -222,8 +222,10 @@
       </button>
       {{ form | payment_button }}
       {% else %}
-      <a href="/cart" class="product-form__submit button product-add-to-cart-button">View Cart</a>
+      <a href="/cart" class="product-form__viewcart button product-add-to-cart-button">View Cart</a>
       {% endif %}
+
+      <a href="/cart" class="product-form__viewcart button product-add-to-cart-button" hidden>View Cart</a>
     </div>
 
 
