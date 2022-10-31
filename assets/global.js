@@ -72,17 +72,36 @@
           return response.json();
         })
         .then((data) => {
+          let pushData = (data);
+          console.log('data 2 ' + pushData);
+          var cart_list = [];
+          cart_list.push(
+          '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">'+
+          '<div class="toast-body" >'+
+          '<img src="'+pushData.featured_image.url+'&width=48&height=64" alt="'+ pushData.featured_image.alt+'" width="48" height="64">'+
+           '<div>'+
+            '<p>'+pushData.title+' is added to bag  </p>'+
+          '</div>'+
+            '<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close">'+
+              '<svg width="24" height="24" class="closeMenu">'+
+                '<use href="#close" />'+
+              '</svg>'+
+            '</button>'+
+          '</div>'+
+        '</div>');
+        $('.productToaster').html(cart_list.join(''));
+
           update_cart();
-          $.getJSON("/cart.js", function (cart) {
-            alert("There are now " + cart.item_count + " items in the cart.");
-            console.log("data 1: " + JSON.stringify(cart));
-          });
+          // $.getJSON("/cart.js", function (cart) {
+            // alert("There are now " + cart.item_count + " items in the cart.");
+            // console.log("data 1: " + JSON.stringify(cart));
+          // });
           var cartItemCounter = document.querySelector(".cart-count");
           $.ajax({
             url: "/cart.js",
             dataType: "json",
           }).done(function (data) {
-            console.log("data 2: " + JSON.stringify(data));
+
             var newCount = data.item_count;
             if (newCount > 0) {
               $(".cart-count").removeAttr("hidden");

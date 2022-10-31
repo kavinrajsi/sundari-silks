@@ -11,7 +11,7 @@
 <link rel="prefetch" href="{{ product_image.src | image_url }}">
 {% endfor %}
 {% unless product == empty %}
-  <script type="application/json" id="ProductJson-{{ section.id }}">
+<script type="application/json" id="ProductJson-{{ section.id }}">
     {{ product | json }}
   </script>
 {% endunless %}
@@ -86,7 +86,7 @@
     <!-- TODO: END --  Need to add link this for size chart -->
     <!--product form-->
     {%- form 'product', product, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
-{{product.variants | json }}
+    {{product.variants | json }}
     {%- unless product.has_only_default_variant -%}
     {%- for option in product.options_with_values -%}
     <fieldset class="product-variant-fielset" id="ProductSelect-option-{{ forloop.index0 }}"
@@ -188,7 +188,8 @@
         <option value="">Select</option>
       </select>
       <div id="add-measurement-link-select" style="padding: 0 5px;margin-bottom: 10px;font-size: 14px;">
-        <a style="color: var(--primary-color);" href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}"><strong>Add new
+        <a style="color: var(--primary-color);"
+          href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}"><strong>Add new
             measurement</strong>
         </a>
       </div>
@@ -199,25 +200,38 @@
     <!-- blouse stitching area -->
     <div class="mb-3">
       <input type="number" class="form-control" name="quantity" id="quantity" value="1" min="1" max="1">
-      <input type="text" name="id" value="{{ product.selected_or_first_available_variant.id }}" {% if product.selected_or_first_available_variant.available==false %}disabled{% endif %}>
+      <input type="text" name="id" value="{{ product.selected_or_first_available_variant.id }}" {% if
+        product.selected_or_first_available_variant.available==false %}disabled{% endif %}>
       <input type="text" name="id" value="{{ product.selected_or_first_available_variant.id }}" disabled>
-  </div>
+    </div>
 
-  <div class="product-form__buttons">
+    <div class="product-form__buttons">
+      {% assign not_in_cart = true %}
+      {% for item in cart.items %}
+      {% if item.product.id == product.id %}
+      {% assign not_in_cart = false %}
+      {% break %}
+      {% endif %}
+      {% endfor %}
+      {% if not_in_cart %}
       <button type="submit" name="add"
-          class="product-form__submit button product-add-to-cart-button  {% if block.settings.show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
-          {% if product.selected_or_first_available_variant.available==false %} disabled {% endif %}>
-          <span>
-              {%- if product.selected_or_first_available_variant.available -%}
-              {{ 'products.product.add_to_cart' | t }}
-              {%- else -%}
-              {{ 'products.product.sold_out' | t }}
-              {%- endif -%}
-          </span>
+        class="product-form__submit button product-add-to-cart-button  {% if block.settings.show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+        {% if product.selected_or_first_available_variant.available==false %} disabled {% endif %}>
+        <span>
+          {%- if product.selected_or_first_available_variant.available -%}
+          ADD TO CART
+          {%- else -%}
+          SOLD OUT
+          {%- endif -%}
+        </span>
       </button>
-  </div>
+      {{ form | payment_button }}
+      {% else %}
+      <a href="/cart" class="product-form__submit button product-add-to-cart-button">View Cart</a>
+      {% endif %}
+    </div>
 
-    {{ form | payment_button }}
+
 
     {%- endform -%}
 

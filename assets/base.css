@@ -2817,6 +2817,36 @@ svg.icon {
   display: none;
 }
 
+.toast {
+  position: fixed;
+  right: 18px;
+  top: 122px;
+  width: max-content;
+  max-width: 100%;
+  pointer-events: none;
+  z-index: 1090;
+  padding: 8px 24px 8px 8px;
+  border-radius: var(--border-radius);
+  width: 280px;
+  pointer-events: auto;
+  background-color: rgba(255, 255, 255, 0.85);
+  background-clip: padding-box;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) img;
+  box-shadow-border-radius: 2px;
+}
+.toast img {
+  border-radius: var(--border-radius);
+}
+.toast .toast-body {
+  display: flex;
+  gap: 24px;
+}
+.toast .btn-close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
 .meFilter .filer--overlay {
   position: fixed;
   top: 0;
@@ -3161,45 +3191,38 @@ svg.icon {
 }
 
 .meFitlerMobile {
-  display: flex;
   position: fixed;
-  bottom: 0;
-  z-index: 5;
-  width: 100%;
-  border-radius: var(--border-radius);
-  background: var(--pure-white);
-  max-width: 420px;
   left: 0;
   right: 0;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
 }
 @media (min-width: 768px) {
   .meFitlerMobile {
     margin: 0 auto 18px;
   }
 }
-.meFitlerMobile div {
+.meFitlerMobile #filterButton {
+  display: inline-block;
   cursor: pointer;
-  padding: 18px 8px;
-  flex: 1 0 50%;
+  padding: 18px 22px;
   text-align: center;
   font-size: 14px;
   line-height: normal;
-  display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 50px;
+  background: var(--pure-white);
 }
-.meFitlerMobile div svg {
+.meFitlerMobile #filterButton svg {
   width: 18px;
   height: 18px;
-  margin-right: 4px;
+  margin-right: 8px;
 }
-.meFitlerMobile div.mobileFilterSortBy {
+.meFitlerMobile #filterButton.mobileFilterSortBy {
   border-left: 1px solid var(--border-color);
-}
-.meFitlerMobile div select {
-  outline: 0px;
-  border: 0px;
-  background: transparent;
 }
 
 body.hidden {
