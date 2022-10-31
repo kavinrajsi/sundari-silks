@@ -351,12 +351,13 @@
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 24px;
+  bottom: 0;
   z-index: 5;
   display: flex;
   justify-content: center;
+  background: var(--pure-white);
   #filterButton {
-    display: inline-block;
+    display: block;
     cursor: pointer;
     padding: 18px 22px;
     text-align: center;
@@ -364,7 +365,7 @@
     line-height: normal;
     justify-content: center;
     align-items: center;
-    border-radius: 50px;
+    width: 100%;
     background: var(--pure-white);
     svg {
       width: 18px;

@@ -2268,12 +2268,12 @@ svg.icon {
 }
 .template-collection .collection-page-header-image {
   overflow: hidden;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   height: 142px;
 }
 @media (min-width: 768px) {
   .template-collection .collection-page-header-image {
-    margin-bottom: 28px;
+    margin-bottom: 16px;
     height: 280px;
   }
 }
@@ -2281,10 +2281,10 @@ svg.icon {
   width: auto;
   height: 142px;
   object-fit: cover;
-  object-position: center;
+  object-position: top center;
   height: 142px;
   object-fit: cover;
-  object-position: center;
+  object-position: top center;
 }
 @media (min-width: 768px) {
   .template-collection .collection-page-header-image img {
@@ -3196,13 +3196,14 @@ svg.icon {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 24px;
+  bottom: 0;
   z-index: 5;
   display: flex;
   justify-content: center;
+  background: var(--pure-white);
 }
 .meFitlerMobile #filterButton {
-  display: inline-block;
+  display: block;
   cursor: pointer;
   padding: 18px 22px;
   text-align: center;
@@ -3210,7 +3211,7 @@ svg.icon {
   line-height: normal;
   justify-content: center;
   align-items: center;
-  border-radius: 50px;
+  width: 100%;
   background: var(--pure-white);
 }
 .meFitlerMobile #filterButton svg {
