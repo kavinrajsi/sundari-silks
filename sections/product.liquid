@@ -66,14 +66,23 @@
     </p>
     <!--product form-->
     {%- form 'product', product, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
-    <!--
-    {{ product.variants | json }}
+
+    <select id="product-select" name="id">
+      {% for variant in product.variants %}
+        <option value="{{ variant.id }}"
+          {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
+        >
+          {{ variant.title }} - {{ variant.price | money }}
+        </option>
+      {% endfor %}
+    </select>
+
     {{ product.variants[0].id }}
     {{ product.variants[1].id }}
     {{ product.variants[2].id }}
     {{ product.variants[3].id }}
     {{ product.variants[4].id }}
-    -->
+
     {%- unless product.has_only_default_variant -%}
     {%- for option in product.options_with_values -%}
     <label for="ProductSelect-option-{{ forloop.index0 }}">
@@ -195,7 +204,19 @@
     </p>
 
     <!-- blouse stitching area -->
-    <div class="mb-3" hidden>
+    <select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js">
+      {% for variant in product.variants %}
+        {% if variant.available %}
+          <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
+            {{ variant.title }}
+          </option>
+        {% else %}
+          <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+        {% endif %}
+      {% endfor %}
+      </select>
+
+    <div class="mb-3">
       <input type="number" class="form-control" name="quantity" id="quantity" value="1" min="1" max="1">
       <input type="text" name="id" value="{{ product.selected_or_first_available_variant.id }}" {% if
         product.selected_or_first_available_variant.available==false %}disabled{% endif %}>
@@ -475,4 +496,30 @@
       {%- endfor -%}
     ]
   }
+</script>
+
+<script>
+  _onSelectChange: function() {
+      var variant = this._getVariantFromOptions();
+
+      this.$container.trigger({
+        type: 'variantChange',
+        variant: variant
+      });
+
+      if (!variant) {
+        return;
+      }
+
+      this._updateMasterSelect(variant);
+      this._updateImages(variant);
+      this._updatePrice(variant);
+      this._updateSKU(variant);
+      this.currentVariant = variant;
+
+      if (this.enableHistoryState) {
+        this._updateHistoryState(variant);
+      }
+    },
+
 </script>

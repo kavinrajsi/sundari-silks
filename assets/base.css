@@ -2872,6 +2872,10 @@ svg.icon {
   color: var(--pure-black);
 }
 
+.product-guide-line {
+  cursor: pointer;
+}
+
 .meFilter .filer--overlay {
   position: fixed;
   top: 0;
@@ -4273,6 +4277,88 @@ div.pswp__img--placeholder,
 
 .pswp--one-slide .pswp__counter {
   display: none;
+}
+
+.page-cart {
+  max-width: 824px;
+  margin: 0 auto;
+  padding-top: var(--Ngap);
+  padding-bottom: var(--Ngap);
+}
+.page-cart .page__title {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  line-height: 1.2222222222;
+  font-size: var(--home-section-title);
+}
+@media (min-width: 768px) {
+  .page-cart .page__title {
+    margin-bottom: 8px;
+  }
+}
+.page-cart .page__decription {
+  border-radius: var(--border-radius);
+  background-color: var(--secondary-color);
+  padding: var(--Ngap);
+  text-align: center;
+  font-family: var(--font-montserrat);
+  line-height: 1.6;
+  line-height: 22px;
+  padding-bottom: 12px;
+  font-size: 16px;
+  padding-bottom: var(--home-section-secondary-title-space);
+  margin-top: var(--home-section-secondary-title-space);
+  margin-bottom: var(--home-section-secondary-title-space);
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .page-cart .page__decription {
+    max-width: initial;
+  }
+}
+.page-cart .cart__items.cart_block {
+  display: grid;
+  gap: 24px;
+}
+.page-cart .cart__items.cart_block .line-item {
+  display: block;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  gap: 24px;
+}
+.page-cart .cart__items.cart_block .line-item__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.page-cart .cart__details.card__block {
+  display: flex;
+  flex-direction: column;
+}
+.page-cart .button.button.page-cart-atbutton {
+  width: 100%;
+  margin: 18px 0;
+  color: var(--pure-white);
+  position: relative;
+  display: block;
+  padding: 14px 28px;
+  line-height: normal;
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+  text-transform: uppercase;
+  font-size: 16px;
+  text-align: center;
+  font-family: var(--font-montserrat);
+  font-weight: 500;
+  font-style: normal;
+  background-color: var(--primary-color);
+  z-index: 1;
+  -webkit-tap-highlight-color: initial;
 }
 
 .customer-login {

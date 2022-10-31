@@ -20,14 +20,14 @@ price remove
 </div>
 <div class="line-item__details">
   <h2 class="line-item__title">
-    {{line_item.product.title}} <hr>
-    {{line_item.variant_id}} <hr>
+    {{line_item.product.title}}
+    <!-- {{line_item.variant_id}} <hr>
     {{line_item.id}} <hr>
-    {{line_item.product_id}} <hr>
+    {{line_item.product_id}} <hr> -->
   </h2>
-  {%- unless line_item.variant.title contains 'Default' -%}
+  <!-- {%- unless line_item.variant.title contains 'Default' -%}
     <p>{{ line_item.variant.title }}</p>
-  {%- endunless -%}
+  {%- endunless -%} -->
 
 
   {% for option in line_item.options_with_values %}
