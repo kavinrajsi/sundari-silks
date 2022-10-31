@@ -85,6 +85,11 @@
         &[open] summary {
           background-color: var(--secondary-color);
         }
+        &:last-child{
+          div{
+            border-bottom: 0;
+          }
+        }
       }
 
       .filter-group-display {
@@ -98,9 +103,17 @@
 
         .filter-group-display__list {
           li {
+            label{
             display: block;
             padding: 8px;
             text-align: left;
+            &:has(input[disabled]) {
+              text-decoration: line-through;
+              opacity: 0.2;
+              cursor: not-allowed;
+              display: none;
+            }
+            }
             @supports (-webkit-appearance: none) or (-moz-appearance: none) {
               input[type="checkbox"],
               input[type="radio"] {
@@ -245,7 +258,9 @@
         }
       }
     }
+
     .filter--footer {
+      border-top: 1px solid var(--border-color);
       position: relative;
       bottom: 0;
       width: 100%;
@@ -253,7 +268,6 @@
       text-align: center;
       .filter-group-display__submit {
         display: flex;
-        // gap: 4px;
       }
 
       .active-filters__clear,

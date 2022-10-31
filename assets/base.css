@@ -436,7 +436,8 @@ summary::marker {
   --border-color: #e8e8e1;
   --background-color: #fef1e1;
   --primary-color: #1d5d31;
-  --secondary-color: #fdd933;
+  --secondary-color: rgb(245, 130, 32);
+  --orange-color: #fdd933;
   --border-radius: 4px;
   --shadow-8dp: 0px 8px 10px rgba(0, 0, 0, 0.14),
     0px 3px 14px rgba(0, 0, 0, 0.12), 0px 4px 5px rgba(0, 0, 0, 0.2);
@@ -2897,6 +2898,9 @@ svg.icon {
 .meFilter .fitler--wrapper form.filter-form .filter-group[open] summary {
   background-color: var(--secondary-color);
 }
+.meFilter .fitler--wrapper form.filter-form .filter-group:last-child div {
+  border-bottom: 0;
+}
 .meFilter .fitler--wrapper form.filter-form .filter-group-display {
   flex: 1 0 50%;
   min-width: 50%;
@@ -2905,10 +2909,16 @@ svg.icon {
   left: 50%;
   overflow-y: scroll;
 }
-.meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li {
+.meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li label {
   display: block;
   padding: 8px;
   text-align: left;
+}
+.meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li label:has(input[disabled]) {
+  text-decoration: line-through;
+  opacity: 0.2;
+  cursor: not-allowed;
+  display: none;
 }
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
   .meFilter .fitler--wrapper form.filter-form .filter-group-display .filter-group-display__list li input[type=checkbox],
@@ -3051,6 +3061,7 @@ svg.icon {
   padding-right: 4px;
 }
 .meFilter .fitler--wrapper .filter--footer {
+  border-top: 1px solid var(--border-color);
   position: relative;
   bottom: 0;
   width: 100%;
