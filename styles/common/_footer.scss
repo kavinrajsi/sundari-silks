@@ -4,7 +4,8 @@
 
 footer {
   background: rgba(245, 222, 201, 0.36);
-  // padding-bottom: 68px;
+  padding: 20px 0px;
+  margin-bottom: 40px;
   @media (min-width: 576px) {
     padding-top: 48px;
     padding-bottom: 0;
@@ -14,7 +15,6 @@ footer {
     margin-left: auto;
     margin-right: auto;
     justify-content: space-around;
-    display: none;
     gap: 28px 8px;
     grid-template-columns: repeat(1, 1fr);
     padding: 0px 8px;
@@ -46,14 +46,20 @@ footer {
   h4 {
     font-family: var(--font-montserrat);
     font-style: normal;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 16px;
     line-height: 150%;
     color: #000000;
-    margin-bottom: 16px;
+    margin-top: 16px;
+    border-top: 1px solid var(--border-color);
+    padding-bottom: 8px;
   }
   .menu {
     &-link {
+      display: inline-block;
+      padding-right: 8px;
+      border-right: 1px solid var(--border-color);
+      margin-right: 8px;
       a {
         margin-bottom: 12px;
         font-family: var(--font-montserrat);
@@ -99,4 +105,9 @@ footer {
       color: inherit;
     }
   }
+}
+
+
+.footer-link h4{
+  border-top: 0px;
 }
