@@ -2923,7 +2923,7 @@ svg.icon {
   margin-left: 4px;
 }
 .meFilter .fitler--wrapper form.filter-form .filter-group summary:hover div {
-  background-color: var(--secondary-color);
+  background-color: #e6e6e6;
 }
 .meFilter .fitler--wrapper form.filter-form .filter-group[open] summary {
   background-color: var(--secondary-color);
