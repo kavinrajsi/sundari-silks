@@ -87,6 +87,7 @@ body:not(.template-index) {
 
   // cta
   &-cta {
+    display: none;
     position: absolute;
     bottom: -60px;
     background: rgba(255, 255, 255, 0.8);
