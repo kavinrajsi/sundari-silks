@@ -2280,15 +2280,15 @@ svg.icon {
   width: auto;
   height: 142px;
   object-fit: cover;
-  object-position: top center;
+  object-position: left center;
   height: 142px;
-  object-fit: cover;
-  object-position: top center;
 }
 @media (min-width: 768px) {
   .template-collection .collection-page-header-image img {
     width: 100%;
     height: 280px;
+    object-fit: cover;
+    object-position: top center;
   }
 }
 .template-collection .collection-page-header p {
