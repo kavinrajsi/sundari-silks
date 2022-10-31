@@ -3145,14 +3145,10 @@ svg.icon {
   justify-content: flex-start;
   margin-right: 40px;
 }
-.meFilter-active .active-filters__clear {
-  display: none;
-}
 .meFilter-active .active-filters__remove-filter,
 .meFilter-active .active-filters__clear {
   flex: 1 0 auto;
   font-size: 12px;
-  display: inline-block;
   background: var(--secondary-color);
   margin-bottom: var(--Ngap);
   margin-right: 4px;
@@ -3189,20 +3185,21 @@ svg.icon {
   background: var(--border-color);
   display: inline-block;
 }
+.meFilter-active .active-filters__remove-filter {
+  display: inline-block;
+}
+.meFilter-active .active-filters__clear {
+  display: none;
+}
 
 .meFitlerMobile {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 24px;
   z-index: 5;
   display: flex;
   justify-content: center;
-}
-@media (min-width: 768px) {
-  .meFitlerMobile {
-    margin: 0 auto 18px;
-  }
 }
 .meFitlerMobile #filterButton {
   display: inline-block;

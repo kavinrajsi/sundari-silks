@@ -64,31 +64,26 @@
     <p class="product-notice-content {% for collection in product.collections%} {{collection.title}} {% endfor %}">
       Our artisanal silver jewellery collection is currently available for shipment within INDIA.
     </p>
-    <!-- TODO: Begin -- Need to add link this for size chart -->
-    <div hidden>
-      {% assign text = product | json %}
-      {% assign objArr = text | split: ',' %}
-      {% assign keyArr = ''%}
-      {% assign valArr = ''%}
-      {% for obj in objArr %}
-      {% assign key = obj | split: ':' | first %}
-      {% assign value = obj | split: ':' | last %}
-      {% assign keyArr = keyArr| append: ',' | append: key %}
-      {% assign valArr = valArr| append: ',' | append: value %}
-      {% endfor %}
-      {% assign keyArr = keyArr | remove_first: ',' | remove: '{' | remove: '"' | split: ',' %}
-      {% assign valArr = valArr | remove_first: ',' | remove: '}' | remove: '"' | split: ',' %}
-      {% for obj in objArr %}
-      {{keyArr[forloop.index0]}} :{{valArr[forloop.index0]}}
-      <br />
-      {% endfor %}
-    </div>
-    <!-- TODO: END --  Need to add link this for size chart -->
     <!--product form-->
     {%- form 'product', product, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
-    {{product.variants | json }}
+    <!-- {{ product.variants | json }} -->
+    {{ product.variants[0].id }}
+    {{ product.variants[1].id }}
+    {{ product.variants[2].id }}
+    {{ product.variants[3].id }}
+    {{ product.variants[4].id }}
     {%- unless product.has_only_default_variant -%}
     {%- for option in product.options_with_values -%}
+    <label for="ProductSelect-option-{{ forloop.index0 }}">
+      {{ option.name | escape }}
+    </label>
+    <select id="ProductSelect-{{ forloop.index0 }}" data-index="option{{ forloop.index }}">
+      {%- for value in option.values -%}
+        <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>
+          {{ value | escape }}
+        </option>
+      {%- endfor -%}
+    </select>
     <fieldset class="product-variant-fielset" id="ProductSelect-option-{{ forloop.index0 }}"
       name="{{ option.name | handleize }}">
       <legend>
@@ -137,7 +132,7 @@
         data-color="{{ value }}" style="text-indent: -9999px; background:{{value | downcase | escape | remove:" " }}" {%
         endif %} for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
         <input type="radio" {% if option.selected_value==value %} checked="checked" {% endif %} {% unless
-          variant_label_state %} disabled="disabled" {% endunless %} value="{{ id  }}"
+          variant_label_state %} disabled="disabled" {% endunless %} value="{{ value }}"
           data-index="option{{ forloop.index }}" name="{{ option.name | handleize }}"
           id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
         {% if value == 'Free Size' %}

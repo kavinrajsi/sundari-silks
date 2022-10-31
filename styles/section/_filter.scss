@@ -45,7 +45,6 @@
     transform: translateY(103%);
     -webkit-overflow-scrolling: touch;
     box-shadow: 0 2px 6px #777;
-
     border-radius: var(--border-radius);
     .filter--header {
       display: flex;
@@ -58,7 +57,6 @@
     }
     form.filter-form {
       position: relative;
-
       .filter-group {
         overflow: hidden;
         flex: 1 0 50%;
@@ -71,7 +69,6 @@
             font-size: 16px;
             padding: 8px;
             border-bottom: 1px solid var(--border-color);
-
             span + span {
               margin-left: 4px;
             }
@@ -91,7 +88,6 @@
           }
         }
       }
-
       .filter-group-display {
         flex: 1 0 50%;
         min-width: 50%;
@@ -100,7 +96,6 @@
         left: 50%;
         // max-height: 230px;
         overflow-y: scroll;
-
         .filter-group-display__list {
           li {
             label {
@@ -258,7 +253,6 @@
         }
       }
     }
-
     .filter--footer {
       border-top: 1px solid var(--border-color);
       position: relative;
@@ -269,7 +263,6 @@
       .filter-group-display__submit {
         display: flex;
       }
-
       .active-filters__clear,
       .filter-group-display__submit input {
         flex: 1 0 50%;
@@ -291,7 +284,6 @@
         justify-content: center;
         border-radius: 4px;
       }
-
       .active-filters__clear {
         background-color: transparent;
       }
@@ -314,14 +306,10 @@
     justify-content: flex-start;
     margin-right: 40px;
   }
-  .active-filters__clear {
-    display: none;
-  }
   .active-filters__remove-filter,
   .active-filters__clear {
     flex: 1 0 auto;
     font-size: 12px;
-    display: inline-block;
     background: var(--secondary-color);
     margin-bottom: var(--Ngap);
     margin-right: 4px;
@@ -347,26 +335,26 @@
       justify-content: center;
       align-items: center;
     }
-
     + .active-filters__clear {
       background: var(--border-color);
       display: inline-block;
     }
   }
+  .active-filters__remove-filter {
+    display: inline-block;
+  }
+  .active-filters__clear {
+    display: none;
+  }
 }
-
 .meFitlerMobile {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 24px;
   z-index: 5;
   display: flex;
   justify-content: center;
-  @media (min-width: 768px) {
-    margin: 0 auto 18px;
-  }
-
   #filterButton {
     display: inline-block;
     cursor: pointer;
@@ -388,7 +376,6 @@
     }
   }
 }
-
 body.hidden {
   overflow: hidden;
 }
