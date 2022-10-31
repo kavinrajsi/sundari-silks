@@ -2524,7 +2524,7 @@ svg.icon {
   margin: 18px 0;
   color: var(--pure-white);
   position: relative;
-  display: inline-block;
+  display: block;
   padding: 14px 28px;
   line-height: normal;
   border: 1px solid var(--primary-color);
@@ -2532,7 +2532,6 @@ svg.icon {
   text-transform: uppercase;
   font-size: 16px;
   text-align: center;
-  letter-spacing: 2px;
   font-family: var(--font-playfair);
   font-weight: 500;
   font-style: normal;
@@ -3055,10 +3054,16 @@ svg.icon {
   position: relative;
   bottom: 0;
   width: 100%;
-  padding: 16px;
+  padding: 16px 10px;
   text-align: center;
 }
+.meFilter .fitler--wrapper .filter--footer .filter-group-display__submit {
+  display: flex;
+}
+.meFilter .fitler--wrapper .filter--footer .active-filters__clear,
 .meFilter .fitler--wrapper .filter--footer .filter-group-display__submit input {
+  flex: 1 0 50%;
+  min-width: 50%;
   font-size: 16px;
   padding: 14px 20px !important;
   color: var(--pure-black);
@@ -3071,11 +3076,13 @@ svg.icon {
   border: 1px solid transparent;
   border-radius: 0;
   text-transform: uppercase;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 4px;
+}
+.meFilter .fitler--wrapper .filter--footer .active-filters__clear {
+  background-color: transparent;
 }
 
 .meFilter-active {

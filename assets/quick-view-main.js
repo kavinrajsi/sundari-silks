@@ -47,6 +47,8 @@ if (productInfoAnchors.length > 0) {
   });
 }
 
+
+
 var modalAddToCartForm = document.querySelector("#addToCartForm");
 
 let err = "";

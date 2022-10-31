@@ -249,10 +249,17 @@
       position: relative;
       bottom: 0;
       width: 100%;
-      padding: 16px;
+      padding: 16px 10px;
       text-align: center;
+      .filter-group-display__submit {
+        display: flex;
+        // gap: 4px;
+      }
+
+      .active-filters__clear,
       .filter-group-display__submit input {
-        // margin-top: 12px;
+        flex: 1 0 50%;
+        min-width: 50%;
         font-size: 16px;
         padding: 14px 20px !important;
         color: var(--pure-black);
@@ -265,11 +272,14 @@
         border: 1px solid transparent;
         border-radius: 0;
         text-transform: uppercase;
-        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 4px;
+      }
+
+      .active-filters__clear {
+        background-color: transparent;
       }
     }
   }
