@@ -85,8 +85,8 @@
         &[open] summary {
           background-color: var(--secondary-color);
         }
-        &:last-child{
-          div{
+        &:last-child {
+          div {
             border-bottom: 0;
           }
         }
@@ -103,16 +103,16 @@
 
         .filter-group-display__list {
           li {
-            label{
-            display: block;
-            padding: 8px;
-            text-align: left;
-            &:has(input[disabled]) {
-              text-decoration: line-through;
-              opacity: 0.2;
-              cursor: not-allowed;
-              display: none;
-            }
+            label {
+              display: block;
+              padding: 8px;
+              text-align: left;
+              &:has(input[disabled]) {
+                text-decoration: line-through;
+                opacity: 0.2;
+                cursor: not-allowed;
+                display: none;
+              }
             }
             @supports (-webkit-appearance: none) or (-moz-appearance: none) {
               input[type="checkbox"],
@@ -299,6 +299,8 @@
   }
 }
 .meFilter-active {
+  width: 100%;
+  overflow-x: scroll;
   display: flex;
   justify-content: space-between;
   margin-left: var(--Ngap);
@@ -307,22 +309,33 @@
     margin-left: 60px;
     margin-right: 60px;
   }
+  .active-filters {
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 40px;
+  }
   .active-filters__clear {
     display: none;
   }
-  .active-filters__remove-filter {
-    padding: 8px 12px;
-    margin-right: 8px;
+  .active-filters__remove-filter,
+  .active-filters__clear {
+    flex: 1 0 auto;
+    font-size: 12px;
     display: inline-block;
     background: var(--secondary-color);
+    margin-bottom: var(--Ngap);
+    margin-right: 4px;
+    padding: 4px 6px;
     border-radius: 20px;
-    display: inline-block;
-    margin-bottom: 40px;
+    @media (min-width: 768px) {
+      border-radius: 20px;
+      margin-right: 8px;
+      padding: 8px 12px;
+    }
     &:hover {
       text-decoration: line-through;
     }
     .iconClose {
-      // background: var(--pure-white);
       padding: 4px;
       border-radius: 25px;
       width: 22px;
@@ -336,11 +349,7 @@
     }
 
     + .active-filters__clear {
-      margin-bottom: 40px;
-      padding: 8px 16px;
-      display: inline-block;
       background: var(--border-color);
-      border-radius: 20px;
       display: inline-block;
     }
   }
