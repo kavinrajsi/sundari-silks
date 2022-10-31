@@ -295,11 +295,11 @@
   overflow-x: scroll;
   display: flex;
   justify-content: space-between;
-  margin-left: var(--Ngap);
-  margin-right: var(--Ngap);
+  padding-left: var(--Ngap);
+  padding-right: var(--Ngap);
   @media (min-width: 1364px) {
-    margin-left: 60px;
-    margin-right: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
   }
   .active-filters {
     display: flex;
@@ -371,9 +371,6 @@
       width: 18px;
       height: 18px;
       margin-right: 8px;
-    }
-    &.mobileFilterSortBy {
-      border-left: 1px solid var(--border-color);
     }
   }
 }
