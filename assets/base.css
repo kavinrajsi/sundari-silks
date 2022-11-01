@@ -4350,6 +4350,10 @@ div.pswp__img--placeholder,
   margin-bottom: 12px;
   display: flex;
 }
+.page-cart .cart_wrapper .cart__items.cart_block .line-item:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
 .page-cart .cart_wrapper .cart__items.cart_block .lin-item__image-wrapper {
   flex: 1 0 80px;
   min-width: 80px;

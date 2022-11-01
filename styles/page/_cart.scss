@@ -61,6 +61,10 @@
         padding-bottom: 12px;
         margin-bottom: 12px;
         display: flex;
+        &:last-child{
+          border-bottom: 0;
+          margin-bottom: 0;
+        }
       }
       .lin-item__image-wrapper {
         flex: 1 0 80px;
@@ -109,6 +113,7 @@
         justify-content: space-between;
       }
     }
+
     .cart__details.card__block {
       position: sticky;
       top: 120px;
