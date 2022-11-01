@@ -58,7 +58,7 @@
 
   //
   // var fixmeTop = $(".meFitlerMobile").offset().top; // get initial position of the element
-  var fixmeTop = 122; // get initial position of the element
+  var fixmeTop = 164; // get initial position of the element
 
   $(window).scroll(function () {
     // assign scroll event listener
