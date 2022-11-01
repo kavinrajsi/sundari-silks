@@ -2904,9 +2904,8 @@ svg.icon {
 .meFilter .fitler--wrapper {
   position: fixed;
   margin: 0 auto;
-  left: 0;
   right: 0;
-  bottom: 0;
+  top: 0;
   bottom: 0;
   width: 100%;
   max-width: 420px;
@@ -3224,17 +3223,13 @@ svg.icon {
 }
 
 .meFitlerMobile {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
   z-index: 5;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   background: var(--pure-white);
 }
 .meFitlerMobile #filterButton {
-  display: block;
   cursor: pointer;
   padding: 18px 22px;
   text-align: center;

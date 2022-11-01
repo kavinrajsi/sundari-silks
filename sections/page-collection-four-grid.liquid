@@ -18,9 +18,11 @@
 </div>
 
 <div class="fixedElement section-{{ section.id }}-padding">
+
+  {{ collection.all_products_count }} total products in this collection
   {% render 'filter' %}
   <section>
-    {% paginate collection.products by 27 %}
+    {% paginate collection.products by 28 %}
     <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="3" collection-list-desktop="4">
       {% for product in collection.products %}
       {% render 'product-card', product:product %}

@@ -34,9 +34,9 @@
                     style="background:{{filter_value.value | downcase | remove:" " }}" {% endif %}
                     id="Filter-{{ filter.param_name }}-{{ forloop.index }}" {% if filter_value.active -%}checked{%-
                     endif %} {% if filter_value.count==0 and filter_value.active==false -%}disabled{%- endif %}>
-                    {{ filter_value.label }}
-                    ({{ filter_value.count }})
-                  </label>
+                  {{ filter_value.label }}
+                  ({{ filter_value.count }})
+                </label>
               </li>
               {%- endfor -%}
             </ul>
@@ -79,6 +79,7 @@
   </div>
 </div>
 <div class="meFitlerMobile">
+
   <div id="filterButton">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
       stroke-linecap="round" stroke-linejoin="round" class="feather feather-sliders">
@@ -93,6 +94,22 @@
       <line x1="17" y1="16" x2="23" y2="16"></line>
     </svg>
     Filter By
+  </div>
+  <div id="sortButton">
+    <select id="sort-by">
+      {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+
+      {% for option in collection.sort_options %}
+
+      {% unless option.value contains 'best-selling' or option.value contains 'manual' or option.value contains
+      'title-ascending' or option.value contains 'title-descending' or option.value contains 'created-ascending' or
+      option.value contains 'created-descending' %}
+      <option value="{{ option.value }}" {% if sort_by==option.value %} selected="selected" {% endif %}>{{ option.name
+        }}</option>
+      {% endunless %}
+      {% endfor %}
+
+    </select>
   </div>
 </div>
 <div class="meFilter-active">
@@ -121,3 +138,27 @@
     </div>
   </form>
 </div>
+<script>
+  Shopify.queryParams = {};
+
+  // Preserve existing query parameters
+  if (location.search.length) {
+    var params = location.search.substr(1).split('&');
+
+    for (var i = 0; i < params.length; i++) {
+      var keyValue = params[i].split('=');
+
+      if (keyValue.length) {
+        Shopify.queryParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+      }
+    }
+  }
+
+  // Update sort_by query parameter on select change
+  document.querySelector('#sort-by').addEventListener('change', function (e) {
+    var value = e.target.value;
+
+    Shopify.queryParams.sort_by = value;
+    location.search = new URLSearchParams(Shopify.queryParams).toString();
+  });
+</script>
