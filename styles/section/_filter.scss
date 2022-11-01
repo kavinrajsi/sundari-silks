@@ -346,11 +346,48 @@
   }
 }
 .meFitlerMobile {
-  z-index: 5;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: center;
-  background: var(--pure-white);
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: #f7f7f5;
+  box-shadow: 1px 1px #d6d6d4, -1px -1px #d6d6d4;
+  z-index: 2;
+
+  .filterCardToggle {
+    display: flex;
+    border-left: none;
+    width: 115px;
+    border-right: 1px solid var(--border-color);
+    white-space: nowrap;
+    .Icon {
+      display: inline-block;
+      fill: currentColor;
+      vertical-align: middle;
+      stroke-width: 1px;
+      background: none;
+      pointer-events: none;
+    }
+    .CollectionToolbar__LayoutType svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  .filteAction {
+    display: flex;
+    border-left: 1px solid var(--border-color);
+    white-space: nowrap;
+    select {
+      cursor: pointer;
+      padding: 18px 22px;
+      text-align: center;
+      font-size: 14px;
+      line-height: normal;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+    }
+  }
   #filterButton {
     cursor: pointer;
     padding: 18px 22px;
@@ -359,8 +396,7 @@
     line-height: normal;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    background: var(--pure-white);
+    background: transparent;
     svg {
       width: 18px;
       height: 18px;

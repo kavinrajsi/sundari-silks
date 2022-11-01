@@ -57,6 +57,32 @@
   });
 
   //
+  // var fixmeTop = $(".meFitlerMobile").offset().top; // get initial position of the element
+  var fixmeTop = 122; // get initial position of the element
+
+  $(window).scroll(function () {
+    // assign scroll event listener
+
+    var currentScroll = $(window).scrollTop(); // get current position
+    console.log(fixmeTop);
+    if (currentScroll >= fixmeTop) {
+      // apply position: fixed if you
+      $(".meFitlerMobile").css({
+        // scroll to that element or below it
+        position: "fixed",
+        top: "112px",
+        left: "0",
+      });
+    } else {
+      // apply position: static
+      $(".meFitlerMobile").css({
+        // if you scroll above it
+        position: "static",
+      });
+    }
+  });
+
+  //
 
   $('.product-variant-fielset input[type="radio"]').click(function () {
     var productVariant = "";
@@ -75,13 +101,19 @@
               console.log(cartItem.variant_title);
               console.log(optionSelectVal);
               if (cartItem.variant_title == optionSelectVal) {
-                $(".product-form__viewcart.product-form__viewcart-default").attr("hidden",true);
-                $(".product-form__viewcart.product-form__viewcart-secondary").attr("hidden", false);
+                $(
+                  ".product-form__viewcart.product-form__viewcart-default"
+                ).attr("hidden", true);
+                $(
+                  ".product-form__viewcart.product-form__viewcart-secondary"
+                ).attr("hidden", false);
                 $(".special__product-form__submit").attr("hidden", true);
-                console.log('yes');
-              }else{
-                console.log('no');
-                $(".product-form__viewcart.product-form__viewcart-default").attr("hidden",true);
+                console.log("yes");
+              } else {
+                console.log("no");
+                $(
+                  ".product-form__viewcart.product-form__viewcart-default"
+                ).attr("hidden", true);
                 $(".product-form__viewcart").attr("hidden", true);
                 $(".special__product-form__submit").attr("hidden", false);
               }
@@ -143,9 +175,9 @@
             .html(cart_list.join(""))
             .delay(2000)
             .fadeOut("slow");
-          $(".product-form__buttons .product-form__viewcart.product-form__viewcart-secondary").removeAttr(
-            "hidden"
-          );
+          $(
+            ".product-form__buttons .product-form__viewcart.product-form__viewcart-secondary"
+          ).removeAttr("hidden");
           $(".product-form__buttons button").attr("hidden", true);
 
           update_cart();

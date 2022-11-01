@@ -18,8 +18,6 @@
 </div>
 
 <div class="fixedElement section-{{ section.id }}-padding">
-
-  {{ collection.all_products_count }} total products in this collection
   {% render 'filter' %}
   <section>
     {% paginate collection.products by 28 %}
