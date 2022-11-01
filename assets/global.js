@@ -56,6 +56,49 @@
     $(this).children(".cd-secondary-nav").removeClass("active");
   });
 
+  //
+
+  $('.product-variant-fielset input[type="radio"]').click(function () {
+    var productVariant = "";
+    var optionSelect = $(this).attr("id");
+    var optionSelectVal = $(this).val();
+
+    $("#productSelect option").each(function () {
+      dataCircleValue = $(this).val();
+      dataCircle = $(this).attr("data-circle");
+      if (dataCircle == optionSelect) {
+        $(".jselecteValue").val(dataCircleValue);
+
+        $.getJSON("/cart.js", function (cart) {
+          $.each(cart.items, function (index, cartItem) {
+            if (cartItem.variant_id == dataCircleValue) {
+              console.log(cartItem.variant_title);
+              console.log(optionSelectVal);
+              if (cartItem.variant_title == optionSelectVal) {
+                $(".product-form__viewcart.product-form__viewcart-default").attr("hidden",true);
+                $(".product-form__viewcart.product-form__viewcart-secondary").attr("hidden", false);
+                $(".special__product-form__submit").attr("hidden", true);
+                console.log('yes');
+              }else{
+                console.log('no');
+                $(".product-form__viewcart.product-form__viewcart-default").attr("hidden",true);
+                $(".product-form__viewcart").attr("hidden", true);
+                $(".special__product-form__submit").attr("hidden", false);
+              }
+            }
+          });
+        });
+      }
+    });
+  });
+  //
+
+  $("#productSelect").on("change", function () {
+    productPrice = $("#productSelect option:selected").val();
+    console.log(productPrice);
+    // productVariant = '{{product.selected_or_first_available_variant.title}}';
+  });
+
   $(".product-form__buttons .product-form__submit")
     .unbind()
     .click(function (e) {
@@ -72,38 +115,49 @@
           return response.json();
         })
         .then((data) => {
-          let pushData = (data);
-          console.log('data 2 ' + pushData);
+          let pushData = data;
+          console.log("data 2 " + pushData);
           var cart_list = [];
           cart_list.push(
-          '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">'+
-          '<div class="toast-body" >'+
-          '<img src="'+pushData.featured_image.url+'&width=48" alt="'+ pushData.featured_image.alt+'" width="48" height="64">'+
-           '<div>'+
-            '<p>'+pushData.title+' is added to bag  </p>'+
-          '</div>'+
-            '<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close">'+
-              '<svg width="24" height="24" class="closeMenu">'+
-                '<use href="#close" />'+
-              '</svg>'+
-            '</button>'+
-          '</div>'+
-        '</div>');
-        $('.productToaster').html(cart_list.join('')).delay(2000).fadeOut('slow');
-        $('.product-form__buttons .product-form__viewcart').removeAttr('hidden');
-        $('.product-form__buttons button').attr("hidden",true);
+            '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">' +
+              '<div class="toast-body" >' +
+              '<img src="' +
+              pushData.featured_image.url +
+              '&width=48" alt="' +
+              pushData.featured_image.alt +
+              '" width="48" height="64">' +
+              "<div>" +
+              "<p>" +
+              pushData.title +
+              " is added to bag  </p>" +
+              "</div>" +
+              '<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close">' +
+              '<svg width="24" height="24" class="closeMenu">' +
+              '<use href="#close" />' +
+              "</svg>" +
+              "</button>" +
+              "</div>" +
+              "</div>"
+          );
+          $(".productToaster")
+            .html(cart_list.join(""))
+            .delay(2000)
+            .fadeOut("slow");
+          $(".product-form__buttons .product-form__viewcart.product-form__viewcart-secondary").removeAttr(
+            "hidden"
+          );
+          $(".product-form__buttons button").attr("hidden", true);
 
           update_cart();
           // $.getJSON("/cart.js", function (cart) {
-            // alert("There are now " + cart.item_count + " items in the cart.");
-            // console.log("data 1: " + JSON.stringify(cart));
+          // alert("There are now " + cart.item_count + " items in the cart.");
+          // console.log("data 1: " + JSON.stringify(cart));
           // });
           var cartItemCounter = document.querySelector(".cart-count");
           $.ajax({
             url: "/cart.js",
             dataType: "json",
           }).done(function (data) {
-
             var newCount = data.item_count;
             if (newCount > 0) {
               $(".cart-count").removeAttr("hidden");
