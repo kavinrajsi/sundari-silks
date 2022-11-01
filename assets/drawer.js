@@ -95,7 +95,7 @@ var drawer = function () {
             });
             document.getElementById("cart__drawer_items").innerHTML = daad;
           }
-          // document.getElementById('cart__total_price').innerHTML = '<p><span class="money" data-currency-inr="'+data.currency+'.'+Shopify.formatMoney(data.total_price)+'">'+ data.currency +'. '+ Shopify.formatMoney(data.total_price) + '</span></p>';
+          document.getElementById('cart__total_price').innerHTML = '<p><span class="money" data-currency-inr="'+data.currency+'.'+Shopify.formatMoney(data.original_total_price)+'">'+ data.currency +'. '+ Shopify.formatMoney(data.original_total_price) + '</span></p>';
         });
     }
     if (close) {
