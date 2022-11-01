@@ -435,17 +435,32 @@
         <dt> Wash Care </dt>
         <dd> {{ product.metafields.custom.wash_care_tips.value }} </dd>
       </dl>
+      {% else %}
+      <dl>
+        <dt> Wash Care </dt>
+        <dd> Normal Wash </dd>
+      </dl>
       {% endif %}
       {% if product.metafields.custom.delivery_shipping.value != blank %}
       <dl>
         <dt> Delivery Shipping </dt>
         <dd> {{ product.metafields.custom.delivery_shipping.value }} </dd>
       </dl>
+      {% else %}
+      <dl>
+        <dt> Delivery Shipping </dt>
+        <dd> This product will take 3-4 days to be shipped within India and 7-9 days for International Shipping.</dd>
+      </dl>
       {% endif %}
       {% if product.metafields.custom.note.value != blank %}
       <dl>
         <dt> Note </dt>
         <dd> {{ product.metafields.custom.note.value }} </dd>
+      </dl>
+      {% else %}
+      <dl>
+        <dt> Note </dt>
+        <dd> There might be slight variations in color due to monitor resolution. </dd>
       </dl>
       {% endif %}
     </div>
