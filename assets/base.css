@@ -3222,6 +3222,12 @@ svg.icon {
   display: none;
 }
 
+@media (min-width: 768px) {
+  .fixedElement {
+    padding-top: 40px;
+  }
+}
+
 .meFitlerMobile {
   position: fixed;
   bottom: 0;

@@ -345,6 +345,13 @@
     display: none;
   }
 }
+.fixedElement{
+
+  @media(min-width: 768px){
+
+     padding-top: 40px;
+  }
+}
 .meFitlerMobile {
   position: fixed;
   bottom: 0;
