@@ -69,6 +69,7 @@ var drawer = function () {
         .then((resp) => resp.json())
         .then((data) => {
           let daad = "";
+          console.log(data);
           if (data.items.length > 0) {
             data.items.forEach(function (product, index) {
               daad +=
@@ -87,28 +88,12 @@ var drawer = function () {
                 Shopify.formatMoney(product.price) +
                 '">' +
                 Shopify.formatMoney(product.price) +
-                '</span></p><p class="delete"><a class="remove removeCta" href="/cart/change?line=' +
+                '</span></p><p class="delete"><a class="remove removeCta" data-variant="'+product.variant_id+'" href="/cart/change?line=' +
                 index +
                 1 +
                 '&amp;quantity=1"><svg width="16" height="16"> <use href="#trash-mini" /> </svg> Remove</a></p></div></div>';
             });
             document.getElementById("cart__drawer_items").innerHTML = daad;
-          } else {
-            $(".cart-count").text(data.items.length);
-            $(".cart-count").text(data.items.length);
-
-            if (data.items.length == 0) {
-              $(".cart-item-no").removeAttr("hidden");
-              $(".cart-count").attr("hidden", "hidden");
-            }
-            $(".cart-item-count").text(data.items.length);
-
-            document
-              .querySelector(".cartpopup-button-alter")
-              .setAttribute("disabled", "disabled");
-            document.querySelector(
-              ".cartpopup-button-alter"
-            ).style.pointerEvents = "none";
           }
           // document.getElementById('cart__total_price').innerHTML = '<p><span class="money" data-currency-inr="'+data.currency+'.'+Shopify.formatMoney(data.total_price)+'">'+ data.currency +'. '+ Shopify.formatMoney(data.total_price) + '</span></p>';
         });
