@@ -1,6 +1,15 @@
 blog  background color 
 just dropped active background color 
 
+menu image - 480 x 480 px
+banner desktop - 2560 × 800 px
+banner mobile - 768 × 568 px
+curated collection - 352 × 277 px
+shop the look - 2440 × 849 px
+arthishtam - 168 × 168 px
+
+
+
 Online Save and Buy
 Members are required to pay for 11 months regularly, without fail.
 
