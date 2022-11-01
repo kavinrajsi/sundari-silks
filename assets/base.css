@@ -3223,7 +3223,8 @@ svg.icon {
 }
 
 .meFitlerMobile {
-  position: sticky;
+  position: fixed;
+  bottom: 0;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -3232,6 +3233,11 @@ svg.icon {
   z-index: 2;
   padding-left: var(--Ngap);
   padding-right: var(--Ngap);
+}
+@media (min-width: 768px) {
+  .meFitlerMobile {
+    position: sticky;
+  }
 }
 @media (min-width: 1364px) {
   .meFitlerMobile {

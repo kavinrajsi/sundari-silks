@@ -346,7 +346,11 @@
   }
 }
 .meFitlerMobile {
+  position: fixed;
+  bottom: 0;
+  @media(min-width: 768px){
   position: sticky;
+  }
   display: flex;
   justify-content: space-between;
   width: 100%;

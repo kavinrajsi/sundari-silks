@@ -57,6 +57,8 @@
   });
 
   //
+  if ($(window).width() > 764) {
+
   // var fixmeTop = $(".meFitlerMobile").offset().top; // get initial position of the element
   var fixmeTop = 164; // get initial position of the element
 
@@ -81,6 +83,7 @@
       });
     }
   });
+}
 
   //
 
