@@ -19,7 +19,7 @@
       <div class="cart-popup">
         <form action="/cart" method="post" novalidate>
           <div class="cartpopup-body " id="cart__drawer_items">
-
+            {% comment %}
             {% for item in cart.items %}
             <div class="cartpopup-item ">
               <div class="cartpopup-item-image">
@@ -75,8 +75,8 @@
                 </span>
               </div>
             </div>
-            <!-- Each item -->
             {% endfor %}
+            {% endcomment %}
           </div>
         </form>
       </div>

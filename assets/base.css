@@ -3738,7 +3738,6 @@ body.hidden {
   display: block;
 }
 .drawer__content .cart-popup .cartpopup-item .delete {
-  padding: 8px 0 0;
   display: flex;
 }
 .drawer__content .cart-popup .cartpopup-item .delete a {

@@ -72,7 +72,7 @@ var drawer = function () {
           if (data.items.length > 0) {
             data.items.forEach(function (product, index) {
               daad +=
-                '<div class="cart__item"><div class="card__item-image"><img src="' +
+                '<div class="cart__item cartpopup-item"><div class="card__item-image"><img src="' +
                 product.featured_image.url +
                 '" alt="' +
                 product.featured_image.alt +
@@ -87,7 +87,7 @@ var drawer = function () {
                 Shopify.formatMoney(product.price) +
                 '">' +
                 Shopify.formatMoney(product.price) +
-                '</span></p><p class=""><a class="removeCta" href="/cart/change?line=' +
+                '</span></p><p class="delete"><a class="remove removeCta" href="/cart/change?line=' +
                 index +
                 1 +
                 '&amp;quantity=1"><svg width="16" height="16"> <use href="#trash-mini" /> </svg> Remove</a></p></div></div>';
@@ -143,177 +143,178 @@ drawer();
 //
 //
 //
-//
-$('.varients-item').on('click', function () {
-  var obj = $(this);
-  var variants_id = $(this).attr("data-variant");
-  $.ajax({
-    type: 'POST',
-    url: '/cart/add.js',
-    data: {
-      quantity: 1,
-      id: variants_id
-    },
-    dataType: 'json',
-    success: function (data) {
-      $.ajax({
-        type: 'GET',
-        dataType: 'jsonp',
-        url: '/cart.json',
-        success: function (cart) {
 
-          var item_count = cart['item_count'];
-          var total_price = cart['total_price'] / 100;
+// $('.varients-item').on('click', function () {
+//   var obj = $(this);
+//   var variants_id = $(this).attr("data-variant");
+//   $.ajax({
+//     type: 'POST',
+//     url: '/cart/add.js',
+//     data: {
+//       quantity: 1,
+//       id: variants_id
+//     },
+//     dataType: 'json',
+//     success: function (data) {
+//       $.ajax({
+//         type: 'GET',
+//         dataType: 'jsonp',
+//         url: '/cart.json',
+//         success: function (cart) {
 
-          //If there are items in cart
-          if (item_count > 0) {
-            // cart count
-            $('.cart-item-count').text(item_count);
+//           var item_count = cart['item_count'];
+//           var total_price = cart['total_price'] / 100;
 
-            // mini cart data
-            $('.cart-popup').attr('id', 'cartPopup');
-            $('.cartpopup-total .price').text('£' + total_price.toFixed(2));
+//           //If there are items in cart
+//           if (item_count > 0) {
+//             // cart count
+//             $('.cart-item-count').text(item_count);
+
+//             // mini cart data
+//             $('.cart-popup').attr('id', 'cartPopup');
+//             $('.cartpopup-total .price').text('£' + total_price.toFixed(2));
 
 
-            var cart_list = [];
+//             var cart_list = [];
 
-            for (var i = 0; i < item_count; i++) {
-              if (cart['items'][i]['id'] != null) {
-                var item_id = cart['items'][i]['id'];
-                var product_title = cart['items'][i]['product_title'];
-                // var product_title = data['items'][i]['title'];
-                var product_handle = cart['items'][i]['handle'];
-                var quantity = cart['items'][i]['quantity'];
-                var line_price = cart['items'][i]['price'] / 100;
-                var url = cart['items'][i]['url'];
-                var image_url = cart['items'][i]['image'];
-                var variants = cart['items'][i]['variant_options'];
+//             for (var i = 0; i < item_count; i++) {
+//               if (cart['items'][i]['id'] != null) {
+//                 var item_id = cart['items'][i]['id'];
+//                 var product_title = cart['items'][i]['product_title'];
+//                 // var product_title = data['items'][i]['title'];
+//                 var product_handle = cart['items'][i]['handle'];
+//                 var quantity = cart['items'][i]['quantity'];
+//                 var line_price = cart['items'][i]['price'] / 100;
+//                 var url = cart['items'][i]['url'];
+//                 var image_url = cart['items'][i]['image'];
+//                 var variants = cart['items'][i]['variant_options'];
 
-                if (product_title == 'Gift Wrap') {
-                  var product_url = product_title;
-                } else {
-                  var product_url = '<a href="' + url + '">' + product_title + '</a>';
-                }
+//                 if (product_title == 'Gift Wrap') {
+//                   var product_url = product_title;
+//                 } else {
+//                   var product_url = '<a href="' + url + '">' + product_title + '</a>';
+//                 }
 
-                var options = [];
-                for (var o = 0; o < variants.length; o++) {
-                  var selected = cart['items'][i]['variant_options'][o];
-                  if (selected !== 'Default Title') {
-                    options.push(selected + '<br>');
-                  }
-                };
-                var selected_options = options.join('');
+//                 var options = [];
+//                 for (var o = 0; o < variants.length; o++) {
+//                   var selected = cart['items'][i]['variant_options'][o];
+//                   if (selected !== 'Default Title') {
+//                     options.push(selected + '<br>');
+//                   }
+//                 };
+//                 var selected_options = options.join('');
 
-                cart_list.push(
-                  '<div class="cartpopup-item ">' +
-                  '<div class="cartpopup-item-image">' +
-                  '<a href="' + url + '">' +
-                  '<img class="img-fluid d-block" src="' + image_url + '"  alt="' + product_title + '" />' +
-                  '</a>' +
-                  '</div>' +
-                  '<div class="cartpopup-item-content ">' +
-                  '<h5>' + product_url + '</h5>' +
-                  '<span class="variant">' + selected_options + '</span>' +
-                  '<span class="price">£' + total_price.toFixed(2) + '</span>' +
-                  '<div class="quantity-box ">' +
-                  '<button class="quantity-button qminus" role="button" type="button" data-variant="' + item_id + '"><i class="fal fa-minus"></i></button>' +
-                  '<input class="quantity-input" type="number" disabled name="updates[]" id="updates_' + item_id + '" value="' + quantity + '" min="1" />' +
-                  '<button class="quantity-button qplus" role="button" type="button" data-variant="' + item_id + '"><i class="fal fa-plus"></i></button>' +
-                  '</div>' +
-                  '<div class="">' +
-                  '<a class="remove" data-cart-remove-id="' + item_id + '" href="/cart/change?line=' + item_count + '&amp;quantity=0">Remove</a>' +
-                  '</div>' +
-                  '</div>' +
-                  '</div>'
-                );
-              } //endif
-            }; // endfor
+//                 cart_list.push(
+//                   '<div class="cartpopup-item ">' +
+//                   '<div class="cartpopup-item-image">' +
+//                   '<a href="' + url + '">' +
+//                   '<img class="img-fluid d-block" src="' + image_url + '"  alt="' + product_title + '" />' +
+//                   '</a>' +
+//                   '</div>' +
+//                   '<div class="cartpopup-item-content ">' +
+//                   '<h5>' + product_url + '</h5>' +
+//                   '<span class="variant">' + selected_options + '</span>' +
+//                   '<span class="price">£' + total_price.toFixed(2) + '</span>' +
+//                   '<div class="quantity-box ">' +
+//                   '<button class="quantity-button qminus" role="button" type="button" data-variant="' + item_id + '"><i class="fal fa-minus"></i></button>' +
+//                   '<input class="quantity-input" type="number" disabled name="updates[]" id="updates_' + item_id + '" value="' + quantity + '" min="1" />' +
+//                   '<button class="quantity-button qplus" role="button" type="button" data-variant="' + item_id + '"><i class="fal fa-plus"></i></button>' +
+//                   '</div>' +
+//                   '<div class="">' +
+//                   '<a class="remove" data-cart-remove-id="' + item_id + '" href="/cart/change?line=' + item_count + '&amp;quantity=0">Remove</a>' +
+//                   '</div>' +
+//                   '</div>' +
+//                   '</div>'
+//                 );
+//               } //endif
+//             }; // endfor
 
-            $('.cartpopup-body').html(cart_list.join(''));
-          }
-        }
-      });
-    }
-  });
-});
+//             $('.cartpopup-body').html(cart_list.join(''));
+//           }
+//         }
+//       });
+//     }
+//   });
+// });
 
-$('.cart-popup .cartpopup-body ').on('click', '.quantity-button.qminus', function () {
-  console.log('minus');
-  if ($(this).next().val() > 1) {
-    var quantityItem = $(this).next().val(+$(this).next().val() - 1);
-  }
-  var vId = $(this).attr("data-variant");
-  var quantityVal = $(this).next().val();
-  $.ajax({
-    type: 'POST',
-    url: '/cart/change.js',
-    dataType: 'json',
-    data: {
-      quantity: quantityVal,
-      id: vId
-    },
-    success: function (data) {
-      $.ajax({
-        type: 'GET',
-        dataType: 'jsonp',
-        url: '/cart.json',
-        success: function (cart) {
-          var item_count = cart['item_count'];
-          var total_price = cart['total_price'] / 100;
-          console.log(item_count);
-          if (item_count > 0) {
-            $('.cart-item-count').text(item_count);
+// $('.cart-popup .cartpopup-body ').on('click', '.quantity-button.qminus', function () {
+//   console.log('minus');
+//   if ($(this).next().val() > 1) {
+//     var quantityItem = $(this).next().val(+$(this).next().val() - 1);
+//   }
+//   var vId = $(this).attr("data-variant");
+//   var quantityVal = $(this).next().val();
+//   $.ajax({
+//     type: 'POST',
+//     url: '/cart/change.js',
+//     dataType: 'json',
+//     data: {
+//       quantity: quantityVal,
+//       id: vId
+//     },
+//     success: function (data) {
+//       $.ajax({
+//         type: 'GET',
+//         dataType: 'jsonp',
+//         url: '/cart.json',
+//         success: function (cart) {
+//           var item_count = cart['item_count'];
+//           var total_price = cart['total_price'] / 100;
+//           console.log(item_count);
+//           if (item_count > 0) {
+//             $('.cart-item-count').text(item_count);
 
-            // mini cart data
-            $('.cart-popup').attr('id', 'cartPopup');
-            $('.cartpopup-total .price').html('<span class="price"><span class="money" data-currency-inr="' + total_price.toFixed(2) + '">' + total_price.toFixed(2) + '</span></span> ');
-          }
-        }
-      });
-    }
-  });
-});
+//             // mini cart data
+//             $('.cart-popup').attr('id', 'cartPopup');
+//             $('.cartpopup-total .price').html('<span class="price"><span class="money" data-currency-inr="' + total_price.toFixed(2) + '">' + total_price.toFixed(2) + '</span></span> ');
+//           }
+//         }
+//       });
+//     }
+//   });
+// });
 
-$('.cart-popup .cartpopup-body').on('click', '.quantity-button.qplus', function () {
-  console.log('olus');
-  $(this).prev().val(+$(this).prev().val() + 1);
-  var vId = $(this).attr("data-variant");
-  var quantityVal = $(this).prev().val();
-  $.ajax({
-    type: 'POST',
-    url: '/cart/add.js',
-    dataType: 'json',
-    data: {
-      quantity: 1,
-      id: vId
-    },
-    success: function (data) {
-      $.ajax({
-        type: 'GET',
-        dataType: 'jsonp',
-        url: '/cart.json',
-        success: function (cart) {
-          var item_count = cart['item_count'];
-          var total_price = cart['total_price'] / 100;
-          console.log(item_count);
-          if (item_count > 0) {
-            $('.cart-item-count').text(item_count);
+// $('.cart-popup .cartpopup-body').on('click', '.quantity-button.qplus', function () {
+//   console.log('olus');
+//   $(this).prev().val(+$(this).prev().val() + 1);
+//   var vId = $(this).attr("data-variant");
+//   var quantityVal = $(this).prev().val();
+//   $.ajax({
+//     type: 'POST',
+//     url: '/cart/add.js',
+//     dataType: 'json',
+//     data: {
+//       quantity: 1,
+//       id: vId
+//     },
+//     success: function (data) {
+//       $.ajax({
+//         type: 'GET',
+//         dataType: 'jsonp',
+//         url: '/cart.json',
+//         success: function (cart) {
+//           var item_count = cart['item_count'];
+//           var total_price = cart['total_price'] / 100;
+//           console.log(item_count);
+//           if (item_count > 0) {
+//             $('.cart-item-count').text(item_count);
 
-            // mini cart data
-            $('.cart-popup').attr('id', 'cartPopup');
-            $('.cartpopup-total .price').html('<span class="price"><span class="money" data-currency-inr="' + total_price.toFixed(2) + '">' + total_price.toFixed(2) + '</span></span> ');
-          }
-        }
-      });
-    }
-  });
-});
+//             // mini cart data
+//             $('.cart-popup').attr('id', 'cartPopup');
+//             $('.cartpopup-total .price').html('<span class="price"><span class="money" data-currency-inr="' + total_price.toFixed(2) + '">' + total_price.toFixed(2) + '</span></span> ');
+//           }
+//         }
+//       });
+//     }
+//   });
+// });
 
 // remove
-$('.removeCta, .cart-popup .cartpopup-body').on('click', '.cartpopup-item .remove', function (e) {
+$(' .cart-popup .cartpopup-body').on('click', '.cartpopup-item .remove', function (e) {
   var obj = $(this);
   e.preventDefault();
   e.stopPropagation();
+  console.log('data' + this );
   var productId = $(this).attr('data-variant');
 
   $.ajax({
