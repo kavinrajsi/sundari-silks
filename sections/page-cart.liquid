@@ -20,19 +20,20 @@
        {% endfor %}
     </div>
     <div class="cart__details card__block">
+      <div class="card_detail-none">
       <label for="CartNote">  Special Instructions For Seller <br> Add special instructions for your order...</label>
       <textarea name="note" id="CartNote">{{ cart.note }}</textarea>
-
+    </div>
+    <div class="cart__action card__block">
       <div class="cart__total">
-        <strong class="cart__total-text">Total:</strong>
+        <strong class="cart__total-text">Sub Total:</strong>
         <span  data-hulkapps-cart-total class="cart__total-price"> {{ cart.total_price | money }}</span>
       </div>
-      <p>Shipping charges will be added at checkout.
-      </p>
+      <p class="cart__total--shippment">Shipping charges will be added at checkout.</p>
       <!-- I would like to receive order information on whatsapp -->
-      <div>
-      {%- comment -%} <button class="button" type="submit"> Update Quantities </button> {%- endcomment -%}
-      <button class="button page-cart-atbutton" type="submit" name="checkout"> Checkout </button>
+      <div class="cart-action-button">
+      <button class="page-cart-atbutton" type="submit" name="checkout"> PROCEED TO CHECKOUT </button>
+    </div>
     </div>
     </div>
   </form>

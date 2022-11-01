@@ -21,6 +21,7 @@ price remove
 <div class="line-item__details">
   <h2 class="line-item__title">
     {{line_item.product.title}}
+
     <!-- {{line_item.variant_id}} <hr>
     {{line_item.id}} <hr>
     {{line_item.product_id}} <hr> -->
@@ -31,10 +32,12 @@ price remove
 
 
   {% for option in line_item.options_with_values %}
+  {% if option.name != "Title" %}
     <div class="line-item__option-block">
-      <div class="line-item__option"> {{ option.name }} </div>
+      <div class="line-item__option"> {{ option.name }} : </div>
       <div class="line-item__value"> {{ option.value }} </div>
     </div>
+    {% endif %}
     {% endfor %}
 </div>
 <div class="line-item__right">

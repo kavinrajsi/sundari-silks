@@ -32,18 +32,18 @@
   /**
    * Desktop and mobile menu active
    */
-  $(".menu-level-1-item.menu-level-1-item-child").on("mouseenter", function () {
+  $(".menu-level-1-item.menu-level-1-item-child a").on("mouseenter", function () {
     console.log("enter");
     $("body").addClass("header-menuActive");
     $("body").css("padding-right", "15px");
-    $(this).children(".second-menu").addClass("active");
+    $(this).parent().children(".second-menu").addClass("active");
     // $(this).children('.menu-level-2').addClass("active");
   });
-  $(".menu-level-1-item").on("mouseleave", function () {
+  $(".menu-level-1-item.menu-level-1-item-child a").on("mouseleave", function () {
     console.log("leave");
     $("body").removeClass("header-menuActive");
     $("body").css("padding-right", "0");
-    $(this).children(".second-menu").removeClass("active");
+    $(this).parent().children(".second-menu").removeClass("active");
     // $(this).children('.menu-level-2').removeClass("active");
   });
   /* .cd-primary-nav .has-children */

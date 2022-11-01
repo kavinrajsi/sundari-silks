@@ -311,13 +311,13 @@
       text-align: center;
       .menu-level-1-item {
         display: inline-block;
-        padding: 0 5px;
+        margin: 0 10px;
         a {
           font-size: 13px;
           line-height: 14px;
           padding: 14px 8px;
           @media (min-width: 1100px) {
-            padding: 14px 5px;
+            padding: 14px 0px;
           }
           color: var(--pure-black);
           position: relative;
