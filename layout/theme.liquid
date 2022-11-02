@@ -33,6 +33,9 @@ assign body_font = settings.body_text_font
   <link rel="preload" as="font" href="{{ header_font | font_url }}" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="{{ body_font | font_url }}" type="font/woff2" crossorigin>
   <link rel="preload" href="{{'base.css' | asset_url}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap" rel="stylesheet">
 
   {{ 'lazysizes.js' | asset_url | preload_tag: as: 'script' }}
   {{ 'ls.rias.js' | asset_url | preload_tag: as: 'script' }}
@@ -350,12 +353,12 @@ assign body_font = settings.body_text_font
 <div class="productToaster"></div>
 
   {% section 'drawer' %}
-  {% section 'quickview-modal' %}
+
   <script defer src="{{ 'slick.js' | asset_url }}"></script>
   <script defer src="{{ 'shopify-money.js' | asset_url }}"></script>
   <script defer src="{{ 'predictive-search.js' | asset_url }}"></script>
-  <script defer src="{{ 'drawer.js' | asset_url }}"></script>
   <script defer src="{{ 'bootstrap.min.js' | asset_url }}"></script>
+  <script defer src="{{ 'drawer.js' | asset_url }}"></script>
   <script defer src="{{ 'quick-view-main.js' | asset_url }}"></script>
   {% if template contains 'collection' %}
   <script defer src="{{ 'filter.js' | asset_url }}"></script>

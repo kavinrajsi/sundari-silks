@@ -90,6 +90,9 @@
   });
 }
 
+
+
+
   //
 
   $('.product-variant-fielset input[type="radio"]').click(function () {
@@ -226,39 +229,27 @@
     console.log(err);
   }
 
-  // var productVariantId = $(".shappify_add_to_cart_form select[name='id']").val();
-  // var plaqueSize = $('#plaque-size option:selected').val();
-  // var customisationPackage = $('#customisation-package option:selected').val();
-
-  // $(document).on("change", ".product-options .selector-wrapper select", function () {
-  //     var productVariantId = $(".shappify_add_to_cart_form select[name='id']").val();
-  // });
-
-  // $('.add-to-cart').on('click', function () {
-
-  //     productVariantId = $(".shappify_add_to_cart_form select[name='id']").val();
-  //     plaqueSize = $('#plaque-size option:selected').val();
-  //     customisationPackage = $('#customisation-package option:selected').val();
-  //     stcLink = productVariantId + ':1,' + plaqueSize + ':1,' + customisationPackage + ':1'
-  //     window.location = 'https://www.blackartgraphics.com/cart/' + stcLink;
-  // })
-
   // Modal for product detail page
   // Quick & dirty toggle to demonstrate modal toggle behavior
-  $(".modal-toggle").on("click", function (e) {
-    e.preventDefault();
-    $(".modal").toggleClass("is-visible");
-    $("body").toggleClass("modalScroll");
-  });
+
+
   $(".modal-size-toggle").on("click", function (e) {
     e.preventDefault();
-    $(".modal-size").toggleClass("is-visible");
+    $(".modal-size-chart").toggleClass("is-visible");
     $("body").toggleClass("modalScroll");
   });
+  $("button.modal-close.modal-toggle").on("click", function (e) {
+    e.preventDefault();
+    console.log('closemoda');
+    $(".modal-size-chart").toggleClass("is-visible");
+    $("body").toggleClass("modalScroll");
+  });
+
 
   //Functions, Plugins, Etc.. Here
   //(does not wait for DOM READY STATE)
 })(jQuery);
+
 /**
  * Home page tab section
  */

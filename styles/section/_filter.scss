@@ -345,11 +345,9 @@
     display: none;
   }
 }
-.fixedElement{
-
-  @media(min-width: 768px){
-
-     padding-top: 40px;
+.fixedElement {
+  @media (min-width: 768px) {
+    padding-top: 40px;
   }
 }
 .meFitlerMobile {
@@ -359,16 +357,16 @@
   right: 0;
   max-height: 56px;
 
-  .filterCardToggle{
+  .filterCardToggle {
     display: none;
   }
-  @media(min-width: 768px){
-    .filterCardToggle{
+  @media (min-width: 768px) {
+    .filterCardToggle {
       display: block;
     }
   }
-  @media(min-width: 768px){
-  position: sticky;
+  @media (min-width: 768px) {
+    position: sticky;
   }
   display: flex;
   justify-content: space-between;
@@ -383,35 +381,25 @@
     padding-right: 60px;
   }
 
-  .filterCardToggle {
-    display: flex;
-    border-left: none;
-    width: auto;
-    border-right: 1px solid var(--border-color);
-    white-space: nowrap;
-
-    padding-right: var(--Ngap);
-    @media (min-width: 1364px) {
-      padding-right: 60px;
-    }
-    .Icon {
-      display: inline-block;
-      fill: currentColor;
-      vertical-align: middle;
-      stroke-width: 1px;
-      background: none;
-      pointer-events: none;
-    }
-    .CollectionToolbar__LayoutType svg {
-      width: 18px;
-      height: 18px;
-    }
-  }
   .filteAction {
     display: flex;
-    border-left: 1px solid var(--border-color);
     white-space: nowrap;
-    select {
+    width: 100%;
+    > div {
+      position: relative;
+      flex: 1 0 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      width: auto;
+      border-left: 1px solid var(--border-color);
+    }
+
+    #filterButton {
+      white-space: nowrap;
+      border-right: 1px solid var(--border-color);
       cursor: pointer;
       padding: 18px 22px;
       text-align: center;
@@ -420,23 +408,32 @@
       justify-content: center;
       align-items: center;
       background: transparent;
-      border: 0px;
+      svg {
+        margin-right: 4px;
+      }
     }
-  }
-  #filterButton {
-    border-right: 1px solid var(--border-color);
-    cursor: pointer;
-    padding: 18px 22px;
-    text-align: center;
-    font-size: 14px;
-    line-height: normal;
-    justify-content: center;
-    align-items: center;
-    background: transparent;
-    svg {
-      width: 18px;
-      height: 18px;
-      margin-right: 8px;
+    #sortButton {
+      svg{
+        display: none;
+        // position: absolute;
+        // left: 30px;
+      }
+      select {
+        background: transparent;
+        white-space: nowrap;
+        cursor: pointer;
+        padding: 18px 22px 18px;
+        text-align: center;
+        font-size: 14px;
+        line-height: normal;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        border: 0px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
     }
   }
 }
