@@ -1,6 +1,4 @@
 {
-  "name": "Wishlist template",
-  "wrapper": "section#wishlist.wishlist",
   "sections": {
     "main": {
       "type": "wishlist-template"
