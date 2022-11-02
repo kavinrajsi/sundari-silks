@@ -24,23 +24,53 @@ assign body_font = settings.body_text_font
   {% endif %}
   {% render 'social-meta-tags' %}
   <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="dns-prefetch" href="https://cdn.shopify.com">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
   <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="font" href="{{ header_font | font_url }}" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="{{ body_font | font_url }}" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{'base.css' | asset_url}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  {{ 'lazysizes.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'ls.rias.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'ls.bgset.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'ls.blur-up.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'jquery.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'slick.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'shopify-money.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'predictive-search.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'drawer.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'bootstrap.min.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'quick-view-main.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'filter.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'photoswipe.umd.min.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'photoswipe-lightbox.umd.min.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'photoswipe-control.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'blouse-data.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'wishlist.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'global.js' | asset_url | preload_tag: as: 'script' }}
+
   <script src="{{ 'lazysizes.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'ls.rias.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'ls.bgset.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'ls.blur-up.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'jquery.js' | asset_url }}" defer="defer"></script>
+
   {{ content_for_header }}
   {% if template contains 'index' %}
   {{ 'slick.css' | asset_url | stylesheet_tag }}
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
   {% endif %}
+
+  {% comment %}
   {{ 'base.css' | asset_url | stylesheet_tag }}
+  {% endcomment %}
+
+  <noscript><link rel="stylesheet" href="{{'base.css' | asset_url }}"></noscript>
+
   {% style %}
   {{ header_font | font_face: font_display: 'swap' }}
   {{ body_font | font_face: font_display: 'swap' }}
@@ -336,7 +366,10 @@ assign body_font = settings.body_text_font
   <script defer src="{{ 'photoswipe-control.js' | asset_url }}"></script>
   <script defer src="{{ 'blouse-data.js' | asset_url }}"></script>
   {% endif %}
+  <script defer src="{{ 'wishlist.js' | asset_url }}"></script>
   <script defer src="{{ 'global.js' | asset_url }}"></script>
+
+
 </body>
 
 </html>

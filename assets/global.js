@@ -72,8 +72,7 @@
       $(".meFitlerMobile").css({
         // scroll to that element or below it
         position: "fixed",
-        top: "112px",
-        left: "0",
+        top: "112px"
       });
     } else {
       // apply position: static
@@ -82,6 +81,12 @@
         position: "static",
       });
     }
+  });
+}else{
+  $(".meFitlerMobile").css({
+    // scroll to that element or below it
+    position: "fixed",
+    bottom: "0"
   });
 }
 

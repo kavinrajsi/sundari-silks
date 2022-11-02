@@ -2484,6 +2484,7 @@ svg.icon {
   }
 }
 .page-product-detail .product-title {
+  margin-bottom: 18px;
   font-family: "Playfair Display";
   font-style: normal;
   font-weight: 500;
@@ -2495,7 +2496,6 @@ svg.icon {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
   font-size: var(--font-h5);
   margin-bottom: 12px;
   line-height: 24px;
@@ -2618,24 +2618,6 @@ svg.icon {
 }
 .page-product-detail .product-common-note dl:last-child {
   border-bottom: 0;
-}
-.page-product-detail .product-common-note dt {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  font-size: var(--font-h5);
-  margin-bottom: 12px;
-  line-height: 24px;
-  color: rgba(0, 0, 0, 0.86);
-}
-.page-product-detail .product-common-note dd {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 150%;
-  color: rgba(0, 0, 0, 0.74);
 }
 .page-product-detail .product-variant-fielset {
   margin-bottom: 16px;
@@ -3231,6 +3213,9 @@ svg.icon {
 .meFitlerMobile {
   position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 56px;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -3239,6 +3224,14 @@ svg.icon {
   z-index: 2;
   padding-left: var(--Ngap);
   padding-right: var(--Ngap);
+}
+.meFitlerMobile .filterCardToggle {
+  display: none;
+}
+@media (min-width: 768px) {
+  .meFitlerMobile .filterCardToggle {
+    display: block;
+  }
 }
 @media (min-width: 768px) {
   .meFitlerMobile {

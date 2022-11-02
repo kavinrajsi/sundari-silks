@@ -6,14 +6,16 @@
 {% assign collectProductName = product_collection %}
 {% endunless %}
 {% assign coeid = "" %}
+
 {% for product_image in product.images %}
 <link rel="preload" as="image" href="{{ product_image.src | image_url }}">
 <link rel="prefetch" href="{{ product_image.src | image_url }}">
 {% endfor %}
+
 {% unless product == empty %}
 <script type="application/json" id="ProductJson-{{ section.id }}">
   {{ product | json }}
-  </script>
+</script>
 {% endunless %}
 <section class="page-product-detail">
   <div class="product-images">
@@ -133,50 +135,6 @@
 
     <!-- blouse stitching area -->
 
-    <!-- check the data -->
-    {% assign with_blouse = true %}
-    {% for tag in product.tags %}
-    {% if tag == "With Blouse" %}
-    {% assign with_blouse = false %}
-    {% break %}
-    {% endif %}
-    {% endfor %}
-    <!-- if data true -->
-    {% if with_blouse %}
-    <div class="blouse-stitching hide" id="hulkapps_custom_options_{{ product.id }}"> </div>
-    {% else %}
-    <div class="blouse-stitching" id="hulkapps_custom_options_{{ product.id }}"> </div>
-    {% endif %}
-
-    {% if product.type == "Sarees" %}
-    <div class="note measurement-select" style="padding: 5px;margin-bottom: 10px;font-size: 14px;">
-      To revise your blouse measurements, please go back to “Add measurements” and make the changes.
-    </div>
-    {% endif %}
-
-    <div id="login-link" class="hide" style="">Please <a style="color: var(--primary-color);"
-        href="/account/login?checkout_url={{shop.url}}{{product.url}}" id="addMeasurementLinkLogin">Login</a> to add
-      measurement. Kindly provide measurement details for blouse
-      stitching before adding this product to the cart.</div>
-    <div id="add-measurement-link" class="hide" style="">Please add
-      measurement <a
-        style="color: #fff !important; display: inline-block; padding: 2px 4px; background-color: var(--primary-color); border-radius: 5px;"
-        href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}" id="addMeasurementLink">Add</a></div>
-    <div class="measurement-select hide" style="margin-bottom: 10px;font-size: 14px;">
-      <label id="select-measurement-title" for="select-measurement">Select Measurement:</label>
-      <select id="select-measurement" style="width:100%">
-        <option value="">Select</option>
-      </select>
-      <div id="add-measurement-link-select" style="margin-bottom: 10px;font-size: 14px;">
-        <a style="color: var(--primary-color);"
-          href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}"><strong>Add new
-            measurement</strong>
-        </a>
-      </div>
-    </div>
-    <p id="measurement-data" class="line-item-property__field hide">
-    </p>
-
     <!-- blouse stitching area -->
 
 
@@ -238,6 +196,24 @@
         {%- endif -%}
       </span>
     </button>
+
+    {%- if product.handle != blank -%}
+  <button type="button" aria-label="Add to wishlist" class="" button-wishlist data-product-handle="{{ product.handle }}">
+    <style scoped>
+      .icon {
+        fill: transparent;
+        stroke: #000000;
+        transition: fill 0.3s ease;
+      }
+      .active .icon {
+        fill: red;
+        stroke: #000000;
+      }
+    </style>
+   <svg class="icon icon-heart {{ class -}}" viewBox="0 0 290 256" xmlns="http://www.w3.org/2000/svg"><path d="M258.844192 127.790368L145 241.63456 31.1558082 127.790368c-26.9461761-26.946176-26.9461761-70.6345598 0-97.5807359 26.9461762-26.94617613 70.6345598-26.94617613 97.5807358 0L145 46.4730881l16.263456-16.263456c26.946176-26.94617613 70.63456-26.94617613 97.580736 0 26.946176 26.9461761 26.946176 70.6345599 0 97.5807359z" stroke="#000" stroke-width="20" fill="red" fill-rule="evenodd"/></svg>
+
+  </button>
+{%- endif -%}
 
     </div>
 
@@ -322,12 +298,12 @@
       </div>
     </div>
 
-    {% if product.content != blank %}
+    <!-- {% if product.content != blank %} -->
     <h2 class="product-title-secondary">Description</h2>
     <p class="product-description">{{product.content | strip_html }}</p>
-    {% endif %}
+    <!-- {% endif %} -->
 
-    {% if product.metafields.custom.note.value != blank %}
+    {% if product.metafields.custom.purity.value != blank %}
     <h2 class="product-title-secondary"> Specification </h2>
     {% endif %}
 
@@ -429,38 +405,34 @@
       </dl>
       {% endif %}
     </div>
+
     <div class="product-common-note">
       {% if product.metafields.custom.wash_care_tips.value != blank %}
       <dl>
-        <dt> Wash Care </dt>
-        <dd> {{ product.metafields.custom.wash_care_tips.value }} </dd>
-      </dl>
-      {% else %}
-      <dl>
-        <dt> Wash Care </dt>
-        <dd> Normal Wash </dd>
+        <dt class="product-title-secondary"> Wash Care </dt>
+        <dd class="product-description"> {{ product.metafields.custom.wash_care_tips.value }} </dd>
       </dl>
       {% endif %}
       {% if product.metafields.custom.delivery_shipping.value != blank %}
       <dl>
-        <dt> Delivery Shipping </dt>
-        <dd> {{ product.metafields.custom.delivery_shipping.value }} </dd>
+        <dt class="product-title-secondary"> Delivery Shipping </dt>
+        <dd class="product-description"> {{ product.metafields.custom.delivery_shipping.value }} </dd>
       </dl>
       {% else %}
       <dl>
-        <dt> Delivery Shipping </dt>
-        <dd> This product will take 3-4 days to be shipped within India and 7-9 days for International Shipping.</dd>
+        <dt class="product-title-secondary"> Delivery Shipping </dt>
+        <dd class="product-description"> This product will take 3-4 days to be shipped within India and 7-9 days for International Shipping.</dd>
       </dl>
       {% endif %}
       {% if product.metafields.custom.note.value != blank %}
       <dl>
-        <dt> Note </dt>
-        <dd> {{ product.metafields.custom.note.value }} </dd>
+        <dt class="product-title-secondary"> Note </dt>
+        <dd class="product-description"> {{ product.metafields.custom.note.value }} </dd>
       </dl>
       {% else %}
       <dl>
-        <dt> Note </dt>
-        <dd> There might be slight variations in color due to monitor resolution. </dd>
+        <dt class="product-title-secondary"> Note </dt>
+        <dd class="product-description"> There might be slight variations in color due to monitor resolution. </dd>
       </dl>
       {% endif %}
     </div>
@@ -501,10 +473,4 @@
       {%- endfor -%}
     ]
   }
-</script>
-
-<script>
-  // Pre-loading product images, to avoid a lag when a thumbnail is clicked, or
-  // when a variant is selected that has a variant image.
-  Shopify.Image.preload({{ product.images | json }}, '{{ product_img_size }}');
 </script>
