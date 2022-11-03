@@ -18,6 +18,7 @@ price remove
     alt="{{ line_item.image.alt | escape }}">
 </a>
 </div>
+<div class="line-item__details-wrapper">
 <div class="line-item__details">
   <h2 class="line-item__title">
     {{line_item.product.title}}
@@ -45,9 +46,10 @@ price remove
     {{ line_item.price | money }}
   </div>
   <a aria-label="Remove {{ line_item.variant.title }}" href="/cart/change?line={{index}}&amp;quantity=0">
-    <svg width="24" height="24">
-      <use href="#trash" />
+    <svg>
+      <use href="#trash-mini" />
     </svg>
     Remove</a>
   </div>
+</div>
 </div>

@@ -1,48 +1,49 @@
 <div class="page-cart">
-  <h1 class="page__title"> My Cart </h1>
-<div class="page__decription" hidden>
-  <ul>
-    <li>Vanakkam!</li>
-    <li>
-      Payments can now be made via PayPal through Cashfree payment gateway.
-      </li>
-      <li>
-        Kindly note that you can now make payments through both PayPal and Cashfree.
-      </li>
-  </ul>
-</div>
-
-{%- if cart.item_count > 0 -%}
-  <form class="cart_wrapper" action="/cart" method="post">
-    <div class="cart__items cart_block">
-      {% for line_item in cart.items %}
-       {% render 'line-item', line_item: line_item, index: forloop.index %}
-       {% endfor %}
+  {%- if cart.item_count > 0 -%}
+  <div class="cart-content">
+    <h1 class="page__title"> My Cart </h1>
+    <div class="page__decription" hidden>
+      <ul>
+        <li>Vanakkam!</li>
+        <li>
+          Kindly note that you can now make payments through both Razorpay and Cashfree.
+        </li>
+      </ul>
     </div>
-    <div class="cart__details card__block">
-      <div class="card_detail-none">
-      <label for="CartNote">  Special Instructions For Seller <br> Add special instructions for your order...</label>
-      <textarea name="note" id="CartNote">{{ cart.note }}</textarea>
-    </div>
-    <div class="cart__action card__block">
-      <div class="cart__total">
-        <strong class="cart__total-text">Sub Total:</strong>
-        <span  data-hulkapps-cart-total class="cart__total-price"> {{ cart.total_price | money }}</span>
+    <form class="cart_wrapper" action="/cart" method="post">
+      <ul class="card__items-title">
+        <li>Product</li>
+        <li>Total</li>
+      </ul>
+      <div class="cart__items cart_block">
+        {% for line_item in cart.items %}
+        {% render 'line-item', line_item: line_item, index: forloop.index %}
+        {% endfor %}
       </div>
-      <p class="cart__total--shippment">Shipping charges will be added at checkout.</p>
-      <!-- I would like to receive order information on whatsapp -->
-      <div class="cart-action-button">
-      <button class="page-cart-atbutton" type="submit" name="checkout"> PROCEED TO CHECKOUT </button>
-    </div>
-    </div>
-    </div>
-  </form>
-
+      <div class="cart__details card__block">
+        <div class="card_detail-note">
+          <label for="CartNote">  Add Order Note </label>
+          <textarea name="note" id="CartNote">{{ cart.note }}</textarea>
+        </div>
+        <div class="cart__action card__block">
+          <div class="cart__total">
+            <strong class="cart__total-text">Sub Total:</strong>
+            <span data-hulkapps-cart-total class="cart__total-price"> {{ cart.total_price | money }}</span>
+          </div>
+          <p class="cart__total--shippment">Shipping charges will be added at checkout.</p>
+          <!-- I would like to receive order information on whatsapp -->
+          <div class="cart-action-button">
+            <button class="page-cart-atbutton" type="submit" name="checkout"> PROCEED TO CHECKOUT </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
   {%- else -%}
-  <div class="empty-cart">
-
-<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-    <p>The cart is empty. <a href="/collections/all">Continue shopping</a></p>
+  <div class="cart-empty text-center">
+    <h2 class="page__title">Shopping Bag is Empty</h2>
+    <p class="page__decription">Your shopping bag is empty.</p>
+    <a type="button" class="button button-solid-maroon" href="/collections/all">Continue shopping</a>
   </div>
   {%- endif -%}
 </div>

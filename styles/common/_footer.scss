@@ -51,25 +51,41 @@ footer {
     line-height: 150%;
     color: #000000;
     margin-top: 16px;
-    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--pure-black);
     padding-bottom: 8px;
-    @media(min-width: 768px){
+    margin-bottom: 8px;
+    position: relative;
+    &:after {
+      display: inline-block;
+      content: "  ";
+      width: 18px;
+      height: 18px;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItY2hldnJvbi1kb3duIj48cG9seWxpbmUgcG9pbnRzPSI2IDkgMTIgMTUgMTggOSI+PC9wb2x5bGluZT48L3N2Zz4=);
+      background-repeat: no-repeat;
+      background-position: right center;
+      position: absolute;
+      right: 0;
+      top: 4px;
+    }
+    @media (min-width: 568px) {
       border: 0;
       margin-top: 0;
+      margin-bottom: 0;
+      &:after {
+        display: none;
+      }
     }
   }
   .menu {
+    display: none;
+    &.footerActive {
+      display: block;
+    }
+    @media (min-width: 568px) {
+      display: block;
+    }
     &-link {
-      display: inline-block;
-      padding-right: 8px;
-      border-right: 1px solid var(--border-color);
-      margin-right: 8px;
-      @media(min-width: 768px){
-        display: block;
-        padding: 0;
-        margin: 0;
-        border: 0;
-      }
+      display: block;
       a {
         margin-bottom: 12px;
         font-family: var(--font-montserrat);
@@ -117,7 +133,6 @@ footer {
   }
 }
 
-
-.footer-link h4{
+.footer-link h4 {
   border-top: 0px;
 }

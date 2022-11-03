@@ -237,3 +237,36 @@ main img {
 .d-block {
   display: block;
 }
+
+.button{
+  border-radius: var(--border-radius);
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s !important;
+  color: #fff;
+  padding: 14px 16px;
+  overflow: hidden;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--pure-black);
+  border: 1px solid;
+  &-solid-maroon{
+    color: var(--pure-white);
+    background-color: var(--maroon-color);
+    border-color: var(--maroon-color);
+  }
+  &-solid-orange{
+    color: var(--pure-black);
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+  }
+  &-outline-maroon{
+    color: var(--pure-black);
+    background-color: transparent;
+    border-color: var(--maroon-color);
+  }
+  &-outline-orange{
+    color: var(--pure-black);
+    background-color: transparent;
+    border-color: var(--secondary-color);
+}
+}
