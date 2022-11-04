@@ -68,8 +68,9 @@
   {{ body_font | font_face: font_display: 'swap' }}
 
   :root {
-  --heading-font: {{ header_font_bold.family }}, {{ header_font.fallback_families }};
-  --body-font: {{ body_font.family }}, {{ body_font.fallback_families }};
+  --font-playfair: {{ header_font.family }}, {{ header_font.fallback_families }};
+  --font-montserrat: {{ body_font.family }}, {{ body_font.fallback_families }};
+
   --gap: {{settings.product-gap-mobile}}px;
   --section-space: {{settings.section-gap-mobile}}px;
   --home-section-space: {{settings.home-section-gap-mobile}}px;

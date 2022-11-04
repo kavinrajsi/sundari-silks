@@ -22,9 +22,9 @@
     "settings": [
       {
         "type": "color",
-        "id": "navbar_color",
-        "label": "NavBar Background Color",
-        "default": "#fff"
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#fef1e1"
       },
       {
         "type": "color",
@@ -42,7 +42,13 @@
         "type": "color",
         "id": "border_color",
         "label": "Border Color",
-        "default": "#000"
+        "default": "#e8e8e1"
+      },
+      {
+        "type": "color",
+        "id": "body_font_color",
+        "label": "Body Font Color",
+        "default": "#222"
       },
       {
         "type": "color",
@@ -102,7 +108,7 @@
         "max": 60,
         "step": 1,
         "unit": "px",
-        "label": "Header 1 Font Size",
+        "label": "Header 2 Font Size",
         "default": 28
       },
       {
@@ -112,7 +118,7 @@
         "max": 60,
         "step": 1,
         "unit": "px",
-        "label": "Header 1 Font Size",
+        "label": "Header 3 Font Size",
         "default": 28
       },
       {
@@ -122,7 +128,7 @@
         "max": 60,
         "step": 1,
         "unit": "px",
-        "label": "Header 1 Font Size",
+        "label": "Header 4 Font Size",
         "default": 28
       },
       {
@@ -132,7 +138,7 @@
         "max": 60,
         "step": 1,
         "unit": "px",
-        "label": "Header 1 Font Size",
+        "label": "Header 5 Font Size",
         "default": 28
       },
       {
@@ -142,7 +148,7 @@
         "max": 60,
         "step": 1,
         "unit": "px",
-        "label": "Header 1 Font Size",
+        "label": "Header 6 Font Size",
         "default": 28
       },
       {
