@@ -33,73 +33,75 @@
     "settings": [
       {
         "type": "font_picker",
-        "id": "type_header_font",
+        "id": "type_header",
         "default": "playfair_display_n7",
         "label": "Heading 1"
       },
       {
-        "type": "range",
-        "id": "heading_scale_font1",
-        "min": 100,
-        "max": 150,
-        "step": 5,
-        "unit": "%",
-        "label": "Header 1 Font Size",
-        "default": 100
+        "type": "font_picker",
+        "id": "type_body",
+        "default": "montserrat_n4",
+        "label": "Body Font"
       },
       {
-        "type": "font_picker",
-        "id": "type_header_font2",
-        "default": "playfair_display_n7",
-        "label": "Heading 2"
+        "type": "range",
+        "id": "heading_scale_font1",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 1 Font Size",
+        "default": 28
       },
       {
         "type": "range",
         "id": "heading_scale_font2",
-        "min": 100,
-        "max": 150,
-        "step": 5,
-        "unit": "%",
-        "label": "Header 2 Font Size",
-        "default": 100
-      },
-      {
-        "type": "font_picker",
-        "id": "type_header_font3",
-        "default": "playfair_display_n7",
-        "label": "Heading 3"
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 1 Font Size",
+        "default": 28
       },
       {
         "type": "range",
         "id": "heading_scale_font3",
-        "min": 100,
-        "max": 150,
-        "step": 5,
-        "unit": "%",
-        "label": "Header 3 Font Size",
-        "default": 100
-      },
-      {
-        "type": "font_picker",
-        "id": "type_header_font4",
-        "default": "playfair_display_n7",
-        "label": "Heading 4"
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 1 Font Size",
+        "default": 28
       },
       {
         "type": "range",
         "id": "heading_scale_font4",
-        "min": 100,
-        "max": 150,
-        "step": 5,
-        "unit": "%",
-        "label": "Header 4 Font Size",
-        "default": 100
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 1 Font Size",
+        "default": 28
       },
       {
-        "type": "font_picker",
-        "id": "body_text_font",
-        "label": "Body Font",
-        "default": "montserrat_n4"
+        "type": "range",
+        "id": "heading_scale_font5",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 1 Font Size",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "heading_scale_font6",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 1 Font Size",
+        "default": 28
       },
       {
         "type": "range",
@@ -107,7 +109,87 @@
         "label": "Body Font Size",
         "default": 16,
         "unit": "px",
-        "min": 13,
+        "min": 12,
+        "max": 18,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "card_product_title",
+        "label": "Product Title in Card",
+        "default": 16,
+        "unit": "px",
+        "min": 12,
+        "max": 18,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "card_product_price",
+        "label": "Product Price in Card",
+        "default": 16,
+        "unit": "px",
+        "min": 10,
+        "max": 18,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "product_title",
+        "label": "Product Title",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "product_price",
+        "label": "Product Price",
+        "default": 16,
+        "unit": "px",
+        "min": 10,
+        "max": 18,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "secondary_product_title",
+        "label": "Secondary Product Title",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "secondary_product_content",
+        "label": "Secondary Product Content",
+        "default": 16,
+        "unit": "px",
+        "min": 10,
+        "max": 18,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "specification_title",
+        "label": "Specification Title",
+        "default": 16,
+        "unit": "px",
+        "min": 10,
+        "max": 28,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "specification_content",
+        "label": "Specification Content",
+        "default": 16,
+        "unit": "px",
+        "min": 10,
         "max": 18,
         "step": 1
       }
