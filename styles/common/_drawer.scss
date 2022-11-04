@@ -152,67 +152,25 @@
     justify-content: space-between;
     // font-family: var(--font-playfair);
     font-size: 16px;
-    .price{
+    .price {
       font-variant-numeric: tabular-nums;
     }
   }
   .cartpopup-buttons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 12px;
     justify-content: center;
-    align-items: center;
-    .cartpopup-button {
-      margin-top: 12px;
-      font-size: 12px;
-      padding: 14px 16px !important;
-      color: var(--color-black);
-      background-color: var(--color-secondary);
-      font-weight: 400;
-      font-style: normal;
-      // z-index: 1;
-      -webkit-tap-highlight-color: initial;
-      text-align: center;
-      line-height: normal;
-      border: 1px solid transparent;
-      border-radius: 0;
-      text-transform: uppercase;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 4px;
-    }
-    .cartpopup-button-alter {
-      margin-top: 12px;
-      width: 100%;
-      &:hover{
-        color: var(--color-white);
-      }
-      // font-size: 12px;
-      // padding: 14px 16px !important;
-      // color: var(--color-black);
-      // background-color: var(--color-secondary);
-      // font-weight: 400;
-      // font-style: normal;
-      // // z-index: 1;
-      // -webkit-tap-highlight-color: initial;
-      // text-align: center;
-      // line-height: normal;
-      // border: 1px solid transparent;
-      // border-radius: 0;
-      // text-transform: uppercase;
-      // width: 100%;
-      // display: flex;
-      // align-items: center;
-      // justify-content: center;
-      // border-radius: 4px;
+    // align-items: center;
+    margin-top: 12px;
+    button,
+    a {
+      flex: 1 0 auto;
     }
   }
 }
 
-
 #cart__drawer_items {
-
   .cart__item {
     display: flex;
     margin-bottom: 8px;
@@ -240,7 +198,6 @@
       aspect-ratio: 1;
     }
   }
-
 }
 
 .drawer__footer {
@@ -261,7 +218,7 @@
   font-weight: 400;
   font-style: normal;
   // transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-    // border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  // border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   // z-index: 1;
   -webkit-tap-highlight-color: initial;
   text-align: center;

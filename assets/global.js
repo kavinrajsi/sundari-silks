@@ -58,7 +58,7 @@
   //
   if ($(window).width() > 764) {
 
-  // var fixmeTop = $(".meFitlerMobile").offset().top; // get initial position of the element
+  // // get initial position of the element
   var fixmeTop = 154; // get initial position of the element
 
   $(window).scroll(function () {
@@ -69,9 +69,10 @@ window.onscroll = function() {myFunction()};
 // Get the header
 var header = document.querySelector(".meFitlerMobile");
 var body = document.querySelector(".fixedElement");
-
+var fixmeTop = $(".meFitlerMobile").offset().top;
 // Get the offset position of the navbar
-var sticky = '402';
+console.log(fixmeTop);
+var sticky = fixmeTop;
 
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction() {

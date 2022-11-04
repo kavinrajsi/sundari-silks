@@ -1,23 +1,24 @@
 <section class="drawer" id="drawer-name" data-drawer-target>
-  <div class="drawer__overlay" data-drawer-close  ></div>
+  <div class="drawer__overlay" data-drawer-close></div>
   <div class="drawer__wrapper">
-    <div class="drawer__header">
-      <div class="drawer__title">
-        Mini Bag
-        <!-- <i>
+    <form action="/cart" method="post" novalidate>
+      <div class="drawer__header">
+        <div class="drawer__title">
+          Mini Bag
+          <!-- <i>
           <span class="cart-item-count"> {{ cart.item_count }} </span> item(s) in bag
         </i> -->
+        </div>
+        <button class="drawer__close" data-drawer-close aria-label="Close Drawer"></button>
       </div>
-      <button class="drawer__close" data-drawer-close aria-label="Close Drawer"></button>
-    </div>
-    <div class="drawer__content" id="cart__drawer">
+      <div class="drawer__content" id="cart__drawer">
 
-      <div class="cart-item-no" {% if cart.item_count> 0 %} hidden {% endif %} >
-        Your shopping bag is empty.
-      </div>
+        <div class="cart-item-no" {% if cart.item_count> 0 %} hidden {% endif %} >
+          Your shopping bag is empty.
+        </div>
 
-      <div class="cart-popup">
-        <form action="/cart" method="post" novalidate>
+        <div class="cart-popup">
+
           <div class="cartpopup-body " id="cart__drawer_items">
             {% comment %}
             {% for item in cart.items %}
@@ -28,7 +29,7 @@
                     src="{{ item.image | image_url: width: 300, format: 'pjpg' }}"
                     data-src="{{ item.image | image_url: width: 300, format: 'pjpg' }}"
                     data-aspectratio="{{ item.image.aspect_ratio }}" alt="{{ item.image.alt | escape }}"
-                    data-sizes="auto"   data-parent-fit="cover" loading="lazy" width="150" height="150">
+                    data-sizes="auto" data-parent-fit="cover" loading="lazy" width="150" height="150">
                 </a>
               </div>
               <div class="cartpopup-item-content ">
@@ -78,18 +79,19 @@
             {% endfor %}
             {% endcomment %}
           </div>
-        </form>
+
+        </div>
       </div>
-    </div>
-    <div class="drawer__footer">
-      <div class="cartpopup-total">
-        <span>Total</span>
-        <span class="price" id="cart__total_price"></span>
+      <div class="drawer__footer">
+        <div class="cartpopup-total">
+          <span>Total</span>
+          <span class="price" id="cart__total_price"></span>
+        </div>
+        <div class="cartpopup-buttons">
+          <a class="button button-outline-maroon" href="{{ routes.cart_url }}">Your Cart</a>
+          <button class="button button-solid-maroon" type="submit" name="checkout"> PROCEED TO CHECKOUT </button>
+        </div>
       </div>
-      <div class="cartpopup-buttons">
-        <!-- <button class="cartpopup-button" type="submit" name="checkout">Checkout</button> -->
-        <a class="cartpopup-button-alter button button-solid-maroon" href="{{ routes.cart_url }}">Your Cart</a>
-      </div>
-    </div>
+    </form>
   </div>
 </section>
