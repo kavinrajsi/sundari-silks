@@ -414,8 +414,6 @@ summary::marker {
   --laptop: 992px;
   --desktop: 1140px;
   --content-width: 1200px;
-  --font-playfair: "Playfair Display", serif;
-  --font-montserrat: "Montserrat", sans-serif;
   --gutter-full: 24px;
   --gutter-half: 12px;
   --gutter-mobile: 8px;
@@ -430,15 +428,6 @@ summary::marker {
   --font-button: 14px;
   --font-12: 12px;
   --font-10: 10px;
-  --pure-black: #000;
-  --pure-white: #fff;
-  --light-black: #222;
-  --border-color: #e8e8e1;
-  --background-color: #fef1e1;
-  --primary-color: #1d5d31;
-  --secondary-color: #f58220;
-  --orange-color: #fdd933;
-  --maroon-color: #90181b;
   --border-radius: 4px;
   --shadow-8dp: 0px 8px 10px rgba(0, 0, 0, 0.14),
     0px 3px 14px rgba(0, 0, 0, 0.12), 0px 4px 5px rgba(0, 0, 0, 0.2);
