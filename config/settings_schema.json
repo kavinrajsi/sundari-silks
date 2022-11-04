@@ -77,7 +77,7 @@
     ]
   },
   {
-    "name": "Typography",
+    "name": "Font Family",
     "settings": [
       {
         "type": "font_picker",
@@ -90,7 +90,12 @@
         "id": "type_body",
         "default": "montserrat_n4",
         "label": "Body Font"
-      },
+      }
+    ]
+  },
+  {
+    "name": "Heading 1",
+    "settings": [
       {
         "type": "range",
         "id": "heading_font_mobile1",
@@ -130,7 +135,12 @@
         "unit": "px",
         "label": "Header 1 Font Size Desktop",
         "default": 28
-      },
+      }
+    ]
+  },
+  {
+    "name": "Heading 2",
+    "settings": [
       {
         "type": "range",
         "id": "heading_font_mobile2",
@@ -170,7 +180,12 @@
         "unit": "px",
         "label": "Header 2 Font Size Desktop",
         "default": 28
-      },
+      }
+    ]
+  },
+  {
+    "name": "Heading 3",
+    "settings": [
       {
         "type": "range",
         "id": "heading_font_mobile3",
@@ -210,7 +225,12 @@
         "unit": "px",
         "label": "Header 3 Font Size Desktop",
         "default": 28
-      },
+      }
+    ]
+  },
+  {
+    "name": "Heading 4",
+    "settings": [
       {
         "type": "range",
         "id": "heading_font_mobile4",
@@ -250,7 +270,12 @@
         "unit": "px",
         "label": "Header 4 Font Size Desktop",
         "default": 28
-      },
+      }
+    ]
+  },
+  {
+    "name": "Heading 5",
+    "settings": [
 
       {
         "type": "range",
@@ -291,8 +316,12 @@
         "unit": "px",
         "label": "Header 5 Font Size Desktop",
         "default": 28
-      },
-
+      }
+    ]
+  },
+  {
+    "name": "Heading 6",
+    "settings": [
       {
         "type": "range",
         "id": "heading_font_mobile6",
@@ -332,17 +361,47 @@
         "unit": "px",
         "label": "Header 6 Font Size Desktop",
         "default": 28
-      },
+      }
+    ]
+  },
+  {
+    "name": "Body",
+    "settings": [
       {
         "type": "range",
-        "id": "body_font_size",
-        "label": "Body Font Size",
+        "id": "body_font_mobile",
+        "label": "Body Font Size Mobile",
         "default": 16,
         "unit": "px",
         "min": 12,
         "max": 18,
         "step": 1
       },
+      {
+        "type": "range",
+        "id": "body_font_laptop",
+        "label": "Body Font Size Laptop",
+        "default": 16,
+        "unit": "px",
+        "min": 12,
+        "max": 18,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "body_font_desktop",
+        "label": "Body Font Size Desktop",
+        "default": 16,
+        "unit": "px",
+        "min": 12,
+        "max": 18,
+        "step": 1
+      }
+    ]
+  },
+  {
+    "name": "Other Font Size",
+    "settings": [
       {
         "type": "range",
         "id": "card_product_title",
