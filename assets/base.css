@@ -2583,6 +2583,8 @@ ul.collection-list.grid .card__heading {
   font-size: 30px;
   line-height: 120%;
   font-size: var(--font-h3);
+  font-size: 20px;
+  line-height: normal;
 }
 .page-product-detail .product-title-secondary {
   font-family: "Montserrat";
