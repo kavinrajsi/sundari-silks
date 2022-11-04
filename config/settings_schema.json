@@ -93,62 +93,244 @@
       },
       {
         "type": "range",
-        "id": "heading_scale_font1",
+        "id": "heading_font_mobile1",
         "min": 8,
         "max": 60,
         "step": 1,
         "unit": "px",
-        "label": "Header 1 Font Size",
+        "label": "Header 1 Font Size Mobile",
         "default": 28
       },
       {
         "type": "range",
-        "id": "heading_scale_font2",
+        "id": "heading_font_tablet1",
         "min": 8,
         "max": 60,
         "step": 1,
         "unit": "px",
-        "label": "Header 2 Font Size",
+        "label": "Header 1 Font Size Tablet",
         "default": 28
       },
       {
         "type": "range",
-        "id": "heading_scale_font3",
+        "id": "heading_font_laptop1",
         "min": 8,
         "max": 60,
         "step": 1,
         "unit": "px",
-        "label": "Header 3 Font Size",
+        "label": "Header 1 Font Size Laptop",
         "default": 28
       },
       {
         "type": "range",
-        "id": "heading_scale_font4",
+        "id": "heading_font_desktop1",
         "min": 8,
         "max": 60,
         "step": 1,
         "unit": "px",
-        "label": "Header 4 Font Size",
+        "label": "Header 1 Font Size Desktop",
         "default": 28
       },
       {
         "type": "range",
-        "id": "heading_scale_font5",
+        "id": "heading_font_mobile2",
         "min": 8,
         "max": 60,
         "step": 1,
         "unit": "px",
-        "label": "Header 5 Font Size",
+        "label": "Header 2 Font Size Mobile",
         "default": 28
       },
       {
         "type": "range",
-        "id": "heading_scale_font6",
+        "id": "heading_font_tablet2",
         "min": 8,
         "max": 60,
         "step": 1,
         "unit": "px",
-        "label": "Header 6 Font Size",
+        "label": "Header 2 Font Size Tablet",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "heading_font_laptop2",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 2 Font Size Laptop",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "heading_font_desktop2",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 2 Font Size Desktop",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "heading_font_mobile3",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 3 Font Size Mobile",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "heading_font_tablet3",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 3 Font Size Tablet",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "heading_font_laptop3",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 3 Font Size Laptop",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "heading_font_desktop3",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 3 Font Size Desktop",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "heading_font_mobile4",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 4 Font Size Mobile",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "heading_font_tablet4",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 4 Font Size Tablet",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "heading_font_laptop4",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 4 Font Size Laptop",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "heading_font_Desktop4",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 4 Font Size Desktop",
+        "default": 28
+      },
+
+      {
+        "type": "range",
+        "id": "heading_font_mobile5",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 5 Font Size Mobile",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "heading_font_tablet5",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 5 Font Size Tablet",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "heading_font_laptop5",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 5 Font Size Laptop",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "heading_font_Desktop5",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 5 Font Size Desktop",
+        "default": 28
+      },
+
+      {
+        "type": "range",
+        "id": "heading_font_mobile6",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 6 Font Size Mobile",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "heading_font_tablet6",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 6 Font Size Tablet",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "heading_font_laptop6",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 6 Font Size Laptop",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "heading_font_Desktop6",
+        "min": 8,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Header 6 Font Size Desktop",
         "default": 28
       },
       {
