@@ -132,12 +132,12 @@
     &-add-to-cart-button {
       width: 100%;
       margin: 18px 0;
-      color: var(--pure-white);
+      color: var(--color-white);
       position: relative;
       display: block;
       padding: 14px 28px;
       line-height: normal;
-      border: 1px solid var(--primary-color);
+      border: 1px solid var(--color-primary);
       border-radius: var(--border-radius);
       text-transform: uppercase;
       font-size: 16px;
@@ -145,7 +145,7 @@
       font-family: var(--font-playfair);
       font-weight: 500;
       font-style: normal;
-      background-color: var(--primary-color);
+      background-color: var(--color-primary);
       z-index: 1;
       -webkit-tap-highlight-color: initial;
     }
@@ -208,7 +208,7 @@
       dl {
         margin-bottom: 16px;
         padding-bottom: 0px;
-        border-bottom: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--color-border);
         &:last-child {
           border-bottom: 0;
         }
@@ -291,7 +291,7 @@
       }
     }
     label:has(input[type="radio"]:checked) {
-      outline: 1px solid var(--pure-black);
+      outline: 1px solid var(--color-black);
       outline-offset: 2px;
     }
     label:has(input[type="radio"][disabled]) {
@@ -375,7 +375,7 @@
     }
 
     .modal-header {
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--color-border);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -407,10 +407,10 @@
       }
       .size-data {
         padding-bottom: 8px;
-        border-bottom: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--color-border);
         @media(min-width: 768px){
         flex: 1 0 50%;
-        border-right: 1px solid var(--border-color);
+        border-right: 1px solid var(--color-border);
         padding-right: 8px;
         padding-bottom: 0;
         border-bottom: 0;
@@ -482,7 +482,7 @@
 
   .hulkapps_product_options {
     overflow: hidden !important;
-    border: 1px solid var(--pure-black) !important;
+    border: 1px solid var(--color-black) !important;
     border-radius: var(--border-radius) !important;
     * {
       background: transparent !important;
@@ -518,7 +518,7 @@
         padding: 0 !important;
         margin: 0 !important;
         min-height: initial !important;
-        border: 1px solid var(--maroon-color) !important;
+        border: 1px solid var(--color-maroon) !important;
         background: transparent !important;
         display: inline-block !important;
         border-radius: 24px !important;
@@ -526,16 +526,16 @@
         height: 24px !important;
       }
       select {
-        border: 1px solid var(--maroon-color) !important;
+        border: 1px solid var(--color-maroon) !important;
         border-radius: var(--border-radius) !important;
         width: auto !important;
-        color: var(--pure-black) !important;
+        color: var(--color-black) !important;
         background: url("https://cdn-icons-png.flaticon.com/512/2985/2985150.png")
           no-repeat 98% center !important;
         background-size: 18px !important;
       }
       + .hulkapps_option {
-        border-top: 1px solid var(--pure-black) !important;
+        border-top: 1px solid var(--color-black) !important;
         margin-top: 8px !important;
         padding-top: 8px !important;
       }
@@ -545,7 +545,7 @@
       border-radius: 4px !important;
       padding: 8px !important;
       margin-top: 8px !important;
-      border: 1px solid var(--pure-black) !important;
+      border: 1px solid var(--color-black) !important;
       background: rgba(253, 217, 51, 0.4) !important;
 
       margin-top: 40px !important;
@@ -554,8 +554,8 @@
       }
     }
     .radio_selected {
-      border: 2px solid var(--maroon-color) !important;
-      background: var(--maroon-color) !important;
+      border: 2px solid var(--color-maroon) !important;
+      background: var(--color-maroon) !important;
       border-radius: var(--border-radius) !important;
     }
   }
@@ -620,14 +620,14 @@
     flex: 1 0;
     border: 1px solid;
     &.product-form__submit {
-      color: var(--pure-white);
-      background-color: var(--maroon-color);
-      border-color: var(--maroon-color);
+      color: var(--color-white);
+      background-color: var(--color-maroon);
+      border-color: var(--color-maroon);
     }
     &.product-form__wishlist {
-      color: var(--pure-black);
+      color: var(--color-black);
       background-color: transparent;
-      border-color: var(--maroon-color);
+      border-color: var(--color-maroon);
     }
     &.product-form__viewcart {
       display: none;
@@ -661,7 +661,7 @@
       display: inline-block;
       padding: 2px 4px;
       margin-left: 8px;
-      background-color: var(--maroon-color);
+      background-color: var(--color-maroon);
       border-radius: 5px;
     }
   }

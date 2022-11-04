@@ -39,7 +39,7 @@
       font-weight: 400;
       font-size: 14px;
       line-height: 150%;
-      color: var(--pure-black);
+      color: var(--color-black);
       @media (min-width: 768px) {
         font-size: 16px;
         line-height: 150%;
@@ -52,7 +52,7 @@
       font-weight: 500;
       line-height: 1.2222222222;
       font-size: var(--home-section-title);
-      color: var(--pure-black);
+      color: var(--color-black);
       text-align: center;
     }
   }
@@ -104,7 +104,7 @@
       padding-right: 60px;
     }
     padding-bottom: var(--home-section-space);
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--color-border);
     margin-bottom: var(--home-section-space);
   }
   .collection-section--title {
@@ -172,7 +172,7 @@ ul.collection-list.grid{
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: var(--pure-white);
+      background-color: var(--color-white);
       border-bottom-left-radius: var(--border-radius);
       border-bottom-right-radius: var(--border-radius);
     }

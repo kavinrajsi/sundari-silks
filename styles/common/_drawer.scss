@@ -14,7 +14,7 @@
     opacity: 0;
     transition: opacity 0.3s;
     will-change: opacity;
-    background-color: var(--pure-black);
+    background-color: var(--color-black);
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -57,7 +57,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--color-border);
   .drawer__title {
     font-family: var(--font-playfair);
     font-size: 16px;
@@ -91,7 +91,7 @@
       display: flex;
       padding-bottom: 12px;
       &:not(:last-child) {
-        border-bottom: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--color-border);
         margin-bottom: 12px;
       }
       &-image {
@@ -107,13 +107,13 @@
         padding: 4px 0 0;
         display: block;
         font-size: 14px;
-        color: var(--pure-black);
+        color: var(--color-black);
       }
       .variant {
         padding: 4px 0 0;
         display: block;
         font-size: 14px;
-        color: var(--pure-black);
+        color: var(--color-black);
       }
       .option {
         color: #333;
@@ -144,7 +144,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: var(--pure-white);
+  background: var(--color-white);
   padding: 16px;
   box-shadow: 3px 0 6px #00000029;
   .cartpopup-total {
@@ -165,8 +165,8 @@
       margin-top: 12px;
       font-size: 12px;
       padding: 14px 20px !important;
-      color: var(--pure-black);
-      background-color: var(--secondary-color);
+      color: var(--color-black);
+      background-color: var(--color-secondary);
       font-weight: 400;
       font-style: normal;
       z-index: 1;
@@ -186,8 +186,8 @@
       margin-top: 12px;
       font-size: 12px;
       padding: 14px 20px !important;
-      color: var(--pure-black);
-      background-color: var(--secondary-color);
+      color: var(--color-black);
+      background-color: var(--color-secondary);
       font-weight: 400;
       font-style: normal;
       z-index: 1;
@@ -213,7 +213,7 @@
     display: flex;
     margin-bottom: 8px;
     padding-bottom: 8px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--color-border);
     img {
       border-radius: 2px;
     }
@@ -253,7 +253,7 @@
   font-size: 11px;
   padding: 14px 20px !important;
   color: #000;
-  background-color: var(--secondary-color);
+  background-color: var(--color-secondary);
   font-weight: 400;
   font-style: normal;
   // transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),
