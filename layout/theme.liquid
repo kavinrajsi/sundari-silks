@@ -1,6 +1,6 @@
 {%- liquid
-  assign header_font = settings.type_header
-  assign body_font = settings.type_body
+assign header_font = settings.type_header
+assign body_font = settings.type_body
 -%}
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
@@ -179,7 +179,9 @@
   {{ 'base.css' | asset_url | stylesheet_tag }}
   {% endcomment %}
 
-  <noscript><link rel="stylesheet" href="{{'base.css' | asset_url }}"></noscript>
+  <noscript>
+    <link rel="stylesheet" href="{{'base.css' | asset_url }}">
+  </noscript>
 
   <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
     if (Shopify.designMode) {
@@ -318,7 +320,7 @@
       <rect x="3" y="14" width="7" height="7"></rect>
     </symbol>
   </svg>
-  {% if request.page_type == 'index' %}
+
   {% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
   <script type="application/ld+json">
     {
@@ -333,7 +335,6 @@
       "url": {{ request.origin | append: page.url | json }}
     }
     </script>
-  {% endif %}
   <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -347,11 +348,7 @@
           {{ settings.social_facebook_link | json }},
           {{ settings.social_pinterest_link | json }},
           {{ settings.social_instagram_link | json }},
-          {{ settings.social_tiktok_link | json }},
-          {{ settings.social_tumblr_link | json }},
-          {{ settings.social_snapchat_link | json }},
-          {{ settings.social_youtube_link | json }},
-          {{ settings.social_vimeo_link | json }}
+          {{ settings.social_youtube_link | json }}
         ],
         "url": {{ request.origin | append: page.url | json }}
       }
@@ -366,59 +363,60 @@
   </section>
 
 
-<!-- search area begin -->
-<div class="header-search-area-wrapper" style="display: none;">
-  <div class="header-search-area-containerWrapper">
-    <div class="header-search-area-container">
-      <predictive-search>
-        <form action="{{ routes.search_url }}" method="get" role="search">
-          <div class="predictive-search ">
-            <i class="input__search-icon">
-              <svg width="24" height="24">
-                <use href="#search" />
-              </svg>
-            </i>
-            <label hidden for="Search">Search</label>
-            <input class="input-full" id="Search" type="search" name="q" placeholder="Search products ..."
-              value="{{ search.terms | escape }}" {%- if settings.predictive_search_enabled -%} role="combobox"
-              aria-expanded="false" aria-owns="predictive-search-results-list"
-              aria-controls="predictive-search-results-list" aria-haspopup="listbox" aria-autocomplete="list"
-              autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false" {%- endif -%}>
-            <i class="input__close-icon">
-              <svg width="24" height="24">
-                <use href="#close" />
-              </svg>
-            </i>
-            <input name="options[prefix]" type="hidden" value="last">
-          </div>
-          <div id="predictive-search"  >
-            <ul class="predictive-content">
-              <li>
+  <!-- search area begin -->
+  <div class="header-search-area-wrapper" style="display: none;">
+    <div class="header-search-area-containerWrapper">
+      <div class="header-search-area-container">
+        <predictive-search>
+          <form action="{{ routes.search_url }}" method="get" role="search">
+            <div class="predictive-search ">
+              <i class="input__search-icon">
                 <svg width="24" height="24">
-                  <use href="#trending" />
+                  <use href="#search" />
                 </svg>
-                <b>Trending Search</b></li>
-              <li>
-                <a href="/collections/all-kanchipuram">ikat saree</a>
-              </li>
-              <li>
-                <a href="/collections/all-kanchipuram">Kanchipuram silk saree</a>
-              </li>
-              <li>
-                <a href="/collections/organza-silk">Organza silk sarees</a>
-              </li>
-              <li>
-                <a href="/pages/saree">Silk </a>
-              </li>
-            </ul>
-          </div>
-        </form>
-      </predictive-search>
+              </i>
+              <label hidden for="Search">Search</label>
+              <input class="input-full" id="Search" type="search" name="q" placeholder="Search products ..."
+                value="{{ search.terms | escape }}" {%- if settings.predictive_search_enabled -%} role="combobox"
+                aria-expanded="false" aria-owns="predictive-search-results-list"
+                aria-controls="predictive-search-results-list" aria-haspopup="listbox" aria-autocomplete="list"
+                autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false" {%- endif -%}>
+              <i class="input__close-icon">
+                <svg width="24" height="24">
+                  <use href="#close" />
+                </svg>
+              </i>
+              <input name="options[prefix]" type="hidden" value="last">
+            </div>
+            <div id="predictive-search">
+              <ul class="predictive-content">
+                <li>
+                  <svg width="24" height="24">
+                    <use href="#trending" />
+                  </svg>
+                  <b>Trending Search</b>
+                </li>
+                <li>
+                  <a href="/collections/all-kanchipuram">ikat saree</a>
+                </li>
+                <li>
+                  <a href="/collections/all-kanchipuram">Kanchipuram silk saree</a>
+                </li>
+                <li>
+                  <a href="/collections/organza-silk">Organza silk sarees</a>
+                </li>
+                <li>
+                  <a href="/pages/saree">Silk </a>
+                </li>
+              </ul>
+            </div>
+          </form>
+        </predictive-search>
+      </div>
     </div>
   </div>
-</div>
-<!-- search area end -->
-<div class="productToaster"></div>
+  <!-- search area end -->
+  <div class="productToaster"></div>
 
   {% section 'drawer' %}
 

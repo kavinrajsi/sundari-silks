@@ -348,6 +348,10 @@
 .fixedElement {
   @media (min-width: 768px) {
     padding-top: 40px;
+    &.sticky{
+      padding-top: 96px;
+    }
+
   }
 }
 .meFitlerMobile {
@@ -356,7 +360,11 @@
   left: 0;
   right: 0;
   max-height: 56px;
-
+  @include z-index(meFilter);
+  &.sticky {
+    position: fixed;
+    top: 112px;
+  }
   .filterCardToggle {
     display: none;
   }

@@ -1162,7 +1162,7 @@ main img {
   display: none;
 }
 .header-mobile-navigation-list.active {
-  z-index: 4;
+  z-index: 6;
   display: block;
   position: fixed;
   top: 64px;
@@ -3453,6 +3453,9 @@ ul.collection-list.grid .card__heading {
   .fixedElement {
     padding-top: 40px;
   }
+  .fixedElement.sticky {
+    padding-top: 96px;
+  }
 }
 
 .meFitlerMobile {
@@ -3461,6 +3464,7 @@ ul.collection-list.grid .card__heading {
   left: 0;
   right: 0;
   max-height: 56px;
+  z-index: 5;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -3468,6 +3472,10 @@ ul.collection-list.grid .card__heading {
   box-shadow: 1px 1px #d6d6d4, -1px -1px #d6d6d4;
   padding-left: var(--Ngap);
   padding-right: var(--Ngap);
+}
+.meFitlerMobile.sticky {
+  position: fixed;
+  top: 112px;
 }
 .meFitlerMobile .filterCardToggle {
   display: none;
@@ -4705,6 +4713,11 @@ footer {
   footer {
     padding-top: 48px;
     padding-bottom: 0;
+  }
+}
+@media (min-width: 768px) {
+  footer {
+    margin-bottom: 0px;
   }
 }
 footer .footer-main {
