@@ -1,6 +1,7 @@
 {
   "current": {
     "favicon": "shopify:\/\/shop_images\/favicon.png",
+    "background_color": "#1878b9",
     "type_header": "playfair_display_n4",
     "section-gap-tablet": 16,
     "section-gap-largetablet": 16,
