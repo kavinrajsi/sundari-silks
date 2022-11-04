@@ -529,6 +529,7 @@ html {
 }
 
 body {
+  z-index: 1;
   font-size: 1rem;
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
@@ -665,7 +666,7 @@ main img {
 
 /* header */
 .header {
-  z-index: 0;
+  z-index: 2;
   position: fixed;
   top: 0px;
   left: 0;
@@ -747,33 +748,39 @@ main img {
 
 /* header search */
 .header-search-area-wrapper {
-  /* background-color: rgba(0, 0, 0, 0.4); */
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.4);
   margin: 0 auto;
   position: absolute;
   height: calc(100vh - 0px);
   top: 0;
   left: 0;
   right: 0;
-  z-index: 2;
-  transform: translateY(-4px);
-  transition: all 0.6s ease-in-out;
+  opacity: 0;
 }
 .header-search-area-wrapper.active {
-  transform: translateY(0px);
+  opacity: 1;
 }
 .header-search-area-wrapper .header-search-area-containerWrapper {
+  transition: transform 0.6s ease-out;
+  transform: translateY(-100%);
   background-color: var(--color-white);
   padding: var(--Ngap) 2vw;
   position: absolute;
   width: 100%;
   left: 0;
   right: 0;
-  top: 62px;
+  top: 0px;
 }
 @media (min-width: 992px) {
   .header-search-area-wrapper .header-search-area-containerWrapper {
-    top: 110px;
+    top: 0px;
   }
+}
+.header-search-area-wrapper.active .header-search-area-containerWrapper {
+  transform: translateY(0px);
+  transform: none;
+  transition: transform 0.6s ease-in;
 }
 .header-search-area-wrapper .header-search-area-container {
   text-align: center;
@@ -791,6 +798,7 @@ main img {
   border-bottom: 1px solid var(--color-border);
 }
 .header-search-area-wrapper .header-search-area-container .predictive-search input {
+  border: 0;
   border-radius: var(--border-radius);
   padding: 10px 40px;
   width: calc(100% - 40px);
@@ -900,7 +908,7 @@ main img {
 }
 .header-search-area-wrapper .header-search-area-container #predictive-search-results-list li:last-child {
   padding: 0px;
-  flex: 1 0 auto;
+  flex: 1 0 100%;
 }
 .header-search-area-wrapper .header-search-area-container #predictive-search-results-list li:last-child button {
   width: 100%;
@@ -915,6 +923,7 @@ main img {
 
 /* common footer */
 .header-nav-list-footer {
+  z-index: 2;
   position: fixed;
   bottom: 0px;
   left: 0;
@@ -923,7 +932,6 @@ main img {
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
   display: flex;
-  z-index: 2;
 }
 .header-nav-list-footer > div {
   padding: 12px 8px;
@@ -1009,7 +1017,6 @@ main img {
   left: 0;
   right: 0;
   top: 100%;
-  z-index: 100;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   width: 100%;
@@ -1084,7 +1091,6 @@ main img {
   right: 0;
   margin: 0 auto;
   width: 100%;
-  z-index: 5;
   visibility: hidden;
   position: absolute;
   display: none;
@@ -1160,9 +1166,7 @@ main img {
   position: fixed;
   top: 64px;
   left: 0px;
-  z-index: 5;
   max-height: none;
-  z-index: 9999999999;
   height: calc(100vh - 64px);
   box-shadow: none;
   touch-action: manipulation;
@@ -1267,7 +1271,6 @@ main img {
   color: var(--color-black);
   position: absolute;
   top: -10px;
-  z-index: 2;
   width: 22px;
   height: 22px;
   left: 11px;
@@ -2641,7 +2644,6 @@ ul.collection-list.grid .card__heading {
   font-weight: 500;
   font-style: normal;
   background-color: var(--color-primary);
-  z-index: 1;
   -webkit-tap-highlight-color: initial;
 }
 .page-product-detail .product-description {
@@ -2767,7 +2769,6 @@ ul.collection-list.grid .card__heading {
 }
 .page-product-detail .modal {
   position: absolute;
-  z-index: 10000;
   top: 0;
   left: 0;
   visibility: hidden;
@@ -2776,7 +2777,6 @@ ul.collection-list.grid .card__heading {
 }
 .page-product-detail .modal .modal-overlay {
   position: fixed;
-  z-index: 1050;
   top: 0;
   left: 0;
   width: 100vw;
@@ -2811,7 +2811,6 @@ ul.collection-list.grid .card__heading {
   left: 0;
   right: 0;
   margin: 0 auto;
-  z-index: 9999;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3016,7 +3015,6 @@ ul.collection-list.grid .card__heading {
   width: max-content;
   max-width: 100%;
   pointer-events: none;
-  z-index: 1090;
   padding: 8px 24px 8px 8px;
   border-radius: var(--border-radius);
   width: 280px;
@@ -3088,7 +3086,6 @@ ul.collection-list.grid .card__heading {
   margin-bottom: 10px;
   font-size: 14px;
   position: absolute;
-  z-index: 4;
   left: 6px;
   right: 0;
   top: 150px;
@@ -3108,31 +3105,6 @@ ul.collection-list.grid .card__heading {
   border-radius: 5px;
 }
 
-@media (max-width: 768px) {
-  body {
-    padding: 0;
-  }
-  .header {
-    position: static;
-  }
-  .product-form__buttons {
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-  .product-form__buttons .button-add-to-cart {
-    gap: 8px;
-  }
-  footer {
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
-  }
-}
-@media (max-width: 568px) {
-  .footer-care {
-    display: none;
-  }
-}
 .meFilter .filer--overlay {
   position: fixed;
   top: 0;
@@ -3140,7 +3112,6 @@ ul.collection-list.grid .card__heading {
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: 200;
   opacity: 0;
   transition: opacity 0.3s;
   will-change: opacity;
@@ -3164,7 +3135,6 @@ ul.collection-list.grid .card__heading {
   bottom: 0;
   width: 100%;
   max-width: 420px;
-  z-index: 10999;
   overflow: auto;
   transition: transform 0.3s;
   will-change: transform;
@@ -3494,7 +3464,6 @@ ul.collection-list.grid .card__heading {
   width: 100%;
   background: #f7f7f5;
   box-shadow: 1px 1px #d6d6d4, -1px -1px #d6d6d4;
-  z-index: 2;
   padding-left: var(--Ngap);
   padding-right: var(--Ngap);
 }
@@ -3651,7 +3620,6 @@ body.hidden {
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: 200;
   opacity: 0;
   transition: opacity 0.3s;
   will-change: opacity;
@@ -3677,7 +3645,6 @@ body.hidden {
   height: 100%;
   width: 100%;
   max-width: 420px;
-  z-index: 10999;
   overflow: auto;
   transition: transform 0.3s;
   will-change: transform;
@@ -3814,7 +3781,6 @@ body.hidden {
   background-color: var(--color-secondary);
   font-weight: 400;
   font-style: normal;
-  z-index: 1;
   -webkit-tap-highlight-color: initial;
   text-align: center;
   line-height: normal;
@@ -3835,7 +3801,6 @@ body.hidden {
   background-color: var(--color-secondary);
   font-weight: 400;
   font-style: normal;
-  z-index: 1;
   -webkit-tap-highlight-color: initial;
   text-align: center;
   line-height: normal;
@@ -3894,7 +3859,6 @@ body.hidden {
   background-color: var(--color-secondary);
   font-weight: 400;
   font-style: normal;
-  z-index: 1;
   -webkit-tap-highlight-color: initial;
   text-align: center;
   line-height: normal;

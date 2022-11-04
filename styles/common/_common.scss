@@ -8,6 +8,10 @@ $desktop: 1024px;
 $ldesktop: 1364px;
 
 $z-index: (
+  body : 1,
+  header: 2,
+  mobileFooter: 2,
+  searchAreaWrapper: 2,
   drawer : 21,
   drawer_overlay : 20,
   cart: 19,
@@ -18,7 +22,6 @@ $z-index: (
   quickview_overlay: 14,
   product: 13,
   product_size-chart: 12,
-  header: 11,
   header_cart_icon:  10
 );
 
@@ -153,6 +156,7 @@ html {
 }
 
 body {
+  @include z-index(body);
   font-size: 1rem;
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;

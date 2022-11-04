@@ -10,7 +10,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 200;
+    // z-index: 200;
     opacity: 0;
     transition: opacity 0.3s;
     will-change: opacity;
@@ -36,7 +36,7 @@
   height: 100%;
   width: 100%;
   max-width: 420px;
-  z-index: 10999;
+  // z-index: 10999;
   overflow: auto;
   transition: transform 0.3s;
   will-change: transform;
@@ -169,7 +169,7 @@
       background-color: var(--color-secondary);
       font-weight: 400;
       font-style: normal;
-      z-index: 1;
+      // z-index: 1;
       -webkit-tap-highlight-color: initial;
       text-align: center;
       line-height: normal;
@@ -190,7 +190,7 @@
       background-color: var(--color-secondary);
       font-weight: 400;
       font-style: normal;
-      z-index: 1;
+      // z-index: 1;
       -webkit-tap-highlight-color: initial;
       text-align: center;
       line-height: normal;
@@ -258,7 +258,7 @@
   font-style: normal;
   // transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),
     // border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  z-index: 1;
+  // z-index: 1;
   -webkit-tap-highlight-color: initial;
   text-align: center;
   line-height: normal;

@@ -365,6 +365,59 @@
     {% section 'footer' %}
   </section>
 
+
+<!-- search area begin -->
+<div class="header-search-area-wrapper" style="display: none;">
+  <div class="header-search-area-containerWrapper">
+    <div class="header-search-area-container">
+      <predictive-search>
+        <form action="{{ routes.search_url }}" method="get" role="search">
+          <div class="predictive-search ">
+            <i class="input__search-icon">
+              <svg width="24" height="24">
+                <use href="#search" />
+              </svg>
+            </i>
+            <label hidden for="Search">Search</label>
+            <input class="input-full" id="Search" type="search" name="q" placeholder="Search products ..."
+              value="{{ search.terms | escape }}" {%- if settings.predictive_search_enabled -%} role="combobox"
+              aria-expanded="false" aria-owns="predictive-search-results-list"
+              aria-controls="predictive-search-results-list" aria-haspopup="listbox" aria-autocomplete="list"
+              autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false" {%- endif -%}>
+            <i class="input__close-icon">
+              <svg width="24" height="24">
+                <use href="#close" />
+              </svg>
+            </i>
+            <input name="options[prefix]" type="hidden" value="last">
+          </div>
+          <div id="predictive-search"  >
+            <ul class="predictive-content">
+              <li>
+                <svg width="24" height="24">
+                  <use href="#trending" />
+                </svg>
+                <b>Trending Search</b></li>
+              <li>
+                <a href="/collections/all-kanchipuram">ikat saree</a>
+              </li>
+              <li>
+                <a href="/collections/all-kanchipuram">Kanchipuram silk saree</a>
+              </li>
+              <li>
+                <a href="/collections/organza-silk">Organza silk sarees</a>
+              </li>
+              <li>
+                <a href="/pages/saree">Silk </a>
+              </li>
+            </ul>
+          </div>
+        </form>
+      </predictive-search>
+    </div>
+  </div>
+</div>
+<!-- search area end -->
 <div class="productToaster"></div>
 
   {% section 'drawer' %}

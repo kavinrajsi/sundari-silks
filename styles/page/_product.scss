@@ -146,7 +146,7 @@
       font-weight: 500;
       font-style: normal;
       background-color: var(--color-primary);
-      z-index: 1;
+      // z-index: 1;
       -webkit-tap-highlight-color: initial;
     }
     &-description {
@@ -303,7 +303,7 @@
 
   .modal {
     position: absolute;
-    z-index: 10000;
+    // z-index: 10000;
     top: 0;
     left: 0;
     visibility: hidden;
@@ -312,7 +312,7 @@
 
     .modal-overlay {
       position: fixed;
-      z-index: 1050;
+      // z-index: 1050;
       top: 0;
       left: 0;
       width: 100vw;
@@ -349,7 +349,7 @@
       left: 0;
       right: 0;
       margin: 0 auto;
-      z-index: 9999;
+      // z-index: 9999;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -572,7 +572,7 @@
   width: max-content;
   max-width: 100%;
   pointer-events: none;
-  z-index: 1090;
+  // z-index: 1090;
   padding: 8px 24px 8px 8px;
   border-radius: var(--border-radius);
   width: 280px;
@@ -647,7 +647,7 @@
     margin-bottom: 10px;
     font-size: 14px;
     position: absolute;
-    z-index: 4;
+    // z-index: 4;
     left: 6px;
     right: 0;
     top: 150px;
@@ -664,36 +664,5 @@
       background-color: var(--color-maroon);
       border-radius: 5px;
     }
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    padding: 0;
-  }
-  .header {
-    position: static;
-  }
-  .product-form__buttons {
-    // position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    // background: white;
-    // padding: 8px;
-  }
-  .product-form__buttons .button-add-to-cart {
-    gap: 8px;
-    // margin: 0;
-  }
-  footer{
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
-  }
-}
-
-@media (max-width: 568px) {
-  .footer-care {
-    display: none;
   }
 }

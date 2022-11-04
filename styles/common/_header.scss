@@ -28,7 +28,7 @@
 
 /* header */
 .header {
-  z-index: 0;
+  @include z-index(header);
   position: fixed;
   top: 0px;
   left: 0;
@@ -110,31 +110,38 @@
 /* header search */
 .header {
   &-search-area-wrapper {
-    /* background-color: rgba(0, 0, 0, 0.4); */
+
+  @include z-index(searchAreaWrapper);
+
+    background-color: rgba(0, 0, 0, 0.4);
     margin: 0 auto;
-    // padding-top: 16px;
     position: absolute;
     height: calc(100vh - 0px);
     top: 0;
     left: 0;
     right: 0;
-    z-index: 2;
-    transform: translateY(-4px);
-    transition: all 0.6s ease-in-out;
+    opacity: 0;
     &.active {
-      transform: translateY(-0px);
+      opacity: 1;
     }
     .header-search-area-containerWrapper {
+      transition: transform 0.6s ease-out;
+      transform: translateY(-100%);
       background-color: var(--color-white);
       padding: var(--Ngap) 2vw;
       position: absolute;
       width: 100%;
       left: 0;
       right: 0;
-      top: 62px;
+      top: 0px;
       @media(min-width: 992px){
-      top: 110px;
+      top: 0px;
       }
+    }
+    &.active .header-search-area-containerWrapper {
+      transform: translateY(-0px);
+      transform: none;
+      transition: transform 0.6s ease-in;
     }
     .header-search-area-container {
       text-align: center;
@@ -148,6 +155,7 @@
         align-items: center;
         border-bottom: 1px solid var(--color-border);
         input {
+          border: 0;
           border-radius: var(--border-radius);
           padding: 10px 40px;
           width: calc(100% - 40px);
@@ -250,7 +258,7 @@
           }
           &:last-child {
             padding: 0px;
-            flex: 1 0 auto;
+            flex: 1 0 100%;
             // margin: 0 18px;
             button {
               width: 100%;
@@ -271,6 +279,7 @@
 /* common footer */
 .header {
   &-nav-list-footer {
+    @include z-index(mobileFooter);
     position: fixed;
     bottom: 0px;
     left: 0;
@@ -279,7 +288,6 @@
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
     display: flex;
-    z-index: 2;
     > div {
       padding: 12px 8px;
       flex: 1 0 auto;
@@ -353,7 +361,7 @@
       left: 0;
       right: 0;
       top: 100%;
-      z-index: 100;
+      // z-index: 100;
       border-bottom-left-radius: 4px;
       border-bottom-right-radius: 4px;
       width: 100%;
@@ -436,7 +444,7 @@
       right: 0;
       margin: 0 auto;
       width: 100%;
-      z-index: 5;
+      // z-index: 5;
       visibility: hidden;
       position: absolute;
       display: none;
@@ -512,9 +520,9 @@
     position: fixed;
     top: 64px;
     left: 0px;
-    z-index: 5;
     max-height: none;
-    z-index: 9999999999;
+    // z-index: 5;
+    // z-index: 9999999999;
     height: calc(100vh - 64px);
     // transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1),
       // visibility 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -638,7 +646,7 @@
   color: var(--color-black);
   position: absolute;
   top: -10px;
-  z-index: 2;
+  // z-index: 2;
   width: 22px;
   height: 22px;
   left: 11px;
