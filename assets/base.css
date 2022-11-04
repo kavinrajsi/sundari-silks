@@ -3114,6 +3114,7 @@ ul.collection-list.grid .card__heading {
   bottom: 0;
   left: 0;
   width: 100%;
+  z-index: 6;
   opacity: 0;
   transition: opacity 0.3s;
   will-change: opacity;
@@ -3137,6 +3138,7 @@ ul.collection-list.grid .card__heading {
   bottom: 0;
   width: 100%;
   max-width: 420px;
+  z-index: 7;
   overflow: auto;
   transition: transform 0.3s;
   will-change: transform;
@@ -3160,6 +3162,9 @@ ul.collection-list.grid .card__heading {
 }
 .meFilter .fitler--wrapper form.filter-form {
   position: relative;
+}
+.meFilter .fitler--wrapper form.filter-form .filter--content {
+  height: calc(100vh - 52px - 94px);
 }
 .meFilter .fitler--wrapper form.filter-form .filter-group {
   overflow: hidden;
