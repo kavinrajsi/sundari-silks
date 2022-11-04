@@ -116,7 +116,7 @@
           @media (min-width: 768px) {
             padding: 0 18px;
             flex: 1 0 440px;
-            min-width: 440px;
+            max-width: 440px;
           }
           .line-item__title {
             font-size: 14px;
@@ -149,6 +149,7 @@
           flex-direction: row;
           align-items: center;
           justify-content: space-between;
+          align-items: flex-end;
           @media (min-width: 768px) {
             flex-direction: column;
             justify-content: space-between;
@@ -177,10 +178,10 @@
             svg {
               width: 18px;
               height: 18px;
-              @media (min-width: 768px) {
-                width: 24px;
-                height: 24px;
-              }
+              // @media (min-width: 768px) {
+              //   width: 24px;
+              //   height: 24px;
+              // }
             }
           }
         }
@@ -239,8 +240,8 @@
         font-weight: bold;
         font-size: 18px;
         @media (min-width: 768px) {
-        text-align: right;
-      }
+          text-align: right;
+        }
       }
       .page-cart-atbutton {
         margin-bottom: 20px;

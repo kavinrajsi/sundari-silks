@@ -3650,6 +3650,7 @@ body.hidden {
   bottom: 0;
   left: 0;
   width: 100%;
+  z-index: 8;
   opacity: 0;
   transition: opacity 0.3s;
   will-change: opacity;
@@ -3675,6 +3676,7 @@ body.hidden {
   height: 100%;
   width: 100%;
   max-width: 420px;
+  z-index: 9;
   overflow: auto;
   transition: transform 0.3s;
   will-change: transform;
@@ -3701,7 +3703,6 @@ body.hidden {
   border-bottom: 1px solid var(--color-border);
 }
 .drawer__header .drawer__title {
-  font-family: var(--font-playfair);
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -3791,7 +3792,6 @@ body.hidden {
 .drawer__footer .cartpopup-total {
   display: flex;
   justify-content: space-between;
-  font-family: var(--font-playfair);
   font-size: 16px;
 }
 .drawer__footer .cartpopup-total .price {
@@ -3825,23 +3825,10 @@ body.hidden {
 }
 .drawer__footer .cartpopup-buttons .cartpopup-button-alter {
   margin-top: 12px;
-  font-size: 12px;
-  padding: 14px 16px !important;
-  color: var(--color-black);
-  background-color: var(--color-secondary);
-  font-weight: 400;
-  font-style: normal;
-  -webkit-tap-highlight-color: initial;
-  text-align: center;
-  line-height: normal;
-  border: 1px solid transparent;
-  border-radius: 0;
-  text-transform: uppercase;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
+}
+.drawer__footer .cartpopup-buttons .cartpopup-button-alter:hover {
+  color: var(--color-white);
 }
 
 #cart__drawer_items .cart__item {
@@ -4436,7 +4423,7 @@ div.pswp__img--placeholder,
   .page-cart .cart-content .cart__items.cart_block .line-item .line-item__details {
     padding: 0 18px;
     flex: 1 0 440px;
-    min-width: 440px;
+    max-width: 440px;
   }
 }
 .page-cart .cart-content .cart__items.cart_block .line-item .line-item__details .line-item__title {
@@ -4473,6 +4460,7 @@ div.pswp__img--placeholder,
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  align-items: flex-end;
 }
 @media (min-width: 768px) {
   .page-cart .cart-content .cart__items.cart_block .line-item .line-item__right {
@@ -4509,12 +4497,6 @@ div.pswp__img--placeholder,
 .page-cart .cart-content .cart__items.cart_block .line-item .line-item__right a svg {
   width: 18px;
   height: 18px;
-}
-@media (min-width: 768px) {
-  .page-cart .cart-content .cart__items.cart_block .line-item .line-item__right a svg {
-    width: 24px;
-    height: 24px;
-  }
 }
 .page-cart .cart-content .cart__details.card__block {
   display: flex;
