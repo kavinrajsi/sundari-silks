@@ -748,7 +748,7 @@ main img {
 
 /* header search */
 .header-search-area-wrapper {
-  z-index: 2;
+  z-index: 3;
   background-color: rgba(0, 0, 0, 0.4);
   margin: 0 auto;
   position: absolute;
@@ -1162,12 +1162,14 @@ main img {
   display: none;
 }
 .header-mobile-navigation-list.active {
+  z-index: 4;
   display: block;
   position: fixed;
   top: 64px;
   left: 0px;
   max-height: none;
   height: calc(100vh - 64px);
+  transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), visibility 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   box-shadow: none;
   touch-action: manipulation;
   bottom: 0;

@@ -25,7 +25,6 @@
   margin-right: auto;
 }
 
-
 /* header */
 .header {
   @include z-index(header);
@@ -103,15 +102,13 @@
           text-align: left !important;
         }
       }
-
     }
   }
 }
 /* header search */
 .header {
   &-search-area-wrapper {
-
-  @include z-index(searchAreaWrapper);
+    @include z-index(searchAreaWrapper);
 
     background-color: rgba(0, 0, 0, 0.4);
     margin: 0 auto;
@@ -134,8 +131,8 @@
       left: 0;
       right: 0;
       top: 0px;
-      @media(min-width: 992px){
-      top: 0px;
+      @media (min-width: 992px) {
+        top: 0px;
       }
     }
     &.active .header-search-area-containerWrapper {
@@ -160,11 +157,11 @@
           padding: 10px 40px;
           width: calc(100% - 40px);
           @media (min-width: 992px) {
-          padding-left: 40px;
-          padding-right: 40px;
-          padding-top: 20px;
-          padding-bottom: 20px;
-          width: calc(100% - 40px);
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            width: calc(100% - 40px);
           }
         }
         .input__search-icon {
@@ -177,8 +174,7 @@
           right: 8px;
         }
       }
-      #predictive-search{
-
+      #predictive-search {
         /* pre data */
 
         .predictive-content {
@@ -429,7 +425,7 @@
           word-wrap: break-word;
           border-bottom: 0;
           border-radius: 2px;
-          &:hover{
+          &:hover {
             background-color: #f4f4f4;
           }
         }
@@ -516,19 +512,17 @@
 .header-mobile-navigation-list {
   display: none;
   &.active {
+    @include z-index(mobileSideMenu);
     display: block;
     position: fixed;
     top: 64px;
     left: 0px;
     max-height: none;
-    // z-index: 5;
-    // z-index: 9999999999;
     height: calc(100vh - 64px);
-    // transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1),
-      // visibility 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1),
+      visibility 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
     box-shadow: none;
     touch-action: manipulation;
-    // top: auto;
     bottom: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
@@ -563,7 +557,7 @@
         justify-content: space-between;
         border-bottom: 1px solid var(--color-border);
       }
-      &:last-child a{
+      &:last-child a {
         border-bottom: 0;
       }
       ul {
@@ -583,8 +577,8 @@
         animation-direction: ease;
         li {
           a {
-           padding: 8px;
-           margin: 8px;
+            padding: 8px;
+            margin: 8px;
           }
         }
       }
