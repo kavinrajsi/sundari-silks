@@ -1,7 +1,7 @@
 {%- liquid
-assign header_font = settings.type_header_font
-assign body_font = settings.body_text_font
-%}
+  assign header_font = settings.type_header
+  assign body_font = settings.type_body
+-%}
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
 
@@ -29,13 +29,10 @@ assign body_font = settings.body_text_font
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
   <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preload" as="font" href="{{ header_font | font_url }}" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="{{ body_font | font_url }}" type="font/woff2" crossorigin>
   <link rel="preload" href="{{'base.css' | asset_url}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap" rel="stylesheet">
 
   {{ 'lazysizes.js' | asset_url | preload_tag: as: 'script' }}
   {{ 'ls.rias.js' | asset_url | preload_tag: as: 'script' }}
@@ -56,28 +53,23 @@ assign body_font = settings.body_text_font
   {{ 'wishlist.js' | asset_url | preload_tag: as: 'script' }}
   {{ 'global.js' | asset_url | preload_tag: as: 'script' }}
 
-  <script src="{{ 'lazysizes.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'ls.rias.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'ls.bgset.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'ls.blur-up.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'jquery.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'lazysizes.js' | asset_url }}" defer></script>
+  <script src="{{ 'ls.rias.js' | asset_url }}" defer></script>
+  <script src="{{ 'ls.bgset.js' | asset_url }}" defer></script>
+  <script src="{{ 'ls.blur-up.js' | asset_url }}" defer></script>
+  <script src="{{ 'jquery.js' | asset_url }}" defer></script>
 
   {{ content_for_header }}
-  {% if template contains 'index' %}
-  {{ 'slick.css' | asset_url | stylesheet_tag }}
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-  {% endif %}
 
-  {% comment %}
-  {{ 'base.css' | asset_url | stylesheet_tag }}
-  {% endcomment %}
-
-  <noscript><link rel="stylesheet" href="{{'base.css' | asset_url }}"></noscript>
 
   {% style %}
+
   {{ header_font | font_face: font_display: 'swap' }}
   {{ body_font | font_face: font_display: 'swap' }}
+
   :root {
+  --heading-font: {{ header_font_bold.family }}, {{ header_font.fallback_families }};
+  --body-font: {{ body_font.family }}, {{ body_font.fallback_families }};
   --gap: {{settings.product-gap-mobile}}px;
   --section-space: {{settings.section-gap-mobile}}px;
   --home-section-space: {{settings.home-section-gap-mobile}}px;
@@ -166,6 +158,19 @@ assign body_font = settings.body_text_font
   }
   }
   {% endstyle %}
+
+
+  {% if template contains 'index' %}
+  {{ 'slick.css' | asset_url | stylesheet_tag }}
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  {% endif %}
+
+  {% comment %}
+  {{ 'base.css' | asset_url | stylesheet_tag }}
+  {% endcomment %}
+
+  <noscript><link rel="stylesheet" href="{{'base.css' | asset_url }}"></noscript>
+
   <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
     if (Shopify.designMode) {
       document.documentElement.classList.add('shopify-design-mode');

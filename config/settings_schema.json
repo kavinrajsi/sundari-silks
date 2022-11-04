@@ -18,7 +18,7 @@
     ]
   },
   {
-    "name": "Navigation Bar Colors Settings",
+    "name": "Color",
     "settings": [
       {
         "type": "color",
@@ -229,6 +229,16 @@
         "type": "range",
         "id": "specification_content",
         "label": "Specification Content",
+        "default": 16,
+        "unit": "px",
+        "min": 10,
+        "max": 18,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "breadcrumb_font",
+        "label": "Bread Crumb",
         "default": 16,
         "unit": "px",
         "min": 10,
