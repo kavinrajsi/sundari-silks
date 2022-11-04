@@ -43,7 +43,8 @@
     transform: translateY(103%);
     -webkit-overflow-scrolling: touch;
     box-shadow: 0 2px 6px #777;
-    border-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
     .filter--header {
       display: flex;
       justify-content: space-between;
@@ -55,8 +56,8 @@
     }
     form.filter-form {
       position: relative;
-      .filter--content{
-          height: calc(100vh - 52px - 94px);
+      .filter--content {
+        height: calc(100vh - 52px - 94px);
       }
       .filter-group {
         overflow: hidden;
@@ -82,6 +83,11 @@
         }
         &[open] summary {
           background-color: var(--color-secondary);
+          &:hover {
+            div {
+              background-color: #e6e6e6;
+            }
+          }
         }
         &:last-child {
           div {
@@ -113,7 +119,7 @@
             @supports (-webkit-appearance: none) or (-moz-appearance: none) {
               input[type="checkbox"],
               input[type="radio"] {
-                --active: #fdd933;
+                --active: #f58220;
                 --active-inner: #fff;
                 --focus: 2px rgba(39, 94, 254, 0.3);
                 --border: #bbc1e1;
@@ -255,35 +261,42 @@
       }
     }
     .filter--footer {
+      background: var(--color-white);
       border-top: 1px solid var(--color-border);
       position: relative;
       bottom: 0;
       width: 100%;
-      padding: 16px 10px;
+      padding: 8px;
       text-align: center;
       .filter-group-display__submit {
         display: flex;
+        gap: 24px;
+        > a,
+        input {
+          flex: 1 0 auto;
+          min-width: auto;
+        }
       }
       .active-filters__clear,
       .filter-group-display__submit input {
         flex: 1 0 50%;
         min-width: 50%;
-        font-size: 16px;
-        padding: 14px 20px !important;
-        color: var(--color-black);
-        background-color: var(--color-secondary);
-        font-weight: 400;
-        font-style: normal;
-        -webkit-tap-highlight-color: initial;
-        text-align: center;
-        line-height: normal;
-        border: 1px solid transparent;
-        border-radius: 0;
-        text-transform: uppercase;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 4px;
+        // font-size: 16px;
+        // padding: 14px 16px !important;
+        // color: var(--color-black);
+        // background-color: var(--color-secondary);
+        // font-weight: 400;
+        // font-style: normal;
+        // -webkit-tap-highlight-color: initial;
+        // text-align: center;
+        // line-height: normal;
+        // border: 1px solid transparent;
+        // border-radius: 0;
+        // text-transform: uppercase;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        // border-radius: 4px;
       }
       .active-filters__clear {
         background-color: transparent;
@@ -296,6 +309,8 @@
   overflow-x: scroll;
   display: flex;
   justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 0;
   padding-left: var(--Ngap);
   padding-right: var(--Ngap);
   @media (min-width: 1364px) {
@@ -312,7 +327,7 @@
     flex: 1 0 auto;
     font-size: 12px;
     background: var(--color-secondary);
-    margin-bottom: var(--Ngap);
+    // margin-bottom: var(--Ngap);
     margin-right: 4px;
     padding: 4px 6px;
     border-radius: 20px;
@@ -351,10 +366,9 @@
 .fixedElement {
   @media (min-width: 768px) {
     padding-top: 40px;
-    &.sticky{
+    &.sticky {
       padding-top: 96px;
     }
-
   }
 }
 .meFitlerMobile {
@@ -424,26 +438,32 @@
       }
     }
     #sortButton {
-      svg{
+      cursor: pointer;
+      ul#sort-by {
         display: none;
-        // position: absolute;
-        // left: 30px;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        background: var(--color-white);
+        padding: 8px;
+        border-bottom-right-radius: var(--border-radius);
+        border-bottom-left-radius: var(--border-radius);
+        margin: 0 8px;
+        li {
+          cursor: pointer;
+          padding: 8px;
+          &:not(:last-child) {
+            border-bottom: 1px solid var(--color-border);
+          }
+
+          &:hover {
+            background-color: #e6e6e6;
+          }
+        }
       }
-      select {
-        background: transparent;
-        white-space: nowrap;
-        cursor: pointer;
-        padding: 18px 22px 18px;
-        text-align: center;
-        font-size: 14px;
-        line-height: normal;
-        justify-content: center;
-        align-items: center;
-        background: transparent;
-        border: 0px;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
+
+      &:hover ul#sort-by {
+        display: block;
       }
     }
   }

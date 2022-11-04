@@ -32,7 +32,7 @@ assign body_font = settings.type_body
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preload" as="font" href="{{ header_font | font_url }}" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="{{ body_font | font_url }}" type="font/woff2" crossorigin>
-  <link rel="preload" href="{{'base.css' | asset_url}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="{{'base.css' | asset_url}}" as="style">
 
   {{ 'lazysizes.js' | asset_url | preload_tag: as: 'script' }}
   {{ 'ls.rias.js' | asset_url | preload_tag: as: 'script' }}
@@ -53,14 +53,7 @@ assign body_font = settings.type_body
   {{ 'wishlist.js' | asset_url | preload_tag: as: 'script' }}
   {{ 'global.js' | asset_url | preload_tag: as: 'script' }}
 
-  <script src="{{ 'lazysizes.js' | asset_url }}" defer></script>
-  <script src="{{ 'ls.rias.js' | asset_url }}" defer></script>
-  <script src="{{ 'ls.bgset.js' | asset_url }}" defer></script>
-  <script src="{{ 'ls.blur-up.js' | asset_url }}" defer></script>
-  <script src="{{ 'jquery.js' | asset_url }}" defer></script>
-
   {{ content_for_header }}
-
 
   {% style %}
 
@@ -179,9 +172,14 @@ assign body_font = settings.type_body
   {{ 'base.css' | asset_url | stylesheet_tag }}
   {% endcomment %}
 
-  <noscript>
-    <link rel="stylesheet" href="{{'base.css' | asset_url }}">
-  </noscript>
+  <link rel="stylesheet" href="{{'base.css' | asset_url }}">
+
+  <script src="{{ 'lazysizes.js' | asset_url }}" defer></script>
+  <script src="{{ 'ls.rias.js' | asset_url }}" defer></script>
+  <script src="{{ 'ls.bgset.js' | asset_url }}" defer></script>
+  <script src="{{ 'ls.blur-up.js' | asset_url }}" defer></script>
+  <script src="{{ 'jquery.js' | asset_url }}" defer></script>
+
 
   <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
     if (Shopify.designMode) {

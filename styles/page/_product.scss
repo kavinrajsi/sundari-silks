@@ -256,7 +256,7 @@
         cursor: pointer;
       }
       &.input-radio-label-chip {
-        cursor: pointer;
+
         display: inline-flex;
         justify-content: center;
         align-items: center;
@@ -267,9 +267,16 @@
         font-weight: 400;
         font-size: 14px;
         line-height: 18px;
-        padding: 12px 18px;
         color: #fff;
         margin-right: 8px;
+        margin-bottom: 8px;
+
+        min-height: 48px;
+        min-width: 60px;
+        border-radius: 50px;
+        height: auto;
+        width: auto;
+        padding: 0 10px;
       }
       &.input-radio-label-circle {
         border-radius: 50%;
@@ -288,6 +295,7 @@
         line-height: 18px;
         color: #fff;
         margin-right: 8px;
+        margin-bottom: 8px;
       }
     }
     label:has(input[type="radio"]:checked) {
