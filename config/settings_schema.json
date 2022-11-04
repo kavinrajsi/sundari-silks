@@ -25,6 +25,48 @@
         "id": "navbar_color",
         "label": "NavBar Background Color",
         "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "neutral_color_1",
+        "label": "Neutral Colors (white)",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "neutral_color_2",
+        "label": "Neutral Colors (black)",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "border_color",
+        "label": "Border Color",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Primary Color",
+        "default": "#1d5d31"
+      },
+      {
+        "type": "color",
+        "id": "secondary_color",
+        "label": "Secondary Color",
+        "default": "#f58220"
+      },
+      {
+        "type": "color",
+        "id": "tertiary_color",
+        "label": "Tertiary Color",
+        "default": "#fdd933"
+      },
+      {
+        "type": "color",
+        "id": "fourth_color",
+        "label": "Fourth Color",
+        "default": "#90181b"
       }
     ]
   },
