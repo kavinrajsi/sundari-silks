@@ -3,8 +3,8 @@
 {% case block.type %}
 {% when 'announcement' %}
 <marquee width="60%" direction="left">
-<div style="background-color: {{block.settings.announcement-background-color}}; color:{{block.settings.announcement-text-color}}; "
-  class="announcement-bar"
+<div style="background-color: {{block.settings.announcement-background-color}}; color: {{block.settings.announcement-text-color}};"
+  class="announcement-bar bg_color-{{block.settings.announcement-background-color}} text_color-{{block.settings.announcement-text-color}}"
   role="region">
   {% if block.settings.text != blank %}
   {% if block.settings.link != blank %}
@@ -20,7 +20,7 @@
   {% endif %}
   {% endif %}
 </div>
-</marquee>
+
 {% endcase %}
 {% endfor %}
 {% schema %}
