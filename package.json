@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/kavinrajsi/boomer#readme",
   "devDependencies": {
+    "@babel/core": "^7.20.2",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-cli": "^2.3.0",
