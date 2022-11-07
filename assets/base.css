@@ -1528,6 +1528,8 @@ body:not(.template-index) .header-nav-list-footer {
 .homepageBanner .large-12.columns img.desktopBanner {
   display: none;
   object-fit: cover;
+  object-position: top center;
+  aspect-ratio: 1457/455;
 }
 @media (min-width: 641px) {
   .homepageBanner .large-12.columns img.desktopBanner {
