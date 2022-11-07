@@ -67,9 +67,8 @@
         "blocks": {
           "e5b9b3cb-42bb-43bc-adac-0cad652993ae": {
             "type": "announcement",
-            "disabled": true,
             "settings": {
-              "text": "Announce something here lorm",
+              "text": "Vanakkam, our website is currently being upgraded. We expect to enhance your shopping experience in 48 hours. We apologize for any inconvenience caused in the meanwhile.",
               "link": "",
               "announcement-background-color": "#000000",
               "announcement-text-color": "#ffffff"
@@ -108,6 +107,61 @@
               "subtitle": "Explore"
             }
           },
+          "9ec61fc7-ed2a-4490-8411-bf33c7d3eb56": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-kanchipuram-wedding-edit_340x_progressive_png.jpg",
+              "mega_link": "Wedding Edit",
+              "link": "shopify:\/\/collections\/saree",
+              "title": "Venkatagiri Cotton",
+              "subtitle": "Explore"
+            }
+          },
+          "ff5db7c6-de70-4624-b1a1-620865565274": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/necklaces.png",
+              "mega_link": "Necklaces",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Necklaces",
+              "subtitle": ""
+            }
+          },
+          "7a42f5b4-6dd8-44e4-aaf9-a4cca16d3985": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/earring.png",
+              "mega_link": "Earrings",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Earrings",
+              "subtitle": ""
+            }
+          },
+          "983fbcfb-efd2-4b72-8014-670919f1d5b1": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/bangles.png",
+              "mega_link": "Bangles \/ Bracelets",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Bangles \/ Bracelets",
+              "subtitle": ""
+            }
+          },
+          "45a49917-2d4a-4818-a6c7-05e15d8d7934": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/rings.png",
+              "mega_link": "Rings",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Rings",
+              "subtitle": ""
+            }
+          },
           "012b8059-1c4e-413f-9c85-824914bb2502": {
             "type": "logo_image",
             "settings": {
@@ -116,6 +170,67 @@
               "mega_link": "Anklets \/ Toe Rings",
               "link": "shopify:\/\/collections\/arthirshtam",
               "title": "Anklets \/ Toe Rings",
+              "subtitle": ""
+            }
+          },
+          "6757033e-547a-49db-b111-6aec43c0ef51": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/kids.png",
+              "mega_link": "Kids Jewellery",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Kids Jewellery",
+              "subtitle": ""
+            }
+          },
+          "a737801a-d041-4ea1-a346-7ffdfb9cee58": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "mega_link": "Pendants",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Pendants",
+              "subtitle": ""
+            }
+          },
+          "bea63853-ebd2-4352-a35d-d3cb27e4be22": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "mega_link": "Men's Bracelets",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Men's Bracelets",
+              "subtitle": ""
+            }
+          },
+          "bc806da1-0a86-4b42-8116-d24a243e9b21": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "mega_link": "Women",
+              "link": "shopify:\/\/collections\/women",
+              "title": "Women",
+              "subtitle": ""
+            }
+          },
+          "3401dc99-bfe7-473f-8619-ab753f5e667a": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "mega_link": "Men",
+              "link": "shopify:\/\/collections\/men",
+              "title": "Men",
+              "subtitle": ""
+            }
+          },
+          "218b71c4-c7cb-4558-a8a9-d843f6d9f329": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "mega_link": "Fabrics",
+              "link": "shopify:\/\/collections\/all-kanchipuram",
+              "title": "Fabrics",
               "subtitle": ""
             }
           },
@@ -139,36 +254,35 @@
               "subtitle": ""
             }
           },
-          "9ec61fc7-ed2a-4490-8411-bf33c7d3eb56": {
+          "15e15742-5345-4198-ba4b-2a98c13bfc08": {
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/menu-image-kanchipuram-wedding-edit_340x_progressive_png.jpg",
-              "mega_link": "Wedding Edit",
-              "link": "shopify:\/\/collections\/saree",
-              "title": "Venkatagiri Cotton",
-              "subtitle": "Explore"
-            }
-          },
-          "6757033e-547a-49db-b111-6aec43c0ef51": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/kids.png",
-              "mega_link": "Kids Jewellery",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Kids Jewellery",
+              "mega_link": "Infant Wears",
+              "link": "shopify:\/\/products\/3-layer-non-surgical-masks-in-cotton-prints-and-plain-set-of-4",
+              "title": "Infant Wears",
               "subtitle": ""
             }
           },
-          "983fbcfb-efd2-4b72-8014-670919f1d5b1": {
+          "92c429f1-06cf-45d6-ae7f-bc1b298b75f3": {
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/bangles.png",
-              "mega_link": "Bangles \/ Bracelets",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Bangles \/ Bracelets",
+              "image": "shopify:\/\/shop_images\/bedroom-bed-with-brown-throw-pillows.jpg",
+              "mega_link": "Living Spaces",
+              "link": "#",
+              "title": "Living Spaces",
+              "subtitle": ""
+            }
+          },
+          "8d6bbc38-40c2-46d2-a363-f855a05e905e": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/customer-in-face-mask-smiles-and-holds-white-shopping-bags.jpg",
+              "mega_link": "Bags",
+              "link": "#",
+              "title": "Bags",
               "subtitle": ""
             }
           },
@@ -194,26 +308,6 @@
               "subtitle": ""
             }
           },
-          "bea63853-ebd2-4352-a35d-d3cb27e4be22": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "mega_link": "Men's Bracelets",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Men's Bracelets",
-              "subtitle": ""
-            }
-          },
-          "bc806da1-0a86-4b42-8116-d24a243e9b21": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "mega_link": "Women",
-              "link": "shopify:\/\/collections\/women",
-              "title": "Women",
-              "subtitle": ""
-            }
-          },
           "8f8423f0-43b3-4fb8-936e-8dab6819c7ab": {
             "type": "logo_image",
             "settings": {
@@ -222,101 +316,6 @@
               "mega_link": "Personal Care",
               "link": "#",
               "title": "Personal Care",
-              "subtitle": ""
-            }
-          },
-          "7a42f5b4-6dd8-44e4-aaf9-a4cca16d3985": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/earring.png",
-              "mega_link": "Earrings",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Earrings",
-              "subtitle": ""
-            }
-          },
-          "3401dc99-bfe7-473f-8619-ab753f5e667a": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "mega_link": "Men",
-              "link": "shopify:\/\/collections\/men",
-              "title": "Men",
-              "subtitle": ""
-            }
-          },
-          "ff5db7c6-de70-4624-b1a1-620865565274": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/necklaces.png",
-              "mega_link": "Necklaces",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Necklaces",
-              "subtitle": ""
-            }
-          },
-          "15e15742-5345-4198-ba4b-2a98c13bfc08": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "mega_link": "Infant Wears",
-              "link": "shopify:\/\/products\/3-layer-non-surgical-masks-in-cotton-prints-and-plain-set-of-4",
-              "title": "Infant Wears",
-              "subtitle": ""
-            }
-          },
-          "45a49917-2d4a-4818-a6c7-05e15d8d7934": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/rings.png",
-              "mega_link": "Rings",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Rings",
-              "subtitle": ""
-            }
-          },
-          "92c429f1-06cf-45d6-ae7f-bc1b298b75f3": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/bedroom-bed-with-brown-throw-pillows.jpg",
-              "mega_link": "Living Spaces",
-              "link": "#",
-              "title": "Living Spaces",
-              "subtitle": ""
-            }
-          },
-          "a737801a-d041-4ea1-a346-7ffdfb9cee58": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "mega_link": "Pendants",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Pendants",
-              "subtitle": ""
-            }
-          },
-          "218b71c4-c7cb-4558-a8a9-d843f6d9f329": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "mega_link": "Fabrics",
-              "link": "shopify:\/\/collections\/all-kanchipuram",
-              "title": "Fabrics",
-              "subtitle": ""
-            }
-          },
-          "8d6bbc38-40c2-46d2-a363-f855a05e905e": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/customer-in-face-mask-smiles-and-holds-white-shopping-bags.jpg",
-              "mega_link": "Bags",
-              "link": "#",
-              "title": "Bags",
               "subtitle": ""
             }
           }
