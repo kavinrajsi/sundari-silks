@@ -2,10 +2,10 @@
 {% for block in section.blocks %}
 {% case block.type %}
 {% when 'announcement' %}
-<marquee width="60%" direction="left">
 <div style="background-color: {{block.settings.announcement-background-color}}; color: {{block.settings.announcement-text-color}};"
-  class="announcement-bar bg_color-{{block.settings.announcement-background-color}} text_color-{{block.settings.announcement-text-color}}"
+  class="announcement-bar"
   role="region">
+  <marquee behavior="scroll" direction="left" scrollamount="6">
   {% if block.settings.text != blank %}
   {% if block.settings.link != blank %}
   <a href="{{ block.settings.link }}" class="announcement-bar__link link link--text focus-inset animate-arrow">
@@ -19,6 +19,7 @@
   </a>
   {% endif %}
   {% endif %}
+</marquee>
 </div>
 
 {% endcase %}

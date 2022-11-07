@@ -3,7 +3,8 @@
   opacity: 0;
   visibility: hidden;
 }
-#shopify-section-announcement-bar {
+.announcement-bar {
+  padding-top: 8px; padding-bottom: 8px;
   a {
     display: block;
     p {
@@ -27,6 +28,7 @@
 
 /* header */
 .header {
+  padding-top: 42px;
   @include z-index(header);
   position: fixed;
   top: 0px;

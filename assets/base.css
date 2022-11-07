@@ -655,10 +655,14 @@ main img {
   visibility: hidden;
 }
 
-#shopify-section-announcement-bar a {
+.announcement-bar {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.announcement-bar a {
   display: block;
 }
-#shopify-section-announcement-bar a p {
+.announcement-bar a p {
   display: block;
   text-align: center;
   margin: 0 auto;
@@ -671,6 +675,7 @@ main img {
 
 /* header */
 .header {
+  padding-top: 42px;
   z-index: 2;
   position: fixed;
   top: 0px;
