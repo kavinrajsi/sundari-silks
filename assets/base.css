@@ -552,6 +552,10 @@ body {
   }
 }
 
+#shopify-section-announcement-bar + .fullpage {
+  padding-top: 44px;
+}
+
 .fullpage {
   height: 100vh;
   display: grid;

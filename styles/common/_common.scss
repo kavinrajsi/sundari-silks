@@ -182,12 +182,8 @@ body {
   }
 }
 
-body:has(.announcement-bar){
-  padding-top: calc(64px + 43px);
-  @media (min-width: 992px) {
-    padding-top: calc(112px + 43px);
-    padding-bottom: 0;
-  }
+#shopify-section-announcement-bar + .fullpage{
+  padding-top: 44px;
 }
 
 .fullpage {
