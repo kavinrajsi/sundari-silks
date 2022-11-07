@@ -656,7 +656,7 @@ main img {
 }
 
 .announcement-bar {
-  z-index: 90;
+  z-index: 2;
   position: fixed;
   top: 0;
   left: 0;
@@ -3506,7 +3506,7 @@ ul.collection-list.grid .card__heading {
   }
   .meFitlerMobile.sticky {
     position: fixed;
-    top: 112px;
+    top: 156px;
     bottom: initial;
   }
 }

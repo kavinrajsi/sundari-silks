@@ -4,7 +4,7 @@
   visibility: hidden;
 }
 .announcement-bar {
-  z-index: 90;
+  @include z-index(marquee);
   position: fixed;
   top: 0;
   left: 0;

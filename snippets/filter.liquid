@@ -14,15 +14,15 @@
         {%- for filter in collection.filters -%}
         <details class="filter-group">
           <summary class="filter-group-summary">
+            {% if filter.label == "Price" %}
+            {% else %}
             <div>
-              {% if filter.label == "Price" %}
-              {% else %}
               <span>{{ filter.label }}</span>
-              {% endif %}
               {%- if filter.active_values.size > 0 -%}
               <span>({{ filter.active_values.size }})</span>
               {%- endif -%}
             </div>
+            {% endif %}
           </summary>
           <div class="filter-group-display">
             {%- case filter.type -%}

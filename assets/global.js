@@ -58,58 +58,44 @@
   //
   if ($(window).width() > 764) {
 
-  // // get initial position of the element
-  var fixmeTop = 154; // get initial position of the element
+    // var fixmeTop = $(".meFitlerMobile").offset().top; // get initial position of the element
+    var fixmeTop = 164; // get initial position of the element
 
-  $(window).scroll(function () {
+    $(window).scroll(function () {
+      // assign scroll event listener
 
-    // When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
+      var currentScroll = $(window).scrollTop(); // get current position
+      console.log(fixmeTop);
+      if (currentScroll >= fixmeTop) {
+        // apply position: fixed if you
+        $(".meFitlerMobile").css({
+          // scroll to that element or below it
+          position: "fixed",
+          top: "152px"
+        });
+        $(".fixedElement").css({
+          "padding-top": "96px",
+        });
 
-// Get the header
-var header = document.querySelector(".meFitlerMobile");
-var body = document.querySelector(".fixedElement");
-var fixmeTop = $(".meFitlerMobile").offset().top;
-// Get the offset position of the navbar
-console.log(fixmeTop);
-var sticky = fixmeTop;
+      } else {
+        // apply position: static
+        $(".meFitlerMobile").css({
+          // if you scroll above it
+          position: "static",
+        });
+        $(".fixedElement").css({
+          "padding-top": "40px",
+        });
 
-// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-    body.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-    body.classList.remove("sticky");
+      }
+    });
+  }else{
+    $(".meFitlerMobile").css({
+      // scroll to that element or below it
+      position: "fixed",
+      bottom: "0"
+    });
   }
-}
-
-    // var currentScroll = $(window).scrollTop(); // get current position
-    // if (currentScroll >= fixmeTop) {
-    //   // apply position: fixed if you
-    //   $(".meFitlerMobile").css({
-    //     // scroll to that element or below it
-    //     position: "fixed",
-    //     top: "112px"
-    //   });
-    // } else {
-    //   // apply position: static
-    //   $(".meFitlerMobile").css({
-    //     // if you scroll above it
-    //     position: "static",
-    //   });
-    // }
-
-
-  });
-}else{
-  $(".meFitlerMobile").css({
-    // scroll to that element or below it
-    position: "fixed",
-    bottom: "0"
-  });
-}
 
 
 
