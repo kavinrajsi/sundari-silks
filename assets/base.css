@@ -3187,7 +3187,7 @@ ul.collection-list.grid .card__heading {
   position: relative;
 }
 .meFilter .fitler--wrapper form.filter-form .filter--content {
-  height: calc(100vh - 52px - 94px);
+  height: calc(100vh - 52px - 78px);
 }
 .meFilter .fitler--wrapper form.filter-form .filter-group {
   overflow: hidden;
