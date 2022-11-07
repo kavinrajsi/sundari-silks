@@ -2,8 +2,9 @@
 {% for block in section.blocks %}
 {% case block.type %}
 {% when 'announcement' %}
-<div
-  class="announcement-bar bg_color-{{block.settings.announcement-background-color}} text_color-{{block.settings.announcement-text-color}}"
+<marquee width="60%" direction="left">
+<div style="background-color: {{block.settings.announcement-background-color}}; color:{{block.settings.announcement-text-color}}; "
+  class="announcement-bar"
   role="region">
   {% if block.settings.text != blank %}
   {% if block.settings.link != blank %}
@@ -19,6 +20,7 @@
   {% endif %}
   {% endif %}
 </div>
+</marquee>
 {% endcase %}
 {% endfor %}
 {% schema %}
