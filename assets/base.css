@@ -4893,10 +4893,9 @@ div.pswp__img--placeholder,
 .shopify-policy__container li {
   display: list-item;
   text-align: -webkit-match-parent;
-  margin-bottom: 1rem;
+  margin-bottom: 24px;
   line-height: 24px;
   margin-top: 0;
-  margin-bottom: 1rem;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
