@@ -20,7 +20,7 @@
     {% assign collect = collections[ item ] %}
     <div class="justdropped-box {% if forloop.first %} active {% endif %}" id="pitem_{{forloop.index}}">
       <div class="test--product-card--grid-four  display-card-grid" data-mobile-count="2"  data-tablet-count="3" data-laptop-count="4" data-desktop-count="4"  data-ldesktop-count="6">
-        {% for product in collect.products limit: 12 %}
+        {% for product in collect.products limit: {{section.settings.just-dropped-count}} %}
         {% render 'product-card', product:product %}
         {% endfor %}
       </div>
