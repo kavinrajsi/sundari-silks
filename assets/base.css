@@ -1713,7 +1713,6 @@ body:not(.template-index) .header-nav-list-footer {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  animation: ripple 2s linear infinite;
 }
 .lookbook-product-section .small-image-products .dot.active,
 .lookbook-product-section .large-image-products .dot.active {
