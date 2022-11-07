@@ -319,6 +319,16 @@ assign body_font = settings.type_body
     </symbol>
   </svg>
 
+  <section class="fullpage" role="main">
+    {% section 'header' %}
+    <main class="content-for-layout">
+      {% render 'breadcrumb' %}
+      {{ content_for_layout }}
+    </main>
+    {% section 'footer' %}
+  </section>
+
+
   {% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
   <script type="application/ld+json">
     {
@@ -351,15 +361,6 @@ assign body_font = settings.type_body
         "url": {{ request.origin | append: page.url | json }}
       }
     </script>
-  <section class="fullpage" role="main">
-    {% section 'header' %}
-    <main class="content-for-layout">
-      {% render 'breadcrumb' %}
-      {{ content_for_layout }}
-    </main>
-    {% section 'footer' %}
-  </section>
-
 
   <!-- search area begin -->
   <div class="header-search-area-wrapper" style="display: none;">

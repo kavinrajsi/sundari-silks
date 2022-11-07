@@ -552,7 +552,7 @@ body {
   }
 }
 
-#shopify-section-announcement-bar + .fullpage {
+#shopify-section-announcement-bar + svg + .fullpage {
   padding-top: 44px;
 }
 
