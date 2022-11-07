@@ -1,280 +1,325 @@
 {
   "current": {
+    "favicon": "shopify:\/\/shop_images\/favicon.png",
+    "background_color": "#fef1e1",
+    "type_header": "playfair_display_n4",
+    "section-gap-tablet": 16,
+    "section-gap-largetablet": 16,
     "section-gap-desktop": 24,
+    "section-gap-largedesktop": 32,
+    "product-gap-tablet": 16,
+    "product-gap-largetablet": 16,
+    "product-gap-desktop": 24,
     "product-gap-largedesktop": 32,
+    "home-section-gap-tablet": 24,
+    "home-section-gap-largetablet": 24,
+    "home-section-gap-desktop": 40,
+    "home-section-gap-largedesktop": 60,
+    "home-section-title-mobile": 22,
+    "home-section-title-tablet": 24,
+    "home-section-title-largetablet": 26,
+    "home-section-title-desktop": 32,
+    "home-section-title-largedesktop": 38,
+    "home-section-secondary-title-mobile": 14,
+    "home-section-secondary-title-tablet": 16,
+    "home-section-secondary-title-largetablet": 16,
+    "home-section-secondary-title-desktop": 18,
+    "home-section-secondary-title-largedesktop": 20,
+    "home-section-secondary-title-space-mobile": 14,
+    "home-section-secondary-title-space-tablet": 18,
+    "home-section-secondary-title-space-largetablet": 18,
+    "home-section-secondary-title-space-desktop": 22,
+    "home-section-secondary-title-space-largedesktop": 26,
     "mlvedaACS_roundDecimal": false,
     "mlvedaACS_autoSwitch": false,
     "mlvedaACS_messageContent": "<<shop.name>> process all orders in <<shop.currency>>. While the content of your cart is currently displayed in <<shop.selected_currency>>, you will checkout using <<shop.currency>> at the most current exchange rate.",
-    "home-section-secondary-title-mobile": 14,
-    "home-section-title-largetablet": 26,
-    "home-section-title-desktop": 32,
-    "home-section-secondary-title-largetablet": 16,
     "mlvedaACS_positionTop": "10px",
     "mlvedaACS_isCustomized": true,
+    "home-section-gap-large-largedesktop": 60,
+    "mlvedaACS_positionRight": "10px",
+    "header_text_font": "playfair_display_n4",
+    "mlvedaACS_borderLook": false,
+    "type_header_font": "playfair_display_n4",
+    "home-section-title-large-largedesktop": 48,
+    "mlvedaACS_positionLeft": "10px",
+    "mlvedaACS_defaultCurrency": "INR",
+    "mlvedaACS_textColor": "inherit",
+    "mlvedaACS_flagStyle": "circle",
+    "mlvedaACS_isMessageDisplay": true,
+    "body_text_font": "montserrat_n4",
+    "mlvedaACS_positionBottom": "10px",
+    "mlvedaACS_messageBackgroundColor": "inherit",
+    "mlvedaACS_roundDecimalValue": 1,
+    "mlvedaACS_backgroundColor": "inherit",
+    "mlvedaACS_position": "top_with_right",
+    "mlvedaACS_messageColor": "inherit",
+    "mlvedaACS_textHoverColor": "inherit",
+    "mlvedaACS_enable": true,
+    "mlvedaACS_supportedCurrencies": "INR USD GBP EUR CAD AUD SGD",
+    "mlvedaACS_hideDecimal": false,
+    "mlvedaACS_hoverBackgroundColor": "inherit",
+    "mlvedaACS_currencyFormat": "money_with_currency_format",
+    "mlvedaACS_borderLineColor": "inherit",
+    "mlvedaACS_displayFlag": false,
     "sections": {
       "announcement-bar": {
-        "settings": {
-        },
+        "type": "announcement-bar",
         "blocks": {
           "e5b9b3cb-42bb-43bc-adac-0cad652993ae": {
+            "type": "announcement",
             "settings": {
-              "link": "",
               "text": "Vanakkam, our website is currently being upgraded. We expect to enhance your shopping experience in 48 hours. We apologize for any inconvenience caused in the meanwhile.",
+              "link": "",
               "announcement-background-color": "#000000",
               "announcement-text-color": "#ffffff"
-            },
-            "type": "announcement"
+            }
           }
         },
-        "type": "announcement-bar",
         "block_order": [
           "e5b9b3cb-42bb-43bc-adac-0cad652993ae"
-        ]
+        ],
+        "settings": {
+        }
       },
       "footer": {
+        "type": "footer",
         "settings": {
           "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
           "logo_width": 100
-        },
-        "type": "footer"
+        }
       },
       "quickview-modal": {
+        "type": "quickview-modal",
         "settings": {
-        },
-        "type": "quickview-modal"
+        }
       },
       "header": {
-        "settings": {
-          "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
-          "menu": "main-menu",
-          "logo_width": 120
-        },
+        "type": "header",
         "blocks": {
           "c37446b7-4fce-4474-9e26-e3348834815e": {
+            "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/menu-image-kanchipuram_374x_progressive_png.jpg",
               "menu_enable": true,
-              "subtitle": "Explore",
+              "image": "shopify:\/\/shop_images\/menu-image-kanchipuram_374x_progressive_png.jpg",
               "mega_link": "Kanchipuram",
               "link": "shopify:\/\/collections\/all-kanchipuram",
-              "title": "All Kanchipuram"
-            },
-            "type": "logo_image"
-          },
-          "012b8059-1c4e-413f-9c85-824914bb2502": {
-            "settings": {
-              "image": "shopify:\/\/shop_images\/ankles.png",
-              "menu_enable": true,
-              "subtitle": "",
-              "mega_link": "Anklets \/ Toe Rings",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Anklets \/ Toe Rings"
-            },
-            "type": "logo_image"
-          },
-          "0dc284ce-400a-4c70-b4be-980ee12441ac": {
-            "settings": {
-              "menu_enable": true,
-              "subtitle": "",
-              "mega_link": "Girls",
-              "link": "shopify:\/\/collections\/readymades",
-              "title": "Girls"
-            },
-            "type": "logo_image"
-          },
-          "a825885a-b299-42ea-a5c5-84ba6100ea8c": {
-            "settings": {
-              "menu_enable": true,
-              "subtitle": "",
-              "mega_link": "Boys",
-              "link": "shopify:\/\/collections\/readymades",
-              "title": "Boys"
-            },
-            "type": "logo_image"
+              "title": "All Kanchipuram",
+              "subtitle": "Explore"
+            }
           },
           "9ec61fc7-ed2a-4490-8411-bf33c7d3eb56": {
+            "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/menu-image-kanchipuram-wedding-edit_340x_progressive_png.jpg",
               "menu_enable": true,
-              "subtitle": "Explore",
+              "image": "shopify:\/\/shop_images\/menu-image-kanchipuram-wedding-edit_340x_progressive_png.jpg",
               "mega_link": "Wedding Edit",
               "link": "shopify:\/\/collections\/saree",
-              "title": "Venkatagiri Cotton"
-            },
-            "type": "logo_image"
-          },
-          "6757033e-547a-49db-b111-6aec43c0ef51": {
-            "settings": {
-              "image": "shopify:\/\/shop_images\/kids.png",
-              "menu_enable": true,
-              "subtitle": "",
-              "mega_link": "Kids Jewellery",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Kids Jewellery"
-            },
-            "type": "logo_image"
-          },
-          "983fbcfb-efd2-4b72-8014-670919f1d5b1": {
-            "settings": {
-              "image": "shopify:\/\/shop_images\/bangles.png",
-              "menu_enable": true,
-              "subtitle": "",
-              "mega_link": "Bangles \/ Bracelets",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Bangles \/ Bracelets"
-            },
-            "type": "logo_image"
-          },
-          "3b41ef82-241e-437d-9545-f05ac21b20bc": {
-            "settings": {
-              "image": "shopify:\/\/shop_images\/interior-decor-shelving-with-ceramic-art.jpg",
-              "menu_enable": true,
-              "subtitle": "",
-              "mega_link": "Decor",
-              "link": "#",
-              "title": "Decor"
-            },
-            "type": "logo_image"
-          },
-          "20802720-32fb-4022-bebc-0f1bddd08987": {
-            "settings": {
-              "image": "shopify:\/\/shop_images\/a-greying-tan-pooch-on-a-chaise-longue.jpg",
-              "menu_enable": true,
-              "subtitle": "",
-              "mega_link": "Accessories",
-              "link": "#",
-              "title": "Accessories"
-            },
-            "type": "logo_image"
-          },
-          "bea63853-ebd2-4352-a35d-d3cb27e4be22": {
-            "settings": {
-              "menu_enable": true,
-              "subtitle": "",
-              "mega_link": "Men's Bracelets",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Men's Bracelets"
-            },
-            "type": "logo_image"
-          },
-          "bc806da1-0a86-4b42-8116-d24a243e9b21": {
-            "settings": {
-              "menu_enable": true,
-              "subtitle": "",
-              "mega_link": "Women",
-              "link": "shopify:\/\/collections\/women",
-              "title": "Women"
-            },
-            "type": "logo_image"
-          },
-          "8f8423f0-43b3-4fb8-936e-8dab6819c7ab": {
-            "settings": {
-              "image": "shopify:\/\/shop_images\/bath-bomb-near-tub.jpg",
-              "menu_enable": true,
-              "subtitle": "",
-              "mega_link": "Personal Care",
-              "link": "#",
-              "title": "Personal Care"
-            },
-            "type": "logo_image"
-          },
-          "7a42f5b4-6dd8-44e4-aaf9-a4cca16d3985": {
-            "settings": {
-              "image": "shopify:\/\/shop_images\/earring.png",
-              "menu_enable": true,
-              "subtitle": "",
-              "mega_link": "Earrings",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Earrings"
-            },
-            "type": "logo_image"
-          },
-          "3401dc99-bfe7-473f-8619-ab753f5e667a": {
-            "settings": {
-              "menu_enable": true,
-              "subtitle": "",
-              "mega_link": "Men",
-              "link": "shopify:\/\/collections\/men",
-              "title": "Men"
-            },
-            "type": "logo_image"
+              "title": "Venkatagiri Cotton",
+              "subtitle": "Explore"
+            }
           },
           "ff5db7c6-de70-4624-b1a1-620865565274": {
+            "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/necklaces.png",
               "menu_enable": true,
-              "subtitle": "",
+              "image": "shopify:\/\/shop_images\/necklaces.png",
               "mega_link": "Necklaces",
               "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Necklaces"
-            },
-            "type": "logo_image"
+              "title": "Necklaces",
+              "subtitle": ""
+            }
           },
-          "15e15742-5345-4198-ba4b-2a98c13bfc08": {
+          "7a42f5b4-6dd8-44e4-aaf9-a4cca16d3985": {
+            "type": "logo_image",
             "settings": {
               "menu_enable": true,
-              "subtitle": "",
-              "mega_link": "Infant Wears",
-              "link": "shopify:\/\/products\/3-layer-non-surgical-masks-in-cotton-prints-and-plain-set-of-4",
-              "title": "Infant Wears"
-            },
-            "type": "logo_image"
+              "image": "shopify:\/\/shop_images\/earring.png",
+              "mega_link": "Earrings",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Earrings",
+              "subtitle": ""
+            }
+          },
+          "983fbcfb-efd2-4b72-8014-670919f1d5b1": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/bangles.png",
+              "mega_link": "Bangles \/ Bracelets",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Bangles \/ Bracelets",
+              "subtitle": ""
+            }
           },
           "45a49917-2d4a-4818-a6c7-05e15d8d7934": {
+            "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/rings.png",
               "menu_enable": true,
-              "subtitle": "",
+              "image": "shopify:\/\/shop_images\/rings.png",
               "mega_link": "Rings",
               "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Rings"
-            },
-            "type": "logo_image"
+              "title": "Rings",
+              "subtitle": ""
+            }
           },
-          "92c429f1-06cf-45d6-ae7f-bc1b298b75f3": {
+          "012b8059-1c4e-413f-9c85-824914bb2502": {
+            "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/bedroom-bed-with-brown-throw-pillows.jpg",
               "menu_enable": true,
-              "subtitle": "",
-              "mega_link": "Living Spaces",
-              "link": "#",
-              "title": "Living Spaces"
-            },
-            "type": "logo_image"
+              "image": "shopify:\/\/shop_images\/ankles.png",
+              "mega_link": "Anklets \/ Toe Rings",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Anklets \/ Toe Rings",
+              "subtitle": ""
+            }
+          },
+          "6757033e-547a-49db-b111-6aec43c0ef51": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/kids.png",
+              "mega_link": "Kids Jewellery",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Kids Jewellery",
+              "subtitle": ""
+            }
           },
           "a737801a-d041-4ea1-a346-7ffdfb9cee58": {
+            "type": "logo_image",
             "settings": {
               "menu_enable": true,
-              "subtitle": "",
               "mega_link": "Pendants",
               "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Pendants"
-            },
-            "type": "logo_image"
+              "title": "Pendants",
+              "subtitle": ""
+            }
+          },
+          "bea63853-ebd2-4352-a35d-d3cb27e4be22": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "mega_link": "Men's Bracelets",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Men's Bracelets",
+              "subtitle": ""
+            }
+          },
+          "bc806da1-0a86-4b42-8116-d24a243e9b21": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "mega_link": "Women",
+              "link": "shopify:\/\/collections\/women",
+              "title": "Women",
+              "subtitle": ""
+            }
+          },
+          "3401dc99-bfe7-473f-8619-ab753f5e667a": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "mega_link": "Men",
+              "link": "shopify:\/\/collections\/men",
+              "title": "Men",
+              "subtitle": ""
+            }
           },
           "218b71c4-c7cb-4558-a8a9-d843f6d9f329": {
+            "type": "logo_image",
             "settings": {
               "menu_enable": true,
-              "subtitle": "",
               "mega_link": "Fabrics",
               "link": "shopify:\/\/collections\/all-kanchipuram",
-              "title": "Fabrics"
-            },
-            "type": "logo_image"
+              "title": "Fabrics",
+              "subtitle": ""
+            }
+          },
+          "0dc284ce-400a-4c70-b4be-980ee12441ac": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "mega_link": "Girls",
+              "link": "shopify:\/\/collections\/readymades",
+              "title": "Girls",
+              "subtitle": ""
+            }
+          },
+          "a825885a-b299-42ea-a5c5-84ba6100ea8c": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "mega_link": "Boys",
+              "link": "shopify:\/\/collections\/readymades",
+              "title": "Boys",
+              "subtitle": ""
+            }
+          },
+          "15e15742-5345-4198-ba4b-2a98c13bfc08": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "mega_link": "Infant Wears",
+              "link": "shopify:\/\/products\/3-layer-non-surgical-masks-in-cotton-prints-and-plain-set-of-4",
+              "title": "Infant Wears",
+              "subtitle": ""
+            }
+          },
+          "92c429f1-06cf-45d6-ae7f-bc1b298b75f3": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/bedroom-bed-with-brown-throw-pillows.jpg",
+              "mega_link": "Living Spaces",
+              "link": "#",
+              "title": "Living Spaces",
+              "subtitle": ""
+            }
           },
           "8d6bbc38-40c2-46d2-a363-f855a05e905e": {
+            "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/customer-in-face-mask-smiles-and-holds-white-shopping-bags.jpg",
               "menu_enable": true,
-              "subtitle": "",
+              "image": "shopify:\/\/shop_images\/customer-in-face-mask-smiles-and-holds-white-shopping-bags.jpg",
               "mega_link": "Bags",
               "link": "#",
-              "title": "Bags"
-            },
-            "type": "logo_image"
+              "title": "Bags",
+              "subtitle": ""
+            }
+          },
+          "3b41ef82-241e-437d-9545-f05ac21b20bc": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/interior-decor-shelving-with-ceramic-art.jpg",
+              "mega_link": "Decor",
+              "link": "#",
+              "title": "Decor",
+              "subtitle": ""
+            }
+          },
+          "20802720-32fb-4022-bebc-0f1bddd08987": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/a-greying-tan-pooch-on-a-chaise-longue.jpg",
+              "mega_link": "Accessories",
+              "link": "#",
+              "title": "Accessories",
+              "subtitle": ""
+            }
+          },
+          "8f8423f0-43b3-4fb8-936e-8dab6819c7ab": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/bath-bomb-near-tub.jpg",
+              "mega_link": "Personal Care",
+              "link": "#",
+              "title": "Personal Care",
+              "subtitle": ""
+            }
           }
         },
-        "type": "header",
         "block_order": [
           "c37446b7-4fce-4474-9e26-e3348834815e",
           "9ec61fc7-ed2a-4490-8411-bf33c7d3eb56",
@@ -297,80 +342,35 @@
           "3b41ef82-241e-437d-9545-f05ac21b20bc",
           "20802720-32fb-4022-bebc-0f1bddd08987",
           "8f8423f0-43b3-4fb8-936e-8dab6819c7ab"
-        ]
+        ],
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
+          "logo_width": 120,
+          "menu": "main-menu"
+        }
       },
       "drawer": {
+        "type": "drawer",
         "settings": {
-        },
-        "type": "drawer"
+        }
       }
     },
-    "product-gap-largetablet": 16,
-    "home-section-gap-large-largedesktop": 60,
-    "product-gap-desktop": 24,
-    "mlvedaACS_positionRight": "10px",
     "content_for_index": [
 
     ],
-    "header_text_font": "playfair_display_n4",
-    "section-gap-tablet": 16,
-    "mlvedaACS_borderLook": false,
-    "type_header_font": "playfair_display_n4",
-    "home-section-title-large-largedesktop": 48,
-    "mlvedaACS_positionLeft": "10px",
-    "mlvedaACS_defaultCurrency": "INR",
-    "product-gap-tablet": 16,
-    "mlvedaACS_textColor": "inherit",
-    "mlvedaACS_flagStyle": "circle",
-    "home-section-gap-largetablet": 24,
-    "home-section-secondary-title-desktop": 18,
-    "mlvedaACS_isMessageDisplay": true,
-    "home-section-gap-desktop": 40,
-    "body_text_font": "montserrat_n4",
-    "home-section-secondary-title-space-largetablet": 18,
-    "mlvedaACS_positionBottom": "10px",
-    "section-gap-largetablet": 16,
-    "mlvedaACS_messageBackgroundColor": "inherit",
-    "mlvedaACS_roundDecimalValue": 1,
-    "mlvedaACS_backgroundColor": "inherit",
-    "mlvedaACS_position": "top_with_right",
-    "mlvedaACS_messageColor": "inherit",
-    "home-section-gap-largedesktop": 60,
-    "home-section-title-largedesktop": 48,
-    "mlvedaACS_textHoverColor": "inherit",
-    "favicon": "shopify:\/\/shop_images\/favicon.png",
-    "mlvedaACS_enable": true,
     "blocks": {
       "10042746950867549768": {
-        "settings": {
-        },
+        "type": "shopify:\/\/apps\/hulk-product-options\/blocks\/app-embed\/380168ef-9475-4244-a291-f66b189208b5",
         "disabled": false,
-        "type": "shopify:\/\/apps\/hulk-product-options\/blocks\/app-embed\/380168ef-9475-4244-a291-f66b189208b5"
+        "settings": {
+        }
       },
       "3294164036280357830": {
-        "settings": {
-        },
+        "type": "shopify:\/\/apps\/mlv-auto-currency-switcher\/blocks\/mlveda-currencies-head\/92ab730f-097e-4571-b27c-3f449e098ca3",
         "disabled": false,
-        "type": "shopify:\/\/apps\/mlv-auto-currency-switcher\/blocks\/mlveda-currencies-head\/92ab730f-097e-4571-b27c-3f449e098ca3"
+        "settings": {
+        }
       }
-    },
-    "mlvedaACS_supportedCurrencies": "INR USD GBP EUR CAD AUD SGD",
-    "home-section-secondary-title-space-largedesktop": 26,
-    "home-section-secondary-title-space-tablet": 18,
-    "mlvedaACS_hideDecimal": false,
-    "type_header": "playfair_display_n4",
-    "home-section-title-tablet": 24,
-    "mlvedaACS_hoverBackgroundColor": "inherit",
-    "background_color": "#fef1e1",
-    "home-section-secondary-title-tablet": 16,
-    "home-section-secondary-title-largedesktop": 20,
-    "mlvedaACS_currencyFormat": "money_with_currency_format",
-    "mlvedaACS_borderLineColor": "inherit",
-    "section-gap-largedesktop": 32,
-    "home-section-secondary-title-space-mobile": 14,
-    "home-section-title-mobile": 22,
-    "mlvedaACS_displayFlag": false,
-    "home-section-gap-tablet": 24,
-    "home-section-secondary-title-space-desktop": 22
+    }
   }
 }
