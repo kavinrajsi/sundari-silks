@@ -97,6 +97,17 @@
     });
   }
 
+  //
+  $('.CollectionToolbar__LayoutType').click( function (){
+    console.log( $(this).data('count') );
+    let cardDisplayCount = $(this).data('count');
+    let cardDisplayView  = $('.collection-list-grid');
+    $('.CollectionToolbar__LayoutType').removeClass('is-active');
+    $(this).addClass('is-active');
+    cardDisplayView.attr('collection-list-desktop', cardDisplayCount);
+
+  });
+  //
 
 
 
