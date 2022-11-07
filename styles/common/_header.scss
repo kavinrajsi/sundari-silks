@@ -4,6 +4,12 @@
   visibility: hidden;
 }
 .announcement-bar {
+  z-index: 90;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   padding-top: 8px; padding-bottom: 8px;
   a {
     display: block;
