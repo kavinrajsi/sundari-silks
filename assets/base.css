@@ -4736,15 +4736,11 @@ div.pswp__img--placeholder,
   }
 }
 .shopify-policy__container .shopify-policy__title {
+  text-transform: capitalize;
   font-family: "Playfair Display", serif;
   font-weight: 500;
   line-height: 1.2222222222;
   font-size: var(--home-section-title);
-}
-@media (min-width: 768px) {
-  .shopify-policy__container .shopify-policy__title {
-    margin-bottom: 8px;
-  }
 }
 .shopify-policy__container h1,
 .shopify-policy__container h2,
@@ -4753,20 +4749,51 @@ div.pswp__img--placeholder,
 .shopify-policy__container h5,
 .shopify-policy__container h6 {
   margin-top: 0;
-  margin-bottom: 1rem;
-  line-height: 1.2;
+  margin-bottom: 24px;
+  line-height: 1.2222222222;
   font-family: "Playfair Display", serif;
   font-weight: 500;
-  line-height: 1.2222222222;
+  font-size: var(--home-section-title);
 }
 .shopify-policy__container p {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 24px;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   color: var(--color-black);
-  text-align: left;
+}
+.shopify-policy__container li {
+  display: list-item;
+  margin-bottom: 24px;
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-black);
+}
+.shopify-policy__container table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  border: 1px solid #dee2e6;
+  border-collapse: collapse;
+}
+.shopify-policy__container table th,
+.shopify-policy__container table td {
+  text-align: inherit;
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+  border: 1px solid #dee2e6;
+  border-bottom-width: 2px;
+}
+.shopify-policy__container table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+.shopify-policy__container table tbody + tbody {
+  border-top: 2px solid #dee2e6;
 }
 .shopify-policy__container pre,
 .shopify-policy__container code,
@@ -4791,61 +4818,12 @@ div.pswp__img--placeholder,
   overflow: hidden;
   vertical-align: middle;
 }
-.shopify-policy__container table {
-  border-collapse: collapse;
-}
 .shopify-policy__container caption {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   color: #6c757d;
   text-align: left;
   caption-side: bottom;
-}
-.shopify-policy__container th {
-  text-align: inherit;
-}
-.shopify-policy__container h1,
-.shopify-policy__container h2,
-.shopify-policy__container h3,
-.shopify-policy__container h4,
-.shopify-policy__container h5,
-.shopify-policy__container h6,
-.shopify-policy__container .h1,
-.shopify-policy__container .h2,
-.shopify-policy__container .h3,
-.shopify-policy__container .h4,
-.shopify-policy__container .h5,
-.shopify-policy__container .h6 {
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-}
-.shopify-policy__container h1,
-.shopify-policy__container .h1 {
-  font-size: 2.5rem;
-}
-.shopify-policy__container h2,
-.shopify-policy__container .h2 {
-  font-size: 2rem;
-}
-.shopify-policy__container h3,
-.shopify-policy__container .h3 {
-  font-size: 1.75rem;
-}
-.shopify-policy__container h4,
-.shopify-policy__container .h4 {
-  font-size: 1.5rem;
-}
-.shopify-policy__container h5,
-.shopify-policy__container .h5 {
-  font-size: 1.25rem;
-}
-.shopify-policy__container h6,
-.shopify-policy__container .h6 {
-  font-size: 1rem;
-}
-.shopify-policy__container .lead {
-  font-size: 1.25rem;
-  font-weight: 300;
 }
 .shopify-policy__container hr {
   margin-top: 1rem;
@@ -4890,18 +4868,6 @@ div.pswp__img--placeholder,
   margin-inline-end: 0px;
   padding-inline-start: 40px;
 }
-.shopify-policy__container li {
-  display: list-item;
-  text-align: -webkit-match-parent;
-  margin-bottom: 24px;
-  line-height: 24px;
-  margin-top: 0;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-  color: var(--color-black);
-  text-align: left;
-}
 .shopify-policy__container b,
 .shopify-policy__container strong {
   font-weight: bold;
@@ -4930,27 +4896,6 @@ div.pswp__img--placeholder,
 .shopify-policy__container sup {
   vertical-align: super;
   font-size: smaller;
-}
-.shopify-policy__container table {
-  width: 100%;
-  margin-bottom: 1rem;
-  color: #212529;
-  border: 1px solid #dee2e6;
-}
-.shopify-policy__container table th,
-.shopify-policy__container table td {
-  padding: 0.75rem;
-  vertical-align: top;
-  border-top: 1px solid #dee2e6;
-  border: 1px solid #dee2e6;
-  border-bottom-width: 2px;
-}
-.shopify-policy__container thead th {
-  vertical-align: bottom;
-  border-bottom: 2px solid #dee2e6;
-}
-.shopify-policy__container tbody + tbody {
-  border-top: 2px solid #dee2e6;
 }
 
 .locale-selectors__container {
