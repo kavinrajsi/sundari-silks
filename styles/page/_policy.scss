@@ -1,4 +1,3 @@
-
 .shopify-policy__container {
   max-width: 896px;
   margin-right: auto;
@@ -14,7 +13,7 @@
     padding-left: 32px !important;
   }
 
-  .shopify-policy__title{
+  .shopify-policy__title {
     font-family: "Playfair Display", serif;
     font-weight: 500;
     line-height: 1.2222222222;
@@ -24,7 +23,6 @@
     }
   }
 
-
   h1,
   h2,
   h3,
@@ -33,6 +31,10 @@
   h6 {
     margin-top: 0;
     margin-bottom: 0.5rem;
+    line-height: 1.2;
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    line-height: 1.2222222222;
   }
 
   p {
@@ -104,7 +106,6 @@
   .h6 {
     margin-bottom: 0.5rem;
     font-weight: 500;
-    line-height: 1.2;
   }
 
   h1,
@@ -232,5 +233,28 @@
   sup {
     vertical-align: super;
     font-size: smaller;
+  }
+
+  table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border: 1px solid #dee2e6;
+
+    th,
+    td {
+      padding: 0.75rem;
+      vertical-align: top;
+      border-top: 1px solid #dee2e6;
+      border: 1px solid #dee2e6;
+      border-bottom-width: 2px;
+    }
+  }
+  thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+  }
+  tbody + tbody {
+    border-top: 2px solid #dee2e6;
   }
 }
