@@ -13,7 +13,7 @@
     $("#pitem_1 .test--product-card--grid-four").slick({
         slidesToShow: 4,
         slidesToScroll: 1,
-        dots: false,
+        dots: true,
         draggable: true,
         centerMode: false,
         variableWidth: false,
@@ -61,7 +61,7 @@
       $('#'+replaced + '.justdropped-box .test--product-card--grid-four').slick({
           slidesToShow: 4,
           slidesToScroll: 1,
-          dots: false,
+          dots: true,
           draggable: true,
           centerMode: false,
           variableWidth: false,

@@ -1529,7 +1529,6 @@ body:not(.template-index) .header-nav-list-footer {
   display: none;
   object-fit: cover;
   object-position: top center;
-  aspect-ratio: 1457/455;
 }
 @media (min-width: 641px) {
   .homepageBanner .large-12.columns img.desktopBanner {
@@ -2231,6 +2230,22 @@ svg.icon {
   height: 24px;
 }
 
+.test--product-card--grid-four .slick-dots li.slick-active button:before {
+  color: var(--color-maroon);
+}
+.test--product-card--grid-four .slick-prev, .test--product-card--grid-four .slick-next {
+  z-index: 8;
+}
+.test--product-card--grid-four .slick-prev:before,
+.test--product-card--grid-four .slick-next:before {
+  color: var(--color-maroon);
+}
+.test--product-card--grid-four .slick-prev {
+  left: 0;
+}
+.test--product-card--grid-four .slick-next {
+  right: 0;
+}
 .test--product-card--grid-four .last-card.product__card.product__card--explore .product__card--content {
   font-size: 14px;
   position: absolute;
