@@ -2965,7 +2965,7 @@ ul.collection-list.grid .card__heading {
   border-radius: var(--border-radius) !important;
   width: auto !important;
   color: var(--color-black) !important;
-  background: url("https://cdn-icons-png.flaticon.com/512/2985/2985150.png") no-repeat 98% center !important;
+  background: url("./icon-arrow-down.png") no-repeat 98% center !important;
   background-size: 18px !important;
 }
 .page-product-detail .hulkapps_product_options .hulkapps_option + .hulkapps_option {
