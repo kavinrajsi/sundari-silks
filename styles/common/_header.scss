@@ -599,38 +599,6 @@
   }
 }
 
-/* desktop menu special */
-.header-nav-list-main .menu-level-2 {
-  &[data-menu-title="arthirshtam"],
-  &[data-menu-title="readymades"],
-  &[data-menu-title="decor & accessories"],
-  &[data-menu-title="mumbai collection"] {
-    grid-gap: 16px;
-    .menu-level-2-item > a {
-      border-bottom: 0px;
-      padding-bottom: 0px;
-      padding-top: 0px;
-      img {
-        margin-bottom: 8px;
-        border-radius: var(--border-radius);
-      }
-    }
-  }
-  &[data-menu-title="saree"] {
-    .menu-level-2-item:nth-last-child(1),
-    .menu-level-2-item:nth-last-child(2) {
-      a {
-        border-bottom: 0px;
-        padding-bottom: 0px;
-        padding-top: 0px;
-        img {
-          margin-bottom: 8px;
-          border-radius: var(--border-radius);
-        }
-      }
-    }
-  }
-}
 
 /* menu and search active */
 .header-menuActive,
@@ -656,4 +624,18 @@
 
 .header-cart {
   position: relative;
+}
+
+
+/* desktop menu special */
+.header-nav-list-main .menu-level-2 {
+  &[data-menu-title="readymades"],
+  &[data-menu-title="arthirshtam"] {
+    grid-gap: 16px;
+    .menu-level-2-item > a {
+      border-bottom: 0px;
+      padding-bottom: 0px;
+      padding-top: 0px;
+    }
+  }
 }

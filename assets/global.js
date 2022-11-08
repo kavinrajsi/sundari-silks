@@ -9,6 +9,49 @@
     // console.log(mes);
     mes1.html(mes);
     $(".slider.single-item").slick({});
+
+    $("#pitem_1 .test--product-card--grid-four").slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        dots: false,
+        draggable: true,
+        centerMode: false,
+        variableWidth: false,
+        arrows: true,
+        infinite: false,
+        mobileFirst: true,
+        focusOnSelect: true,
+        touchMove: true,
+        swipeToSlide: true,
+        adaptiveHeight: true,
+      });
+
+    $(".tab-buttton .tab").click(function () {
+      console.log(this.id);
+      var str = this.id;
+      var char = str[0];
+      var replaced = str.replace(char, "p");
+      console.log(replaced);
+      // $('.justdropped-box  .test--product-card--grid-four').not('.slick-initialized').slick({
+      //   settings: "unslick"
+      // });
+      $('#'+replaced + '.justdropped-box .test--product-card--grid-four').slick({
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          dots: false,
+          draggable: true,
+          centerMode: false,
+          variableWidth: false,
+          arrows: true,
+          infinite: false,
+          mobileFirst: true,
+          focusOnSelect: true,
+          touchMove: true,
+          swipeToSlide: true,
+          adaptiveHeight: true,
+        });
+    });
+
     /**
      *  Header bar search
      */
@@ -34,15 +77,15 @@
    */
   $(".menu-level-1-item.menu-level-1-item-child").on("mouseenter", function () {
     console.log("enter");
-    $("body").addClass("header-menuActive");
-    $("body").css("padding-right", "15px");
+    // $("body").addClass("header-menuActive");
+    // $("body").css("padding-right", "15px");
     $(this).children(".second-menu").addClass("active");
     // $(this).children('.menu-level-2').addClass("active");
   });
   $(".menu-level-1-item.menu-level-1-item-child").on("mouseleave", function () {
     console.log("leave");
-    $("body").removeClass("header-menuActive");
-    $("body").css("padding-right", "0");
+    // $("body").removeClass("header-menuActive");
+    // $("body").css("padding-right", "0");
     $(this).children(".second-menu").removeClass("active");
   });
   /* .cd-primary-nav .has-children */
@@ -57,7 +100,6 @@
 
   //
   if ($(window).width() > 764) {
-
     // var fixmeTop = $(".meFitlerMobile").offset().top; // get initial position of the element
     var fixmeTop = 164; // get initial position of the element
 
@@ -65,18 +107,17 @@
       // assign scroll event listener
 
       var currentScroll = $(window).scrollTop(); // get current position
-      console.log(fixmeTop);
+      // console.log(fixmeTop);
       if (currentScroll >= fixmeTop) {
         // apply position: fixed if you
         $(".meFitlerMobile").css({
           // scroll to that element or below it
           position: "fixed",
-          top: "152px"
+          top: "152px",
         });
         $(".fixedElement").css({
           "padding-top": "96px",
         });
-
       } else {
         // apply position: static
         $(".meFitlerMobile").css({
@@ -86,30 +127,26 @@
         $(".fixedElement").css({
           "padding-top": "40px",
         });
-
       }
     });
-  }else{
+  } else {
     $(".meFitlerMobile").css({
       // scroll to that element or below it
       position: "fixed",
-      bottom: "0"
+      bottom: "0",
     });
   }
 
   //
-  $('.CollectionToolbar__LayoutType').click( function (){
-    console.log( $(this).data('count') );
-    let cardDisplayCount = $(this).data('count');
-    let cardDisplayView  = $('.collection-list-grid');
-    $('.CollectionToolbar__LayoutType').removeClass('is-active');
-    $(this).addClass('is-active');
-    cardDisplayView.attr('collection-list-desktop', cardDisplayCount);
-
+  $(".CollectionToolbar__LayoutType").click(function () {
+    console.log($(this).data("count"));
+    let cardDisplayCount = $(this).data("count");
+    let cardDisplayView = $(".collection-list-grid");
+    $(".CollectionToolbar__LayoutType").removeClass("is-active");
+    $(this).addClass("is-active");
+    cardDisplayView.attr("collection-list-desktop", cardDisplayCount);
   });
   //
-
-
 
   //
 
@@ -250,7 +287,6 @@
   // Modal for product detail page
   // Quick & dirty toggle to demonstrate modal toggle behavior
 
-
   $(".modal-size-toggle").on("click", function (e) {
     e.preventDefault();
     $(".modal-size-chart").toggleClass("is-visible");
@@ -258,14 +294,14 @@
   });
   $("button.modal-close.modal-toggle").on("click", function (e) {
     e.preventDefault();
-    console.log('closemoda');
+    console.log("closemoda");
     $(".modal-size-chart").toggleClass("is-visible");
     $("body").toggleClass("modalScroll");
   });
 
-  $(".footer-main h4").click(function(){
+  $(".footer-main h4").click(function () {
     $(this).next("ul").toggleClass("footerActive");
-});
+  });
 
   //Functions, Plugins, Etc.. Here
   //(does not wait for DOM READY STATE)
