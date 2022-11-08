@@ -6,8 +6,8 @@
   padding-top: 4vw;
   padding-bottom: 4vw;
 
-padding-top: var(--home-section-secondary-title-space);
-padding-bottom: var(--home-section-secondary-title-space);
+  padding-top: var(--home-section-secondary-title-space);
+  padding-bottom: var(--home-section-secondary-title-space);
 
   padding-right: 24px !important;
   padding-left: 24px !important;
@@ -17,7 +17,7 @@ padding-bottom: var(--home-section-secondary-title-space);
   }
 
   .shopify-policy__title {
-    --home-section-title : 32px;
+    --home-section-title: 32px;
     text-transform: capitalize;
     font-family: "Playfair Display", serif;
     font-weight: 500;
@@ -31,7 +31,7 @@ padding-bottom: var(--home-section-secondary-title-space);
   h4,
   h5,
   h6 {
-    --home-section-title : 32px;
+    --home-section-title: 32px;
     margin-top: 0;
     margin-bottom: 24px;
     line-height: 1.2222222222;
@@ -215,5 +215,4 @@ padding-bottom: var(--home-section-secondary-title-space);
     vertical-align: super;
     font-size: smaller;
   }
-
 }

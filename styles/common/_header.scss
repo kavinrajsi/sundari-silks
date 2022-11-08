@@ -490,6 +490,27 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
+
+/* desktop menu special */
+.header-nav-list-main .menu-level-2 {
+  &[data-menu-title="readymades"],
+  &[data-menu-title="arthirshtam"] {
+    grid-gap: 16px;
+    .menu-level-2-item > a {
+      border-bottom: 0px;
+      padding-bottom: 0px;
+      padding-top: 0px;
+    }
+  }
+}
+
+.header-nav-list-main .menu-level-1-item.arthirshtam {
+.second-menu{
+  background: transparent;
+  max-width: initial;
+}
+}
+
 /* header burger icon */
 .header {
   .cd-nav-trigger {
@@ -626,16 +647,3 @@
   position: relative;
 }
 
-
-/* desktop menu special */
-.header-nav-list-main .menu-level-2 {
-  &[data-menu-title="readymades"],
-  &[data-menu-title="arthirshtam"] {
-    grid-gap: 16px;
-    .menu-level-2-item > a {
-      border-bottom: 0px;
-      padding-bottom: 0px;
-      padding-top: 0px;
-    }
-  }
-}
