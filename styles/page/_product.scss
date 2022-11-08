@@ -590,7 +590,9 @@
 
     label input[type="checkbox"]:checked,
     .radio_selected {
-      border: 2px solid var(--color-maroon) !important;
+      transform: scale(0.9);
+      outline: 2px solid var(--color-maroon) !important;
+      border: 2px solid var(--color-white) !important;
       background: var(--color-maroon) !important;
     }
   }
