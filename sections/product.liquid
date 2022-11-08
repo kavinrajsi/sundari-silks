@@ -105,13 +105,12 @@
       {%- endunless -%}
       {%- endif -%}
       {% assign inputStyle = '' %}
-      {% if option.name contains "Color" or option.name contains "color" or option.name contains "Size" or option.name
-      contains "size" %}
+      {% if option.name contains "Color" or option.name contains "color" or option.name contains "Size" or option.name contains "size" %}
       {% assign inputStyle = "input-radio-label-circle" %}
       {% else %}
       {% assign inputStyle = "input-radio-label-chip" %}
       {% endif %}
-      <label class="{{inputStyle}}" {% if option.name contains "Color" or option.name contains "color" %}
+      <label class="{{inputStyle}} {{ option.name }}" {% if option.name contains "Color" or option.name contains "color" %}
         data-color="{{ value }}" style="text-indent: -9999px; background:{{value | downcase | escape | remove:" " }}" {%
         endif %} for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
         <input type="radio" {% if option.selected_value==value %} checked="checked" {% endif %} {% unless

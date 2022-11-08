@@ -2701,10 +2701,6 @@ ul.collection-list.grid .card__heading {
   padding: 0 10px;
 }
 .page-product-detail .product-variant-fielset label.input-radio-label-circle {
-  border-radius: 50%;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -2718,6 +2714,12 @@ ul.collection-list.grid .card__heading {
   color: #fff;
   margin-right: 8px;
   margin-bottom: 8px;
+  min-height: 48px;
+  min-width: 60px;
+  border-radius: 50px;
+  height: auto;
+  width: auto;
+  padding: 0 10px;
 }
 .page-product-detail .product-variant-fielset label:has(input[type=radio]:checked) {
   outline: 1px solid var(--color-black);
