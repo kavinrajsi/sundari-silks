@@ -7,40 +7,40 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/Model_shoot_Banner-01.png",
-            "mobile_image": "shopify:\/\/shop_images\/sundari-silks-woven-wonder-two-banner-mobile.png",
+            "mobile_image": "shopify:\/\/shop_images\/Model_Mobile_Banner_Mobile_Banner_copy.png",
             "link": "shopify:\/\/collections\/all-collections"
           }
         },
         "3fbd7fec-f97f-434e-9f56-1ddc4581978e": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/CHECKS_Web_Banner_9219e20f-8511-455d-894f-06e386ee4beb.png",
-            "mobile_image": "shopify:\/\/shop_images\/sundari-silk-kattam-vari-collection-banner-mobile.png",
+            "image": "shopify:\/\/shop_images\/CHECKS_Web_Banner.png",
+            "mobile_image": "shopify:\/\/shop_images\/Checks_Mobile_Banner_Mobile_Banner.png",
             "link": "shopify:\/\/collections\/all-kanchipuram"
           }
         },
         "bead778a-0fcd-4281-b9bf-e0d5edcf2d7c": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/WEB_BANNER_e57edcab-7b7b-426c-a33a-127559e1666e.png",
-            "mobile_image": "shopify:\/\/shop_images\/MOBILE_BANNER.png",
-            "link": ""
-          }
-        },
-        "46a12e3e-d35a-4136-8a28-c0579f4c7632": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Evergreen_classics-01.png",
-            "mobile_image": "shopify:\/\/shop_images\/sundari-silks-mens-kurta-banner-mobile.png",
+            "image": "shopify:\/\/shop_images\/KARYA_-_Final_Web_Banner.png",
+            "mobile_image": "shopify:\/\/shop_images\/KARYA-_Mobile_Banner.png",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
         },
         "d7cf8c8d-ed59-41e8-8f48-4fc28bbf74ae": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/KARYA-Patterned_1.png",
-            "mobile_image": "shopify:\/\/shop_images\/KARYA-_Mobile_Banner.png",
+            "image": "shopify:\/\/shop_images\/WEB_BANNER.png",
+            "mobile_image": "shopify:\/\/shop_images\/MOBILE_BANNER.png",
             "link": "shopify:\/\/collections\/all-silks"
+          }
+        },
+        "46a12e3e-d35a-4136-8a28-c0579f4c7632": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Evergreen_classics-01.png",
+            "mobile_image": "shopify:\/\/shop_images\/Shirts_Mobile_Banner_Mobile_Banner_copy.png",
+            "link": "shopify:\/\/collections\/arthirshtam"
           }
         }
       },
@@ -48,8 +48,8 @@
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b",
         "3fbd7fec-f97f-434e-9f56-1ddc4581978e",
         "bead778a-0fcd-4281-b9bf-e0d5edcf2d7c",
-        "46a12e3e-d35a-4136-8a28-c0579f4c7632",
-        "d7cf8c8d-ed59-41e8-8f48-4fc28bbf74ae"
+        "d7cf8c8d-ed59-41e8-8f48-4fc28bbf74ae",
+        "46a12e3e-d35a-4136-8a28-c0579f4c7632"
       ],
       "settings": {
         "layout": "full_bleed",
