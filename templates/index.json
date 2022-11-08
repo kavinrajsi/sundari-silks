@@ -34,13 +34,21 @@
             "mobile_image": "shopify:\/\/shop_images\/sundari-silks-mens-kurta-banner-mobile.png",
             "link": "shopify:\/\/collections\/arthirshtam"
           }
+        },
+        "d7cf8c8d-ed59-41e8-8f48-4fc28bbf74ae": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/KARYA-Patterned.png",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b",
         "3fbd7fec-f97f-434e-9f56-1ddc4581978e",
         "bead778a-0fcd-4281-b9bf-e0d5edcf2d7c",
-        "46a12e3e-d35a-4136-8a28-c0579f4c7632"
+        "46a12e3e-d35a-4136-8a28-c0579f4c7632",
+        "d7cf8c8d-ed59-41e8-8f48-4fc28bbf74ae"
       ],
       "settings": {
         "layout": "full_bleed",
