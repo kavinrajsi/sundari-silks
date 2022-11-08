@@ -2939,6 +2939,7 @@ ul.collection-list.grid .card__heading {
   border-radius: 24px !important;
   width: 24px !important;
   height: 24px !important;
+  margin-right: 8px !important;
 }
 .page-product-detail .hulkapps_product_options .hulkapps_option select {
   border: 1px solid var(--color-maroon) !important;
