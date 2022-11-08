@@ -39,7 +39,8 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/KARYA-Patterned.png",
-            "link": ""
+            "mobile_image": "shopify:\/\/shop_images\/KARYA-_Mobile_Banner.png",
+            "link": "shopify:\/\/collections\/all-silks"
           }
         }
       },
