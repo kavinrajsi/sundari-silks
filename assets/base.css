@@ -2714,6 +2714,7 @@ ul.collection-list.grid .card__heading {
   color: #fff;
   margin-right: 8px;
   margin-bottom: 8px;
+  cursor: pointer;
   min-height: 48px;
   min-width: 60px;
   border-radius: 50px;
