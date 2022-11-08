@@ -2941,8 +2941,12 @@ ul.collection-list.grid .card__heading {
 .page-product-detail .hulkapps_product_options .hulkapps_option .hulkapps_option_value {
   flex: 1 0 auto;
 }
+.page-product-detail .hulkapps_product_options .hulkapps_option label {
+  cursor: pointer !important;
+}
 .page-product-detail .hulkapps_product_options .hulkapps_option input[type=checkbox],
 .page-product-detail .hulkapps_product_options .hulkapps_option input[type=radio] {
+  cursor: pointer;
   -webkit-appearance: initial !important;
   vertical-align: baseline !important;
   padding: 0 !important;
@@ -2979,13 +2983,13 @@ ul.collection-list.grid .card__heading {
 }
 @media (min-width: 768px) {
   .page-product-detail .hulkapps_product_options #option_total {
-    margin-top: 0 !important;
+    margin-top: 8px !important;
   }
 }
+.page-product-detail .hulkapps_product_options label input[type=checkbox]:checked,
 .page-product-detail .hulkapps_product_options .radio_selected {
   border: 2px solid var(--color-maroon) !important;
   background: var(--color-maroon) !important;
-  border-radius: var(--border-radius) !important;
 }
 .page-product-detail #add-measurement-link a {
   padding: 2px 16px !important;

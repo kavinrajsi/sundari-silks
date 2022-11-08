@@ -540,8 +540,12 @@
       .hulkapps_option_value {
         flex: 1 0 auto;
       }
+      label{
+        cursor: pointer !important;
+      }
       input[type="checkbox"],
       input[type="radio"] {
+        cursor: pointer;
         -webkit-appearance: initial !important;
         vertical-align: baseline !important;
         padding: 0 !important;
@@ -580,13 +584,14 @@
 
       margin-top: 40px !important;
       @media (min-width: 768px) {
-        margin-top: 0 !important;
+        margin-top: 8px !important;
       }
     }
+
+    label input[type="checkbox"]:checked,
     .radio_selected {
       border: 2px solid var(--color-maroon) !important;
       background: var(--color-maroon) !important;
-      border-radius: var(--border-radius) !important;
     }
   }
 
