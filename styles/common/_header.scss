@@ -10,7 +10,8 @@
   left: 0;
   right: 0;
   width: 100%;
-  padding-top: 8px; padding-bottom: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   a {
     display: block;
     p {
@@ -372,7 +373,7 @@
       justify-content: center;
       grid-gap: 14px;
       visibility: hidden;
-      padding: 20px 10px;
+      padding: 10px 10px;
       display: grid;
       &.active {
         visibility: visible;
@@ -386,7 +387,7 @@
           display: block;
           border-bottom: 1px solid var(--color-border);
           font-size: 15px;
-          font-weight: 600;
+          // font-weight: 600;
           line-height: 1.5;
         }
         &-image {
@@ -479,36 +480,53 @@
 .menu-level-2[data-menu-title="readymades"] {
   grid-template-columns: repeat(6, 1fr);
 }
+.menu-level-2[data-menu-title="decor & accessories"] {
+  grid-template-columns: repeat(5, 1fr);
+}
 .menu-level-2[data-menu-title="arthirshtam"] {
   grid-template-columns: repeat(8, 1fr);
 }
 
-.menu-level-2[data-menu-title="decor & accessories"] {
-  grid-template-columns: repeat(5, 1fr);
-}
-.menu-level-2[data-menu-title="mumbai collection"] {
-  grid-template-columns: repeat(3, 1fr);
-}
 
+// .menu-level-2[data-menu-title="mumbai collection"] {
+//   grid-template-columns: repeat(3, 1fr);
+// }
 
 /* desktop menu special */
-.header-nav-list-main .menu-level-2 {
-  &[data-menu-title="readymades"],
-  &[data-menu-title="arthirshtam"] {
-    grid-gap: 16px;
-    .menu-level-2-item > a {
-      border-bottom: 0px;
-      padding-bottom: 0px;
-      padding-top: 0px;
+// .header-nav-list-main .menu-level-2 {
+//   &[data-menu-title="readymades"],
+//   &[data-menu-title="arthirshtam"] {
+//     grid-gap: 16px;
+//     .menu-level-2-item > a {
+//       border-bottom: 0px;
+//       margin: 6px 0px;
+//       padding-bottom: 0px;
+//       padding-top: 0px;
+//     }
+//   }
+// }
+
+.header-nav-list-main .menu-level-1-item.mumbai-collection,
+.header-nav-list-main .menu-level-1-item.arthirshtam {
+  .second-menu {
+    background: transparent;
+    left: initial;
+    right: initial;
+    .menu-level-2 {
+      display: block;
+      max-width: 260px;
+      margin: 0;
+      a {
+        padding: 5px;
+        border-bottom: 0px;
+        text-transform: capitalize;
+        font-size: 13px;
+        &:hover {
+          background-color: #f4f4f4;
+        }
+      }
     }
   }
-}
-
-.header-nav-list-main .menu-level-1-item.arthirshtam {
-.second-menu{
-  background: transparent;
-  max-width: initial;
-}
 }
 
 /* header burger icon */
@@ -620,7 +638,6 @@
   }
 }
 
-
 /* menu and search active */
 .header-menuActive,
 .header-seachActive {
@@ -646,4 +663,3 @@
 .header-cart {
   position: relative;
 }
-

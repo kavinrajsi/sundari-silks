@@ -1043,7 +1043,7 @@ main img {
   justify-content: center;
   grid-gap: 14px;
   visibility: hidden;
-  padding: 20px 10px;
+  padding: 10px 10px;
   display: grid;
 }
 .header-nav-list-main .menu-level-2.active {
@@ -1057,7 +1057,6 @@ main img {
   display: block;
   border-bottom: 1px solid var(--color-border);
   font-size: 15px;
-  font-weight: 600;
   line-height: 1.5;
 }
 .header-nav-list-main .menu-level-2 .menu-level-2-item-image a {
@@ -1138,31 +1137,37 @@ main img {
   grid-template-columns: repeat(6, 1fr);
 }
 
-.menu-level-2[data-menu-title=arthirshtam] {
-  grid-template-columns: repeat(8, 1fr);
-}
-
 .menu-level-2[data-menu-title="decor & accessories"] {
   grid-template-columns: repeat(5, 1fr);
 }
 
-.menu-level-2[data-menu-title="mumbai collection"] {
-  grid-template-columns: repeat(3, 1fr);
+.menu-level-2[data-menu-title=arthirshtam] {
+  grid-template-columns: repeat(8, 1fr);
 }
 
 /* desktop menu special */
-.header-nav-list-main .menu-level-2[data-menu-title=readymades], .header-nav-list-main .menu-level-2[data-menu-title=arthirshtam] {
-  grid-gap: 16px;
-}
-.header-nav-list-main .menu-level-2[data-menu-title=readymades] .menu-level-2-item > a, .header-nav-list-main .menu-level-2[data-menu-title=arthirshtam] .menu-level-2-item > a {
-  border-bottom: 0px;
-  padding-bottom: 0px;
-  padding-top: 0px;
-}
-
+.header-nav-list-main .menu-level-1-item.mumbai-collection .second-menu,
 .header-nav-list-main .menu-level-1-item.arthirshtam .second-menu {
   background: transparent;
-  max-width: initial;
+  left: initial;
+  right: initial;
+}
+.header-nav-list-main .menu-level-1-item.mumbai-collection .second-menu .menu-level-2,
+.header-nav-list-main .menu-level-1-item.arthirshtam .second-menu .menu-level-2 {
+  display: block;
+  max-width: 260px;
+  margin: 0;
+}
+.header-nav-list-main .menu-level-1-item.mumbai-collection .second-menu .menu-level-2 a,
+.header-nav-list-main .menu-level-1-item.arthirshtam .second-menu .menu-level-2 a {
+  padding: 5px;
+  border-bottom: 0px;
+  text-transform: capitalize;
+  font-size: 13px;
+}
+.header-nav-list-main .menu-level-1-item.mumbai-collection .second-menu .menu-level-2 a:hover,
+.header-nav-list-main .menu-level-1-item.arthirshtam .second-menu .menu-level-2 a:hover {
+  background-color: #f4f4f4;
 }
 
 /* header burger icon */
