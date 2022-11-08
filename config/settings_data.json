@@ -208,6 +208,7 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-women.jpg",
               "mega_link": "Women",
               "link": "shopify:\/\/collections\/women",
               "title": "Women",
@@ -218,6 +219,7 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-men.jpg",
               "mega_link": "Men",
               "link": "shopify:\/\/collections\/men",
               "title": "Men",
@@ -228,6 +230,7 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-fabric.jpg",
               "mega_link": "Fabrics",
               "link": "shopify:\/\/collections\/all-kanchipuram",
               "title": "Fabrics",
@@ -238,6 +241,7 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-girls.jpg",
               "mega_link": "Girls",
               "link": "shopify:\/\/collections\/readymades",
               "title": "Girls",
@@ -248,6 +252,7 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-boys.jpg",
               "mega_link": "Boys",
               "link": "shopify:\/\/collections\/readymades",
               "title": "Boys",
@@ -258,64 +263,10 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/sundari-silks-infant-wear-menu-image.jpg",
               "mega_link": "Infant Wears",
               "link": "shopify:\/\/products\/3-layer-non-surgical-masks-in-cotton-prints-and-plain-set-of-4",
               "title": "Infant Wears",
-              "subtitle": ""
-            }
-          },
-          "92c429f1-06cf-45d6-ae7f-bc1b298b75f3": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/bedroom-bed-with-brown-throw-pillows.jpg",
-              "mega_link": "Living Spaces",
-              "link": "#",
-              "title": "Living Spaces",
-              "subtitle": ""
-            }
-          },
-          "8d6bbc38-40c2-46d2-a363-f855a05e905e": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/customer-in-face-mask-smiles-and-holds-white-shopping-bags.jpg",
-              "mega_link": "Bags",
-              "link": "#",
-              "title": "Bags",
-              "subtitle": ""
-            }
-          },
-          "3b41ef82-241e-437d-9545-f05ac21b20bc": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/interior-decor-shelving-with-ceramic-art.jpg",
-              "mega_link": "Decor",
-              "link": "#",
-              "title": "Decor",
-              "subtitle": ""
-            }
-          },
-          "20802720-32fb-4022-bebc-0f1bddd08987": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/a-greying-tan-pooch-on-a-chaise-longue.jpg",
-              "mega_link": "Accessories",
-              "link": "#",
-              "title": "Accessories",
-              "subtitle": ""
-            }
-          },
-          "8f8423f0-43b3-4fb8-936e-8dab6819c7ab": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/bath-bomb-near-tub.jpg",
-              "mega_link": "Personal Care",
-              "link": "#",
-              "title": "Personal Care",
               "subtitle": ""
             }
           }
@@ -336,12 +287,7 @@
           "218b71c4-c7cb-4558-a8a9-d843f6d9f329",
           "0dc284ce-400a-4c70-b4be-980ee12441ac",
           "a825885a-b299-42ea-a5c5-84ba6100ea8c",
-          "15e15742-5345-4198-ba4b-2a98c13bfc08",
-          "92c429f1-06cf-45d6-ae7f-bc1b298b75f3",
-          "8d6bbc38-40c2-46d2-a363-f855a05e905e",
-          "3b41ef82-241e-437d-9545-f05ac21b20bc",
-          "20802720-32fb-4022-bebc-0f1bddd08987",
-          "8f8423f0-43b3-4fb8-936e-8dab6819c7ab"
+          "15e15742-5345-4198-ba4b-2a98c13bfc08"
         ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
