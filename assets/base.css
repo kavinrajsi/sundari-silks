@@ -2231,20 +2231,18 @@ svg.icon {
   height: 24px;
 }
 
-.test--product-card--grid-four .slick-slide:last-child div.item {
-  height: 422px;
-}
-.test--product-card--grid-four .slick-slide:last-child div.item .product__card {
-  border-radius: var(--border-radius);
-  background-color: var(--color-white);
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+.test--product-card--grid-four .last-card.product__card.product__card--explore .product__card--content {
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 0;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-}
-.test--product-card--grid-four .slick-slide:last-child div.item .product__card .product__card--content {
-  font-size: 20px;
+  font-size: 24px;
 }
 .test--product-card--grid-four .product__card {
   padding-right: var(--Ngap);
