@@ -2232,7 +2232,7 @@ svg.icon {
 }
 
 .test--product-card--grid-four .last-card.product__card.product__card--explore .product__card--content {
-  font-size: 20px;
+  font-size: 14px;
   position: absolute;
   left: 0;
   right: 0;
@@ -2243,6 +2243,11 @@ svg.icon {
   justify-content: center;
   align-items: center;
   font-size: 24px;
+}
+@media (min-width: 768px) {
+  .test--product-card--grid-four .last-card.product__card.product__card--explore .product__card--content {
+    font-size: 20px;
+  }
 }
 .test--product-card--grid-four .product__card {
   padding-right: var(--Ngap);

@@ -894,7 +894,10 @@ svg.icon {
 .test--product-card--grid-four {
   .last-card.product__card.product__card--explore{
       .product__card--content{
+        font-size: 14px;
+        @media(min-width: 768px){
         font-size: 20px;
+        }
         position: absolute;
         left: 0;
         right: 0;
