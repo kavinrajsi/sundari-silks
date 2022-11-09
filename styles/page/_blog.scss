@@ -76,4 +76,215 @@
       }
     }
   }
+  &-article {
+    padding-top: 4vw;
+    padding-bottom: 4vw;
+
+    padding-left: var(--Ngap);
+    padding-right: var(--Ngap);
+    @media (min-width: 1364px) {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      --home-section-title: 32px;
+      margin-top: 0;
+      margin-bottom: 24px;
+      line-height: 1.2222222222;
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      font-size: var(--home-section-title);
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 24px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--color-black);
+      // text-align: justify;
+      // text-justify: distribute;
+      // text-align-last: left;
+      // text-align: justify;
+      // hyphens: auto;
+      // -webkit-hyphens: auto;
+      // word-spacing: -0.05em;
+    }
+
+    li {
+      display: list-item;
+      margin-bottom: 24px;
+      margin-top: 0;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--color-black);
+      // text-align: justify;
+      // text-justify: distribute;
+      // text-align-last: left;
+      // text-align: justify;
+      // hyphens: auto;
+      // -webkit-hyphens: auto;
+      // word-spacing: -0.05em;
+    }
+
+    table {
+      width: 100%;
+      margin-bottom: 1rem;
+      color: #212529;
+      border: 1px solid #dee2e6;
+      border-collapse: collapse;
+
+      th,
+      td {
+        text-align: inherit;
+        padding: 0.75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+        border: 1px solid #dee2e6;
+        border-bottom-width: 2px;
+      }
+      thead th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #dee2e6;
+      }
+
+      tbody + tbody {
+        border-top: 2px solid #dee2e6;
+      }
+    }
+
+    pre,
+    code,
+    kbd,
+    samp {
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+        "Courier New", monospace;
+      font-size: 1em;
+    }
+
+    pre {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      overflow: auto;
+    }
+
+    figure {
+      margin: 0 0 1rem;
+    }
+
+    img {
+      vertical-align: middle;
+      border-style: none;
+    }
+
+    svg {
+      overflow: hidden;
+      vertical-align: middle;
+    }
+
+    caption {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      color: #6c757d;
+      text-align: left;
+      caption-side: bottom;
+    }
+
+    hr {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border: 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    dl {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    blockquote {
+      margin: 0 0 1rem;
+    }
+    img {
+      vertical-align: middle;
+      border-style: none;
+      max-width: 100%;
+      height: auto;
+    }
+
+    ol ol,
+    ul ul,
+    ol ul,
+    ul ol {
+      margin-bottom: 0;
+    }
+
+    ul {
+      display: block;
+      list-style-type: disc;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      padding-inline-start: 40px;
+    }
+
+    ol {
+      display: block;
+      list-style-type: decimal;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      padding-inline-start: 40px;
+    }
+
+    b,
+    strong {
+      font-weight: bold;
+    }
+
+    i,
+    em {
+      font-style: italic;
+    }
+
+    mark {
+      background-color: mark;
+      color: marktext;
+    }
+    small {
+      font-size: smaller;
+    }
+    del {
+      text-decoration: line-through;
+    }
+    ins {
+      text-decoration: underline;
+    }
+    sub {
+      vertical-align: sub;
+      font-size: smaller;
+    }
+    sup {
+      vertical-align: super;
+      font-size: smaller;
+    }
+
+    img {
+      vertical-align: middle;
+      border-style: none;
+    }
+  }
 }
