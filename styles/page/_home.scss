@@ -76,13 +76,16 @@ body:not(.template-index) {
     position: absolute;
     top: 0;
     left: 0;
-    padding: 4px;
-    color: var(--color-white);
-    background: red;
-    margin: 4px;
-    border-radius: 2px;
-    font-size: 12px;
-    line-height: normal;
+    span {
+      display: inline-block;
+      padding: 4px;
+      color: var(--color-white);
+      background: red;
+      margin: 4px;
+      border-radius: 2px;
+      font-size: 12px;
+      line-height: normal;
+    }
   }
 
   // cta
@@ -890,10 +893,11 @@ svg.icon {
 }
 
 .test--product-card--grid-four {
-  .slick-dots li.slick-active button:before{
+  .slick-dots li.slick-active button:before {
     color: var(--color-maroon);
   }
-  .slick-prev, .slick-next{
+  .slick-prev,
+  .slick-next {
     z-index: 8;
   }
   .slick-prev:before,
