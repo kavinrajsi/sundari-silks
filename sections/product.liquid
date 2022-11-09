@@ -6,6 +6,7 @@
 {% assign collectProductName = product_collection %}
 {% endunless %}
 {% assign coeid = "" %}
+
 {% for product_image in product.images %}
 <link rel="preload" as="image" href="{{ product_image.src | image_url }}">
 <link rel="prefetch" href="{{ product_image.src | image_url }}">
@@ -17,37 +18,36 @@
 {% endunless %}
 <section class="page-product-detail">
   <div class="product-images">
-    <ul class="product-images-thumbnails">
-      {% for product_image in product.images %}
-      <li>
-        <a href="{{ product_image.src | image_url }}" data-pswp-width="{{ product_image.width }}"
-          data-pswp-height="{{ product_image.height }}">
-          {{ product_image | image_url : width: 160 | image_tag:
-          width: 160,
-          height: 160,
-          loading: "lazy",
-          alt: product_image.alt | escape
-          }}
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
+
     <div class="ImageMe test-gallery">
-      <a href="{{ product_image.src | image_url }}" data-pswp-width="{{ product_image.width }}"
-        data-pswp-height="{{ product_image.height }}">
-        <img
-          class="global-media-settings global-media-settings--no-shadow{% if variant_image %} product__media-item--variant{% endif %}"
-          src="{{ product_image.src | image_url }}" alt="{{ media.alt | escape }}" loading="lazy"
-          data-media-id="{{ media.id }}">
-      </a>
-      {% for product_image in product.images offset:1 %}
-      <a href="{{ product_image.src | image_url }}" style="opacity: 0; width: 0; height: 0;"
-        data-pswp-src="{{ product_image | image_url }}" data-pswp-width="{{ product_image.width }}"
-        data-pswp-height="{{ product_image.height }}" target="_blank">
-        &nbsp;
-      </a>
-      {% endfor %}
+
+      <div class="easyzoom easyzoom--overlay">
+				<a href="{{ product_image | img_url: 'master' }}">
+					<img src="{{ product_image | img_url: 'large' }}"
+          width="320" height="480"
+          loading="lazy"
+          alt="{{ product_image.alt }}"
+          />
+				</a>
+			</div>
+			<ul class="thumbnails">
+        {% for product_image in product.images %}
+        <!-- {{ product_image | json }} -->
+				<li>
+					<a href="{{ product_image.src | image_url: 'master' }}" data-standard="{{ product_image.src | image_url: 'medium' }}">
+						<img src="{{ product_image.src | image_url: 'small' }}"
+            width="160"
+            height="160"
+            loading="lazy"
+            alt="" />
+					</a>
+				</li>
+        {% endfor %}
+			</ul>
+
     </div>
+
+
   </div>
   <div class="product-content">
     <h2 class="product-title">{{product.title}}</h2>
@@ -105,14 +105,15 @@
       {%- endunless -%}
       {%- endif -%}
       {% assign inputStyle = '' %}
-      {% if option.name contains "Color" or option.name contains "color" or option.name contains "Size" or option.name contains "size" %}
+      {% if option.name contains "Color" or option.name contains "color" or option.name contains "Size" or option.name
+      contains "size" %}
       {% assign inputStyle = "input-radio-label-circle" %}
       {% else %}
       {% assign inputStyle = "input-radio-label-chip" %}
       {% endif %}
-      <label class="{{inputStyle}} {{ option.name }}" {% if option.name contains "Color" or option.name contains "color" %}
-        data-color="{{ value }}" style="text-indent: -9999px; background:{{value | downcase | escape | remove:" " }}" {%
-        endif %} for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
+      <label class="{{inputStyle}} {{ option.name }}" {% if option.name contains "Color" or option.name contains "color"
+        %} data-color="{{ value }}" style="text-indent: -9999px; background:{{value | downcase | escape | remove:" " }}"
+        {% endif %} for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
         <input type="radio" {% if option.selected_value==value %} checked="checked" {% endif %} {% unless
           variant_label_state %} disabled="disabled" {% endunless %} value="{{ value }}"
           data-index="option{{ forloop.index }}" name="{{ option.name | handleize }}"
@@ -129,48 +130,48 @@
     {%- endunless -%}
     <!-- blouse stitching area -->
     <section class="blouseStitching-area">
-    {% assign with_blouse = true %}
-    {% for tag in product.tags %}
-    {% if tag == "With Blouse" %}
-    {% assign with_blouse = false %}
-    {% break %}
-    {% endif %}
-    {% endfor %}
-    {% if with_blouse %}
+      {% assign with_blouse = true %}
+      {% for tag in product.tags %}
+      {% if tag == "With Blouse" %}
+      {% assign with_blouse = false %}
+      {% break %}
+      {% endif %}
+      {% endfor %}
+      {% if with_blouse %}
 
-    <div class="blouse-stitching hide" id="hulkapps_custom_options_{{ product.id }}"> </div>
-    {% else %}
-    <div class="blouse-stitching" id="hulkapps_custom_options_{{ product.id }}"> </div>
-    {% endif %}
+      <div class="blouse-stitching hide" id="hulkapps_custom_options_{{ product.id }}"> </div>
+      {% else %}
+      <div class="blouse-stitching" id="hulkapps_custom_options_{{ product.id }}"> </div>
+      {% endif %}
 
-    <div id="login-link" class="hide" style="padding: 0 5px;margin-bottom: 10px;font-size: 14px;">Please <a
-        style="color: #880216;" href="/account/login?checkout_url={{shop.url}}{{product.url}}"
-        id="addMeasurementLinkLogin">Login</a> to add measurement. Kindly provide measurement details for blouse
-      stitching before adding this product to the cart.</div>
-    <div id="add-measurement-link" class="hide" style="padding: 0 5px;margin-bottom: 10px;font-size: 14px;">Please
-      add measurement <a
-        style="color: #fff !important; display: inline-block; padding: 2px 4px; background-color: #880216; border-radius: 5px;"
-        href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}" id="addMeasurementLink">Add</a></div>
+      <div id="login-link" class="hide" style="padding: 0 5px;margin-bottom: 10px;font-size: 14px;">Please <a
+          style="color: #880216;" href="/account/login?checkout_url={{shop.url}}{{product.url}}"
+          id="addMeasurementLinkLogin">Login</a> to add measurement. Kindly provide measurement details for blouse
+        stitching before adding this product to the cart.</div>
+      <div id="add-measurement-link" class="hide" style="padding: 0 5px;margin-bottom: 10px;font-size: 14px;">Please
+        add measurement <a
+          style="color: #fff !important; display: inline-block; padding: 2px 4px; background-color: #880216; border-radius: 5px;"
+          href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}" id="addMeasurementLink">Add</a></div>
 
-    <div class="measurement-select hide" style="padding: 0 5px; margin-bottom: 10px;">
-      <label id="select-measurement-title" for="select-measurement">Select Measurement:</label>
-      <select id="select-measurement" style="width:100%">
-        <option value="">Select</option>
-      </select>
-      <!-- <div id="add-measurement-link-select" style="padding: 0 5px;margin-bottom: 10px;font-size: 14px;">
+      <div class="measurement-select hide" style="padding: 0 5px; margin-bottom: 10px;">
+        <label id="select-measurement-title" for="select-measurement">Select Measurement:</label>
+        <select id="select-measurement" style="width:100%">
+          <option value="">Select</option>
+        </select>
+        <!-- <div id="add-measurement-link-select" style="padding: 0 5px;margin-bottom: 10px;font-size: 14px;">
     <a style="color: #880216;" href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}"><strong>Add new measurement</strong>
     </a>
   </div> -->
-    </div>
-    <p id="measurement-data" class="line-item-property__field hide">
-    </p>
+      </div>
+      <p id="measurement-data" class="line-item-property__field hide">
+      </p>
 
-    {% if product.type == "Sarees" %}
-    <div class="note measurement-select" style="padding: 5px;margin-bottom: 10px;font-size: 14px;">
-      To revise your blouse measurements, please go back to “Add measurements” and make the changes.
-    </div>
-    {% endif %}
-  </section>
+      {% if product.type == "Sarees" %}
+      <div class="note measurement-select" style="padding: 5px;margin-bottom: 10px;font-size: 14px;">
+        To revise your blouse measurements, please go back to “Add measurements” and make the changes.
+      </div>
+      {% endif %}
+    </section>
     <!-- blouse stitching area -->
     <div class="mb-3" hidden>
       <select name="id" id="productSelect" class="form-control">
@@ -479,7 +480,7 @@
     ]
   }
 </script>
-
+<!--
 <script language="Javascript" type="text/javascript">
   var myProduct = {{ product | json}};
   var customTags = myProduct.tags;
@@ -701,4 +702,4 @@
     }
     return separateWord.join(' ');
   }
-</script>
+</script> -->
