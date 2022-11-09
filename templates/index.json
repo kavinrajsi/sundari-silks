@@ -396,13 +396,15 @@
         "eb85e280-6467-4c94-ba24-1c67614f9538": {
           "type": "instagram-image",
           "settings": {
-            "link": ""
+            "image": "shopify:\/\/shop_images\/insta-3.jpg",
+            "link": "https:\/\/www.instagram.com\/p\/CkpX7JiyBoT\/"
           }
         },
         "3d96368b-be8a-4f43-8bec-34291e919c59": {
           "type": "instagram-image",
           "settings": {
-            "link": ""
+            "image": "shopify:\/\/shop_images\/insta-4.jpg",
+            "link": "https:\/\/www.instagram.com\/p\/Ckm0llZSzC5\/"
           }
         },
         "c1918fec-48db-48ab-9952-a73830214706": {
