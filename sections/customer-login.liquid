@@ -70,15 +70,22 @@
 </div>
 
 <div id="recover-form" class="d-none">
-  <h1   >
-    {{ 'customer.recover_password.title' | t }}
-  </h1>
-  <p>
-    {{ 'customer.recover_password.subtext' | t }}
-  </p>
+  <div class="customer-login-content">
+    {% comment %}
+    <h2 class="page-title">
+      {{section.settings.custom_form_title}}
+    </h2>
+    <p class="page-description">
+      {{section.settings.custom_form_description}}
+    </p>
+    {% endcomment %}
+
   {% form 'recover_customer_password'  %}
     {% assign recover_success = form.posted_successfully? %}
-    <div class="field">
+    <div class="email">
+      <label for="RecoverEmail">
+        {{ 'customer.login_page.email' | t }}
+      </label>
       <input type="email"
         value=""
         name="email"
@@ -93,9 +100,6 @@
         {% endif %}
         placeholder="{{ 'customer.login_page.email' | t }}"
       >
-      <label for="RecoverEmail">
-        {{ 'customer.login_page.email' | t }}
-      </label>
     </div>
     {% if form.errors  %}
       <small id="RecoverEmail-email-error" class="form__message">
@@ -108,13 +112,14 @@
         {{ form.errors.messages['form'] }}
       </small>
     {% endif  %}
-    <button>
+    <button class="button button-solid-maroon" type="submit">
       {{ 'customer.login_page.submit' | t }}
     </button>
     <a href="javascript:void(0)" id="login">
       {{ 'customer.login_page.cancel' | t }}
     </a>
   {% endform  %}
+</div>
 </div>
 
 {% comment %}

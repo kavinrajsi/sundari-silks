@@ -4600,6 +4600,7 @@ div.pswp__img--placeholder,
   }
 }
 .customer-login-content .page-title {
+  font-family: var(--font-playfair);
   --home-section-title: 32px;
   font-size: var(--home-section-title);
   line-height: normal;
@@ -4935,6 +4936,84 @@ div.pswp__img--placeholder,
 .shopify-policy__container sup {
   vertical-align: super;
   font-size: smaller;
+}
+
+.blog-grid {
+  padding-top: 4vw;
+  padding-bottom: 4vw;
+  display: grid;
+  gap: var(--Ngap);
+  padding-left: var(--Ngap);
+  padding-right: var(--Ngap);
+}
+@media (min-width: 1364px) {
+  .blog-grid {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+.blog-grid[collection-list-mobile="2"] {
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 768px) {
+  .blog-grid[collection-list-tablet="3"] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .blog-grid[collection-list-tablet="2"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .blog-grid[collection-list-desktop="3"], .blog-grid[collection-list-desktop="4"] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .blog-grid[collection-list-desktop="3"] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .blog-grid[collection-list-desktop="4"] {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.blog-grid img {
+  width: 100%;
+}
+.blog-card-link {
+  display: block;
+}
+.blog-card-image {
+  width: 100%;
+  margin-bottom: 14px;
+}
+.blog-card-title {
+  font-family: var(--font-playfair);
+  font-size: 22px;
+  line-height: 1.5;
+  padding-top: 4px;
+  height: 38px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  width: 100%;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .blog-card-title {
+    height: 46px;
+    padding-top: 8px;
+  }
+}
+.blog-card-excerpt {
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  line-height: 1.5;
+}
+@media (min-width: 768px) {
+  .blog-card-excerpt {
+    font-size: 16px;
+  }
 }
 
 .locale-selectors__container {

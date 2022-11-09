@@ -1,5 +1,30 @@
-<h1>{{ page_title }}</h1>
+<div class="blog-grid"  collection-list-mobile="2" collection-list-tablet="3" collection-list-desktop="4">
+{% for article in blog.articles %}
+<div class="blog-card">
+  <a href="{{ article.url }}" class="blog-card-url">
+    {% if article.image %}
+    {{ article.image | image_url: width: 404, height: 296, format: 'pjpg' | image_tag: alt:article.image.alt, class:'blog-card-image' }}
+    <noscript>
+      <p>
+        {{ article.image | image_url: width: 404, height: 296, format: 'pjpg' | image_tag: article.title }}
+      </p>
+    </noscript>
+    {% endif %}
+    <h2 class="blog-card-title">  {{ article.title }} </h2>
+    <p class="blog-card-excerpt">
+      {% if article.excerpt.size > 0 %}
+      {{ article.excerpt }}
+      {% else %}
+      {{ article.content | strip_html | truncate: 150 }}
+      {% endif %}
+    </p>
 
+  </a>
+</div>
+{% endfor %}
+</div>
+
+{% comment %}
 <ul>
   {% for article in blog.articles %}
   <li>
@@ -71,6 +96,8 @@
   </li>
   {% endfor %}
 </ul>
+{% endcomment %}
+
 
 {% schema %}
 {
