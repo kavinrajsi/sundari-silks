@@ -144,7 +144,7 @@
           </a>
           {% if link.links != blank %}
           <div class="second-menu">
-            <ul class="menu-level-2" data-menu-title="{{ link.title | downcase }}">
+            <ul class="menu-level-2" data-menu-title="{{ link.title | handle }}">
               {% for child_link in link.links %}
               <li class="menu-level-2-item">
                 <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page" {% endif %}>
