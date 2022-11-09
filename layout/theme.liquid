@@ -5,7 +5,7 @@ assign body_font = settings.type_body
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
 
-<head>
+<head> <!-- WEBENGAGE INTEGRATION VARIABLES --> {% include 'webengage_variables' %}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -192,6 +192,7 @@ assign body_font = settings.type_body
     window.supported_currencies = "{{ settings.mlvedaACS_supportedCurrencies }}";
   </script>
   {% include 'hulk_po_vd.liquid' %}
+{% include 'nerdy-form-builder' %}
 </head>
 
 <body class="template-{{ template | split : '.' | first }}">
