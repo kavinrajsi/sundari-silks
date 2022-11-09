@@ -5,6 +5,7 @@ Usage:
 {% render 'product-card', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
 
+{% unless product.available %}
 <div class="product__card">
   <div class="product__card--img">
     <a href="{{ product.url | within: collection }}" class="product__card--link">
@@ -67,3 +68,4 @@ Usage:
     </a>
   </div>
 </div>
+{% endunless %}
