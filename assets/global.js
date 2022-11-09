@@ -287,10 +287,7 @@
             .html(cart_list.join(""))
             .delay(2000)
             .fadeOut("slow");
-          $(
-            ".product-form__buttons .product-form__viewcart.product-form__viewcart-secondary"
-          ).removeAttr("hidden");
-          $(".product-form__buttons button").attr("hidden", true);
+
 
           update_cart();
           // $.getJSON("/cart.js", function (cart) {

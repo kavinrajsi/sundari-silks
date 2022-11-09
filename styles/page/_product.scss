@@ -120,7 +120,8 @@
       color: #000000;
       padding: 16px;
       margin-bottom: 16px;
-      &.Arthirshtam {
+      &.Athirshtam,
+      &.athirshtam {
         display: block;
       }
       &.India,
@@ -608,7 +609,7 @@
   width: max-content;
   max-width: 100%;
   pointer-events: none;
-  // z-index: 1090;
+  @include z-index(toasterOver);
   padding: 8px 24px 8px 8px;
   border-radius: var(--border-radius);
   width: 280px;

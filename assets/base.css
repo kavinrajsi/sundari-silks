@@ -1147,26 +1147,26 @@ main img {
 
 /* desktop menu special */
 .header-nav-list-main .menu-level-1-item.mumbai-collection .second-menu,
-.header-nav-list-main .menu-level-1-item.arthirshtam .second-menu {
+.header-nav-list-main .menu-level-1-item.athirshtam .second-menu {
   background: transparent;
   left: initial;
   right: initial;
 }
 .header-nav-list-main .menu-level-1-item.mumbai-collection .second-menu .menu-level-2,
-.header-nav-list-main .menu-level-1-item.arthirshtam .second-menu .menu-level-2 {
+.header-nav-list-main .menu-level-1-item.athirshtam .second-menu .menu-level-2 {
   display: block;
   max-width: 260px;
   margin: 0;
 }
 .header-nav-list-main .menu-level-1-item.mumbai-collection .second-menu .menu-level-2 a,
-.header-nav-list-main .menu-level-1-item.arthirshtam .second-menu .menu-level-2 a {
+.header-nav-list-main .menu-level-1-item.athirshtam .second-menu .menu-level-2 a {
   padding: 5px;
   border-bottom: 0px;
   text-transform: capitalize;
   font-size: 13px;
 }
 .header-nav-list-main .menu-level-1-item.mumbai-collection .second-menu .menu-level-2 a:hover,
-.header-nav-list-main .menu-level-1-item.arthirshtam .second-menu .menu-level-2 a:hover {
+.header-nav-list-main .menu-level-1-item.athirshtam .second-menu .menu-level-2 a:hover {
   background-color: #f4f4f4;
 }
 
@@ -2604,7 +2604,7 @@ ul.collection-list.grid .card__heading {
   padding: 16px;
   margin-bottom: 16px;
 }
-.page-product-detail .product-notice-content.Arthirshtam {
+.page-product-detail .product-notice-content.Athirshtam, .page-product-detail .product-notice-content.athirshtam {
   display: block;
 }
 .page-product-detail .product-notice-content.India, .page-product-detail .product-notice-content.in, .page-product-detail .product-notice-content.IN {
@@ -3014,6 +3014,7 @@ ul.collection-list.grid .card__heading {
   width: max-content;
   max-width: 100%;
   pointer-events: none;
+  z-index: 5;
   padding: 8px 24px 8px 8px;
   border-radius: var(--border-radius);
   width: 280px;
