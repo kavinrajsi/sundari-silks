@@ -410,13 +410,15 @@
         "c1918fec-48db-48ab-9952-a73830214706": {
           "type": "instagram-image",
           "settings": {
-            "link": ""
+            "image": "shopify:\/\/shop_images\/insta-5.jpg",
+            "link": "https:\/\/www.instagram.com\/p\/CkkOUIPS9JV\/"
           }
         },
         "bc35ba83-726f-453f-9f7b-1da723646c48": {
           "type": "instagram-image",
           "settings": {
-            "link": ""
+            "image": "shopify:\/\/shop_images\/insta-6.jpg",
+            "link": "https:\/\/www.instagram.com\/p\/CkhqMo3LpFl\/"
           }
         }
       },
