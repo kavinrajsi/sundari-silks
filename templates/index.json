@@ -269,8 +269,9 @@
         "fa5013d1-6109-4c81-b660-98dc29a81ca3": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/athirshtam-necklaces.png",
             "contentTitle": "Necklaces",
-            "link": "shopify:\/\/collections\/arthirshtam"
+            "link": "shopify:\/\/collections\/necklaces"
           }
         },
         "d6761f47-65a7-4751-a264-d641de9efe16": {
@@ -332,7 +333,7 @@
         "just-dropped-title": "Just Dropped",
         "just-dropped-description": "New arrivals you will love",
         "just-dropped-count": 6,
-        "collection-list": "pure-zari-kanchipuram | bandhani-sarees | women-long-kurtas"
+        "collection-list": "pure-zari-kanchipuram | bandhani-sarees | readymades"
       }
     },
     "recent-products": {
