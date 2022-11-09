@@ -320,6 +320,8 @@
       "settings": {
         "collaborate-title": "Athirshtam Jewellery",
         "collaborate-description": "An eclectic silver jewellery collection embedded with cultural and contemporary nuances",
+        "collaborate-background": "shopify:\/\/shop_images\/athirshtam-collection-pattern-bg.png",
+        "collaborate-background-edge": "shopify:\/\/shop_images\/athirshtam-collection-frame.png",
         "collaborate-border-color": "#dbae40",
         "collaborate-hover-color": "#49194f"
       }
