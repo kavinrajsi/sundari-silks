@@ -87,73 +87,13 @@
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%)",
             "link": "shopify:\/\/collections\/mysore-silks"
           }
-        },
-        "b8f50da7-dab7-470a-9316-30bf31b01a5a": {
-          "type": "readymade-image",
-          "disabled": true,
-          "settings": {
-            "heading": "Women",
-            "background": "linear-gradient(180deg, rgba(39, 2, 2, 0), rgba(0, 0, 0, 0) 50%, rgba(156, 116, 70, 0.5) 100%)",
-            "link": "shopify:\/\/collections\/readymades"
-          }
-        },
-        "af64ae0e-b0ce-44f1-9174-96c976588b5f": {
-          "type": "readymade-image",
-          "disabled": true,
-          "settings": {
-            "heading": "Men",
-            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(108, 72, 30, 0.5) 100%)",
-            "link": "shopify:\/\/collections\/readymades"
-          }
-        },
-        "3df7725e-d735-4aca-a28b-46a8340b3ab5": {
-          "type": "readymade-image",
-          "disabled": true,
-          "settings": {
-            "heading": "Girls",
-            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 98.561%, rgba(0, 0, 0, 1) 100%)",
-            "link": "shopify:\/\/collections\/readymades"
-          }
-        },
-        "b64e9a81-ca1c-4151-bcdd-5de5dcabd06b": {
-          "type": "readymade-image",
-          "disabled": true,
-          "settings": {
-            "heading": "Boys",
-            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
-            "link": "shopify:\/\/collections\/readymades"
-          }
-        },
-        "a71593b3-0ca8-4b76-bbe5-8de06e41635c": {
-          "type": "readymade-image",
-          "disabled": true,
-          "settings": {
-            "heading": "Fabric",
-            "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 1) 100%)",
-            "link": "shopify:\/\/collections\/readymades"
-          }
-        },
-        "341a96da-ba85-4fdf-9220-c3a94a04920d": {
-          "type": "readymade-image",
-          "disabled": true,
-          "settings": {
-            "heading": "Infant",
-            "background": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(156, 116, 70, 0.5) 100%)",
-            "link": "shopify:\/\/collections\/readymades"
-          }
         }
       },
       "block_order": [
         "1fb3c54d-915e-48cf-81db-15adfd6c2cb8",
         "3d1616af-f24e-40c8-b9c6-db9a40ab317c",
         "e4c9673a-1fde-4af5-9e4a-6d2563a84c99",
-        "3e91a06e-4db1-487e-920b-fcbc90f781c2",
-        "b8f50da7-dab7-470a-9316-30bf31b01a5a",
-        "af64ae0e-b0ce-44f1-9174-96c976588b5f",
-        "3df7725e-d735-4aca-a28b-46a8340b3ab5",
-        "b64e9a81-ca1c-4151-bcdd-5de5dcabd06b",
-        "a71593b3-0ca8-4b76-bbe5-8de06e41635c",
-        "341a96da-ba85-4fdf-9220-c3a94a04920d"
+        "3e91a06e-4db1-487e-920b-fcbc90f781c2"
       ],
       "settings": {
         "curated-title": "Curated collection",
@@ -177,47 +117,52 @@
             "image": "shopify:\/\/shop_images\/readymade-collection-women.png",
             "text": "Women",
             "background": "linear-gradient(180deg, rgba(39, 2, 2, 0), rgba(156, 116, 70, 0.5) 100%)",
-            "link": "shopify:\/\/collections\/readymades"
+            "link": "shopify:\/\/collections\/women"
           }
         },
         "e4653ca2-9d0a-4e89-979c-9c1b932897db": {
           "type": "readymade-image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/readymade-collection-men.png",
             "text": "Men",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(108, 72, 30, 0.5) 100%)",
-            "link": "shopify:\/\/collections\/readymades"
+            "link": "shopify:\/\/collections\/men"
           }
         },
         "558c4938-63b0-436c-bb48-95f4396e958e": {
           "type": "readymade-image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/readymade-collection-girl.png",
             "text": "Girls",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
-            "link": "shopify:\/\/collections\/readymades"
+            "link": "shopify:\/\/collections\/girls"
           }
         },
         "0fa2d46d-88b9-4852-a880-4e28e17aedab": {
           "type": "readymade-image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/readymade-collection-boy.png",
             "text": "Boys",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
-            "link": "shopify:\/\/collections\/readymades"
+            "link": "shopify:\/\/collections\/boys"
           }
         },
         "6c0d8e0e-f040-459b-9a2a-ea4be141c0d6": {
           "type": "readymade-image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/readymade-collection-fabirc.png",
             "text": "Fabric",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
-            "link": "shopify:\/\/collections\/readymades"
+            "link": "shopify:\/\/collections\/unstitched-materials"
           }
         },
         "d024e20d-b890-4a5d-b3a1-680f7f65694c": {
           "type": "readymade-image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/readymade-collection-infant.png",
             "text": "Infant",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
-            "link": "shopify:\/\/collections\/readymades"
+            "link": "shopify:\/\/collections\/infant-wear"
           }
         }
       },
