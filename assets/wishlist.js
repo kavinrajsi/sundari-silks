@@ -28,7 +28,8 @@ document.addEventListener('shopify-wishlist:init-buttons', (event) => {
 });
 
 const fetchProductCardHTML = (handle) => {
-  const productTileTemplateUrl = `/products/${handle}?view=card`;
+  const productTileTemplateUrl = `/products/${handle}`;
+  console.log(productTileTemplateUrl);
   return fetch(productTileTemplateUrl)
   .then((res) => res.text())
   .then((res) => {
