@@ -19,7 +19,9 @@
           {% assign collection = collections[ section.settings.spotlight-collection ] %}
           {% assign collectionCount = 8 %}
           {% for product in collection.products limit: collectionCount %}
-          {% render 'product-card', product:product %}
+          {% if product.available %}
+            {% render 'product-card', product:product %}
+          {% endif %}
           {% endfor %}
         </div>
 
