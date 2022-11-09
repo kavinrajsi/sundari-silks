@@ -1399,12 +1399,12 @@ body:not(.template-index) .header-nav-list-footer {
   top: 0;
   left: 0;
   padding: 4px;
+  color: var(--color-white);
   background: red;
   margin: 4px;
   border-radius: 2px;
   font-size: 12px;
   line-height: normal;
-  display: none;
 }
 .product__card-cta {
   display: none;
@@ -3092,7 +3092,7 @@ ul.collection-list.grid .card__heading {
   right: 0;
   top: 150px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1364px) {
   .blouseStitching-area #add-measurement-link {
     top: 73px;
     left: 450px;
@@ -4976,9 +4976,6 @@ div.pswp__img--placeholder,
     grid-template-columns: repeat(4, 1fr);
   }
 }
-.blog-grid img {
-  width: 100%;
-}
 .blog-card-link {
   display: block;
 }
@@ -5102,6 +5099,10 @@ div.pswp__img--placeholder,
 .blog-article img {
   vertical-align: middle;
   border-style: none;
+}
+.blog-article .imageGrid {
+  display: flex;
+  gap: 12px;
 }
 .blog-article svg {
   overflow: hidden;
