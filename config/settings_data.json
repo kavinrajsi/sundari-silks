@@ -86,7 +86,7 @@
         "type": "footer",
         "settings": {
           "logo": "shopify:\/\/shop_images\/sundari-silks-512.png",
-          "logo_width": 120
+          "logo_width": 250
         }
       },
       "quickview-modal": {
