@@ -31,8 +31,9 @@
 				</a>
 			</div>
 			<ul class="thumbnails">
+
+        <!-- {{ product.images | json }} -->
         {% for product_image in product.images %}
-        <!-- {{ product_image | json }} -->
 				<li>
 					<a href="{{ product_image | image_url: 'master' }}" data-standard="{{ product_image.src | image_url: 'medium' }}">
 						<img src="{{ product_image | image_url: 'small' }}"
