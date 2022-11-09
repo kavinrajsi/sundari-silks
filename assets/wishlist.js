@@ -28,18 +28,93 @@ document.addEventListener('shopify-wishlist:init-buttons', (event) => {
 });
 
 const fetchProductCardHTML = (handle) => {
-  const productTileTemplateUrl = `/products/${handle}?view=card`;
-  console.log(productTileTemplateUrl);
-  return fetch(productTileTemplateUrl)
-  .then((res) => res.text())
-  .then((res) => {
-    const text = res;
-    const parser = new DOMParser();
-    const htmlDocument = parser.parseFromString(text, 'text/html');
-    const productCard = htmlDocument.documentElement.querySelector(selectors.productCard);
-    return productCard.outerHTML;
-  })
-  .catch((err) => console.error(`[Shopify Wishlist] Failed to load content for handle: ${handle}`, err));
+  const productTileTemplateUrl = document.location.origin + `/products/${handle}`;
+  // console.log(document.location.origin);
+  // console.log(productTileTemplateUrl);
+
+    jQuery
+    .ajax({
+      url: productTileTemplateUrl,
+      dataType: "json",
+    })
+    .done(function (data) {
+      // console.table(data);
+      console.log(data);
+      console.log(data.product.id);
+      console.log(data.product.title);
+      console.log(data.product.image.src);
+      console.log(data.product.variants[0].price);
+let productCard = `
+<div class="product__card">
+  <div class="product__card--img">
+    <a href="{{ product.url | within: collection }}" class="product__card--link">
+      <div class="product__card--image--wrapper">
+        {% if product.featured_image != blank %}
+        <!-- [200,400,600,700,800,900,1000,1200] -->
+        <img loading="lazy" id="Image-{{ image.id }}" class="blur-up responsive-image__image lazyload"
+          src="{{ product.featured_image | image_url: width: '300x', format: 'pjpg' }}"
+          data-src="{{ product.featured_image | image_url: width: '300x', format: 'pjpg' }}"
+          data-aspectratio="{{ product.featured_image.aspect_ratio }}"
+          data-widths="[540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]" data-sizes="auto"
+          data-parent-fit="cover" alt="{{ product.feature_image.alt }}">
+        {% comment %}
+        {% endcomment %}
+        {% else %}
+        {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
+        {% endif %}
+
+      </div>
+    </a>
+    <div class="product__card-cta quick-view-button">
+      <a href="javascript:void(0)" id="productInfoAnchor" class="quick-view" product-handle="{{ product.handle }}"
+        product-price="{{ product.price | money_without_trailing_zeros }}">Quick View</a>
+    </div>
+  </div>
+  <div class="product__card--content">
+    <a href="{{ product.url | within: collection }}" class="product__card--link">
+      <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
+      <div class="product__variant--price">
+        {% if product.price_varies %}
+        <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency }}</p>
+        {% else %}
+        <p>
+          {% if product.compare_at_price_max > product.price %}
+          <span><s>{{ product.compare_at_price_max | money_with_currency }}</s></span>
+          <span>{{ product.price | money_with_currency }}</span>
+          {% else %}
+          <span>{{ product.price | money_with_currency }}</span>
+          {% endif %}
+        </p>
+        {% endif %}
+      </div>
+        {% if product.variants.size > 1 %}
+        <div class="product__variant--list">
+          <span class="product__variant--list-title">
+            {{product.options }} :
+          </span>
+          {% for variant in product.variants %}
+          {% if variant.inventory_quantity == 0 %} <s>  {% endif %}
+          <span class="product__variant--list-name"> {{ variant.title }} </span>
+          {% if variant.inventory_quantity == 0 %} </s>  {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+    </a>
+  </div>
+</div>`;
+
+    });
+
+  // return fetch(productTileTemplateUrl)
+  // .then((res) => res.text())
+  // .then((res) => {
+  //   const text = res;
+  //   const parser = new DOMParser();
+  //   const htmlDocument = parser.parseFromString(text, 'text/html');
+  //   const productCard = htmlDocument.documentElement.querySelector(selectors.productCard);
+  //   return productCard.outerHTML;
+  // })
+  // .catch((err) => console.error(`[Shopify Wishlist] Failed to load content for handle: ${handle}`, err));
 };
 
 const setupGrid = async (grid) => {

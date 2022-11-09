@@ -1,12 +1,14 @@
 <section>
 <div id="login-froms" class="d-block">
   <div class="customer-login-content">
+    {% comment %}
     <h2 class="page-title">
       {{section.settings.custom_form_title}}
     </h2>
     <p class="page-description">
       {{section.settings.custom_form_description}}
     </p>
+    {% endcomment %}
     {% form 'customer_login', novalidate: 'novalidate' %}
     <!-- success -->
     {% if recover_success == true %}
@@ -24,6 +26,9 @@
     <!-- success end -->
     <!-- error -->
     {% if form.errors %}
+    <h2 class="page-title">
+     Login
+    </h2>
     <h2 class="form__message"   autofocus>
       <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>
       <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 13 13">
@@ -53,7 +58,7 @@
       Forgot your password?
     </a>
     <div class="submit">
-      <button type="submit" class="button--primary">
+      <button type="submit" class="button button-solid-maroon">
         Sign In
       </button>
     </div>
@@ -112,6 +117,7 @@
   {% endform  %}
 </div>
 
+{% comment %}
   <div class="customer-login-image">
     {% if section.settings.custom_form_image != blank %}
     {{ section.settings.custom_form_image | image_url: width: 720, height: 400, format: 'pjpg' | image_tag : loading: 'lazy', alt:
@@ -120,6 +126,8 @@
     {{ 'image' | placeholder_svg_tag }}
     {% endif %}
   </div>
+  {% endcomment %}
+
 </section>
 
 {% schema %}

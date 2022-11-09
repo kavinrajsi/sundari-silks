@@ -381,14 +381,16 @@
       .menu-level-2-item {
         a {
           text-transform: uppercase;
-          padding-left: 0;
-          padding-right: 0;
+          padding: 0;
           text-align: left;
           display: block;
-          border-bottom: 1px solid var(--color-border);
           font-size: 15px;
-          // font-weight: 600;
           line-height: 1.5;
+          padding: 5px;
+        }
+        &-titleImage{
+          margin-top:  5px;
+          border-radius: var(--border-radius);
         }
         &-image {
           a {
@@ -453,7 +455,7 @@
       visibility: hidden;
       position: absolute;
       display: none;
-      border-top: 1px solid var(--color-border);
+      // border-top: 1px solid var(--color-border);
       &.active {
         visibility: visible;
         display: block;

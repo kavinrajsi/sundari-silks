@@ -1051,13 +1051,16 @@ main img {
 }
 .header-nav-list-main .menu-level-2 .menu-level-2-item a {
   text-transform: uppercase;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
   text-align: left;
   display: block;
-  border-bottom: 1px solid var(--color-border);
   font-size: 15px;
   line-height: 1.5;
+  padding: 5px;
+}
+.header-nav-list-main .menu-level-2 .menu-level-2-item-titleImage {
+  margin-top: 5px;
+  border-radius: var(--border-radius);
 }
 .header-nav-list-main .menu-level-2 .menu-level-2-item-image a {
   padding: 0px;
@@ -1113,7 +1116,6 @@ main img {
   visibility: hidden;
   position: absolute;
   display: none;
-  border-top: 1px solid var(--color-border);
 }
 .header-nav-list-main .second-menu.active {
   visibility: visible;
@@ -4583,38 +4585,95 @@ div.pswp__img--placeholder,
   }
 }
 
-.customer-login {
-  display: flex;
-  margin-bottom: 48px;
+.customer-login-content {
+  max-width: 448px;
+  margin: 0 auto;
+  padding-top: var(--home-section-secondary-title-space);
+  padding-bottom: var(--home-section-secondary-title-space);
+  padding-right: 24px !important;
+  padding-left: 24px !important;
 }
-.customer-login .customer-login-content {
-  margin-right: 24px;
-  max-width: 320px;
+@media (min-width: 768px) {
+  .customer-login-content {
+    padding-right: 32px !important;
+    padding-left: 32px !important;
+  }
 }
-.customer-login .customer-login-image {
-  width: 100%;
-  margin-left: 24px;
-}
-.customer-login .customer-login-image img {
-  width: 100%;
-}
-.customer-login .page-title {
-  margin-bottom: 24px;
-  font-family: "Playfair Display";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 120%;
+.customer-login-content .page-title {
+  --home-section-title: 32px;
+  font-size: var(--home-section-title);
+  line-height: normal;
   color: var(--color-black);
+  text-align: center;
+  padding-top: var(--home-section-secondary-title-space);
+  padding-bottom: var(--home-section-secondary-title-space);
 }
-.customer-login .page-description {
-  font-family: var(--font-montserrat);
-  font-style: normal;
-  font-weight: 400;
+.customer-login-content form label {
+  font-size: 14px;
+  display: block;
+  padding-bottom: 8px;
+}
+.customer-login-content form a::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-maroon);
+}
+.customer-login-content form input[type=text],
+.customer-login-content form input[type=password],
+.customer-login-content form input[type=email],
+.customer-login-content form input[type=date] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: rgb(var(--color-white));
+  color: rgb(var(--color-black));
   font-size: 16px;
-  line-height: 28px;
-  color: var(--color-black);
-  margin-bottom: 24px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: box-shadow var(--duration-short) ease;
+  border-radius: var(--border-radius);
+  height: 46px;
+  position: relative;
+  border: 1px solid var(--color-black);
+  margin-bottom: 20px;
+  padding: 14px;
+}
+.customer-login-content form input[type=radio],
+.customer-login-content form input[type=checkbox] {
+  cursor: pointer;
+  -webkit-appearance: initial !important;
+  vertical-align: baseline !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: initial !important;
+  border: 1px solid var(--color-maroon) !important;
+  background: transparent !important;
+  display: inline-block !important;
+  border-radius: 24px !important;
+  width: 24px !important;
+  height: 24px !important;
+  margin-right: 8px !important;
+}
+.customer-login-content form input[type=radio]:checked,
+.customer-login-content form input[type=checkbox]:checked {
+  transform: scale(0.9);
+  outline: 2px solid var(--color-maroon) !important;
+  border: 2px solid var(--color-white) !important;
+  background: var(--color-maroon) !important;
+}
+.customer-login-content form .accepts-marketing {
+  display: flex;
+  cursor: pointer;
+}
+.customer-login-content form button[type=submit],
+.customer-login-content form input[type=submit] {
+  background-color: var(--color-maroon);
+  color: var(--color-white);
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .customer-account {
