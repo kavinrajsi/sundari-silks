@@ -1,29 +1,9 @@
 <div class="collection-page-header">
-
-  {% commnet %}
-  {% if collection.description != blank %}
-  <div class="collection-page-header-image text-center image-radius">
-    {{ collection | image_url: height: '340x', format: 'pjpg' | image_tag : alt: collection.image.alt, class:
-    'image-radius' }}
-  </div>
-  {% else %}
-
-  {% endcommnet %}
   <div class="collection-page-title">
     {% if collection.title != blank %}
     <h1>{{ collection.title }}</h1>
     {% endif %}
   </div>
-
-  {% commnet %}
-  {% endif %}
-  {% if collection.description != blank %}
-  <div class="collection-page-description">
-    <p>{{ collection.description }}</p>
-  </div>
-  {% endif %}
-
-  {% endcommnet %}
 </div>
 
 {% render 'filter' %}
