@@ -38,9 +38,6 @@
       }
     }
 
-    img {
-      width: 100%;
-    }
   }
   &-card {
     &-link {
@@ -113,13 +110,6 @@
       font-weight: 400;
       line-height: 1.5;
       color: var(--color-black);
-      // text-align: justify;
-      // text-justify: distribute;
-      // text-align-last: left;
-      // text-align: justify;
-      // hyphens: auto;
-      // -webkit-hyphens: auto;
-      // word-spacing: -0.05em;
     }
 
     li {
@@ -130,13 +120,6 @@
       font-weight: 400;
       line-height: 1.5;
       color: var(--color-black);
-      // text-align: justify;
-      // text-justify: distribute;
-      // text-align-last: left;
-      // text-align: justify;
-      // hyphens: auto;
-      // -webkit-hyphens: auto;
-      // word-spacing: -0.05em;
     }
 
     table {
@@ -189,6 +172,10 @@
       border-style: none;
     }
 
+    .imageGrid{
+      display: flex;
+      gap: 12px;
+    }
     svg {
       overflow: hidden;
       vertical-align: middle;
