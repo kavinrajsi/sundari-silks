@@ -1,0 +1,144 @@
+<script type="text/javascript">
+    var _webengage_license_code = "76aa6d5";
+    var _webengage_id_type = "customer_id";
+	var _webengage_region = "US";
+    var _webengage_web_push_enabled = true;
+	var _webengage_version = "2.0";
+	var _webengage_env = "production";
+    var __webengage_webhook_enabled = true;
+	var _webengage_variables = "shop_url,shop_domain,shop_email,shop_money_format,product_json,product_title,product_price,cart_json,cart_item_count,cart_total_price";
+	var _webengage_shop_url = `{{ shop.url }}`;
+	var _webengage_shop_domain = `{{ shop.domain }}`;
+	var _webengage_shop_email = `{{ shop.email }}`;
+	var _webengage_shop_name =`{{shop.name}}`;
+	var _webengage_charged_currency = `{{shop.currency}}`;
+	var _webengage_customer_name = `{{ customer.name }}`;
+	var _webengage_customer_identity = `{{ customer.id }}`;
+	var _webengage_customer_email = `{{ customer.email }}`;
+	var _webengage_customer_phone = `{{ customer.phone }}`;
+    var _webengage_page_type = `{{template}}`;
+	{% if template contains 'product' %}
+        var _webengage_product_json = {{ product | json }};
+        var _webengage_product_title = `{{ product.title }}`;
+        var _webengage_product_price = `{{ product.price | money }}`
+        var _webengage_product_category_name = `{{ collection.title }}`;
+        var _webengage_currency = `{{ shop.currency }}`;
+        var _webengage_quantity =`{{ line_item.quantity }}`;
+        var _webengage_seller_name = `{{product.vendor}}`
+	{% endif %}
+	{% if template contains 'collection' %}
+        var _webengage_collection_json = {{collection | json}}
+	    var _webengage_collection_name = `{{collection.title}}`
+	{% endif %}
+	{% if search.performed %}
+        var _webengage_search_json = {{search | json}}
+	    var _webengage_searchterm = `{{search.terms}}`
+	{% endif %}
+window.webengageApp = {
+        config: {
+          	currency: '{{ shop.currency }}',
+            meta : {
+                title : '{{ page_title }}',
+                template : '{{ template }}',
+                url : '{{ canonical_url }}',
+                type : '{{ request.page_type }}',
+            },
+            routes: {
+                customer: {
+                    account: '{{ routes.account_url }}',
+                    login: '{{ routes.account_login_url }}',
+                    logout: '{{ routes.account_logout_url }}',
+                    register: '{{ routes.account_register_url }}'
+                },
+                cart: {
+                    list: '{{ routes.cart_url }}',
+                    add: '{{ routes.cart_add_url }}',
+                    clear: '{{ routes.cart_clear_url }}',
+                    update: '{{ routes.cart_change_url }}',
+                    change: '{{ routes.cart_change_url }}',
+                }    
+            }
+        },
+        allMap : {}
+    };
+
+    {% if template == 'search' %}
+
+        webengageApp.searchProduct = {
+            items: [],
+            terms: '{{ search.terms }}'
+        }; 
+
+        {% for item in search.results %}
+            {% if item.object_type == 'product' %}
+                webengageApp.searchProduct.items.push({
+                    SKUCode: '{{ item.variants[0].sku }}',
+                    id: parseInt('{{ item.variants[0].id }}'),
+                    type: '{{ item.type }}',
+                    title: '{{ item.title }}',
+                    available: '{{ item.available }}',
+                    image: '{{ item.featured_image }}',
+                    price: parseFloat((parseInt('{{ item.price }}') / 100).toFixed(2)),
+                });
+            {% endif %}
+        {% endfor %}
+    {% elsif template == 'collection' or request.page_type == 'collection' %}
+  		{% if collection.handle != 'all' and collection.url != '' %}
+            webengageApp.collection = {
+                url: '{{ collection.url }}',
+                title: '{{ collection.title }}',
+                image : _webengage_collection_json && _webengage_collection_json.image && _webengage_collection_json.image.src ? _webengage_collection_json.image.src : '{{ collection.image | img_url: "large" }}',
+                handle: '{{ collection.handle }}',
+                id: parseInt('{{ collection.id }}'),
+                productCount: parseInt('{{ collection.products_count }}')
+            }
+        {% endif %}
+    {% elsif template contains 'product' or request.page_type == 'product' %}
+        webengageApp.product = {
+            variants : {},
+            url : '{{ product.url }}',
+            title : '{{ product.title }}',
+          	handle : '{{ product.handle }}',
+          	id : parseInt('{{ product.id }}'),
+          	available : '{{ product.available }}',
+            image : _webengage_product_json && _webengage_product_json.featured_image ? 'https:' + _webengage_product_json.featured_image : 'https:' + '{{ product.featured_image | img_url: "large" }}',
+            tags : `{{ product.tags | join:',' }}`,
+          	price : parseFloat((parseInt('{{ product.price }}') / 100).toFixed(2))
+        };
+        {% for variant in product.variants %}
+            webengageApp.product.variants[parseInt('{{ variant.id }}')] = {
+				title: '{{ variant.title }}',
+				id : parseInt('{{ variant.id }}'),
+                available : '{{ variant.available }}',
+                image : '{{ variant.featured_media }}',
+				price : parseFloat((parseInt('{{ variant.price }}') / 100).toFixed(2)),
+            };
+        {% endfor %}
+    {% endif %}
+
+    {% if customer %}
+
+        var tags = [];
+        {% for tag in customer.tags %}
+           tags.push('{{tag}}');
+        {% endfor %}
+        webengageApp.customer = {
+            phone: '{{ customer.phone }}',
+            email: '{{ customer.email }}',
+            name: '{{ customer.name }}',
+            id: parseInt('{{ customer.id }}'),
+            lastName: '{{ customer.last_name }}',
+            firstName: '{{ customer.first_name }}',
+            city: '{{ customer.default_address.city }}',
+            acceptsMarketing: '{{ customer.accepts_marketing }}',
+            hasAccount: '{{ customer.has_account }}',
+            ordersCount: parseInt('{{ customer.orders_count }}'),
+            taxExempt: '{{ customer.tax_exempt }}',
+            totalSpent:  parseFloat('{{ customer.total_spent }}').toFixed(2),
+            tags: tags
+        };
+
+    {% endif %}
+if (localStorage) {
+	localStorage.setItem("WEBENGAGE_SHOP_INFO", "{ \"license_code\" : \"76aa6d5\" , \"region\" : \"US\" , \"webPushEnabled\" : true, \"id_type\" : \"customer_id\", \"webhookEnabled\" : true}");
+}</script>
