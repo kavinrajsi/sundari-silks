@@ -77,12 +77,12 @@ body:not(.template-index) {
     top: 0;
     left: 0;
     padding: 4px;
+    color: var(--color-white);
     background: red;
     margin: 4px;
     border-radius: 2px;
     font-size: 12px;
     line-height: normal;
-    display: none;
   }
 
   // cta
