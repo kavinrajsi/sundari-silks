@@ -22,7 +22,9 @@
         "bead778a-0fcd-4281-b9bf-e0d5edcf2d7c": {
           "type": "slide",
           "settings": {
-            "link": "shopify:\/\/collections\/arthirshtam"
+            "image": "shopify:\/\/shop_images\/boxed-traditional-banner-desktop.png",
+            "mobile_image": "shopify:\/\/shop_images\/boxed-traditional-banner-mobile.png",
+            "link": "shopify:\/\/collections\/kanchipuram-silks"
           }
         },
         "d7cf8c8d-ed59-41e8-8f48-4fc28bbf74ae": {
