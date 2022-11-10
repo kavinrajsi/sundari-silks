@@ -2775,6 +2775,7 @@ ul.collection-list.grid .card__heading {
 }
 .page-product-detail .modal .modal-overlay {
   position: fixed;
+  z-index: 9;
   top: 0;
   left: 0;
   width: 100vw;
@@ -2809,6 +2810,7 @@ ul.collection-list.grid .card__heading {
   left: 0;
   right: 0;
   margin: 0 auto;
+  z-index: 8;
   display: flex;
   justify-content: center;
   align-items: center;
