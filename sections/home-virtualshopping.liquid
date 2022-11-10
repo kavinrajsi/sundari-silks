@@ -1,5 +1,5 @@
 <section class="shopify-section homepage-section">
-  <section class="virtualshopping" style="background: #efe1d3 url({{ section.settings.vsvirtual-shopping-background }}) repeat center;background-size: cover;">
+  <section class="virtualshopping" style="background: #efe1d3 url({{ section.settings.vsvirtual-shopping-background | image_url }}) repeat center;background-size: cover;">
     <a href="{{ section.settings.virtual-shopping-url }}">
       <div class="content-area">
         <h3>The Virtual Store <br> Of Exquisite Products</h3>
@@ -7,8 +7,8 @@
         <span>{{ section.settings.spotlight-button }}</span>
       </div>
       <div class="image-area">
-      <img loading="lazy" class="mobile" src="{{ section.settings.vsvirtual-shopping-mobile}} " alt="{{ section.settings.spotlight-title }}">
-      <img loading="lazy" class="desktop" src="{{ section.settings.vsvirtual-shopping-desktop}} " alt="{{ section.settings.spotlight-title }}">
+      <img loading="lazy" class="mobile" src="{{ section.settings.vsvirtual-shopping-mobile | image_url }} " alt="{{ section.settings.spotlight-title }}">
+      <img loading="lazy" class="desktop" src="{{ section.settings.vsvirtual-shopping-desktop | image_url }} " alt="{{ section.settings.spotlight-title }}">
     </div>
     </a>
   </section>
