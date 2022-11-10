@@ -3160,7 +3160,7 @@ ul.collection-list.grid .card__heading {
   opacity: 0.5;
 }
 .meFilter.is-visible .fitler--wrapper {
-  transform: translateY(0);
+  transform: translateX(0);
 }
 .meFilter .fitler--wrapper {
   position: fixed;
@@ -3177,8 +3177,7 @@ ul.collection-list.grid .card__heading {
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  -webkit-transform: translateY(103%);
-  transform: translateY(103%);
+  transform: translateX(103%);
   -webkit-overflow-scrolling: touch;
   box-shadow: 0 2px 6px #777;
   border-top-left-radius: var(--border-radius);
