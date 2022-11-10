@@ -4,7 +4,7 @@
 <p>
   {{ section.settings.not-found-content }}
 </p>
-<a href="{{ routes.all_products_collection_url }}" type="button" class="button">
+<a href="{{ routes.all_products_collection_url }}" type="button" class="button button-solid-maroon">
   {{ section.settings.not-found-cta }}
 </a>
 </div>
@@ -18,19 +18,19 @@
 			"type": "text",
 			"id": "no-found-title",
 			"label": "404 Title",
-			"default": "404 😢"
+			"default": "Sorry! There’s been an error"
 		},
     {
       "type": "textarea",
       "id": "not-found-content",
       "label": "404 Content",
-      "default": "The page you are looking for cannot be found."
+      "default": "Vanakkam, this page does not exist. The URL entered is either invalid or does not exist anymore. You can always search the homepage to find what you’re looking for!"
     },
     {
       "type": "text",
       "id": "not-found-cta",
       "label": "CTA Text",
-      "default": "Back to Home"
+      "default": "Go to the Homepage"
     },
     {
       "type": "url",
