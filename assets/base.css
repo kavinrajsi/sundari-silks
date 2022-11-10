@@ -3573,6 +3573,7 @@ ul.collection-list.grid .card__heading {
   border-bottom-right-radius: var(--border-radius);
   border-bottom-left-radius: var(--border-radius);
   margin: 0 8px;
+  z-index: 2;
 }
 .meFitlerMobile .filteAction #sortButton ul#sort-by li {
   cursor: pointer;

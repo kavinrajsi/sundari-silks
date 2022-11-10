@@ -452,6 +452,7 @@
         border-bottom-right-radius: var(--border-radius);
         border-bottom-left-radius: var(--border-radius);
         margin: 0 8px;
+        @include z-index(sort_overlay);
         li {
           cursor: pointer;
           padding: 8px;
