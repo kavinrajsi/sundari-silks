@@ -1,5 +1,5 @@
 <section class="shopify-section homepage-section">
-  <section class="virtualshopping" style="background: #efe1d3 url(https://cdn.shopify.com/s/files/1/0560/3695/0174/files/Virtual_Shopping_Background.png?v=1666868614) repeat center;background-size: cover;">
+  <section class="virtualshopping" style="background: #efe1d3 url({{ section.settings.vsvirtual-shopping-background }}) repeat center;background-size: cover;">
     <a href="{{ section.settings.virtual-shopping-url }}">
       <div class="content-area">
         <h3>The Virtual Store <br> Of Exquisite Products</h3>
@@ -7,7 +7,8 @@
         <span>{{ section.settings.spotlight-button }}</span>
       </div>
       <div class="image-area">
-      <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0560/3695/0174/files/vs-desktop-image-1.png?v=1666855198" alt="">
+      <img loading="lazy" class="mobile" src="{{ section.settings.vsvirtual-shopping-mobile}} " alt="{{ section.settings.spotlight-title }}">
+      <img loading="lazy" class="desktop" src="{{ section.settings.vsvirtual-shopping-desktop}} " alt="{{ section.settings.spotlight-title }}">
     </div>
     </a>
   </section>
@@ -38,6 +39,11 @@
 "label": "Section Button",
 "default": "Book an Appointment"
 },
+{
+  "type": "image_picker",
+  "id": "vsvirtual-shopping-background",
+  "label": "Background Image"
+  },
 {
 "type": "image_picker",
 "id": "vsvirtual-shopping-mobile",

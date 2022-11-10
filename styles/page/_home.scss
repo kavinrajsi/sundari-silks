@@ -753,6 +753,10 @@ body:not(.template-index) {
 .virtualshopping {
   margin-left: var(--Mgap);
   margin-right: var(--Mgap);
+  background-position: right;
+  @media (min-width: 768px) {
+    background-position: center;
+  }
   a {
     padding: var(--gap);
     padding-top: 24px;
@@ -783,13 +787,19 @@ body:not(.template-index) {
     align-items: center;
     display: block;
     text-align: center;
-    img {
+    .mobile {
       margin-left: 8px;
+    }
+    .desktop {
+      display: none;
     }
     @media (min-width: 768px) {
       margin: 0;
       text-align: left;
-      img {
+      .mobile{
+        display: none;
+      }
+      .desktop {
         margin-left: 0;
         max-height: 600px;
       }

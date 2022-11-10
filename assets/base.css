@@ -2118,6 +2118,12 @@ body:not(.template-index) .header-nav-list-footer {
 .virtualshopping {
   margin-left: var(--Mgap);
   margin-right: var(--Mgap);
+  background-position: right;
+}
+@media (min-width: 768px) {
+  .virtualshopping {
+    background-position: center;
+  }
 }
 .virtualshopping a {
   padding: var(--gap);
@@ -2155,15 +2161,21 @@ body:not(.template-index) .header-nav-list-footer {
   display: block;
   text-align: center;
 }
-.virtualshopping .image-area img {
+.virtualshopping .image-area .mobile {
   margin-left: 8px;
+}
+.virtualshopping .image-area .desktop {
+  display: none;
 }
 @media (min-width: 768px) {
   .virtualshopping .image-area {
     margin: 0;
     text-align: left;
   }
-  .virtualshopping .image-area img {
+  .virtualshopping .image-area .mobile {
+    display: none;
+  }
+  .virtualshopping .image-area .desktop {
     margin-left: 0;
     max-height: 600px;
   }
