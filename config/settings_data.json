@@ -101,8 +101,9 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-kanchipuram_30c234a7-66f8-48d5-91a6-821dd5a71f1c.png",
               "mega_link": "Kanchipuram",
-              "link": "shopify:\/\/collections\/all-kanchipuram",
+              "link": "shopify:\/\/collections\/kanchipuram-silks",
               "title": "All Kanchipuram",
               "subtitle": "Explore"
             }
@@ -111,9 +112,10 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-kanchipuram-wedding-edit_b2f741a0-1f63-4c64-855f-5d39e0ed3699.png",
               "mega_link": "Wedding Edit",
-              "link": "shopify:\/\/collections\/saree",
-              "title": "Venkatagiri Cotton",
+              "link": "shopify:\/\/collections\/wedding-saree-collection",
+              "title": "Wedding Edit",
               "subtitle": "Explore"
             }
           },
@@ -209,6 +211,7 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-women.jpg",
               "mega_link": "Women",
               "link": "shopify:\/\/collections\/women",
               "title": "Women",
@@ -219,6 +222,7 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-men.jpg",
               "mega_link": "Men",
               "link": "shopify:\/\/collections\/men",
               "title": "Men",
@@ -229,8 +233,9 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-fabric.jpg",
               "mega_link": "Fabrics",
-              "link": "shopify:\/\/collections\/all-kanchipuram",
+              "link": "shopify:\/\/collections\/unstitched-materials",
               "title": "Fabrics",
               "subtitle": ""
             }
@@ -239,8 +244,9 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-girls.jpg",
               "mega_link": "Girls",
-              "link": "shopify:\/\/collections\/readymades",
+              "link": "shopify:\/\/collections\/girls",
               "title": "Girls",
               "subtitle": ""
             }
@@ -249,8 +255,9 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-boys.jpg",
               "mega_link": "Boys",
-              "link": "shopify:\/\/collections\/readymades",
+              "link": "shopify:\/\/collections\/boys",
               "title": "Boys",
               "subtitle": ""
             }
@@ -259,8 +266,9 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/sundari-silks-infant-wear-menu-image.jpg",
               "mega_link": "Infant Wears",
-              "link": "shopify:\/\/products\/3-layer-non-surgical-masks-in-cotton-prints-and-plain-set-of-4",
+              "link": "shopify:\/\/collections\/infant-wear",
               "title": "Infant Wears",
               "subtitle": ""
             }
