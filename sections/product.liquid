@@ -322,13 +322,15 @@
         </div>
       </div>
     </div>
+    {% if product.metafields.my_fields.product_information %}
+    <h2 class="product-title-secondary">Description</h2>
+    <div class="product-description-old">
+    {{product.metafields.my_fields.product_information}}
+  </div>
+  {% else %}
     {% if product.content != blank %}
     <h2 class="product-title-secondary">Description</h2>
     <p class="product-description">{{product.content | strip_html }}</p>
-    {% elsif product.metafields.my_fields.product_information %}
-    <h2 class="product-title-secondary">Description</h2>
-    {{product.metafields.my_fields.product_information}}
-    {% else %}
     {% endif %}
     {% if product.metafields.custom.purity.value or product.metafields.custom.material.value != blank %}
     <h2 class="product-title-secondary"> Specification </h2>
@@ -443,6 +445,8 @@
       </dl>
       {% endif %}
     </div>
+    {% endif %}
+
     <div class="product-common-note">
       {% if product.metafields.custom.wash_care_tips.value != blank %}
       <dl>

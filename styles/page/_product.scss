@@ -175,6 +175,47 @@
       line-height: 18px;
       color: #ffffff;
     }
+    /* old product detail */
+    &-description-old {
+      table {
+        tbody {
+          width: 100%;
+          display: flex;
+          margin-bottom: 26px;
+          padding-right: 8px;
+          padding-left: 8px;
+          flex-wrap: wrap;
+        }
+        tr {
+          display: inline-block;
+          margin-bottom: 26px;
+          width: calc(50% - 16px);
+          padding-right: 8px;
+          td {
+            &:first-child {
+              font-family: "Montserrat";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 10px;
+              line-height: 12px;
+              color: rgba(0, 0, 0, 0.6);
+            }
+            &:last-child {
+              display: block;
+              font-family: "Montserrat";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 20px;
+              color: rgba(0, 0, 0, 0.85);
+              border-bottom: 1px solid #c3c2c9;
+              padding-bottom: 8px;
+            }
+          }
+        }
+      }
+    }
+    /* old product detail end */
     &-detail {
       // display: grid;
       // gap: 16px;
@@ -184,7 +225,7 @@
         margin-bottom: 26px;
         width: calc(50% - 16px);
         padding-right: 8px;
-        padding-left: 8px;
+        // padding-left: 8px;
       }
       dt {
         font-family: "Montserrat";
