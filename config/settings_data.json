@@ -209,6 +209,7 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-women.jpg",
               "mega_link": "Women",
               "link": "shopify:\/\/collections\/women",
               "title": "Women",
@@ -219,6 +220,7 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-men.jpg",
               "mega_link": "Men",
               "link": "shopify:\/\/collections\/men",
               "title": "Men",
@@ -229,8 +231,9 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-fabric.jpg",
               "mega_link": "Fabrics",
-              "link": "shopify:\/\/collections\/all-kanchipuram",
+              "link": "",
               "title": "Fabrics",
               "subtitle": ""
             }
@@ -239,6 +242,7 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-girls.jpg",
               "mega_link": "Girls",
               "link": "shopify:\/\/collections\/readymades",
               "title": "Girls",
@@ -249,6 +253,7 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-boys.jpg",
               "mega_link": "Boys",
               "link": "shopify:\/\/collections\/readymades",
               "title": "Boys",
@@ -259,8 +264,9 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/sundari-silks-infant-wear-menu-image.jpg",
               "mega_link": "Infant Wears",
-              "link": "shopify:\/\/products\/3-layer-non-surgical-masks-in-cotton-prints-and-plain-set-of-4",
+              "link": "shopify:\/\/collections\/infant-wear",
               "title": "Infant Wears",
               "subtitle": ""
             }
