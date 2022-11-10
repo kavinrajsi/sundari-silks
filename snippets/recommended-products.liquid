@@ -78,9 +78,9 @@
            {% unless same_type and current_product.type != product.type %}
              {%- comment -%} {% include 'product-grid-item' %} {%- endcomment -%}
 
-             {% if product.available %}
-             {% render 'product-card', product:product %}
-           {% endif %}
+
+             {% render 'product-card', product: product %}
+
 
 
              {% assign counter = counter | plus: 1 %}

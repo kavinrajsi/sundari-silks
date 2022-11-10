@@ -1,23 +1,14 @@
 {% paginate search.results by 27 %}
-
 <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="3" collection-list-desktop="4">
   {%- for product in search.results -%}
   {%- case product.object_type -%}
   {%- when 'product' -%}
-
-
-  {% render 'product-card', product:product %}
-
+  {% render 'product-card', product: product %}
   {%- when 'article' -%}
-
   {%- when 'page' -%}
   {%- endcase -%}
-
   {%- endfor -%}
-
-
 </div>
-
 <div class="pagination--number">
   {{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
 </div>
