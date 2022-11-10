@@ -9,7 +9,7 @@
 
 <div class="page-width">
   <h1 class="title title--primary"> Collection Page</h1>
-  {% paginate collections by 24, window_size: '4'%}
+  {% paginate collections by 24 %}
   <ul class="collection-list grid" role="list">
     {% for collection in collections %}
     <!-- {{ collection.products.first | json }} -->

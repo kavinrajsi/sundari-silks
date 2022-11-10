@@ -1,4 +1,4 @@
-{% paginate search.results by 24, window_size: '4'%}
+{% paginate search.results by 24 %}
 <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="3" collection-list-desktop="4">
   {%- for product in search.results -%}
   {%- case product.object_type -%}
