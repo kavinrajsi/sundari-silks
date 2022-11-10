@@ -800,6 +800,7 @@ body:not(.template-index) {
         display: none;
       }
       .desktop {
+        display: block;
         margin-left: 0;
         max-height: 600px;
       }

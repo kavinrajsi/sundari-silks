@@ -2176,6 +2176,7 @@ body:not(.template-index) .header-nav-list-footer {
     display: none;
   }
   .virtualshopping .image-area .desktop {
+    display: block;
     margin-left: 0;
     max-height: 600px;
   }
