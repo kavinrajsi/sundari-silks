@@ -76,9 +76,7 @@
   <div class="availableProductCount">
     {% assign available_products = 0 %}
     {% for product in collection.products %}
-    {% if product.available %}
     {% assign available_products = available_products | plus: 1 %}
-    {% endif %}
     {% endfor %}
     {% if available_products == collection.all_products_count %}
     {{ collection.all_products_count }} Products
