@@ -154,6 +154,10 @@ body:not(.template-index) {
 
   @media (hover: hover) {
     &:hover {
+      .product__card--img img{
+        transform: scale(1.03);
+        transition: transform var(--duration-long) ease;
+      }
       .product__card-cta.quick-view-button {
         bottom: 0;
       }

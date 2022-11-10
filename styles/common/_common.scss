@@ -61,6 +61,10 @@ $z-index: (
   --font-12: 12px;
   --font-10: 10px;
 
+  --duration-short: .1s;
+  --duration-default: .2s;
+  --duration-long: .5s;
+
   --border-radius: 4px;
   --shadow-8dp: 0px 8px 10px rgba(0, 0, 0, 0.14),
     0px 3px 14px rgba(0, 0, 0, 0.12), 0px 4px 5px rgba(0, 0, 0, 0.2);
