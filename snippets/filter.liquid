@@ -73,7 +73,7 @@
       </svg></button>
   </div>
 
-  <div class="availableProductCount">
+  <div class="availableProductCount" hidden>
     {% assign available_products = 0 %}
     {% for product in collection.products %}
     {% if product.available %}
