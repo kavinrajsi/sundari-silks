@@ -191,15 +191,13 @@
         value="{{ product.selected_or_first_available_variant.id }}" {% if
         product.selected_or_first_available_variant.available==false %}disabled{% endif %}>
     </div>
-    <script type="application/json">
-      {% assign collectionName = '' %}
-      {% for collection in product.collections%}
-       {% if collection.name == 'Mumbai Collection' %}
-        {% assign collectionName = 'buttonWhatsapp' %}
-       {% endif %}
-       {% endfor %}
 
-    </script>
+    {% assign collectionName = '' %}
+    {% for collection in product.collections%}
+     {% if collection.name == 'Mumbai Collection' %}
+      {% assign collectionName = 'buttonWhatsapp' %}
+     {% endif %}
+     {% endfor %}
 
     <div class="product-form__buttons">
       <div class="button-add-to-cart">
