@@ -208,7 +208,8 @@
         {% if collectionName == 'buttonWhatsapp' %}
         {%- assign current_variant = product.selected_or_first_available_variant -%}
 
-        <a aria-label="Chat on WhatsApp" href="https://wa.me/+919962712299?text=Prodcut Code: {{current_variant.sku}}%0AProduct Name: {{product.title}}"
+        <a aria-label="Chat on WhatsApp"
+          href="https://wa.me/+919962712299?text=Prodcut Code: {{current_variant.sku}}%0AProduct Name: {{product.title}}"
           class="button button-solid-maroon">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32">
             <path fill="#fff" fill-rule="evenodd"
@@ -324,6 +325,10 @@
     {% if product.content != blank %}
     <h2 class="product-title-secondary">Description</h2>
     <p class="product-description">{{product.content | strip_html }}</p>
+    {% elsif product.metafields.my_fields.product_information %}
+    <h2 class="product-title-secondary">Description</h2>
+    {{product.metafields.my_fields.product_information}}
+    {% else %}
     {% endif %}
     {% if product.metafields.custom.purity.value or product.metafields.custom.material.value != blank %}
     <h2 class="product-title-secondary"> Specification </h2>
