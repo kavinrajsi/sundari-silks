@@ -372,6 +372,9 @@
         "spotlight-title": "The Virtual Store Of Exquisite Products",
         "spotlight-description": "Shop our collection from the comfort of your home",
         "spotlight-button": "Book an Appointment",
+        "vsvirtual-shopping-background": "shopify:\/\/shop_images\/Virtual_Shopping_Background.png",
+        "vsvirtual-shopping-mobile": "shopify:\/\/shop_images\/vs-desktop-image-1.png",
+        "vsvirtual-shopping-desktop": "shopify:\/\/shop_images\/vs-desktop-image-1.png",
         "virtual-shopping-url": "https:\/\/calendly.com\/sundarisilks\/30min"
       }
     },
