@@ -11,7 +11,7 @@
     <nav>
       {% for block in section.blocks %}
       {% if block.settings.image != blank %}
-      <a href="{{block.settings.url}}">
+      <a href="{{block.settings.url}}?filter.v.availability=1">
         {{ block.settings.image | image_url : width: 168, height: 168 | image_tag : alt: block.settings.image.alt, loading: "lazy" }}
         <div class="section-Name" style="background: {{section.settings.collaborate-hover-color}} ">
           {{block.settings.contentTitle}}
