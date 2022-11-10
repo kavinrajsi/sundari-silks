@@ -375,16 +375,6 @@
         "virtual-shopping-url": "https:\/\/calendly.com\/sundarisilks\/30min"
       }
     },
-    "vss": {
-      "type": "home-video",
-      "disabled": true,
-      "settings": {
-        "spotlight-title": "The Virtual Store Of Exquisite Products",
-        "spotlight-description": "Shop our collection from the comfort of your home",
-        "spotlight-button": "Book an Appointment",
-        "virtual-shopping-url": "https:\/\/calendly.com\/sundarisilks\/30min"
-      }
-    },
     "instagram": {
       "type": "instagram",
       "blocks": {
@@ -457,7 +447,6 @@
     "recent-products",
     "blog",
     "vs",
-    "vss",
     "instagram"
   ]
 }
