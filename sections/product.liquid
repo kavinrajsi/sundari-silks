@@ -453,7 +453,9 @@
         <dt class="product-title-secondary"> Wash Care </dt>
         <dd class="product-description"> {{ product.metafields.custom.wash_care_tips.value }} </dd>
       </dl>
-      {% elsif product.metafields.my_fields.delivery_shipping != blank  %}
+      {% endif %}
+
+      {% if product.metafields.my_fields.delivery_shipping != blank %}
       <dl>
         <dt class="product-title-secondary"> Wash Care </dt>
         <dd class="product-description"> {{ product.metafields.descriptors.care_guide }} </dd>
@@ -465,7 +467,9 @@
         <dt class="product-title-secondary"> Delivery Shipping </dt>
         <dd class="product-description"> {{ product.metafields.custom.delivery_shipping.value }} </dd>
       </dl>
-      {% elsif product.metafields.my_fields.delivery_shipping != blank  %}
+      {% endif %}
+
+      {% if product.metafields.my_fields.delivery_shipping != blank %}
       <dl>
         <dt class="product-title-secondary"> Delivery Shipping </dt>
         <dd class="product-description"> {{ product.metafields.my_fields.delivery_shipping }} </dd>
