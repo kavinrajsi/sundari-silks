@@ -653,6 +653,21 @@ main img {
   border-color: var(--color-secondary);
 }
 
+.shopify-challenge__container .shopify-challenge__button {
+  border-radius: var(--border-radius);
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s !important;
+  color: #fff;
+  padding: 14px 16px;
+  overflow: hidden;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-white);
+  background-color: var(--color-maroon);
+  border-color: var(--color-maroon);
+  margin-top: var(--Ngap);
+}
+
 .skip-to-content-link {
   display: none;
   opacity: 0;
