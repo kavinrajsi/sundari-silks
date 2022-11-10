@@ -275,11 +275,6 @@
               pushData.title +
               " is added to bag  </p>" +
               "</div>" +
-              '<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close">' +
-              '<svg width="24" height="24" class="closeMenu">' +
-              '<use href="#close" />' +
-              "</svg>" +
-              "</button>" +
               "</div>" +
               "</div>"
           );
