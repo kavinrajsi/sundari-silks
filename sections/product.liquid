@@ -192,7 +192,6 @@
         product.selected_or_first_available_variant.available==false %}disabled{% endif %}>
     </div>
     <script type="application/json">
-{{collection.title}}
     {% assign product_collection = collection.title | link_to: product_collection.url %}
     {% unless product_collection == blank %}
        {{ product_collection }}
