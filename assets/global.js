@@ -159,10 +159,10 @@
         $(".meFitlerMobile").css({
           // scroll to that element or below it
           position: "fixed",
-          top: "152px",
+          top: "151px",
         });
         $(".fixedElement").css({
-          "padding-top": "96px",
+          "padding-top": "97px",
         });
       } else {
         // apply position: static
