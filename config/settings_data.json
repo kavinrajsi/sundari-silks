@@ -233,7 +233,7 @@
               "menu_enable": true,
               "image": "shopify:\/\/shop_images\/menu-image-fabric.jpg",
               "mega_link": "Fabrics",
-              "link": "",
+              "link": "shopify:\/\/collections\/unstitched-materials",
               "title": "Fabrics",
               "subtitle": ""
             }
@@ -244,7 +244,7 @@
               "menu_enable": true,
               "image": "shopify:\/\/shop_images\/menu-image-girls.jpg",
               "mega_link": "Girls",
-              "link": "shopify:\/\/collections\/readymades",
+              "link": "shopify:\/\/collections\/girls",
               "title": "Girls",
               "subtitle": ""
             }
@@ -255,7 +255,7 @@
               "menu_enable": true,
               "image": "shopify:\/\/shop_images\/menu-image-boys.jpg",
               "mega_link": "Boys",
-              "link": "shopify:\/\/collections\/readymades",
+              "link": "shopify:\/\/collections\/boys",
               "title": "Boys",
               "subtitle": ""
             }
