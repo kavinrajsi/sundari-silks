@@ -2693,9 +2693,6 @@ ul.collection-list.grid .card__heading {
 .page-product-detail .product-description-old table tbody {
   width: 100%;
   display: flex;
-  margin-bottom: 26px;
-  padding-right: 8px;
-  padding-left: 8px;
   flex-wrap: wrap;
 }
 .page-product-detail .product-description-old table tr {
