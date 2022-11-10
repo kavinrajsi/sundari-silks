@@ -257,7 +257,6 @@
         cursor: pointer;
       }
       &.input-radio-label-chip {
-
         display: inline-flex;
         justify-content: center;
         align-items: center;
@@ -391,9 +390,9 @@
       box-shadow: 0 0 1.5em rgba(0%, 0%, 0%, 0.35);
       max-width: 820px;
       top: 0;
-      @media(min-width: 768px){
-      top: calc(50% - 233px);
-      min-width: 520px;
+      @media (min-width: 768px) {
+        top: calc(50% - 233px);
+        min-width: 520px;
       }
     }
 
@@ -414,7 +413,7 @@
       line-height: normal;
       font-weight: 500;
       font-size: 16px;
-      @media(min-width: 768px){
+      @media (min-width: 768px) {
         font-size: 20px;
       }
     }
@@ -432,24 +431,24 @@
     .modal-content {
       display: flex;
       flex-direction: column;
-      @media(min-width: 768px){
+      @media (min-width: 768px) {
         flex-direction: row;
       }
       .size-data {
         padding-bottom: 8px;
         border-bottom: 1px solid var(--color-border);
-        @media(min-width: 768px){
-        flex: 1 0 50%;
-        border-right: 1px solid var(--color-border);
-        padding-right: 8px;
-        padding-bottom: 0;
-        border-bottom: 0;
+        @media (min-width: 768px) {
+          flex: 1 0 50%;
+          border-right: 1px solid var(--color-border);
+          padding-right: 8px;
+          padding-bottom: 0;
+          border-bottom: 0;
         }
       }
       .size-data-image {
-        @media(min-width: 768px){
-        flex: 1 0 50%;
-        padding-left: 8px;
+        @media (min-width: 768px) {
+          flex: 1 0 50%;
+          padding-left: 8px;
         }
       }
     }
@@ -541,7 +540,7 @@
       .hulkapps_option_value {
         flex: 1 0 auto;
       }
-      label{
+      label {
         cursor: pointer !important;
       }
       input[type="checkbox"],
@@ -660,6 +659,9 @@
       color: var(--color-white);
       background-color: var(--color-maroon);
       border-color: var(--color-maroon);
+      &[data-status-button="soldout"] {
+        cursor: not-allowed;
+      }
     }
     &.product-form__wishlist {
       color: var(--color-black);

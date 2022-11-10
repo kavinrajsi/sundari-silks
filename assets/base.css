@@ -1401,13 +1401,14 @@ body:not(.template-index) .header-nav-list-footer {
 }
 .product__card--status span {
   display: inline-block;
-  padding: 4px;
+  padding: 4px 8px;
   color: var(--color-white);
   background: red;
   margin: 4px;
   border-radius: 2px;
   font-size: 12px;
   line-height: normal;
+  border-radius: 20px;
 }
 .product__card-cta {
   display: none;
@@ -3071,6 +3072,9 @@ ul.collection-list.grid .card__heading {
   color: var(--color-white);
   background-color: var(--color-maroon);
   border-color: var(--color-maroon);
+}
+.product-form__buttons .button.product-form__submit[data-status-button=soldout] {
+  cursor: not-allowed;
 }
 .product-form__buttons .button.product-form__wishlist {
   color: var(--color-black);
