@@ -220,7 +220,6 @@
         </a>
         {% else %}
 
-        {% if cart.item_count > 1 %}
         <button type="submit" name="add"
           class="button product-form__submit {% if block.settings.show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
           data-status-button="{%- if product.selected_or_first_available_variant.available -%} add-to-cart {%- else -%} soldout {%- endif -%}"
@@ -233,8 +232,6 @@
             {%- endif -%}
           </span>
         </button>
-        {% endif %}
-
         {% endif %}
 
         <a type="button" href="/cart" class="button product-form__viewcart">View Cart</a>
