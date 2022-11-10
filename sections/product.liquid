@@ -453,19 +453,25 @@
         <dt class="product-title-secondary"> Wash Care </dt>
         <dd class="product-description"> {{ product.metafields.custom.wash_care_tips.value }} </dd>
       </dl>
+      {% elsif product.metafields.my_fields.delivery_shipping != blank  %}
+      <dl>
+        <dt class="product-title-secondary"> Wash Care </dt>
+        <dd class="product-description"> {{ product.metafields.descriptors.care_guide }} </dd>
+      </dl>
       {% endif %}
+
       {% if product.metafields.custom.delivery_shipping.value != blank %}
       <dl>
         <dt class="product-title-secondary"> Delivery Shipping </dt>
         <dd class="product-description"> {{ product.metafields.custom.delivery_shipping.value }} </dd>
       </dl>
-      {% else %}
+      {% elsif product.metafields.my_fields.delivery_shipping != blank  %}
       <dl>
         <dt class="product-title-secondary"> Delivery Shipping </dt>
-        <dd class="product-description"> This product will take 3-4 days to be shipped within India and 7-9 days for
-          International Shipping.</dd>
+        <dd class="product-description"> {{ product.metafields.my_fields.delivery_shipping }} </dd>
       </dl>
       {% endif %}
+
       {% if product.metafields.custom.note.value != blank %}
       <dl>
         <dt class="product-title-secondary"> Note </dt>
