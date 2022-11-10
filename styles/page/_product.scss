@@ -342,7 +342,7 @@
 
     .modal-overlay {
       position: fixed;
-      @include z-index(drawer_overlay);
+      @include z-index(drawer_overlayWrapper);
       top: 0;
       left: 0;
       width: 100vw;
@@ -379,7 +379,7 @@
       left: 0;
       right: 0;
       margin: 0 auto;
-      @include z-index(drawer_overlayWrapper);
+      @include z-index(drawer_overlay);
       display: flex;
       justify-content: center;
       align-items: center;
