@@ -122,25 +122,16 @@
    * Desktop and mobile menu active
    */
   $(".menu-level-1-item.menu-level-1-item-child").on("mouseenter", function () {
-    // console.log("enter");
-    // $("body").addClass("header-menuActive");
-    // $("body").css("padding-right", "15px");
     $(this).children(".second-menu").addClass("active");
-    // $(this).children('.menu-level-2').addClass("active");
   });
   $(".menu-level-1-item.menu-level-1-item-child").on("mouseleave", function () {
-    // console.log("leave");
-    // $("body").removeClass("header-menuActive");
-    // $("body").css("padding-right", "0");
     $(this).children(".second-menu").removeClass("active");
   });
   /* .cd-primary-nav .has-children */
   $(".cd-primary-nav .has-children").on("mouseenter", function () {
-    // console.log("enter");
     $(this).children(".cd-secondary-nav").addClass("active");
   });
   $(".cd-primary-nav .has-children").on("mouseleave", function () {
-    // console.log("leave");
     $(this).children(".cd-secondary-nav").removeClass("active");
   });
 
@@ -183,19 +174,18 @@
     });
   }
 
-  //
+  //filter toggle
   $(".CollectionToolbar__LayoutType").click(function () {
     console.log($(this).data("count"));
-    let cardDisplayCount = $(this).data("count");
-    let cardDisplayView = $(".collection-list-grid");
+    var cardDisplayCount = $(this).data("count");
+    var cardDisplayView = $(".collection-list-grid");
     $(".CollectionToolbar__LayoutType").removeClass("is-active");
     $(this).addClass("is-active");
     cardDisplayView.attr("collection-list-desktop", cardDisplayCount);
   });
   //
 
-  //
-
+  // product variant
   $('.product-variant-fielset input[type="radio"]').click(function () {
     var productVariant = "";
     var optionSelect = $(this).attr("id");
@@ -278,6 +268,8 @@
               "</div>" +
               "</div>"
           );
+          $('.product-form__submit').hide();
+          $('.product-form__viewcart').show();
           $(".productToaster")
             .html(cart_list.join(""))
             .delay(2000)
@@ -370,6 +362,9 @@ function clickTab(e) {
   var currentPage = document.querySelector("#" + pageID);
   currentPage.classList.add("active");
 }
+
+/* click  */
+/*  account */
 if (document.getElementById("recover") != null) {
   document.getElementById("recover").addEventListener("click", function (e) {
     console.log("recover password");
