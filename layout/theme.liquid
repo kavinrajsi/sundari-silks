@@ -37,14 +37,18 @@ assign body_font = settings.type_body
   {{ 'image-lazy.js' | asset_url | preload_tag: as: 'script' }}
   {{ 'jquery.js' | asset_url | preload_tag: as: 'script' }}
   {{ 'slick.js' | asset_url | preload_tag: as: 'script' }}
-  {{ 'script-common.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'shopify-money.js' | asset_url | preload_tag: as: 'script' }}
   {{ 'predictive-search.js' | asset_url | preload_tag: as: 'script' }}
-  {{ 'script-filter.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'drawer.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'bootstrap.min.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'quick-view-main.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'filter.js' | asset_url | preload_tag: as: 'script' }}
   {{ 'photoswipe.umd.min.js' | asset_url | preload_tag: as: 'script' }}
   {{ 'photoswipe-lightbox.umd.min.js' | asset_url | preload_tag: as: 'script' }}
   {{ 'photoswipe-control.js' | asset_url | preload_tag: as: 'script' }}
   {{ 'blouse-data.js' | asset_url | preload_tag: as: 'script' }}
-  {{ 'script-global.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'wishlist.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'global.js' | asset_url | preload_tag: as: 'script' }}
 
   {{ content_for_header }}
 
@@ -168,6 +172,7 @@ assign body_font = settings.type_body
 
   <script src="{{ 'image-lazy.js' | asset_url }}" defer></script>
   <script src="{{ 'jquery.js' | asset_url }}" defer></script>
+
 
   <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
     if (Shopify.designMode) {
@@ -407,21 +412,23 @@ assign body_font = settings.type_body
 
   {% section 'drawer' %}
 
+  <script defer src="{{ 'slick.js' | asset_url }}"></script>
+  <script defer src="{{ 'shopify-money.js' | asset_url }}"></script>
+  <script defer src="{{ 'predictive-search.js' | asset_url }}"></script>
+  <script defer src="{{ 'bootstrap.min.js' | asset_url }}"></script>
+  <script defer src="{{ 'drawer.js' | asset_url }}"></script>
+  <script defer src="{{ 'quick-view-main.js' | asset_url }}"></script>
   {% if template contains 'collection' %}
-  <script defer src="{{ 'script-filter.js' | asset_url }}"></script>
+  <script defer src="{{ 'filter.js' | asset_url }}"></script>
   {% endif %}
-
   {% if template contains 'product' %}
   <script defer src="{{ 'photoswipe.umd.min.js' | asset_url }}"></script>
   <script defer src="{{ 'photoswipe-lightbox.umd.min.js' | asset_url }}"></script>
   <script defer src="{{ 'photoswipe-control.js' | asset_url }}"></script>
   <script defer src="{{ 'blouse-data.js' | asset_url }}"></script>
   {% endif %}
-
-  <script defer src="{{ 'slick.js' | asset_url }}"></script>
-  <script defer src="{{ 'script-common.js' | asset_url }}"></script>
-  <script defer src="{{ 'predictive-search.js' | asset_url }}"></script>
-  <script defer src="{{ 'script-global.js' | asset_url }}"></script>
+  <script defer src="{{ 'wishlist.js' | asset_url }}"></script>
+  <script defer src="{{ 'global.js' | asset_url }}"></script>
 
 
 </body>
