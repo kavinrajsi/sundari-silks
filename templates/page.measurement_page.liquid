@@ -21,18 +21,18 @@
 
             <div id="measurement-header-content" class="col-md-12 col-sm-12 home-section pb-20">
               <div class="row">
-                <div class="col-sm-6">
+                <!-- <div class="col-sm-6">
                   <h1>Measurements</h1>
-                </div>
-                <div class="col-sm-6">
-                  <div class="add_new">
+                </div> -->
+                <div class="col-sm-6" style="display: flex; justify-content: center; width: 100%;">
+                  <div class="add_new" style="margin-bottom:20px; padding-bottom: 15px;">
                     <button id="select_url" class="btn btn-default button btn-wishlist add-new-measurement-btn">
                       Add New Measurement
                     </button>
                   </div>
                 </div>
                 <div class="col-sm-12 no-measurement-section">
-                  No measurments added.
+                  <!-- No measurments added. -->
                 </div>
 
                 <div class="col-sm-12 measurement-list">
@@ -201,7 +201,7 @@
                                       class="btn btn-default button btn-wishlist col-xs-width home-v btn_top_measurement show_tab"
                                       data-toggle="tab">
                                       Next
-                                      <i class="fa fa-chevron-right my_icon"></i>
+                                      <i style="padding-left: 4px; display: inline-block; vertical-align: middle;" class="fa fa-chevron-right my_icon"></i>
                                     </a>
                                   </div>
                                 </div>
@@ -239,7 +239,7 @@
                                     <a href="javascript:void(0)" tab-name="embroidery"
                                       class="btn btn-default button btn-wishlist col-xs-width home-v btn_top_measurement show_tab"
                                       data-toggle="tab">
-                                      <i class="fa fa-chevron-left my_icon"></i>
+                                      <i style="padding-right: 4px; display: inline-block; vertical-align: middle;" class="fa fa-chevron-left my_icon"></i>
                                       Previous
                                     </a>
                                     <a href="javascript:void(0)" id="proceedToBackNeck" tab-name="backNeckDesign"
@@ -721,11 +721,11 @@
                                     <textarea class="form-control" name="additional_description" rows="5"
                                       id="additional_description" placeholder="Additional Description"></textarea>
                                   </div>
-                                  <div class="form-group" id="title_form" style="padding-top: 10px;">
+                                  <!-- <div class="form-group" id="title_form" style="padding-top: 10px;">
                                     <label for="usr">Name: *</label><br>
                                     <input type="text" class="form-control" name="title" id="title" placeholder="Please give name for measurement">
                                     <span class="title_error_text danger_alert err_text">Please give name for measurement</span>
-                                  </div>
+                                  </div> -->
 
                                 </div>
 
@@ -796,7 +796,7 @@
             </div>
           </div>
         </div>
-        <div class="row" style="justify-content: center;">
+        <div class="row" style="display-flex; margin-top:12px; justify-content: center;">
             <a id="product-back-btn" class="btn mt-10 hide" style="color: #880216;" href="">Back to product</a>
           </div>
       </div>
@@ -1279,16 +1279,16 @@
 
   $('#additional_description').val(measurement['additional_description']);
 
-  $('#title').val(measurement['title']);
+  // $('#title').val(measurement['title']);
 
   $('#additional_description').keyup(function () {
     measurement['additional_description'] = this.value;
   });
 
-  $('#title').keyup(function () {
-    measurement['title'] = this.value;
-    $('.title_error_text').hide();
-  });
+  // $('#title').keyup(function () {
+  //   measurement['title'] = this.value;
+  //   $('.title_error_text').hide();
+  // });
 
   // Sleeve types and opening
   function navigateToSleeveAndOpening() {
@@ -1380,7 +1380,7 @@
       }, 100);
       return false;
     } else {
-      $('#title').val(measurement['title']);
+      // $('#title').val(measurement['title']);
 
       var armhole_val = measurement['arm_hole'];
       var bn_depth = measurement['back_neck_depth'];
@@ -1528,22 +1528,22 @@
 
         event.preventDefault();
 
-       if (!measurement['title']) {
+      //  if (!measurement['title']) {
 
-        console.log('addMeasurementClick =1 title if');
-        $('.title_error_text').show();
-        $('.title_error_text').text('Please give name for measurement');
-        return;
-      }
+      //   console.log('addMeasurementClick =1 title if');
+      //   $('.title_error_text').show();
+      //   $('.title_error_text').text('Please give name for measurement');
+      //   return;
+      // }
 
 
-      if (measurementList.find(m => m.title === measurement['title'].trim())) {
+      // if (measurementList.find(m => m.title === measurement['title'].trim())) {
 
-        console.log('addMeasurementClick =1 title already exists');
-    	$('.title_error_text').show();
-    	$('.title_error_text').text('Measurement title already exists');
-    	return;
-      }
+      //   console.log('addMeasurementClick =1 title already exists');
+    	// $('.title_error_text').show();
+    	// $('.title_error_text').text('Measurement title already exists');
+    	// return;
+      // }
 
       if (!measurement['id']) {
         measurement['id'] = uuidv4();
