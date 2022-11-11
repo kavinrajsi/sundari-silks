@@ -269,7 +269,7 @@
               "</div>"
           );
           $('.product-form__submit').hide();
-          $('.product-form__viewcart').show();
+          $('.product-form__submit+.product-form__viewcart').show();
           $(".productToaster")
             .html(cart_list.join(""))
             .delay(2000)

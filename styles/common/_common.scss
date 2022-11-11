@@ -239,14 +239,6 @@ main img {
   filter: blur(0);
 }
 
-.d-none {
-  display: none;
-}
-
-.d-block {
-  display: block;
-}
-
 .button{
   border-radius: var(--border-radius);
   transition: background-color 0.2s, border-color 0.2s, color 0.2s ;
