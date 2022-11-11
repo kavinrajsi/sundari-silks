@@ -6,6 +6,17 @@
 {% assign collectProductName = product_collection %}
 {% endunless %}
 {% assign coeid = "" %}
+
+  {% assign collectionName = '' %}
+  {% for collection in product.collections %}
+  {% if collection.title == 'Mumbai Collection' %}
+  {% assign collectionName = 'buttonWhatsapp' %}
+
+  {% endif %}
+  {% endfor %}
+
+
+
 {% for product_image in product.images %}
 <link rel="preload" as="image" href="{{ product_image.src | image_url }}">
 <link rel="prefetch" href="{{ product_image.src | image_url }}">
@@ -57,7 +68,10 @@
       {% endfor %}
     </div>
     {% endif %}
+    {% if collectionName == 'buttonWhatsapp' %}
+    {% else %}
     <p class="product-price">{{current_product.price | money_with_currency }}</p>
+    {% endif %}
     <p class="product-notice-content {% for collection in product.collections%} {{collection.title}} {% endfor %}">
       Our artisanal silver jewellery collection is currently available for shipment within INDIA.
     </p>
@@ -192,16 +206,6 @@
         product.selected_or_first_available_variant.available==false %}disabled{% endif %}>
     </div>
 
-    <div hidden>
-      {% assign collectionName = '' %}
-      {% for collection in product.collections %}
-      {{collection.title}}
-      {% if collection.title == 'Mumbai Collection' %}
-      {% assign collectionName = 'buttonWhatsapp' %}
-
-      {% endif %}
-      {% endfor %}
-    </div>
 
     <div class="product-form__buttons" data-colle="{{collectionName}}">
       <div class="button-add-to-cart">

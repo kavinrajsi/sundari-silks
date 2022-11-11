@@ -9,7 +9,7 @@
   {{ 'measurement_minified_stylesheet.css' | asset_url | stylesheet_tag }}
   {{ 'add_measurement.css' | asset_url | stylesheet_tag }}
   {{ 'edit_measurement.css' | asset_url | stylesheet_tag }}
-  <div
+  <div style="margin: 0 auto;"
     class="container {% if offset_pages_margin_top_d > 0 %} mt-lg-{{ offset_pages_margin_top_d }}{% endif %} mb-60{% if offset_pages_margin_bottom_d > 0 %} mb-lg-{{ offset_pages_margin_bottom_d }}{% endif %}">
     <div style=" display: flex; flex-direction: column;" class="mt-30">
       <h1 class="page__title text-center">{{ page.title }}</h1>
