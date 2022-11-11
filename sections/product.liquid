@@ -7,12 +7,12 @@
 {% endunless %}
 {% assign coeid = "" %}
 
-  {% assign collectionName = '' %}
-  {% for collection in product.collections %}
-  {% if collection.title == 'Mumbai Collection' %}
-  {% assign collectionName = 'buttonWhatsapp' %}
-  {% endif %}
-  {% endfor %}
+{% assign collectionName = '' %}
+{% for collection in product.collections %}
+{% if collection.title == 'Mumbai Collection' %}
+{% assign collectionName = 'buttonWhatsapp' %}
+{% endif %}
+{% endfor %}
 
 
 
@@ -155,24 +155,21 @@
       <div class="blouse-stitching" id="hulkapps_custom_options_{{ product.id }}"> </div>
       {% endif %}
 
-      <div id="login-link" class="hide" style="padding: 0 5px;margin-bottom: 10px;font-size: 14px;">Please <a
-          style="color: #880216;" href="/account/login?checkout_url={{shop.url}}{{product.url}}"
-          id="addMeasurementLinkLogin">Login</a> to add measurement. Kindly provide measurement details for blouse
-        stitching before adding this product to the cart.</div>
+      <div id="login-link" class="hide" style="padding: 0 5px;margin-bottom: 10px;font-size: 14px;">Please
+        <a href="/account/login?checkout_url={{shop.url}}{{product.url}}" id="addMeasurementLinkLogin">Login</a> to add
+        measurement. Kindly provide measurement details for blouse
+        stitching before adding this product to the cart.
+      </div>
       <div id="add-measurement-link" class="hide" style="padding: 0 5px;margin-bottom: 10px;font-size: 14px;">Please
-        add measurement <a
-          style="color: #fff !important; display: inline-block; padding: 2px 4px; background-color: #880216; border-radius: 5px;"
-          href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}" id="addMeasurementLink">Add</a></div>
+        add measurement <a href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}"
+          id="addMeasurementLink">Add</a></div>
 
       <div class="measurement-select hide" style="padding: 0 5px; margin-bottom: 10px;">
         <label id="select-measurement-title" for="select-measurement">Select Measurement:</label>
         <select id="select-measurement" style="width:100%">
           <option value="">Select</option>
         </select>
-        <!-- <div id="add-measurement-link-select" style="padding: 0 5px;margin-bottom: 10px;font-size: 14px;">
-    <a style="color: #880216;" href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}"><strong>Add new measurement</strong>
-    </a>
-  </div> -->
+
       </div>
       <p id="measurement-data" class="line-item-property__field hide">
       </p>
@@ -328,9 +325,9 @@
     {% if product.metafields.my_fields.product_information %}
     <h2 class="product-title-secondary">Description</h2>
     <div class="product-description-old">
-    {{product.metafields.my_fields.product_information}}
-  </div>
-  {% else %}
+      {{product.metafields.my_fields.product_information}}
+    </div>
+    {% else %}
     {% if product.content != blank %}
     <h2 class="product-title-secondary">Description</h2>
     <p class="product-description">{{product.content | strip_html }}</p>

@@ -108,13 +108,13 @@ $z-index: (
 
 @media screen and (prefers-reduced-motion: reduce), (update: slow) {
   * {
-    -webkit-animation-duration: 0s !important;
-    animation-duration: 0s !important;
-    -webkit-animation-iteration-count: 1 !important;
-    animation-iteration-count: 1 !important;
-    -webkit-transition-duration: 0s !important;
-    -o-transition-duration: 0s !important;
-    transition-duration: 0s !important;
+    -webkit-animation-duration: 0s ;
+    animation-duration: 0s ;
+    -webkit-animation-iteration-count: 1 ;
+    animation-iteration-count: 1 ;
+    -webkit-transition-duration: 0s ;
+    -o-transition-duration: 0s ;
+    transition-duration: 0s ;
   }
 }
 
@@ -249,7 +249,7 @@ main img {
 
 .button{
   border-radius: var(--border-radius);
-  transition: background-color 0.2s, border-color 0.2s, color 0.2s !important;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s ;
   color: #fff;
   padding: 14px 16px;
   overflow: hidden;
@@ -287,7 +287,7 @@ main img {
 
 .shopify-challenge__container .shopify-challenge__button{
   border-radius: var(--border-radius);
-  transition: background-color 0.2s, border-color 0.2s, color 0.2s !important;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s ;
   color: #fff;
   padding: 14px 16px;
   overflow: hidden;

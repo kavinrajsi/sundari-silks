@@ -763,9 +763,10 @@ body:not(.template-index) {
 .virtualshopping {
   margin-left: var(--Mgap);
   margin-right: var(--Mgap);
-  background-position: right !important;
+  background-repeat: repeat;
+  background-position: top right;
   @media (min-width: 768px) {
-    background-position: center !important;
+    background-position: center;
   }
   a {
     padding: var(--gap);
