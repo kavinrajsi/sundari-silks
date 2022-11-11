@@ -469,6 +469,13 @@
       &:hover ul#sort-by {
         display: block;
       }
+@media(max-width: 768px){
+      &:focus ul#sort-by {
+        display: block;
+        top: initial;
+        bottom: 100%;
+      }
+      }
     }
   }
 }
