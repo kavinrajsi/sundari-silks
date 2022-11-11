@@ -41,4 +41,5 @@ gulp.task('global', function() {
 
 gulp.task('watch', function(){
   gulp.watch('styles/**/*.scss', gulp.series('style'));
+  gulp.watch('script/*.js', gulp.series('image-script', 'allpage-script', 'filter', 'global' ));
 });

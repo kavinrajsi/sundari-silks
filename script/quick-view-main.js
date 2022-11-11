@@ -51,7 +51,7 @@ if (productInfoAnchors.length > 0) {
 
 var modalAddToCartForm = document.querySelector("#addToCartForm");
 
-let err = "";
+var err = "";
 if (modalAddToCartForm != null) {
   modalAddToCartForm.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -76,9 +76,9 @@ if (modalAddToCartForm != null) {
       })
       .then((data) => {
         update_cart();
-        // jQuery.getJSON('/cart.js', function(cart) {
-        //   alert('There are now ' + cart.item_count + ' items in the cart.');
-        // } );
+        jQuery.getJSON('/cart.js', function(cart) {
+          console.log('There are now ' + cart.item_count + ' items in the cart.');
+        } );
         var cartItemCounter = document.querySelector(".cart-count");
         jQuery
           .ajax({
