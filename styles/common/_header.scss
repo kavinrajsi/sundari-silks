@@ -346,9 +346,6 @@
             background-color: var(--color-primary);
           }
         }
-        &:first-child {
-          display: none;
-        }
         &:nth-last-child(2) {
           display: block;
           @media (min-width: 992px) {
@@ -565,11 +562,10 @@
     display: block;
     position: fixed;
     top: 64px;
+    top: 104px;
     left: 0px;
     max-height: none;
     height: calc(100vh - 64px);
-    transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1),
-      visibility 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
     box-shadow: none;
     touch-action: manipulation;
     bottom: 0;
