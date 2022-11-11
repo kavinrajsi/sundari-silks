@@ -3198,11 +3198,6 @@ ul.collection-list.grid .card__heading {
     top: 110px;
   }
 }
-@media (min-width: 1364px) {
-  .blouseStitching-area #add-measurement-link {
-    top: 110px;
-  }
-}
 .blouseStitching-area #add-measurement-link a {
   color: #fff !important;
   display: inline-block;
