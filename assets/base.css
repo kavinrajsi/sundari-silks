@@ -3081,11 +3081,6 @@ ul.collection-list.grid .card__heading {
   background: rgba(253, 217, 51, 0.4) !important;
   margin-top: 40px !important;
 }
-@media (min-width: 1364px) {
-  .page-product-detail .hulkapps_product_options #option_total {
-    margin-top: 8px !important;
-  }
-}
 .page-product-detail .hulkapps_product_options label input[type=checkbox]:checked,
 .page-product-detail .hulkapps_product_options .radio_selected {
   transform: scale(0.9);
@@ -3196,12 +3191,16 @@ ul.collection-list.grid .card__heading {
   position: absolute;
   left: 6px;
   right: 0;
-  top: 150px;
+  top: 144px;
+}
+@media (min-width: 768px) {
+  .blouseStitching-area #add-measurement-link {
+    top: 110px;
+  }
 }
 @media (min-width: 1364px) {
   .blouseStitching-area #add-measurement-link {
-    top: 73px;
-    left: 450px;
+    top: 110px;
   }
 }
 .blouseStitching-area #add-measurement-link a {
