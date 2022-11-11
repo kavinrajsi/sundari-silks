@@ -311,7 +311,7 @@ body:not(.template-index) {
   .collection-item-link {
     display: block;
     position: relative;
-
+    overflow: hidden;
   @media (hover: hover) {
     &:hover{
       img{
