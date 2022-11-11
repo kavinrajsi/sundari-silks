@@ -311,6 +311,15 @@ body:not(.template-index) {
   .collection-item-link {
     display: block;
     position: relative;
+
+  @media (hover: hover) {
+    &:hover{
+      img{
+        transform: scale(1.03);
+        transition: transform var(--duration-long) ease;
+      }
+    }
+  }
   }
   img {
     width: 100%;
