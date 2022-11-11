@@ -796,7 +796,7 @@
             </div>
           </div>
         </div>
-        <div class="row" style="display-flex; margin-top:12px; justify-content: center;">
+        <div class="row" style="display: flex; margin-top:12px; justify-content: center;">
             <a id="product-back-btn" class="btn mt-10 hide" style="color: #880216;" href="">Back to product</a>
           </div>
       </div>
@@ -1527,7 +1527,7 @@
   	    $('#measurement_submit').hide();
 
         event.preventDefault();
-
+        homeSection$.hide();
       //  if (!measurement['title']) {
 
       //   console.log('addMeasurementClick =1 title if');
@@ -1637,7 +1637,7 @@
     html = '<div class="row" style="padding-bottom: 25px;">';
     for (let i = 0; i < measurementList.length; i++) {
       let measurementType = measurementList[i].type.replaceAll(" ", "-");
-      html = html + '<div class="col-md-6 col-sm-6 col-xs-12 card"><div class="card-content"><div class="row">';
+      html = html + '<div class="col-md-6 col-sm-6 col-xs-12 card" style="display: flex; justify-content: center; align-items: center; width: 100%;"><div class="card-content"><div class="row">';
       html = html + '<div class="col-lg-5"><img src="' + imgPath + 'blouse-designs-' + measurementType + '_300x.png' + '" style="width: 100%; height:auto;" class="img-responsive"></div>';
       html = html + '<div class="col-lg-7"><table class="table"><tbody>';
       html = html + '<tr><td class="strong">Measurement details of</td><td>' + measurementList[i].title + '</td></tr>';
