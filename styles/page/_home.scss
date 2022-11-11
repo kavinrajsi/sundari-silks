@@ -154,7 +154,7 @@ body:not(.template-index) {
 
   @media (hover: hover) {
     &:hover {
-      .product__card--img img{
+      .product__card--img img {
         transform: scale(1.03);
         transition: transform var(--duration-long) ease;
       }
@@ -312,14 +312,15 @@ body:not(.template-index) {
     display: block;
     position: relative;
     overflow: hidden;
-  @media (hover: hover) {
-    &:hover{
-      img{
-        transform: scale(1.03);
-        transition: transform var(--duration-long) ease;
+    border-radius: var(--border-radius);
+    @media (hover: hover) {
+      &:hover {
+        img {
+          transform: scale(1.03);
+          transition: transform var(--duration-long) ease;
+        }
       }
     }
-  }
   }
   img {
     width: 100%;
@@ -805,7 +806,7 @@ body:not(.template-index) {
     @media (min-width: 768px) {
       margin: 0;
       text-align: left;
-      .mobile{
+      .mobile {
         display: none;
       }
       .desktop {
