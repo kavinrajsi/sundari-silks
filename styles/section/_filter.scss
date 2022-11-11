@@ -468,10 +468,11 @@
 
       &:hover ul#sort-by {
         display: block;
-        top: 100%;
+        top: initial;
+        bottom: 100%;
         @media(min-width: 768px){
-          top: initial;
-          bottom: 100%;
+          top: 100%;
+          bottom: initial;
         }
       }
     }
