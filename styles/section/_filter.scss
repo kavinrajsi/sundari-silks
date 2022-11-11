@@ -468,13 +468,11 @@
 
       &:hover ul#sort-by {
         display: block;
-      }
-@media(max-width: 768px){
-      &:focus ul#sort-by {
-        display: block;
-        top: initial;
-        bottom: 100%;
-      }
+        top: 100%;
+        @media(min-width: 768px){
+          top: initial;
+          bottom: 100%;
+        }
       }
     }
   }
