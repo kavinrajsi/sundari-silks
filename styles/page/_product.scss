@@ -186,7 +186,7 @@
         tr {
           display: inline-block;
           margin-bottom: 26px;
-          width: calc(50% - 16px);
+          width: 50%;
           padding-right: 8px;
           td {
             &:first-child {
@@ -604,6 +604,7 @@
         color: var(--color-black) !important;
         background: url("./icon-arrow-down.png") no-repeat 98% center !important;
         background-size: 18px !important;
+        font-weight: normal !important;
       }
       + .hulkapps_option {
         border-top: 1px solid var(--color-black) !important;
@@ -620,7 +621,7 @@
       background: rgba(253, 217, 51, 0.4) !important;
 
       margin-top: 40px !important;
-      @media (min-width: 768px) {
+      @media (min-width: 1364px) {
         margin-top: 8px !important;
       }
     }
@@ -670,9 +671,21 @@
 }
 
 .product-form__buttons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-white);
+  padding: 0 8px;
+  @media (min-width: 768px) {
+    position: static;
+  }
   .button-add-to-cart {
     display: flex;
-    gap: 24px;
+    gap: 12px;
+    @media (min-width: 768px) {
+      gap: 24px;
+    }
     margin-top: 18px;
     margin-bottom: 18px;
   }
