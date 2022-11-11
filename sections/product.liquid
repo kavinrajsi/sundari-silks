@@ -203,8 +203,16 @@
     </div>
 
 
-    <div class="product-form__buttons" data-colle="{{collectionName}}">
+    <div class="product-form__buttons">
       <div class="button-add-to-cart">
+        {% assign not_in_cart = true %}
+        {% for item in cart.items %}
+        {% if item.product.id == product.id %}
+        {% assign not_in_cart = false %}
+        {% break %}
+        {% endif %}
+        {% endfor %}
+
         {% if collectionName == 'buttonWhatsapp' %}
         {%- assign current_variant = product.selected_or_first_available_variant -%}
 
@@ -219,7 +227,7 @@
           <span style="padding-left: 4px">Whatsapp</span>
         </a>
         {% else %}
-
+        {% if not_in_cart %}
         <button type="submit" name="add"
           class="button product-form__submit {% if block.settings.show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
           data-status-button="{%- if product.selected_or_first_available_variant.available -%} add-to-cart {%- else -%} soldout {%- endif -%}"
@@ -232,9 +240,11 @@
             {%- endif -%}
           </span>
         </button>
+        {% else %}
+        <a type="button" href="/cart" class="button button-solid-maroon product-form__viewcart">View Cart</a>
+        {% endif %}
         {% endif %}
 
-        <a type="button" href="/cart" class="button button-solid-maroon product-form__viewcart">View Cart</a>
 
         {%- if product.handle != blank -%}
         <button type="button" aria-label="Add to wishlist" class="button product-form__wishlist" button-wishlist
