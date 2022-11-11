@@ -160,25 +160,12 @@
         measurement. Kindly provide measurement details for blouse
         stitching before adding this product to the cart.
       </div>
-      <div id="add-measurement-link" class="hide">Please
-        add measurement <a href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}"
+      <div id="add-measurement-link" class="hide">Please add / update measurement <a href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}"
           id="addMeasurementLink">Add</a></div>
 
-      <div class="measurement-select hide" style="padding: 0 5px; margin-bottom: 10px;">
-        <label id="select-measurement-title" for="select-measurement">Select Measurement:</label>
-        <select id="select-measurement" style="width:100%">
-          <option value="">Select</option>
-        </select>
-
-      </div>
       <p id="measurement-data" class="line-item-property__field hide">
       </p>
 
-      {% if product.type == "Sarees" %}
-      <div class="note measurement-select" style="padding: 5px;margin-bottom: 10px;font-size: 14px;">
-        To revise your blouse measurements, please go back to “Add measurements” and make the changes.
-      </div>
-      {% endif %}
     </section>
     <!-- blouse stitching area -->
     <div class="mb-3" hidden>
