@@ -5494,7 +5494,12 @@ footer .footer-copyright a {
 iframe#dummy-chat-button-iframe {
   bottom: 70px !important;
   z-index: 1 !important;
-  display: none !important;
+}
+@media (max-width: 768px) {
+  #shopify-chat iframe,
+iframe#dummy-chat-button-iframe {
+    display: none !important;
+  }
 }
 
 .d-none {

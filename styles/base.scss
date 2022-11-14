@@ -26,7 +26,9 @@
 iframe#dummy-chat-button-iframe {
   bottom: 70px !important;
   z-index: 1 !important;
+  @media(max-width: 768px){
   display: none !important;
+  }
 }
 
 
