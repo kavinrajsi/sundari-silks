@@ -76,8 +76,15 @@
   {% if customer and customer.tags contains 'admin' %}
 
   <div class="availableProductCount">
-    {{ available_products }} active product
-    {{ collection.all_products_count }} Products
+    {% assign available_products = 0 %}
+
+    {% for product in collection.products %}
+      {% if product.available %}
+        {% assign available_products = available_products | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+
+    {{ available_products }}
   </div>
   {% endif %}
 
