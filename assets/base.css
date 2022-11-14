@@ -1543,6 +1543,9 @@ body:not(.template-index) .header-nav-list-footer {
 .homepageBanner .large-12.columns {
   margin: 0 auto !important;
 }
+.homepageBanner .large-12.columns a {
+  display: block;
+}
 .homepageBanner .large-12.columns img {
   border-radius: 0;
   width: 100%;
