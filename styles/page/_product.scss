@@ -563,21 +563,26 @@
     .hulkapps_option {
       display: flex !important;
       flex-direction: column !important;
-      align-items: center !important;
-      @media (min-width: 768px) {
-        flex-direction: row !important;
-        align-items: center !important;
-        margin-bottom: 0px !important;
+      align-items: flex-start !important;
+      .hulkapps_option_name{
+        width: auto;
+        padding-right: 0 !important;
+        padding-bottom: 8px !important;
       }
-      .hulkapps_option_name {
-        @media (min-width: 768px) {
-          flex: 1 0 140px !important;
-          min-width: 140px !important;
-        }
-      }
-      .hulkapps_option_value {
-        flex: 1 0 auto;
-      }
+      // @media (min-width: 768px) {
+        // flex-direction: row !important;
+        // align-items: center !important;
+        // margin-bottom: 0px !important;
+      // }
+      // .hulkapps_option_name {
+      //   @media (min-width: 768px) {
+      //     flex: 1 0 140px !important;
+      //     min-width: 140px !important;
+      //   }
+      // }
+      // .hulkapps_option_value {
+      //   flex: 1 0 auto;
+      // }
       label {
         cursor: pointer !important;
       }
