@@ -4,12 +4,10 @@
     {% for block in section.blocks %}
     {% if block.settings.image %}
     <div class="item">
+      <a href="{{block.settings.link}}">
       {{ block.settings.image | image_url :  width: 2560, height: 800 | image_tag : alt: block.settings.image.alt, class: 'desktopBanner', loading: "lazy" }}
       {{ block.settings.mobile_image | image_url : height: "338x" | image_tag : alt: block.settings.mobile_image.alt, class: 'mobileBanner', loading: "lazy" }}
-    </div>
-    {% else %}
-    <div class="item">
-      {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+    </a>
     </div>
     {% endif %}
     {% endfor %}
