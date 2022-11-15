@@ -24,22 +24,13 @@
 
 #shopify-chat iframe,
 iframe#dummy-chat-button-iframe {
-  bottom: 80px !important;
+  bottom: 70px !important;
   z-index: 1000 !important;
-  &[isopen="true"] {
+  &[isopen="true"]{
     bottom: 0px !important;
   }
-
-    button.chat-toggle {
-      height: 40px !important;
-      width: 40px !important;
-      svg {
-        width: 24px !important;
-        height: 24px !important;
-      }
-    }
-
 }
+
 
 .d-none {
   display: none !important;
@@ -49,70 +40,72 @@ iframe#dummy-chat-button-iframe {
   display: block !important;
 }
 
+
+
 /**
  * EasyZoom core styles
  */
-.easyzoom {
-  position: relative;
+ .easyzoom {
+	position: relative;
 
-  /* 'Shrink-wrap' the element */
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
+	/* 'Shrink-wrap' the element */
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
 }
 
 .easyzoom img {
-  vertical-align: bottom;
+	vertical-align: bottom;
 }
 
 .easyzoom.is-loading img {
-  cursor: progress;
+	cursor: progress;
 }
 
 .easyzoom.is-ready img {
-  cursor: crosshair;
+	cursor: crosshair;
 }
 
-.easyzoom.is-error img {
-  cursor: not-allowed;
+.easyzoom.is-error  img {
+	cursor: not-allowed;
 }
 
 .easyzoom-notice {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 150;
-  width: 10em;
-  margin: -1em 0 0 -5em;
-  line-height: 2em;
-  text-align: center;
-  background: #fff;
-  box-shadow: 0 0 10px #888;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 150;
+	width: 10em;
+	margin: -1em 0 0 -5em;
+	line-height: 2em;
+	text-align: center;
+	background: #FFF;
+	box-shadow: 0 0 10px #888;
 }
 
 .easyzoom-flyout {
-  position: absolute;
-  z-index: 100;
-  overflow: hidden;
-  background: #fff;
+	position:absolute;
+	z-index: 100;
+	overflow: hidden;
+	background: #FFF;
 }
 
 /**
  * EasyZoom layout variations
  */
 .easyzoom--overlay .easyzoom-flyout {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .easyzoom--adjacent .easyzoom-flyout {
-  top: 0;
-  left: 100%;
-  width: 100%;
-  height: 100%;
-  margin-left: 20px;
+	top: 0;
+	left: 100%;
+	width: 100%;
+	height: 100%;
+	margin-left: 20px;
 }
 
 /* Shrink wrap strategy 2 */
