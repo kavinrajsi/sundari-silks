@@ -147,7 +147,9 @@
 <div hidden>
   {{tag}}
 </div>
-      {% if tag == "With Blouse" or tag == "Blouse Material" %}
+      {% if tag == "With Blouse" %}
+      {% assign with_blouse = false %}
+      {% elsif tag == "Blouse Material"  %}
       {% assign with_blouse = false %}
       {% break %}
       {% endif %}
