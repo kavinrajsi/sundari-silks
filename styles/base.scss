@@ -24,10 +24,22 @@
 
 #shopify-chat iframe,
 iframe#dummy-chat-button-iframe {
-  bottom: 70px !important;
+  bottom: 80px !important;
   z-index: 1000 !important;
+  height: 50px !important;
+  width: 50px !important;
   &[isopen="true"]{
     bottom: 0px !important;
+  }
+  @media(max-width: 768px){
+    button.chat-toggle{
+      height: 40px !important;
+      width: 40px !important;
+      svg{
+        width: 24px !important;
+        height: 24px !important;
+      }
+    }
   }
 }
 
