@@ -725,7 +725,7 @@
 
 .blouseStitching-area {
   position: relative;
-  .blouse-stitching {
+
     #login-link {
       padding: 0 5px;
       margin-bottom: 10px;
@@ -752,6 +752,7 @@
         border-radius: 5px;
       }
     }
+    .blouse-stitching {
     &[data-alankara="blouse-material"] {
       #add-measurement-link {
         top: 84px;
