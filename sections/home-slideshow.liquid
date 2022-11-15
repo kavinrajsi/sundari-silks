@@ -1,21 +1,11 @@
 <div class="large-12 columns">
   <div class="slider single-item" data-slick='{"autoplay": true, "cssEase": "linear", "slidesToShow": 1, "slidesToScroll": 1, "autoplaySpeed": 3000, "fade": true, "arrows": false, "dots": true, "adaptiveHeight": true }'>
-
     {% for block in section.blocks %}
-    {% if forloop.last == true %}
     {% if block.settings.image %}
     <div class="item">
       <a href="{{block.settings.link}}?filter.v.availability=1">
-        {{ block.settings.image | image_url :  width: 2560, height: 800 | image_tag : alt: block.settings.image.alt, class: 'desktopBanner', loading: "lazy" }}
+        {{ block.settings.image | image_url :  width: 2560, height: 800 | image_tag : alt: block.settings.image.alt, class: 'desktopBanner' }}
         {{ block.settings.mobile_image | image_url : width: 450, height: 450 | image_tag : alt: block.settings.mobile_image.alt, class: 'mobileBanner' }}
-    </a>
-    </div>
-    {% endif %}
-    {% else %}
-    <div class="item">
-      <a href="{{block.settings.link}}?filter.v.availability=1">
-        {{ block.settings.image | image_url :  width: 2560, height: 800 | image_tag : alt: block.settings.image.alt, class: 'desktopBanner', loading: "lazy" }}
-        {{ block.settings.mobile_image | image_url : width: 450, height: 450 | image_tag : alt: block.settings.mobile_image.alt, class: 'mobileBanner', loading: "lazy" }}
     </a>
     </div>
     {% endif %}
