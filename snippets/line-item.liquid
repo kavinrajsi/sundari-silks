@@ -26,15 +26,10 @@ price remove
 <div class="line-item__details">
   <h2 class="line-item__title">
     {{line_item.product.title}}
-
-    <!-- {{line_item.variant_id}} <hr>
-    {{line_item.id}} <hr>
-    {{line_item.product_id}} <hr> -->
   </h2>
-  <!-- {%- unless line_item.variant.title contains 'Default' -%}
-    <p>{{ line_item.variant.title }}</p>
-  {%- endunless -%} -->
-  <!-- <button type='button' style='display: none;' class='edit_cart_option btn btn--primary button' data-product_id='{{line_item.product_id}}' data-key='{{line_item.key}}' data-variant_id='{{line_item.variant_id}}' data-quantity='{{line_item.quantity}}'>Edit Options</button> -->
+<div hidden>
+  {{ line_item.product.properties }}
+</div>
 
 
   {% for option in line_item.options_with_values %}
