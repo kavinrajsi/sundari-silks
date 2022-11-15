@@ -569,20 +569,7 @@
         padding-right: 0 !important;
         padding-bottom: 8px !important;
       }
-      // @media (min-width: 768px) {
-      // flex-direction: row !important;
-      // align-items: center !important;
-      // margin-bottom: 0px !important;
-      // }
-      // .hulkapps_option_name {
-      //   @media (min-width: 768px) {
-      //     flex: 1 0 140px !important;
-      //     min-width: 140px !important;
-      //   }
-      // }
-      // .hulkapps_option_value {
-      //   flex: 1 0 auto;
-      // }
+
       label {
         cursor: pointer !important;
       }
@@ -805,4 +792,12 @@
       border-bottom: 1px solid #c3c2c9;
     }
   }
+}
+
+
+.hulkapps-tooltip:hover .hulkapps-tooltip-inner{
+  width: 314px !important;
+  background: var(--color-maroon) !important;
+  display: inline-block !important;
+  word-break: break-all !important;
 }
