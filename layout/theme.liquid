@@ -5,7 +5,8 @@ assign body_font = settings.type_body
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
 
-<head> <!-- WEBENGAGE INTEGRATION VARIABLES --> {% include 'webengage_variables' %}
+<head>
+  <!-- WEBENGAGE INTEGRATION VARIABLES --> {% include 'webengage_variables' %}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -171,7 +172,7 @@ assign body_font = settings.type_body
   <link rel="stylesheet" href="{{'base.css' | asset_url }}">
 
   <script src="{{ 'image-lazy.js' | asset_url }}" defer></script>
-  <script src="{{ 'jquery.js' | asset_url }}" ></script>
+  <script src="{{ 'jquery.js' | asset_url }}"></script>
 
 
   <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -335,13 +336,13 @@ assign body_font = settings.type_body
       },
       "url": {{ request.origin | append: page.url | json }}
     }
-    </script>
+  </script>
   <script type="application/ld+json">
       {
         "@context": "http://schema.org",
         "@type": "Organization",
         "name": {{ shop.name | json }},
-        {% if section.settings.logo %}
+        {% if section.settings.logo != blank  %}
           "logo": {{ section.settings.logo | image_url: width: section.settings.logo.width | prepend: "https:" | json }},
         {% endif %}
         "sameAs": [
