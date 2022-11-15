@@ -7,6 +7,10 @@ image
 content variable option extra infor
 price remove
 {%- endcomment -%}
+
+<div hidden>
+  {{ line_item | json }}
+</div>
 <div class="lin-item__image-wrapper">
 <a href="{{line_item.url  | within: collections.all }}" target="_blank">
   <img id="{{ line_item.id }}"
@@ -30,7 +34,7 @@ price remove
   <!-- {%- unless line_item.variant.title contains 'Default' -%}
     <p>{{ line_item.variant.title }}</p>
   {%- endunless -%} -->
-  <button type='button' style='display: none;' class='edit_cart_option btn btn--primary button' data-product_id='{{line_item.product_id}}' data-key='{{line_item.key}}' data-variant_id='{{line_item.variant_id}}' data-quantity='{{line_item.quantity}}'>Edit Options</button>
+  <!-- <button type='button' style='display: none;' class='edit_cart_option btn btn--primary button' data-product_id='{{line_item.product_id}}' data-key='{{line_item.key}}' data-variant_id='{{line_item.variant_id}}' data-quantity='{{line_item.quantity}}'>Edit Options</button> -->
 
 
   {% for option in line_item.options_with_values %}
