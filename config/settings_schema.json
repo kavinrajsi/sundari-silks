@@ -900,32 +900,27 @@
       {
         "type": "url",
         "id": "social_twitter_link",
-        "label": "Twitter URL",
-        "default": "https://twitter.com/sundari_silks"
+        "label": "Twitter URL"
       },
       {
         "type": "url",
         "id": "social_facebook_link",
-        "label": "Facebook link",
-        "default": "https://www.facebook.com/sundarisilks"
+        "label": "Facebook link"
       },
       {
         "type": "url",
         "id": "social_pinterest_link",
-        "label": "Pinterest link",
-        "default": "https://pinterest.com/sundari_silks"
+        "label": "Pinterest link"
       },
       {
         "type": "url",
         "id": "social_instagram_link",
-        "label": "Instagram link",
-        "default": "https://www.instagram.com/sundari_silks"
+        "label": "Instagram link"
       },
       {
         "type": "url",
         "id": "social_youtube_link",
-        "label": "Youtube link",
-        "default": "https://www.youtube.com/channel/UCQFej6I3rSymWTFkaKs0ngQ"
+        "label": "Youtube link"
       }
     ]
   }
