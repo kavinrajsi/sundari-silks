@@ -19,6 +19,23 @@
   </div>
 </section>
 {% endfor %}
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "itemListElement":[
+    {% for product in collection.products limit: 4 %}
+      {
+        "@type":"ListItem",
+        "position": {{ forloop.index }},
+        "url":"{{ product.url | within: collection }}"
+      }
+      {% endfor %}
+    ]
+  }
+</script>
+
+
 {% schema %}
 {
 "name": "Collection Page",
