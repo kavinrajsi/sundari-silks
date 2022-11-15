@@ -30,6 +30,7 @@ price remove
 
 <div hidden>
   {{ line_item.properties | json }}
+  <hr>
   {% for blouseOption in line_item.options_with_values %}
   {{ blouseOption.last }}
   {% endfor %}
