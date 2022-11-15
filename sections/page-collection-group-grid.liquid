@@ -28,7 +28,8 @@
       {
         "@type":"ListItem",
         "position": {{ forloop.index }},
-        "url":"{{ product.url | within: collection }}"
+        "name": "{{ product.title }}",
+        "url":"{{ product.url}}"
       }
       {% endfor %}
     ]
