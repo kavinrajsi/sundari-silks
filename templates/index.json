@@ -3,6 +3,14 @@
     "slideshow": {
       "type": "home-slideshow",
       "blocks": {
+        "8efe5e97-f302-4f66-ae4c-451513f79459": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/KANJIVARAM_-_NOVEMBER2-01.png",
+            "mobile_image": "shopify:\/\/shop_images\/KANJIVARAM_-_Mobile_Banner-03.png",
+            "link": "https:\/\/www.sundarisilks.com\/collections\/kanchipuram-silks?filter.v.availability=1"
+          }
+        },
         "bead778a-0fcd-4281-b9bf-e0d5edcf2d7c": {
           "type": "slide",
           "settings": {
@@ -42,23 +50,15 @@
             "mobile_image": "shopify:\/\/shop_images\/conversations-with-sundari-patrons-ft-srekala-bharath-banner-mobile_ffbcf83e-5e44-4132-b0d9-a736fa1a9a5d.png",
             "link": "shopify:\/\/blogs\/article\/conversations-with-sundari-patrons-ft-srekala-bharath"
           }
-        },
-        "8efe5e97-f302-4f66-ae4c-451513f79459": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/KANJIVARAM_-_NOVEMBER2-01.png",
-            "mobile_image": "shopify:\/\/shop_images\/KANJIVARAM_-_Mobile_Banner-03.png",
-            "link": "https:\/\/www.sundarisilks.com\/collections\/kanchipuram-silks?filter.v.availability=1"
-          }
         }
       },
       "block_order": [
+        "8efe5e97-f302-4f66-ae4c-451513f79459",
         "bead778a-0fcd-4281-b9bf-e0d5edcf2d7c",
         "46a12e3e-d35a-4136-8a28-c0579f4c7632",
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b",
         "3fbd7fec-f97f-434e-9f56-1ddc4581978e",
-        "bed9709b-8de2-4214-8e93-8253620cb5e1",
-        "8efe5e97-f302-4f66-ae4c-451513f79459"
+        "bed9709b-8de2-4214-8e93-8253620cb5e1"
       ],
       "settings": {
         "layout": "full_bleed",
