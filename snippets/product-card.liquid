@@ -15,7 +15,12 @@ Usage:
           data-src="{{ product.featured_image | image_url: width: '300x', format: 'pjpg' }}"
           data-aspectratio="{{ product.featured_image.aspect_ratio }}"
           data-widths="[540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]" data-sizes="auto"
-          data-parent-fit="cover" alt="{{ product.feature_image.alt }}">
+          data-parent-fit="cover" alt="
+          {% if  product.feature_image.alt != blank %}
+          {{ product.feature_image.alt }}
+          {% else %}
+          {{ product.title }}
+          {% endif %} ">
         {% comment %}
         {% endcomment %}
         {% else %}
