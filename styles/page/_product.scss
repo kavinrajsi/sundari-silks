@@ -564,15 +564,15 @@
       display: flex !important;
       flex-direction: column !important;
       align-items: flex-start !important;
-      .hulkapps_option_name{
+      .hulkapps_option_name {
         width: auto;
         padding-right: 0 !important;
         padding-bottom: 8px !important;
       }
       // @media (min-width: 768px) {
-        // flex-direction: row !important;
-        // align-items: center !important;
-        // margin-bottom: 0px !important;
+      // flex-direction: row !important;
+      // align-items: center !important;
+      // margin-bottom: 0px !important;
       // }
       // .hulkapps_option_name {
       //   @media (min-width: 768px) {
@@ -733,12 +733,13 @@
   #add-measurement-link {
     padding: 0 5px;
     margin-bottom: 10px;
-    font-size: 14px;
     position: absolute;
-    // z-index: 4;
     left: 6px;
     right: 0;
-    top: 158px;
+    font-size: 12px;
+    @media (min-width: 768px) {
+      font-size: 14px;
+    }
 
     @media (min-width: 768px) {
       top: 160px;
