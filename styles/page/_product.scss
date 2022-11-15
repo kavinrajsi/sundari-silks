@@ -725,30 +725,37 @@
 
 .blouseStitching-area {
   position: relative;
-  #login-link {
-    padding: 0 5px;
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
-  #add-measurement-link {
-    padding: 0 5px;
-    margin-bottom: 10px;
-    top: 160px;
-    position: absolute;
-    left: 6px;
-    right: 0;
-    font-size: 12px;
-    @media (min-width: 768px) {
+  .blouse-stitching {
+    #login-link {
+      padding: 0 5px;
+      margin-bottom: 10px;
       font-size: 14px;
     }
+    #add-measurement-link {
+      padding: 0 5px;
+      margin-bottom: 10px;
+      top: 160px;
+      position: absolute;
+      left: 6px;
+      right: 0;
+      font-size: 12px;
+      @media (min-width: 768px) {
+        font-size: 14px;
+      }
 
-    a {
-      color: #fff !important;
-      display: inline-block;
-      padding: 2px 4px;
-      margin-left: 8px;
-      background-color: var(--color-maroon);
-      border-radius: 5px;
+      a {
+        color: #fff !important;
+        display: inline-block;
+        padding: 2px 4px;
+        margin-left: 8px;
+        background-color: var(--color-maroon);
+        border-radius: 5px;
+      }
+    }
+    &[data-alankara="blouse-material"] {
+      #add-measurement-link {
+        top: 84px;
+      }
     }
   }
 }

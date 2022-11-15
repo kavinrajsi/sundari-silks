@@ -142,22 +142,25 @@
     <!-- blouse stitching area -->
     <section class="blouseStitching-area">
       {% assign with_blouse = true %}
+      {% assign data_alankara = '' %}
       {% for tag in product.tags %}
-
-<div hidden>
-  {{tag}}
-</div>
+      {% assign data_alankara = tag %}
+      <div hidden>
+        {{tag}}
+      </div>
       {% if tag == "With Blouse" %}
       {% assign with_blouse = false %}
-      {% elsif tag == "Blouse Material"  %}
-      {% assign with_blouse = false %}
+      {% elsif tag == "Blouse Material" %}
+      {% assign with_blouse = true %}
       {% break %}
       {% endif %}
       {% endfor %}
       {% if with_blouse %}
-      <div class="blouse-stitching hide" id="hulkapps_custom_options_{{ product.id }}"> </div>
+      <div data-alankara="{{data_alankara}}" class="blouse-stitching hide"
+        id="hulkapps_custom_options_{{ product.id }}"> </div>
       {% else %}
-      <div class="blouse-stitching" id="hulkapps_custom_options_{{ product.id }}"> </div>
+      <div data-alankara="{{data_alankara}}" class="blouse-stitching" id="hulkapps_custom_options_{{ product.id }}">
+      </div>
       {% endif %}
 
       <div id="login-link" class="hide">Please
@@ -165,8 +168,8 @@
         measurement. Kindly provide measurement details for blouse
         stitching before adding this product to the cart.
       </div>
-      <div id="add-measurement-link" class="hide">Please add / update measurement <a href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}"
-          id="addMeasurementLink">Add</a></div>
+      <div id="add-measurement-link" class="hide">Please add / update measurement <a
+          href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}" id="addMeasurementLink">Add</a></div>
 
       <p id="measurement-data" class="line-item-property__field hide"> </p>
 
