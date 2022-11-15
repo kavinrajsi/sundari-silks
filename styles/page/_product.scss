@@ -733,16 +733,13 @@
   #add-measurement-link {
     padding: 0 5px;
     margin-bottom: 10px;
+    top: 160px;
     position: absolute;
     left: 6px;
     right: 0;
     font-size: 12px;
     @media (min-width: 768px) {
       font-size: 14px;
-    }
-
-    @media (min-width: 768px) {
-      top: 160px;
     }
 
     a {
