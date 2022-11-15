@@ -143,7 +143,7 @@
     <section class="blouseStitching-area">
       {% assign with_blouse = true %}
       {% for tag in product.tags %}
-      {% if tag == "With Blouse" %}
+      {% if tag == "With Blouse" or tag == "Blouse Material" %}
       {% assign with_blouse = false %}
       {% break %}
       {% endif %}
