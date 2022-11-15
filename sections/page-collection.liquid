@@ -30,7 +30,7 @@
         "@type":"ListItem",
         "position": {{ forloop.index }},
         "name": "{{ product.title }}",
-        "url":"{{ shop.name}}/{{ product.url}}"
+        "url":"{{ shop.secure_url}}/{{ product.url}}"
       }
       {% endfor %}
     ]
