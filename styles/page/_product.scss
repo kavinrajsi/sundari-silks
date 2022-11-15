@@ -548,7 +548,7 @@
   }
 
   .hulkapps_product_options {
-    overflow: hidden !important;
+    overflow: visible !important;
     border: 1px solid var(--color-black) !important;
     border-radius: var(--border-radius) !important;
     * {
@@ -626,6 +626,14 @@
   #add-measurement-link a {
     padding: 2px 16px !important;
   }
+
+  .hulkapps-tooltip:hover .hulkapps-tooltip-inner {
+    width: 314px !important;
+    background: var(--color-maroon) !important;
+    display: inline-block !important;
+    word-break: break-all !important;
+    white-space: initial !important;
+  }
 }
 
 .toast {
@@ -676,9 +684,8 @@
     margin-top: 8px;
     margin-bottom: 8px;
     @media (min-width: 768px) {
-
-    margin-top: 18px;
-    margin-bottom: 18px;
+      margin-top: 18px;
+      margin-bottom: 18px;
       gap: 24px;
     }
   }
@@ -716,34 +723,34 @@
 .blouseStitching-area {
   position: relative;
 
-    #login-link {
-      padding: 0 5px;
-      margin-bottom: 10px;
+  #login-link {
+    padding: 0 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  #add-measurement-link {
+    padding: 0 5px;
+    margin-bottom: 10px;
+    top: 160px;
+    position: absolute;
+    left: 6px;
+    right: 0;
+    font-size: 12px;
+    @media (min-width: 768px) {
       font-size: 14px;
     }
-    #add-measurement-link {
-      padding: 0 5px;
-      margin-bottom: 10px;
-      top: 160px;
-      position: absolute;
-      left: 6px;
-      right: 0;
-      font-size: 12px;
-      @media (min-width: 768px) {
-        font-size: 14px;
-      }
 
-      a {
-        color: #fff !important;
-        display: inline-block;
-        padding: 2px 4px;
-        margin-left: 8px;
-        background-color: var(--color-maroon);
-        border-radius: 5px;
-      }
+    a {
+      color: #fff !important;
+      display: inline-block;
+      padding: 2px 4px;
+      margin-left: 8px;
+      background-color: var(--color-maroon);
+      border-radius: 5px;
     }
-    .blouse-stitching {
-    &[data-alankara="blouse-material"] + #login-link{
+  }
+  .blouse-stitching {
+    &[data-alankara="blouse-material"] + #login-link {
       + #add-measurement-link {
         top: 84px;
       }
@@ -792,12 +799,4 @@
       border-bottom: 1px solid #c3c2c9;
     }
   }
-}
-
-
-.hulkapps-tooltip:hover .hulkapps-tooltip-inner{
-  width: 314px !important;
-  background: var(--color-maroon) !important;
-  display: inline-block !important;
-  word-break: break-all !important;
 }
