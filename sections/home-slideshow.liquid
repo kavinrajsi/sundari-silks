@@ -6,7 +6,7 @@
     <div class="item">
       <a href="{{block.settings.link}}">
       {{ block.settings.image | image_url :  width: 2560, height: 800 | image_tag : alt: block.settings.image.alt, class: 'desktopBanner', loading: "lazy" }}
-      {{ block.settings.mobile_image | image_url : height: "338x" | image_tag : alt: block.settings.mobile_image.alt, class: 'mobileBanner', loading: "lazy" }}
+      {{ block.settings.mobile_image | image_url : width:720, height: 752 | image_tag : alt: block.settings.mobile_image.alt, class: 'mobileBanner', loading: "lazy" }}
     </a>
     </div>
     {% endif %}
