@@ -30,6 +30,7 @@ price remove
   <!-- {%- unless line_item.variant.title contains 'Default' -%}
     <p>{{ line_item.variant.title }}</p>
   {%- endunless -%} -->
+  <button type='button' style='display: none;' class='edit_cart_option btn btn--primary button' data-product_id='{{line_item.product_id}}' data-key='{{line_item.key}}' data-variant_id='{{line_item.variant_id}}' data-quantity='{{line_item.quantity}}'>Edit Options</button>
 
 
   {% for option in line_item.options_with_values %}
@@ -41,7 +42,6 @@ price remove
     {% endif %}
     {% endfor %}
 
-    <button type='button' style='display: none;' class='edit_cart_option btn btn--primary button' data-product_id='{{item.product_id}}' data-key='{{item.key}}' data-variant_id='{{item.variant_id}}' data-quantity='{{item.quantity}}'>Edit Options</button>
 
    </div>
 <div class="line-item__right">
