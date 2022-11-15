@@ -15,6 +15,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/boxed-traditional-banner-desktop.png",
+            "mobile_image": "shopify:\/\/shop_images\/boxed-traditional-banner-mobile.png",
             "link": "shopify:\/\/collections\/pure-zari-kanchipuram"
           }
         },
