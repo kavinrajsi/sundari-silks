@@ -40,6 +40,8 @@ price remove
     </div>
     {% endif %}
     {% endfor %}
+
+    <button type='button' style='display: none;' class='edit_cart_option btn btn--primary button' data-product_id='{{product_id}}' data-key='{{key}}' data-variant_id='{{variant_id}}' data-quantity='{{quantity}}'>Edit Options</button>
 </div>
 <div class="line-item__right">
   <div  data-hulkapps-ci-price data-key='{{line_item.key}}' class="line-item__price">
