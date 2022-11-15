@@ -276,7 +276,6 @@
   {
     "name": "Heading 5",
     "settings": [
-
       {
         "type": "range",
         "id": "heading_font_mobile5",
@@ -896,6 +895,11 @@
       {
         "type": "header",
         "content": "social media url, logo for organization schema"
+      },
+      {
+        "type": "image_picker",
+        "id": "brand_logo",
+        "label": "Brand Logo"
       },
       {
         "type": "url",

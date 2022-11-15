@@ -342,8 +342,8 @@ assign body_font = settings.type_body
         "@context": "http://schema.org",
         "@type": "Organization",
         "name": {{ shop.name | json }},
-        {% if section.settings.logo != blank  %}
-          "logo": {{ section.settings.logo | image_url: width: section.settings.logo.width | prepend: "https:" | json }},
+        {% if settings.brand_logo != blank  %}
+          "logo": {{ settings.brand_logo | image_url: width: settings.brand_logo.width | prepend: "https:" | json }},
         {% endif %}
         "sameAs": [
           {{ settings.social_twitter_link | json }},
