@@ -564,15 +564,15 @@
       display: flex !important;
       flex-direction: column !important;
       align-items: flex-start !important;
-      .hulkapps_option_name{
+      .hulkapps_option_name {
         width: auto;
         padding-right: 0 !important;
         padding-bottom: 8px !important;
       }
       // @media (min-width: 768px) {
-        // flex-direction: row !important;
-        // align-items: center !important;
-        // margin-bottom: 0px !important;
+      // flex-direction: row !important;
+      // align-items: center !important;
+      // margin-bottom: 0px !important;
       // }
       // .hulkapps_option_name {
       //   @media (min-width: 768px) {
@@ -686,11 +686,14 @@
   .button-add-to-cart {
     display: flex;
     gap: 12px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     @media (min-width: 768px) {
-      gap: 24px;
-    }
+
     margin-top: 18px;
     margin-bottom: 18px;
+      gap: 24px;
+    }
   }
   .button {
     border-radius: var(--border-radius);
@@ -725,32 +728,38 @@
 
 .blouseStitching-area {
   position: relative;
-  #login-link {
-    padding: 0 5px;
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
-  #add-measurement-link {
-    padding: 0 5px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    position: absolute;
-    // z-index: 4;
-    left: 6px;
-    right: 0;
-    top: 144px;
 
-    @media (min-width: 768px) {
-      top: 160px;
+    #login-link {
+      padding: 0 5px;
+      margin-bottom: 10px;
+      font-size: 14px;
     }
+    #add-measurement-link {
+      padding: 0 5px;
+      margin-bottom: 10px;
+      top: 160px;
+      position: absolute;
+      left: 6px;
+      right: 0;
+      font-size: 12px;
+      @media (min-width: 768px) {
+        font-size: 14px;
+      }
 
-    a {
-      color: #fff !important;
-      display: inline-block;
-      padding: 2px 4px;
-      margin-left: 8px;
-      background-color: var(--color-maroon);
-      border-radius: 5px;
+      a {
+        color: #fff !important;
+        display: inline-block;
+        padding: 2px 4px;
+        margin-left: 8px;
+        background-color: var(--color-maroon);
+        border-radius: 5px;
+      }
+    }
+    .blouse-stitching {
+    &[data-alankara="blouse-material"] + #login-link{
+      + #add-measurement-link {
+        top: 84px;
+      }
     }
   }
 }

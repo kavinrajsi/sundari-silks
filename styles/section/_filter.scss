@@ -56,10 +56,7 @@
     form.filter-form {
       position: relative;
       .filter--content {
-        height: calc(100vh - 52px - 68px);
-        @media (min-width: 768px) {
-          height: calc(100vh - 52px - 78px);
-        }
+        height: calc(100vh - 130px);
       }
       .filter-group {
         overflow: hidden;
@@ -296,7 +293,7 @@
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
-  padding-bottom: 0;
+  padding-bottom: 20px;
   padding-left: var(--Ngap);
   padding-right: var(--Ngap);
   @media (min-width: 1364px) {

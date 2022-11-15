@@ -7,6 +7,10 @@ image
 content variable option extra infor
 price remove
 {%- endcomment -%}
+
+<div hidden>
+  {{ line_item | json }}
+</div>
 <div class="lin-item__image-wrapper">
 <a href="{{line_item.url  | within: collections.all }}" target="_blank">
   <img id="{{ line_item.id }}"
@@ -22,14 +26,17 @@ price remove
 <div class="line-item__details">
   <h2 class="line-item__title">
     {{line_item.product.title}}
-
-    <!-- {{line_item.variant_id}} <hr>
-    {{line_item.id}} <hr>
-    {{line_item.product_id}} <hr> -->
   </h2>
-  <!-- {%- unless line_item.variant.title contains 'Default' -%}
-    <p>{{ line_item.variant.title }}</p>
-  {%- endunless -%} -->
+
+<div hidden>
+  {{ line_item.properties | json }}
+  <hr>
+  {{ line_item.options_with_values | json }}
+  <hr>
+  {% for blouseOption in line_item.options_with_values %}
+  {{ blouseOption.last }}
+  {% endfor %}
+</div>
 
 
   {% for option in line_item.options_with_values %}
@@ -40,7 +47,9 @@ price remove
     </div>
     {% endif %}
     {% endfor %}
-</div>
+
+
+   </div>
 <div class="line-item__right">
   <div  data-hulkapps-ci-price data-key='{{line_item.key}}' class="line-item__price">
     {{ line_item.price | money }}

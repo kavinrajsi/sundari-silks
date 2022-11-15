@@ -276,7 +276,6 @@
   {
     "name": "Heading 5",
     "settings": [
-
       {
         "type": "range",
         "id": "heading_font_mobile5",
@@ -887,6 +886,45 @@
         "step": 2,
         "unit": "px",
         "default": 8
+      }
+    ]
+  },
+  {
+    "name": "Organization Schema",
+    "settings": [
+      {
+        "type": "header",
+        "content": "social media url, logo for organization schema"
+      },
+      {
+        "type": "image_picker",
+        "id": "brand_logo",
+        "label": "Brand Logo"
+      },
+      {
+        "type": "url",
+        "id": "social_twitter_link",
+        "label": "Twitter URL"
+      },
+      {
+        "type": "url",
+        "id": "social_facebook_link",
+        "label": "Facebook link"
+      },
+      {
+        "type": "url",
+        "id": "social_pinterest_link",
+        "label": "Pinterest link"
+      },
+      {
+        "type": "url",
+        "id": "social_instagram_link",
+        "label": "Instagram link"
+      },
+      {
+        "type": "url",
+        "id": "social_youtube_link",
+        "label": "Youtube link"
       }
     ]
   }
