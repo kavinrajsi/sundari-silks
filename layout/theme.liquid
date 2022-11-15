@@ -343,7 +343,7 @@ assign body_font = settings.type_body
         "@type": "Organization",
         "name": {{ shop.name | json }},
         {% if settings.brand_logo != blank  %}
-        "logo": {{ settings.brand_logo | image_url: width: settings.brand_logo.width | prepend: "https:" | json }},
+        "logo": {{ settings.brand_logo.src | prepend: "https:" | json }},
         {% endif %}
         "sameAs": [
           {{ settings.social_twitter_link | json }},
