@@ -31,12 +31,12 @@ Usage:
           <!-- TODO: Sold out chip color -->
           <span class="product__card--status-soldout">sold out</span>
           {% endunless %}
-          {% unless product.compare_at_price_max > product.price %}
+          {% if product.compare_at_price_max > product.price %}
           <!-- TODO: Sold out chip color -->
           <span class="product__card--status-soldout">
             {{  product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | remove: '.0'}}% off
           </span>
-          {% endunless %}
+          {% endif %}
         </div>
       </div>
     </a>
