@@ -31,9 +31,8 @@ Usage:
           <!-- TODO: Sold out chip color -->
           <span class="product__card--status-soldout">sold out</span>
           {% endunless %}
-
           {% if product.compare_at_price_max > product.price %}
-          <span class="product__card--status-soldout">  {{  product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | remove: '.0'}} % off </span>
+          <span class="product__card--status-soldout">  {{  product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | remove: '.0' | slice: 1, 2 }} % off </span>
           {% endif %}
 
         </div>
@@ -62,17 +61,13 @@ Usage:
       </div>
       <div hidden>
 
-        {% if product.compare_at_price_max > product.price %}
-        <span class="product__card--status-soldout">  {{  product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | remove: '.0'}} % off </span>
-        {% endif %}
-
 
         {% if product.compare_at_price_max > product.price %}
         <!-- {{ product.compare_at_price_max }} -->
         <!-- {{ product.price  }} -->
         <!-- {{ product.compare_at_price_max | minus: product.price }} -->
         <!-- {{  product.compare_at_price_max | minus: product.price | times: 100.0 }} -->
-        {{  product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max |  remove: '.0'}}% off
+        {{  product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | remove: '.0'}}% off
         <!-- {{  product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency }} -->
         <!-- {{  product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0' }} -->
         <!-- {{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% off -->
