@@ -133,7 +133,7 @@
   <div class="header-container">
     <nav class="header-nav-list-main" role="navigation">
       <ul class="menu-level-1">
-        {% for link in linklists.main-menu.links %}
+        {% for link in linklists.desktop-menu.links %}
         <li
           class="menu-level-1-item {{ link.title | handle }} {% if link.links.size > 0 %} menu-level-1-item-child {% endif %} {% if link.active %}menu-active{% endif %} {% if link.child_active %}menu-child-active{% endif %} ">
           <a href="{{ link.url }}?filter.v.availability=1" {% if link.active %}aria-current="page" {% endif %}>
