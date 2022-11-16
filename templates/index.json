@@ -119,14 +119,6 @@
         "curated-description": "Styles for every occasion"
       }
     },
-    "homeCurated2": {
-      "type": "home-curated-two",
-      "disabled": true,
-      "settings": {
-        "curated-title": "Curated collection",
-        "curated-description": "Styles for every occasion"
-      }
-    },
     "readymade": {
       "type": "home-readymade",
       "blocks": {
@@ -360,13 +352,6 @@
         "collection-list": "pure-zari-kanchipuram | bandhani-sarees | shirts"
       }
     },
-    "recent-products": {
-      "type": "product-recommendations",
-      "disabled": true,
-      "settings": {
-        "show_product_recommendations": true
-      }
-    },
     "blog": {
       "type": "blog-feed",
       "settings": {
@@ -451,13 +436,11 @@
   "order": [
     "slideshow",
     "curated",
-    "homeCurated2",
     "readymade",
     "lookbookArea",
     "spotlight",
     "collaborate",
     "dropped",
-    "recent-products",
     "blog",
     "vs",
     "instagram"
