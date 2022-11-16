@@ -349,7 +349,7 @@ assign body_font = settings.type_body
         "@context": "http://schema.org",
         "@type": "Organization",
         "name": {{ shop.name | json }},
-        {% if settings.brand_logo != blank  %}
+        {% if settings.brand_logo != blank %}
         "logo": {{ settings.brand_logo.src | prepend: "https:" | json }},
         {% endif %}
         "sameAs": [

@@ -25,14 +25,22 @@
     "@context":"https://schema.org",
     "@type":"ItemList",
     "itemListElement":[
-    {% for product in collection.products limit: 4 %}
+    {% for product in collection.products limit: 10 %}
+    {
+      "@type":"ListItem",
+      "position": {{ forloop.index }},
+      "name": "{{ product.title }}",
+      "url":"{{ shop.secure_url}}{{ product.url}}"
+    },
+    {% if forloop.last %}
       {
         "@type":"ListItem",
         "position": {{ forloop.index }},
         "name": "{{ product.title }}",
         "url":"{{ shop.secure_url}}{{ product.url}}"
       }
-      {% endfor %}
+    {% endif %}
+    {% endfor %}
     ]
   }
 </script>
