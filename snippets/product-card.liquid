@@ -14,8 +14,8 @@ Usage:
           src="{{ product.featured_image | image_url: width: '300x', format: 'pjpg' }}"
           data-src="{{ product.featured_image | image_url: width: '300x', format: 'pjpg' }}"
           data-aspectratio="{{ product.featured_image.aspect_ratio }}"
-          data-widths="[540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]" data-sizes="auto"
-          data-parent-fit="cover" alt="
+          data-widths="[540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]" data-sizes="auto" data-parent-fit="cover"
+          alt="
           {% if  product.feature_image.alt != blank %}
           {{ product.feature_image.alt }}
           {% else %}
@@ -31,6 +31,11 @@ Usage:
           <!-- TODO: Sold out chip color -->
           <span class="product__card--status-soldout">sold out</span>
           {% endunless %}
+
+          {% if product.compare_at_price_max > product.price %}
+          <span class="product__card--status-soldout"> {{ product.compare_at_price_max | minus: product.price | times:
+            100.0 | divided_by: product.compare_at_price_max | remove: '.0'}} % off </span>
+          {% endif %}
 
         </div>
       </div>
@@ -56,31 +61,19 @@ Usage:
         </p>
         {% endif %}
       </div>
-      <div hidden>
-        {% if product.compare_at_price_max > product.price %}
-        <!-- {{ product.compare_at_price_max }} -->
-        <!-- {{ product.price  }} -->
-        <!-- {{ product.compare_at_price_max | minus: product.price }} -->
-        <!-- {{  product.compare_at_price_max | minus: product.price | times: 100.0 }} -->
-        {{  product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | remove: '.0'}}% off
-        <!-- {{  product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency }} -->
-        <!-- {{  product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0' }} -->
-        {{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% off
-        {% endif %}
 
-      </div>
-        {% if product.variants.size > 1 %}
-        <div class="product__variant--list" hidden>
-          <span class="product__variant--list-title">
-            {{product.options }} :
-          </span>
-          {% for variant in product.variants %}
-          {% if variant.inventory_quantity == 0 %} <s>  {% endif %}
+      {% if product.variants.size > 1 %}
+      <div class="product__variant--list" hidden>
+        <span class="product__variant--list-title">
+          {{product.options }} :
+        </span>
+        {% for variant in product.variants %}
+        {% if variant.inventory_quantity == 0 %} <s> {% endif %}
           <span class="product__variant--list-name"> {{ variant.title }} </span>
-          {% if variant.inventory_quantity == 0 %} </s>  {% endif %}
-          {% endfor %}
-        </div>
-        {% endif %}
+          {% if variant.inventory_quantity == 0 %} </s> {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
     </a>
   </div>
 </div>
