@@ -469,8 +469,6 @@
     .menu-child-active,
     .active {
       opacity: 1 !important;
-      // font-weight: 500 !important;
-      // color: var(--color-primary) !important;
     }
   }
 }
@@ -485,25 +483,6 @@
 .menu-level-2[data-menu-title="arthirshtam"] {
   grid-template-columns: repeat(8, 1fr);
 }
-
-
-// .menu-level-2[data-menu-title="mumbai collection"] {
-//   grid-template-columns: repeat(3, 1fr);
-// }
-
-/* desktop menu special */
-// .header-nav-list-main .menu-level-2 {
-//   &[data-menu-title="readymades"],
-//   &[data-menu-title="arthirshtam"] {
-//     grid-gap: 16px;
-//     .menu-level-2-item > a {
-//       border-bottom: 0px;
-//       margin: 6px 0px;
-//       padding-bottom: 0px;
-//       padding-top: 0px;
-//     }
-//   }
-// }
 
 .header-nav-list-main .menu-level-1-item.mumbai-collection,
 .header-nav-list-main .menu-level-1-item.athirshtam {
