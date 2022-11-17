@@ -9,18 +9,21 @@
 {% render 'filter' %}
 
 <div class="fixedElement section-{{ section.id }}-padding">
-  {% comment %}
-  {% paginate array by page_size %}
-  {% for item in array %}
-    forloop_content
-  {% endfor %}
-{% endpaginate %}
-  {% endcomment %}
+
+
+  <section hidden>
+    {% for product in collection.products %}
+    {{ product | json }}
+    {% endfor %}
+  </section>
   <section>
     {% paginate collection.products by 24 %}
     <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="3" collection-list-desktop="4">
       {% for product in collection.products limit: 28 %}
+      {%- if product.available == false -%}
       {% render 'product-card', product: product %}
+      {%- continue -%}
+      {%- endif -%}
       {% endfor %}
     </div>
     <div class="pagination--number">
