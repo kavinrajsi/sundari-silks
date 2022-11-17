@@ -59,12 +59,12 @@ Usage:
         {% endif %}
       </div>
 
-
+      {% if customer.tags contains "admin" %}
       <div class="product__variant--sku">
         {% assign current_variant = product.selected_or_first_available_variant %}
         <span class="variant-sku">{{ current_variant.sku }}</span>
       </div>
-
+      {% endif %}
 
         {% if product.variants.size > 1 %}
         <div class="product__variant--list" hidden>
