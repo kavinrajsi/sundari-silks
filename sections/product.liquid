@@ -60,7 +60,7 @@
   <div class="product-content">
     <h2 class="product-title">{{product.title}}</h2>
     {% if customer and customer.tags contains 'admin' %}
-    <div class="product-sku" hidden>
+    <div class="product-sku">
       {%- assign current_variant = product.selected_or_first_available_variant -%}
       {% for variant in product.variants %}
       <span class="product__variant--sku"> Product Code : {{ variant.sku }} </span>
