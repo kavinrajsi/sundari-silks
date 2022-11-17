@@ -11,9 +11,7 @@
     {% paginate collection.products by 24 %}
     <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="3" collection-list-desktop="4">
       {% for product in collection.products %}
-      {% if product.available %}
             {% render 'product-card', product: product %}
-            {% endif %}
       {% endfor %}
     </div>
     <div class="pagination--number">
