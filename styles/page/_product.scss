@@ -668,11 +668,12 @@
 
 .product-form__buttons {
   position: fixed;
+  position: initial;
   bottom: 0;
   left: 0;
   right: 0;
-  background: var(--color-white);
-  padding: 0 8px;
+  // background: var(--color-white);
+  // padding: 0 8px;
   @media (min-width: 768px) {
     position: static;
     padding: 0;
