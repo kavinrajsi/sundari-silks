@@ -1,0 +1,12 @@
+{% comment %}
+  Shopify remove sold out product
+{% endcomment %}
+
+{%- layout none -%}
+
+
+{% for product in collection.products %}
+{% if product.available %}
+  {% render 'product-card', product: product %}
+{% endif %}
+{% endfor %}
