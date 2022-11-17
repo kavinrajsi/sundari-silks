@@ -151,8 +151,8 @@
   }
 
   // Update sort_by query parameter on select change
-  let link = document.querySelector('#sort-by li');
-  document.querySelector('#sort-by li').addEventListener('click', function (e) {
+  let link = document.querySelectorAll('#sort-by li');
+  document.querySelectorAll('#sort-by li').addEventListener('click', function (e) {
     var value = link.getAttribute('value');
     console.log(value);
     Shopify.queryParams.sort_by = value;
