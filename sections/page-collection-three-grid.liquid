@@ -11,7 +11,7 @@
     {% paginate collection.products by 8 %}
     <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="3" collection-list-desktop="3">
       {% for product in collection.products %}
-      {% render 'collection-date', product: product %}
+      {% render 'collection-data', product: product %}
       {% endfor %}
     </div>
     <div class="pagination--number">
