@@ -8,10 +8,10 @@
 {% render 'filter' %}
 <div class="fixedElement section-{{ section.id }}-padding">
   <section>
-    {% paginate collection.products by 24 %}
+    {% paginate collection.products by 8 %}
     <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="3" collection-list-desktop="3">
       {% for product in collection.products %}
-      {% render 'product-card', product: product %}
+      {% render 'collection-date', product: product %}
       {% endfor %}
     </div>
     <div class="pagination--number">
