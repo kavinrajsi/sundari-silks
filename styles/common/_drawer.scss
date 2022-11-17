@@ -79,7 +79,7 @@
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
-  height: 100%;
+  height: calc(100vh - 100px);
   flex-grow: 1;
   padding: 16px;
   padding-bottom: 114px;
