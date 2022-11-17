@@ -99,6 +99,31 @@
     {% endpaginate %}
   </section>
 </div>
+<script>
+  function modifyLink(link) {
+      if (link.tagName !== 'a') return;
+
+      const url = new URL(link.href);
+      if (!url.searchParams.has("filter.v.availability")) {
+          url.searchParams.append("filter.v.availability", "1");
+          link.href = url.href;
+      }
+  }
+
+  function setAvailabilityFilterInCollectionLinks() {
+      const selectorStr = "header a[href*='/collections/'], .drawer a[href*='/collections/']"; // you can change this selector based on your theme structure
+      selectorStr.split(',').forEach((selector) => {
+          const selectorTrimmed = selector.trim();
+          if (selectorTrimmed) {
+              document.querySelectorAll(selectorTrimmed).forEach(modifyLink);
+          }
+      });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+      setAvailabilityFilterInCollectionLinks();
+  });
+  </script>
 <script type="application/ld+json">
   {
     "@context":"https://schema.org",
