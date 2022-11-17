@@ -62,6 +62,7 @@
     {% if customer and customer.tags contains 'admin' %}
     <div class="product-sku">
       {%- assign current_variant = product.selected_or_first_available_variant -%}
+      Current Variant: {{current_variant.sku}}
       {% for variant in product.variants %}
       <span class="product__variant--sku"> Product Code : {{ variant.sku }} </span>
       {% endfor %}
