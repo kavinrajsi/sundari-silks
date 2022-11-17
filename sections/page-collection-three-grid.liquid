@@ -11,8 +11,6 @@
     {% paginate collection.products by 24 %}
     <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="4" collection-list-desktop="4">
       {% for product in collection.products %}
-      {% unless product.handle == current_product_handle %}
-      {% if product.available %}
 
       <div class="product__card">
         <div class="product__card--img">
@@ -91,8 +89,7 @@
           </a>
         </div>
       </div>
-      {% endif %}
-      {% endunless %}
+
 
       {% endfor %}
     </div>
