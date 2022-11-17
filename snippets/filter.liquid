@@ -98,7 +98,7 @@
         {% for option in collection.sort_options %}
 
         {% unless  option.value contains 'title-ascending' or option.value contains 'title-descending' or option.value contains 'created-ascending' or option.value contains 'created-descending' %}
-        <li value="{{ option.value }}" {% if sort_by==option.value %} selected="selected" {% endif %}> {{ option.name }}
+        <li class="sortby-Value" value="{{ option.value }}" {% if sort_by==option.value %} selected="selected" {% endif %}> {{ option.name }}
         </li>
 
         {% endunless %}
@@ -151,11 +151,15 @@
   }
 
   // Update sort_by query parameter on select change
-  let link = document.querySelectorAll('#sort-by li');
-  document.querySelectorAll('#sort-by li').addEventListener('click', function (e) {
+  let link = document.querySelectorAll('#sort-by li.sortby-Value');
+  console.log(link);
+  console.log(link[0]);
+
+  link.addEventListener('click', function (e) {
     var value = link.getAttribute('value');
     console.log(value);
     Shopify.queryParams.sort_by = value;
     location.search = new URLSearchParams(Shopify.queryParams).toString();
   });
+
 </script>
