@@ -108,6 +108,7 @@
               display: block;
               padding: 8px;
               text-align: left;
+              text-transform: capitalize;
               &:has(input[disabled]) {
                 text-decoration: line-through;
                 opacity: 0.2;

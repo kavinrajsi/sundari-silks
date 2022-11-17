@@ -33,7 +33,7 @@
       <a href="{{ article.url }}">
 
         {% if article.image %}
-        {{ article.image | image_url: width: 300, format: 'pjpg' | image_tag: alt:article.image.alt }}
+        {{ article.image | image_url: width: 4600, height: 460, crop: top, format: 'pjpg' | image_tag: alt:article.image.alt }}
         <noscript>
           <p>
             {{ article.image | image_url: 300, scale: 2, format: 'pjpg' | image_tag: article.title }}

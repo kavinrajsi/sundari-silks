@@ -15,29 +15,11 @@
     &[collection-list-mobile="2"] {
       grid-template-columns: repeat(2, 1fr);
     }
-    @media (min-width: $tablet) {
-      &[collection-list-tablet="3"] {
-        grid-template-columns: repeat(3, 1fr);
-      }
-      &[collection-list-tablet="2"] {
-        grid-template-columns: repeat(2, 1fr);
+    @media (min-width: 768px) {
+      &[collection-list-mobile="2"] {
+        grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
       }
     }
-    @media (min-width: $ptablet) {
-      &[collection-list-desktop="3"],
-      &[collection-list-desktop="4"] {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    @media (min-width: $desktop) {
-      &[collection-list-desktop="3"] {
-        grid-template-columns: repeat(3, 1fr);
-      }
-      &[collection-list-desktop="4"] {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-
   }
   &-card {
     &-link {
@@ -172,7 +154,7 @@
       border-style: none;
     }
 
-    .imageGrid{
+    .imageGrid {
       display: flex;
       gap: 12px;
     }
