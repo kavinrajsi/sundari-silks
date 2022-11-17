@@ -667,13 +667,13 @@
 }
 
 .product-form__buttons {
-  position: fixed;
   position: initial;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  // background: var(--color-white);
-  // padding: 0 8px;
+  background: var(--color-white);
+  padding: 0 8px;
   @media (min-width: 768px) {
     position: static;
     padding: 0;
@@ -799,5 +799,13 @@
       border: 0;
       border-bottom: 1px solid #c3c2c9;
     }
+  }
+}
+
+
+.hulkapps-tooltip.tooltip-left-pos{
+  display: none !important;
+  @media(min-width: 768px){
+    display: block !important;
   }
 }
