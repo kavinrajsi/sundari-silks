@@ -9,7 +9,7 @@
 <div class="fixedElement section-{{ section.id }}-padding collectionGridThree">
   <section>
     {% paginate collection.products by 24 %}
-    <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="3" collection-list-desktop="3">
+    <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="4" collection-list-desktop="4">
       {% for product in collection.products %}
       {% render 'collectiondata', product: product %}
       {% endfor %}
