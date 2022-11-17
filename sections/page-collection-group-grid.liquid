@@ -24,21 +24,21 @@
     "@context":"https://schema.org",
     "@type":"ItemList",
     "itemListElement":[
-    {% for product in collection.products limit: 10 %}
+    {% for product in collection.products limit: 9 %}
     {
       "@type":"ListItem",
       "position": {{ forloop.index }},
       "name": "{{ product.title }}",
       "url":"{{ shop.secure_url}}{{ product.url}}"
     },
-    {% if forloop.last %}
-      {
-        "@type":"ListItem",
-        "position": {{ forloop.index }},
-        "name": "{{ product.title }}",
-        "url":"{{ shop.secure_url}}{{ product.url}}"
-      }
-    {% endif %}
+    {% endfor %}
+    {% for product in collection.products limit: 1 offset: continue%}
+    {
+      "@type":"ListItem",
+      "position": 10,
+      "name": "{{ product.title }}",
+      "url":"{{ shop.secure_url}}{{ product.url}}"
+    }
     {% endfor %}
     ]
   }
