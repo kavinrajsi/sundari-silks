@@ -195,11 +195,11 @@
       dataCircleValue = $(this).val();
       dataCircle = $(this).attr("data-circle");
       dataVariantPrice = $(this).attr("data-VariantPrice");
-      console.log(dataVariantPrice);
-      $('.product-price').html('<span class="money" data-currency-inr="'+ dataVariantPrice +'">'+ dataVariantPrice +'</span>');
 
       if (dataCircle == optionSelect) {
         $(".jselecteValue").val(dataCircleValue);
+        console.log(dataVariantPrice);
+        $('.product-price').html('<span class="money" data-currency-inr="'+ dataVariantPrice +'">'+ dataVariantPrice +'</span>');
 
         $.getJSON("/cart.js", function (cart) {
           $.each(cart.items, function (index, cartItem) {
