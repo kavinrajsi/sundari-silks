@@ -103,6 +103,7 @@
         // max-height: 230px;
         overflow-y: scroll;
         .filter-group-display__list {
+          border-left: 1px solid var(--color-border);
           li {
             label {
               display: block;
