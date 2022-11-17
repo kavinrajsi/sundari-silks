@@ -60,9 +60,9 @@
       }
       .filter-group {
         overflow: hidden;
-        flex: 1 0 50%;
-        max-width: 50%;
-        min-width: 50%;
+        flex: 1 0 40%;
+        max-width: 40%;
+        min-width: 40%;
         border-right: 1px solid var(--color-border);
         summary {
           cursor: pointer;
@@ -95,11 +95,11 @@
         }
       }
       .filter-group-display {
-        flex: 1 0 50%;
-        min-width: 50%;
+        flex: 1 0 60%;
+        min-width: 60%;
         position: absolute;
         top: 0;
-        left: 50%;
+        left: 40%;
         // max-height: 230px;
         overflow-y: scroll;
         .filter-group-display__list {
