@@ -667,15 +667,19 @@
 }
 
 .product-form__buttons {
+  position: initial;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   background: var(--color-white);
   padding: 0 8px;
+  z-index: 1;
+
   @media (min-width: 768px) {
     position: static;
     padding: 0;
+    z-index: initial;
     background-color: transparent;
   }
   .button-add-to-cart {
@@ -798,5 +802,13 @@
       border: 0;
       border-bottom: 1px solid #c3c2c9;
     }
+  }
+}
+
+
+.hulkapps-tooltip.tooltip-left-pos{
+  display: none !important;
+  @media(min-width: 768px){
+    display: block !important;
   }
 }

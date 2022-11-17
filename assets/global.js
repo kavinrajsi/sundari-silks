@@ -194,8 +194,12 @@
     $("#productSelect option").each(function () {
       dataCircleValue = $(this).val();
       dataCircle = $(this).attr("data-circle");
+      dataVariantPrice = $(this).attr("data-VariantPrice");
+
       if (dataCircle == optionSelect) {
         $(".jselecteValue").val(dataCircleValue);
+        console.log(dataVariantPrice);
+        $('.product-price').html('<span class="money" data-currency-inr="'+ dataVariantPrice +'">'+ dataVariantPrice +'</span>');
 
         $.getJSON("/cart.js", function (cart) {
           $.each(cart.items, function (index, cartItem) {
@@ -227,11 +231,7 @@
   });
   //
 
-  $("#productSelect").on("change", function () {
-    productPrice = $("#productSelect option:selected").val();
-    console.log(productPrice);
-    // productVariant = '{{product.selected_or_first_available_variant.title}}';
-  });
+
 
   $(".product-form__buttons .product-form__submit")
     .unbind()
