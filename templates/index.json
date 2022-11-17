@@ -368,6 +368,7 @@
       "blocks": {
         "a5609535-cb7a-4a74-be9b-65b247317692": {
           "type": "instagram-image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/insta-1.jpg",
             "link": "https:\/\/www.instagram.com\/p\/Ckuux7oyW6w\/"
@@ -375,6 +376,7 @@
         },
         "c9b9ece3-c055-4862-a8e7-e7f7d07eb85f": {
           "type": "instagram-image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/insta-2.jpg",
             "link": "https:\/\/www.instagram.com\/p\/CksAskoSXTW\/"
@@ -382,6 +384,7 @@
         },
         "eb85e280-6467-4c94-ba24-1c67614f9538": {
           "type": "instagram-image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/insta-3.jpg",
             "link": "https:\/\/www.instagram.com\/p\/CkpX7JiyBoT\/"
@@ -389,6 +392,7 @@
         },
         "3d96368b-be8a-4f43-8bec-34291e919c59": {
           "type": "instagram-image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/insta-4.jpg",
             "link": "https:\/\/www.instagram.com\/p\/Ckm0llZSzC5\/"
@@ -396,6 +400,7 @@
         },
         "c1918fec-48db-48ab-9952-a73830214706": {
           "type": "instagram-image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/insta-5.jpg",
             "link": "https:\/\/www.instagram.com\/p\/CkkOUIPS9JV\/"
@@ -403,6 +408,7 @@
         },
         "bc35ba83-726f-453f-9f7b-1da723646c48": {
           "type": "instagram-image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/insta-6.jpg",
             "link": "https:\/\/www.instagram.com\/p\/CkhqMo3LpFl\/"
@@ -421,6 +427,25 @@
         "instagram-title": "Follow us on Instagram",
         "instagram-description": "Use #SundariAndYou when you Instagram your favourite Sundari outfits"
       }
+    },
+    "16686779941b8008d1": {
+      "type": "apps",
+      "blocks": {
+        "26b91c2a-4bee-40d3-8ffd-d27fccd96b06": {
+          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "26b91c2a-4bee-40d3-8ffd-d27fccd96b06"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -433,6 +458,7 @@
     "dropped",
     "blog",
     "vs",
-    "instagram"
+    "instagram",
+    "16686779941b8008d1"
   ]
 }
