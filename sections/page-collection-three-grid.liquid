@@ -8,7 +8,7 @@
 {% render 'filter' %}
 <div class="fixedElement section-{{ section.id }}-padding collectionGridThree">
   <section>
-    {% paginate collection.products by 24 %}
+    {% paginate collection.products by 24 | sort: 'available' %}
     <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="4" collection-list-desktop="4">
       {% for product in collection.products %}
       {% render 'collectiondata', product: product %}
