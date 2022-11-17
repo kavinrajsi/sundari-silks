@@ -33,7 +33,7 @@
       "url":"{{ shop.secure_url}}{{ product.url}}"
     },
     {% endfor %}
-    {% for product in collection.products limit: 1 offset: continue%}
+    {% for product in collection.products limit: 1 offset: continue %}
     {
       "@type":"ListItem",
       "position": 10,
