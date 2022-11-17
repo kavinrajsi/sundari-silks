@@ -9,19 +9,11 @@
 {% render 'filter' %}
 
 <div class="fixedElement section-{{ section.id }}-padding">
-
-
-  <section hidden>
-    {% for product in collection.products %}
-    {{ product | json }}
-    {% endfor %}
-  </section>
   <section>
     {% paginate collection.products by 24 %}
     <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="3" collection-list-desktop="4">
       {% for product in collection.products limit: 28 %}
       {% render 'product-card', product: product %}
-      {%- endif -%}
       {% endfor %}
     </div>
     <div class="pagination--number">
@@ -43,7 +35,7 @@
       "url":"{{ shop.secure_url}}{{ product.url}}"
     },
     {% endfor %}
-    {% for product in collection.products limit: 1 offset: continue%}
+    {% for product in collection.products offset:2 limit: 1 %}
     {
       "@type":"ListItem",
       "position": 10,
