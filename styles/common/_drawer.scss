@@ -41,8 +41,6 @@
   transition: transform 0.3s;
   will-change: transform;
   background-color: #fff;
-  display: flex;
-  flex-direction: column;
   -webkit-transform: translateX(103%);
   transform: translateX(103%);
   -webkit-overflow-scrolling: touch;
@@ -79,10 +77,9 @@
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 204px);
   flex-grow: 1;
   padding: 16px;
-  padding-bottom: 114px;
   .cart-popup {
     a {
       display: block;
