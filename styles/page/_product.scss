@@ -675,9 +675,11 @@
   background: var(--color-white);
   padding: 0 8px;
   z-index: 1;
+
   @media (min-width: 768px) {
     position: static;
     padding: 0;
+    z-index: initial;
     background-color: transparent;
   }
   .button-add-to-cart {
