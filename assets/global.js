@@ -194,6 +194,9 @@
     $("#productSelect option").each(function () {
       dataCircleValue = $(this).val();
       dataCircle = $(this).attr("data-circle");
+      dataVariantPrice = $(this).attr("data-VariantPrice");
+      $('.product-price').html('<span class="money" data-currency-inr="'+ dataVariantPrice +'">'+ dataVariantPrice +'</span>');
+
       if (dataCircle == optionSelect) {
         $(".jselecteValue").val(dataCircleValue);
 
