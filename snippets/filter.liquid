@@ -73,10 +73,9 @@
         </path>
       </svg></button>
   </div>
-
   {% if customer and customer.tags contains 'admin' %}
   <div>
-    {{ collection.products_count }}
+    {{ collection.products_count }} products
   </div>
   {% endif %}
   <div class="filteAction">
