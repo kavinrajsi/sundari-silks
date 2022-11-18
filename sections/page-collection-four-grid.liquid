@@ -5,13 +5,13 @@
     {% endif %}
   </div>
 </div>
-
+{% paginate collection.products by 24 %}
 {% render 'filter' %}
 
 
 <div class="fixedElement section-{{ section.id }}-padding collectionGridFour">
   <section>
-    {% paginate collection.products by 24 %}
+
 
     {% if customer and customer.tags contains 'admin' %}
     <div>
@@ -41,9 +41,11 @@
     <div class="pagination--number">
       {{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
     </div>
-    {% endpaginate %}
   </section>
 </div>
+
+{% endpaginate %}
+
 <script type="application/ld+json">
   {
     "@context":"https://schema.org",
