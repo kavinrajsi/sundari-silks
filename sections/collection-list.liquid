@@ -1,9 +1,7 @@
 {% for collection in collections %}
 {% unless collection.metafields.custom.collection_secondary_image.value != blank %}
-<link rel="preload" as="image"
-  href="{{ collection.image.src | image_url: height: '450x' }}">
-<link rel="prefetch"
-  href="{{ collection.image.src | image_url: height: '450x' }}">
+<link rel="preload" as="image" href="{{ collection.image.src | image_url: height: '450x' }}">
+<link rel="prefetch" href="{{ collection.image.src | image_url: height: '450x' }}">
 {% endunless %}
 {% endfor %}
 
@@ -35,7 +33,7 @@
     {% endfor %}
   </ul>
   <div class="pagination--number">
-    {{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
+    {{ paginate | default_pagination: next: 'Next', previous: 'Previous' }}
   </div>
   {% endpaginate %}
 </div>

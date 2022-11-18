@@ -40,7 +40,8 @@
                 <span class="product__card--status-soldout">sold out</span>
                 {% endunless %}
                 {% if product.compare_at_price_max > product.price %}
-                <span class="product__card--status-soldout">  {{  product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | remove: '.0' | slice: 0, 2 }} % off </span>
+                <span class="product__card--status-soldout"> {{ product.compare_at_price_max | minus: product.price |
+                  times: 100.0 | divided_by: product.compare_at_price_max | remove: '.0' | slice: 0, 2 }} % off </span>
                 {% endif %}
               </div>
             </div>
@@ -54,7 +55,8 @@
             <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
             <div class="product__variant--price">
               {% if product.price_varies %}
-              <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency }}</p>
+              <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency }}
+              </p>
               {% else %}
               <p>
                 {% if product.compare_at_price_max > product.price %}
@@ -74,18 +76,18 @@
             </div>
             {% endif %}
 
-              {% if product.variants.size > 1 %}
-              <div class="product__variant--list" hidden>
-                <span class="product__variant--list-title">
-                  {{product.options }} :
-                </span>
-                {% for variant in product.variants %}
-                {% if variant.inventory_quantity == 0 %} <s>  {% endif %}
+            {% if product.variants.size > 1 %}
+            <div class="product__variant--list" hidden>
+              <span class="product__variant--list-title">
+                {{product.options }} :
+              </span>
+              {% for variant in product.variants %}
+              {% if variant.inventory_quantity == 0 %} <s> {% endif %}
                 <span class="product__variant--list-name"> {{ variant.title }} </span>
-                {% if variant.inventory_quantity == 0 %} </s>  {% endif %}
-                {% endfor %}
-              </div>
-              {% endif %}
+                {% if variant.inventory_quantity == 0 %} </s> {% endif %}
+              {% endfor %}
+            </div>
+            {% endif %}
           </a>
         </div>
       </div>
@@ -94,36 +96,36 @@
       {% endfor %}
     </div>
     <div class="pagination--number">
-      {{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
+      {{ paginate | default_pagination: next: 'Older', previous: 'Next' }}
     </div>
     {% endpaginate %}
   </section>
 </div>
 <script>
   function modifyLink(link) {
-      if (link.tagName !== 'a') return;
+    if (link.tagName !== 'a') return;
 
-      const url = new URL(link.href);
-      if (!url.searchParams.has("filter.v.availability")) {
-          url.searchParams.append("filter.v.availability", "1");
-          link.href = url.href;
-      }
+    const url = new URL(link.href);
+    if (!url.searchParams.has("filter.v.availability")) {
+      url.searchParams.append("filter.v.availability", "1");
+      link.href = url.href;
+    }
   }
 
   function setAvailabilityFilterInCollectionLinks() {
-      const selectorStr = "header a[href*='/collections/'], .drawer a[href*='/collections/']"; // you can change this selector based on your theme structure
-      selectorStr.split(',').forEach((selector) => {
-          const selectorTrimmed = selector.trim();
-          if (selectorTrimmed) {
-              document.querySelectorAll(selectorTrimmed).forEach(modifyLink);
-          }
-      });
+    const selectorStr = "header a[href*='/collections/'], .drawer a[href*='/collections/']"; // you can change this selector based on your theme structure
+    selectorStr.split(',').forEach((selector) => {
+      const selectorTrimmed = selector.trim();
+      if (selectorTrimmed) {
+        document.querySelectorAll(selectorTrimmed).forEach(modifyLink);
+      }
+    });
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-      setAvailabilityFilterInCollectionLinks();
+    setAvailabilityFilterInCollectionLinks();
   });
-  </script>
+</script>
 <script type="application/ld+json">
   {
     "@context":"https://schema.org",
