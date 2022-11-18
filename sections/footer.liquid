@@ -5,7 +5,8 @@
         {% if section.settings.logo != blank %}
         {% assign logo_alt = section.settings.logo.alt | default: shop.name | escape %}
         {% assign logo_height = section.settings.logo_width | divided_by: section.settings.logo.aspect_ratio %}
-        <img loading="lazy" src="{{ section.settings.logo.src | image_url: width: 172, height: 38, format: 'pjpg' }}" alt="{{ logo_alt }}">
+        <img loading="lazy" src="{{ section.settings.logo.src | image_url: width: 172, height: 38, format: 'pjpg' }}"
+          alt="{{ logo_alt }}">
         {% endif %}
       </a>
     </div>
@@ -19,16 +20,7 @@
           <ul class="menu dropdown-child">
             {% for child_link in link.links %}
             <li class="menu-link">
-              <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-              {% if child_link.links.size > 0 %}
-              <ul class="menu dropdown-grandchild">
-                {% for grandchild_link in child_link.links %}
-                <li class="menu-link">
-                  <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
-                </li>
-                {% endfor %}
-              </ul>
-              {% endif %}
+              <a href="{{ child_link.url }}?filter.v.availability=1">{{ child_link.title }}</a>
             </li>
             {% endfor %}
           </ul>
@@ -139,24 +131,24 @@
 
 {% schema %}
 {
-  "name": "Footer",
-  "class": "section-header",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Footer logo"
-    },
-    {
-      "type": "range",
-      "id": "logo_width",
-      "min": 50,
-      "max": 250,
-      "step": 10,
-      "default": 100,
-      "unit": "px",
-      "label": "Custom logo width"
-    }
-  ]
+"name": "Footer",
+"class": "section-header",
+"settings": [
+{
+"type": "image_picker",
+"id": "logo",
+"label": "Footer logo"
+},
+{
+"type": "range",
+"id": "logo_width",
+"min": 50,
+"max": 250,
+"step": 10,
+"default": 100,
+"unit": "px",
+"label": "Custom logo width"
+}
+]
 }
 {% endschema %}
