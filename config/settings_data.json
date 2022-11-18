@@ -37,6 +37,7 @@
     "social_instagram_link": "https:\/\/www.instagram.com\/sundari_silks\/",
     "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCQFej6I3rSymWTFkaKs0ngQ",
     "checkout_logo_image": "shopify:\/\/shop_images\/sundari-silks-512.png",
+    "checkout_logo_size": "large",
     "checkout_accent_color": "#90181b",
     "checkout_button_color": "#90181b",
     "mlvedaACS_roundDecimal": false,
