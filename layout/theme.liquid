@@ -187,12 +187,12 @@ assign body_font = settings.type_body
   </script>
   {% include 'hulk_po_vd.liquid' %}
   <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
     })(window, document, "clarity", "script", "6d9waakfsv");
-</script>
+  </script>
 </head>
 
 <body class="template-{{ template | split : '.' | first }}">
@@ -430,6 +430,15 @@ assign body_font = settings.type_body
   <script defer src="{{ 'drawer.js' | asset_url }}"></script>
   <script defer src="{{ 'quick-view-main.js' | asset_url }}"></script>
   {% if template contains 'collection' %}
+  <script>
+    let url = window.location.href;
+    if (url.includes('?')) {
+      console.log('Parameterised URL');
+    } else {
+      window.location.href += "?filter.v.availability=1";
+      console.log('No Parameters in URL');
+    }
+  </script>
   <script defer src="{{ 'filter.js' | asset_url }}"></script>
   {% endif %}
   {% if template contains 'product' %}
