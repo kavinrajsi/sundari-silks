@@ -126,7 +126,8 @@
       {%- endif -%}
       {%- else -%}
       {%- for filter_value in filter.active_values -%}
-      <a class="active-filters__remove-filter" href="{{ filter_value.url_to_remove }}">
+      <a class="active-filters__remove-filter" href="{{ filter_value.url_to_remove }}"
+        data-FitlerMe="{{ filter.label }}">
         {{ filter.label }}: {{ filter_value.label }}
         <span class="iconClose"> X </span>
       </a>
