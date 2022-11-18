@@ -13,7 +13,7 @@
     {%- when 'product' -%}
     {%- if collection.url -%}
     <li class="breadcrumbs__item">
-      {{ collection.title | link_to: collection.url }}
+      {{ collection.title | link_to: collection.url }}?filter.v.availability=1
     </li>
     {%- endif -%}
     <li class="breadcrumbs__item">
@@ -22,7 +22,7 @@
     {%- when 'collection' and collection.handle -%}
     {%- if current_tags -%}
     <li class="breadcrumbs__item">
-      {{ collection.title | link_to: collection.url }}
+      {{ collection.title | link_to: collection.url }}?filter.v.availability=1
     </li>
     <li class="breadcrumbs__item">
       {%- capture tag_url -%}{{ collection.url }}/{{ current_tags | join: "+"}}{%- endcapture -%}
