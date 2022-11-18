@@ -14,7 +14,7 @@
         {%- for filter in collection.filters -%}
         <details class="filter-group">
           <summary class="filter-group-summary">
-            {% if filter.label == "Price" %}
+            {% if filter.label == "Price" or "Availability" %}
             {% else %}
             <div>
               <span>{{ filter.label }}</span>
