@@ -365,6 +365,7 @@
   left: 0;
   right: 0;
   max-height: 56px;
+  overflow: hidden;
   @include z-index(meFilter);
   &.sticky {
     position: fixed;

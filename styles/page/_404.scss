@@ -2,13 +2,24 @@
   padding-top: 4vw;
   padding-bottom: 4vw;
 
-  display: grid;
-  gap: var(--Ngap);
+  // display: grid;
+  // gap: var(--Ngap);
+  // padding-left: var(--Ngap);
+  // padding-right: var(--Ngap);
+  // @media (min-width: 1364px) {
+  //   padding-left: 60px;
+  //   padding-right: 60px;
+  // }
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 0 auto var(--home-section-space);
   padding-left: var(--Ngap);
   padding-right: var(--Ngap);
   @media (min-width: 1364px) {
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 248px;
+    padding-right: 248px;
   }
 
   text-align: center;
@@ -29,9 +40,16 @@
     font-family: "Playfair Display", serif;
     font-weight: 500;
     font-size: var(--home-section-title);
+
+    font-weight: 500;
+    font-size: 28px;
+    margin-bottom: 12px;
+
+    margin-bottom: 28px;
   }
   .page__description {
     p {
+      text-align: center;
       margin-top: 0;
       margin-bottom: 24px;
       font-size: 16px;
