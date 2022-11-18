@@ -74,6 +74,11 @@
       </svg></button>
   </div>
 
+  {% if customer and customer.tags contains 'admin' %}
+  <div>
+    {{ collection.products_count }}
+  </div>
+  {% endif %}
   <div class="filteAction">
     <div id="filterButton">
 
