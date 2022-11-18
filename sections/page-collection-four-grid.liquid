@@ -5,36 +5,12 @@
     {% endif %}
   </div>
 </div>
-{% paginate collection.products by 24 %}
-{% render 'filter' %}
 
+{% render 'filter' %}
 
 <div class="fixedElement section-{{ section.id }}-padding collectionGridFour">
   <section>
-
-
-    {% if customer and customer.tags contains 'admin' %}
-    <div>
-      {% if paginate.next.is_link %}
-      if Showing products {{ paginate.current_offset | plus: 1 }} - {{ paginate.current_offset | plus:
-      paginate.page_size
-      }}
-      of {{ collection.all_products_count }}
-      {% else %}
-      {% capture itemsOnCurrentPage %}
-      {{ collection.all_products_count | minus: paginate.current_offset }}
-      {% endcapture %}
-      eise Showing products {{ paginate.current_offset | plus: 1 }} - {{ paginate.current_offset | plus:
-      itemsOnCurrentPage
-      }}
-      of {{ collection.all_products_count }}
-      {% endif %}
-      {%- comment -%}
-      {{ collection.products_count }} products
-      {%- endcomment -%}
-    </div>
-    {% endif %}
-
+    {% paginate collection.products by 24 %}
     <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="3" collection-list-desktop="4">
       {% for product in collection.products limit: 28 %}
       {% render 'product-card', product: product %}
@@ -43,11 +19,9 @@
     <div class="pagination--number">
       {{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
     </div>
+    {% endpaginate %}
   </section>
 </div>
-
-{% endpaginate %}
-
 <script type="application/ld+json">
   {
     "@context":"https://schema.org",
