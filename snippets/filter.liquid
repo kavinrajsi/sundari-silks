@@ -75,19 +75,7 @@
   </div>
   {% if customer and customer.tags contains 'admin' %}
   <div>
-    {% if paginate.next.is_link %}
-    Showing products {{ paginate.current_offset | plus: 1 }} - {{ paginate.current_offset | plus: paginate.page_size }}
-    of {{ collection.all_products_count }}
-    {% else %}
-    {% capture itemsOnCurrentPage %}
-    {{ collection.all_products_count | minus: paginate.current_offset }}
-    {% endcapture %}
-    Showing products {{ paginate.current_offset | plus: 1 }} - {{ paginate.current_offset | plus: itemsOnCurrentPage }}
-    of {{ collection.all_products_count }}
-    {% endif %}
-    {%- comment -%}
     {{ collection.products_count }} products
-    {%- endcomment -%}
   </div>
   {% endif %}
   <div class="filteAction">
