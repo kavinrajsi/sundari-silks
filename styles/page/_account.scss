@@ -1,6 +1,15 @@
 .customer-account {
-  margin: 0 auto 48px;
-  padding: 0 48px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 0 auto var(--home-section-space);
+  padding-left: var(--Ngap);
+  padding-right: var(--Ngap);
+  @media (min-width: 1364px) {
+    padding-left: 248px;
+    padding-right: 248px;
+  }
+
   .customer-account-title {
     h2 {
       font-weight: 500;
