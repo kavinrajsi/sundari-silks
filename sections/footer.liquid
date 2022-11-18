@@ -15,16 +15,7 @@
       <ul class="menu">
         {% for link in linklists.shop.links %}
         <li class="menu-link">
-          <a href="{{ link.url }}">{{ link.title }}</a>
-          {% if link.links.size > 0 %}
-          <ul class="menu dropdown-child">
-            {% for child_link in link.links %}
-            <li class="menu-link">
-              <a href="{{ child_link.url }}?filter.v.availability=1">{{ child_link.title }}</a>
-            </li>
-            {% endfor %}
-          </ul>
-          {% endif %}
+          <a href="{{ link.url }}?filter.v.availability=1">{{ link.title }}</a>
         </li>
         {% endfor %}
       </ul>
