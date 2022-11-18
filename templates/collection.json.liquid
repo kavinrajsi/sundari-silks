@@ -1,0 +1,17 @@
+{%- layout none -%}
+
+{
+  "product": [
+    {%- for product in collection.products -%}
+    {%- if product.available -%}
+      {
+        "title" : "{{ product.title }}",
+        "image" : "{{ product.featured_image.src }}",
+        "price" : "{{ product.price }}",
+        "availability" : "true"
+      },
+
+      {%- endif -%}
+    {%- endfor -%}
+  ]
+}

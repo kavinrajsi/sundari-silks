@@ -1,0 +1,27 @@
+{% layout none %}
+<div id="app">
+
+</div>
+
+<script src="https://unpkg.org/vue@next"></script>
+<script>
+  const options = {
+    name: "colleciton app",
+    data() {
+      return {
+        collection: null
+      }
+    },
+    methods: {
+      grabCollection() {
+        fetch('http://127.0.0.1:9292/collections/{{collection.handle}}?view=json')
+          .then(response => response.json())
+          .then(data => this.collection = data);
+      }
+    },
+    mounted() {
+      this.grabCollection();
+    }
+  }
+  const CollecitonApp = Vue.createApp(options).mount('#app');
+</script>
