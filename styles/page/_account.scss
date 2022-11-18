@@ -23,8 +23,11 @@
   }
   .customer-account-detail {
     display: grid;
-    gap: 48px;
-    grid-template-columns: repeat(2, 1fr);
+    gap: var(--Ngap);
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
     h2 {
       font-size: 18px;
       font-weight: 500;
@@ -122,4 +125,8 @@
       padding-top: 8px;
     }
   }
+}
+
+.customer-account-address{
+  display:  none;
 }
