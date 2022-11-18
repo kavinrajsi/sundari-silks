@@ -90,11 +90,15 @@
   }
 }
 
-
-.address-list{
+.address-list {
   display: flex;
   justify-content: space-between;
-  gap: 24px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+  gap: var(--Ngap);
   margin: 0 auto var(--home-section-space);
   padding-left: var(--Ngap);
   padding-right: var(--Ngap);
@@ -102,17 +106,17 @@
     padding-left: 248px;
     padding-right: 248px;
   }
-  address{
+  address {
     background-color: #fff;
     border-bottom: 1px solid #d5d9d9;
-    margin-bottom: 24px;
     border-radius: 8px;
     box-shadow: 0 3px 6px #00000029;
     padding: 18px;
-    // min-width: 25%;
-    // width: 25%;
-    flex: 1 0 25%;
-    .address-delete-form{
+    flex: 1 0 100%;
+    @media (min-width: 768px) {
+      flex: 1 0 25%;
+    }
+    .address-delete-form {
       border-top: 1px solid var(--color-border);
       margin-top: 8px;
       padding-top: 8px;
