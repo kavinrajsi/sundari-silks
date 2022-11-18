@@ -343,6 +343,9 @@
   }
   .active-filters__remove-filter {
     display: inline-block;
+    &[data-FitlerMe="availability"]{
+      display: none !important;
+    }
   }
   .active-filters__clear {
     display: none;
