@@ -134,7 +134,8 @@
       {%- endfor -%}
       {%- endif- %}
       {%- endfor -%}
-      <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}" class="active-filters__clear">Clear all</a>
+      <a href="{{ collection.url }}?filter.v.availability=1&sort_by={{ collection.sort_by }}"
+        class="active-filters__clear">Clear all</a>
     </div>
   </form>
 </div>
