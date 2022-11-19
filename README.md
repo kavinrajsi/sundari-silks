@@ -26,8 +26,6 @@
 
 ## Developer tools
 
----
-
 ### Shopify CLI
 
 [Shopify CLI](https://github.com/Shopify/shopify-cli) helps you build Shopify themes faster and is used to automate and enhance your local development workflow. It comes bundled with a suite of commands for developing Shopify themes—everything from working with themes on a Shopify store (e.g. creating, publishing, deleting themes) or launching a development server for local theme development.
@@ -41,4 +39,4 @@ You can follow this [quick start guide for theme developers](https://github.com/
 
 ## Documentation, FAQs, and More
 
-If you’re interested in writing any documentation or creating tutorials please [let me know](mailto:sikavinraj@gmail.com){:target="_blank"}.
+If you’re interested in writing any documentation or creating tutorials please [let me know](mailto:sikavinraj@gmail.com)
