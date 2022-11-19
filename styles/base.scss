@@ -1,5 +1,3 @@
-// @import "interpolate";
-
 @import "reset";
 
 @import "common/common";
@@ -31,7 +29,6 @@ iframe#dummy-chat-button-iframe {
   }
 }
 
-
 .d-none {
   display: none !important;
 }
@@ -39,8 +36,6 @@ iframe#dummy-chat-button-iframe {
 .d-block {
   display: block !important;
 }
-
-
 
 /**
  * EasyZoom core styles
