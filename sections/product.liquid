@@ -282,10 +282,12 @@
       </div>
     </div>
     {% if product.metafields.my_fields.product_information %}
+    {% if product.metafields.my_fields.product_custom_description != blank %}
     <h2 class="product-title-secondary">Description</h2>
     <div class="product-description-old" style="padding-bottom: 16px;">
       {{product.metafields.my_fields.product_custom_description}}
     </div>
+    {% endif %}
     <h2 class="product-title-secondary"> Specification </h2>
     <div class="product-description-old">
       {{product.metafields.my_fields.product_information}}
