@@ -426,18 +426,23 @@
       background-color: #fff;
       border-radius: var(--border-radius);
       box-shadow: 0 0 1.5em rgba(0%, 0%, 0%, 0.35);
+      height: 100vh;
       max-width: 820px;
       top: 0;
       @media (min-width: 768px) {
+        justify-content: flex-start;
         top: calc(50% - 233px);
         min-width: 520px;
+        top: 0px;
+        left: initial;
+        right: 0;
       }
     }
 
     .modal-header,
     .modal-content {
       padding: 1em;
-      flex: 1 0 100%;
+      // flex: 1 0 100%;
       min-width: 100%;
     }
 
