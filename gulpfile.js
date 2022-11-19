@@ -8,7 +8,7 @@ gulp.task('style', function(){
   return gulp.src('styles/*.scss')
     .pipe(sass({outputStyle: 'compressed'}))
     .pipe(autoprefixer())
-    .pipe(gulp.dest('asset'));
+    .pipe(gulp.dest('assets'));
 });
 
 gulp.task('watch', function(){
