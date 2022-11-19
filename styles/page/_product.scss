@@ -442,9 +442,11 @@
         flex-direction: row;
       }
       .size-data {
+        overflow-x: scroll;
         padding-bottom: 8px;
         border-bottom: 1px solid var(--color-border);
         @media (min-width: 768px) {
+          overflow-x: hidden;
           flex: 1 0 50%;
           border-right: 1px solid var(--color-border);
           padding-right: 8px;
