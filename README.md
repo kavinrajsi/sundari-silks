@@ -11,7 +11,7 @@
   git remote -v
   ```
 
-- If you don't see an `upstream`, you can add one that points to Shopify's Dawn repository:
+- If you don't see an `upstream`, you can add one that points to boomer repository:
 
   ```sh
   git remote add upstream https://github.com/kavinrajsi/boomer
