@@ -270,56 +270,7 @@
         <div class="modal-body">
           <div class="modal-content">
             <div class="size-data">
-              {% assign suppliers = product.metafields.custom.size_chart.value %}
-              {% for supplier in suppliers %}
-              <h2 class="sizeChatTitle">{{supplier.type}}</h2>
-              <div class="sizeChart">
-                <div class="sizeChartLable">
-                  <table>
-                    <tr>
-                      <td>
-                        year
-                      </td>
-                      <td>
-                        size
-                      </td>
-                      <td>
-                        shoulder
-                      </td>
-                      <td>
-                        sleeves
-                      </td>
-                      <td>
-                        chest
-                      </td>
-                      <td>
-                        height
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-                <div class="sizeChartValue">
-                  {% for dfdf in supplier.value %}
-                  <!-- {{ dfdf | json }} -->
-                  {{ dfdf[0] }}
-                  {% endfor %}
-                  <table>
-                    {% for dfdf in supplier.value %}
-                    <tr>
-                      {% for ddf in dfdf.value %}
-                      <td> {{ dfdf.age }}</td>
-                      <td>{{ ddf.size }}</td>
-                      <td> {{ ddf.shoulder }}</td>
-                      <td> {{ ddf.sleeves }}</td>
-                      <td> {{ ddf.chest }}</td>
-                      <td> {{ ddf.height }}</td>
-                      {% endfor %}
-                    </tr>
-                    {% endfor %}
-                  </table>
-                </div>
-              </div>
-              {% endfor %}
+              {{ product.content | strip_html }}
             </div>
             <div class="size-data-image">
               <img width="538" height="538" loading="lazy"
