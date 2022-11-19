@@ -1,15 +1,16 @@
 {
-  "name": "Default 404 template",
   "sections": {
     "main": {
-      "type": "main-404"
-    },
-    "recommendations": {
-      "type": "resent-product-list"
+      "type": "main-404",
+      "settings": {
+        "no-found-title": "Sorry! There’s been an error",
+        "not-found-content": "Vanakkam, this page does not exist. The URL entered is either invalid or does not exist anymore. You can always search the homepage to find what you’re looking for!",
+        "not-found-cta": "Go to the Homepage",
+        "not-found-url": "shopify:\/\/collections\/all"
+      }
     }
   },
   "order": [
-    "main",
-    "recommendations"
+    "main"
   ]
 }
