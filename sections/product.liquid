@@ -14,8 +14,6 @@
 {% endif %}
 {% endfor %}
 
-
-
 {% for product_image in product.images %}
 <link rel="preload" as="image" href="{{ product_image.src | image_url }}">
 <link rel="prefetch" href="{{ product_image.src | image_url }}">
