@@ -42,6 +42,14 @@
             "mobile_image": "shopify:\/\/shop_images\/conversations-with-sundari-patrons-ft-srekala-bharath-banner-mobile_ffbcf83e-5e44-4132-b0d9-a736fa1a9a5d.png",
             "link": "shopify:\/\/blogs\/article\/conversations-with-sundari-patrons-ft-srekala-bharath"
           }
+        },
+        "5cd59610-c2b0-470a-8ce5-780b7df44578": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Monsoon_-_Web_Banner.png",
+            "mobile_image": "shopify:\/\/shop_images\/MOBILE_BANNER_1.png",
+            "link": "shopify:\/\/collections\/manvasanai-collection"
+          }
         }
       },
       "block_order": [
@@ -49,7 +57,8 @@
         "e9a6b9e8-f03a-4387-8e80-17b7bcd09ace",
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b",
         "3fbd7fec-f97f-434e-9f56-1ddc4581978e",
-        "bed9709b-8de2-4214-8e93-8253620cb5e1"
+        "bed9709b-8de2-4214-8e93-8253620cb5e1",
+        "5cd59610-c2b0-470a-8ce5-780b7df44578"
       ],
       "settings": {
         "layout": "full_bleed",
