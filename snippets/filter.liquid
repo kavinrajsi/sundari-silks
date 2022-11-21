@@ -169,6 +169,7 @@
 
   // Preserve existing query parameters
   if (location.search.length) {
+    console.log(location.search.length);
     var params = location.search.substr(1).split('&');
     console.log(params);
     for (var i = 0; i < params.length; i++) {
