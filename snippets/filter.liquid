@@ -191,6 +191,9 @@
       console.log(value);
       Shopify.queryParams.sort_by = value;
       location.search = new URLSearchParams(Shopify.queryParams).toString();
+      console.log(new URLSearchParams(Shopify.queryParams).toString());
+      console.log(new URLSearchParams(Shopify.queryParams).search());
+      console.log(new URL(Shopify.queryParams).search());
       console.log(location.search);
     });
 
