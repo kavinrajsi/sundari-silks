@@ -17,8 +17,11 @@
         {{ collection.image | image_url }} {{ collection.image.width }}w"
       src="{{ collection.image | image_url: width: 750 }}" alt="" width="{{ collection.image.width }}"
       height="{{ collection.image.height }}">
-    {{ collection | image_url: height: '340x', format: 'pjpg' | image_tag : alt: collection.image.alt, class:
-    'image-radius' }}
+
+    {%- comment -%} {{ collection | image_url: height: '340x', format: 'pjpg' | image_tag : alt: collection.image.alt,
+    class:
+    'image-radius' }} {%- endcomment -%}
+
   </div>
   <div class="collection-page-title">
     <h1>{{ collection.title }}</h1>
