@@ -14,10 +14,10 @@
     &-image {
       overflow: hidden;
       margin-bottom: 8px;
-      height: 142px;
+      // height: 142px;
       @media (min-width: 768px) {
         margin-bottom: 16px;
-        height: 280px;
+        // height: 280px;
       }
       img {
         width: auto;
