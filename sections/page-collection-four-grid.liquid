@@ -1,5 +1,5 @@
 <div class="collection-page-header">
-  <div class="collection-page-title">
+  <div class="collection-page-title {% if customer and customer.tags contains 'admin' %} d-none {% endif %}">
     {% if collection.title != blank %}
     <h1>{{ collection.title }}</h1>
     {% endif %}
