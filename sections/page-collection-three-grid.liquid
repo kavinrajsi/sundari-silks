@@ -7,22 +7,16 @@
 
 
   {% if customer and customer.tags contains 'admin' %}
-  {% if collection.description != blank %}
   <div class="collection-page-header-image text-center image-radius">
     {{ collection | image_url: height: '340x', format: 'pjpg' | image_tag : alt: collection.image.alt, class:
     'image-radius' }}
   </div>
-  {% else %}
   <div class="collection-page-title">
-    {% if collection.title != blank %}
     <h1>{{ collection.title }}</h1>
-    {% endif %}
   </div>
-  {% if collection.description != blank %}
   <div class="collection-page-description">
     <p>{{ collection.description }}</p>
   </div>
-  {% endif %}
   {% endif %}
 </div>
 {% render 'filter' %}
