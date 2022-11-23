@@ -3,38 +3,38 @@
   <div class="header-container">
     <div class="header-action-list">
       <div style="display: flex; align-items: center;">
-      <div style="margin-right: 8px;" class="header-menu">
-        <div class="cd-nav-trigger">
-          <svg width="24" height="24" class="burgerMenu active">
-            <use href="#menu" />
-          </svg>
-          <svg width="24" height="24" class="closeMenu">
-            <use href="#close" />
-          </svg>
+        <div style="margin-right: 8px;" class="header-menu">
+          <div class="cd-nav-trigger">
+            <svg width="24" height="24" class="burgerMenu active">
+              <use href="#menu" />
+            </svg>
+            <svg width="24" height="24" class="closeMenu">
+              <use href="#close" />
+            </svg>
+          </div>
         </div>
-      </div>
-      {% if request.page_type == 'index' %}
-      <h1 class="header-logo header__heading" itemscope itemtype="http://schema.org/Organization">
-        {% endif %}
-        <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset" itemprop="url">
-          {% if section.settings.logo != blank %}
-          {% assign logo_alt = section.settings.logo.alt | default: shop.name | escape %}
-          {% assign logo_height = section.settings.logo_width | divided_by: section.settings.logo.aspect_ratio %}
-          {{ section.settings.logo | image_url: width: section.settings.width, format: 'pjpg' | image_tag:
-          class: 'header__heading-logo',
-          widths: '50, 100, 150, 200, 250, 300, 400, 500',
-          height: logo_height,
-          width: section.settings.logo_width,
-          alt: logo_alt
-          }}
-          {% else %}
-          <span class="h2">{{ shop.name }}</span>
-          {% endif %}
-        </a>
         {% if request.page_type == 'index' %}
-      </h1>
-      {% endif %}
-    </div>
+        <h1 class="header-logo header__heading" itemscope itemtype="http://schema.org/Organization">
+          {% endif %}
+          <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset" itemprop="url">
+            {% if section.settings.logo != blank %}
+            {% assign logo_alt = section.settings.logo.alt | default: shop.name | escape %}
+            {% assign logo_height = section.settings.logo_width | divided_by: section.settings.logo.aspect_ratio %}
+            {{ section.settings.logo | image_url: width: section.settings.width, format: 'pjpg' | image_tag:
+            class: 'header__heading-logo',
+            widths: '50, 100, 150, 200, 250, 300, 400, 500',
+            height: logo_height,
+            width: section.settings.logo_width,
+            alt: logo_alt
+            }}
+            {% else %}
+            <span class="h2">{{ shop.name }}</span>
+            {% endif %}
+          </a>
+          {% if request.page_type == 'index' %}
+        </h1>
+        {% endif %}
+      </div>
       <div class="header-action-lists">
         <div class="header-search">
           <svg width="24" height="24">
@@ -48,18 +48,17 @@
         </div>
         <div class="header-cart">
           <!-- <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart" id="cart-icon-bubble" data-drawer-trigger aria-controls="drawer-name" aria-expanded="false"> -->
-          <a title="cart" href="#" class="site-header__icon site-header__cart" id="cart-icon-bubble" data-drawer-trigger aria-controls="drawer-name" aria-expanded="false">
+          <a title="cart" href="#" class="site-header__icon site-header__cart" id="cart-icon-bubble" data-drawer-trigger
+            aria-controls="drawer-name" aria-expanded="false">
             <svg width="24" height="24">
               <use xlink:href="#bag" />
             </svg>
 
-            <div class="cart-count" {% if cart.item_count == 0 %} hidden  {% endif %}>
-              {% if cart.item_count < 100 %}
-              <span aria-hidden="true">{{ cart.item_count }}</span>
-              <!-- <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span> -->
+            <div class="cart-count" {% if cart.item_count==0 %} hidden {% endif %}>
+              {% if cart.item_count < 100 %} <span aria-hidden="true">{{ cart.item_count }}</span>
+                <!-- <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span> -->
                 {% endif %}
             </div>
-
           </a>
         </div>
         <div class="header-account">
@@ -73,7 +72,7 @@
           {% endif %}
         </div>
         <div class="header-currency-price-list">
-         <span class="default-currency"> INR</span>
+          <span class="default-currency"> INR</span>
         </div>
       </div>
     </div>
@@ -81,26 +80,30 @@
   <!-- mobile navigation -->
   <nav class="header-nav-list-footer">
     <div class="header-home">
-    <a href="{{ routes.root_url }}">
-      <svg width="24" height="24">
-        <use href="#home" />
-      </svg>
-      <span>Home</span>
-    </a>
+      <a href="{{ routes.root_url }}">
+        <svg width="24" height="24">
+          <use href="#home" />
+        </svg>
+        <span>Home</span>
+      </a>
     </div>
     <div class="header-wishlist" style="display: none;">
       <a href="/collections" class="collection-grid-item__link">
-      <svg width="24" height="24">
-        <use href="#grid" />
-      </svg>
-      <span>Categories</span>
-    </a>
+        <svg width="24" height="24">
+          <use href="#grid" />
+        </svg>
+        <span>Categories</span>
+      </a>
     </div>
     <div class="header-price">
       <svg xmlns="http://www.w3.org/2000/svg" width="19.351" height="16.779" viewBox="0 0 19.351 16.779">
         <g id="currency" transform="translate(-1210.896 -114.8)">
-          <path id="Path_42" data-name="Path 42" d="M24.519,22.424a10.621,10.621,0,0,0-4.475.887c-1.125.539-1.889,1.31-1.931,2.221,0,.008-.008.008-.008.017v.008a.161.161,0,0,0-.008.066V33.5c0,.945.781,1.741,1.94,2.3a10.687,10.687,0,0,0,4.484.887,12.45,12.45,0,0,0,1.881-.141,5.981,5.981,0,1,0,4.669-9.723h-.143v-1.2a.176.176,0,0,0,0-.066v-.017c-.008,0-.008-.008-.008-.017a2.923,2.923,0,0,0-1.931-2.213,10.623,10.623,0,0,0-4.468-.887Zm0,.473a10.169,10.169,0,0,1,4.257.846c1.05.505,1.654,1.169,1.679,1.84v.041a1.836,1.836,0,0,1-.865,1.393c0,.008-.008,0-.008,0a6.129,6.129,0,0,0-1.973.92,11.409,11.409,0,0,1-3.09.415,10.1,10.1,0,0,1-4.274-.846c-1.008-.481-1.6-1.111-1.671-1.749v-.133c0-.025-.008-.041-.008-.058.034-.663.63-1.318,1.679-1.824a10.227,10.227,0,0,1,4.274-.846Zm5.936,3.937v.025H30.43l.025-.025Zm-11.881.009a4.172,4.172,0,0,0,1.469,1.094,10.618,10.618,0,0,0,4.475.887,11.911,11.911,0,0,0,2.292-.207,5.961,5.961,0,0,0-1.4,2.3c-.294.025-.6.042-.9.042a10.058,10.058,0,0,1-4.266-.846c-1.074-.514-1.671-1.194-1.671-1.882V26.842Zm12.494.456a5.521,5.521,0,1,1-5.5,5.521,5.509,5.509,0,0,1,5.5-5.521ZM18.574,29.453a4.2,4.2,0,0,0,1.461,1.086,10.623,10.623,0,0,0,4.475.879c.26,0,.5-.008.756-.025a6.145,6.145,0,0,0-.168,1.426,6.029,6.029,0,0,0,.059.878c-.21.017-.428.025-.647.025a10.182,10.182,0,0,1-4.266-.846c-1.074-.514-1.671-1.2-1.671-1.89V29.453Zm0,2.76A4.194,4.194,0,0,0,20.035,33.3a10.618,10.618,0,0,0,4.475.887c.252,0,.487,0,.73-.017a5.9,5.9,0,0,0,.848,1.948,11.983,11.983,0,0,1-1.57.108,10.1,10.1,0,0,1-4.274-.846c-1.074-.514-1.671-1.194-1.671-1.882V32.214Z" transform="translate(1193 92.576)" fill="#424a54" stroke="#424a54" stroke-width="0.4"></path>
-          <path id="Path_553" data-name="Path 553" d="M1.865,6.636H1.508l0-1.075a3.932,3.932,0,0,1-.75-.088A4.205,4.205,0,0,1,0,5.232V4.589a3.156,3.156,0,0,0,.738.345,2.663,2.663,0,0,0,.77.12V3.424A2.361,2.361,0,0,1,.359,2.988,1.053,1.053,0,0,1,0,2.144a1.149,1.149,0,0,1,.39-.918A1.871,1.871,0,0,1,1.508.84V0h.357V.83A4.957,4.957,0,0,1,2.509.9a4.606,4.606,0,0,1,.607.152v.626a3.084,3.084,0,0,0-.609-.232,3.008,3.008,0,0,0-.642-.1V2.873a2.428,2.428,0,0,1,1.193.447,1.087,1.087,0,0,1,.382.879,1.191,1.191,0,0,1-.406.953,1.968,1.968,0,0,1-1.17.4ZM1.508,2.809V1.344a1.135,1.135,0,0,0-.632.235.635.635,0,0,0-.218.5.6.6,0,0,0,.2.479,1.356,1.356,0,0,0,.648.246m.357.686V5.042a1.307,1.307,0,0,0,.684-.257.647.647,0,0,0,.231-.518.622.622,0,0,0-.22-.5,1.5,1.5,0,0,0-.7-.271" transform="translate(1222.501 122.208)" fill="#424a54"></path>
+          <path id="Path_42" data-name="Path 42"
+            d="M24.519,22.424a10.621,10.621,0,0,0-4.475.887c-1.125.539-1.889,1.31-1.931,2.221,0,.008-.008.008-.008.017v.008a.161.161,0,0,0-.008.066V33.5c0,.945.781,1.741,1.94,2.3a10.687,10.687,0,0,0,4.484.887,12.45,12.45,0,0,0,1.881-.141,5.981,5.981,0,1,0,4.669-9.723h-.143v-1.2a.176.176,0,0,0,0-.066v-.017c-.008,0-.008-.008-.008-.017a2.923,2.923,0,0,0-1.931-2.213,10.623,10.623,0,0,0-4.468-.887Zm0,.473a10.169,10.169,0,0,1,4.257.846c1.05.505,1.654,1.169,1.679,1.84v.041a1.836,1.836,0,0,1-.865,1.393c0,.008-.008,0-.008,0a6.129,6.129,0,0,0-1.973.92,11.409,11.409,0,0,1-3.09.415,10.1,10.1,0,0,1-4.274-.846c-1.008-.481-1.6-1.111-1.671-1.749v-.133c0-.025-.008-.041-.008-.058.034-.663.63-1.318,1.679-1.824a10.227,10.227,0,0,1,4.274-.846Zm5.936,3.937v.025H30.43l.025-.025Zm-11.881.009a4.172,4.172,0,0,0,1.469,1.094,10.618,10.618,0,0,0,4.475.887,11.911,11.911,0,0,0,2.292-.207,5.961,5.961,0,0,0-1.4,2.3c-.294.025-.6.042-.9.042a10.058,10.058,0,0,1-4.266-.846c-1.074-.514-1.671-1.194-1.671-1.882V26.842Zm12.494.456a5.521,5.521,0,1,1-5.5,5.521,5.509,5.509,0,0,1,5.5-5.521ZM18.574,29.453a4.2,4.2,0,0,0,1.461,1.086,10.623,10.623,0,0,0,4.475.879c.26,0,.5-.008.756-.025a6.145,6.145,0,0,0-.168,1.426,6.029,6.029,0,0,0,.059.878c-.21.017-.428.025-.647.025a10.182,10.182,0,0,1-4.266-.846c-1.074-.514-1.671-1.2-1.671-1.89V29.453Zm0,2.76A4.194,4.194,0,0,0,20.035,33.3a10.618,10.618,0,0,0,4.475.887c.252,0,.487,0,.73-.017a5.9,5.9,0,0,0,.848,1.948,11.983,11.983,0,0,1-1.57.108,10.1,10.1,0,0,1-4.274-.846c-1.074-.514-1.671-1.194-1.671-1.882V32.214Z"
+            transform="translate(1193 92.576)" fill="#424a54" stroke="#424a54" stroke-width="0.4"></path>
+          <path id="Path_553" data-name="Path 553"
+            d="M1.865,6.636H1.508l0-1.075a3.932,3.932,0,0,1-.75-.088A4.205,4.205,0,0,1,0,5.232V4.589a3.156,3.156,0,0,0,.738.345,2.663,2.663,0,0,0,.77.12V3.424A2.361,2.361,0,0,1,.359,2.988,1.053,1.053,0,0,1,0,2.144a1.149,1.149,0,0,1,.39-.918A1.871,1.871,0,0,1,1.508.84V0h.357V.83A4.957,4.957,0,0,1,2.509.9a4.606,4.606,0,0,1,.607.152v.626a3.084,3.084,0,0,0-.609-.232,3.008,3.008,0,0,0-.642-.1V2.873a2.428,2.428,0,0,1,1.193.447,1.087,1.087,0,0,1,.382.879,1.191,1.191,0,0,1-.406.953,1.968,1.968,0,0,1-1.17.4ZM1.508,2.809V1.344a1.135,1.135,0,0,0-.632.235.635.635,0,0,0-.218.5.6.6,0,0,0,.2.479,1.356,1.356,0,0,0,.648.246m.357.686V5.042a1.307,1.307,0,0,0,.684-.257.647.647,0,0,0,.231-.518.622.622,0,0,0-.22-.5,1.5,1.5,0,0,0-.7-.271"
+            transform="translate(1222.501 122.208)" fill="#424a54"></path>
         </g>
       </svg>
       <div class="header-currency-price-list">
@@ -114,7 +117,7 @@
         <svg width="24" height="24">
           <use href="#user" />
         </svg>
-        <span class="visually-hidden">
+        <span>
           {% liquid
           if customer
           echo 'customer.account_fallback' | t
@@ -147,14 +150,17 @@
             <ul class="menu-level-2" data-menu-title="{{ link.title | handle }}">
               {% for child_link in link.links %}
               <li class="menu-level-2-item">
-                <a href="{{ child_link.url }}?filter.v.availability=1" {% if child_link.active %}aria-current="page" {% endif %}>
+                <a href="{{ child_link.url }}?filter.v.availability=1" {% if child_link.active %}aria-current="page" {%
+                  endif %}>
 
                   {{ child_link.title }}
 
                   {% for block in section.blocks %}
                   {% if child_link.title == block.settings.mega_link %}
                   {% if block.settings.image.src != blank %}
-                    <img class="menu-level-2-item-titleImage" loading="lazy" src="{{ block.settings.image.src | image_url:  width: 500, height: 500, format: 'pjpg' }}" alt="{{ block.settings.image.alt }}">
+                  <img class="menu-level-2-item-titleImage" loading="lazy"
+                    src="{{ block.settings.image.src | image_url:  width: 500, height: 500, format: 'pjpg' }}"
+                    alt="{{ block.settings.image.alt }}">
                   {% endif %}
                   {% endif %}
                   {% endfor %}
@@ -163,7 +169,8 @@
                 <ul class="menu-level-3">
                   {% for grandchild_link in child_link.links %}
                   <li class="menu-level-3-item">
-                    <a href="{{ grandchild_link.url }}?filter.v.availability=1" {% if grandchild_link.active %}aria-current="page" {% endif %}>
+                    <a href="{{ grandchild_link.url }}?filter.v.availability=1" {% if grandchild_link.active
+                      %}aria-current="page" {% endif %}>
                       {{ grandchild_link.title }}
                     </a>
                   </li>
@@ -186,7 +193,9 @@
       <ul id="cd-primary-nav" class="cd-primary-nav is-fixed nav-is-visible menu">
         {% for link in linklists.mobile-menu.links %}
         <li class="{% if link.links.size > 0 %} has-children {% else %} menu-link {% endif %}">
-          <a href="{% if link.links.size > 0 %}javascript:void(0);{% else %}{{ link.url }}?filter.v.availability=1{% endif %}">{{ link.title }}
+          <a
+            href="{% if link.links.size > 0 %}javascript:void(0);{% else %}{{ link.url }}?filter.v.availability=1{% endif %}">{{
+            link.title }}
             {% if link.links.size > 0 %} {% render 'icon-chevron-right' %}{% endif %}</a>
           {% if link.links.size > 0 %}
           <ul class="is-hidden cd-secondary-nav menu dropdown-child">
@@ -210,7 +219,7 @@
         {% endfor %}
       </ul>
     </div>
-    </nav>
+  </nav>
 </header>
 
 {% comment %}
@@ -256,21 +265,21 @@ TODO: Menu, Sale text color and Image for special occasion
 "label": "Mobile Menu"
 },
 {
-  "type": "select",
-  "id": "sticky_menu",
-  "label": "Sticky Menu",
-  "options": [
-    {
-      "value": "sticky",
-      "label": "sticky"
-    },
-    {
-      "value": "non-sticky",
-      "label": "Non Sticky"
-    }
-  ],
-  "default": "sticky"
-  }
+"type": "select",
+"id": "sticky_menu",
+"label": "Sticky Menu",
+"options": [
+{
+"value": "sticky",
+"label": "sticky"
+},
+{
+"value": "non-sticky",
+"label": "Non Sticky"
+}
+],
+"default": "sticky"
+}
 
 ],
 "blocks": [
