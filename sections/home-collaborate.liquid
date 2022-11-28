@@ -1,5 +1,5 @@
 <section class="home-page-silver-section"
-  style="background-image: url({{section.settings.collaborate-background-pattern | image_url }}), url({{section.settings.collaborate-background | image_url }}); --toolColor: {{section.settings.collaborate-border-color}}">
+  style="background-image: url({{section.settings.collaborate-background-pattern.src | image_url }}), url({{section.settings.collaborate-background.src | image_url }}); --toolColor: {{section.settings.collaborate-border-color}}">
   <div class="section-header text-center">
     <div class="section-header-title">
       {{section.settings.collaborate-title}}
@@ -12,7 +12,8 @@
       {% for block in section.blocks %}
       {% if block.settings.image != blank %}
       <a href="{{block.settings.link}}?filter.v.availability=1">
-        {{ block.settings.image | image_url : width: 168, height: 168 | image_tag : alt: block.settings.image.alt, loading: "lazy" }}
+        {{ block.settings.image | image_url : width: 168, height: 168 | image_tag : alt: block.settings.image.alt,
+        loading: "lazy" }}
         <div class="section-Name" style="background: {{section.settings.collaborate-hover-color}} ">
           {{block.settings.contentTitle}}
         </div>
