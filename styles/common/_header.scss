@@ -35,7 +35,7 @@
 
 /* header */
 .header {
-  padding-top: 42px;
+  // padding-top: 42px;
   @include z-index(header);
   position: fixed;
   top: 0px;
@@ -142,7 +142,7 @@
       right: 0;
       top: 0px;
       @media (min-width: 992px) {
-        top: 0px;
+        top: 43px;
       }
     }
     &.active .header-search-area-containerWrapper {
@@ -185,7 +185,6 @@
         }
       }
       #predictive-search {
-        /* pre data */
 
         .predictive-content {
           li {
@@ -543,7 +542,6 @@
     display: block;
     position: fixed;
     top: 64px;
-    top: 104px;
     left: 0px;
     max-height: none;
     height: calc(100vh - 64px);
@@ -593,7 +591,6 @@
         width: 51%;
         background: #fff;
         top: 64px;
-        top: 104px;
         bottom: 0;
         overflow-y: auto;
         padding: 15px 0;
