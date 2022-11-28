@@ -150,7 +150,7 @@
         $(".meFitlerMobile").css({
           // scroll to that element or below it
           position: "fixed",
-          top: "151px",
+          top: "109px",
         });
         $(".fixedElement").css({
           "padding-top": "97px",
