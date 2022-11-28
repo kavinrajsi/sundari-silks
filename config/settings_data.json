@@ -78,6 +78,7 @@
         "blocks": {
           "e5b9b3cb-42bb-43bc-adac-0cad652993ae": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "Vanakkam, our website is currently being upgraded. We expect to enhance your shopping experience in 48 hours. We apologize for any inconvenience caused in the meanwhile.",
               "link": "",
