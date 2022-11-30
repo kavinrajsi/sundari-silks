@@ -6,7 +6,7 @@
     {{ article.content }}
 
     {% if article.tags.size > 0 %}
-    <footer>
+    <footer hidden>
       <ul aria-label="Tags">
         {% for tag in article.tags %}
         <li>
