@@ -436,6 +436,11 @@
           &:hover {
             background-color: #f4f4f4;
           }
+          @media(hover: hover) and (pointer: fine) {
+            &:hover {
+              background-color: #f4f4f4;
+            }
+          }
         }
         &:last-child a {
           border-bottom: 0;

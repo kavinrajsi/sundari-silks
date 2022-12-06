@@ -192,21 +192,24 @@
     <div class="Drawer__Container">
       <ul id="cd-primary-nav" class="cd-primary-nav is-fixed nav-is-visible menu">
         {% for link in linklists.mobile-menu.links %}
-        <li class="{% if link.links.size > 0 %} has-children {% else %} menu-link {% endif %}">
-          <a
+        <li {% if link.active %}aria-current="page" {% endif %}
+          class="{% if link.links.size > 0 %} has-children {% else %} menu-link {% endif %}">
+          <a {% if link.active %}aria-current="page" {% endif %}
             href="{% if link.links.size > 0 %}javascript:void(0);{% else %}{{ link.url }}?filter.v.availability=1{% endif %}">{{
             link.title }}
             {% if link.links.size > 0 %} {% render 'icon-chevron-right' %}{% endif %}</a>
           {% if link.links.size > 0 %}
           <ul class="is-hidden cd-secondary-nav menu dropdown-child">
             {% for child_link in link.links %}
-            <li class="menu-link">
-              <a href="{{ child_link.url }}?filter.v.availability=1">{{ child_link.title }}</a>
+            <li class="menu-link" {% if link.active %}aria-current="page" {% endif %}>
+              <a {% if link.active %}aria-current="page" {% endif %}
+                href="{{ child_link.url }}?filter.v.availability=1">{{ child_link.title }}</a>
               {% if child_link.links.size > 0 %}
               <ul class="menu dropdown-grandchild">
                 {% for grandchild_link in child_link.links %}
-                <li class="menu-link">
-                  <a href="{{ grandchild_link.url }}?filter.v.availability=1">{{ grandchild_link.title }}</a>
+                <li {% if link.active %}aria-current="page" {% endif %} class="menu-link">
+                  <a {% if link.active %}aria-current="page" {% endif %}
+                    href="{{ grandchild_link.url }}?filter.v.availability=1">{{ grandchild_link.title }}</a>
                 </li>
                 {% endfor %}
               </ul>
