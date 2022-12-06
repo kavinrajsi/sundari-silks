@@ -15,6 +15,14 @@
         <details class="filter-group">
           <summary class="filter-group-summary">
             {% if filter.label == "Price" %}
+            {% if customer and customer.tags contains 'admin' %}
+            <div>
+              <span>{{ filter.label }}</span>
+              {%- if filter.active_values.size > 0 -%}
+              <span>({{ filter.active_values.size }})</span>
+              {%- endif -%}
+            </div>
+            {% endif %}
             {% elsif filter.label == "Availability" %}
             {% else %}
             <div>
