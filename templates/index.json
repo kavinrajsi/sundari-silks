@@ -50,6 +50,14 @@
             "mobile_image": "shopify:\/\/shop_images\/conversations-with-sundari-patrons-ft-mana-anandavel-banner-mobile.png",
             "link": "shopify:\/\/blogs\/article\/conversations-with-sundari-patrons-ft-mana-anandavel"
           }
+        },
+        "ab99cd22-9db2-4cf4-9676-120271eed88d": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Online_exclusive_banner.png",
+            "mobile_image": "shopify:\/\/shop_images\/Online_exclusive_MB.png",
+            "link": "shopify:\/\/collections\/salwar-material"
+          }
         }
       },
       "block_order": [
@@ -58,7 +66,8 @@
         "e9a6b9e8-f03a-4387-8e80-17b7bcd09ace",
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b",
         "3fbd7fec-f97f-434e-9f56-1ddc4581978e",
-        "bed9709b-8de2-4214-8e93-8253620cb5e1"
+        "bed9709b-8de2-4214-8e93-8253620cb5e1",
+        "ab99cd22-9db2-4cf4-9676-120271eed88d"
       ],
       "settings": {
         "layout": "full_bleed",

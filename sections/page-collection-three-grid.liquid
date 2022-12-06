@@ -1,34 +1,37 @@
-<div class="collection-page-header">
+<div class="collection-page-header pageCollectionThreeGrid">
   <div class="collection-page-title {% if customer and customer.tags contains 'admin' %} d-none {% endif %}">
     {% if collection.title != blank %}
     <h1>{{ collection.title }}</h1>
     {% endif %}
   </div>
-  {% if customer and customer.tags contains 'admin' %}
-  <div class="collection-page-header-image text-center image-radius">
-    <img srcset="{%- if collection.image.width >= 165 -%}{{ collection.image | image_url: width: 165 }} 165w,{%- endif -%}
-          {%- if collection.image.width >= 360 -%}{{ collection.image | image_url: width: 360 }} 360w,{%- endif -%}
-          {%- if collection.image.width >= 535 -%}{{ collection.image | image_url: width: 535 }} 535w,{%- endif -%}
-          {%- if collection.image.width >= 750 -%}{{ collection.image | image_url: width: 750 }} 750w,{%- endif -%}
-          {%- if collection.image.width >= 1070 -%}{{ collection.image | image_url: width: 1070 }} 1070w,{%- endif -%}
-          {%- if collection.image.width >= 1500 -%}{{ collection.image | image_url: width: 1500 }} 1500w,{%- endif -%}
-          {{ collection.image | image_url }} {{ collection.image.width }}w"
-      src="{{ collection.image | image_url: width: 750 }}" alt="" width="{{ collection.image.width }}"
-      height="{{ collection.image.height }}">
 
-    {%- comment -%} {{ collection | image_url: height: '340x', format: 'pjpg' | image_tag : alt: collection.image.alt,
-    class:
-    'image-radius' }} {%- endcomment -%}
 
+  <div
+    class="collection-page-header-image text-center d-none {% if customer and customer.tags contains 'admin' %} d-block {% endif %}">
+    <div class="collection-page-image">
+      <img srcset="{%- if collection.image.width >= 165 -%}{{ collection.image | image_url: width: 165 }} 165w,{%- endif -%}
+      {%- if collection.image.width >= 360 -%}{{ collection.image | image_url: width: 360 }} 360w,{%- endif -%}
+      {%- if collection.image.width >= 535 -%}{{ collection.image | image_url: width: 535 }} 535w,{%- endif -%}
+      {%- if collection.image.width >= 750 -%}{{ collection.image | image_url: width: 750 }} 750w,{%- endif -%}
+      {%- if collection.image.width >= 1070 -%}{{ collection.image | image_url: width: 1070 }} 1070w,{%- endif -%}
+      {%- if collection.image.width >= 1500 -%}{{ collection.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+      {{ collection.image | image_url }} {{ collection.image.width }}w"
+        src="{{ collection.image | image_url: width: 750 }}" alt="" width="{{ collection.image.width }}"
+        height="{{ collection.image.height }}">
+    </div>
+    <div class="collection-page-content-area">
+      <div class="collection-page-title text-left">
+        <h1 class="text-left">{{ collection.title }}</h1>
+      </div>
+      <div class="collection-page-description text-left">
+        <p>{{ collection.description }}</p>
+      </div>
+    </div>
   </div>
-  <div class="collection-page-title">
-    <h1 class="text-left">{{ collection.title }}</h1>
-  </div>
-  <div class="collection-page-description">
-    <p>{{ collection.description }}</p>
-  </div>
-  {% endif %}
+
 </div>
+
+
 {% render 'filter' %}
 <div class="fixedElement section-{{ section.id }}-padding collectionGridThrees">
   <section>
