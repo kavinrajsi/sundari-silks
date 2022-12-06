@@ -329,6 +329,11 @@
     $("body").toggleClass("modalScroll");
   });
 
+  $(".product-title-secondary").click(function () {
+    $(this).next(".product-description,.product-detail").toggleClass("product-detail-description-active");
+    $(this).toggleClass("product-detail-description-active");
+  });
+
   $(".footer-main h4").click(function () {
     $(this).next("ul").toggleClass("footerActive");
   });

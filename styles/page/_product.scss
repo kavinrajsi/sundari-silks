@@ -81,9 +81,24 @@
         font-style: normal;
         font-weight: 400;
         font-size: var(--font-h5);
-        margin-bottom: 12px;
         line-height: 24px;
         color: rgba(0, 0, 0, 0.85);
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--color-border);
+        cursor: pointer;
+        position: relative;
+        &:after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          right: 6px;
+          width: 18px;
+          height: 18px;
+          top: 7px;
+          background-size: contain;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='feather feather-plus'%3E%3Cline x1='12' y1='5' x2='12' y2='19'%3E%3C/line%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E");
+        }
       }
     }
     &-sku span {
@@ -245,18 +260,41 @@
     }
     &-common-note {
       dl {
-        margin-bottom: 16px;
-        padding-bottom: 0px;
-        border-bottom: 1px solid var(--color-border);
-        &:last-child {
-          border-bottom: 0;
-        }
+        // margin-bottom: 16px;
+        // padding-bottom: 0px;
+        // border-bottom: 1px solid var(--color-border);
+        // &:last-child {
+        //   border-bottom: 0;
+        // }
       }
       dd {
         &.product-description {
-          margin-bottom: 8px;
+          // margin-bottom: 8px;
         }
       }
+    }
+  }
+
+  //
+  .product-title-secondary.product-detail-description-active {
+    border-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    &:after {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-minus'%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E");
+    }
+  }
+  .product-content .product-detail,
+  .product-content .product-description {
+    display: none;
+    cursor: pointer;
+
+    &.product-detail-description-active {
+      &:after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-minus'%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E");
+      }
+    }
+    &.product-detail-description-active {
+      display: block;
     }
   }
 
