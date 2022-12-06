@@ -39,31 +39,25 @@
   grid-template-columns: 1fr;
   justify-content: center;
   align-items: center;
-  @media (min-width: 768px) {
-    gap: 20px;
-    grid-template-columns: 1fr 1fr;
-  }
 
-  @media (min-width: 992px) {
-    grid-template-columns: 1fr 400px;
-  }
-  @media (min-width: 1364px) {
-    grid-template-columns: 70% 30%;
-  }
   .collection-page-image{
     img{
       width: 100%;
+      object-fit: cover;
+      height: 130px;
+      @media(min-width: 768px){
+      height: 180px;
+      }
+      @media(min-width: 1364px){
+      height: 280px;
+      }
     }
   }
 
   .collection-page-content-area {
-    @media (min-width: 992px) {
-      padding: 0 80px;
-    }
-
     .collection-page-title {
       padding-top: var(--Ngap);
-      padding-bottom: var(--Ngap);
+      padding-bottom: 8px;
       font-family: "Playfair Display", serif;
       font-weight: 500;
       line-height: 1.2222222222;
