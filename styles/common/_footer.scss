@@ -212,10 +212,8 @@ footer {
     a {
       display: inline-block;
       padding: 1rem;
-      &:hover {
-        svg {
-          fill: var(--color-maroon);
-        }
+      svg {
+        fill: var(--color-maroon);
       }
     }
   }
