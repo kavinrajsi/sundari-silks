@@ -1,13 +1,12 @@
 <div class="collection-page-header pageCollectionFourGrid">
-  <div class="collection-page-title {% if customer and customer.tags contains 'admin' %} d-none {% endif %}">
+  <div class="collection-page-title d-none">
     {% if collection.title != blank %}
     <h1>{{ collection.title }}</h1>
     {% endif %}
   </div>
 
 
-  <div
-    class="collection-page-header-image text-center d-none {% if customer and customer.tags contains 'admin' %} d-block {% endif %}">
+  <div class="collection-page-header-image text-center">
     <div class="collection-page-image">
       <img srcset="{%- if collection.image.width >= 165 -%}{{ collection.image | image_url: width: 165 }} 165w,{%- endif -%}
       {%- if collection.image.width >= 360 -%}{{ collection.image | image_url: width: 360 }} 360w,{%- endif -%}
