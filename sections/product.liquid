@@ -295,7 +295,18 @@
     <h2 class="product-title-secondary">Description</h2>
     <p class="product-description">{{product.content | strip_html }}</p>
     {% endif %}
-    {% if product.metafields.custom.purity.value or product.metafields.custom.material.value != blank %}
+    {% if product.metafields.custom.border_type.value != blank or product.metafields.custom.border_type.value != blank
+    or
+    product.metafields.custom.pallu_color.value != blank or product.metafields.custom.blouse_color.value != blank or
+    product.metafields.custom.angavastram.value != blank or product.metafields.custom.bottom.value != blank or
+    product.metafields.custom.age.value != blank or product.metafields.custom.collar.value != blank or
+    product.metafields.custom.dupatta.value != blank or product.metafields.custom.bottom_color.value != blank or
+    product.metafields.custom.sleeve.value != blank or product.metafields.custom.color.value != blank or
+    product.metafields.custom.size.value != blank or product.metafields.custom.purity.value != blank or
+    product.metafields.custom.material.value != blank or product.metafields.custom.zari.value != blank or
+    product.metafields.custom.blouse.value != blank or product.metafields.custom.border.value != blank or
+    product.metafields.custom.border_color.value != blank or product.metafields.custom.body_color.value != blank
+    %}
     <h2 class="product-title-secondary"> Specification </h2>
     {% endif %}
     <div class="product-detail">
