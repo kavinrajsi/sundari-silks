@@ -514,7 +514,7 @@
 /* menu active */
 #cd-primary-nav .menu-itemActive a{
   background-color: var(--color-maroon) !important;
-  color: var(--pure-white);
+  color: var(--color-white);
 }
 
 /* header burger icon */
@@ -584,7 +584,6 @@
         line-height: 24px;
         color: var(--color-black);
         padding: 8px 0px;
-        padding: 8px 0px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -611,7 +610,7 @@
         li {
           a {
             padding: 8px;
-            margin: 8px;
+            margin: 0 8px;
           }
         }
       }
