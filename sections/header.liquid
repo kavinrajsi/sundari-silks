@@ -138,7 +138,7 @@
       <ul class="menu-level-1">
         {% for link in linklists.desktop-menu.links %}
         <li
-          class="menu-level-1-item {{ link.title | handle }} {% if link.links.size > 0 %} menu-level-1-item-child {% endif %} {% if link.active %}menu-active{% endif %} {% if link.child_active %}menu-child-active{% endif %} ">
+          class="menu-level-1-item {{ link.title | handle }} {% if link.links.size > 0 %} menu-level-1-item-child {% endif %} {% if link.active %}menu-itemActive{% endif %} ">
           <a href="{{ link.url }}?filter.v.availability=1" {% if link.active %}aria-current="page" {% endif %}>
             {{ link.title }}
             {% if link.links.size > 0 %}
@@ -149,12 +149,10 @@
           <div class="second-menu">
             <ul class="menu-level-2" data-menu-title="{{ link.title | handle }}">
               {% for child_link in link.links %}
-              <li class="menu-level-2-item">
+              <li class="menu-level-2-item  {% if child_link.active %}menu-itemActive{% endif %}">
                 <a href="{{ child_link.url }}?filter.v.availability=1" {% if child_link.active %}aria-current="page" {%
                   endif %}>
-
                   {{ child_link.title }}
-
                   {% for block in section.blocks %}
                   {% if child_link.title == block.settings.mega_link %}
                   {% if block.settings.image.src != blank %}
@@ -168,7 +166,7 @@
                 {% if child_link.links != blank %}
                 <ul class="menu-level-3">
                   {% for grandchild_link in child_link.links %}
-                  <li class="menu-level-3-item">
+                  <li class="menu-level-3-item {% if grandchild_link.active %}menu-itemActive{% endif %}">
                     <a href="{{ grandchild_link.url }}?filter.v.availability=1" {% if grandchild_link.active
                       %}aria-current="page" {% endif %}>
                       {{ grandchild_link.title }}
@@ -193,7 +191,7 @@
       <ul id="cd-primary-nav" class="cd-primary-nav is-fixed nav-is-visible menu">
         {% for link in linklists.mobile-menu.links %}
         <li {% if link.active %}aria-current="page" {% endif %}
-          class="{% if link.links.size > 0 %} has-children {% else %} menu-link {% endif %}">
+          class="{% if link.links.size > 0 %} has-children {% else %} menu-link {% endif %}  {% if link.active %}menu-itemActive{% endif%}">
           <a {% if link.active %}aria-current="page" {% endif %}
             href="{% if link.links.size > 0 %}javascript:void(0);{% else %}{{ link.url }}?filter.v.availability=1{% endif %}">{{
             link.title }}
@@ -201,13 +199,15 @@
           {% if link.links.size > 0 %}
           <ul class="is-hidden cd-secondary-nav menu dropdown-child">
             {% for child_link in link.links %}
-            <li class="menu-link" {% if link.active %}aria-current="page" {% endif %}>
+            <li class="menu-link {% if child_link.active %}menu-itemActive{% endif%}" {% if link.active
+              %}aria-current="page" {% endif %}>
               <a {% if link.active %}aria-current="page" {% endif %}
                 href="{{ child_link.url }}?filter.v.availability=1">{{ child_link.title }}</a>
               {% if child_link.links.size > 0 %}
               <ul class="menu dropdown-grandchild">
                 {% for grandchild_link in child_link.links %}
-                <li {% if link.active %}aria-current="page" {% endif %} class="menu-link">
+                <li {% if link.active %}aria-current="page" {% endif %}
+                  class="menu-link {% if grandchild_link.active %}menu-itemActive{% endif%}">
                   <a {% if link.active %}aria-current="page" {% endif %}
                     href="{{ grandchild_link.url }}?filter.v.availability=1">{{ grandchild_link.title }}</a>
                 </li>
