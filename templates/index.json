@@ -3,6 +3,14 @@
     "slideshow": {
       "type": "home-slideshow",
       "blocks": {
+        "ab99cd22-9db2-4cf4-9676-120271eed88d": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Online_exclusive_banner.png",
+            "mobile_image": "shopify:\/\/shop_images\/Online_exclusive_MB.png",
+            "link": "shopify:\/\/collections\/salwar-material"
+          }
+        },
         "5cd59610-c2b0-470a-8ce5-780b7df44578": {
           "type": "slide",
           "settings": {
@@ -46,28 +54,20 @@
         "bed9709b-8de2-4214-8e93-8253620cb5e1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/conversations-with-sundari-patrons-ft-mana-anandavel-banner-desktop.png",
-            "mobile_image": "shopify:\/\/shop_images\/conversations-with-sundari-patrons-ft-mana-anandavel-banner-mobile.png",
-            "link": "shopify:\/\/blogs\/article\/conversations-with-sundari-patrons-ft-mana-anandavel"
-          }
-        },
-        "ab99cd22-9db2-4cf4-9676-120271eed88d": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Online_exclusive_banner.png",
-            "mobile_image": "shopify:\/\/shop_images\/Online_exclusive_MB.png",
-            "link": "shopify:\/\/collections\/salwar-material"
+            "image": "shopify:\/\/shop_images\/saree-styling-ideas-and-tips-banner-desktop.png",
+            "mobile_image": "shopify:\/\/shop_images\/saree-styling-ideas-and-tips-banner-mobile.png",
+            "link": "shopify:\/\/blogs\/article\/saree-styling-ideas-and-tips"
           }
         }
       },
       "block_order": [
+        "ab99cd22-9db2-4cf4-9676-120271eed88d",
         "5cd59610-c2b0-470a-8ce5-780b7df44578",
         "8efe5e97-f302-4f66-ae4c-451513f79459",
         "e9a6b9e8-f03a-4387-8e80-17b7bcd09ace",
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b",
         "3fbd7fec-f97f-434e-9f56-1ddc4581978e",
-        "bed9709b-8de2-4214-8e93-8253620cb5e1",
-        "ab99cd22-9db2-4cf4-9676-120271eed88d"
+        "bed9709b-8de2-4214-8e93-8253620cb5e1"
       ],
       "settings": {
         "layout": "full_bleed",
