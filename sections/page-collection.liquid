@@ -74,3 +74,28 @@
     ]
   }
 </script>
+
+{% schema %}
+{
+"name": "Sub Collection",
+"blocks": [
+{
+"type": "text",
+"name": "Sub Collection Name List",
+"limit": 32,
+"settings": [
+{
+"type": "text",
+"id": "sub_collection_name",
+"label": "Sub Collection Name"
+},
+{
+"type": "url",
+"id": "link",
+"label": "Sub Collection URL"
+}
+]
+}
+]
+}
+{% endschema %}
