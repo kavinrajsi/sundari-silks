@@ -2,26 +2,6 @@
   "sections": {
     "product-grid": {
       "type": "page-collection-four-grid",
-      "blocks": {
-        "3dbec49f-8e94-471e-b103-6dc410ca223b": {
-          "type": "text",
-          "settings": {
-            "sub_collection_name": "Test !",
-            "link": "shopify:\/\/collections"
-          }
-        },
-        "c6cf3d51-9348-476b-bc80-22474ef29b0a": {
-          "type": "text",
-          "settings": {
-            "sub_collection_name": "test 2",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "3dbec49f-8e94-471e-b103-6dc410ca223b",
-        "c6cf3d51-9348-476b-bc80-22474ef29b0a"
-      ],
       "settings": {
       }
     }
