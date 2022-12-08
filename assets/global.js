@@ -330,7 +330,7 @@
   });
 
   $(".product-title-secondary").click(function () {
-    $(this).next(".product-description,.product-detail").toggleClass("product-detail-description-active");
+    $(this).next(".product-description,.product-description-old,.product-detail").toggleClass("product-detail-description-active");
     $(this).toggleClass("product-detail-description-active");
   });
 
