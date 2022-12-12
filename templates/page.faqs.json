@@ -149,6 +149,41 @@
             "question": "Is it possible to get my order delivered on a specific date?",
             "answer": "Yes, for online orders it is possible to select a specific date for delivery as per your convenience. This can be availed only on orders with no tailoring or customisation. Although this must be done in an advance of 7 business days. This shipping feature is available within India and Internationally."
           }
+        },
+        "ed262c22-2ec1-4c8a-a154-abafa671b615": {
+          "type": "section",
+          "settings": {
+            "question": "Where can I track my order?",
+            "answer": "We will be sending you an email with updates on the status of your order. You can also track it in the My Account page of our website. Feel free to reach out to our Customer Care team for more details about your order."
+          }
+        },
+        "433f56ed-0b59-4c30-8d3a-562ccd669230": {
+          "type": "section",
+          "settings": {
+            "question": "What are the different order statuses to keep a track of?",
+            "answer": "(a) Pending - Payment pending or unsuccessful\n<br> \n(b) Processing - Payment successful, yet to be shipped\n<br> \n(c) Shipment in Transit - Order has been shipped from our warehouse\n<br> \n(d) Cancelled - Order has been cancelled due to non-payment or customer request\n<br> \n(e) Closed - Successful order cancellation based on customer request and refund has been initiated"
+          }
+        },
+        "bc84c100-63ff-4675-a745-230b9a47d2c9": {
+          "type": "section",
+          "settings": {
+            "question": "How do I return or get a refund or exchange any product from my order?",
+            "answer": "To learn more about returns, refund and exchange, visit our Returns Policy page and carefully read through our Terms and Conditions. For any assistance in this process, kindly contact our Customer Care team."
+          }
+        },
+        "b655ec2c-0e30-4258-b56d-9ade61ab96e3": {
+          "type": "section",
+          "settings": {
+            "question": "How do I join the Save and Buy Scheme?",
+            "answer": "To enrol for our save and buy scheme, kindly visit our stores in Chennai or Mumbai. This provision is currently not available online."
+          }
+        },
+        "7bf17521-e0bf-460c-a866-959beeb86b6a": {
+          "type": "section",
+          "settings": {
+            "question": "What are the different plans available under the Save and Buy Scheme?",
+            "answer": "There 3 types of 1 year plan available as of now, valued at INR 300, INR 500 and INR 1,000 per month. Additionally, there will be one lucky draw chosen on the 20th of every month through tokens and further details of which can be obtained in the T&C."
+          }
         }
       },
       "block_order": [
@@ -172,7 +207,12 @@
         "dc486eca-9bd5-4f2b-a1a8-1509ca18b6e8",
         "50ddc2d3-702f-49c7-a4ab-8d6fd593c682",
         "989a5623-3fbf-47a1-8fde-8336ed7e009d",
-        "2bc2e486-cfd5-4186-924c-3ded3f782ad7"
+        "2bc2e486-cfd5-4186-924c-3ded3f782ad7",
+        "ed262c22-2ec1-4c8a-a154-abafa671b615",
+        "433f56ed-0b59-4c30-8d3a-562ccd669230",
+        "bc84c100-63ff-4675-a745-230b9a47d2c9",
+        "b655ec2c-0e30-4258-b56d-9ade61ab96e3",
+        "7bf17521-e0bf-460c-a866-959beeb86b6a"
       ],
       "settings": {
       }
