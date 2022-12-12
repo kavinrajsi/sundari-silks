@@ -202,8 +202,12 @@
       <div class="button-add-to-cart">
         {% assign not_in_cart = true %}
         {% for item in cart.items %}
-        <div class="d-none">
-          {{item | json}}
+        <div class="mb-3 d-none" hidden>
+          {{item | json }}
+          <hr>
+          {{item.prodcut.id}}
+          <hr>
+          {{prodcut.id}}
         </div>
         {% if item.product.id == product.id %}
         {% assign not_in_cart = false %}
