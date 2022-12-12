@@ -7,7 +7,6 @@
           "type": "section",
           "settings": {
             "question": "Do I need an account to place an order?",
-            "page_content": "",
             "answer": "Yes, to place your order it is required that you register with us through a few simple steps and create an account. We require only necessary contact details to provide you with a holistic experience in terms of faster checkout, delivery and tracking of your order. By creating an account you can also save your favourite products to a wishlist and access them later."
           }
         },
@@ -15,7 +14,6 @@
           "type": "section",
           "settings": {
             "question": "Can I make changes to my account details?",
-            "page_content": "",
             "answer": "Yes, you can make changes through the My Account tab. In the event you don't remember your password, you can reset it from the login screen, through the Forgotten Password link. An email will be sent to you on how to proceed."
           }
         },
@@ -23,7 +21,6 @@
           "type": "section",
           "settings": {
             "question": "What about the safety of the personal details that I have shared with you?",
-            "page_content": "",
             "answer": "We guarantee you that the information provided by you is absolutely safe and will not be disclosed anywhere. This information is to enable us to provide you with a better service by understanding your needs and preferences, and for you to be able to have a faster checkout and track your products better."
           }
         },
@@ -31,7 +28,6 @@
           "type": "section",
           "settings": {
             "question": "How do I change my subscription status for newsletters and retailers?",
-            "page_content": "",
             "answer": "Through our newsletters we keep you updated on the latest trends, collections and activities that we have undertaken. In case you require to opt-out of this facility, you can do so under the Newsletter tab in the My Account page."
           }
         },
@@ -39,7 +35,6 @@
           "type": "section",
           "settings": {
             "question": "In case of further queries, how do I to get in touch with your Customer Care team?",
-            "page_content": "",
             "answer": "You can reach out to our Customer Care team through various channels. Please feel free to drop an email to different@sundarisilks.com or give us a call at +91 99627 12299, between 9 AM to 6 Pm from Monday to Saturday. You can also get in touch with us through social media pages on Instagram and Facebook."
           }
         },
@@ -47,8 +42,14 @@
           "type": "section",
           "settings": {
             "question": "Can I save my measurement details in my account for future orders?",
-            "page_content": "",
             "answer": "Yes definitely. You can add and save your custom measurements in your My Account page, which can be accessed or modified later."
+          }
+        },
+        "f7f34b29-8af5-4136-8f6a-6d570bd2a390": {
+          "type": "section",
+          "settings": {
+            "question": "What is the process to purchase a product from our website?",
+            "answer": "You can order a product from our website by following a few simple and easy steps.\n <br>\n1. Select the product of your choice.\n<br>\n2. In the case of a saree, kindly provide your blouse measurement details if you wish to opt for the blouse stitching feature. You can also opt for pico\/fall stitching service at this stage.\n<br>\n3. In the case of any readymade, kindly select the size after consulting our size guide for each product.\n<br>\n4. Click on the add to cart to button.\n<br>\n5. At this point, you can continue shopping and add more products of your choice to the cart. Or you can proceed to checkout. \n<br>\n6. In the checkout page, please provide your billing and shipping details, along with your payment method. \n<br>\n7. Remember to check your order summary and then click \"confirm order\" to proceed with the payment. \n<br>\n8. You will be redirected to our secure payment gateway page.\n <br>\n9. Once your transaction is through, we will send a confirmation to your registered email address."
           }
         }
       },
@@ -58,7 +59,8 @@
         "2c94ad45-da83-4923-b747-71b741b2905e",
         "4cf6eb2a-e279-4b3c-b378-d60a2dd70372",
         "f33b8bdd-5797-4522-b09a-62f2e5c7eb8b",
-        "bf6677b8-e89d-40e1-8f99-af0fbf2a5238"
+        "bf6677b8-e89d-40e1-8f99-af0fbf2a5238",
+        "f7f34b29-8af5-4136-8f6a-6d570bd2a390"
       ],
       "settings": {
       }
