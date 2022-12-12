@@ -38,6 +38,20 @@ iframe#dummy-chat-button-iframe {
 }
 
 
+
+#loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  z-index: 9;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+
 .loader-icon {
   border: 6px solid #f3f3f3;
   border-radius: 50%;
@@ -52,12 +66,4 @@ iframe#dummy-chat-button-iframe {
       transform: rotate(360deg);
   }
 }
-
-.center {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
 }
