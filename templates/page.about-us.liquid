@@ -1,11 +1,7 @@
-<!-- {% include 'global-variables' %} -->
 <div class="page">
-  {% include 'breadcrumbs' %}
-  <div class="container {% if offset_pages_margin_top_d > 0 %} mt-lg-{{ offset_pages_margin_top_d }}{% endif %} mb-60{% if offset_pages_margin_bottom_d > 0 %} mb-lg-{{ offset_pages_margin_bottom_d }}{% endif %}">
+  <div class="container ">
     <div class="rte">
-      {% include 'parse-for-icons' content: page.content %}
       {% section 'about-us' %}
     </div>
   </div>
 </div>
-
