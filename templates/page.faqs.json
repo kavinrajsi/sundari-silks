@@ -1,10 +1,70 @@
 {
-    "sections": {
-      "main": {
-        "type": "page-faq"
+  "sections": {
+    "main": {
+      "type": "page-faq",
+      "blocks": {
+        "99d31c79-9a2b-4624-866a-48a496e630c4": {
+          "type": "section",
+          "settings": {
+            "question": "Do I need an account to place an order?",
+            "page_content": "",
+            "answer": "Yes, to place your order it is required that you register with us through a few simple steps and create an account. We require only necessary contact details to provide you with a holistic experience in terms of faster checkout, delivery and tracking of your order. By creating an account you can also save your favourite products to a wishlist and access them later."
+          }
+        },
+        "1590a593-fa64-469e-9988-17e1abdf23bc": {
+          "type": "section",
+          "settings": {
+            "question": "Can I make changes to my account details?",
+            "page_content": "",
+            "answer": "Yes, you can make changes through the My Account tab. In the event you don't remember your password, you can reset it from the login screen, through the Forgotten Password link. An email will be sent to you on how to proceed."
+          }
+        },
+        "2c94ad45-da83-4923-b747-71b741b2905e": {
+          "type": "section",
+          "settings": {
+            "question": "What about the safety of the personal details that I have shared with you?",
+            "page_content": "",
+            "answer": "We guarantee you that the information provided by you is absolutely safe and will not be disclosed anywhere. This information is to enable us to provide you with a better service by understanding your needs and preferences, and for you to be able to have a faster checkout and track your products better."
+          }
+        },
+        "4cf6eb2a-e279-4b3c-b378-d60a2dd70372": {
+          "type": "section",
+          "settings": {
+            "question": "How do I change my subscription status for newsletters and retailers?",
+            "page_content": "",
+            "answer": "Through our newsletters we keep you updated on the latest trends, collections and activities that we have undertaken. In case you require to opt-out of this facility, you can do so under the Newsletter tab in the My Account page."
+          }
+        },
+        "f33b8bdd-5797-4522-b09a-62f2e5c7eb8b": {
+          "type": "section",
+          "settings": {
+            "question": "In case of further queries, how do I to get in touch with your Customer Care team?",
+            "page_content": "",
+            "answer": "You can reach out to our Customer Care team through various channels. Please feel free to drop an email to different@sundarisilks.com or give us a call at +91 99627 12299, between 9 AM to 6 Pm from Monday to Saturday. You can also get in touch with us through social media pages on Instagram and Facebook."
+          }
+        },
+        "bf6677b8-e89d-40e1-8f99-af0fbf2a5238": {
+          "type": "section",
+          "settings": {
+            "question": "Can I save my measurement details in my account for future orders?",
+            "page_content": "",
+            "answer": "Yes definitely. You can add and save your custom measurements in your My Account page, which can be accessed or modified later."
+          }
+        }
+      },
+      "block_order": [
+        "99d31c79-9a2b-4624-866a-48a496e630c4",
+        "1590a593-fa64-469e-9988-17e1abdf23bc",
+        "2c94ad45-da83-4923-b747-71b741b2905e",
+        "4cf6eb2a-e279-4b3c-b378-d60a2dd70372",
+        "f33b8bdd-5797-4522-b09a-62f2e5c7eb8b",
+        "bf6677b8-e89d-40e1-8f99-af0fbf2a5238"
+      ],
+      "settings": {
       }
-    },
-    "order": [
-      "main"
-    ]
-  }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
