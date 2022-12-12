@@ -1,10 +1,25 @@
 {
-    "sections": {
-      "main": {
-        "type": "page-faq"
+  "sections": {
+    "main": {
+      "type": "page-faq",
+      "blocks": {
+        "99d31c79-9a2b-4624-866a-48a496e630c4": {
+          "type": "section",
+          "settings": {
+            "question": "Do I need an account to place an order?",
+            "page_content": "",
+            "answer": "Yes, to place your order it is required that you register with us through a few simple steps and create an account. We require only necessary contact details to provide you with a holistic experience in terms of faster checkout, delivery and tracking of your order. By creating an account you can also save your favourite products to a wishlist and access them later."
+          }
+        }
+      },
+      "block_order": [
+        "99d31c79-9a2b-4624-866a-48a496e630c4"
+      ],
+      "settings": {
       }
-    },
-    "order": [
-      "main"
-    ]
-  }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
