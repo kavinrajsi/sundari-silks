@@ -184,6 +184,20 @@
             "question": "What are the different plans available under the Save and Buy Scheme?",
             "answer": "There 3 types of 1 year plan available as of now, valued at INR 300, INR 500 and INR 1,000 per month. Additionally, there will be one lucky draw chosen on the 20th of every month through tokens and further details of which can be obtained in the T&C."
           }
+        },
+        "9098ad8e-e9f1-4e1e-b3fd-7481284b27ba": {
+          "type": "section",
+          "settings": {
+            "question": "How do I go about the monthly payments?",
+            "answer": "There are 3 payment methods. You can visit either of our stores, submit your Save and Buy ID and number and pay for it. Or you can do an online payment. In the case of online payments, it is necessary that you link your Save and Buy ID with your online account on our website by sending a mail or calling our Customer Care team. This would take approximately 24 hours to come into effect. Post which, you can access your save and buy dashboard and proceed with the monthly payments. Or you can also opt for the door collection method. You will receive a Save and Buy Card to keep track of your payments."
+          }
+        },
+        "4c6f4173-ab66-496f-8629-44c61e3ed861": {
+          "type": "section",
+          "settings": {
+            "question": "How does the lucky draw scheme work?",
+            "answer": "A winner is selected from each group of 100 members of the Save and Buy Scheme, on the 20th of every month, for whom the payments of remaining months are made free of charge. This lucky draw is done on the shop floor where one of our customers picks the draw for each group."
+          }
         }
       },
       "block_order": [
@@ -212,7 +226,9 @@
         "433f56ed-0b59-4c30-8d3a-562ccd669230",
         "bc84c100-63ff-4675-a745-230b9a47d2c9",
         "b655ec2c-0e30-4258-b56d-9ade61ab96e3",
-        "7bf17521-e0bf-460c-a866-959beeb86b6a"
+        "7bf17521-e0bf-460c-a866-959beeb86b6a",
+        "9098ad8e-e9f1-4e1e-b3fd-7481284b27ba",
+        "4c6f4173-ab66-496f-8629-44c61e3ed861"
       ],
       "settings": {
       }
