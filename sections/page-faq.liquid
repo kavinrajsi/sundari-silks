@@ -1,6 +1,6 @@
 <div class="container container--sm">
     {%- for block in section.blocks -%}
-    <div class="faqs border-top" data-js-accordion="all">
+    <div class="faqs border-top">
         <h2>{{ block.settings.question }}</h2>
         <div>
             {{ block.settings.page_content html: block.settings.answer }}
