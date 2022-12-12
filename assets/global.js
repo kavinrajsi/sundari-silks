@@ -1,14 +1,10 @@
 document.onreadystatechange = function() {
   if (document.readyState !== "complete") {
-      document.querySelector(
-        "body").style.visibility = "hidden";
-      document.querySelector(
-        "#loader").style.visibility = "visible";
+      document.querySelector("body").style.visibility = "hidden";
+      document.querySelector("#loader-icon").style.visibility = "visible";
   } else {
-      document.querySelector(
-        "#loader").style.display = "none";
-      document.querySelector(
-        "body").style.visibility = "visible";
+      document.querySelector("#loader-icon").style.display = "none";
+      document.querySelector("body").style.visibility = "visible";
   }
 };
 
