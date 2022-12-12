@@ -7,7 +7,6 @@
           "type": "section",
           "settings": {
             "question": "Do I need an account to place an order?",
-            "page_content": "",
             "answer": "Yes, to place your order it is required that you register with us through a few simple steps and create an account. We require only necessary contact details to provide you with a holistic experience in terms of faster checkout, delivery and tracking of your order. By creating an account you can also save your favourite products to a wishlist and access them later."
           }
         },
@@ -15,7 +14,6 @@
           "type": "section",
           "settings": {
             "question": "Can I make changes to my account details?",
-            "page_content": "",
             "answer": "Yes, you can make changes through the My Account tab. In the event you don't remember your password, you can reset it from the login screen, through the Forgotten Password link. An email will be sent to you on how to proceed."
           }
         },
@@ -23,7 +21,6 @@
           "type": "section",
           "settings": {
             "question": "What about the safety of the personal details that I have shared with you?",
-            "page_content": "",
             "answer": "We guarantee you that the information provided by you is absolutely safe and will not be disclosed anywhere. This information is to enable us to provide you with a better service by understanding your needs and preferences, and for you to be able to have a faster checkout and track your products better."
           }
         },
@@ -31,7 +28,6 @@
           "type": "section",
           "settings": {
             "question": "How do I change my subscription status for newsletters and retailers?",
-            "page_content": "",
             "answer": "Through our newsletters we keep you updated on the latest trends, collections and activities that we have undertaken. In case you require to opt-out of this facility, you can do so under the Newsletter tab in the My Account page."
           }
         },
@@ -39,7 +35,6 @@
           "type": "section",
           "settings": {
             "question": "In case of further queries, how do I to get in touch with your Customer Care team?",
-            "page_content": "",
             "answer": "You can reach out to our Customer Care team through various channels. Please feel free to drop an email to different@sundarisilks.com or give us a call at +91 99627 12299, between 9 AM to 6 Pm from Monday to Saturday. You can also get in touch with us through social media pages on Instagram and Facebook."
           }
         },
@@ -47,8 +42,196 @@
           "type": "section",
           "settings": {
             "question": "Can I save my measurement details in my account for future orders?",
-            "page_content": "",
             "answer": "Yes definitely. You can add and save your custom measurements in your My Account page, which can be accessed or modified later."
+          }
+        },
+        "f7f34b29-8af5-4136-8f6a-6d570bd2a390": {
+          "type": "section",
+          "settings": {
+            "question": "What is the process to purchase a product from our website?",
+            "answer": "You can order a product from our website by following a few simple and easy steps.\n <br>\n1. Select the product of your choice.\n<br>\n2. In the case of a saree, kindly provide your blouse measurement details if you wish to opt for the blouse stitching feature. You can also opt for pico\/fall stitching service at this stage.\n<br>\n3. In the case of any readymade, kindly select the size after consulting our size guide for each product.\n<br>\n4. Click on the add to cart to button.\n<br>\n5. At this point, you can continue shopping and add more products of your choice to the cart. Or you can proceed to checkout. \n<br>\n6. In the checkout page, please provide your billing and shipping details, along with your payment method. \n<br>\n7. Remember to check your order summary and then click \"confirm order\" to proceed with the payment. \n<br>\n8. You will be redirected to our secure payment gateway page.\n <br>\n9. Once your transaction is through, we will send a confirmation to your registered email address."
+          }
+        },
+        "5e26a2f8-b361-474a-b16f-7c1730252b0f": {
+          "type": "section",
+          "settings": {
+            "question": "Is there any possibility to gift wrap my order?",
+            "answer": "Yes. In the event, you require your order to be gift wrapped you can mention it in the checkout page, under the \"more information about your order\" box. No additional price will be charged for this."
+          }
+        },
+        "50acf2ab-5d67-4d61-a998-aa46d00d207e": {
+          "type": "section",
+          "settings": {
+            "question": "Do you undertake custom orders?",
+            "answer": "Yes, our Alankara division caters to customisation and tailoring of ethnic ensembles for men, women and children. For more details regarding this, reach out to our customer care team at  different@sundarisilks.com"
+          }
+        },
+        "ce6e7c2b-9d56-4a7e-a600-49d52c9ab81f": {
+          "type": "section",
+          "settings": {
+            "question": "How do I purchase a product from Instagram?",
+            "answer": "Our social media channels feature only our latest collections and products, that are one-of-a-kind pieces that get sold out very quickly. If you wish to purchase a product that you view on Instagram\/Facebook, send us a direct message on the said platform to check for availability. Our customer care team will look into and let you know whether it is available in our store or online showroom, and how to proceed after that."
+          }
+        },
+        "b03b9f88-9a1c-497b-93e0-271bdf09d4d8": {
+          "type": "section",
+          "settings": {
+            "question": "Do you undertake corporate orders?",
+            "answer": "Yes, we do. Be it a corporate event or exhibition or celebration, we undertake bulk orders of products, as well as offer an exclusive selection of gift cards and coupons. For inquiries please drop a mail to  admin@sundarisilks.com."
+          }
+        },
+        "8f1d65ec-c9de-4e94-a008-e0752b26c152": {
+          "type": "section",
+          "settings": {
+            "question": "How do I place an order with special requests?",
+            "answer": "For such orders, let us know about your special requests and requirements in the enquiry form on our \"Contact Us\" page. Alternatively, you can also reach out to our customer care team."
+          }
+        },
+        "ee5e89b7-cbd2-4c66-8cf5-a09fd6d0767b": {
+          "type": "section",
+          "settings": {
+            "question": "What are the different modes of payment available?",
+            "answer": "Currently, we offer 2 payment methods - PayPal and PayU Payment Gateway (Net banking, credit cards, debit cards, wallets and UPI). The default payment currency is set to INR. You can change it from the drop-down button at the top your page."
+          }
+        },
+        "b612e89d-8c2c-4201-8e5b-798de7ad7b85": {
+          "type": "section",
+          "settings": {
+            "question": "Why did my payment fail and not go through?",
+            "answer": "Your payment could have failed due to one of the following reasons:\n<br>\n(a) Incorrect entry of card details, including name, card number, expiry date, CVV or 3D secure pin. \n<br>\n(b) Invalid or out-of-date card details. \n<br>\n(c) An outage or system failure from the bank's end. \n<br>\n(d) Accidental closing or refreshing of the payment page while your transaction was being processed. \n<br>\n(e) Connection error between your bank and our payment gateway due to technical glitches"
+          }
+        },
+        "10c64dcc-e74a-4108-a8f5-d873192e9476": {
+          "type": "section",
+          "settings": {
+            "question": "What do I do in case my payment fails?",
+            "answer": "If you face any of the above situations, please reach out to our Customer Care team, who would check the transaction details and send you an email regarding your payment, order status and how to proceed. If we are unable to get in contact with your bank, there might be a slight delay. We shall get in touch with you at the earliest and help you resolve the issue at the earliest."
+          }
+        },
+        "3577d545-01a3-49c5-bc99-db030de89080": {
+          "type": "section",
+          "settings": {
+            "question": "How secure is your online payment system?",
+            "answer": "We value our customer's safety and privacy to the maximum. All your transactions and payments are processed in a secure environment, complying with the industry standards."
+          }
+        },
+        "5cdd937c-38b6-4483-92fd-a79783b04737": {
+          "type": "section",
+          "settings": {
+            "question": "Do you ship Internationally?",
+            "answer": "Yes, we do ship worldwide, Applicable only for silk sarees that are purchased online. Purchase by virtual video shopping is not applicable. Terms and Conditions apply."
+          }
+        },
+        "dc486eca-9bd5-4f2b-a1a8-1509ca18b6e8": {
+          "type": "section",
+          "settings": {
+            "question": "Is free shipping available on my orders?",
+            "answer": "Yes, we offer free shipping facility for orders with a minimum purchase value of INR 4,000 (India). We also offer a home delivery facility within Chennai that will be delivered within 3-5 business days."
+          }
+        },
+        "50ddc2d3-702f-49c7-a4ab-8d6fd593c682": {
+          "type": "section",
+          "settings": {
+            "question": "Will I be charged extra for International shipping and customs?",
+            "answer": "For a stress-free shopping experience, we have collaborated with the International courier service, DHL, to help clear your orders through customs. There is a possibility that you may have to pay the customs charges during delivery if presented with an invoice for import duties and taxes."
+          }
+        },
+        "989a5623-3fbf-47a1-8fde-8336ed7e009d": {
+          "type": "section",
+          "settings": {
+            "question": "How long will my orders take to get delivered?",
+            "answer": "It would take us 3-5 business days to process and ship your order, and in case of special requirements or customisations, it would take 5 business days. Orders with free international shipping may take about 5-7 days to get delivered. However, you could opt for paid shipping to fast forward the process."
+          }
+        },
+        "2bc2e486-cfd5-4186-924c-3ded3f782ad7": {
+          "type": "section",
+          "settings": {
+            "question": "Is it possible to get my order delivered on a specific date?",
+            "answer": "Yes, for online orders it is possible to select a specific date for delivery as per your convenience. This can be availed only on orders with no tailoring or customisation. Although this must be done in an advance of 7 business days. This shipping feature is available within India and Internationally."
+          }
+        },
+        "ed262c22-2ec1-4c8a-a154-abafa671b615": {
+          "type": "section",
+          "settings": {
+            "question": "Where can I track my order?",
+            "answer": "We will be sending you an email with updates on the status of your order. You can also track it in the My Account page of our website. Feel free to reach out to our Customer Care team for more details about your order."
+          }
+        },
+        "433f56ed-0b59-4c30-8d3a-562ccd669230": {
+          "type": "section",
+          "settings": {
+            "question": "What are the different order statuses to keep a track of?",
+            "answer": "(a) Pending - Payment pending or unsuccessful\n<br> \n(b) Processing - Payment successful, yet to be shipped\n<br> \n(c) Shipment in Transit - Order has been shipped from our warehouse\n<br> \n(d) Cancelled - Order has been cancelled due to non-payment or customer request\n<br> \n(e) Closed - Successful order cancellation based on customer request and refund has been initiated"
+          }
+        },
+        "bc84c100-63ff-4675-a745-230b9a47d2c9": {
+          "type": "section",
+          "settings": {
+            "question": "How do I return or get a refund or exchange any product from my order?",
+            "answer": "To learn more about returns, refund and exchange, visit our Returns Policy page and carefully read through our Terms and Conditions. For any assistance in this process, kindly contact our Customer Care team."
+          }
+        },
+        "b655ec2c-0e30-4258-b56d-9ade61ab96e3": {
+          "type": "section",
+          "settings": {
+            "question": "How do I join the Save and Buy Scheme?",
+            "answer": "To enrol for our save and buy scheme, kindly visit our stores in Chennai or Mumbai. This provision is currently not available online."
+          }
+        },
+        "7bf17521-e0bf-460c-a866-959beeb86b6a": {
+          "type": "section",
+          "settings": {
+            "question": "What are the different plans available under the Save and Buy Scheme?",
+            "answer": "There 3 types of 1 year plan available as of now, valued at INR 300, INR 500 and INR 1,000 per month. Additionally, there will be one lucky draw chosen on the 20th of every month through tokens and further details of which can be obtained in the T&C."
+          }
+        },
+        "9098ad8e-e9f1-4e1e-b3fd-7481284b27ba": {
+          "type": "section",
+          "settings": {
+            "question": "How do I go about the monthly payments?",
+            "answer": "There are 3 payment methods. You can visit either of our stores, submit your Save and Buy ID and number and pay for it. Or you can do an online payment. In the case of online payments, it is necessary that you link your Save and Buy ID with your online account on our website by sending a mail or calling our Customer Care team. This would take approximately 24 hours to come into effect. Post which, you can access your save and buy dashboard and proceed with the monthly payments. Or you can also opt for the door collection method. You will receive a Save and Buy Card to keep track of your payments."
+          }
+        },
+        "4c6f4173-ab66-496f-8629-44c61e3ed861": {
+          "type": "section",
+          "settings": {
+            "question": "How does the lucky draw scheme work?",
+            "answer": "A winner is selected from each group of 100 members of the Save and Buy Scheme, on the 20th of every month, for whom the payments of remaining months are made free of charge. This lucky draw is done on the shop floor where one of our customers picks the draw for each group."
+          }
+        },
+        "c410a6a2-dfeb-4a86-972a-c2e2646aac59": {
+          "type": "section",
+          "settings": {
+            "question": "What are the various features of the Save and Buy Dashboard in my online account?",
+            "answer": "Through the online Save and Buy Dashboard, you can access all your various Save and Buy plans in one place, make hassle-free online payments, view the monthly lucky draw winner and keep a track of all your transaction details."
+          }
+        },
+        "331e8445-c0ee-46d3-a844-4c083d4d7840": {
+          "type": "section",
+          "settings": {
+            "question": "How do I make monthly advance payments?",
+            "answer": "Advance payments should reach us before the 19th of every month and can be made through cash, credit\/debit cards, DD, cheques or post-dated cheques."
+          }
+        },
+        "2dcbd591-6b29-4575-85bc-1267789a290c": {
+          "type": "section",
+          "settings": {
+            "question": "What happens if I choose to discontinue the Save and Buy?",
+            "answer": "Members who choose to discontinue at any period will not be eligible for the incentive. The amount paid thus far can be adjusted with your purchase in our Chennai and Mumbai showroom. It cannot be adjusted online."
+          }
+        },
+        "6801f915-f631-4b64-9e93-bb2d80716fb2": {
+          "type": "section",
+          "settings": {
+            "question": "How do I redeem my plan at the end of its tenure?",
+            "answer": "As of now, redeeming can be availed only at our stores in Chennai and Mumbai."
+          }
+        },
+        "3981fd8b-0abb-4eb3-b611-9f633d81cbb3": {
+          "type": "section",
+          "settings": {
+            "question": "Is there any specific contact details for the Save and Buy Scheme?",
+            "answer": "In case of further queries please reach out us at 9176280099 and for Door Collection call us at 8939586609."
           }
         }
       },
@@ -58,7 +241,34 @@
         "2c94ad45-da83-4923-b747-71b741b2905e",
         "4cf6eb2a-e279-4b3c-b378-d60a2dd70372",
         "f33b8bdd-5797-4522-b09a-62f2e5c7eb8b",
-        "bf6677b8-e89d-40e1-8f99-af0fbf2a5238"
+        "bf6677b8-e89d-40e1-8f99-af0fbf2a5238",
+        "f7f34b29-8af5-4136-8f6a-6d570bd2a390",
+        "5e26a2f8-b361-474a-b16f-7c1730252b0f",
+        "50acf2ab-5d67-4d61-a998-aa46d00d207e",
+        "ce6e7c2b-9d56-4a7e-a600-49d52c9ab81f",
+        "b03b9f88-9a1c-497b-93e0-271bdf09d4d8",
+        "8f1d65ec-c9de-4e94-a008-e0752b26c152",
+        "ee5e89b7-cbd2-4c66-8cf5-a09fd6d0767b",
+        "b612e89d-8c2c-4201-8e5b-798de7ad7b85",
+        "10c64dcc-e74a-4108-a8f5-d873192e9476",
+        "3577d545-01a3-49c5-bc99-db030de89080",
+        "5cdd937c-38b6-4483-92fd-a79783b04737",
+        "dc486eca-9bd5-4f2b-a1a8-1509ca18b6e8",
+        "50ddc2d3-702f-49c7-a4ab-8d6fd593c682",
+        "989a5623-3fbf-47a1-8fde-8336ed7e009d",
+        "2bc2e486-cfd5-4186-924c-3ded3f782ad7",
+        "ed262c22-2ec1-4c8a-a154-abafa671b615",
+        "433f56ed-0b59-4c30-8d3a-562ccd669230",
+        "bc84c100-63ff-4675-a745-230b9a47d2c9",
+        "b655ec2c-0e30-4258-b56d-9ade61ab96e3",
+        "7bf17521-e0bf-460c-a866-959beeb86b6a",
+        "9098ad8e-e9f1-4e1e-b3fd-7481284b27ba",
+        "4c6f4173-ab66-496f-8629-44c61e3ed861",
+        "c410a6a2-dfeb-4a86-972a-c2e2646aac59",
+        "331e8445-c0ee-46d3-a844-4c083d4d7840",
+        "2dcbd591-6b29-4575-85bc-1267789a290c",
+        "6801f915-f631-4b64-9e93-bb2d80716fb2",
+        "3981fd8b-0abb-4eb3-b611-9f633d81cbb3"
       ],
       "settings": {
       }
