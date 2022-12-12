@@ -1,0 +1,53 @@
+<div class="container container--sm">
+    {%- for block in section.blocks -%}
+    <div class="faqs border-top" data-js-accordion="all">
+        <h2>{{ block.settings.question }}</h2>
+        <div>
+            {{ block.settings.page_content html: block.settings.answer }}
+        </div>
+
+    </div>
+    {%- endfor -%}
+</div>
+
+
+{% schema %}
+{
+"name": "FAQs",
+"blocks": [
+{
+"type": "section",
+"name": "Section",
+"settings": [
+{
+"type": "text",
+"id": "question",
+"label": "Question",
+"default": "QUESTION"
+},
+{
+"type": "page",
+"id": "page_content",
+"label": "Page content for the answer",
+"info": "Default page: 'Include FAQs Answer'"
+},
+{
+"type": "paragraph",
+"content": "OR ↓"
+},
+{
+"type": "textarea",
+"id": "answer",
+"label": "Answer"
+},
+{
+"type": "checkbox",
+"id": "is_open",
+"label": "Is open",
+"default": true
+}
+]
+}
+]
+}
+{% endschema %}
