@@ -38,7 +38,7 @@ iframe#dummy-chat-button-iframe {
 }
 
 
-#loader {
+.loader-icon {
   border: 6px solid #f3f3f3;
   border-radius: 50%;
   border-top: 6px solid #444444;
@@ -54,7 +54,7 @@ iframe#dummy-chat-button-iframe {
 }
 
 .center {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;

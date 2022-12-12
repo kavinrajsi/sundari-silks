@@ -197,7 +197,9 @@ assign body_font = settings.type_body
 
 <body class="template-{{ template | split : '.' | first }}">
 
-  <div id="loader"></div>
+  <div id="loader" class="center">
+    <div class="loader-icon"></div>
+  </div>
 
   {% section 'announcement-bar' %}
   <!--[if IE]>
