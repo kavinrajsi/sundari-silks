@@ -198,6 +198,41 @@
             "question": "How does the lucky draw scheme work?",
             "answer": "A winner is selected from each group of 100 members of the Save and Buy Scheme, on the 20th of every month, for whom the payments of remaining months are made free of charge. This lucky draw is done on the shop floor where one of our customers picks the draw for each group."
           }
+        },
+        "c410a6a2-dfeb-4a86-972a-c2e2646aac59": {
+          "type": "section",
+          "settings": {
+            "question": "What are the various features of the Save and Buy Dashboard in my online account?",
+            "answer": "Through the online Save and Buy Dashboard, you can access all your various Save and Buy plans in one place, make hassle-free online payments, view the monthly lucky draw winner and keep a track of all your transaction details."
+          }
+        },
+        "331e8445-c0ee-46d3-a844-4c083d4d7840": {
+          "type": "section",
+          "settings": {
+            "question": "How do I make monthly advance payments?",
+            "answer": "Advance payments should reach us before the 19th of every month and can be made through cash, credit\/debit cards, DD, cheques or post-dated cheques."
+          }
+        },
+        "2dcbd591-6b29-4575-85bc-1267789a290c": {
+          "type": "section",
+          "settings": {
+            "question": "What happens if I choose to discontinue the Save and Buy?",
+            "answer": "Members who choose to discontinue at any period will not be eligible for the incentive. The amount paid thus far can be adjusted with your purchase in our Chennai and Mumbai showroom. It cannot be adjusted online."
+          }
+        },
+        "6801f915-f631-4b64-9e93-bb2d80716fb2": {
+          "type": "section",
+          "settings": {
+            "question": "How do I redeem my plan at the end of its tenure?",
+            "answer": "As of now, redeeming can be availed only at our stores in Chennai and Mumbai."
+          }
+        },
+        "3981fd8b-0abb-4eb3-b611-9f633d81cbb3": {
+          "type": "section",
+          "settings": {
+            "question": "Is there any specific contact details for the Save and Buy Scheme?",
+            "answer": "In case of further queries please reach out us at 9176280099 and for Door Collection call us at 8939586609."
+          }
         }
       },
       "block_order": [
@@ -228,7 +263,12 @@
         "b655ec2c-0e30-4258-b56d-9ade61ab96e3",
         "7bf17521-e0bf-460c-a866-959beeb86b6a",
         "9098ad8e-e9f1-4e1e-b3fd-7481284b27ba",
-        "4c6f4173-ab66-496f-8629-44c61e3ed861"
+        "4c6f4173-ab66-496f-8629-44c61e3ed861",
+        "c410a6a2-dfeb-4a86-972a-c2e2646aac59",
+        "331e8445-c0ee-46d3-a844-4c083d4d7840",
+        "2dcbd591-6b29-4575-85bc-1267789a290c",
+        "6801f915-f631-4b64-9e93-bb2d80716fb2",
+        "3981fd8b-0abb-4eb3-b611-9f633d81cbb3"
       ],
       "settings": {
       }
