@@ -65,6 +65,90 @@
             "question": "Do you undertake custom orders?",
             "answer": "Yes, our Alankara division caters to customisation and tailoring of ethnic ensembles for men, women and children. For more details regarding this, reach out to our customer care team at  different@sundarisilks.com"
           }
+        },
+        "ce6e7c2b-9d56-4a7e-a600-49d52c9ab81f": {
+          "type": "section",
+          "settings": {
+            "question": "How do I purchase a product from Instagram?",
+            "answer": "Our social media channels feature only our latest collections and products, that are one-of-a-kind pieces that get sold out very quickly. If you wish to purchase a product that you view on Instagram\/Facebook, send us a direct message on the said platform to check for availability. Our customer care team will look into and let you know whether it is available in our store or online showroom, and how to proceed after that."
+          }
+        },
+        "b03b9f88-9a1c-497b-93e0-271bdf09d4d8": {
+          "type": "section",
+          "settings": {
+            "question": "Do you undertake corporate orders?",
+            "answer": "Yes, we do. Be it a corporate event or exhibition or celebration, we undertake bulk orders of products, as well as offer an exclusive selection of gift cards and coupons. For inquiries please drop a mail to  admin@sundarisilks.com."
+          }
+        },
+        "8f1d65ec-c9de-4e94-a008-e0752b26c152": {
+          "type": "section",
+          "settings": {
+            "question": "How do I place an order with special requests?",
+            "answer": "For such orders, let us know about your special requests and requirements in the enquiry form on our \"Contact Us\" page. Alternatively, you can also reach out to our customer care team."
+          }
+        },
+        "ee5e89b7-cbd2-4c66-8cf5-a09fd6d0767b": {
+          "type": "section",
+          "settings": {
+            "question": "What are the different modes of payment available?",
+            "answer": "Currently, we offer 2 payment methods - PayPal and PayU Payment Gateway (Net banking, credit cards, debit cards, wallets and UPI). The default payment currency is set to INR. You can change it from the drop-down button at the top your page."
+          }
+        },
+        "b612e89d-8c2c-4201-8e5b-798de7ad7b85": {
+          "type": "section",
+          "settings": {
+            "question": "Why did my payment fail and not go through?",
+            "answer": "Your payment could have failed due to one of the following reasons:\n<br>\n(a) Incorrect entry of card details, including name, card number, expiry date, CVV or 3D secure pin. \n<br>\n(b) Invalid or out-of-date card details. \n<br>\n(c) An outage or system failure from the bank's end. \n<br>\n(d) Accidental closing or refreshing of the payment page while your transaction was being processed. \n<br>\n(e) Connection error between your bank and our payment gateway due to technical glitches"
+          }
+        },
+        "10c64dcc-e74a-4108-a8f5-d873192e9476": {
+          "type": "section",
+          "settings": {
+            "question": "What do I do in case my payment fails?",
+            "answer": "If you face any of the above situations, please reach out to our Customer Care team, who would check the transaction details and send you an email regarding your payment, order status and how to proceed. If we are unable to get in contact with your bank, there might be a slight delay. We shall get in touch with you at the earliest and help you resolve the issue at the earliest."
+          }
+        },
+        "3577d545-01a3-49c5-bc99-db030de89080": {
+          "type": "section",
+          "settings": {
+            "question": "How secure is your online payment system?",
+            "answer": "We value our customer's safety and privacy to the maximum. All your transactions and payments are processed in a secure environment, complying with the industry standards."
+          }
+        },
+        "5cdd937c-38b6-4483-92fd-a79783b04737": {
+          "type": "section",
+          "settings": {
+            "question": "Do you ship Internationally?",
+            "answer": "Yes, we do ship worldwide, Applicable only for silk sarees that are purchased online. Purchase by virtual video shopping is not applicable. Terms and Conditions apply."
+          }
+        },
+        "dc486eca-9bd5-4f2b-a1a8-1509ca18b6e8": {
+          "type": "section",
+          "settings": {
+            "question": "Is free shipping available on my orders?",
+            "answer": "Yes, we offer free shipping facility for orders with a minimum purchase value of INR 4,000 (India). We also offer a home delivery facility within Chennai that will be delivered within 3-5 business days."
+          }
+        },
+        "50ddc2d3-702f-49c7-a4ab-8d6fd593c682": {
+          "type": "section",
+          "settings": {
+            "question": "Will I be charged extra for International shipping and customs?",
+            "answer": "For a stress-free shopping experience, we have collaborated with the International courier service, DHL, to help clear your orders through customs. There is a possibility that you may have to pay the customs charges during delivery if presented with an invoice for import duties and taxes."
+          }
+        },
+        "989a5623-3fbf-47a1-8fde-8336ed7e009d": {
+          "type": "section",
+          "settings": {
+            "question": "How long will my orders take to get delivered?",
+            "answer": "It would take us 3-5 business days to process and ship your order, and in case of special requirements or customisations, it would take 5 business days. Orders with free international shipping may take about 5-7 days to get delivered. However, you could opt for paid shipping to fast forward the process."
+          }
+        },
+        "2bc2e486-cfd5-4186-924c-3ded3f782ad7": {
+          "type": "section",
+          "settings": {
+            "question": "Is it possible to get my order delivered on a specific date?",
+            "answer": "Yes, for online orders it is possible to select a specific date for delivery as per your convenience. This can be availed only on orders with no tailoring or customisation. Although this must be done in an advance of 7 business days. This shipping feature is available within India and Internationally."
+          }
         }
       },
       "block_order": [
@@ -76,7 +160,19 @@
         "bf6677b8-e89d-40e1-8f99-af0fbf2a5238",
         "f7f34b29-8af5-4136-8f6a-6d570bd2a390",
         "5e26a2f8-b361-474a-b16f-7c1730252b0f",
-        "50acf2ab-5d67-4d61-a998-aa46d00d207e"
+        "50acf2ab-5d67-4d61-a998-aa46d00d207e",
+        "ce6e7c2b-9d56-4a7e-a600-49d52c9ab81f",
+        "b03b9f88-9a1c-497b-93e0-271bdf09d4d8",
+        "8f1d65ec-c9de-4e94-a008-e0752b26c152",
+        "ee5e89b7-cbd2-4c66-8cf5-a09fd6d0767b",
+        "b612e89d-8c2c-4201-8e5b-798de7ad7b85",
+        "10c64dcc-e74a-4108-a8f5-d873192e9476",
+        "3577d545-01a3-49c5-bc99-db030de89080",
+        "5cdd937c-38b6-4483-92fd-a79783b04737",
+        "dc486eca-9bd5-4f2b-a1a8-1509ca18b6e8",
+        "50ddc2d3-702f-49c7-a4ab-8d6fd593c682",
+        "989a5623-3fbf-47a1-8fde-8336ed7e009d",
+        "2bc2e486-cfd5-4186-924c-3ded3f782ad7"
       ],
       "settings": {
       }
