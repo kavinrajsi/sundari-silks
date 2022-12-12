@@ -51,6 +51,20 @@
             "question": "What is the process to purchase a product from our website?",
             "answer": "You can order a product from our website by following a few simple and easy steps.\n <br>\n1. Select the product of your choice.\n<br>\n2. In the case of a saree, kindly provide your blouse measurement details if you wish to opt for the blouse stitching feature. You can also opt for pico\/fall stitching service at this stage.\n<br>\n3. In the case of any readymade, kindly select the size after consulting our size guide for each product.\n<br>\n4. Click on the add to cart to button.\n<br>\n5. At this point, you can continue shopping and add more products of your choice to the cart. Or you can proceed to checkout. \n<br>\n6. In the checkout page, please provide your billing and shipping details, along with your payment method. \n<br>\n7. Remember to check your order summary and then click \"confirm order\" to proceed with the payment. \n<br>\n8. You will be redirected to our secure payment gateway page.\n <br>\n9. Once your transaction is through, we will send a confirmation to your registered email address."
           }
+        },
+        "5e26a2f8-b361-474a-b16f-7c1730252b0f": {
+          "type": "section",
+          "settings": {
+            "question": "Is there any possibility to gift wrap my order?",
+            "answer": "Yes. In the event, you require your order to be gift wrapped you can mention it in the checkout page, under the \"more information about your order\" box. No additional price will be charged for this."
+          }
+        },
+        "50acf2ab-5d67-4d61-a998-aa46d00d207e": {
+          "type": "section",
+          "settings": {
+            "question": "Do you undertake custom orders?",
+            "answer": "Yes, our Alankara division caters to customisation and tailoring of ethnic ensembles for men, women and children. For more details regarding this, reach out to our customer care team at  different@sundarisilks.com"
+          }
         }
       },
       "block_order": [
@@ -60,7 +74,9 @@
         "4cf6eb2a-e279-4b3c-b378-d60a2dd70372",
         "f33b8bdd-5797-4522-b09a-62f2e5c7eb8b",
         "bf6677b8-e89d-40e1-8f99-af0fbf2a5238",
-        "f7f34b29-8af5-4136-8f6a-6d570bd2a390"
+        "f7f34b29-8af5-4136-8f6a-6d570bd2a390",
+        "5e26a2f8-b361-474a-b16f-7c1730252b0f",
+        "50acf2ab-5d67-4d61-a998-aa46d00d207e"
       ],
       "settings": {
       }
