@@ -223,8 +223,7 @@
         </a>
         {% else %}
         {% if not_in_cart %}
-        <button type="submit" name="add"
-          class="button product-form__submit {% if block.settings.show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+        <button type="submit" name="add" class="button product-form__submit  button--primary"
           data-status-button="{%- if product.selected_or_first_available_variant.available -%} add-to-cart {%- else -%} soldout {%- endif -%}"
           {% if product.selected_or_first_available_variant.available==false %} disabled {% endif %}>
           <span>
