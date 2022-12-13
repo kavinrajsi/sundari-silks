@@ -1,103 +1,32 @@
-<div class="blog-grid"  collection-list-mobile="2" collection-list-tablet="3" collection-list-desktop="4">
-{% for article in blog.articles %}
-<div class="blog-card">
-  <a href="{{ article.url }}" class="blog-card-url">
-    {% if article.image %}
-    {{ article.image | image_url: width: 404, height: 296, format: 'pjpg' | image_tag: alt:article.image.alt, class:'blog-card-image' }}
-    <noscript>
-      <p>
-        {{ article.image | image_url: width: 404, height: 296, format: 'pjpg' | image_tag: article.title }}
-      </p>
-    </noscript>
-    {% endif %}
-    <h2 class="blog-card-title">  {{ article.title }} </h2>
-    <p class="blog-card-excerpt">
-      {% if article.excerpt.size > 0 %}
-      {{ article.excerpt }}
-      {% else %}
-      {{ article.content | strip_html | truncate: 150 }}
-      {% endif %}
-    </p>
-
-  </a>
-</div>
-{% endfor %}
-</div>
-
-{% comment %}
-<ul>
+<div class="blog-grid">
+  {% paginate article.comments by 20 %}
   {% for article in blog.articles %}
-  <li>
-
-    <h2>
-      <a href="{{ article.url }}">
-
-        {% if article.image %}
-        {{ article.image | image_url: width: 4600, height: 460, crop: top, format: 'pjpg' | image_tag: alt:article.image.alt }}
-        <noscript>
-          <p>
-            {{ article.image | image_url: 300, scale: 2, format: 'pjpg' | image_tag: article.title }}
-          </p>
-        </noscript>
+  <div class="blog-card">
+    <a href="{{ article.url }}" class="blog-card-url">
+      {% if article.image %}
+      {{ article.image | image_url: width: 404, height: 296, format: 'pjpg' | image_tag: alt:article.image.alt,
+      class:'blog-card-image' }}
+      <noscript>
+        <p>
+          {{ article.image | image_url: width: 404, height: 296, format: 'pjpg' | image_tag: article.title }}
+        </p>
+      </noscript>
+      {% endif %}
+      <h2 class="blog-card-title"> {{ article.title }} </h2>
+      <p class="blog-card-excerpt">
+        {% if article.excerpt.size > 0 %}
+        {{ article.excerpt }}
         {% else %}
-        {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg' }}
+        {{ article.content | strip_html | truncate: 150 }}
         {% endif %}
-
-        {{ article.title }}
-      </a>
-    </h2>
-
-    {% if section.settings.blog_show_author %}
-    <span>
-      By {{ article.author }}
-    </span>
-    {% endif %}
-
-    {% if section.settings.blog_show_date %}
-    <span>
-      {{ article.published_at | time_tag: format: 'date' }}
-    </span>
-    {% endif %}
-
-    <p>
-      {% if article.excerpt.size > 0 %}
-      {{ article.excerpt }}
-      {% else %}
-      {{ article.content | strip_html | truncate: 150 }}
-      {% endif %}
-    </p>
-
-    {% if article.tags.size > 0 %}
-    <ul>
-      {{ 'blogs.article.posted_in' }}
-      <li>
-        {% for tag in article.tags %}
-        <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
-        {% endfor %}
-      </li>
-    </ul>
-    {% endif %}
-
-    <ul>
-      <li>
-        <a href="{{ article.url }}" aria-label="Read more: {{ article.title }}">
-          Read more
-        </a>
-      </li>
-      {% if blog.comments_enabled? and article.comments_count > 0 %}
-      <li>
-        <a href="{{ article.url }}#comments">
-          {{ article.comments_count }}
-        </a>
-      </li>
-      {% endif %}
-    </ul>
-
-  </li>
+      </p>
+    </a>
+  </div>
   {% endfor %}
-</ul>
-{% endcomment %}
+  {{ paginate | default_pagination }}
+  {% endpaginate %}
 
+</div>
 
 {% schema %}
 {
