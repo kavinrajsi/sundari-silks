@@ -180,7 +180,9 @@
       </ul>
     </div>
   </div>
-  {% if section.settings.popularserchmenu != 'blank' %}
+
+
+  {% if section.settings.popularserchmenu_show %}
   <div class="footer-popularsearch">
     <h2 class="popularsearch-title">Popular Search:</h2>
     <ul class="popularsearch-list">
@@ -225,6 +227,12 @@
 "type": "link_list",
 "id": "popularserchmenu",
 "label": "Popular Search Menu"
+},
+{
+"type": "checkbox",
+"id": "popularserchmenu_show",
+"label": "Popular Search Menu Enable",
+"default": false
 }
 ]
 }
