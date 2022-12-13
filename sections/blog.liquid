@@ -1,33 +1,34 @@
-<div class="blog-grid">
+<div class="blog-gridList">
   {% paginate blog.articles by 20 %}
-  {% for article in blog.articles %}
-  <div class="blog-card">
-    <a href="{{ article.url }}" class="blog-card-url">
-      {% if article.image %}
-      {{ article.image | image_url: width: 404, height: 296, format: 'pjpg' | image_tag: alt:article.image.alt,
-      class:'blog-card-image' }}
-      <noscript>
-        <p>
-          {{ article.image | image_url: width: 404, height: 296, format: 'pjpg' | image_tag: article.title }}
-        </p>
-      </noscript>
-      {% endif %}
-      <h2 class="blog-card-title"> {{ article.title }} </h2>
-      <p class="blog-card-excerpt">
-        {% if article.excerpt.size > 0 %}
-        {{ article.excerpt }}
-        {% else %}
-        {{ article.content | strip_html | truncate: 150 }}
+  <div class="blog-grid">
+    {% for article in blog.articles %}
+    <div class="blog-card">
+      <a href="{{ article.url }}" class="blog-card-url">
+        {% if article.image %}
+        {{ article.image | image_url: width: 404, height: 296, format: 'pjpg' | image_tag: alt:article.image.alt,
+        class:'blog-card-image' }}
+        <noscript>
+          <p>
+            {{ article.image | image_url: width: 404, height: 296, format: 'pjpg' | image_tag: article.title }}
+          </p>
+        </noscript>
         {% endif %}
-      </p>
-    </a>
+        <h2 class="blog-card-title"> {{ article.title }} </h2>
+        <p class="blog-card-excerpt">
+          {% if article.excerpt.size > 0 %}
+          {{ article.excerpt }}
+          {% else %}
+          {{ article.content | strip_html | truncate: 150 }}
+          {% endif %}
+        </p>
+      </a>
+    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
   <div class="pagination--number">
     {{ paginate | default_pagination: next: 'Next', previous: 'Previous' }}
   </div>
   {% endpaginate %}
-
 </div>
 
 {% schema %}
