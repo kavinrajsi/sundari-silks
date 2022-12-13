@@ -232,7 +232,7 @@
         {% if not_in_cart %}
         <button type="submit" name="add" class="button product-form__submit  button--primary"
           data-status-button="{%- if product.selected_or_first_available_variant.available -%} add-to-cart {%- else -%} soldout {%- endif -%}"
-          {% if product.selected_or_first_available_variant.available==false %} enabled {% endif %}>
+          {% if product.selected_or_first_available_variant.available==false %} Disabled {% endif %}>
           <span>
             {%- if product.selected_or_first_available_variant.available -%}
             ADD TO CART
