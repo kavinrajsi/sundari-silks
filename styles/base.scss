@@ -37,7 +37,9 @@ iframe#dummy-chat-button-iframe {
   display: block !important;
 }
 
-
+.radio_image:checked+.image_radio{
+  border: 0px !important;
+}
 
 #loader {
   position: fixed;
