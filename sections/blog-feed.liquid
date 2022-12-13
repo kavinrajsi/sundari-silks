@@ -21,12 +21,12 @@
             <h3 class="blog-feed-card-title"> {{ article.title | escape }} </h3>
             <p class="blog-feed-card-content">
               {% if article.excerpt.size > 0 %}
-              {{ article.excerpt | strip_html | truncate: 148 }}
+              {{ article.excerpt | strip_html | truncate: 100 }}
               {% else %}
-              {{ article.content | strip_html | truncate: 148 }}
+              {{ article.content | strip_html | truncate: 100 }}
               {% endif %}
             </p>
-            <p class="blog-feed-card-cta">  Read More </p>
+            <p class="blog-feed-card-cta"> Read More </p>
           </a>
         </div>
       </div>

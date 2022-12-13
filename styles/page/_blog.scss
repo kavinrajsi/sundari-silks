@@ -257,5 +257,27 @@
       vertical-align: super;
       font-size: smaller;
     }
+    &-share {
+      display: flex;
+      align-items: center;
+      &-title {
+        display: inline-block;
+        margin-right: 4px;
+      }
+      &-list {
+        list-style: none;
+        padding: 0 !important;
+        margin: 0 !important;
+        li {
+          display: inline-block;
+          margin: 0 4px;
+          svg {
+            width: 18px;
+            height: 18px;
+            color: rgba(28, 28, 27, 0.5);
+          }
+        }
+      }
+    }
   }
 }
