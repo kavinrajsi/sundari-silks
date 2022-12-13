@@ -1,0 +1,40 @@
+.policy-page__container {
+  max-width: 896px;
+  margin-right: auto;
+  margin-left: auto;
+
+  padding-top: 4vw;
+  padding-bottom: 4vw;
+
+  padding-top: var(--home-section-secondary-title-space);
+  padding-bottom: var(--home-section-secondary-title-space);
+
+  padding-right: 24px !important;
+  padding-left: 24px !important;
+  @media (min-width: 768px) {
+    padding-right: 32px !important;
+    padding-left: 32px !important;
+  }
+
+  .faqQuestion {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2222;
+    color: var(--color-black);
+
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-border);
+    cursor: pointer;
+    position: relative;
+  }
+  .faqAnswer {
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-black);
+  }
+}

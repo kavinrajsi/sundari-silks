@@ -17,6 +17,7 @@
 @import "page/login";
 @import "page/account";
 @import "page/policy";
+@import "page/faq";
 @import "page/blog";
 @import "common/footer";
 
@@ -24,7 +25,7 @@
 iframe#dummy-chat-button-iframe {
   bottom: 70px !important;
   z-index: 1000 !important;
-  &[isopen="true"]{
+  &[isopen="true"] {
     bottom: 0px !important;
   }
 }
@@ -37,7 +38,7 @@ iframe#dummy-chat-button-iframe {
   display: block !important;
 }
 
-.radio_image:checked+.image_radio{
+.radio_image:checked + .image_radio {
   border-width: 1px !important;
 }
 
@@ -54,18 +55,18 @@ iframe#dummy-chat-button-iframe {
   align-items: center;
   background-color: #fff;
 
-.loader-icon {
-  border: 6px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 6px solid #444444;
-  width: 70px;
-  height: 70px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  100% {
-      transform: rotate(360deg);
+  .loader-icon {
+    border: 6px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 6px solid #444444;
+    width: 70px;
+    height: 70px;
+    animation: spin 1s linear infinite;
   }
-}
+
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }

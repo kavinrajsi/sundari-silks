@@ -337,7 +337,7 @@
     $(this).toggleClass("product-detail-description-active");
   });
 
-  $(".faqs.faqQuestion").click(function () {
+  $(".faqs .faqQuestion").click(function () {
     $(this).next(".faqAnswer").toggleClass("faqActive");
   });
 
