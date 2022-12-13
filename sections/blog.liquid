@@ -1,5 +1,5 @@
 <div class="blog-grid">
-  {% paginate article.comments by 20 %}
+  {% paginate blog.articles by 20 %}
   {% for article in blog.articles %}
   <div class="blog-card">
     <a href="{{ article.url }}" class="blog-card-url">
