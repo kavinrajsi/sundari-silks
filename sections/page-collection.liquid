@@ -1,11 +1,14 @@
+{% if collection.metafields.custom.sub_collection_two.value != blank %}
+{{ collection.metafields.custom.sub_collection_two.value }}
+{% endif %}
+
+
 <div class="collection-page-header pageCollectionFourGrid">
   <div class="collection-page-title {% if customer and customer.tags contains 'admin' %} d-none {% endif %}">
     {% if collection.title != blank %}
     <h1>{{ collection.title }}</h1>
     {% endif %}
   </div>
-
-
   <div
     class="collection-page-header-image text-center d-none {% if customer and customer.tags contains 'admin' %} d-block {% endif %}">
     {% if collection.image != blank %}
