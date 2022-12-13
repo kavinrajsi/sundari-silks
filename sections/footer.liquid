@@ -180,6 +180,18 @@
       </ul>
     </div>
   </div>
+  <div class="footer-popularsearch">
+    <h2 class="popularsearch-title">Popular Search:</h2>
+    <ul class="popularsearch-list">
+      {% for link in linklists[settings.popularserchmenu].links %}
+      <li>
+        <a href="{{ link.url }}" {% if link.active %}aria-current="page" {% endif %}>
+          {{ link.title }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
   <div class="footer-copyright">
     <p>&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: '/' }}. Built with ❤️ in India</p>
   </div>
@@ -205,6 +217,11 @@
 "default": 100,
 "unit": "px",
 "label": "Custom logo width"
+},
+{
+"type": "link_list",
+"id": "popularserchmenu",
+"label": "Popular Search Menu"
 }
 ]
 }

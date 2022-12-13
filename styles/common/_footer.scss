@@ -139,7 +139,6 @@ footer {
 .footer-link h4 {
   border-top: 0px;
 }
-
 .footer-dataaction {
   max-width: var(--content-width);
   display: flex;
@@ -217,5 +216,26 @@ footer {
         color: var(--color-maroon);
       }
     }
+  }
+}
+
+
+
+.footer-popularsearch{
+  max-width: var(--content-width);
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+  padding: 0 8px;
+  @media (min-width: 576px) {
+    padding: 0 16px;
+  }
+  @media (min-width: 768px) {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 2rem 24px;
+    align-items: center;
   }
 }
