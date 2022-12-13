@@ -98,7 +98,8 @@
         "settings": {
           "logo": "shopify:\/\/shop_images\/sundarisilks-footer-logo-512.png",
           "logo_width": 120,
-          "popularserchmenu": ""
+          "popularserchmenu": "popular-search",
+          "popularserchmenu_show": false
         }
       },
       "quickview-modal": {
