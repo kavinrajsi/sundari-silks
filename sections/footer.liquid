@@ -180,10 +180,11 @@
       </ul>
     </div>
   </div>
+  {% if section.settings.popularserchmenu != 'blank' %}
   <div class="footer-popularsearch">
     <h2 class="popularsearch-title">Popular Search:</h2>
     <ul class="popularsearch-list">
-      {% for link in linklists[settings.popularserchmenu].links %}
+      {% for link in linklists[section.settings.popularserchmenu].links %}
       <li>
         <a href="{{ link.url }}" {% if link.active %}aria-current="page" {% endif %}>
           {{ link.title }}
@@ -192,6 +193,8 @@
       {% endfor %}
     </ul>
   </div>
+  {% endif %}
+
   <div class="footer-copyright">
     <p>&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: '/' }}. Built with ❤️ in India</p>
   </div>
