@@ -337,6 +337,11 @@
     $(this).toggleClass("product-detail-description-active");
   });
 
+  $(".faqs.faqQuestion").click(function () {
+    $(this).next(".faqAnswer").toggleClass("faqActive");
+  });
+
+
   $(".footer-main h4").click(function () {
     $(this).next("ul").toggleClass("footerActive");
   });
