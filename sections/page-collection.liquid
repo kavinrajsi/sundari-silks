@@ -1,6 +1,60 @@
-{% if collection.metafields.custom.sub_collection_two.value != blank %}
-{{ collection.metafields.custom.sub_collection_two.value }}
+{% if customer and customer.tags contains 'admin' %}
+{% if collection.metafields.custom.sub_collection_one.value != blank %}
+<ul class="collection-sub-list">
+  {% assign ShopURL = shop.url | append: "/colections/" %}
+  {% if collection.metafields.custom.sub_collection_one.value != blank %}
+  <li>
+    <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_one.value.handle }}">
+      {{ collection.metafields.custom.sub_collection_one.value.title }}
+    </a>
+  </li>
+  {% endif %}
+  {% if collection.metafields.custom.sub_collection_two.value != blank %}
+  <li>
+    <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_two.value.handle }}">
+      {{ collection.metafields.custom.sub_collection_two.value.title }}
+    </a>
+  </li>
+  {% endif %}
+  {% if collection.metafields.custom.sub_collection_three.value != blank %}
+  <li>
+    <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_three.value.handle }}">
+      {{ collection.metafields.custom.sub_collection_three.value.title }}
+    </a>
+  </li>
+  {% endif %}
+  {% if collection.metafields.custom.sub_collection_four.value != blank %}
+  <li>
+    <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_four.value.handle }}">
+      {{ collection.metafields.custom.sub_collection_four.value.title }}
+    </a>
+  </li>
+  {% endif %}
+  {% if collection.metafields.custom.sub_collection_five.value != blank %}
+  <li>
+    <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_five.value.handle }}">
+      {{ collection.metafields.custom.sub_collection_five.value.title }}
+    </a>
+  </li>
+  {% endif %}
+  {% if collection.metafields.custom.sub_collection_six.value != blank %}
+  <li>
+    <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_six.value.handle }}">
+      {{ collection.metafields.custom.sub_collection_six.value.title }}
+    </a>
+  </li>
+  {% endif %}
+  {% if collection.metafields.custom.sub_collection_seven.value != blank %}
+  <li>
+    <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_seven.value.handle }}">
+      {{ collection.metafields.custom.sub_collection_seven.value.title }}
+    </a>
+  </li>
+  {% endif %}
+</ul>
 {% endif %}
+{% endif %}
+
 
 
 <div class="collection-page-header pageCollectionFourGrid">
