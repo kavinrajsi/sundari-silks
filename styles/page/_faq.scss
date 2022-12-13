@@ -18,12 +18,12 @@
 
   .faqQuestion {
     margin: 0;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     line-height: 1.2222;
     color: var(--color-black);
     margin-bottom: 16px;
-    padding-bottom: 12px;
+    padding: 0 12px 12px;
     border-bottom: 1px solid var(--color-border);
     cursor: pointer;
     position: relative;
@@ -48,7 +48,7 @@
     display: none;
     margin-top: 0;
     margin-bottom: 24px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 1.5;
     color: var(--color-black);
