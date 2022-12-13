@@ -339,6 +339,7 @@
 
   $(".faqs .faqQuestion").click(function () {
     $(this).next(".faqAnswer").toggleClass("faqActive");
+    $(this).toggleClass("faqActive");
   });
 
 
