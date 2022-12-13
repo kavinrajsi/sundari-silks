@@ -17,7 +17,6 @@
     @media (min-width: 992px) {
       grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
     }
-
   }
   &-card {
     &-url,
@@ -91,6 +90,9 @@
       font-weight: 400;
       line-height: 1.5;
       color: var(--color-black);
+      a {
+        text-decoration: underline;
+      }
     }
 
     li {
@@ -156,8 +158,13 @@
     .imageGrid {
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-around;
       gap: 8px;
+      img {
+        width: 48%;
+      }
     }
+
     svg {
       overflow: hidden;
       vertical-align: middle;
@@ -249,11 +256,6 @@
     sup {
       vertical-align: super;
       font-size: smaller;
-    }
-
-    img {
-      vertical-align: middle;
-      border-style: none;
     }
   }
 }
