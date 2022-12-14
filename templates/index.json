@@ -55,7 +55,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/sundari-silks-brides-of-sundari-wedding-saree-ideas-banner-desktop.png",
-            "mobile_image": "shopify:\/\/shop_images\/sundari-silks-brides-of-sundari-wedding-saree-idea-banner-mobile.png",
+            "mobile_image": "shopify:\/\/shop_images\/sundarisilks-brides-of-sundari-wedding-saree-ideas-banner-mobile.png",
             "link": "shopify:\/\/blogs\/article\/saree-styling-ideas-and-tips"
           }
         }
@@ -388,7 +388,6 @@
           "type": "instagram-image",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta-1.jpg",
             "link": "https:\/\/www.instagram.com\/p\/Ckuux7oyW6w\/"
           }
         },
@@ -396,7 +395,6 @@
           "type": "instagram-image",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta-2.jpg",
             "link": "https:\/\/www.instagram.com\/p\/CksAskoSXTW\/"
           }
         },
@@ -404,7 +402,6 @@
           "type": "instagram-image",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta-3.jpg",
             "link": "https:\/\/www.instagram.com\/p\/CkpX7JiyBoT\/"
           }
         },
@@ -412,7 +409,6 @@
           "type": "instagram-image",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta-4.jpg",
             "link": "https:\/\/www.instagram.com\/p\/Ckm0llZSzC5\/"
           }
         },
@@ -420,7 +416,6 @@
           "type": "instagram-image",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta-5.jpg",
             "link": "https:\/\/www.instagram.com\/p\/CkkOUIPS9JV\/"
           }
         },
@@ -428,7 +423,6 @@
           "type": "instagram-image",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta-6.jpg",
             "link": "https:\/\/www.instagram.com\/p\/CkhqMo3LpFl\/"
           }
         }
