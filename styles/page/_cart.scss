@@ -107,7 +107,7 @@
           }
         }
         .line-item__details-wrapper {
-          flex: 1 0 auto;
+          flex: 1 0;
           display: flex;
           flex-direction: column;
           @media (min-width: 768px) {
