@@ -97,10 +97,12 @@
               }
             }
           }
-          flex: 1 0 80px;
+          flex: 0 0 80px;
+          max-width: 80px;
           min-width: 80px;
           @media (min-width: 768px) {
-            flex: 1 0 120px;
+            flex: 0 0 120px;
+            max-width: 120px;
             min-width: 120px;
           }
         }
