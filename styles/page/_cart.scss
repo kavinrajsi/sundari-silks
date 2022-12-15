@@ -75,7 +75,7 @@
     .cart__items.cart_block {
       display: grid;
       gap: 12px;
-      overflow: hidden;
+      // overflow: hidden;
 
       .line-item {
         border-bottom: 1px solid var(--color-border);
@@ -107,6 +107,7 @@
           }
         }
         .line-item__details-wrapper {
+          flex: 1 0 auto;
           display: flex;
           flex-direction: column;
           @media (min-width: 768px) {
