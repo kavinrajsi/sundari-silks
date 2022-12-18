@@ -1,0 +1,184 @@
+<section class="shopify-section page-header-image">
+    <img class="banner-image"
+        src="https://cdn.shopify.com/s/files/1/0270/5129/4854/files/1560777459contact_us_banner_desktop_1900x.jpg?v=1614322936"
+        alt="">
+    <p class="banner-text">Contact Us </p>
+</section>
+<section class="contact-card-data">
+    <h2 class="contact-content-title">Drop Us A Line</h2>
+    <p class="contact-content-description">We're happy to answer any questions you have or provide you with an estimate.
+        Just send us a message in the form
+        below with any questions you may have.</p>
+    <nav>
+        <div class="contact-chat-option contact-list">
+            <div class="contact-icon">
+                <svg width="24" height="24" class="closeMenu">
+                    <use href="#phone" />
+                </svg>
+            </div>
+            <div class=" contact-title">
+                Call us
+            </div>
+            <div class="contact-content">
+                <p>Chennai</p>
+                <p>
+                    <a href="tel:+914428149999">
+                        +91 44 2814 9999
+                    </a>
+
+                    <a href="tel:+914428143093">
+                        +91 44 2814 3093
+                    </a>
+
+                    <a href="tel:+918680877999">
+                        +91 86808 77999
+                    </a>
+
+                    <a href="tel:+919962425968">
+                        +91 99624 25968
+                    </a>
+                </p>
+            </div>
+            <div class="contact-content">
+                <p>Mumbai</p>
+                <a href="tel:+9102235941935">
+                    +91 022 35941935
+                </a>
+
+                <a href="tel:+919324244503">
+                    +91 93242 44503
+                </a>
+            </div>
+            <div class="contact-content">
+                <p>Online</p>
+                <p>
+                    <a href="tel:+919962712299">
+                        +91 99627 12299
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="contact-chat-option contact-list">
+            <div class="contact-icon">
+                <svg width="24" height="24" class="closeMenu">
+                    <use href="#mail" />
+                </svg>
+            </div>
+            <div class=" contact-title">
+                Write to us
+            </div>
+            <div class="contact-content">
+                <p>Online</p>
+                <p><a href="mailto:different@sundarisilks.com">different@sundarisilks.com</a></p>
+            </div>
+            <div class="contact-content">
+                <p>Mumbai</p>
+                <p><a href="mailto:mumbai@sundarisilks.com">mumbai@sundarisilks.com</a></p>
+            </div>
+        </div>
+        <div class="contact-chat-option contact-list">
+            <div class="contact-icon">
+                <svg width="24" height="24" class="closeMenu">
+                    <use href="#chat" />
+                </svg>
+            </div>
+            <div class=" contact-title">
+                Live chat
+            </div>
+            <div class="contact-content">
+                <p>Monday - Saturday <br>9:00 am to 6:00 pm (IST)</p>
+                <p>Talk to us on live chat. <br> We're here to help.</p>
+            </div>
+        </div>
+    </nav>
+</section>
+<section class="shopify-section homepage-section">
+    <section class="virtualshopping"
+        style="background-image: url(//cdn.shopify.com/s/files/1/0490/1158/9282/files/Virtual_Shopping_Background.png?v=1668099429);">
+        <a href="https://calendly.com/sundarisilks/30min">
+            <div class="content-area">
+                <h3>The Virtual Store <br> Of Exquisite Products</h3>
+                <p> Shop our collection from the comfort of your home </p>
+                <span>Book an Appointment</span>
+            </div>
+            <div class="image-area">
+                <img loading="lazy" class="mobile"
+                    src="//cdn.shopify.com/s/files/1/0490/1158/9282/files/vs-desktop-image-1.png?v=1668099334 "
+                    alt="The Virtual Store Of Exquisite Products">
+                <img loading="lazy" class="desktop"
+                    src="//cdn.shopify.com/s/files/1/0490/1158/9282/files/vs-desktop-image-1.png?v=1668099334 "
+                    alt="The Virtual Store Of Exquisite Products">
+            </div>
+        </a>
+    </section>
+</section>
+<section class="shopify-section contact-card-form">
+    <h2 class="contact-content-title">Drop Us A Line</h2>
+    <p class="contact-content-description">We're happy to answer any questions you have or provide you with an estimate.
+        Just send us a message in the form
+        below with any questions you may have.</p>
+    {% form 'contact' %}
+    {{ form.errors | default_errors }}
+    <div class="contact-input name">
+        <label for="name">Name</label>
+        <input type="text" name="contact[name]" id="name" />
+    </div>
+    <div class="contact-input email">
+        <label for="email">Email</label>
+        <input type="email" name="contact[email]" id="email" />
+    </div>
+    <div class="contact-input phone">
+        <label for="phone">Phone</label>
+        <input type="tel" name="contact[phone]" id="phone" />
+    </div>
+    <div class="contact-input message">
+        <label for="message">Message</label>
+        <textarea name="contact[body]" id="message"></textarea>
+    </div>
+    <div class="contact-input submit">
+        <input class="button" type="submit" value="Submit" />
+    </div>
+    {% endform %}
+</section>
+<section class="shopify-section contact-card-map">
+    <h2 class="contact-content-title">Drop Us A Line</h2>
+    <p class="contact-content-description">We're happy to answer any questions you have or provide you with an estimate.
+        Just send us a message in the form
+        below with any questions you may have.</p>
+    <div class="contact-address-lists">
+        <div class="contact-address-list">
+            <address>
+                <strong> Chennai Showroom </strong> <br>
+                36, North Usman Road, T. Nagar, <br>
+                
+                Chennai - 600 017, India. <br>
+
+                Phone : <a href="tel:+914428149999"> +91 44 2814 9999 </a> / <a href="tel:+914428143093">+91 44 2814 3093</a> <br>
+
+                Mobile : <a href="tel:+918680877999"> +91 86808 77999 </a> / <a href="tel:+919962425968">+91 99624 25968</a> <br>
+                
+                Email : <a href="mailto:different@sundarisilks.com">different@sundarisilks.com</a>
+            </address>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15547.44566049614!2d80.23228900000001!3d13.044492!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe63857a058127e57!2sSundari%20Silks%20-%20India%20%7C%20Wedding%20Sarees%20Collection!5e0!3m2!1sen!2sin!4v1644493602344!5m2!1sen!2sin"
+                width="370" height="240" style="border: 0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="contact-address-list">
+            <address>
+                <strong> Mumbai Showroom </strong> <br>
+                No: 2, 4 Upper Ground Floor, <br>
+
+                Parle Square Mall, Monghibai Road, <br>
+
+                Vile Parle - East, Mumbai 400 057, India. <br>
+
+                Phone : <a href="tel:+9102235941935">+91 022 35941935</a> / <a href="tel:+919324244503">93242 44503</a> <br>
+
+                Email : <a href="mailto:mumbai@sundarisilks.com">mumbai@sundarisilks.com</a>
+            </address>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5648.853381470971!2d72.84536175453906!3d19.100751220741206!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c935fa794b39%3A0xcef6c3f8059ac58f!2sSundari%20Silks!5e0!3m2!1sen!2sin!4v1651650338536!5m2!1sen!2sin"
+                width="370" height="240" style="border: 0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
