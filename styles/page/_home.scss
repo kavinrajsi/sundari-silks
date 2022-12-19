@@ -764,6 +764,7 @@ body:not(.template-index) {
 
 // store idea
 .virtualshopping {
+  border-radius: var(--border-radius);
   margin-left: var(--Mgap);
   margin-right: var(--Mgap);
   background-repeat: repeat;
