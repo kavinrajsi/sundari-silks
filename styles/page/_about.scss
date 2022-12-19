@@ -16,23 +16,72 @@
         padding-left: 32px !important;
     }
 
+    &-centertitle {
+        text-align: center;
+        color: var(--color-maroon);
+        font-size: 34px;
+        line-height: 1.35;
+        font-family: playfair display;
+        font-weight: 400;
+
+        margin-bottom: 40px;
+
+        @media(min-width: 768px) {
+            margin-bottom: 60px;
+        }
+    }
+
     .aboutus-card {
         display: flex;
-    }
+        justify-content: center;
+        align-items: center;
+        max-width: 990px;
+        margin-bottom: 40px;
+        margin-right: 14px;
+        margin-left: 14px;
 
-    .aboutus-content {
-        h2 {
-            font-size: 30px;
-            font-family: var(--font-playfair);
-            font-size: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        @media(min-width: 768px) {
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: 60px;
         }
 
-        p {
-            margin-bottom: 20px;
+        &.row-reverse {
+
+            @media(min-width: 768px) {
+
+                flex-direction: row-reverse;
+            }
+
+        }
+
+        .aboutus-image {
+            width: 50%;
+            flex: 1 0 auto;
+            padding: 0 14px;
+        }
+
+        .aboutus-content {
+            width: 50%;
+            flex: 1 0 auto;
+            padding: 0 14px;
+
+            h2 {
+                font-size: 28px;
+                line-height: 1.35;
+                font-family: playfair display;
+                font-weight: 400;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 8px;
+            }
+
+            p {
+                margin-bottom: 20px;
+            }
         }
     }
+
 
     .aboutus {
         &-quote {
@@ -42,13 +91,16 @@
             font-family: var(--font-playfair);
             font-weight: 400;
             font-size: 27px;
-            
+
             margin-top: 40px;
             margin-bottom: 40px;
 
             @media(min-width: 768px) {
-                margin-top: 60px;
-                margin-bottom: 60px;
+                max-width: 84%;
+                margin-top: 80px;
+                margin-bottom: 80px;
+                margin-left: auto;
+                margin-right: auto;
             }
 
         }
@@ -65,7 +117,7 @@
             grid-auto-rows: minmax(150px, auto);
             margin-bottom: 40px;
 
-            @media(min-width: 768px) { 
+            @media(min-width: 768px) {
                 margin-bottom: 60px;
             }
 
