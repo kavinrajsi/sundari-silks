@@ -26,7 +26,7 @@
 #shopify-chat iframe,
 iframe#dummy-chat-button-iframe {
   bottom: 70px !important;
-  z-index: 1000 !important;
+  @include z-index(chat_icon);
   &[isopen="true"] {
     bottom: 0px !important;
   }
@@ -44,6 +44,16 @@ iframe#dummy-chat-button-iframe {
   border-width: 1px !important;
 }
 
+/*set a border on the images to prevent shifting*/
+.zoomContainer{
+  z-index: 1 !important;
+}
+#gallery_01 img,
+.active img,
+.zoomWindowContainer .zoomWindow{
+  border: 0px !important;
+}
+
 #loader {
   position: fixed;
   top: 0;
@@ -51,7 +61,7 @@ iframe#dummy-chat-button-iframe {
   left: 0;
   right: 0;
   margin: auto;
-  display: flex;
+  display: none !important;
   z-index: 9;
   justify-content: center;
   align-items: center;

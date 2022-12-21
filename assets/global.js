@@ -376,28 +376,3 @@ function clickTab(e) {
   var currentPage = document.querySelector("#" + pageID);
   currentPage.classList.add("active");
 }
-
-/* click  */
-/*  account */
-if (document.getElementById("recover") != null) {
-  document.getElementById("recover").addEventListener("click", function (e) {
-    console.log("recover password");
-    document
-      .getElementById("recover-form")
-      .classList.replace("d-none", "d-block");
-    document
-      .getElementById("login-froms")
-      .classList.replace("d-block", "d-none");
-  });
-}
-if (document.getElementById("login") != null) {
-  document.getElementById("login").addEventListener("click", function (e) {
-    console.log("login action");
-    document
-      .getElementById("login-froms")
-      .classList.replace("d-none", "d-block");
-    document
-      .getElementById("recover-form")
-      .classList.replace("d-block", "d-none");
-  });
-}

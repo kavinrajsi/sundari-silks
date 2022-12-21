@@ -25,35 +25,24 @@
 {% endunless %}
 <section class="page-product-detail">
   <div class="product-images">
-    <ul class="product-images-thumbnails">
-      {% for product_image in product.images %}
-      <li>
-        <a href="{{ product_image.src | image_url }}" data-pswp-width="{{ product_image.width }}"
-          data-pswp-height="{{ product_image.height }}">
-          {{ product_image | image_url: width:"80", height: "120" | image_tag:
-          loading: "lazy",
-          alt: product_image.alt | escape
-          }}
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
-    <div class="ImageMe test-gallery">
-      <a href="{{ product_image.src | image_url }}" data-pswp-width="{{ product_image.width }}"
-        data-pswp-height="{{ product_image.height }}">
-        <img
-          class="global-media-settings global-media-settings--no-shadow{% if variant_image %} product__media-item--variant{% endif %}"
-          src="{{ product_image.src | image_url }}" alt="{{ media.alt | escape }}" loading="lazy"
-          data-media-id="{{ media.id }}">
-      </a>
-      {% for product_image in product.images offset:1 %}
-      <a href="{{ product_image.src | image_url }}" style="opacity: 0; width: 0; height: 0;"
-        data-pswp-src="{{ product_image | image_url }}" data-pswp-width="{{ product_image.width }}"
-        data-pswp-height="{{ product_image.height }}" target="_blank">
-        &nbsp;
-      </a>
-      {% endfor %}
-    </div>
+<!-- New image zoom -->
+
+<div id="gallery_01" class="product-images-thumbnails">
+  {% for product_image in product.images %}
+    <a href="javascript:void(0)"
+      data-image="{{ product_image | image_url }}"
+      data-zoom-image="{{ product_image  |  image_url: width:"1256",  height: "1886" }}">
+      <img id="img_{{forloop.index}}" src=" {{ product_image | image_url: width:"320 ", height: "480 " }}"/>
+  </a>
+  {% endfor %}
+</div>
+<img
+  src="{{ product_image | image_url: width:"640", height: "960" }}"
+  data-zoom-image="{{ product_image | image_url: width:"1256",  height: "1886" }}"
+  class="test-gallery" id="zoom_03" 
+/>
+ 
+
   </div>
   <div class="product-content">
     <h2 class="product-title">{{product.title}}</h2>
@@ -373,7 +362,11 @@
       {% if product.metafields.custom.size.value != blank %}
       <dl>
         <dt> Size </dt>
-        <dd>{{ product.metafields.custom.size.value }}</dd>
+        <dd> 
+          {% for customSize in product.metafields.custom.size.value %}
+            <span>{{customSize}}</span>
+          {% endfor %}
+        </dd>
       </dl>
       {% endif %}
       {% if product.metafields.custom.color.value != blank %}
@@ -415,7 +408,11 @@
       {% if product.metafields.custom.age.value != blank %}
       <dl>
         <dt> Age </dt>
-        <dd>{{ product.metafields.custom.age.value }}</dd>
+        <dd> 
+          {% for customAge in product.metafields.custom.age.value %}
+            <span>{{customAge}}</span>
+          {% endfor %}
+        </dd>
       </dl>
       {% endif %}
       {% if product.metafields.custom.angavastram.value != blank %}

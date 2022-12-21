@@ -1,11 +1,15 @@
-.customer-login-content {
+.page-customer-register,
+.page-customer-login {
   max-width: 448px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: var(--home-section-secondary-title-space);
-  padding-bottom: var(--home-section-secondary-title-space);
-
   padding-right: 24px !important;
   padding-left: 24px !important;
+  
+  margin-bottom: calc(var(--home-section-secondary-title-space) * 2);
+  padding-bottom: var(--home-section-secondary-title-space);
+
   @media (min-width: 768px) {
     padding-right: 32px !important;
     padding-left: 32px !important;
@@ -17,18 +21,19 @@
     font-size: var(--home-section-title);
     line-height: normal;
     color: var(--color-black);
-    text-align: center;
-
+    // text-align: center;
     padding-top: var(--home-section-secondary-title-space);
     padding-bottom: var(--home-section-secondary-title-space);
   }
+
   form {
-    // margin-top: 40px;
+
     label {
       font-size: 14px;
       display: block;
       padding-bottom: 8px;
     }
+
     a {
       &::after {
         content: "";
@@ -38,6 +43,7 @@
         background-color: var(--color-maroon);
       }
     }
+
     input[type="text"],
     input[type="password"],
     input[type="email"],
@@ -73,6 +79,7 @@
       width: 24px !important;
       height: 24px !important;
       margin-right: 8px !important;
+
       &:checked {
         transform: scale(0.9);
         outline: 2px solid var(--color-maroon) !important;
@@ -80,10 +87,13 @@
         background: var(--color-maroon) !important;
       }
     }
+
     .accepts-marketing {
       display: flex;
       cursor: pointer;
     }
+
+    .button,
     button[type="submit"],
     input[type="submit"] {
       background-color: var(--color-maroon);
@@ -95,12 +105,38 @@
     }
   }
 
-
-.form__message{
+  .form__message {
     svg {
       margin-right: 8px;
       width: 24px;
       height: 24px;
     }
+
+    display: flex;
+    margin-bottom: 20px;
+
   }
+}
+
+#recover,
+#recover+div {
+  display: none;
+}
+
+#recover:target {
+  display: block;
+}
+
+#recover:target+div {
+  display: block;
+}
+
+#recover:target~#login,
+#recover:target~#login+div {
+  display: none;
+}
+
+
+#recover {
+  margin-bottom: 0;
 }

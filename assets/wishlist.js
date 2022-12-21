@@ -45,11 +45,8 @@ const fetchProductCardHTML = (handle) => {
       console.log(data.product.image.src);
       console.log(data.product.variants[0].price);
       console.log('jEach');
-      for (datas of data) { console.log('jDAtaEnter');
-      $('.wishlist__grid').html(`<h2>${datas}</h2><p>${datas.product.id}</p>`); 
-    
-
-      
+      // for (datas of data) { console.log('jDAtaEnter');
+      // $('.wishlist__grid').html(`<h2>${datas}</h2><p>${datas.product.id}</p>`); 
 
 
     });

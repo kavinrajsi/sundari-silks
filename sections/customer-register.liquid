@@ -1,4 +1,4 @@
-<div class="customer-login">
+<div class="page-customer-register">
   <div class="customer-login-content">
     {% form 'create_customer' %}
     {{ form.errors | default_errors }}
@@ -13,25 +13,35 @@
       <label for="last-name">Last name</label>
       <input type="text" name="customer[last_name]">
     </div>
+    <div class="input-full">
     <div class="email">
       <label for="email">Email</label>
       <input type="email" name="customer[email]">
+    </div>
     </div>
     <div class="password">
       <label for="password">Password</label>
       <input type="password" name="customer[password]">
     </div>
-    <div class="password">
+
+    {% comment %} <div class="password">
       <label for="password-confirmation">Confirm Password</label>
       <input id="password-confirmation" type="password" name="customer[password]" />
     </div>
+  {% endcomment %}
+    
+    <div class="input-full">
     <div class="birthday">
       <label for="birthday">Date of Birth</label>
       <input id="birthday" type="date" name="customer[note][Birthday]" />
     </div>
+    </div>
+    
+    <div class="input-full">
     <div class="date-anniversary">
       <label for="date-anniversary">Date of Anniversary</label>
       <input id="date-anniversary" type="date" name="customer[note][Anniversary]" />
+    </div>
     </div>
     <div class="accepts-marketing">
       <input type="hidden" name="customer[accepts_marketing]" value="false" />
