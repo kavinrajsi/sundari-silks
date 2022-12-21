@@ -26,31 +26,36 @@
 
   .product {
     &-images {
-      display: grid; 
-      grid-template-columns: 1fr;
+      display: flex; 
+      flex-direction: column-reverse;
 
       @media (min-width: 768px) {
-        
+      display: grid; 
       grid-template-columns: 116px 1fr;
-        // flex: 1 0 60%;
-        // max-width: 60%;
       }
 
       .product-images-thumbnails {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        margin-top: 16px;
+        margin-bottom: 16px;
 
         @media (min-width: 768px) { 
+          flex-direction: column;
+          margin-top: 0;
+          margin-bottom: 0;
           margin-right: 24px;
         }
 
         img {
-          margin-bottom: 16px;
+          margin-right: 16px;
           width: 80px;
           height: 80px;
           border-radius: var(--border-radius);
 
           @media (min-width: 768px) {
+            margin-right: 0;
+            margin-bottom: 16px;
             width: 116px;
             height: auto;
           }
