@@ -32,15 +32,27 @@ const fetchProductCardHTML = (handle) => {
   // console.log(document.location.origin);
   // console.log(productTileTemplateUrl);
 
-  jQuery
+    jQuery
     .ajax({
       url: productTileTemplateUrl,
       dataType: "json",
     })
-    .done(function () {
-      console.table(data);
-    });
+    .done(function (data) {
+      // console.table(data);
+      console.log(data);
+      console.log(data.product.id);
+      console.log(data.product.title);
+      console.log(data.product.image.src);
+      console.log(data.product.variants[0].price);
+      console.log('jEach');
+      for (datas of data) { console.log('jDAtaEnter');
+      $('.wishlist__grid').html(`<h2>${datas}</h2><p>${datas.product.id}</p>`); 
+    
 
+      
+
+
+    });
 
   // return fetch(productTileTemplateUrl)
   // .then((res) => res.text())
