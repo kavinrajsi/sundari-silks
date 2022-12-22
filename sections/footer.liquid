@@ -188,7 +188,7 @@
       <ul class="popularsearch-list">
         {% for link in linklists[section.settings.kanchipurammenu].links %}
         <li>
-          <a href="{{ link.url }}" {% if link.active %}aria-current="page" {% endif %}>
+          <a href="{{ link.url }}?filter.v.availability=1" {% if link.active %}aria-current="page" {% endif %}>
             {{ link.title }}
           </a>
         </li>
@@ -203,7 +203,7 @@
     <ul class="popularsearch-list">
       {% for link in linklists[section.settings.popularserchmenu].links %}
       <li>
-        <a href="{{ link.url }}" {% if link.active %}aria-current="page" {% endif %}>
+        <a href="{{ link.url }}?filter.v.availability=1" {% if link.active %}aria-current="page" {% endif %}>
           {{ link.title }}
         </a>
       </li>
