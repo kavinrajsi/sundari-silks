@@ -255,27 +255,39 @@ footer {
     margin-bottom: 0;
 
   }
-  .popularsearch-list {
-    display: flex;
-    flex-wrap: wrap;
-    li {
-      position: relative;
-      clear: both;
-      border-left: 1px solid red;
-      margin-bottom: 4px;
-      a {
+
+}
+
+.footer{
+  &-inbound-link{
+    
+    max-width: var(--content-width);
+    margin-left: auto;
+    margin-right: auto;
+    &__title{
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-size: 16px;
+    }
+    &__lists{
+      margin-bottom: 14px;
+      a{
+        color: rgba(35, 31, 32, 0.8);
+        font-weight: normal;
+        text-decoration: none;
+        margin-right: 15px;
+        text-underline-position: auto;
         display: inline-block;
-        margin: 0 4px;
-        padding: 0 4px;
         position: relative;
-      }
-      &:first-child {
-        border-left: 0;
-        a {
-          padding-left: 0;
-          margin-left: 0;
+    
+        font-size: 13px;
+        &::after{
+          content: " | ";
+          position: absolute;
+          right: -10px;
         }
       }
     }
   }
 }
+ 
