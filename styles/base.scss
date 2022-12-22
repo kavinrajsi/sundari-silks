@@ -116,7 +116,7 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-iconbtnlink.swym-
   border-color: var(--color-maroon);
   border-radius: var(--border-radius);
   transition: background-color .2s,border-color .2s,color .2s!important;
-  color: #fff;
+  color: var(--color-white);
   padding: 14px 16px;
   overflow: hidden;
   font-weight: 400;
@@ -124,4 +124,8 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-iconbtnlink.swym-
   text-align: center;
   // flex: 1 0;
   border: 1px solid;
+}
+
+.swym-ui-component .swym-wishlist-grid .swym-wishlist-item .swym-delete-btn .swym-icon::before{
+  color: var(--color-white);
 }
