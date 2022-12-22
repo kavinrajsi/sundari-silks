@@ -181,6 +181,21 @@
     </div>
   </div>
 
+  
+  {% if section.settings.kanchipurammenu_show %}
+    <div class="footer-popularsearch">
+      <h2 class="popularsearch-title">Kanchipuram Silks:</h2>
+      <ul class="popularsearch-list">
+        {% for link in linklists[section.settings.kanchipurammenu].links %}
+        <li>
+          <a href="{{ link.url }}" {% if link.active %}aria-current="page" {% endif %}>
+            {{ link.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
 
   {% if section.settings.popularserchmenu_show %}
   <div class="footer-popularsearch">
@@ -223,6 +238,17 @@
 "unit": "px",
 "label": "Custom logo width"
 },
+{
+  "type": "link_list",
+  "id": "kanchipurammenu",
+  "label": "Kanchipuram Menu"
+  },
+  {
+  "type": "checkbox",
+  "id": "kanchipurammenu_show",
+  "label": "Kanchipuram Enable",
+  "default": false
+  },
 {
 "type": "link_list",
 "id": "popularserchmenu",
