@@ -212,13 +212,12 @@
   </div>
 
   <div class="footer-inbound-link">
-    <h4>You might want to look at</h4>
-    <div class="menu">
+    <h2 class="footer-inbound-link__title">You might want to look at</h2>
+    <div class="footer-inbound-link__menu">
       {% if section.settings.kanchipurammenu_show %}
         <h2 class="footer-inbound-link__title">Kanchipuram Silks:</h2>
         <nav class="footer-inbound-link__lists">
           {% for link in linklists[section.settings.kanchipurammenu].links %}
-             
               <a
                 href="{{ link.url }}?filter.v.availability=1"
                 {% if link.active %}
