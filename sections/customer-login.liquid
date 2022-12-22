@@ -7,6 +7,7 @@
       <p>
         {{ 'customer.recover_password.subtext' | t }}
       </p>
+      <br>
       {%- form 'recover_customer_password' -%}
         {% assign recover_success = form.posted_successfully? %}
         <div class="field">
