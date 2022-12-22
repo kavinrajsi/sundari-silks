@@ -70,9 +70,10 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-iconbtnlink.swym-
 }
 .swym-button-bar{
   border: 1px solid var(--color-maroon);
+  border-radius: var(--border-radius);
   padding: 14px 16px;
   margin: 0 !important;
-  display: flex !important;
+  display: none !important;
   justify-content: center;
   align-items: center;
 }
