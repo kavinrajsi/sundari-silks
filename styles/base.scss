@@ -55,31 +55,23 @@ iframe#dummy-chat-button-iframe {
   border: 0px !important;
 }
 
-#loader {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+
+.swym-button-bar.swym-wishlist-button-bar.swym-inject {
+  background: transparent !important;
+}
+
+.swym-add-to-wishlist {
+  background: transparent !important;
+  color: var(--color-maroon) !important;
+  border: 1px solid var(--color-maroon)  !important;
+}
+
+button.btn.swym-button.swym-add-to-wishlist.swym-inject.swym-has-fave-count.swym-icontext.swym-heart.swym-loaded {}
+
+.swym-fave-count {
   display: none !important;
-  z-index: 9;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
+}
 
-  .loader-icon {
-    border: 6px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 6px solid #444444;
-    width: 70px;
-    height: 70px;
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+.swym-btn-container[data-position=default] .swym-add-to-wishlist.swym-icontext:after {
+  color: var(--color-maroon) !important;
 }
