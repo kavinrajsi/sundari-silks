@@ -87,3 +87,7 @@ button.swym-button.disabled, button.swym-button:disabled,
 .swym-btn-container .swym-button.swym-added *:not(.swym-tooltip){
   opacity: 1 !important;
 }
+
+button.button.product-form__wishlist.swym-add-to-wishlist.swym-iconbtnlink.swym-heart.swym-loaded.disabled.swym-added.swym-adding + .swym-button-bar{
+  display: block !important;
+}
