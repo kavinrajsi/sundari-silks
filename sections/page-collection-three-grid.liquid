@@ -33,65 +33,67 @@
 
 {% if customer and customer.tags contains 'admin' %}
 {% if collection.metafields.custom.sub_collection_one.value != blank %}
-<ul class="collection-sub-list">
-  {% assign ShopURL = shop.url | append: "/colections/" %}
-  {% if collection.metafields.custom.sub_collection_one.value != blank %}
-  <li>
-    <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_one.value.handle }}">
-      {{ collection.metafields.custom.sub_collection_one.value.title }}
-      <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
-    </a>
-  </li>
-  {% endif %}
-  {% if collection.metafields.custom.sub_collection_two.value != blank %}
-  <li>
-    <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_two.value.handle }}">
-      {{ collection.metafields.custom.sub_collection_two.value.title }}
-      <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
-    </a>
-  </li>
-  {% endif %}
-  {% if collection.metafields.custom.sub_collection_three.value != blank %}
-  <li>
-    <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_three.value.handle }}">
-      {{ collection.metafields.custom.sub_collection_three.value.title }}
-      <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
-    </a>
-  </li>
-  {% endif %}
-  {% if collection.metafields.custom.sub_collection_four.value != blank %}
-  <li>
-    <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_four.value.handle }}">
-      {{ collection.metafields.custom.sub_collection_four.value.title }}
-      <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
-    </a>
-  </li>
-  {% endif %}
-  {% if collection.metafields.custom.sub_collection_five.value != blank %}
-  <li>
-    <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_five.value.handle }}">
-      {{ collection.metafields.custom.sub_collection_five.value.title }}
-      <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
-    </a>
-  </li>
-  {% endif %}
-  {% if collection.metafields.custom.sub_collection_six.value != blank %}
-  <li>
-    <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_six.value.handle }}">
-      {{ collection.metafields.custom.sub_collection_six.value.title }}
-      <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
-    </a>
-  </li>
-  {% endif %}
-  {% if collection.metafields.custom.sub_collection_seven.value != blank %}
-  <li>
-    <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_seven.value.handle }}">
-      {{ collection.metafields.custom.sub_collection_seven.value.title }}
-      <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
-    </a>
-  </li>
-  {% endif %}
-</ul>
+  {% comment %}
+    <ul class="collection-sub-list">
+    {% assign ShopURL = shop.url | append: "/colections/" %}
+    {% if collection.metafields.custom.sub_collection_one.value != blank %}
+    <li>
+      <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_one.value.handle }}">
+      <span>  {{ collection.metafields.custom.sub_collection_one.value.title }} </span>
+        <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
+      </a>
+    </li>
+    {% endif %}
+    {% if collection.metafields.custom.sub_collection_two.value != blank %}
+    <li>
+      <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_two.value.handle }}">
+      <span>  {{ collection.metafields.custom.sub_collection_two.value.title }} </span>
+        <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
+      </a>
+    </li>
+    {% endif %}
+    {% if collection.metafields.custom.sub_collection_three.value != blank %}
+    <li>
+      <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_three.value.handle }}">
+       <span> {{ collection.metafields.custom.sub_collection_three.value.title }} </span>
+        <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
+      </a>
+    </li>
+    {% endif %}
+    {% if collection.metafields.custom.sub_collection_four.value != blank %}
+    <li>
+      <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_four.value.handle }}">
+        <span> {{ collection.metafields.custom.sub_collection_four.value.title }} </span>
+        <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
+      </a>
+    </li>
+    {% endif %}
+    {% if collection.metafields.custom.sub_collection_five.value != blank %}
+    <li>
+      <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_five.value.handle }}">
+        <span>{{ collection.metafields.custom.sub_collection_five.value.title }}</span>
+        <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
+      </a>
+    </li>
+    {% endif %}
+    {% if collection.metafields.custom.sub_collection_six.value != blank %}
+    <li>
+      <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_six.value.handle }}">
+        <span>{{ collection.metafields.custom.sub_collection_six.value.title }}</span>
+        <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
+      </a>
+    </li>
+    {% endif %}
+    {% if collection.metafields.custom.sub_collection_seven.value != blank %}
+    <li>
+      <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_seven.value.handle }}">
+        <span>{{ collection.metafields.custom.sub_collection_seven.value.title }}</span>
+        <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+{% endcomment %}
 {% endif %}
 {% endif %}
 

@@ -238,7 +238,8 @@
 
 
         {%- if product.handle != blank -%}
-        <button type="button" aria-label="Add to wishlist" class="button product-form__wishlist wishlist-btn">
+          {% include 'swym-product-view', product: product %}
+        <button type="button" aria-label="Add to wishlist" data-swaction="addToWishlist" data-product-id="{{product.id | json}}" class="button product-form__wishlist product_{{product.id}}  swym-add-to-wishlist">
           Wish list
         </button>
         {%- endif -%}
