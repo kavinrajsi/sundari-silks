@@ -2,14 +2,13 @@
     margin-right: auto;
     margin-left: auto;
 
-    padding-top: 4vw;
-    padding-bottom: 4vw;
+ 
 
     padding-top: var(--home-section-secondary-title-space);
     padding-bottom: var(--home-section-secondary-title-space);
 
-    padding-right: 24px !important;
-    padding-left: 24px !important;
+    padding-right: 16px;
+    padding-left: 16px ;
 
     @media (min-width: 768px) {
         padding-right: 32px !important;
@@ -33,14 +32,16 @@
 
     .aboutus-card {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         max-width: 990px;
         margin-bottom: 40px;
-        margin-right: 14px;
-        margin-left: 14px;
+        // margin-right: 14px;
+        // margin-left: 14px;
 
         @media(min-width: 768px) {
+            flex-direction: row;
             margin-right: auto;
             margin-left: auto;
             margin-bottom: 60px;
@@ -56,15 +57,20 @@
         }
 
         .aboutus-image {
+            @media(min-width: 768px) {
+            width: 50%;
+            flex: 1 0 auto;
+            padding: 0 14px;
+            }
+        }
+
+        .aboutus-content {
+            
+        @media(min-width: 768px) {
             width: 50%;
             flex: 1 0 auto;
             padding: 0 14px;
         }
-
-        .aboutus-content {
-            width: 50%;
-            flex: 1 0 auto;
-            padding: 0 14px;
 
             h2 {
                 font-size: 28px;
@@ -74,11 +80,14 @@
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 margin-bottom: 8px;
+                margin-top: 14px;
+                
+        @media(min-width: 768px) {
+            margin-top: 0;
+        }
             }
 
-            p {
-                margin-bottom: 20px;
-            }
+     
         }
     }
 
