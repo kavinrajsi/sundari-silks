@@ -11,7 +11,7 @@ var productCardMarkup =
         </div>
         <div class="swym-product-price swym-text swym-text-1">
             <div class="swym-product-final-price swym-value">
-                {{cu}}{{pr}}
+                {{pr}}
             </div>
         </div>
         <button id="swym-custom-add-toCartBtn" data-state-cart="{{#isInCart}}swym-added{{/isInCart}}"data-product-url="{{du}}" data-variant-id="{{epi}}" data-product-id="{{empi}}"class="swym-add-to-cart-btn swym-button swym-button-1 swym-is-button swym-is-button">
