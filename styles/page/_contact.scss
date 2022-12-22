@@ -217,6 +217,10 @@
                      margin-bottom: 0px;
                      margin-left: 0px;
                  }
+                 input[aria-invalid="true"]{
+                    border: 1px solid #EB001B;
+                  }
+              
              }
          }
      }

@@ -103,6 +103,11 @@
       margin-top: 20px;
       margin-bottom: 20px;
     }
+    
+    input[aria-invalid="true"]{
+      border: 1px solid #EB001B;
+    }
+
   }
 
   .form__message {

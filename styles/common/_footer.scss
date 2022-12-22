@@ -205,6 +205,11 @@ footer {
         margin-bottom: 0px;
         margin-left: 8px;
       }
+      
+    input[aria-invalid="true"]{
+      border: 1px solid #EB001B;
+    }
+
     }
   }
   ul.footer__list-social.list-unstyled.list-social {
