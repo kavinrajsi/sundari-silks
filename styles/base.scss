@@ -91,3 +91,37 @@ button.swym-button.disabled, button.swym-button:disabled,
 button.button.product-form__wishlist.swym-add-to-wishlist.swym-iconbtnlink.swym-heart.swym-loaded.disabled.swym-added.swym-adding + .swym-button-bar{
   display: block !important;
 }
+.swym-ui-component .swym-wishlist-grid{
+  max-width: auto !important;
+}
+.swym-ui-component .swym-wishlist-grid .swym-wishlist-item{
+  width: 22% !important;
+  margin: 0 16px 16px !important;
+  border: 0px !important;
+}
+
+.swym-ui-component .swym-wishlist-grid .swym-wishlist-item .swym-title:hover{
+  white-space: nowrap !important;
+  overflow: hidden !important;
+}
+
+.swym-ui-component .swym-wishlist-grid .swym-wishlist-image-wrapper{
+  height: auto !important;
+}
+
+.swym-ui-component .swym-wishlist-grid .swym-wishlist-item .swym-add-to-cart-btn{
+
+  color: var(--color-white);
+  background-color: var(--color-maroon);
+  border-color: var(--color-maroon);
+  border-radius: var(--border-radius);
+  transition: background-color .2s,border-color .2s,color .2s!important;
+  color: #fff;
+  padding: 14px 16px;
+  overflow: hidden;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  // flex: 1 0;
+  border: 1px solid;
+}
