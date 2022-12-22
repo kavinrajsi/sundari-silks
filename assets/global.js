@@ -346,10 +346,6 @@
     $(this).next("ul").toggleClass("footerActive");
   });
 
-  $(".footer-inbound-link h4").click(function () {
-    $(this).next("ul").toggleClass("footerActive");
-  });
-
 
   //Functions, Plugins, Etc.. Here
   //(does not wait for DOM READY STATE)
