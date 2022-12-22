@@ -56,22 +56,33 @@ iframe#dummy-chat-button-iframe {
 }
 
 
-.swym-button-bar.swym-wishlist-button-bar.swym-inject {
-  background: transparent !important;
+ 
+button.button.product-form__wishlist.swym-add-to-wishlist.swym-iconbtnlink.swym-heart.swym-loaded {
+  display: block !important;
 }
 
-.swym-add-to-wishlist {
-  background: transparent !important;
-  color: var(--color-maroon) !important;
-  border: 1px solid var(--color-maroon)  !important;
-}
-
-button.btn.swym-button.swym-add-to-wishlist.swym-inject.swym-has-fave-count.swym-icontext.swym-heart.swym-loaded {}
-
-.swym-fave-count {
+button.button.product-form__wishlist.swym-add-to-wishlist.swym-iconbtnlink.swym-heart.swym-loaded.disabled.swym-added.swym-adding {
   display: none !important;
 }
-
-.swym-btn-container[data-position=default] .swym-add-to-wishlist.swym-icontext:after {
+ 
+.swym-btn-container[data-position=default] .swym-add-to-wishlist.swym-iconbtnlink+.swym-fave-count{
+  display: none !important;
+}
+.swym-button-bar{
+  border: 1px solid var(--color-maroon);
+  padding: 14px 16px;
+  margin: 0 !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+.swym-btn-container[data-position=default] .swym-add-to-wishlist.swym-iconbtnlink{
   color: var(--color-maroon) !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  border-color: var(--color-maroon) !important;
+}
+button.swym-button.disabled, button.swym-button:disabled,
+.swym-btn-container .swym-button.swym-added *:not(.swym-tooltip){
+  opacity: 1 !important;
 }
