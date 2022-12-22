@@ -32,6 +32,10 @@
       font-size: 14px;
       display: block;
       padding-bottom: 8px;
+      &.accepts-marketing-label{
+        margin-bottom: 0;
+        cursor: pointer;
+      }
     }
 
     a {
