@@ -469,6 +469,7 @@
       <script defer src="{{ 'blouse-data.js' | asset_url }}"></script>
       <script defer src="{{ 'jquery.ez-plus.js'| asset_url }}"></script>
       <script>
+        if ($(window).width() > 764) {
             $(document).ready (function () {
             $('#zoom_03').ezPlus({
               zoomType: 'inner',
@@ -481,6 +482,7 @@
               {% comment %} $.fancyboxPlus(ez.getGalleryList()); {% endcomment %}
               return false;
           });
+        });
         });
       </script>
     {% endif %}
