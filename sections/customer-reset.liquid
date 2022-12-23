@@ -9,12 +9,13 @@
           <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
         </symbol>
       </svg>
-      <h1>
-        {{ 'customer.reset_password.title' | t }}
-      </h1>
+      <h2 class="page-title">
+        Reset account password
+      </h2>
       <p>
-        {{ 'customer.reset_password.subtext' | t }}
+        Enter a new password for {{ email }}
       </p>
+      <br>
       {%- form 'reset_customer_password' -%}
         {%- if form.errors -%}
           <h2 class="form__message" tabindex="-1" autofocus>
@@ -40,9 +41,9 @@
         {%- endif -%}
 
         <div class="field">
-          <label for="password">
+          {% comment %} <label for="password">
             {{ 'customer.reset_password.password' | t }}
-          </label>
+          </label> {% endcomment %}
           <input
             type="password"
             name="customer[password]"
@@ -66,9 +67,9 @@
         </div>
 
         <div class="field">
-          <label for="password_confirmation">
+          {% comment %} <label for="password_confirmation">
             {{ 'customer.reset_password.password_confirm' | t }}
-          </label>
+          </label> {% endcomment %}
           <input
             type="password"
             name="customer[password_confirmation]"
