@@ -1,4 +1,5 @@
-<div class="page-customer-register">
+
+<div class="page-customer-register" style="">
   <div class="customer-login-content">
     <div class="customer register">
       <svg style="display: none">
@@ -10,7 +11,7 @@
         </symbol>
       </svg>
       <h1 class="page-title">
-        {{ 'customer.register.title' | t }}
+        Create Account
       </h1>
       {%- form 'create_customer', novalidate: 'novalidate' -%}
         {%- if form.errors -%}
@@ -34,6 +35,7 @@
             </ul>
           </h2>
         {%- endif -%}
+        <div class="input-by-two">
         <div class="field">
           <label for="RegisterForm-FirstName">
             {{ 'customer.register.first_name' | t }}
@@ -64,6 +66,7 @@
             placeholder="{{ 'customer.register.last_name' | t }}"
           >
         </div>
+      </div>
         <div class="field">
           <label for="RegisterForm-email">
             {{ 'customer.register.email' | t }}
@@ -120,30 +123,31 @@
             {{ form.errors.messages.password }}.
           </span>
         {%- endif -%}
-
+        <div class="input-by-two">
         <div class="field">
           <label for="birthday">Date of Birth</label>
-          <input id="birthday" type="date" name="customer[note][Birthday]">
+          <input name="customer[note][Birthday]" id="birthday" type="text" placeholder="dd-mm-yyyy" onfocus="(this.type='date')">
         </div>
 
         <div class="field">
           <label for="date-anniversary">Date of Anniversary</label>
-          <input id="date-anniversary" type="date" name="customer[note][Anniversary]">
+          <input name="customer[note][Anniversary]" id="date-anniversary" type="text" placeholder="dd-mm-yyyy" onfocus="(this.type='date')">
+        </div>
         </div>
 
         <div class="field accepts-marketing">
           <input type="hidden" name="customer[accepts_marketing]" value="false">
           <input id="accepts-marketing" type="checkbox" name="customer[accepts_marketing]">
           <label for="accepts-marketing" class="accepts-marketing-label"
-            >Subscribe here for updates on email &amp; whatsapp</label
+            >Subscribe to receive updates on email &amp; whatsapp</label
           >
         </div>
 
         <button class="button button-solid-maroon">
-          {{ 'customer.register.submit' | t }}
+          SIGN UP
         </button>
       {%- endform -%}
-      <a href="{{ routes.account_login_url }}"> Already have an account? Sign in </a>
+      <a href="{{ routes.account_login_url }}"> Returning Customer? Sign in </a>
     </div>
   </div>
 </div>

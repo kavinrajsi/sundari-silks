@@ -70,7 +70,23 @@
       border: 1px solid var(--color-black);
       margin-bottom: 20px;
       padding: 14px;
+
+      &::placeholder,
+      &:invalid::-webkit-datetime-edit {
+        color: #999;  /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #999;
+        opacity: 1; /* Firefox */
+      }
+      
+      &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: #999
+      }
+      
+      &::-ms-input-placeholder { /* Microsoft Edge */
+        color: #999
+      }
     }
+
 
     input[type="radio"],
     input[type="checkbox"] {
@@ -131,6 +147,14 @@
   }
 }
 
+.page-customer-register{
+  .input-by-two{
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+}
 #recover,
 #recover+div {
   display: none;
