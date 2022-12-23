@@ -39,6 +39,7 @@
     {{ 'jquery.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'slick.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'shopify-money.js' | asset_url | preload_tag: as: 'script' }}
+    {{ 'jquery.cookie.min.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'predictive-search.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'drawer.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'bootstrap.min.js' | asset_url | preload_tag: as: 'script' }}
@@ -171,6 +172,7 @@
 
     <script src="{{ 'image-lazy.js' | asset_url }}" defer></script>
     <script src="{{ 'jquery.js' | asset_url }}"></script>
+    <script src="{{ 'jquery.cookie.min.js' | asset_url }}"></script>
 
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -489,6 +491,13 @@
     <script defer src="{{ 'wishlist.js' | asset_url }}"></script>
     <script defer src="{{ 'global.js' | asset_url }}"></script>
     {% include 'swymSnippet' %}
-
+    {% comment %} <script type="text/javascript">
+      $(document).ready(function() {
+          if ($.cookie('pop') == null) {
+              $('#staticBackdrop').modal('show');
+              $.cookie('pop', '1');
+          }
+      });
+     </script> {% endcomment %}
   </body>
 </html>

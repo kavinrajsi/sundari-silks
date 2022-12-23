@@ -258,6 +258,50 @@
   </div>
 </footer>
 
+
+     <!-- modal begin -->
+ 
+    
+      
+    {% comment %} <div class="modal fade welcomeModal cookieActive" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-overlay modal-toggle"></div>
+      <div class="modal-wrapper modal-transition">
+        <button class="cookieModal modal-close modal-toggle"><svg class="icon-close icon" viewBox="0 0 24 24">
+          <use xlink:href="#close"></use>
+        </svg></button>
+        <div class="modal-body">
+          <div class="modal-content">
+            <div class="size-data-image">
+              <img width="538" height="538" loading="lazy"
+                src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundarisilks-how-to-{{ collection.title | remove:"
+                /" | remove: " " }}.jpg" />
+            </div>
+            <div class="size-data">
+            <h3>Fresh collections straight to your inbox!</h3>
+            <p>Subscription to our newsletter and stay updated on new launches and exciting deals!</p>
+           <div class="subscription-from">
+            {% form 'customer' %}
+              <label for="contact_email">
+                <input id="contact_tags" name="contact[tags]" type="hidden" value="prospect,newsletter">
+                <input
+                  placeholder="Your E-mail"
+                  id="contact_email"
+                  name="contact[email]"
+                  type="email"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  autocomplete="email"
+                >
+              </label>
+              <input class="button" type="submit" value="Subscribe Now">
+            {% endform %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+         {% endcomment %}
+
 {% schema %}
 {
   "name": "Footer",

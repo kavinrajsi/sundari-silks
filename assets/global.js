@@ -320,6 +320,14 @@
   // Modal for product detail page
   // Quick & dirty toggle to demonstrate modal toggle behavior
 
+  // $(".cookieModal").on("click", function (e) {
+  //   e.preventDefault();
+  //   console.log("closemoda");
+  //   $(".cookieActive").toggleClass("is-visible");
+  //   $("body").toggleClass("modalScroll");
+  // });
+
+
   $(".modal-size-toggle").on("click", function (e) {
     e.preventDefault();
     $(".modal-size-chart").toggleClass("is-visible");
