@@ -65,3 +65,8 @@ _site
 secrets.json
 .jekyll-metadata
 .ruby-version
+
+# Shopify #
+###################
+config/settings_data.json
+config/settings_schema.json
