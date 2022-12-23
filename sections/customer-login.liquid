@@ -1,11 +1,11 @@
 <section class="page-customer-login">
   <div class="customer login">
     <h2 class="page-title" id="recover" tabindex="-1">
-      {{ 'customer.recover_password.title' | t }}
+      Reset password
     </h2>
     <div>
       <p>
-        {{ 'customer.recover_password.subtext' | t }}
+        We will send you an email to reset your password.
       </p>
       <br>
       {%- form 'recover_customer_password' -%}
@@ -51,7 +51,7 @@
     </div>
     <h2 class="page-title" id="login" tabindex="-1">
       Vanakkam! <br>
-      <span>Please enter your e-mail and password </span>
+      {% comment %} <span>Please enter your e-mail and password </span> {% endcomment %}
     </h2>
     <div>
       {%- if recover_success == true -%}
