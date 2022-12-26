@@ -475,7 +475,11 @@
             $(document).ready (function () {
             $('#zoom_03').ezPlus({
               zoomType: 'inner',
-              gallery: 'gallery_01', cursor: 'pointer', galleryActiveClass: 'active'
+              zoomWindowFadeIn: 500,
+              zoomWindowFadeOut: 500,
+              gallery: 'gallery_01',
+              cursor: 'zoom-in',
+              galleryActiveClass: 'active'
           });
 
           //pass the images to Fancybox
