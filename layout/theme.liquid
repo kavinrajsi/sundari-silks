@@ -474,11 +474,13 @@
         if ($(window).width() > 764) {
             $(document).ready (function () {
             $('#zoom_03').ezPlus({
-              zoomType: 'inner',
-              zoomWindowFadeIn: 500,
-              zoomWindowFadeOut: 500,
+              constrainType: 'height',
+              constrainSize: 274,
+              zoomType: 'lens',
+              containLensZoom: true,
               gallery: 'gallery_01',
               cursor: 'zoom-in',
+              easing: true,
               galleryActiveClass: 'active'
           });
 
