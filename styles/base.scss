@@ -335,3 +335,49 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-iconbtnlink.swym-
   
   }
 }
+
+
+.min-cart-recommendations-card {
+  width: 120px;
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+.page-account-navigation{
+  a{
+    display: block;
+    padding: 0 20px 20px;
+    position: relative;
+    margin: 20px 0;
+    cursor: pointer;
+    border-bottom: 1px solid var(--color-border);
+    &:after{
+     
+      position: absolute;
+      left: 0px;
+      color: #ddd;
+      border-left: 4px solid var(--color-maroon);
+      height: 100%;
+      top: 0;
+      opacity: .5;
+    }
+    &.active{
+      &:after{
+        content: "";
+      }
+    }
+  }
+}
+
+
+.firstName{
+  display: inline-block;
+  color: var(--color-black);
+  border-radius: 50%;
+  background-color: #a3d8d8;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+  position: relative; 
+  font-family: var(--font-playfair);
+}

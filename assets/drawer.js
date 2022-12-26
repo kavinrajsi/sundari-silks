@@ -63,7 +63,6 @@ var drawer = function () {
       close = toggle.closest(settings.selectorClose);
 
     if (open) {
-      openDrawer(open);
 
       fetch("/cart.js")
         .then((resp) => resp.json())
@@ -99,7 +98,75 @@ var drawer = function () {
 
           document.getElementById('cart__total_price').innerHTML = '<p><span class="money" data-currency-inr="'+data.currency+'.'+Shopify.formatMoney(data.original_total_price)+'">'+ data.currency +'. '+ Shopify.formatMoney(data.original_total_price) + '</span></p>';
         });
+      
+  var loadProductRecommendationsIntoSection = function () {
+    // Look for an element with class 'product-recommendations'
+    var productRecommendationsSection = document.querySelector('.cart-recommendations');
+    if (productRecommendationsSection === null) {
+      return;
     }
+    // Read product id from data attribute
+    var productId = productRecommendationsSection.dataset.productId;
+    // Read limit from data attribute
+    var limit = productRecommendationsSection.dataset.limit;
+    // Build request URL
+    var requestUrl = window.location.origin +'/recommendations/products.json?product_id=' + productId + '&limit=' + limit + '&intent=related';
+    // Create request and submit it using Ajax
+    console.log(requestUrl);
+    var request = new XMLHttpRequest();
+    request.open('GET', requestUrl);
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 300) {
+        console.log(request.response);
+        let obj = JSON.parse(request.response);
+        let objData = obj.products;
+        let objLength = obj.products.length;
+        // console.log(obj);
+        // console.log(typeof obj);
+        objData.forEach(function (number) {
+          let objHtml= `
+          <div class="min-cart-recommendations-card">
+            <a href="${number.url}">
+            <div class="card-image">
+              <img src="${number.featured_image}" width="120" height="120">  
+            </div>
+            <div class="card-title">${number.title}</div>
+            <div class="card-price">${Shopify.formatMoney(number.price)}</div>
+            </a>
+          </div>
+          `;
+          $('#cart-recommendations-cards').append(objHtml);
+          
+          $('#cart-recommendations-cards ').slick({
+            dots: true,
+            infinite: true,
+            arrows: false,
+            slidesToShow: 3,
+            slidesToScroll: 3
+          }); 
+        });
+      }
+    };
+    request.send();
+  };
+  
+  // If your section has theme settings, the theme editor
+  // reloads the section as you edit those settings. When that happens, the
+  // recommendations need to be fetched again.
+  // See https://help.shopify.com/en/themes/development/sections/integration-with-theme-editor
+  document.addEventListener('shopify:section:load', function (event) {
+    if (event.detail.sectionId === 'product-recommendations') {
+      loadProductRecommendationsIntoSection();
+    }
+  });
+  // Fetching the recommendations on page load
+  loadProductRecommendationsIntoSection();
+
+
+
+  openDrawer(open);
+
+      }
     if (close) {
       closeDrawer(close);
     }
@@ -173,4 +240,15 @@ $(' .cart-popup .cartpopup-body').on('click', '.cartpopup-item .remove', functio
       });
     }
   });
+});
+
+
+document.addEventListener('readystatechange', event => {
+  console.log('readyStage Enter');
+  if (event.target.readyState === "complete") {  
+    console.log('readyStage Complete');
+  // reinitialize 
+  
+}
+
 });

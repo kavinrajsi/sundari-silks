@@ -1,7 +1,7 @@
-<div class="page-cart">
+<div class="page-cart page-cart-version-two">
   {%- if cart.item_count > 0 -%}
   <div class="cart-content">
-    <h1 class="page__title"> My Cart </h1>
+    <h1 class="page__title"> Shopping Cart  </h1>
     <div class="page__decription" hidden>
       <ul>
         <li>Vanakkam!</li>
@@ -11,11 +11,11 @@
       </ul>
     </div>
     <form class="cart_wrapper" action="/cart" method="post">
-      <ul class="card__items-title">
-        <li>Product</li>
-        <li>Total</li>
-      </ul>
       <div class="cart__items cart_block">
+        <ul class="card__items-title">
+          <li>Products</li>
+          <li>Total</li>
+        </ul>
         {% for line_item in cart.items %}
         {% render 'line-item', line_item: line_item, index: forloop.index %}
         {% endfor %}
@@ -30,10 +30,13 @@
             <strong class="cart__total-text">Sub Total:</strong>
             <span data-hulkapps-cart-total class="cart__total-price"> {{ cart.total_price | money }}</span>
           </div>
-          <p class="cart__total--shippment">Shipping charges will be added at checkout.</p>
+          <p class="cart__total--shippment">Shipping & taxes calculated at checkout</p>
           <!-- I would like to receive order information on whatsapp -->
           <div class="cart-action-button">
-            <button class="page-cart-atbutton" type="submit" name="checkout"> PROCEED TO CHECKOUT </button>
+            <button class="page-cart-atbutton" type="submit" name="checkout"> 
+            PROCEED TO CHECKOUT 
+          </button>
+            <a class="page-card-atllink" href="{{shop.url}}">Continue Shopping</a>
           </div>
         </div>
       </div>

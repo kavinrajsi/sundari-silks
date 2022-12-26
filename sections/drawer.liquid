@@ -4,92 +4,46 @@
     <form action="/cart" method="post" novalidate>
       <div class="drawer__header">
         <div class="drawer__title">
-          Mini Bag
-          <!-- <i>
-          <span class="cart-item-count"> {{ cart.item_count }} </span> item(s) in bag
-        </i> -->
+          Cart
+          <!--
+            <i>
+              <span class="cart-item-count"> {{ cart.item_count }} </span> item(s) in bag
+            </i>
+          -->
         </div>
         <button class="drawer__close" data-drawer-close aria-label="Close Drawer"></button>
       </div>
       <div class="drawer__content" id="cart__drawer">
-
-        <div class="cart-item-no" {% if cart.item_count> 0 %} hidden {% endif %} >
+        <div
+          class="cart-item-no"
+          {% if cart.item_count > 0 %}
+            hidden
+          {% endif %}
+        >
           Your shopping bag is empty.
         </div>
-
         <div class="cart-popup">
-
-          <div class="cartpopup-body " id="cart__drawer_items">
-            {% comment %}
-            {% for item in cart.items %}
-            <div class="cartpopup-item ">
-              <div class="cartpopup-item-image">
-                <a href="{{ item.url | within: collection }}">
-                  <img loading="lazy" class="blur-up responsive-image__image lazyload cart-item__image"
-                    src="{{ item.image | image_url: width: 300, format: 'pjpg' }}"
-                    data-src="{{ item.image | image_url: width: 300, format: 'pjpg' }}"
-                    data-aspectratio="{{ item.image.aspect_ratio }}" alt="{{ item.image.alt | escape }}"
-                    data-sizes="auto" data-parent-fit="cover" loading="lazy" width="150" height="150">
-                </a>
-              </div>
-              <div class="cartpopup-item-content ">
-                <h5><a href="{{ item.url | within: collection }}">{{ item.product.title }}</a></h5>
-                <span class="price">{{ item.price | money }}</span>
-                <span class="variant">
-                  {%- for option in item.options_with_values -%}
-                  <dl class="option">
-                    <dt>{{ option.name }}: </dt>
-                    <dd>{{ option.value }}</dd>
-                  </dl>
-                  {%- endfor -%}
-                </span>
-                <span class="quantity-box" hidden>
-                  <button class="quantity-button qminus" role="button" type="button"
-                    data-variant="{{ item.variant.id }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-                      class="feather feather-minus-circle">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <line x1="8" y1="12" x2="16" y2="12"></line>
-                    </svg>
-                  </button>
-                  <input class="quantity-input" type="number" name="updates[]" id="updates_{{ item.key }}"
-                    value="{{ item.quantity }}" min="1" />
-                  <button class="quantity-button qplus" role="button" type="button"
-                    data-variant="{{ item.variant.id }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-                      class="feather feather-plus-circle">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <line x1="12" y1="8" x2="12" y2="16"></line>
-                      <line x1="8" y1="12" x2="16" y2="12"></line>
-                    </svg>
-                  </button>
-                </span>
-                <span class="delete">
-                  <a class="remove" data-variant="{{ item.variant.id }}"
-                    href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
-                    <svg width="16" height="16">
-                      <use href="#trash-mini" />
-                    </svg>
-                    Remove</a>
-                </span>
-              </div>
-            </div>
-            {% endfor %}
-            {% endcomment %}
-          </div>
-
+          {% assign productId = '' %}
+          {% for item in cart.items limit: 1 %}
+            {% assign productId = item.product_id %}
+          {% endfor %}
+          <div class="d-none" hidden>{{ productId }}</div>
+          <section class="cart-recommendations" data-product-id="{{ productId }}" data-limit="8">
+            <div id="cart-recommendations-cards"></div>
+          </section>
+          <div class="cartpopup-body " id="cart__drawer_items"></div>
         </div>
       </div>
       <div class="drawer__footer">
+        <p>Shipping & taxes calculated at checkout</p>
+        <br>
         <div class="cartpopup-total">
           <span>Total</span>
           <span class="price" id="cart__total_price"></span>
         </div>
         <div class="cartpopup-buttons">
           <a class="button button-outline-maroon" href="{{ routes.cart_url }}">Your Cart</a>
-          <button class="button button-solid-maroon" type="submit" name="checkout"> PROCEED TO CHECKOUT </button>
+          <button class="button button-solid-maroon" type="submit" name="checkout">PROCEED TO CHECKOUT</button>
         </div>
       </div>
     </form>

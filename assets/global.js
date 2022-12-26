@@ -251,39 +251,9 @@
         .then((response) => {
           return response.json();
         })
-        .then((data) => {
-          let pushData = data;
-          console.log("data 2 " + pushData);
-          var cart_list = [];
-          cart_list.push(
-            '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">' +
-              '<div class="toast-body" >' +
-              '<img src="' +
-              pushData.featured_image.url +
-              '&width=48" alt="' +
-              pushData.featured_image.alt +
-              '" width="48" height="64">' +
-              "<div>" +
-              "<p>" +
-              pushData.title +
-              " is added to bag  </p>" +
-              "</div>" +
-              "</div>" +
-              "</div>"
-          );
-          $('.product-form__submit').hide();
-          $('.product-form__submit+.product-form__viewcart').show();
-          $(".productToaster")
-            .html(cart_list.join(""))
-            .delay(2000)
-            .fadeOut("slow");
-
-
+        .then((data) => { 
           update_cart();
-          // $.getJSON("/cart.js", function (cart) {
-          // alert("There are now " + cart.item_count + " items in the cart.");
-          // console.log("data 1: " + JSON.stringify(cart));
-          // });
+           
           var cartItemCounter = document.querySelector(".cart-count");
           $.ajax({
             url: "/cart.js",
@@ -295,6 +265,43 @@
             }
             cartItemCounter.innerText = newCount;
           });
+          
+          $('.drawer').toggleClass('is-active is-visible');
+          fetch("/cart.js")
+          .then((resp) => resp.json())
+          .then((data) => {
+            let daad = "";
+            console.log(data);
+            if (data.items.length > 0) {
+              $('.cart-item-no').attr('hidden', true);
+              data.items.forEach(function (product, index) {
+                daad +=
+                  '<div class="cart__item cartpopup-item"><div class="card__item-image"><img src="' +
+                  product.featured_image.url +
+                  '" alt="' +
+                  product.featured_image.alt +
+                  '"></div><div class="card__item-content"><h5>' +
+                  product.title +
+                  '</h5><p class="productPrice">' +
+                  product.quantity +
+                  " x " +
+                  '<span class="money"  data-currency-inr="' +
+                  data.currency +
+                  "." +
+                  Shopify.formatMoney(product.price) +
+                  '">' +
+                  Shopify.formatMoney(product.price) +
+                  '</span></p><p class="delete"><a class="remove removeCta" data-variant="'+product.variant_id+'" href="/cart/change?line=' +
+                  index +
+                  1 +
+                  '&amp;quantity=1"><svg width="16" height="16"> <use href="#trash-mini" /> </svg> Remove</a></p></div></div>';
+              });
+              document.getElementById("cart__drawer_items").innerHTML = daad;
+            }
+  
+            document.getElementById('cart__total_price').innerHTML = '<p><span class="money" data-currency-inr="'+data.currency+'.'+Shopify.formatMoney(data.original_total_price)+'">'+ data.currency +'. '+ Shopify.formatMoney(data.original_total_price) + '</span></p>';
+          });
+          
         })
         .catch((error) => {
           console.error("Error:", error);
@@ -355,6 +362,7 @@
   });
 
 
+ 
   //Functions, Plugins, Etc.. Here
   //(does not wait for DOM READY STATE)
 })(jQuery);

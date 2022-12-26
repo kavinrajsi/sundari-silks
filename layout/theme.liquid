@@ -472,43 +472,44 @@
       <script defer src="{{ 'jquery.ez-plus.js'| asset_url }}"></script>
       <script>
         if ($(window).width() > 764) {
-     console.log('if');
-     $(document).ready(function() {
+          console.log('if');
+          $(document).ready(function () {
 
-       console.log('if doc');
-       $('#zoom_03').ezPlus({
-         constrainType: 'height',
-         zoomType: 'lens',
-         containLensZoom: true,
-         gallery: 'gallery_01',
-         cursor: 'zoom-in',
-         easing: true,
-         galleryActiveClass: 'active'
-       });
-       //pass the images to Fancybox
-       $('#zoom_03').bind('click', function(e) {
-         var ez = $('#zoom_03').data('ezPlus');
-         return false;
-       });
+            console.log('if doc');
+            $('#zoom_03').ezPlus({
+              constrainType: 'height',
+              zoomType: 'lens',
+              containLensZoom: true,
+              gallery: 'gallery_01',
+              cursor: 'zoom-in',
+              easing: true,
+              galleryActiveClass: 'active'
+            });
+            //pass the images to Fancybox
+            $('#zoom_03').bind('click', function (e) {
+              var ez = $('#zoom_03').data('ezPlus');
+              return false;
+            });
 
-     });
-   } else {
-     console.log('else');
-     $(document).ready(function() {
+          });
+        } else {
+          console.log('else');
+          $(document).ready(function () {
 
-       console.log('else doc');
-       $('#gallery_01 a').on('click', function() {
-         var dataImage = $(this).data("image");
-         $('.test-gallery').attr('src', dataImage);
-         console.log(dataImage);
-       });
-     });
-   }
+            console.log('else doc');
+            $('#gallery_01 a').on('click', function () {
+              var dataImage = $(this).data("image");
+              $('.test-gallery').attr('src', dataImage);
+              console.log(dataImage);
+            });
+          });
+        }
 
       </script>
     {% endif %}
     <script defer src="{{ 'wishlist.js' | asset_url }}"></script>
     <script defer src="{{ 'global.js' | asset_url }}"></script>
+
     {% include 'swymSnippet' %}
     {% comment %} <script type="text/javascript">
       $(document).ready(function() {

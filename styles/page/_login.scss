@@ -1,12 +1,17 @@
 .page-customer-register,
 .page-customer-login {
+
+  button.no-margin-top {
+    margin-top: 0 !important;
+  }
+
   max-width: 448px;
   margin-left: auto;
   margin-right: auto;
   padding-top: var(--home-section-secondary-title-space);
   padding-right: 24px !important;
   padding-left: 24px !important;
-  
+
   margin-bottom: calc(var(--home-section-secondary-title-space) * 2);
   padding-bottom: var(--home-section-secondary-title-space);
 
@@ -24,7 +29,8 @@
     // text-align: center;
     padding-top: var(--home-section-secondary-title-space);
     padding-bottom: var(--home-section-secondary-title-space);
-    span{
+
+    span {
       font-size: 16px;
       font-family: var(--font-montserrat);
     }
@@ -36,7 +42,8 @@
       font-size: 14px;
       display: block;
       padding-bottom: 8px;
-      &.accepts-marketing-label{
+
+      &.accepts-marketing-label {
         margin-bottom: 0;
         cursor: pointer;
       }
@@ -73,16 +80,20 @@
 
       &::placeholder,
       &:invalid::-webkit-datetime-edit {
-        color: #999;  /* Chrome, Firefox, Opera, Safari 10.1+ */
         color: #999;
-        opacity: 1; /* Firefox */
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #999;
+        opacity: 1;
+        /* Firefox */
       }
-      
-      &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+
+      &:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
         color: #999
       }
-      
-      &::-ms-input-placeholder { /* Microsoft Edge */
+
+      &::-ms-input-placeholder {
+        /* Microsoft Edge */
         color: #999
       }
     }
@@ -127,8 +138,8 @@
       margin-top: 20px;
       margin-bottom: 20px;
     }
-    
-    input[aria-invalid="true"]{
+
+    input[aria-invalid="true"] {
       border: 1px solid #EB001B;
     }
 
@@ -147,14 +158,15 @@
   }
 }
 
-.page-customer-register{
-  .input-by-two{
+.page-customer-register {
+  .input-by-two {
     display: grid;
     gap: 16px;
     grid-template-columns: 1fr 1fr;
   }
-  
+
 }
+
 #recover,
 #recover+div {
   display: none;
@@ -176,4 +188,36 @@
 
 #recover {
   margin-bottom: 0;
+}
+
+
+.icon-customer-name {
+
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  position: relative;
+  font-size: 16px;
+
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: gold;
+    border-radius: 50%;
+    position: absolute;
+    top: -3px;
+    right: -2px;
+  }
+
+  &:hover {
+    background-color: var(--color-maroon);
+    color: var(--color-white);
+  }
 }
