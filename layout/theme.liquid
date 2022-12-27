@@ -484,7 +484,11 @@
           });
         });
            } else{
-          
+          $('#gallery_01 a').on('click', function(){ 
+   var dataImage = $(this).data("image");
+   $('.test-gallery').attr('src', dataImage);
+   console.log(dataImage);
+});
            }
       </script>
     {% endif %}
