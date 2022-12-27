@@ -2,10 +2,74 @@
   <div class="page-account">
     <aside class="page-account-navigation">
       <nav>
-        <a href="/account">Account Details</a>
-        <a  class="active" href="/account/orders">My Orders </a> 
-        <a href="/pages/swym-wishlist">My Wishlist </a> 
-        <a href="/account/addresses">Address</a> 
+        <a href="/account">
+          <span> Account Details </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-chevron-down"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </a>
+        <a class="active" href="/pages/order">
+          <span> My Orders </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-chevron-down"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </a>
+        <a href="/pages/swym-wishlist">
+          <span> My Wishlist </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-chevron-down"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </a>
+        <a href="/account/addresses">
+          <span>Address </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-chevron-down"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </a>
         <a href="{{ routes.account_logout_url }}">Sign Out </a>
       </nav>
     </aside>
@@ -40,17 +104,20 @@
             <span class="data-value">{{ order.name }}</span>
           </div>
           <div>
-          
+          {% comment %} 
           <div class="order-invoice">
               <span class="data-value">
                 <a href="{{ order.customer_url }}" target="_blank"> View order details
                 </a>
               </span>
-            </div>
+            </div> 
+          {% endcomment %}
             
+              {% comment %} 
               <div class="data-invoice">
         <span class="data-value"> <a href="{{ order.customer_url }}" target="_blank"> Invoice </a></span>
       </div> 
+    {% endcomment %}
           </div>
         </div>
       </div>

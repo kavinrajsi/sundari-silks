@@ -1,17 +1,81 @@
-x
-
 <div class="page-account">
   <aside class="page-account-navigation">
     <nav>
-      <a class="active" href="/account">Account Details</a>
-      <a href="/pages/order">My Orders </a>
-      <a href="/pages/swym-wishlist">My Wishlist </a>
-      <a href="/account/addresses">Address</a>
+      <a class="active" href="/account">
+        <span> Account Details </span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-chevron-down"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </a>
+      <a href="/pages/order">
+        <span> My Orders </span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-chevron-down"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </a>
+      <a href="/pages/swym-wishlist">
+        <span> My Wishlist </span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-chevron-down"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </a>
+      <a href="/account/addresses">
+        <span>Address </span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-chevron-down"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </a>
       <a href="{{ routes.account_logout_url }}">Sign Out </a>
     </nav>
   </aside>
 
   <section>
+    
+    <h2 class="account-card-title">Account</h2>
     <p class="customer-name-firstName">
       <span class="firstName">
     {{customer.first_name | slice: 0 }}

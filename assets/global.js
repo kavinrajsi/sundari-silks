@@ -130,6 +130,14 @@
   $(".menu-level-1-item.menu-level-1-item-child").on("mouseleave", function () {
     $(this).children(".second-menu").removeClass("active");
   });
+  /* Header user icon */
+  $(".icon-customer-name").on("click", function () {
+    $(this).next(".header-account-submenu").toggleClass("active");
+  });
+ 
+  $(document).click(function(){
+    $(".header-account-submenu").toggleClass("active");
+});
   /* .cd-primary-nav .has-children */
   $(".cd-primary-nav .has-children").on("mouseenter", function () {
     $(this).children(".cd-secondary-nav").addClass("active");

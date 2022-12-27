@@ -28,10 +28,13 @@
             {% assign productId = item.product_id %}
           {% endfor %}
           <div class="d-none" hidden>{{ productId }}</div>
-          <section class="cart-recommendations" data-product-id="{{ productId }}" data-limit="8">
+          <div class="cartpopup-body " id="cart__drawer_items"></div>
+          
+          <section class="cart-recommendations" data-product-id="{{ productId }}" data-limit="2">
+            <h3>Cross Sell </h3>
             <div id="cart-recommendations-cards"></div>
           </section>
-          <div class="cartpopup-body " id="cart__drawer_items"></div>
+          
         </div>
       </div>
       <div class="drawer__footer">

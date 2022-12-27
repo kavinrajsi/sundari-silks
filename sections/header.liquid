@@ -2,8 +2,8 @@
   <!-- header navigation -->
   <div class="header-container">
     <div class="header-action-list">
-      <div style="display: flex; align-items: center;">
-        <div style="margin-right: 8px;" class="header-menu">
+      <div class="header-action-list-logo">
+        <div  class="header-menu">
           <div class="cd-nav-trigger">
             <svg width="24" height="24" class="burgerMenu active">
               <use href="#menu" />
@@ -35,7 +35,11 @@
         </h1>
         {% endif %}
       </div>
-      <div class="header-action-lists">
+      
+      <div class="header-action-list-icon">
+        <div class="header-currency-price-list">
+          <span class="default-currency"> INR</span>
+        </div>
         <div class="header-search">
           <svg width="24" height="24">
             <use href="#search" />
@@ -66,9 +70,82 @@
         <div class="header-account">
           {% if shop.customer_accounts_enabled %}
             {% if customer %}
-              <a href="{{ routes.account_url }}" class="header__icon header__icon--account icon-customer-name{% if section.settings.menu != blank %} small-hide{% endif %}">
+              <a href="javascript:void(0)" class="header__icon header__icon--account icon-customer-name{% if section.settings.menu != blank %} small-hide{% endif %}">
                 {{customer.first_name | slice: 0 }}
                 </a>
+                <div class="header-account-submenu">
+                    <nav class="submenu-navigation">
+                      <a href="/account">
+                        <span> Account Details </span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-chevron-down"
+                        >
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </a>
+                      <a href="/pages/order">
+                        <span> My Orders </span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-chevron-down"
+                        >
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </a>
+                      <a href="/pages/swym-wishlist">
+                        <span> My Wishlist </span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-chevron-down"
+                        >
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </a>
+                      <a href="/account/addresses">
+                        <span>Address </span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-chevron-down"
+                        >
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </a>
+                      <a href="{{ routes.account_logout_url }}">Sign Out </a>
+                    </nav>
+                </div>
               {% else %}
               <a href="{{ routes.account_login_url }}"
                 class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
@@ -79,14 +156,12 @@
             {% endif %}
           {% endif %}
         </div>
-        <div class="header-currency-price-list">
-          <span class="default-currency"> INR</span>
-        </div>
       </div>
     </div>
   </div>
   <!-- mobile navigation -->
-  <nav class="header-nav-list-footer">
+  {% comment %}
+    <nav class="header-nav-list-footer">
     <div class="header-home">
       <a href="{{ routes.root_url }}">
         <svg width="24" height="24">
@@ -138,6 +213,7 @@
       {% endif %}
     </div>
   </nav>
+{% endcomment %}
   <!-- search area -->
 
   <!-- navigation list -->

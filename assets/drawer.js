@@ -110,7 +110,7 @@ var drawer = function () {
     // Read limit from data attribute
     var limit = productRecommendationsSection.dataset.limit;
     // Build request URL
-    var requestUrl = window.location.origin +'/recommendations/products.json?product_id=' + productId + '&limit=' + limit + '&intent=related';
+    var requestUrl = window.location.origin +'/recommendations/products.json?product_id=' + productId + '&limit=3&intent=related';
     // Create request and submit it using Ajax
     console.log(requestUrl);
     var request = new XMLHttpRequest();
@@ -137,13 +137,6 @@ var drawer = function () {
           `;
           $('#cart-recommendations-cards').append(objHtml);
           
-          $('#cart-recommendations-cards ').slick({
-            dots: true,
-            infinite: true,
-            arrows: false,
-            slidesToShow: 3,
-            slidesToScroll: 3
-          }); 
         });
       }
     };
@@ -240,15 +233,4 @@ $(' .cart-popup .cartpopup-body').on('click', '.cartpopup-item .remove', functio
       });
     }
   });
-});
-
-
-document.addEventListener('readystatechange', event => {
-  console.log('readyStage Enter');
-  if (event.target.readyState === "complete") {  
-    console.log('readyStage Complete');
-  // reinitialize 
-  
-}
-
 });
