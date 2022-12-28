@@ -181,7 +181,7 @@
     for (var i = 0; i < params.length; i++) {
       var keyValue = params[i].split('=');
       if (keyValue.length) {
-        var demos = encodeURI(keyValue[1]);
+        var demos = encodeURI(keyValue[1]).replace(/\+/g, " ");
         Shopify.queryParams[decodeURIComponent(keyValue[0])] = demos;
         console.log(demos);
       }
