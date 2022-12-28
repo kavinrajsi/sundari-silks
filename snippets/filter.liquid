@@ -173,15 +173,27 @@
   </form>
 </div>
 <script>
-   $('#sort-by li").change(function() {
-  // Get the current URL and parse it into an object
-  let currentUrl = new URL(window.location.href);
+   $(document).ready(function() {
+  // Select the element that you want to update
+  let sortByElement = $("#sort-by li");
 
-  // Set the sort_by parameter to the value of the select element
-  currentUrl.searchParams.set('sort_by', $(this).val());
+  // Set an event handler for the change event
+  sortByElement.change(function() {
+    // Get the new value of the select element
+    let sortByValue = $(this).val();
 
-  // Use history.replaceState to update the URL without changing the page
-  history.replaceState({}, '', currentUrl.href);
+    // Get the current href value of the element
+    let currentHref = sortByElement.prop("href");
+
+    // Parse the URL
+    let url = new URL(currentHref);
+
+    // Set the search property to update the query parameters
+    url.search = "?sort_by=" + sortByValue;
+
+    // Update the href attribute of the element
+    sortByElement.attr("href", url.href);
+  });
 });
 
 
