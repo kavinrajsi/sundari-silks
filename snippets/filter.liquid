@@ -173,12 +173,16 @@
   </form>
 </div>
 <script>
- $("#sort-by li").on("change", function() {
-  let selectedValue = $(this).val();
-  let searchParams = new URLSearchParams(window.location.search);
-  searchParams.set("sort_by", selectedValue);
-  let newQueryString = searchParams.toString();
-  window.history.pushState({}, "", `${window.location.pathname}?${newQueryString}`);
+   $('#sort-by li").change(function() {
+  // Get the current URL and parse it into an object
+  let currentUrl = new URL(window.location.href);
+
+  // Set the sort_by parameter to the value of the select element
+  currentUrl.searchParams.set('sort_by', $(this).val());
+
+  // Use history.replaceState to update the URL without changing the page
+  history.replaceState({}, '', currentUrl.href);
 });
+
 
 </script>
