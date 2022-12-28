@@ -181,18 +181,19 @@
   sortByElement.change(function() {
     // Get the new value of the select element
     let sortByValue = $(this).val();
-
+  console.log(sortByValue);
     // Get the current href value of the element
     let currentHref = sortByElement.prop("href");
-
+console.log(currentHref);
     // Parse the URL
     let url = new URL(currentHref);
-
+console.log(currentHref);
     // Set the search property to update the query parameters
     url.search = "?sort_by=" + sortByValue;
-
+console.log(url.search);
     // Update the href attribute of the element
     sortByElement.attr("href", url.href);
+console.log(sortByElement.attr("href", url.href));
   });
 });
 
