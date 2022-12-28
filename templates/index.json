@@ -82,7 +82,7 @@
         "1fb3c54d-915e-48cf-81db-15adfd6c2cb8": {
           "type": "collection-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/curated-collection-kanchipuram-silk.jpg",
+            "image": "shopify:\/\/shop_images\/Kanchipuram-608-478.png",
             "heading": "Kanchipuram Silk",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%)",
             "link": "shopify:\/\/collections\/kanchipuram-silks"
@@ -91,28 +91,28 @@
         "3d1616af-f24e-40c8-b9c6-db9a40ab317c": {
           "type": "collection-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/curated-collection-soft-silk.jpg",
-            "heading": "Soft Silk",
+            "image": "shopify:\/\/shop_images\/Maheshwari-608-478.png",
+            "heading": "Maheswari",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%)",
-            "link": "shopify:\/\/collections\/soft-silk"
+            "link": "shopify:\/\/collections\/maheswari"
           }
         },
         "e4c9673a-1fde-4af5-9e4a-6d2563a84c99": {
           "type": "collection-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/curated-collection-printed-silk.jpg",
-            "heading": "Printed Silk",
+            "image": "shopify:\/\/shop_images\/nineyards.png",
+            "heading": "Nine Yards Silk",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%)",
-            "link": "shopify:\/\/collections\/printed-silks-cotton"
+            "link": "shopify:\/\/collections\/nine-yards-silk"
           }
         },
         "3e91a06e-4db1-487e-920b-fcbc90f781c2": {
           "type": "collection-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/curated-collection-mysore-silk.jpg",
-            "heading": "Mysore Silk",
+            "image": "shopify:\/\/shop_images\/patola_2d4904f8-0145-47a9-97aa-a56f3fecfa07.png",
+            "heading": "Patola",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%)",
-            "link": "shopify:\/\/collections\/mysore-silks"
+            "link": "shopify:\/\/collections\/patola"
           }
         }
       },
