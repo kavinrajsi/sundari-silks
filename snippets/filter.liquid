@@ -173,52 +173,52 @@
   </form>
 </div>
 <script>
-  // Shopify.queryParams = {};
+  Shopify.queryParams = {};
 
-  // // Preserve existing query parameters
-  // if (location.search.length) {
-  //   var params = location.search.substr(1).split('&');
-  //   for (var i = 0; i < params.length; i++) {
-  //     var keyValue = params[i].split('=');
-  //     if (keyValue.length) {
-  //       var demos = encodeURI(keyValue[1]).replace(/\+/g, " ");
-  //       Shopify.queryParams[decodeURIComponent(keyValue[0])] = demos;
-  //       console.log(demos);
-  //     }
-  //   }
-  // }
+  // Preserve existing query parameters
+  if (location.search.length) {
+    var params = location.search.substr(1).split('&');
+    for (var i = 0; i < params.length; i++) {
+      var keyValue = params[i].split('=');
+      if (keyValue.length) {
+        var demos = encodeURI(keyValue[1]).replace(/\+/g, " ");
+        Shopify.queryParams[decodeURIComponent(keyValue[0])] = demos;
+        console.log(demos);
+      }
+    }
+  }
 
-  // // Update sort_by query parameter on select change
-  // let link = document.querySelectorAll('#sort-by li.sortby-Value');
-  // link.forEach(box => {
-  //   box.addEventListener('click', function (e) {
-  //     var value = box.getAttribute('value');
-  //     Shopify.queryParams.sort_by = value;
-  //     location.search = new URLSearchParams(Shopify.queryParams).toString();
-  //   });
+  // Update sort_by query parameter on select change
+  let link = document.querySelectorAll('#sort-by li.sortby-Value');
+  link.forEach(box => {
+    box.addEventListener('click', function (e) {
+      var value = box.getAttribute('value');
+      Shopify.queryParams.sort_by = value;
+      location.search = new URLSearchParams(Shopify.queryParams).toString();
+    });
 
-  // });
+  });
 
 
-$(document).ready(function() {
-  // Bind a click event handler to the list items
-  $('#sort-by li').click(function() {
+// $(document).ready(function() {
+//   // Bind a click event handler to the list items
+//   $('#sort-by li').click(function() {
 
-  // Get the current URL and parse it into its component parts
-  let currentUrl = new URL(window.location.href);
+//   // Get the current URL and parse it into its component parts
+//   let currentUrl = new URL(window.location.href);
 
-  // Get the current value of the sort_by parameter
-  let sortBy = currentUrl.searchParams.get('sort_by');
+//   // Get the current value of the sort_by parameter
+//   let sortBy = currentUrl.searchParams.get('sort_by');
 
-  // Get the new value for the sort_by parameter from the dropdown
-  let newSortBy = $(this).attr('value');
+//   // Get the new value for the sort_by parameter from the dropdown
+//   let newSortBy = $(this).attr('value');
 
-  // Update the sort_by parameter in the URL
-  currentUrl.searchParams.set('sort_by', newSortBy);
+//   // Update the sort_by parameter in the URL
+//   currentUrl.searchParams.set('sort_by', newSortBy);
 
-  // Use the replaceState method to update the URL in the browser's address bar
-  window.history.pushState({}, '', currentUrl.toString());
-      });
-});
+//   // Use the replaceState method to update the URL in the browser's address bar
+//   window.history.pushState({}, '', currentUrl.toString());
+//       });
+// });
 
 </script>
