@@ -217,7 +217,7 @@ $(document).ready(function() {
   currentUrl.searchParams.set('sort_by', newSortBy);
 
   // Use the replaceState method to update the URL in the browser's address bar
-  history.replaceState({}, '', currentUrl.toString());
+  window.history.pushState({}, '', currentUrl.toString());
       });
 });
 
