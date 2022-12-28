@@ -173,7 +173,7 @@
   </form>
 </div>
 <script>
- $("#sort-select").on("change", function() {
+ $("#sort-by li").on("change", function() {
   let selectedValue = $(this).val();
   let searchParams = new URLSearchParams(window.location.search);
   searchParams.set("sort_by", selectedValue);
