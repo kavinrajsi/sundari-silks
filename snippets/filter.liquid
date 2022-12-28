@@ -173,21 +173,15 @@
   </form>
 </div>
 <script>
-   $('#sort-by li').click(function() {
-  // Get the current URL and parse it into its component parts
-  let currentUrl = new URL(window.location.href);
-console.log(currentUrl);
-  // Get the current value of the sort_by parameter
-  let sortBy = currentUrl.searchParams.get('sort_by');
-console.log(sortBy);
-  // Get the new value for the sort_by parameter from the dropdown
-  let newSortBy = $(this).val();
-console.log(newSortBy);
-  // Update the sort_by parameter in the URL
-  currentUrl.searchParams.set('sort_by', newSortBy);
+$(document).ready(function() {
+  // Bind a click event handler to the list items
+  $('#sort-by li').click(function() {
+    // Get the value of the selected list item
+    var value = $(this).attr('value');
 
-  // Use the replaceState method to update the URL in the browser's address bar
-  history.replaceState({}, '', currentUrl.toString());
+    // Update the URL in the browser using pushState
+    window.history.pushState({}, "", "?sort_by=" + value);
+  });
 });
 
 
