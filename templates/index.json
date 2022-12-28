@@ -3,6 +3,14 @@
     "slideshow": {
       "type": "home-slideshow",
       "blocks": {
+        "ca73578c-33bc-41c8-9383-b57d6e7d0228": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sundari-silks-sale-year-end-banner-desktop.png",
+            "mobile_image": "shopify:\/\/shop_images\/sundari-silks-sale-year-end-banner-mobile.png",
+            "link": "#"
+          }
+        },
         "ab99cd22-9db2-4cf4-9676-120271eed88d": {
           "type": "slide",
           "settings": {
@@ -61,6 +69,7 @@
         }
       },
       "block_order": [
+        "ca73578c-33bc-41c8-9383-b57d6e7d0228",
         "ab99cd22-9db2-4cf4-9676-120271eed88d",
         "5cd59610-c2b0-470a-8ce5-780b7df44578",
         "8efe5e97-f302-4f66-ae4c-451513f79459",
