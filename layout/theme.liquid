@@ -52,7 +52,7 @@
     {{ 'wishlist.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'global.js' | asset_url | preload_tag: as: 'script' }}
 
-    {{ content_for_header }}
+    {{ content_for_header }}{% if product %}<script id="hc_product_countdown_dates" data-p_id="{{ product.id }}" type="application/json">{{ shop.metafields.hc_product_countdown.dates_json }}</script>{% endif %}<script src="{{ 'hc_sdm_script.js' | asset_url }}" defer="defer"></script>
 
     {% style %}
       {{ header_font | font_face: font_display: 'swap' }}
