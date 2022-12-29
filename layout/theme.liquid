@@ -203,12 +203,6 @@
   </head>
 
   <body class="template-{{ template | split : '.' | first }}">
-    {% comment %}
-      <div id="loader" class="center">
-        <div class="loader-icon"></div>
-      </div>
-    {% endcomment %}
-
     {% section 'announcement-bar' %}
     <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -504,7 +498,6 @@
             });
           });
         }
-
       </script>
     {% endif %}
     <script defer src="{{ 'wishlist.js' | asset_url }}"></script>

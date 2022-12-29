@@ -18,7 +18,6 @@
     letter-spacing: 0em;
     font-weight: 400;
     margin-bottom: 20px;
-
     margin-top: 20px;
 
     @media (min-width: 768px) {
@@ -37,7 +36,6 @@
     letter-spacing: 0em;
     margin-bottom: 20px;
   }
- 
 
   .cart-content {
     .page__decription {
@@ -84,8 +82,8 @@
     .cart__items.cart_block {
       display: grid;
       gap: 12px;
-      // overflow: hidden;
 
+      // overflow: hidden;
       .line-item {
         border-bottom: 1px solid var(--color-border);
         padding-bottom: 12px;
@@ -319,48 +317,79 @@
   }
 
   &.page-cart-version-two {
-    margin: 0 auto 80px;
     max-width: 1250px;
-    padding: 0 80px;
-    .page__title{
-      text-align: left;
-      padding: 40px 0 24px;
+
+    padding-top: var(--home-section-space);
+    padding-bottom: var(--home-section-space);
+    padding-left: var(--Ngap);
+    padding-right: var(--Ngap);
+    margin: 0 auto;
+
+    @media(min-width: 768px) {
+      padding: 0 80px;
+      margin: 0 auto 80px;
     }
+
+
+    .page__title {
+      text-align: left;
+
+      @media(min-width: 768px) {
+        padding: 40px 0 24px;
+      }
+    }
+
     .cart_wrapper {
       display: flex;
+      flex-direction: column;
+
+      @media(min-width: 768px) {
+        flex-direction: row;
+      }
+
       .cart__items.cart_block {
+        @media(min-width: 768px) {
+          padding-right: 7%;
+          width: 67%;
+        }
 
-        padding-right: 7%;
-        width: 67%;
-
-        .line-item .line-item__details{
+        .line-item .line-item__details {
           max-width: initial;
-          flex: initial;      
+          flex: initial;
         }
       }
 
       .cart__details.card__block {
-        padding: 0 20px;
         border: none;
-        margin: 0 0 0 26px;
-        width: 37.4%;
+        padding: 20px 0px;
+
+        @media(min-width: 768px) {
+          padding: 0 20px;
+          margin: 0 0 0 26px;
+          width: 37.4%;
+        }
+
         display: block;
-        .card_detail-note{
+
+        .card_detail-note {
           max-width: initial;
           margin-bottom: 24px;
         }
-        .cart__total--shippment{
+
+        .cart__total--shippment {
+          @media(min-width: 768px) {
           text-align: right;
+          }
         }
       }
     }
-    .page-card-atllink{
+
+    .page-card-atllink {
       font-size: 16px;
-     margin-top: 16px;
-     text-align: center;
-     display: block;
-     text-decoration: underline;
+      margin-top: 16px;
+      text-align: center;
+      display: block;
+      text-decoration: underline;
     }
   }
-
 }

@@ -37,7 +37,7 @@
             {% endif %}
           </li>
         {% endfor %}
-        
+
         {% for link in linklists.company.links %}
           <li class="menu-link ">
             <a href="{{ link.url }}">{{ link.title }}</a>
@@ -195,7 +195,7 @@
         </ul>
       </div>
     </div>
-  
+
   </div>
 
   <div class="footer-inbound-link">
@@ -212,10 +212,10 @@
               >
                 {{ link.title }}
               </a>
-           
+
           {% endfor %}
           {% for link in linklists[section.settings.popularserchmenu].links %}
-           
+
             <a
               href="{{ link.url }}?filter.v.availability=1"
               {% if link.active %}
@@ -224,15 +224,15 @@
             >
               {{ link.title }}
             </a>
-          
+
         {% endfor %}
         </nav>
       {% endif %}
-  
-       
+
+
     </div>
   </div>
-  
+
 
   <div class="footer-copyright">
     <p>&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: '/' }}. Built with ❤️ in India</p>
@@ -241,10 +241,11 @@
 
 
      <!-- modal begin -->
- 
-    
-      
-    {% comment %} <div class="modal fade welcomeModal cookieActive" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+
+
+     {% comment %}
+      <div class="modal fade welcomeModal cookieActive" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-overlay modal-toggle"></div>
       <div class="modal-wrapper modal-transition">
         <button class="cookieModal modal-close modal-toggle"><svg class="icon-close icon" viewBox="0 0 24 24">
@@ -254,8 +255,7 @@
           <div class="modal-content">
             <div class="size-data-image">
               <img width="538" height="538" loading="lazy"
-                src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundarisilks-how-to-{{ collection.title | remove:"
-                /" | remove: " " }}.jpg" />
+                src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/popup-modal-temp.png?v=1672218991" />
             </div>
             <div class="size-data">
             <h3>Fresh collections straight to your inbox!</h3>
@@ -281,7 +281,7 @@
         </div>
       </div>
     </div>
-         {% endcomment %}
+ {% endcomment %}
 
 {% schema %}
 {

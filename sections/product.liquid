@@ -39,9 +39,9 @@
 <img
   src="{{ product_image | image_url: width:"640", height: "960" }}"
   data-zoom-image="{{ product_image | image_url: width:"1256",  height: "1886" }}"
-  class="test-gallery" id="zoom_03" 
+  class="test-gallery" id="zoom_03"
 />
- 
+
 
   </div>
   <div class="product-content">
@@ -370,7 +370,7 @@
       {% if product.metafields.custom.size.value != blank %}
       <dl>
         <dt> Size </dt>
-        <dd> 
+        <dd>
           {% for customSize in product.metafields.custom.size.value %}
             <span>{{customSize}}</span>
           {% endfor %}
@@ -416,7 +416,7 @@
       {% if product.metafields.custom.age.value != blank %}
       <dl>
         <dt> Age </dt>
-        <dd> 
+        <dd>
           {% for customAge in product.metafields.custom.age.value %}
             <span>{{customAge}}</span>
           {% endfor %}

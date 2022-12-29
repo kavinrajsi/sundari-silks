@@ -29,12 +29,14 @@
           {% endfor %}
           <div class="d-none" hidden>{{ productId }}</div>
           <div class="cartpopup-body " id="cart__drawer_items"></div>
-          
-          <section class="cart-recommendations" data-product-id="{{ productId }}" data-limit="2">
-            <h3>Cross Sell </h3>
+
+          {% comment %}
+            <div class="cart-recommendations" data-product-id="{{ productId }}" data-limit="6">
+            <h3> Related Product </h3>
             <div id="cart-recommendations-cards"></div>
-          </section>
-          
+          </div>
+        {% endcomment %}
+
         </div>
       </div>
       <div class="drawer__footer">

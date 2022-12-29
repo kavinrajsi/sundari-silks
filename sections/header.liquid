@@ -35,7 +35,7 @@
         </h1>
         {% endif %}
       </div>
-      
+
       <div class="header-action-list-icon">
         <div class="header-currency-price-list">
           <span class="default-currency"> INR</span>
@@ -70,10 +70,10 @@
         <div class="header-account">
           {% if shop.customer_accounts_enabled %}
             {% if customer %}
-              <a href="javascript:void(0)" class="header__icon header__icon--account icon-customer-name{% if section.settings.menu != blank %} small-hide{% endif %}">
+              <a href="/account" class="header__icon header__icon--account icon-customer-name{% if section.settings.menu != blank %} small-hide{% endif %}">
                 {{customer.first_name | slice: 0 }}
                 </a>
-                <div class="header-account-submenu">
+                <div hidden class="header-account-submenu">
                     <nav class="submenu-navigation">
                       <a href="/account">
                         <span> Account Details </span>
