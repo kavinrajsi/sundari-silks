@@ -138,45 +138,6 @@
     $(this).children(".cd-secondary-nav").removeClass("active");
   });
 
-  //
-  if ($(window).width() > 764) {
-    var fixmeTop = $(".meFitlerMobile").offset().top; // get initial position of the element
-    // var fixmeTop = 296; // get initial position of the element
-
-    $(window).scroll(function () {
-      // assign scroll event listener
-
-      var currentScroll = $(window).scrollTop(); // get current position
-      // console.log(fixmeTop);
-      if (currentScroll >= fixmeTop) {
-        // apply position: fixed if you
-        $(".meFitlerMobile").css({
-          // scroll to that element or below it
-          position: "fixed",
-          top: "0",
-        });
-        $(".fixedElement").css({
-          "padding-top": "97px",
-        });
-      } else {
-        // apply position: static
-        $(".meFitlerMobile").css({
-          // if you scroll above it
-          position: "static",
-        });
-        $(".fixedElement").css({
-          "padding-top": "40px",
-        });
-      }
-    });
-  } else {
-    $(".meFitlerMobile").css({
-      // scroll to that element or below it
-      position: "fixed",
-      bottom: "0",
-    });
-  }
-
   //filter toggle
   $(".CollectionToolbar__LayoutType").click(function () {
     console.log($(this).data("count"));
