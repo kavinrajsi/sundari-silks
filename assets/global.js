@@ -140,8 +140,8 @@
 
   //
   if ($(window).width() > 764) {
-    // var fixmeTop = $(".meFitlerMobile").offset().top; // get initial position of the element
-    var fixmeTop = 164; // get initial position of the element
+    var fixmeTop = $(".meFitlerMobile").offset().top; // get initial position of the element
+    // var fixmeTop = 296; // get initial position of the element
 
     $(window).scroll(function () {
       // assign scroll event listener
@@ -153,7 +153,7 @@
         $(".meFitlerMobile").css({
           // scroll to that element or below it
           position: "fixed",
-          top: "109px",
+          top: "0",
         });
         $(".fixedElement").css({
           "padding-top": "97px",
