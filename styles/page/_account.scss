@@ -1,44 +1,78 @@
-
 .page-account-navigation {
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media(min-width: 768px) {
+      display: block;
+    }
+  }
+
   a {
-    display: block;
-    padding: 0px 20px;
     position: relative;
-    margin: 20px 0;
+    display: block;
+    padding: 0 10px;
+    margin: 10px;
     cursor: pointer;
+
+
+    @media(min-width: 768px) {
+      padding: 0px 20px;
+      margin: 20px 0;
+    }
 
     span {
       display: block;
     }
 
     svg {
-      position: absolute;
-      right: 0;
-      top: 2px;
-      transform: rotate(-90deg);
+      display: none;
+
+      @media(min-width: 768px) {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 2px;
+        transform: rotate(-90deg);
+      }
     }
 
     &:before {
       content: "";
-      position: absolute;
-      background-color: #ddd;
       width: 100%;
       height: 1px;
       bottom: -10px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      background-color: #ddd;
     }
 
-    &:after {
-      position: absolute;
-      left: 0px;
-      border-left: 2px solid var(--color-maroon);
-      height: 100%;
-      top: 0;
+
+    @media(min-width: 768px) {
+      &:after {
+        position: absolute;
+        left: 0px;
+        border-left: 2px solid var(--color-maroon);
+        height: 100%;
+        top: 0;
+      }
     }
+
 
     &.active {
+      &:before{
+        background-color: var(--color-maroon);
+      }
       &:after {
         content: "";
       }
+    }
+
+    &:nth-child(1),
+    &:nth-child(3) {
+      display: none;
     }
   }
 }
@@ -74,8 +108,12 @@
   margin-left: auto;
   margin-right: auto;
   display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 48px;
+  gap: 20px;
+
+  @media(min-width: 768px) {
+    grid-template-columns: 180px 1fr;
+    gap: 48px;
+  }
 
   .account-card {
     &-title {
@@ -168,11 +206,18 @@
 
 }
 
+.customer-account-detail {
+  padding: 0 14px;
+
+  @media(min-width: 768px) {
+    padding: 0;
+  }
+}
 
 .address-list {
 
   display: grid;
-  grid-template-columns:  repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 24px;
 
   address {

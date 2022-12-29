@@ -183,8 +183,10 @@ body {
   width: 100%;
   height: 100%;
   padding-top: 64px;
+  padding-top: 0;
   @media (min-width: 992px) {
     padding-top: 112px;
+    padding-top: 0;
     padding-bottom: 0;
   }
 }
@@ -300,4 +302,21 @@ main img {
   margin-bottom: var(--Ngap);
   padding: 14px 24px;
   border: 0;
+}
+
+
+.hc_cd.at_top{
+column-gap: 12px !important;
+.hc_cd_heading,
+.hc_cd-timer.timer_1 .hc_cd_timernum{
+  font-weight: normal !important;
+  font-size: 12px !important;
+  font-family: var(--font-montserrat);
+}
+
+.hc_cd_subheading,
+.hc_cd-timer.timer_1 .hc_cd_timerlabel.last{
+  font-size: 10px;
+}
+
 }

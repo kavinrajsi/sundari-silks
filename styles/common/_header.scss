@@ -39,8 +39,8 @@
 /* header */
 .header {
   // padding-top: 42px;
-  @include z-index(header);
   position: fixed;
+  position: static;
   top: 0px;
   left: 0;
   right: 0;
@@ -48,6 +48,7 @@
 
   // position: relative;
   &-container {
+    @include z-index(header);
     background-color: var(--color-white);
     position: relative;
   }

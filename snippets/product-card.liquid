@@ -31,9 +31,21 @@ Usage:
           <!-- TODO: Sold out chip color -->
           <span class="product__card--status-soldout">sold out</span>
           {% endunless %}
+
+
+          {% for variant in product.variants limit:1 %}
+            {% if variant.compare_at_price > variant.price %}
+           <span class="product__card--status-soldout">
+           {{  variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | remove: '.0' | slice: 0, 2 }}% off </span>
+          {% endif %}
+          {% endfor %}
+
+        {% comment %}
           {% if product.compare_at_price_max > product.price %}
           <span class="product__card--status-soldout">  {{  product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | remove: '.0' | slice: 0, 2 }} % off </span>
           {% endif %}
+        {% endcomment %}
+
         </div>
       </div>
     </a>
