@@ -57,7 +57,15 @@
     {% endif %}
     {% if collectionName == 'buttonWhatsapp' %}
     {% else %}
-    <p class="product-price">{{current_product.price | money_with_currency }}</p>
+    <p  class="product-price">
+      {% if product.compare_at_price_max > product.price %}
+      <span><s>{{ product.compare_at_price_max | money_with_currency }}</s></span>
+      <span>{{ product.price | money_with_currency }}</span>
+      {% else %}
+      <span>{{ product.price | money_with_currency }}</span>
+      {% endif %}
+    </p>
+    {% comment %} <p class="product-price">{{current_product.price | money_with_currency }}</p> {% endcomment %}
     {% endif %}
     <p class="product-notice-content {% for collection in product.collections%} {{collection.title}} {% endfor %}">
       Our artisanal silver jewellery collection is currently available for shipment within INDIA.
