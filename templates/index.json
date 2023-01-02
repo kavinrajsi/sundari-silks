@@ -68,6 +68,7 @@
         },
         "655cf251-418a-4859-a273-26801c333f2f": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/sundari-silks-pongal-2023-banner-desktop.png",
             "mobile_image": "shopify:\/\/shop_images\/saree-trends-in-2022-a-review-banner-mobile.png",
