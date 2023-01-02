@@ -5,6 +5,7 @@
       "blocks": {
         "ca73578c-33bc-41c8-9383-b57d6e7d0228": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/sundari-silks-sale-year-end-2022-banner-desktop.png",
             "mobile_image": "shopify:\/\/shop_images\/sundari-silks-sale-year-end-2022-banner-mobile.png",
@@ -38,8 +39,6 @@
         "e9a6b9e8-f03a-4387-8e80-17b7bcd09ace": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/boxed-traditional-banner-desktop.png",
-            "mobile_image": "shopify:\/\/shop_images\/boxed-traditional-banner-mobile.png",
             "link": "https:\/\/www.sundarisilks.com\/collections\/magic-of-lines-checks?filter.v.availability=1"
           }
         },
