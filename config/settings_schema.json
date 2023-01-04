@@ -891,7 +891,7 @@
   },
   {
     "name": "Wash care for Silk",
-    "settings":[
+    "settings": [
       {
         "type": "image_picker",
         "id": "silk_washcare_icon_1",
@@ -911,7 +911,8 @@
         "type": "text",
         "id": "silk_washcare_text_2",
         "label": "Wash Care Text"
-      },      {
+      },
+      {
         "type": "image_picker",
         "id": "silk_washcare_icon_3",
         "label": "Wash Care Icon"
@@ -925,7 +926,7 @@
   },
   {
     "name": "Wash care for Cotton",
-    "settings":[
+    "settings": [
       {
         "type": "image_picker",
         "id": "cotton_washcare_icon_1",
@@ -960,7 +961,7 @@
   },
   {
     "name": "Wash care for Silver",
-    "settings":[
+    "settings": [
       {
         "type": "image_picker",
         "id": "silver_washcare_icon_1",
