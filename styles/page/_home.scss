@@ -170,6 +170,9 @@ body:not(.template-index) {
 
   @media (hover: hover) {
     &:hover {
+      .product__card--img{
+        overflow: hidden;
+      }
       .product__card--img img {
         transform: scale(1.03);
         transition: transform var(--duration-long) ease;
@@ -177,6 +180,7 @@ body:not(.template-index) {
 
       .product__card-cta.quick-view-button {
         bottom: 0;
+        display: block;
       }
     }
   }
@@ -1085,4 +1089,4 @@ svg.icon {
 
 section#shopify-section-template--16000227246242__instagram {
   padding-bottom: 0 !important;
-} 
+}

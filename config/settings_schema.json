@@ -890,6 +890,110 @@
     ]
   },
   {
+    "name": "Wash care for Silk",
+    "settings":[
+      {
+        "type": "image_picker",
+        "id": "silk_washcare_icon_1",
+        "label": "Wash Care Icon"
+      },
+      {
+        "type": "text",
+        "id": "silk_washcare_text_1",
+        "label": "Wash Care Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "silk_washcare_icon_2",
+        "label": "Wash Care Icon"
+      },
+      {
+        "type": "text",
+        "id": "silk_washcare_text_2",
+        "label": "Wash Care Text"
+      },      {
+        "type": "image_picker",
+        "id": "silk_washcare_icon_3",
+        "label": "Wash Care Icon"
+      },
+      {
+        "type": "text",
+        "id": "silk_washcare_text_3",
+        "label": "Wash Care Text"
+      }
+    ]
+  },
+  {
+    "name": "Wash care for Cotton",
+    "settings":[
+      {
+        "type": "image_picker",
+        "id": "cotton_washcare_icon_1",
+        "label": "Wash Care Icon"
+      },
+      {
+        "type": "text",
+        "id": "cotton_washcare_text_1",
+        "label": "Wash Care Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "cotton_washcare_icon_2",
+        "label": "Wash Care Icon"
+      },
+      {
+        "type": "text",
+        "id": "cotton_washcare_text_2",
+        "label": "Wash Care Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "cotton_washcare_icon_3",
+        "label": "Wash Care Icon"
+      },
+      {
+        "type": "text",
+        "id": "cotton_washcare_text_3",
+        "label": "Wash Care Text"
+      }
+    ]
+  },
+  {
+    "name": "Wash care for Silver",
+    "settings":[
+      {
+        "type": "image_picker",
+        "id": "silver_washcare_icon_1",
+        "label": "Wash Care Icon"
+      },
+      {
+        "type": "text",
+        "id": "silver_washcare_text_1",
+        "label": "Wash Care Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "silver_washcare_icon_2",
+        "label": "Wash Care Icon"
+      },
+      {
+        "type": "text",
+        "id": "silver_washcare_text_2",
+        "label": "Wash Care Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "silver_washcare_icon_3",
+        "label": "Wash Care Icon"
+      },
+      {
+        "type": "text",
+        "id": "silver_washcare_text_3",
+        "label": "Wash Care Text"
+      }
+    ]
+  },
+  {
     "name": "Organization Schema",
     "settings": [
       {

@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "page-microsite": {
+      "type": "page-microsite"
+    }
+  },
+  "order": [
+    "page-microsite"
+  ]
+}

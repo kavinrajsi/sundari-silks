@@ -13,33 +13,65 @@ if (productInfoAnchors.length > 0) {
     item.addEventListener("click", (event) => {
       var url = "/products/" + item.getAttribute("product-handle") + ".js";
       var url2 = "/products/" + item.getAttribute("product-handle") + ".json";
-      console.log(url2);
+      // console.log(url2);
 
       fetch(url)
         .then((resp) => resp.json())
         .then(function (data) {
           console.log(data);
+          // console.log(data.title);
+          // console.log(data.handle);
+          // console.log(data.type);
+          // console.log(data.tags);
+          // console.log(data.price);
+          // console.log(data.price_min);
+          // console.log(data.price_max);
+          // console.log(data.price_varies);
+          // console.log(data.compare_at_price);
+          // console.log(data.compare_at_price_min);
+          // console.log(data.compare_at_price_max);
+          // console.log(data.compare_at_price_varies);
+          // console.log(data.featured_image);
 
-          document.getElementById("productInfoImg").src = data.images[0];
-          document.getElementById("productInfoTitle").innerHTML = data.title;
-          document.getElementById("productInfoPrice").innerHTML =
-            item.getAttribute("product-price");
-          document.getElementById("productInfoDescription").innerHTML =
-            data.description;
+          let dataContentType = `
+          <div class="col-12 col-md-6">
+          <div class="single">
+              <img class="img-fluid" src="${data.featured_image}" alt="${data.title}">
+          </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="modalDescription">
+              <p class="modalDescription-Title">${data.title}</p>
+              <p class="modalDescription-Price">${data.price}</p>
+              <p class="modalDescription-Price">${data.price_max}</p>
+              <p class="modalDescription-Price">${data.price_varies}</p>
+              <p class="modalDescription-Price">${data.compare_at_price}</p>
+              <p class="modalDescription-Price">${data.compare_at_price_min}</p>
+              <p class="modalDescription-Price">${data.compare_at_price_max}</p>
+              <p class="modalDescription-Price">${data.compare_at_price_varies}</p>
+            </div>
+          </div>
+          `;
 
-          var variants = data.variants;
-          var variantSelect = document.getElementById("modalItemID");
+          document.getElementById("productInfoModalContent").innerHTML = dataContentType;
 
-          variantSelect.innerHTML = "";
+          // document.getElementById("productInfoPrice").innerHTML = item.getAttribute("product-price");
+          // // document.getElementById("productInfoDescription").innerHTML =
+          // //   data.description;
 
-          variants.forEach(function (variant, index) {
-            console.log(variant);
+          // var variants = data.variants;
+          // var variantSelect = document.getElementById("modalItemID");
 
-            variantSelect.options[variantSelect.options.length] = new Option(
-              variant.option1,
-              variant.id
-            );
-          });
+          // variantSelect.innerHTML = "";
+
+          // variants.forEach(function (variant, index) {
+          //   console.log(variant);
+
+          //   variantSelect.options[variantSelect.options.length] = new Option(
+          //     variant.option1,
+          //     variant.id
+          //   );
+          // });
 
           productModal.show();
         });

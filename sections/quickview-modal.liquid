@@ -8,25 +8,7 @@
           </svg>
         </button>
         <div class="row">
-          <div class="col-12 col-md-6">
-            <img class="img-fluid" src="" id="productInfoImg" alt="">
-          </div>
-          <div class="col-12 col-md-6">
-            <div class="modalDescription">
-              <p class="modalDescription-Title" id="productInfoTitle"></p>
-              <p class="modalDescription-Description" id="productInfoDescription"></p>
-              <p class="modalDescription-Price" id="productInfoPrice"></p>
-              <form action="#" id="addToCartForm" class="row">
-                <select name="id" id="modalItemID" class="form-select col-auto">
-                </select>
-
-                <input hidden type="number" name="quantity" value="1" id="modalItemQuantity" min="1" max="1"
-                  class="col-auto">
-
-                <button type="submit" class="btn btn-success col-auto">Add to cart</button>
-              </form>
-            </div>
-          </div>
+          <div id="productInfoModalContent"></div>
         </div>
       </div>
     </div>

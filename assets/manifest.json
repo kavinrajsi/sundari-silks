@@ -1,0 +1,58 @@
+{
+  "name": "Sundari Silks India",
+  "short_name": "Sundari Silks",
+  "description": "Buy traditional silk sarees online. Explore our collection of pure Kanjivaram silk sari, Banarasi sarees, Cotton sarees, Mysore silk sarees, wedding silk sarees &amp;amp; handicrafts",
+  "lang": "en",
+  "dir": "ltr",
+  "display_override": [
+    "fullscreen",
+    "minimal-ui"
+  ],
+  "display": "standalone",
+  "scope": "/?source=pwa",
+  "start_url": "/?source=pwa",
+  "orientation": "portrait",
+  "theme_color": "#1d5d31",
+  "background_color": "#fef1e1",
+  "categories": ["shopping","fashion"],
+  "icons": [
+    {
+      "src": "https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundari-silks-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundari-silks-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Sundari Silks Saree",
+      "short_name": "Saree",
+      "url": "/collections/cotton-sarees?filter.v.availability=1&source=pwa",
+      "description": "For every woman in India, a saree is a repository of emotions, memories and milestones in life",
+      "icons": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0490/1158/9282/files/pwa-homepage-slider.png?v=1672850745",
+          "sizes": "1920x932"
+        }
+      ]
+    },
+    {
+      "name": "Kanchipuram",
+      "url": "/collections/kanchipuram-silks?filter.v.availability=1&source=pwa",
+      "description": "Kanchipuram Silks is a sensational influence in the array of silk sarees"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://cdn.shopify.com/s/files/1/0490/1158/9282/files/pwa-homepage-slider.png?v=1672850745",
+      "type": "image/png",
+      "sizes": "1920x932"
+    }
+  ]
+}
