@@ -1,12 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "collection-list",
-      "settings": {
-        "title": "Collections",
-        "sort": "alphabetical",
-        "image_ratio": "square"
-      }
+      "type": "collection-list"
     }
   },
   "order": [
