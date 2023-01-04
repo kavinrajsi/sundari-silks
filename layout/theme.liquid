@@ -24,7 +24,7 @@
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
     {% render 'social-meta-tags' %}
-    
+
     <link rel="manifest" href="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/manifest.json?v=1672849300">
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="dns-prefetch" href="https://cdn.shopify.com">
@@ -187,7 +187,6 @@
       window.shopCurrency = '{{ shop.currency }}';
       window.supported_currencies = '{{ settings.mlvedaACS_supportedCurrencies }}';
     </script>
-    {% include 'hulk_po_vd.liquid' %}
     <script type="text/javascript">
       (function (c, l, a, r, i, t, y) {
         c[a] =
