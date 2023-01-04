@@ -544,6 +544,11 @@
     {% endif %}
     <script defer src="{{ 'global.js' | asset_url }}"></script>
     <script>
+       if ( window.location.search == '?customer_posted=true' ) {
+    setTimeout(function(){
+      document.getElementById('subscription-from').closest('.footer-dataaction').scrollIntoView();
+    }, 500);
+  }
       if (typeof navigator.serviceWorker !== 'undefined') {
         navigator.serviceWorker.register('https://cdn.shopify.com/s/files/1/0490/1158/9282/t/22/assets/pwabuilder-sw.js')
       }
