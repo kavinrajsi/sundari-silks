@@ -1,2 +1,31 @@
 {% layout none %}
-loren
+
+<div style="display: grid; gap: 24px; grid-template-columns: repeat(4, 1fr)">
+{% for product in collections.instagram.products  limit:8 %}
+  <a href="{{ product.url | within: collection }}">
+  <p>{{ product.title }}</p>
+
+  {{ product.featured_image | image_url: width: 404, height: 404, format: 'pjpg', crop: 'center' | image_tag: alt:product.featured_image.alt}}
+  </a>
+{% endfor %}
+</div>
+<hr>
+<div style="display: grid; gap: 24px; grid-template-columns: repeat(4, 1fr)">
+{% for product in collections.boys.products limit:8 %}
+  <a href="{{ product.url | within: collection }}">
+  <p>{{ product.title }}</p>
+  {{ product.featured_image | image_url: width: 404, height: 404, format: 'pjpg', crop: 'center' | image_tag: alt:product.featured_image.alt}}
+  </a>
+{% endfor %}
+</div>
+<hr>
+<div style="display: grid; gap: 24px; grid-template-columns: repeat(4, 1fr)">]
+  {% for article in blogs.article.articles limit:8 %}
+    <a href="{{ article.url }}">
+
+  <p>{{ article.title }}</p>
+      {{ article.image | image_url: width: 404, height: 404, format: 'pjpg', crop: 'center' | image_tag: alt:article.image.alt}}
+    </a>
+  </a>
+{% endfor %}
+</div>
