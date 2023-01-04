@@ -542,8 +542,12 @@
         }
       </script>
     {% endif %}
-    <script defer src="{{ 'wishlist.js' | asset_url }}"></script>
     <script defer src="{{ 'global.js' | asset_url }}"></script>
+    <script>
+      if (typeof navigator.serviceWorker !== 'undefined') {
+        navigator.serviceWorker.register('https://cdn.shopify.com/s/files/1/0490/1158/9282/t/22/assets/pwabuilder-sw.js')
+      }
+    </script>
 
     {% include 'swymSnippet' %}
     {% comment %} <script type="text/javascript">
