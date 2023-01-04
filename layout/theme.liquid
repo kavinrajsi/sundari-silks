@@ -545,7 +545,7 @@
     <script defer src="{{ 'global.js' | asset_url }}"></script>
     <script>
        if ( window.location.search == '?customer_posted=true' ) {
-    
+      document.getElementById('subscription-from').closest('.subscription-from .newsletter-form__field-wrapper input,.subscription-from .newsletter-form__field-wrapper input[type=submit].button').style.display = "none";
       document.getElementById('subscription-from').closest('.footer-dataaction').scrollIntoView();
       );
   }
