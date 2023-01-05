@@ -15,14 +15,12 @@
         <details class="filter-group">
           <summary class="filter-group-summary">
             {% if filter.label == "Price" %}
-            {% if customer and customer.tags contains 'admin' %}
             <div>
               <span>{{ filter.label }}</span>
               {%- if filter.active_values.size > 0 -%}
               <span>({{ filter.active_values.size }})</span>
               {%- endif -%}
             </div>
-            {% endif %}
             {% elsif filter.label == "Availability" %}
             {% else %}
             <div>
@@ -53,6 +51,44 @@
               {%- endfor -%}
             </ul>
             {%- when 'price_range' -%}
+              <div class="filter-group-display__price-range">
+              <div class="filter-group-display__price-rangeInput" style="display: flex; justify-content: space-around; gap: 12px;">
+                <div class="filter-group-display__price-range-from">
+                  <span>{{ cart.currency.symbol }}</span>
+                  <input name="{{ filter.min_value.param_name }}"
+                    id="Filter-{{ filter.min_value.param_name }}"
+                    {% if filter.min_value.value -%}
+                      value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+                    {%- endif %}
+                    type="number"
+                    placeholder="0"
+                    min="0"
+                    max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                  >
+                </div>
+                <div class="filter-group-display__price-range-to">
+                  <span>{{ cart.currency.symbol }}</span>
+                  <input name="{{ filter.max_value.param_name }}"
+                    id="Filter-{{ filter.max_value.param_name }}"
+                    {% if filter.max_value.value -%}
+                      value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+                    {%- endif %}
+                    type="number"
+                    placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                    min="0"
+                    max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                  >
+                </div>
+                </div>
+
+
+
+
+              </div>
+{% comment %}
+              <div class="filter-group-display__submit">
+                <input type="submit" value="Apply">
+              </div> {% endcomment %}
 
             {%- endcase -%}
           </div>
