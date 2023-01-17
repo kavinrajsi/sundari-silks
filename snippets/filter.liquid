@@ -22,12 +22,7 @@
               {%- endif -%}
             </div>
             
-            <div>
-              <span>{{ filter.label }}</span>
-              {%- if filter.active_values.size > 0 -%}
-              <span>({{ filter.active_values.size }})</span>
-              {%- endif -%}
-            </div>
+          
           </summary>
           <div class="filter-group-display">
             {%- case filter.type -%}
