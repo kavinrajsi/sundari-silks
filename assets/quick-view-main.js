@@ -32,23 +32,42 @@ if (productInfoAnchors.length > 0) {
           // console.log(data.compare_at_price_max);
           // console.log(data.compare_at_price_varies);
           // console.log(data.featured_image);
+let ImagesMe = data.images;
 
           let dataContentType = `
           <div class="col-12 col-md-6">
-          <div class="single">
-              <img class="img-fluid" src="${data.featured_image}" alt="${data.title}">
-          </div>
+          <div class="single-item" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>`;
+
+          for (face of ImagesMe) {
+            dataContentType += `<div><img class="" width="240" height="240" src="${face}" alt="${data.title}"></div>`;
+          }
+
+
+
+           dataContentType += ` </div>
           </div>
           <div class="col-12 col-md-6">
             <div class="modalDescription">
               <p class="modalDescription-Title">${data.title}</p>
-              <p class="modalDescription-Price">${data.price}</p>
-              <p class="modalDescription-Price">${data.price_max}</p>
-              <p class="modalDescription-Price">${data.price_varies}</p>
-              <p class="modalDescription-Price">${data.compare_at_price}</p>
-              <p class="modalDescription-Price">${data.compare_at_price_min}</p>
-              <p class="modalDescription-Price">${data.compare_at_price_max}</p>
-              <p class="modalDescription-Price">${data.compare_at_price_varies}</p>
+              <p  class="product-price">`;
+              if(data.price_varies){
+                dataContentType += `
+                <p>From
+                <span class="money" data-currency-inr="INR ${Shopify.formatMoney(data.price_min)} >
+                ${Shopify.formatMoney(data.price_min)} </span> to
+                <span class="money" data-currency-inr="INR ${Shopify.formatMoney(data.price_max)} >
+                ${Shopify.formatMoney(data.price_max)}
+                </span>
+                </p>`;
+              }else{
+                dataContentType += `
+                <p>else</p>
+                <span class="money" data-currency-inr="INR ${Shopify.formatMoney(data.price)}">INR ${Shopify.formatMoney(data.price)}</span>
+                `;
+              }
+              dataContentType += `
+            </p>
+              <p class="modalDescription-Price">${data.variants.length}</p>
             </div>
           </div>
           `;
@@ -78,7 +97,6 @@ if (productInfoAnchors.length > 0) {
     });
   });
 }
-
 
 
 var modalAddToCartForm = document.querySelector("#addToCartForm");

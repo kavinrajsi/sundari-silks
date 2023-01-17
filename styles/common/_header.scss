@@ -38,15 +38,12 @@
 
 /* header */
 .header {
-  // padding-top: 42px;
   position: fixed;
-  position: static;
   top: 0px;
   left: 0;
   right: 0;
   width: 100%;
-
-  // position: relative;
+  @include z-index(header);
   &-container {
     @include z-index(header);
     background-color: var(--color-white);
