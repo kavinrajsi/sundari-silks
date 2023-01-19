@@ -1,3 +1,43 @@
+{{ 'jquery.products.min.js' | asset_url | script_tag }}
+
+<div class="product-template__container product-recommendations-detail ">
+  <h2 class="section-header__title border-bottom">Recently Viewed Products</h2>
+  <div
+    id="recently-viewed-products"
+    class="collection-list-grid"
+    collection-list-mobile="2"
+    collection-list-tablet="3"
+    collection-list-desktop="4"
+  ></div>
+</div>
+
+{% raw %}
+<script id="recently-viewed-product-template"  type="text/x-jquery-tmpl">
+<div id="product-${handle}" class="product__card">
+<div class="product__card--img">
+<a href="${url}" class="product-link">
+<div class="product__image--wrapper">
+<img src="${Shopify.Products.resizeImage(featured_image, "large")}" />
+</div>
+</a>
+</div>
+<div class="product__card--content">
+<a href="${url}" class="product__card--link">
+<h2 itemprop="name" class="product__title">${title}</h2>
+<div class="product__variant--price">
+<p>
+<span><span class="money">
+ {{if price_varies}}From {{/if}}${Shopify.formatMoney(price)}</span>
+</span></span>
+</p>
+</div>
+</a>
+</div>
+</div>
+</script>
+{% endraw %}
+ 
+
 {% schema %}
   {
     "name": "Section name",
@@ -8,5 +48,6 @@
 {% stylesheet %}
 {% endstylesheet %}
 
-{% javascript %}
+{% javascript %}  
+  Shopify.Products.showRecentlyViewed({ howManyToShow: 8 });
 {% endjavascript %}
