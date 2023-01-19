@@ -336,6 +336,18 @@
       </main>
       {% section 'footer' %}
     </section>
+{% if customer and customer.tags contains 'admin' %}
+        <section>
+          <ul>
+{% for product in customer.recently_viewed_products %}
+  <li>
+    <a href="{{ product.url }}">{{ product.title }}</a>
+  </li>
+{% endfor %}
+</ul>
+
+        </section>
+      {% endif %}
 
     {% assign potential_action_target = request.origin
       | append: routes.search_url
