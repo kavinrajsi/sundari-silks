@@ -334,9 +334,7 @@
         {% render 'breadcrumb' %}
         {{ content_for_layout }}
       </main>
-      {% section 'footer' %}
-    </section>
-{% if customer and customer.tags contains 'admin' %}
+        {% if customer and customer.tags contains 'admin' %}
         <section>
           <ul>
 {% for product in customer.recently_viewed_products %}
@@ -358,6 +356,9 @@
 
         </section>
       {% endif %}
+      {% section 'footer' %}
+    </section>
+
 
     {% assign potential_action_target = request.origin
       | append: routes.search_url
