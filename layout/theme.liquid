@@ -334,28 +334,6 @@
         {% render 'breadcrumb' %}
         {{ content_for_layout }}
       </main>
-        {% if customer and customer.tags contains 'admin' %}
-        <section>
-          <ul>
-{% for product in customer.recently_viewed_products %}
-  <li>
-    <a href="{{ product.url }}">{{ product.title }}</a>
-  </li>
-{% endfor %}
-</ul>
-<div class="recently-viewed-products">
-  <h2>Recently Viewed Products</h2>
-  <ul>
-    {% for product in recently_viewed_products %}
-      <li>
-        <a href="{{ product.url }}">{{ product.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
-
-        </section>
-      {% endif %}
       {% section 'footer' %}
     </section>
 
@@ -529,6 +507,9 @@
       <script defer src="{{ 'photoswipe-control.js' | asset_url }}"></script>
       <script defer src="{{ 'blouse-data.js' | asset_url }}"></script>
       <script defer src="{{ 'jquery.ez-plus.js'| asset_url }}"></script>
+      <script>
+        Shopify.Products.recordRecentlyViewed();
+      </script>
       <script>
         if ($(window).width() > 764) {
           console.log('if');
