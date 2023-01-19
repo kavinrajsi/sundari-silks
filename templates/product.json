@@ -9,10 +9,16 @@
       "type": "product-recommendations",
       "settings": {
       }
+    },
+    "product-recently-viewed": {
+      "type": "product-recently-viewed",
+      "settings": {
+      }
     }
   },
   "order": [
     "template",
-    "product-recommendation"
+    "product-recommendation",
+    "product-recently-viewed"
   ]
 }
