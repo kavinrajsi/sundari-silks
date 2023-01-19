@@ -345,6 +345,16 @@
   </li>
 {% endfor %}
 </ul>
+<div class="recently-viewed-products">
+  <h2>Recently Viewed Products</h2>
+  <ul>
+    {% for product in recently_viewed_products %}
+      <li>
+        <a href="{{ product.url }}">{{ product.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
 
         </section>
       {% endif %}
