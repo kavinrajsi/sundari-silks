@@ -101,14 +101,14 @@
 {% render 'filter' %}
 <div class="fixedElement section-{{ section.id }}-padding collectionGridThrees">
   <section>
-    {% paginate collection.products by 4   %}
+    {% paginate collection.products by 24   %}
     <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="4" collection-list-desktop="4">
-     {% for product in collection.products limit: 4 %} 
+     {% for product in collection.products limit: 24 %} 
 {% if product.available %} 
 {% include 'product-card' with collection.handle %}
 {% endif %}
 {% endfor %}
-{% for product in collection.products limit: settings.pagination_limit %} 
+{% for product in collection.products limit: 24 %} 
 {% unless product.available %} 
 {% include 'product-card' with collection.handle %} 
 {% endunless %} 
