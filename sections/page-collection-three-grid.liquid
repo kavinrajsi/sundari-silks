@@ -101,9 +101,10 @@
 {% render 'filter' %}
 <div class="fixedElement section-{{ section.id }}-padding collectionGridThrees">
   <section>
-    {% paginate collection.products by 24  %}
+   
     <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="4" collection-list-desktop="4">
       {% for product in collection.products %}
+    {% if product.variants.first.inventory_quantity > 0 %}
 
       <div class="product__card">
         <div class="product__card--img">
@@ -187,14 +188,30 @@
           </a>
         </div>
       </div>
+    {% endif %}
 
 
       {% endfor %}
     </div>
     <div class="pagination--number">
-      {{ paginate | default_pagination: next: 'Older', previous: 'Next' }}
+      <div class="pagination">
+    {% if paginate.previous %}
+        <a href="{{ paginate.previous.url }}">Previous</a>
+    {% endif %}
+    {% for page in (1..paginate.pages) %}
+        {% if page == paginate.current_page %}
+            <span class="current-page">{{ page }}</span>
+        {% else %}
+            <a href="{{ paginate.url | replace: 'PAGE', page }}">{{ page }}</a>
+        {% endif %}
+    {% endfor %}
+    {% if paginate.next %}
+        <a href="{{ paginate.next.url }}">Next</a>
+    {% endif %}
+</div>
+
+      
     </div>
-    {% endpaginate %}
   </section>
 </div>
 <script>
