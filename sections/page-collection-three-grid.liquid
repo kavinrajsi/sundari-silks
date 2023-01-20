@@ -101,11 +101,9 @@
 {% render 'filter' %}
 <div class="fixedElement section-{{ section.id }}-padding collectionGridThrees">
   <section>
-  {% assign available_products = collection.products | where: "status", "!=", "sold out" %}
-
     {% paginate collection.products by 24 | sort: 'available' %}
     <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="4" collection-list-desktop="4">
-      {% for product in available_products %}
+      {% for product in collection.products %}
 
       <div class="product__card">
         <div class="product__card--img">
@@ -142,10 +140,7 @@
             </div>
           </a>
           <div class="product__card-cta quick-view-button">
-            {% comment %}
-              <span id="productInfoAnchor" class="quick-view" product-handle="{{ product.handle }}"
-              product-price="{{ product.price | money_without_trailing_zeros }}">Quick View</span>
-            {% endcomment %}
+
           </div>
         </div>
         <div class="product__card--content">
