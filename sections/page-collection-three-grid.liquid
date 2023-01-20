@@ -101,7 +101,7 @@
 {% render 'filter' %}
 <div class="fixedElement section-{{ section.id }}-padding collectionGridThrees">
   <section>
-    {% paginate collection.products by 24 | sort: 'available' %}
+    {% paginate collection.products by 4   %}
     <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="4" collection-list-desktop="4">
      {% for product in collection.products limit: 4 %} 
 {% if product.available %} 
