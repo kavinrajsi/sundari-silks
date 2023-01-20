@@ -101,21 +101,97 @@
 {% render 'filter' %}
 <div class="fixedElement section-{{ section.id }}-padding collectionGridThrees">
   <section>
-    
     <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="4" collection-list-desktop="4">
-     {% for product in collection.products limit: 24 %} 
-{% if product.available %} 
-{% include 'product-card' with collection.handle %}
-{% endif %}
-{% endfor %}
-{% for product in collection.products limit: 24 %} 
-{% unless product.available %} 
-{% include 'product-card' with collection.handle %} 
-{% endunless %} 
-{% endfor %}
+      {% for product in collection.products %}
 
+      <div class="product__card">
+        <div class="product__card--img">
+          <a href="{{ product.url | within: collection }}" class="product__card--link">
+            <div class="product__card--image--wrapper">
+              {% if product.featured_image != blank %}
+              <!-- [200,400,600,700,800,900,1000,1200] -->
+              <img loading="lazy" id="Image-{{ image.id }}" class="blur-up responsive-image__image lazyload"
+                src="{{ product.featured_image | image_url: width: '300x', format: 'pjpg' }}"
+                data-src="{{ product.featured_image | image_url: width: '300x', format: 'pjpg' }}"
+                data-aspectratio="{{ product.featured_image.aspect_ratio }}"
+                data-widths="[540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]" data-sizes="auto"
+                data-parent-fit="cover" alt="
+                {% if  product.feature_image.alt != blank %}
+                {{ product.feature_image.alt }}
+                {% else %}
+                {{ product.title }}
+                {% endif %} ">
+              {% comment %}
+              {% endcomment %}
+              {% else %}
+              {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
+              {% endif %}
+              <div class="product__card--status">
+                {% unless product.available %}
+                <!-- TODO: Sold out chip color -->
+                <span class="product__card--status-soldout">sold out</span>
+                {% endunless %}
+                {% if product.compare_at_price_max > product.price %}
+                <span class="product__card--status-soldout"> {{ product.compare_at_price_max | minus: product.price |
+                  times: 100.0 | divided_by: product.compare_at_price_max | remove: '.0' | slice: 0, 2 }} % off </span>
+                {% endif %}
+              </div>
+            </div>
+          </a>
+          <div class="product__card-cta quick-view-button">
+            {% comment %}
+              <span id="productInfoAnchor" class="quick-view" product-handle="{{ product.handle }}"
+              product-price="{{ product.price | money_without_trailing_zeros }}">Quick View</span>
+            {% endcomment %}
+          </div>
+        </div>
+        <div class="product__card--content">
+          <a href="{{ product.url | within: collection }}" class="product__card--link">
+            <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
+            <div class="product__variant--price">
+              {% if product.price_varies %}
+              <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency }}
+              </p>
+              {% else %}
+              <p>
+                {% if product.compare_at_price_max > product.price %}
+                <span><s>{{ product.compare_at_price_max | money_with_currency }}</s></span>
+                <span>{{ product.price | money_with_currency }}</span>
+                {% else %}
+                <span>{{ product.price | money_with_currency }}</span>
+                {% endif %}
+              </p>
+              {% endif %}
+            </div>
+
+            {% if customer and customer.tags contains 'admin' %}
+            <div class="product__variant--sku">
+              {% assign current_variant = product.selected_or_first_available_variant %}
+              <span class="variant-sku">{{ current_variant.sku }}</span>
+            </div>
+            {% endif %}
+
+            {% if product.variants.size > 1 %}
+            <div class="product__variant--list" hidden>
+              <span class="product__variant--list-title">
+                {{product.options }} :
+              </span>
+              {% for variant in product.variants %}
+              {% if variant.inventory_quantity == 0 %} <s> {% endif %}
+                <span class="product__variant--list-name"> {{ variant.title }} </span>
+                {% if variant.inventory_quantity == 0 %} </s> {% endif %}
+              {% endfor %}
+            </div>
+            {% endif %}
+          </a>
+        </div>
+      </div>
+
+
+      {% endfor %}
     </div>
-    {% paginate collection.products by 24   %}
+    
+    {% paginate collection.products by 24  %}
     <div class="pagination--number">
       {{ paginate | default_pagination: next: 'Older', previous: 'Next' }}
     </div>
