@@ -101,9 +101,11 @@
 {% render 'filter' %}
 <div class="fixedElement section-{{ section.id }}-padding collectionGridThrees">
   <section>
-    {% paginate collection.products by 24 where product.status != 'sold out' %}
+  {% assign available_products = collection.products | where: "status", "!=", "sold out" %}
+
+    {% paginate collection.products by 24 | sort: 'available' %}
     <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="4" collection-list-desktop="4">
-      {% for product in collection.products %}
+      {% for product in available_products %}
 
       <div class="product__card">
         <div class="product__card--img">
