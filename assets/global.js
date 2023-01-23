@@ -166,7 +166,7 @@
           '<span><span class="money" data-currency-'+dataVariantCurrency +'="'+dataVariantCurrency + " " + dataVariantPrice+'">'+dataVariantCurrency + " " + dataVariantPrice+'</span></span>'
         );
       var cart_sizelist = [];
-        var productSelectID =   $(".jselecteValue").val();
+        var productSelectID =   parseInt($(".jselecteValue").val());
       var cartContents = fetch(window.Shopify.routes.root + "cart.js")
         .then((response) => response.json())
         .then((data) => {
