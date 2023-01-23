@@ -171,37 +171,12 @@
             dataVariantPrice +
             "</span>"
         );
-
-        $.getJSON("/cart.js", function (cart) {
-          $.each(cart.items, function (index, cartItem) {
-            if (cartItem.variant_id == dataCircleValue) {
-              console.log(cartItem.variant_title);
-              console.log(optionSelectVal);
-              if (cartItem.variant_title == optionSelectVal) {
-                $(
-                  ".product-form__viewcart.product-form__viewcart-default"
-                ).attr("hidden", true);
-                $(
-                  ".product-form__viewcart.product-form__viewcart-secondary"
-                ).attr("hidden", false);
-                $(".special__product-form__submit").attr("hidden", true);
-                console.log("yes");
-              } else {
-                console.log("no");
-                $(
-                  ".product-form__viewcart.product-form__viewcart-default"
-                ).attr("hidden", true);
-                $(".product-form__viewcart").attr("hidden", true);
-                $(".special__product-form__submit").attr("hidden", false);
-              }
-            }
-          });
-        });
+        // change the button
       }
     });
   });
-  //
 
+  // add to cart ajax
   $(".product-form__buttons .product-form__submit")
     .unbind()
     .click(function (e) {
