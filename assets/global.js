@@ -233,13 +233,12 @@
           let cartData = JSON.stringify(data);
           let pushmyObj = JSON.parse(cartData);
           let pushDataItem = pushmyObj.items[0];
-          console.log(pushmyObj.items[0].title + "::");
           var cart_list = [];
           cart_list.push(
             '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">' +
               '<div class="toast-body" >' +
               '<img src="' +
-              pushData.featured_image +
+              pushData.featured_image.url +
               '&width=48" alt="' +
               pushData.featured_image.alt +
               '" width="48" height="64">' +
