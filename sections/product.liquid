@@ -285,11 +285,14 @@
               {% if product.selected_or_first_available_variant.available == false %}
                 Disabled
               {% endif %}
-              {% if not_in_cart %}
-                style="d-block"
-              {% else %}
-                style="d-none"
-              {% endif %}
+              style="
+                display:
+                {% if not_in_cart %}
+                 d-block
+                {% else %}
+                d-none
+                {% endif %}
+              "
             >
               <span>
                 {%- if product.selected_or_first_available_variant.available -%}
@@ -611,6 +614,7 @@
   
   
   
+  
   var myProduct = {{ product | json}};
   var customTags = myProduct.tags;
 
@@ -795,6 +799,7 @@
       console.log('no value from measurement page');
     }
   });
+
 
 
 
