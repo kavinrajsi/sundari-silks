@@ -250,13 +250,12 @@
           {% assign not_in_cart = true %}
           {% for item in cart.items %}
             <div class="mb-3 d-none" hidden>
-              {{ item | json }}
               <hr>
               {{ item.variant_id }}
               <hr>
               {{ product.selected_or_first_available_variant.id }}
             </div>
-            {% if item.product.id == product.id %}
+            {% if item.variant_id == product.selected_or_first_available_variant.id %}
               {% assign not_in_cart = false %}
               {% break %}
             {% endif %}
@@ -608,6 +607,7 @@
   
   
   
+  
   var myProduct = {{ product | json}};
   var customTags = myProduct.tags;
 
@@ -792,6 +792,7 @@
       console.log('no value from measurement page');
     }
   });
+
 
 
 
