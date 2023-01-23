@@ -173,7 +173,7 @@
           $.each(data.items, function (index, cartItem) {
             cart_sizelist.push(cartItem.variant_id);
           });
-          if (jQuery.inArray(dataCircleValue, cart_sizelist) != -1) {
+          if ($.inArray(productSelectID, cart_sizelist) != -1) {
             console.log("is in array");
           } else {
             console.log("is NOT in array");
@@ -181,8 +181,9 @@
 
           //sd
           console.log(data.items);
-          console.log(typeof productSelectID);
-          console.log(typeof cart_sizelist[0]);
+          console.log($.inArray(productSelectID, cart_sizelist);
+          console.log(productSelectID);
+          console.log(cart_sizelist[0]);
         });
       }
     });
