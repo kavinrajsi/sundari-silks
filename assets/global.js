@@ -201,7 +201,7 @@
     .unbind()
     .click(function (e) {
       e.preventDefault();
-let dataItem = $(".jselecteValue").val(dataCircleValue);
+let dataItem = $(".jselecteValue").val();
     
       let formData = {
  'items': [{
