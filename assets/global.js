@@ -230,7 +230,7 @@
         })
         .then((data) => {
           update_cart();
-          let pushDataItem = JSON.parse(data);
+          let pushDataItem = JSON.stringify(data);
           console.log(pushDataItem + " :: ");
           // var cart_list = [];
           // cart_list.push(
