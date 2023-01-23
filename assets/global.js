@@ -165,6 +165,7 @@
         $(".product-price").html(
           '<span><span class="money" data-currency-inr="' +
             dataVariantPrice +
+            dataVariantPrice +
             '">' +
             dataVariantPrice +
             "</span></span>"
