@@ -232,6 +232,7 @@
           update_cart();
           // $(".drawer").addClass(["is-visible", "is-active"]);
           let pushData = JSON.stringify(data);
+          console.log(pushData);
           let pushDataItem = pushData.items[0];
           console.log(pushDataItem);
           var cart_list = [];
