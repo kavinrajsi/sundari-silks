@@ -176,11 +176,7 @@
           .then((response) => response.json())
           .then((data) => {
             $.each(data.items, function (index, cartItem) {
-              if (cartItem.variant_id == dataCircleValue) {
-                console.log("has");
-              } else {
-                console.log("no");
-              }
+              console.log(cartItem.variant_id);
             });
           });
       }
