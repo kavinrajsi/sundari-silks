@@ -288,16 +288,39 @@
   //   $("body").toggleClass("modalScroll");
   // });
 
+  
+  window.setTimeout(function(){
+    // First check, if localStorage is supported.
+    if (window.localStorage) {
+      // Get the expiration date of the previous popup.
+      var nextPopup = localStorage.getItem( 'nextNewsletter' );
+
+      if (nextPopup > new Date()) {
+        return;
+      }
+
+      // Store the expiration date of the current popup in localStorage.
+      var expires = new Date();
+      expires = expires.setHours(expires.getHours() + 24);
+
+      localStorage.setItem( 'nextNewsletter', expires );
+    }
+
+    $(".modal-all-page").addClass("is-visible");
+  }, 3000);
+
 
   $(".modal-size-toggle").on("click", function (e) {
     e.preventDefault();
     $(".modal-size-chart").toggleClass("is-visible");
     $("body").toggleClass("modalScroll");
   });
+
+  // all modal close
   $("button.modal-close.modal-toggle").on("click", function (e) {
     e.preventDefault();
-    console.log("closemoda");
     $(".modal-size-chart").toggleClass("is-visible");
+    $(".modal-all-page").removeClass("is-visible");
     $("body").toggleClass("modalScroll");
   });
 
