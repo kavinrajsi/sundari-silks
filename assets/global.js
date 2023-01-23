@@ -205,6 +205,7 @@
       // let addToCartForms = jQuery.post(window.Shopify.routes.root + 'cart/add.js', $('form[action$="/cart/add"]').serialize());
       let addToCartForm = document.querySelector('form[action$="/cart/add"]');
       let formData = new FormData(addToCartForm);
+      console.log(formData);
       fetch(window.Shopify.routes.root + "cart/add.js", {
         method: "POST",
         body: formData,
