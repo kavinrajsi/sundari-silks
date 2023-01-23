@@ -231,7 +231,7 @@
         .then((data) => {
           update_cart();
           let pushDataItem = data;
-          console.log(pushDataItem + " :: " + typeof pushDataItem);
+          console.log(pushDataItem + " :: " + typeof JSON.parse(pushDataItem));
           var cart_list = [];
           cart_list.push(
             '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">' +
