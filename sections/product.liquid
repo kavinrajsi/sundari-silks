@@ -254,7 +254,7 @@
               <hr>
               {{ item.variant_id }}
               <hr>
-              {{ prodcut.id }}
+              {{ product.selected_or_first_available_variant.id }}
             </div>
             {% if item.product.id == product.id %}
               {% assign not_in_cart = false %}
@@ -607,6 +607,7 @@
   
   
   
+  
   var myProduct = {{ product | json}};
   var customTags = myProduct.tags;
 
@@ -791,6 +792,7 @@
       console.log('no value from measurement page');
     }
   });
+
 
 
 
