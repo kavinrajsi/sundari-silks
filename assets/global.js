@@ -263,16 +263,16 @@
   document.addEventListener("DOMContentLoaded", function () {
     update_cart();
   });
+
   function update_cart() {
-    fetch("/cart.js")
-      .then((resp) => resp.json())
-      .then(
-        (data) =>
-          (document.getElementsByClassName("cart-count span").innerHTML =
-            data.items.length)
-      )
-      .catch((err) => console.error(err));
-    console.log(err);
+    var cartContents = fetch(window.Shopify.routes.root + "cart.js")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        document.getElementsByClassName("cart-count span").innerHTML =
+          data.items.length;
+        return data;
+      });
   }
 
   // Modal for product detail page
