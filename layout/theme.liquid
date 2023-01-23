@@ -41,7 +41,6 @@
     {{ 'jquery.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'slick.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'shopify-money.js' | asset_url | preload_tag: as: 'script' }}
-    {{ 'jquery.cookie.min.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'predictive-search.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'drawer.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'bootstrap.min.js' | asset_url | preload_tag: as: 'script' }}
@@ -51,7 +50,6 @@
     {{ 'photoswipe-lightbox.umd.min.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'photoswipe-control.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'blouse-data.js' | asset_url | preload_tag: as: 'script' }}
-    {{ 'wishlist.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'global.js' | asset_url | preload_tag: as: 'script' }}
 
     {{ content_for_header }}
@@ -307,7 +305,8 @@
         y.parentNode.insertBefore(t, y);
       })(window, document, 'clarity', 'script', '6d9waakfsv');
     </script>
-  {% include 'hulk_po_vd' %}</head>
+    {% include 'hulk_po_vd' %}
+  </head>
 
   <body class="template-{{ template | split : '.' | first }}">
     {% section 'announcement-bar' %}
