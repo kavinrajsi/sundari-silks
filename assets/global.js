@@ -210,6 +210,7 @@
         body: formData,
       })
         .then((response) => {
+          console.log("data 0 " + response.json())
           return response.json();
         })
         .then((data) => {
@@ -262,21 +263,21 @@
         });
     });
 
-  document.addEventListener("DOMContentLoaded", function () {
-    update_cart();
-  });
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   update_cart();
+  // });
 
-  function update_cart() {
-    fetch("/cart.js")
-      .then((resp) => resp.json())
-      .then(
-        (data) =>
-          (document.getElementsByClassName("cart-count span").innerHTML =
-            data.items.length)
-      )
-      .catch((err) => console.error(err));
-    console.log(err);
-  }
+  // function update_cart() {
+  //   fetch("/cart.js")
+  //     .then((resp) => resp.json())
+  //     .then(
+  //       (data) =>
+  //         (document.getElementsByClassName("cart-count span").innerHTML =
+  //           data.items.length)
+  //     )
+  //     .catch((err) => console.error(err));
+  //   console.log(err);
+  // }
 
   // Modal for product detail page
   // Quick & dirty toggle to demonstrate modal toggle behavior
