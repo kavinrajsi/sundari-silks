@@ -164,9 +164,12 @@
         $(".jselecteValue").val(dataCircleValue); // pass product id to cart input
         $(".product-price").html(
           '<span><span class="money" data-currency-inr="' +
-            dataVariantPrice +
+            dataVariantCurrency +
+            "" +
             dataVariantPrice +
             '">' +
+            dataVariantCurrency +
+            "" +
             dataVariantPrice +
             "</span></span>"
         );
