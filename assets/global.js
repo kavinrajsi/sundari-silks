@@ -175,8 +175,10 @@
         var cartContents = fetch(window.Shopify.routes.root + "cart.js")
           .then((response) => response.json())
           .then((data) => {
-            console.log(data.items.product_id);
-            console.log(data.items.variant_id);
+            $.each(data.items, function (index, cartItem) {
+              console.log(cartItem.product_id);
+              console.log(cartItem.variant_id);
+            });
             console.log($(".jselecteValue").val());
           });
       }
