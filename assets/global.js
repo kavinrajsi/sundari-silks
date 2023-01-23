@@ -163,7 +163,7 @@
 
       if (dataCircle == optionSelect) {
         $(".jselecteValue").val(dataCircleValue);
-        var store_url = "https://sundarisilks.com"; // replaced with your shopify store url
+        var store_url = {{canonical_url}}; // replaced with your shopify store url
         var product_id = "babe-you-look-so-cool-neon-sign"; // replaced with your product id
         var full_url = store_url + "/products/" + 7681226145954 + ".json";
 
