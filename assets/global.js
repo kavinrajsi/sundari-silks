@@ -210,12 +210,12 @@
         body: formData,
       })
         .then((response) => {
-          console.log("data 0 " + JSON.parse(response));
+          console.log("data 0 ");
           return response.json();
         })
         .then((data) => {
           let pushData = data;
-          console.log("data 2 " + JSON.parse(pushData));
+          console.log("data 2 :" + JSON.parse(pushData));
           var cart_list = [];
           cart_list.push(
             '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">' +
