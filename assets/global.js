@@ -226,6 +226,9 @@
         .then((response) => {
           $(".product-form__submit").hide();
           $(".product-form__viewcart").show();
+          return response.json();
+        })
+        .then((data) => {
           update_cart();
           let pushData = response;
           console.log("data 2 " + JSON.stringify(pushData));
@@ -250,8 +253,6 @@
             .html(cart_list.join(""))
             .delay(2000)
             .fadeOut("slow");
-
-          return response.json();
         })
         .catch((error) => {
           console.error("Error:", error);
