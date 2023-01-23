@@ -196,7 +196,7 @@
   //
 
 
-
+/*
   $(".product-form__buttons .product-form__submit")
     .unbind()
     .click(function (e) {
@@ -278,6 +278,8 @@
   //     .catch((err) => console.error(err));
   //   console.log(err);
   // }
+
+  */
 
   // Modal for product detail page
   // Quick & dirty toggle to demonstrate modal toggle behavior
