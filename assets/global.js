@@ -229,9 +229,8 @@
           return response.json();
         })
         .then((data) => {
-          update_cart();
-          let pushData = response;
-          console.log("data 2 " + JSON.stringify(pushData));
+          let pushData = data;
+          console.log("data 2 " + JSON.stringify(data));
           var cart_list = [];
           cart_list.push(
             '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">' +
