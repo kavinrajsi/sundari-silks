@@ -181,8 +181,8 @@
 
           //sd
           console.log(data.items);
-          console.log(productSelectID);
-          console.log(cart_sizelist);
+          console.log(typeof productSelectID);
+          console.log(typeof cart_sizelist[0]);
         });
       }
     });
