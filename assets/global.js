@@ -230,7 +230,7 @@
           return response.json();
         })
         .then((data) => {
-          let pushData = data;
+          let pushData = JSON.stringify(data);
           console.log("data 2 :: " + typeof pushData);
           console.log("data 2 :: " + pushData);
           var cart_list = [];
