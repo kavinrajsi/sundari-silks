@@ -238,6 +238,11 @@
           cart_list.push(
             '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">' +
               '<div class="toast-body" >' +
+              '<img src="' +
+              pushData.featured_image +
+              '&width=48" alt="' +
+              pushData.featured_image.alt +
+              '" width="48" height="64">' +
               "<div>" +
               "<p>" +
               pushDataItem.title +
