@@ -153,27 +153,23 @@
   // product variant
   $('.product-variant-fielset input[type="radio"]').click(function () {
     var productVariant = "";
-    var optionSelect = $(this).attr("id");
-    var optionSelectVal = $(this).val();
-
+    var optionSelect = $(this).attr("id"); // radio button for and id
+    var optionSelectVal = $(this).val(); // check me
     $("#productSelect option").each(function () {
-      dataCircleValue = $(this).val();
-      dataCircle = $(this).attr("data-circle");
-      dataVariantPrice = $(this).attr("data-VariantPrice");
-
+      dataCircleValue = $(this).val(); // get product value id
+      dataCircle = $(this).attr("data-circle"); // get product label name to match with radio for and id
+      dataVariantPrice = $(this).attr("data-VariantPrice"); // get price
+      dataVariantCurrency = $(this).attr("data-variantcurrency"); // get currency
       if (dataCircle == optionSelect) {
-        $(".jselecteValue").val(dataCircleValue);
-
-        console.log(dataCircleValue);
+        $(".jselecteValue").val(dataCircleValue); // pass product id to cart input
         $(".product-price").html(
-          '<span class="money" data-productid="' +
-            dataCircleValue +
-            '" data-currency-inr="INR">' +
+          '<span><span class="money" data-currency-inr="' +
             dataVariantPrice +
-            "</span>"
+            '">' +
+            dataVariantPrice +
+            "</span></span>"
         );
       }
-      // change the button
     });
   });
 
