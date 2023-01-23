@@ -359,3 +359,12 @@ function clickTab(e) {
   var currentPage = document.querySelector("#" + pageID);
   currentPage.classList.add("active");
 }
+
+if (window.location.search == "?customer_posted=true") {
+  let ded = document.getElementsByClassName("newsletter-form__field-wrapper");
+  ded[0].style.display = "none";
+  document
+    .getElementById("subscription-from")
+    .closest(".footer-dataaction")
+    .scrollIntoView();
+}
