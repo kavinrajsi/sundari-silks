@@ -228,7 +228,7 @@
           $(".product-form__viewcart").show();
           update_cart();
           let pushData = response;
-          console.log("data 2 " + pushData);
+          console.log("data 2 " + JSON.stringify(pushData));
           var cart_list = [];
           cart_list.push(
             '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">' +
