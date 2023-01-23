@@ -226,6 +226,7 @@
         .then((response) => {
           $(".product-form__submit").hide();
           $(".product-form__viewcart").show();
+          update_cart();
           return response.json();
         })
         .then((data) => {
@@ -258,7 +259,9 @@
           console.error("Error:", error);
         });
     });
-
+  document.addEventListener("DOMContentLoaded", function () {
+    update_cart();
+  });
   function update_cart() {
     fetch("/cart.js")
       .then((resp) => resp.json())
