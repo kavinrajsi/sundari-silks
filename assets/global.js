@@ -319,9 +319,9 @@
   // all modal close
   $("button.modal-close.modal-toggle").on("click", function (e) {
     e.preventDefault();
-    $(".modal-size-chart").toggleClass("is-visible");
+    $(".modal-size-chart").removeClass("is-visible");
     $(".modal-all-page").removeClass("is-visible");
-    $("body").toggleClass("modalScroll");
+    $("body").removeClass("modalScroll");
   });
 
   $(".product-title-secondary").click(function () {
