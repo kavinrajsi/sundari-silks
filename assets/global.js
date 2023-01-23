@@ -269,10 +269,7 @@
       .then((response) => response.json())
       .then((data) => {
         console.log(data.item_count);
-        $(".header-cart .cart-count span").html("data.item_count");
-
-        document.getElementsByClassName("cart-count span").innerHTML =
-          data.item_count;
+        $(".header-cart .cart-count span").html(data.item_count);
         return data;
       });
   }
