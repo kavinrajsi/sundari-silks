@@ -640,7 +640,6 @@
       <script>
         if ($(window).width() > 764) {
           console.log('if');
-          $(document).ready(function () {
 
             console.log('if doc');
             $('#zoom_03').ezPlus({
@@ -658,43 +657,17 @@
               return false;
             });
 
-          });
         } else {
           console.log('else');
-          $(document).ready(function () {
 
-            console.log('else doc');
             $('#gallery_01 a').on('click', function () {
               var dataImage = $(this).data("image");
               $('.test-gallery').attr('src', dataImage);
               console.log(dataImage);
             });
-          });
         }
       </script>
     {% endif %}
     <script defer src="{{ 'global.js' | asset_url }}"></script>
-    <script>
-           if ( window.location.search == '?customer_posted=true' ) {
-          let ded = document.getElementsByClassName('newsletter-form__field-wrapper');
-          ded[0].style.display='none';
-          document.getElementById('subscription-from').closest('.footer-dataaction').scrollIntoView();
-      }
-          if (typeof navigator.serviceWorker !== 'undefined') {
-            navigator.serviceWorker.register('https://cdn.shopify.com/s/files/1/0490/1158/9282/t/22/assets/pwabuilder-sw.js')
-          }
-    </script>
-
-    {% include 'swymSnippet' %}
-    {% comment %}
-      <script type="text/javascript">
-       $(document).ready(function() {
-           if ($.cookie('pop') == null) {
-               $('#staticBackdrop').modal('show');
-               $.cookie('pop', '1');
-           }
-       });
-      </script>
-    {% endcomment %}
   </body>
 </html>
