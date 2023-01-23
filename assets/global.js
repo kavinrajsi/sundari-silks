@@ -163,23 +163,33 @@
       if (dataCircle == optionSelect) {
         $(".jselecteValue").val(dataCircleValue); // pass product id to cart input
         $(".product-price").html(
-          '<span><span class="money" data-currency-'+dataVariantCurrency +'="'+dataVariantCurrency + " " + dataVariantPrice+'">'+dataVariantCurrency + " " + dataVariantPrice+'</span></span>'
+          '<span><span class="money" data-currency-' +
+            dataVariantCurrency +
+            '="' +
+            dataVariantCurrency +
+            " " +
+            dataVariantPrice +
+            '">' +
+            dataVariantCurrency +
+            " " +
+            dataVariantPrice +
+            "</span></span>"
         );
-      var cart_sizelist = [];
-        var productSelectID =   parseInt($(".jselecteValue").val());
-      var cartContents = fetch(window.Shopify.routes.root + "cart.js")
-        .then((response) => response.json())
-        .then((data) => {
-          $.each(data.items, function (index, cartItem) {
-            cart_sizelist.push(cartItem.variant_id);
+        var cart_sizelist = [];
+        var productSelectID = parseInt($(".jselecteValue").val());
+        var cartContents = fetch(window.Shopify.routes.root + "cart.js")
+          .then((response) => response.json())
+          .then((data) => {
+            $.each(data.items, function (index, cartItem) {
+              cart_sizelist.push(cartItem.variant_id);
+            });
+
+            //sd
+            console.log(data.items);
+            console.log($.inArray(productSelectID, cart_sizelist));
+            console.log(productSelectID);
+            console.log(cart_sizelist);
           });
-          
-          //sd
-          console.log(data.items);
-          console.log($.inArray(productSelectID, cart_sizelist));
-          console.log(productSelectID);
-          console.log(cart_sizelist;
-        });
       }
     });
   });
