@@ -19,7 +19,10 @@
             <h3 class="card__heading">
               {{collection.title}}
             </h3>
-            <p>{{ colleciton.description }}</p>
+           {%- if collection.description != blank -%}
+  <p>{{ collection.description }}</p>
+{%- endif -%}
+
           </div>
         </a>
       </div>
