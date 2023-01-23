@@ -231,7 +231,8 @@
         .then((data) => {
           update_cart();
           let pushDataItem = JSON.stringify(data);
-          console.log(pushDataItem + " :: " + typeof pushDataItem + "::");
+          let pushmyObj = JSON.parse(pushDataItem);
+          console.log(pushmyObj.items[0].title + "::");
           // var cart_list = [];
           // cart_list.push(
           //   '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">' +
