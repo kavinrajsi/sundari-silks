@@ -165,7 +165,9 @@
         $(".jselecteValue").val(dataCircleValue);
         console.log(dataCircleValue);
         $(".product-price").html(
-          '<span class="money" data-productid="" data-currency-inr="INR">' +
+          '<span class="money" data-productid="' +
+            dataCircleValue +
+            '" data-currency-inr="INR">' +
             dataVariantPrice +
             "</span>"
         );
