@@ -184,9 +184,11 @@
               cart_sizelist.push(cartItem.variant_id);
             });
             if (jQuery.inArray(productSelectID, cart_sizelist) != -1) {
+              console.log("is in array");
               $(".product-form__submit").hide();
               $(".product-form__viewcart").show();
             } else {
+              console.log("is NOT in array");
               $(".product-form__submit").show();
               $(".product-form__viewcart").hide();
             }
