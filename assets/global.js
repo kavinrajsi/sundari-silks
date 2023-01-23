@@ -231,20 +231,19 @@
         .then((data) => {
           update_cart();
           let pushData = JSON.stringify(data);
-          console.log("data 2 :: " + typeof pushData);
-          console.log("data 2 :: " + pushData);
+          let pushDataItem = datas.items[0];
           var cart_list = [];
           cart_list.push(
             '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">' +
               '<div class="toast-body" >' +
               '<img src="' +
-              pushData.featured_image.url +
+              pushDataItem.featured_image.url +
               '&width=48" alt="' +
-              pushData.featured_image.alt +
+              pushDataItem.featured_image.alt +
               '" width="48" height="64">' +
               "<div>" +
               "<p>" +
-              pushData.title +
+              pushDataItem.title +
               " is added to bag  </p>" +
               "</div>" +
               "</div>" +
