@@ -177,6 +177,7 @@
           .then((data) => {
             console.log(data.items.product_id);
             console.log(data.items.variant_id);
+            console.log($(".jselecteValue").val());
           });
       }
     });
