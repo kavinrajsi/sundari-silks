@@ -175,7 +175,8 @@
         var cartContents = fetch(window.Shopify.routes.root + "cart.js")
           .then((response) => response.json())
           .then((data) => {
-            console.log(data);
+            console.log(data.items.product_id);
+            console.log(data.items.variant_id);
           });
       }
     });
