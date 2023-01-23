@@ -179,7 +179,6 @@
               console.log(dataCircleValue);
               console.log(cartItem.variant_id);
             });
-            console.log($(".jselecteValue").val());
           });
       }
     });
