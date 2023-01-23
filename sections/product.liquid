@@ -220,7 +220,7 @@
                 {% endif %}
                 data-circle="ProductSelect-option-size-{{ variant.title }}"
                 value="{{ variant.id }}"
-                data-VariantPrice="{{ variant.price | money_with_currency | strip_html  }}"
+                data-VariantPrice="{{ variant.price | money    }}"
               >
                 {{ variant.title }} - {{ variant.price | money_with_currency }}
               </option>
@@ -597,6 +597,8 @@
 
 <script language="Javascript" type="text/javascript">
   
+  
+  
   var myProduct = {{ product | json}};
   var customTags = myProduct.tags;
 
@@ -781,6 +783,8 @@
       console.log('no value from measurement page');
     }
   });
+
+
 
 </script>
 
