@@ -179,10 +179,10 @@
             $.each(data.items, function (index, cartItem) {
               console.log(cartItem.variant_id);
               cart_sizelist.push(cartItem.variant_id);
+              //sd
+              console.log(cart_sizelist);
             });
           });
-        //sd
-        console.log(cart_sizelist);
       }
     });
   });
