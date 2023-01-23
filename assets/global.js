@@ -201,74 +201,33 @@
     .unbind()
     .click(function (e) {
       e.preventDefault();
+let dataItem = $(".jselecteValue").val(dataCircleValue);
+    
+      let formData = {
+ 'items': [{
+  'id': dataItem,
+  'quantity': 1
+  }]
+};
 
-      let addToCartform = jQuery.post(window.Shopify.routes.root + 'cart/add.js', $('form[action$="/cart/add"]').serialize());
-      console.log('addToCartform:: ' + JSON.stringify(addToCartform));
-      let addToCartForm = document.querySelector('form[action$="/cart/add"]');
-      let formData = new FormData(addToCartForm);
-      console.log(formData);
-      fetch(window.Shopify.routes.root + "cart/add.js", {
-        method: "POST",
-        body: formData,
-      })
-        .then((response) => {
-          console.log("data 0 ");
-          return response.json();
-        })
-        .then((data) => {
-          let pushData = data;
-          console.log("data 2 :");
-          var cart_list = [];
-          cart_list.push(
-            '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">' +
-              '<div class="toast-body" >' +
-              '<img src="' +
-              pushData.featured_image.url +
-              '&width=48" alt="' +
-              pushData.featured_image.alt +
-              '" width="48" height="64">' +
-              "<div>" +
-              "<p>" +
-              pushData.title +
-              " is added to bag  </p>" +
-              "</div>" +
-              "</div>" +
-              "</div>"
-          );
-          $('.product-form__submit').hide();
-          $('.product-form__submit+.product-form__viewcart').show();
-          $(".productToaster")
-            .html(cart_list.join(""))
-            .delay(2000)
-            .fadeOut("slow");
+fetch(window.Shopify.routes.root + 'cart/add.js', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(formData)
+})
+.then(response => {
+  return response.json();
+})
+.catch((error) => {
+  console.error('Error:', error);
+});
 
-
-          update_cart();
-          $.getJSON("/cart.js", function (cart) {
-          //alert("There are now " + cart.item_count + " items in the cart.");
-          console.log("data 1: " + JSON.stringify(cart));
-          });
-          var cartItemCounter = document.querySelector(".cart-count");
-          $.ajax({
-            url: "/cart.js",
-            dataType: "json",
-          }).done(function (data) {
-            var newCount = data.item_count;
-            if (newCount > 0) {
-              $(".cart-count").removeAttr("hidden");
-            }
-            cartItemCounter.innerText = newCount;
-          });
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
+     
     });
 
-  // document.addEventListener("DOMContentLoaded", function () {
-  //   update_cart();
-  // });
-
+ 
   function update_cart() {
     fetch("/cart.js")
       .then((resp) => resp.json())
