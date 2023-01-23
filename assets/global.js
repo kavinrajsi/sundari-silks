@@ -240,7 +240,7 @@
             .fadeOut("slow");
 
 
-          update_cart();
+          //update_cart();
           // $.getJSON("/cart.js", function (cart) {
           // alert("There are now " + cart.item_count + " items in the cart.");
           // console.log("data 1: " + JSON.stringify(cart));
