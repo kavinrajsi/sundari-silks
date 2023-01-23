@@ -224,6 +224,7 @@
         body: JSON.stringify(formData),
       })
         .then((response) => {
+          update_cart();
           let pushData = response;
           console.log("data 2 " + pushData);
           var cart_list = [];
