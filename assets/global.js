@@ -183,7 +183,7 @@
             $.each(data.items, function (index, cartItem) {
               cart_sizelist.push(cartItem.variant_id);
             });
-            if (jQuery.inArray(productSelectID, cart_sizelist) == -1) {
+            if (jQuery.inArray(productSelectID, cart_sizelist) != -1) {
               console.log("is NOT in array");
               $(".product-form__submit").show();
               $(".product-form__viewcart").hide();
