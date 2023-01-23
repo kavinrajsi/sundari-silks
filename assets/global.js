@@ -192,11 +192,11 @@
               $(".product-form__submit").show();
               $(".product-form__viewcart").hide();
             }
-            //sd
-            console.log(data.items);
-            console.log($.inArray(productSelectID, cart_sizelist));
-            console.log(productSelectID);
-            console.log(cart_sizelist);
+            // verification data
+            // console.log(data.items);
+            // console.log($.inArray(productSelectID, cart_sizelist));
+            // console.log(productSelectID);
+            // console.log(cart_sizelist);
           });
       }
     });
