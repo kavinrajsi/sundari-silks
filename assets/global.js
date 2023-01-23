@@ -166,6 +166,7 @@
           '<span><span class="money" data-currency-'+dataVariantCurrency +'="'+dataVariantCurrency + " " + dataVariantPrice+'">'+dataVariantCurrency + " " + dataVariantPrice+'</span></span>'
         );
       var cart_sizelist = [];
+        var productSelectID =   $(".jselecteValue").val(dataCircleValue);
       var cartContents = fetch(window.Shopify.routes.root + "cart.js")
         .then((response) => response.json())
         .then((data) => {
@@ -180,7 +181,7 @@
 
           //sd
           console.log(data.items);
-          console.log(dataCircleValue);
+          console.log(productSelectID);
           console.log(cart_sizelist);
         });
       }
