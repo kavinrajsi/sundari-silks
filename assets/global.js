@@ -241,11 +241,11 @@
             .fadeOut("slow");
 
 
-          //update_cart();
-          // $.getJSON("/cart.js", function (cart) {
-          // alert("There are now " + cart.item_count + " items in the cart.");
-          // console.log("data 1: " + JSON.stringify(cart));
-          // });
+          update_cart();
+          $.getJSON("/cart.js", function (cart) {
+          alert("There are now " + cart.item_count + " items in the cart.");
+          console.log("data 1: " + JSON.stringify(cart));
+          });
           var cartItemCounter = document.querySelector(".cart-count");
           $.ajax({
             url: "/cart.js",
@@ -263,21 +263,21 @@
         });
     });
 
-  // document.addEventListener("DOMContentLoaded", function () {
-  //   update_cart();
-  // });
+  document.addEventListener("DOMContentLoaded", function () {
+    update_cart();
+  });
 
-  // function update_cart() {
-  //   fetch("/cart.js")
-  //     .then((resp) => resp.json())
-  //     .then(
-  //       (data) =>
-  //         (document.getElementsByClassName("cart-count span").innerHTML =
-  //           data.items.length)
-  //     )
-  //     .catch((err) => console.error(err));
-  //   console.log(err);
-  // }
+  function update_cart() {
+    fetch("/cart.js")
+      .then((resp) => resp.json())
+      .then(
+        (data) =>
+          (document.getElementsByClassName("cart-count span").innerHTML =
+            data.items.length)
+      )
+      .catch((err) => console.error(err));
+    console.log(err);
+  }
 
   // Modal for product detail page
   // Quick & dirty toggle to demonstrate modal toggle behavior
