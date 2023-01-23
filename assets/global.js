@@ -230,32 +230,31 @@
         })
         .then((data) => {
           update_cart();
-          // $(".drawer").addClass(["is-visible", "is-active"]);
           let pushData = JSON.stringify(data);
           console.log(pushData);
           let pushDataItem = pushData.items[0];
           console.log(pushDataItem);
           var cart_list = [];
-          cart_list.push(
-            '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">' +
-              '<div class="toast-body" >' +
-              '<img src="' +
-              pushDataItem.featured_image.url +
-              '&width=48" alt="' +
-              pushDataItem.featured_image.alt +
-              '" width="48" height="64">' +
-              "<div>" +
-              "<p>" +
-              pushDataItem.title +
-              " is added to bag  </p>" +
-              "</div>" +
-              "</div>" +
-              "</div>"
-          );
-          $(".productToaster")
-            .html(cart_list.join(""))
-            .delay(2000)
-            .fadeOut("slow");
+          // cart_list.push(
+          //   '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">' +
+          //     '<div class="toast-body" >' +
+          //     '<img src="' +
+          //     pushDataItem.featured_image.url +
+          //     '&width=48" alt="' +
+          //     pushDataItem.featured_image.alt +
+          //     '" width="48" height="64">' +
+          //     "<div>" +
+          //     "<p>" +
+          //     pushDataItem.title +
+          //     " is added to bag  </p>" +
+          //     "</div>" +
+          //     "</div>" +
+          //     "</div>"
+          // );
+          // $(".productToaster")
+          //   .html(cart_list.join(""))
+          //   .delay(2000)
+          //   .fadeOut("slow");
         })
         .catch((error) => {
           console.error("Error:", error);
