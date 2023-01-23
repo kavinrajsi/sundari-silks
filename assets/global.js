@@ -176,7 +176,7 @@
           .then((response) => response.json())
           .then((data) => {
             $.each(data.items, function (index, cartItem) {
-              console.log(cartItem.product_id);
+              console.log(dataCircleValue);
               console.log(cartItem.variant_id);
             });
             console.log($(".jselecteValue").val());
