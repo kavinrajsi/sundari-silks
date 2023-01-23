@@ -163,11 +163,9 @@
 
       if (dataCircle == optionSelect) {
         $(".jselecteValue").val(dataCircleValue);
-        console.log(dataVariantPrice);
+        console.log(dataCircleValue);
         $(".product-price").html(
-          '<span class="money" data-productid="' +
-            dataCircleValue +
-            '" data-currency-inr="' +
+          '<span class="money" data-productid="" data-currency-inr="' +
             dataVariantPrice +
             '">' +
             dataVariantPrice +
