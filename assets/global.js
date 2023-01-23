@@ -202,7 +202,8 @@
     .click(function (e) {
       e.preventDefault();
 
-      // let addToCartForms = jQuery.post(window.Shopify.routes.root + 'cart/add.js', $('form[action$="/cart/add"]').serialize());
+      let addToCartform = jQuery.post(window.Shopify.routes.root + 'cart/add.js', $('form[action$="/cart/add"]').serialize());
+      console.log('addToCartform:: ' + addToCartform);
       let addToCartForm = document.querySelector('form[action$="/cart/add"]');
       let formData = new FormData(addToCartForm);
       console.log(formData);
