@@ -270,7 +270,7 @@
       .then((data) => {
         console.log(data);
         document.getElementsByClassName("cart-count span").innerHTML =
-          data.items.length;
+          data.item_count;
         return data;
       });
   }
