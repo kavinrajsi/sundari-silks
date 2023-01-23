@@ -183,14 +183,14 @@
             $.each(data.items, function (index, cartItem) {
               cart_sizelist.push(cartItem.variant_id);
             });
-            if (jQuery.inArray(productSelectID, cart_sizelist) != -1) {
-              console.log("is in array");
-              $(".product-form__submit").hide();
-              $(".product-form__viewcart").show();
-            } else {
+            if (jQuery.inArray(productSelectID, cart_sizelist) == -1) {
               console.log("is NOT in array");
               $(".product-form__submit").show();
               $(".product-form__viewcart").hide();
+            } else {
+              console.log("is in array");
+              $(".product-form__submit").hide();
+              $(".product-form__viewcart").show();
             }
             //sd
             console.log(data.items);
