@@ -215,7 +215,7 @@
         })
         .then((data) => {
           let pushData = data;
-          console.log("data 2 " + pushData);
+          console.log("data 2 " + JSON.parse(pushData));
           var cart_list = [];
           cart_list.push(
             '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">' +
