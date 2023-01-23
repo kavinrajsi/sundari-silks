@@ -158,8 +158,8 @@
     $("#productSelect option").each(function () {
       dataCircleValue = $(this).val(); // get product value id
       dataCircle = $(this).attr("data-circle"); // get product label name to match with radio for and id
+      dataVariantCurrency = $(this).attr("data-variantcurrency"); // get currency code
       dataVariantPrice = $(this).attr("data-VariantPrice"); // get price
-      dataVariantCurrency = $(this).attr("data-variantcurrency"); // get currency
       if (dataCircle == optionSelect) {
         $(".jselecteValue").val(dataCircleValue); // pass product id to cart input
         $(".product-price").html(
