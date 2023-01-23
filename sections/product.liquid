@@ -277,28 +277,29 @@
               <span style="padding-left: 4px">Whatsapp</span>
             </a>
           {% else %}
-            
-              <button
-                type="submit"
-                name="add"
-                class="button product-form__submit  button--primary"
-                data-status-button="{%- if product.selected_or_first_available_variant.available -%} add-to-cart {%- else -%} soldout {%- endif -%}"
-                {% if product.selected_or_first_available_variant.available == false %}
-                  Disabled
-                {% endif %}
-            {% if not_in_cart %} d-block {% else %}
-              >
-                <span>
-                  {%- if product.selected_or_first_available_variant.available -%}
-                    ADD TO CART
-                  {%- else -%}
-                    SOLD OUT
-                  {%- endif -%}
-                </span>
-              </button>
-              <a type="button" href="/cart" class="button button-solid-maroon product-form__viewcart">View Cart</a>
-         
-            {% endif %}
+            <button
+              type="submit"
+              name="add"
+              class="button product-form__submit  button--primary"
+              data-status-button="{%- if product.selected_or_first_available_variant.available -%} add-to-cart {%- else -%} soldout {%- endif -%}"
+              {% if product.selected_or_first_available_variant.available == false %}
+                Disabled
+              {% endif %}
+              {% if not_in_cart %}
+                d-block
+              {% else %}
+                d-none
+              {% endif %}
+            >
+              <span>
+                {%- if product.selected_or_first_available_variant.available -%}
+                  ADD TO CART
+                {%- else -%}
+                  SOLD OUT
+                {%- endif -%}
+              </span>
+            </button>
+            <a type="button" href="/cart" class="button button-solid-maroon product-form__viewcart">View Cart</a>
           {% endif %}
 
           {%- if product.handle != blank -%}
@@ -606,6 +607,7 @@
   
   
   
+  
   var myProduct = {{ product | json}};
   var customTags = myProduct.tags;
 
@@ -790,6 +792,7 @@
       console.log('no value from measurement page');
     }
   });
+
 
 
 
