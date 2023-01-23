@@ -286,9 +286,9 @@
                 Disabled
               {% endif %}
               {% if not_in_cart %}
-                d-none
+                style="d-none"
               {% else %}
-                d-block
+                style="d-block"
               {% endif %}
             >
               <span>
@@ -609,6 +609,7 @@
   
   
   
+  
   var myProduct = {{ product | json}};
   var customTags = myProduct.tags;
 
@@ -793,6 +794,7 @@
       console.log('no value from measurement page');
     }
   });
+
 
 
 
