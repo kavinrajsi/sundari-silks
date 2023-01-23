@@ -220,7 +220,7 @@
                 {% endif %}
                 data-circle="ProductSelect-option-size-{{ variant.title }}"
                 value="{{ variant.id }}"
-                data-VariantPrice="{{ variant.price  }}"
+                data-VariantPrice="{{ variant.price | money_with_currency | strip_html  }}"
               >
                 {{ variant.title }} - {{ variant.price | money_with_currency }}
               </option>
