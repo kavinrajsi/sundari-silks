@@ -250,7 +250,6 @@
           {% assign not_in_cart = true %}
           {% for item in cart.items %}
             <div class="mb-3 d-none" hidden>
-              {{ item | json }}
               <hr>
               {{ item.prodcut.id }}
               <hr>
@@ -605,6 +604,7 @@
   
   
   
+  
   var myProduct = {{ product | json}};
   var customTags = myProduct.tags;
 
@@ -789,6 +789,7 @@
       console.log('no value from measurement page');
     }
   });
+
 
 
 
