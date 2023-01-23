@@ -171,26 +171,26 @@
             dataVariantPrice +
             "</span>"
         );
-        // change the button
-        var cart_sizelist = [];
-        var cartContents = fetch(window.Shopify.routes.root + "cart.js")
-          .then((response) => response.json())
-          .then((data) => {
-            $.each(data.items, function (index, cartItem) {
-              cart_sizelist.push(cartItem.variant_id);
-            });
-            if (jQuery.inArray(dataCircleValue, cart_sizelist) != -1) {
-              console.log("is in array");
-            } else {
-              console.log("is NOT in array");
-            }
-
-            //sd
-            console.log(data);
-            console.log(dataCircleValue);
-            console.log(cart_sizelist);
-          });
       }
+      // change the button
+      var cart_sizelist = [];
+      var cartContents = fetch(window.Shopify.routes.root + "cart.js")
+        .then((response) => response.json())
+        .then((data) => {
+          $.each(data.items, function (index, cartItem) {
+            cart_sizelist.push(cartItem.variant_id);
+          });
+          if (jQuery.inArray(dataCircleValue, cart_sizelist) != -1) {
+            console.log("is in array");
+          } else {
+            console.log("is NOT in array");
+          }
+
+          //sd
+          console.log(data.items);
+          console.log(dataCircleValue);
+          console.log(cart_sizelist);
+        });
     });
   });
 
