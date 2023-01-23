@@ -176,7 +176,7 @@
           
           //sd
           console.log(data.items);
-          console.log($.inArray(productSelectID, cart_sizelist);
+          console.log($.inArray(productSelectID, cart_sizelist));
           console.log(productSelectID);
           console.log(cart_sizelist;
         });
