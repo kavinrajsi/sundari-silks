@@ -277,7 +277,7 @@
               <span style="padding-left: 4px">Whatsapp</span>
             </a>
           {% else %}
-            {% if not_in_cart %}
+            
               <button
                 type="submit"
                 name="add"
@@ -286,6 +286,7 @@
                 {% if product.selected_or_first_available_variant.available == false %}
                   Disabled
                 {% endif %}
+            {% if not_in_cart %} d-block {% else %}
               >
                 <span>
                   {%- if product.selected_or_first_available_variant.available -%}
@@ -296,10 +297,7 @@
                 </span>
               </button>
               <a type="button" href="/cart" class="button button-solid-maroon product-form__viewcart">View Cart</a>
-            {% else %}
-              <a type="button" href="/cart" class="button button-solid-maroon product-form__viewcart d-block"
-                >View Cart</a
-              >
+         
             {% endif %}
           {% endif %}
 
