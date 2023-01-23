@@ -232,6 +232,7 @@
           update_cart();
           let pushData = JSON.stringify(data);
           let pushDataItem = pushData.items[0];
+          console.log(pushDataItem);
           var cart_list = [];
           cart_list.push(
             '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">' +
