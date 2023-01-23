@@ -230,25 +230,26 @@
         })
         .then((data) => {
           update_cart();
-          let pushDataItem = JSON.stringify(data);
-          let pushmyObj = JSON.parse(pushDataItem);
+          let cartData = JSON.stringify(data);
+          let pushmyObj = JSON.parse(cartData);
+          let pushDataItem = pushmyObj.items[0];
           console.log(pushmyObj.items[0].title + "::");
-          // var cart_list = [];
-          // cart_list.push(
-          //   '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">' +
-          //     '<div class="toast-body" >' +
-          //     "<div>" +
-          //     "<p>" +
-          //     pushDataItem.title +
-          //     " is added to bag  </p>" +
-          //     "</div>" +
-          //     "</div>" +
-          //     "</div>"
-          // );
-          // $(".productToaster")
-          //   .html(cart_list.join(""))
-          //   .delay(2000)
-          //   .fadeOut("slow");
+          var cart_list = [];
+          cart_list.push(
+            '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">' +
+              '<div class="toast-body" >' +
+              "<div>" +
+              "<p>" +
+              pushDataItem.title +
+              " is added to bag  </p>" +
+              "</div>" +
+              "</div>" +
+              "</div>"
+          );
+          $(".productToaster")
+            .html(cart_list.join(""))
+            .delay(2000)
+            .fadeOut("slow");
         })
         .catch((error) => {
           console.error("Error:", error);
