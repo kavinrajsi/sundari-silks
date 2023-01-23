@@ -263,9 +263,9 @@
         });
     });
 
-  document.addEventListener("DOMContentLoaded", function () {
-    update_cart();
-  });
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   update_cart();
+  // });
 
   function update_cart() {
     fetch("/cart.js")
