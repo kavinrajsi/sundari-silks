@@ -288,9 +288,9 @@
               style="
                 display:
                 {% if not_in_cart %}
-                 d-block
+                 block
                 {% else %}
-                d-none
+                none
                 {% endif %}
               "
             >
@@ -302,7 +302,20 @@
                 {%- endif -%}
               </span>
             </button>
-            <a type="button" href="/cart" class="button button-solid-maroon product-form__viewcart">View Cart</a>
+            <a
+              type="button"
+              href="/cart"
+              class="button button-solid-maroon product-form__viewcart"
+              style="
+                display:
+                {% if not_in_cart %}
+                 none
+                {% else %}
+                block
+                {% endif %}
+              "
+              >View Cart</a
+            >
           {% endif %}
 
           {%- if product.handle != blank -%}
@@ -615,6 +628,7 @@
   
   
   
+  
   var myProduct = {{ product | json}};
   var customTags = myProduct.tags;
 
@@ -799,6 +813,7 @@
       console.log('no value from measurement page');
     }
   });
+
 
 
 
