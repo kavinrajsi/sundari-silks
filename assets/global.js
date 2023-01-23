@@ -163,7 +163,7 @@
       if (dataCircle == optionSelect) {
         $(".jselecteValue").val(dataCircleValue); // pass product id to cart input
         $(".product-price").html(
-          '<span><span class="money" data-currency-inr="'+ dataVariantCurrency +'">'+ dataVariantPrice +'</span></span>'
+          '<span><span class="money" data-currency-inr="'+ dataVariantPrice +'">'+dataVariantCurrency + " " + dataVariantPrice+'</span></span>'
         );
       }
     });
