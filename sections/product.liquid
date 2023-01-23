@@ -220,6 +220,7 @@
                 {% endif %}
                 data-circle="ProductSelect-option-size-{{ variant.title }}"
                 value="{{ variant.id }}"
+                data-variantName="{{ variant.title }}"
                 data-VariantCurrency="{{ shop.currency }}"
                 data-VariantPrice="{{ variant.price | money_without_currency  | strip_html  }}"
               >
@@ -603,6 +604,7 @@
   
   
   
+  
   var myProduct = {{ product | json}};
   var customTags = myProduct.tags;
 
@@ -787,6 +789,7 @@
       console.log('no value from measurement page');
     }
   });
+
 
 
 
