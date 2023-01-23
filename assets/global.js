@@ -179,6 +179,11 @@
             $.each(data.items, function (index, cartItem) {
               cart_sizelist.push(cartItem.variant_id);
             });
+            if (jQuery.inArray(dataCircleValue, cart_sizelist) != -1) {
+              console.log("is in array");
+            } else {
+              console.log("is NOT in array");
+            }
 
             //sd
             console.log(cart_sizelist);
