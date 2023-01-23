@@ -230,8 +230,7 @@
         })
         .then((data) => {
           update_cart();
-          let pushDataIteam = JSON.stringify(data);
-          let pushData = pushDataIteam.items[0];
+          let pushData = JSON.stringify(data);
           console.log("data 2 :: " + typeof pushData);
           console.log("data 2 :: " + pushData);
           var cart_list = [];
