@@ -1,8 +1,7 @@
-
 (function ($) {
   console.log("functions");
   $(function () {
-    jQuery('#loader').fadeOut(3000);
+    jQuery("#loader").fadeOut(3000);
 
     console.log("document ready");
     //document.ready
@@ -14,6 +13,56 @@
     $(".slider.single-item").slick({});
 
     $("#pitem_1 .test--product-card--grid-four").slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      dots: true,
+      draggable: true,
+      centerMode: false,
+      variableWidth: false,
+      arrows: true,
+      infinite: false,
+      mobileFirst: true,
+      focusOnSelect: true,
+      touchMove: true,
+      swipeToSlide: true,
+      adaptiveHeight: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          },
+        },
+        {
+          breakpoint: 300,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          },
+        },
+      ],
+    });
+
+    $(".tab-buttton .tab").click(function () {
+      console.log(this.id);
+      var str = this.id;
+      var char = str[0];
+      var replaced = str.replace(char, "p");
+      console.log(replaced);
+      // $('.justdropped-box  .test--product-card--grid-four').not('.slick-initialized').slick({
+      //   settings: "unslick"
+      // });
+      $(
+        "#" + replaced + ".justdropped-box .test--product-card--grid-four"
+      ).slick({
         slidesToShow: 4,
         slidesToScroll: 1,
         dots: true,
@@ -32,73 +81,25 @@
             breakpoint: 1024,
             settings: {
               slidesToShow: 4,
-              slidesToScroll: 1
-            }
+              slidesToScroll: 1,
+            },
           },
           {
             breakpoint: 768,
             settings: {
               slidesToShow: 2,
-              slidesToScroll: 2
-            }
+              slidesToScroll: 2,
+            },
           },
           {
             breakpoint: 300,
             settings: {
               slidesToShow: 2,
-              slidesToScroll: 2
-            }
-          }
-        ]
+              slidesToScroll: 2,
+            },
+          },
+        ],
       });
-
-    $(".tab-buttton .tab").click(function () {
-      console.log(this.id);
-      var str = this.id;
-      var char = str[0];
-      var replaced = str.replace(char, "p");
-      console.log(replaced);
-      // $('.justdropped-box  .test--product-card--grid-four').not('.slick-initialized').slick({
-      //   settings: "unslick"
-      // });
-      $('#'+replaced + '.justdropped-box .test--product-card--grid-four').slick({
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          dots: true,
-          draggable: true,
-          centerMode: false,
-          variableWidth: false,
-          arrows: true,
-          infinite: false,
-          mobileFirst: true,
-          focusOnSelect: true,
-          touchMove: true,
-          swipeToSlide: true,
-          adaptiveHeight: true,
-          responsive: [
-            {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 4,
-                slidesToScroll: 1
-              }
-            },
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-              }
-            },
-            {
-              breakpoint: 300,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-              }
-            }
-          ]
-        });
     });
 
     /**
@@ -163,7 +164,13 @@
       if (dataCircle == optionSelect) {
         $(".jselecteValue").val(dataCircleValue);
         console.log(dataVariantPrice);
-        $('.product-price').html('<span class="money" data-currency-inr="'+ dataVariantPrice +'">'+ dataVariantPrice +'</span>');
+        $(".product-price").html(
+          '<span class="money" data-currency-inr="' +
+            dataVariantPrice +
+            '">' +
+            dataVariantPrice +
+            "</span>"
+        );
 
         $.getJSON("/cart.js", function (cart) {
           $.each(cart.items, function (index, cartItem) {
@@ -195,39 +202,61 @@
   });
   //
 
-
-
   $(".product-form__buttons .product-form__submit")
     .unbind()
     .click(function (e) {
       e.preventDefault();
-let dataItem = $(".jselecteValue").val();
-    
+      let dataItem = $(".jselecteValue").val();
       let formData = {
- 'items': [{
-  'id': dataItem,
-  'quantity': 1
-  }]
-};
+        items: [
+          {
+            id: dataItem,
+            quantity: 1,
+          },
+        ],
+      };
 
-fetch(window.Shopify.routes.root + 'cart/add.js', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(formData)
-})
-.then(response => {
-  return response.json();
-})
-.catch((error) => {
-  console.error('Error:', error);
-});
+      fetch(window.Shopify.routes.root + "cart/add.js", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => {
+          let pushData = data;
+          console.log("data 2 " + pushData);
+          var cart_list = [];
+          cart_list.push(
+            '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">' +
+              '<div class="toast-body" >' +
+              '<img src="' +
+              pushData.featured_image.url +
+              '&width=48" alt="' +
+              pushData.featured_image.alt +
+              '" width="48" height="64">' +
+              "<div>" +
+              "<p>" +
+              pushData.title +
+              " is added to bag  </p>" +
+              "</div>" +
+              "</div>" +
+              "</div>"
+          );
+          $(".product-form__submit").hide();
+          $(".product-form__viewcart").show();
+          $(".productToaster")
+            .html(cart_list.join(""))
+            .delay(2000)
+            .fadeOut("slow");
 
-     
+          return response.json();
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
     });
 
- 
   function update_cart() {
     fetch("/cart.js")
       .then((resp) => resp.json())
@@ -250,12 +279,11 @@ fetch(window.Shopify.routes.root + 'cart/add.js', {
   //   $("body").toggleClass("modalScroll");
   // });
 
-  
-  window.setTimeout(function(){
+  window.setTimeout(function () {
     // First check, if localStorage is supported.
     if (window.localStorage) {
       // Get the expiration date of the previous popup.
-      var nextPopup = localStorage.getItem( 'nextNewsletter' );
+      var nextPopup = localStorage.getItem("nextNewsletter");
 
       if (nextPopup > new Date()) {
         return;
@@ -265,12 +293,11 @@ fetch(window.Shopify.routes.root + 'cart/add.js', {
       var expires = new Date();
       expires = expires.setHours(expires.getHours() + 24);
 
-      localStorage.setItem( 'nextNewsletter', expires );
+      localStorage.setItem("nextNewsletter", expires);
     }
 
     $(".modal-all-page").addClass("is-visible");
   }, 3000);
-
 
   $(".modal-size-toggle").on("click", function (e) {
     e.preventDefault();
@@ -287,7 +314,9 @@ fetch(window.Shopify.routes.root + 'cart/add.js', {
   });
 
   $(".product-title-secondary").click(function () {
-    $(this).next(".product-description,.product-description-old,.product-detail").toggleClass("product-detail-description-active");
+    $(this)
+      .next(".product-description,.product-description-old,.product-detail")
+      .toggleClass("product-detail-description-active");
     $(this).toggleClass("product-detail-description-active");
   });
 
@@ -299,7 +328,6 @@ fetch(window.Shopify.routes.root + 'cart/add.js', {
   $(".footer-main h4").click(function () {
     $(this).next("ul").toggleClass("footerActive");
   });
-
 
   //Functions, Plugins, Etc.. Here
   //(does not wait for DOM READY STATE)
