@@ -172,6 +172,11 @@
             "</span>"
         );
         // change the button
+        var cartContents = fetch(window.Shopify.routes.root + "cart.js")
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data.item_count);
+          });
       }
     });
   });
