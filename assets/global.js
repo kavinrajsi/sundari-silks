@@ -210,7 +210,7 @@
         body: formData,
       })
         .then((response) => {
-          console.log("data 0 " + response);
+          console.log("data 0 " + JSON.parse(response));
           return response.json();
         })
         .then((data) => {
