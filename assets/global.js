@@ -224,6 +224,8 @@
         body: JSON.stringify(formData),
       })
         .then((response) => {
+          $(".product-form__submit").hide();
+          $(".product-form__viewcart").show();
           update_cart();
           let pushData = response;
           console.log("data 2 " + pushData);
@@ -244,8 +246,6 @@
               "</div>" +
               "</div>"
           );
-          $(".product-form__submit").hide();
-          $(".product-form__viewcart").show();
           $(".productToaster")
             .html(cart_list.join(""))
             .delay(2000)
