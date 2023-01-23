@@ -8,15 +8,14 @@
 <div class="page-width">
   <h1 class="title title--primary"> Collection Page</h1>
   {% paginate collections by 24 %}
-  <ul class="collection-list grid" role="list">
+  <ul class="collection-list grid" role="list" style=""display: block;>
     {% for collection in collections %}
-    <!-- {{ collection.products.first | json }} -->
     <li class="collection-list__item grid__item">
       <div class="card">
         <a href="{{ collection.url }}">
 
           <div class="card__content">
-            <h3 class="card__heading">
+            <h3 class="card__heading" style="text-align: left;">
               {{collection.title}}
             </h3>
             
