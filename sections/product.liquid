@@ -1,272 +1,334 @@
 {% assign current_product = product.selected_or_first_available_variant %}
 {% assign product_image = current_product.featured_image | default: product.featured_image %}
 {% assign product_collection = collection.title | link_to: product_collection.url %}
-{% assign collectProductName = "" %}
+{% assign collectProductName = '' %}
 {% unless product_collection == blank %}
-{% assign collectProductName = product_collection %}
+  {% assign collectProductName = product_collection %}
 {% endunless %}
-{% assign coeid = "" %}
+{% assign coeid = '' %}
 
 {% assign collectionName = '' %}
 {% for collection in product.collections %}
-{% if collection.title == 'Mumbai Collection' %}
-{% assign collectionName = 'buttonWhatsapp' %}
-{% endif %}
+  {% if collection.title == 'Mumbai Collection' %}
+    {% assign collectionName = 'buttonWhatsapp' %}
+  {% endif %}
 {% endfor %}
 
 {% for product_image in product.images %}
-<link rel="preload" as="image" href="{{ product_image.src | image_url }}">
-<link rel="prefetch" href="{{ product_image.src | image_url }}">
+  <link rel="preload" as="image" href="{{ product_image.src | image_url }}">
+  <link rel="prefetch" href="{{ product_image.src | image_url }}">
 {% endfor %}
 {% unless product == empty %}
-<script type="application/json" id="ProductJson-{{ section.id }}">
-  {{ product | json }}
-</script>
+  <script type="application/json" id="ProductJson-{{ section.id }}">
+    {{ product | json }}
+  </script>
 {% endunless %}
 <section class="page-product-detail">
   <div class="product-images">
-<!-- New image zoom -->
+    <!-- New image zoom -->
 
-<div id="gallery_01" class="product-images-thumbnails">
-  {% for product_image in product.images %}
-    <a href="javascript:void(0)"
-      data-image="{{ product_image | image_url }}"
-      data-zoom-image="{{ product_image  |  image_url: width:"1256",  height: "1886" }}">
-      <img id="img_{{forloop.index}}" src=" {{ product_image | image_url: width:"320 ", height: "480 " }}"/>
-  </a>
-  {% endfor %}
-</div>
-<img
-  src="{{ product_image | image_url: width:"640", height: "960" }}"
-  data-zoom-image="{{ product_image | image_url: width:"1256",  height: "1886" }}"
-  class="test-gallery" id="zoom_03"
-/>
-
-
+    <div id="gallery_01" class="product-images-thumbnails">
+      {% for product_image in product.images %}
+        <a
+          href="javascript:void(0)"
+          data-image="{{ product_image | image_url }}"
+          data-zoom-image="{{ product_image  |  image_url: width:"1256",  height: "1886" }}"
+        >
+          <img id="img_{{forloop.index}}" src=" {{ product_image | image_url: width:"320 ", height: "480 " }}">
+        </a>
+      {% endfor %}
+    </div>
+    <img
+      src="{{ product_image | image_url: width:"640", height: "960" }}"
+      data-zoom-image="{{ product_image | image_url: width:"1256",  height: "1886" }}"
+      class="test-gallery"
+      id="zoom_03"
+    >
   </div>
   <div class="product-content">
-    <h2 class="product-title">{{product.title}}</h2>
+    <h2 class="product-title">{{ product.title }}</h2>
     {% if customer and customer.tags contains 'admin' %}
-    <div class="product-sku">
-      {%- assign current_variant = product.selected_or_first_available_variant -%}
-      <span class="product__variant--sku"> Product Code : {{current_variant.sku}} </span>
-      <!-- {% for variant in product.variants %}
-      <span class="product__variant--sku"> Product Code : {{ variant.sku }} </span>
-      {% endfor %} -->
-    </div>
+      <div class="product-sku">
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        <span class="product__variant--sku"> Product Code : {{ current_variant.sku }} </span>
+        <!--
+          {% for variant in product.variants %}
+          <span class="product__variant--sku"> Product Code : {{ variant.sku }} </span>
+          {% endfor %}
+        -->
+      </div>
     {% endif %}
     {% if collectionName == 'buttonWhatsapp' %}
     {% else %}
-    <p  class="product-price">
-      {% if product.compare_at_price_max > product.price %}
-      <span><s>{{ product.compare_at_price_max | money_with_currency }}</s></span>
-      <span>{{ product.price | money_with_currency }}</span>
-      {% else %}
-      <span>{{ product.price | money_with_currency }}</span>
-      {% endif %}
-    </p>
-    {% comment %} <p class="product-price">{{current_product.price | money_with_currency }}</p> {% endcomment %}
+      <p class="product-price">
+        {% if product.compare_at_price_max > product.price %}
+          <span
+            ><s>{{ product.compare_at_price_max | money_with_currency }}</s></span
+          >
+          <span>{{ product.price | money_with_currency }}</span>
+        {% else %}
+          <span>{{ product.price | money_with_currency }}</span>
+        {% endif %}
+      </p>
+      {% comment %} <p class="product-price">{{current_product.price | money_with_currency }}</p> {% endcomment %}
     {% endif %}
     <p class="product-notice-content {% for collection in product.collections%} {{collection.title}} {% endfor %}">
       Our artisanal silver jewellery collection is currently available for shipment within INDIA.
     </p>
-    <!--product form-->
+    <!-- product form -->
     {%- form 'product', product, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
-    {%- unless product.has_only_default_variant -%}
-    {%- for option in product.options_with_values -%}
-    <fieldset class="product-variant-fielset" id="ProductSelect-option-{{ forloop.index0 }}"
-      name="{{ option.name | handleize }}">
-      <legend>
-        {{ option.name | escape }}
-        {% if option.name contains "Size" or option.name contains "size" %}
-        <span>
-          <nav class="product-guide-line">
-            <div class="modal-size-toggle" id="measurement-guide">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" fill="none" viewBox="0 0 18 24">
-                <g clip-path="url(#clip0_3_2)">
-                  <path fill="#000"
-                    d="M5.717 24L.023 20.713 11.97.022l5.693 3.287L5.717 24zm-5.1-3.445l4.94 2.852L17.07 3.467 12.128.616.617 20.555z">
-                  </path>
-                  <path fill="#000"
-                    d="M1.998 17.727l.217-.376 1.516.875-.218.376-1.515-.875zm.962-1.666l.218-.377 3.174 1.833-.217.376-3.175-1.832zm.963-1.667l.217-.376 1.587.916-.217.376-1.587-.916zm.962-1.667l.217-.376 1.587.917-.217.376-1.587-.917zm.962-1.666l.217-.376 1.587.916-.217.376-1.587-.916zm.962-1.666l.217-.376 3.175 1.832-.218.376L6.81 9.395zm1.134-1.667l.217-.376 1.443.833-.217.376-1.443-.833zm.961-1.667l.218-.376 1.443.833-.218.376-1.443-.833zm.963-1.666l.217-.376 1.443.833-.217.376-1.443-.833zm.962-1.666l.217-.377 3.175 1.833-.218.376L10.83 2.73z">
-                  </path>
-                </g>
-                <defs>
-                  <clipPath id="clip0_3_2">
-                    <path fill="#fff" d="M0 0h17.674v24H0z"></path>
-                  </clipPath>
-                </defs>
-              </svg>
-              Size Guidelines
-            </div>
-          </nav>
-        </span>
-        {% endif %}
-      </legend>
-      {%- for value in option.values -%}
-      <!-- Check to see if there's a product size option. If there is a size, check to see if there's any availble for purchase. If not, set the variat control in a "disabled" state. -->
-      {%- assign variant_label_state = true -%}
-      {%- if product.options.size == 1 -%}
-      {%- unless product.variants[forloop.index0].available -%}
-      {%- assign variant_label_state = false -%}
+      {%- unless product.has_only_default_variant -%}
+        {%- for option in product.options_with_values -%}
+          <fieldset
+            class="product-variant-fielset"
+            id="ProductSelect-option-{{ forloop.index0 }}"
+            name="{{ option.name | handleize }}"
+          >
+            <legend>
+              {{ option.name | escape }}
+              {% if option.name contains 'Size' or option.name contains 'size' %}
+                <span>
+                  <nav class="product-guide-line">
+                    <div class="modal-size-toggle" id="measurement-guide">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" fill="none" viewBox="0 0 18 24">
+                        <g clip-path="url(#clip0_3_2)">
+                          <path fill="#000"
+                            d="M5.717 24L.023 20.713 11.97.022l5.693 3.287L5.717 24zm-5.1-3.445l4.94 2.852L17.07 3.467 12.128.616.617 20.555z">
+                          </path>
+                          <path fill="#000"
+                            d="M1.998 17.727l.217-.376 1.516.875-.218.376-1.515-.875zm.962-1.666l.218-.377 3.174 1.833-.217.376-3.175-1.832zm.963-1.667l.217-.376 1.587.916-.217.376-1.587-.916zm.962-1.667l.217-.376 1.587.917-.217.376-1.587-.917zm.962-1.666l.217-.376 1.587.916-.217.376-1.587-.916zm.962-1.666l.217-.376 3.175 1.832-.218.376L6.81 9.395zm1.134-1.667l.217-.376 1.443.833-.217.376-1.443-.833zm.961-1.667l.218-.376 1.443.833-.218.376-1.443-.833zm.963-1.666l.217-.376 1.443.833-.217.376-1.443-.833zm.962-1.666l.217-.377 3.175 1.833-.218.376L10.83 2.73z">
+                          </path>
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_3_2">
+                            <path fill="#fff" d="M0 0h17.674v24H0z"></path>
+                          </clipPath>
+                        </defs>
+                      </svg>
+                      Size Guidelines
+                    </div>
+                  </nav>
+                </span>
+              {% endif %}
+            </legend>
+            {%- for value in option.values -%}
+              <!--
+                Check to see if there's a product size option. If there is a size, check to see if there's any availble for purchase. If not, set the variat control in a "disabled" state.
+              -->
+              {%- assign variant_label_state = true -%}
+              {%- if product.options.size == 1 -%}
+                {%- unless product.variants[forloop.index0].available -%}
+                  {%- assign variant_label_state = false -%}
+                {%- endunless -%}
+              {%- endif -%}
+              {% assign inputStyle = '' %}
+              {% if option.name contains 'Color'
+                or option.name contains 'color'
+                or option.name contains 'Size'
+                or option.name contains 'size'
+              %}
+                {% assign inputStyle = 'input-radio-label-circle' %}
+              {% else %}
+                {% assign inputStyle = 'input-radio-label-chip' %}
+              {% endif %}
+              <label
+                class="{{inputStyle}} {{ option.name }}"
+                {% if option.name contains 'Color' or option.name contains 'color' %}
+                  data-color="{{ value }}"
+                  style="text-indent: -9999px; background:{{value | downcase | escape | remove:" " }}"
+                {% endif %}
+                for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}"
+              >
+                <input
+                  type="radio"
+                  {% if option.selected_value == value %}
+                    checked="checked"
+                  {% endif %}
+                  {% unless variant_label_state %}
+                    disabled="disabled"
+                  {% endunless %}
+                  value="{{ value }}"
+                  data-index="option{{ forloop.index }}"
+                  name="{{ option.name | handleize }}"
+                  id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}"
+                >
+                {% if value == 'Free Size' %}
+                  FS
+                {% else %}
+                  {{ value | escape }}
+                {% endif %}
+              </label>
+            {%- endfor -%}
+          </fieldset>
+        {%- endfor -%}
       {%- endunless -%}
-      {%- endif -%}
-      {% assign inputStyle = '' %}
-      {% if option.name contains "Color" or option.name contains "color" or option.name contains "Size" or option.name
-      contains "size" %}
-      {% assign inputStyle = "input-radio-label-circle" %}
-      {% else %}
-      {% assign inputStyle = "input-radio-label-chip" %}
-      {% endif %}
-      <label class="{{inputStyle}} {{ option.name }}" {% if option.name contains "Color" or option.name contains "color"
-        %} data-color="{{ value }}" style="text-indent: -9999px; background:{{value | downcase | escape | remove:" " }}"
-        {% endif %} for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
-        <input type="radio" {% if option.selected_value==value %} checked="checked" {% endif %} {% unless
-          variant_label_state %} disabled="disabled" {% endunless %} value="{{ value }}"
-          data-index="option{{ forloop.index }}" name="{{ option.name | handleize }}"
-          id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
-        {% if value == 'Free Size' %}
-        FS
-        {% else %}
-        {{ value | escape }}
-        {% endif %}
-      </label>
-      {%- endfor -%}
-    </fieldset>
-    {%- endfor -%}
-    {%- endunless -%}
-    <!-- blouse stitching area -->
-    <section class="blouseStitching-area">
-      {% assign with_blouse = true %}
-      {% assign data_alankara = '' %}
-      {% for tag in product.tags %}
-      {% assign data_alankara = tag %}
-      <div hidden>
-        {{tag}}
-      </div>
-      {% if tag == "With Blouse" %}
-      {% assign with_blouse = false %}
-      {% elsif tag == "Blouse Material" %}
-      {% assign with_blouse = true %}
-      {% break %}
-      {% endif %}
-      {% endfor %}
-      {% if with_blouse %}
-      <div data-alankara="{{data_alankara | handle}}" class="blouse-stitching hide"
-        id="hulkapps_custom_options_{{ product.id }}"> </div>
-      {% else %}
-      <div data-alankara="{{data_alankara | handle }}" class="blouse-stitching"
-        id="hulkapps_custom_options_{{ product.id }}">
-      </div>
-      {% endif %}
-
-      <div id="login-link" class="hide">Please
-        <a href="/account/login?checkout_url={{shop.url}}{{product.url}}" id="addMeasurementLinkLogin">Login</a> to add
-        measurement. Kindly provide measurement details for blouse
-        stitching before adding this product to the cart.
-      </div>
-      <div id="add-measurement-link" class="hide">Please add / update measurement <a
-          href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}" id="addMeasurementLink">Add</a></div>
-
-      <p id="measurement-data" class="line-item-property__field hide"> </p>
-
-    </section>
-    <!-- blouse stitching area -->
-    <div class="mb-3" hidden>
-      <select name="id" id="productSelect" class="form-control">
-        {% for variant in product.variants %}
-        {% if variant.available %}
-        <option {% if variant==product.selected_or_first_available_variant %} selected="selected" {% endif %}
-          data-circle="ProductSelect-option-size-{{ variant.title }}" value="{{ variant.id }}"
-          data-VariantPrice="{{ variant.price | money_with_currency }}">{{ variant.title }} - {{
-          variant.price | money_with_currency }}</option>
-        {% else %}
-        <option disabled="disabled">
-          {{ variant.title }} - {{ 'products.product.sold_out' | t }}
-        </option>
-        {% endif %}
+      <!-- blouse stitching area -->
+      <section class="blouseStitching-area">
+        {% assign with_blouse = true %}
+        {% assign data_alankara = '' %}
+        {% for tag in product.tags %}
+          {% assign data_alankara = tag %}
+          <div hidden>
+            {{ tag }}
+          </div>
+          {% if tag == 'With Blouse' %}
+            {% assign with_blouse = false %}
+          {% elsif tag == 'Blouse Material' %}
+            {% assign with_blouse = true %}
+            {% break %}
+          {% endif %}
         {% endfor %}
-      </select>
-      <hr>
-      <input type="number" disable class="form-control" name="quantity" id="quantity" value="1" min="1" max="1">
-      <input type="text" disable class="jselecteValue" name="id"
-        value="{{ product.selected_or_first_available_variant.id }}" {% if
-        product.selected_or_first_available_variant.available==false %}disabled{% endif %}>
-    </div>
+        {% if with_blouse %}
+          <div
+            data-alankara="{{data_alankara | handle}}"
+            class="blouse-stitching hide"
+            id="hulkapps_custom_options_{{ product.id }}"
+          ></div>
+        {% else %}
+          <div
+            data-alankara="{{data_alankara | handle }}"
+            class="blouse-stitching"
+            id="hulkapps_custom_options_{{ product.id }}"
+          ></div>
+        {% endif %}
 
-
-    <div class="product-form__buttons">
-      <div class="button-add-to-cart">
-        {% assign not_in_cart = true %}
-        {% for item in cart.items %}
-        <div class="mb-3 d-none" hidden>
-          {{item | json }}
-          <hr>
-          {{item.prodcut.id}}
-          <hr>
-          {{prodcut.id}}
+        <div id="login-link" class="hide">
+          Please
+          <a href="/account/login?checkout_url={{shop.url}}{{product.url}}" id="addMeasurementLinkLogin">Login</a> to
+          add measurement. Kindly provide measurement details for blouse stitching before adding this product to the
+          cart.
         </div>
-        {% if item.product.id == product.id %}
-        {% assign not_in_cart = false %}
-        {% break %}
-        {% endif %}
-        {% endfor %}
+        <div id="add-measurement-link" class="hide">
+          Please add / update measurement
+          <a
+            href="/pages/measurement?checkout_url={{shop.url}}{{product.url}}"
+            id="addMeasurementLink"
+            >Add</a
+          >
+        </div>
 
-        {% if collectionName == 'buttonWhatsapp' %}
-        {%- assign current_variant = product.selected_or_first_available_variant -%}
-
-        <a aria-label="Chat on WhatsApp"
-          href="https://wa.me/+919962712299?text=Prodcut Code: {{current_variant.sku}}%0AProduct Name: {{product.title}}"
-          class="button button-solid-maroon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 32 32">
-            <path fill="#fff" fill-rule="evenodd"
-              d="M27.186 4.647A15.74 15.74 0 0 0 15.978 0C7.244 0 .136 7.108.133 15.844a15.81 15.81 0 0 0 2.115 7.921L0 31.977l8.4-2.204a15.824 15.824 0 0 0 7.572 1.929h.006c8.733 0 15.842-7.109 15.845-15.845a15.748 15.748 0 0 0-4.637-11.21ZM15.978 29.026h-.005c-2.363 0-4.68-.636-6.703-1.836l-.481-.285-4.985 1.307 1.33-4.86-.313-.498a13.136 13.136 0 0 1-2.013-7.01C2.811 8.585 8.72 2.677 15.984 2.677a13.08 13.08 0 0 1 9.31 3.862 13.089 13.089 0 0 1 3.854 9.317c-.003 7.262-5.91 13.17-13.17 13.17Zm7.224-9.863c-.396-.199-2.342-1.156-2.705-1.288-.363-.132-.627-.198-.89.198-.264.397-1.023 1.289-1.254 1.552-.231.265-.462.297-.858.099-.396-.198-1.672-.616-3.184-1.965-1.177-1.05-1.972-2.346-2.203-2.742-.23-.397-.024-.611.173-.808.178-.178.396-.463.595-.694.198-.23.263-.396.395-.66.133-.264.066-.495-.032-.694-.099-.198-.89-2.147-1.221-2.94-.322-.771-.648-.666-.89-.679a15.98 15.98 0 0 0-.76-.014c-.264 0-.693.1-1.056.496-.363.396-1.385 1.354-1.385 3.302s1.418 3.832 1.616 4.096c.199.265 2.792 4.263 6.764 5.979.944.408 1.682.652 2.257.834.948.302 1.811.259 2.493.157.761-.114 2.343-.958 2.673-1.883.33-.924.33-1.717.23-1.882-.098-.165-.363-.265-.759-.463l.001-.001Z"
-              clip-rule="evenodd" />
-          </svg>
-          <span style="padding-left: 4px">Whatsapp</span>
-        </a>
-        {% else %}
-        {% if not_in_cart %}
-        <button type="submit" name="add" class="button product-form__submit  button--primary"
-          data-status-button="{%- if product.selected_or_first_available_variant.available -%} add-to-cart {%- else -%} soldout {%- endif -%}"
-          {% if product.selected_or_first_available_variant.available==false %} Disabled {% endif %}>
-          <span>
-            {%- if product.selected_or_first_available_variant.available -%}
-            ADD TO CART
-            {%- else -%}
-            SOLD OUT
-            {%- endif -%}
-          </span>
-        </button>
-        <a type="button" href="/cart" class="button button-solid-maroon product-form__viewcart">View Cart</a>
-        {% else %}
-        <a type="button" href="/cart" class="button button-solid-maroon product-form__viewcart d-block">View Cart</a>
-        {% endif %}
-        {% endif %}
-
-
-        {%- if product.handle != blank -%}
-          {% include 'swym-product-view', product: product %}
-        <button type="button" aria-label="Add to wishlist" data-swaction="addToWishlist" data-product-id="{{product.id | json}}" class="button product-form__wishlist product_{{product.id}}  swym-add-to-wishlist">
-          Wish list
-        </button>
-        {%- endif -%}
-
-
-
+        <p id="measurement-data" class="line-item-property__field hide"></p>
+      </section>
+      <!-- blouse stitching area -->
+      <div class="mb-3" hidden>
+        <select name="id" id="productSelect" class="form-control">
+          {% for variant in product.variants %}
+            {% if variant.available %}
+              <option
+                {% if variant == product.selected_or_first_available_variant %}
+                  selected="selected"
+                {% endif %}
+                data-circle="ProductSelect-option-size-{{ variant.title }}"
+                value="{{ variant.id }}"
+                data-VariantPrice="{{ variant.price  }}"
+              >
+                {{ variant.title }} - {{ variant.price | money_with_currency }}
+              </option>
+            {% else %}
+              <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+            {% endif %}
+          {% endfor %}
+        </select>
+        <hr>
+        <input type="number" disable class="form-control" name="quantity" id="quantity" value="1" min="1" max="1">
+        <input
+          type="text"
+          disable
+          class="jselecteValue"
+          name="id"
+          value="{{ product.selected_or_first_available_variant.id }}"
+          {% if product.selected_or_first_available_variant.available == false %}
+            disabled
+          {% endif %}
+        >
       </div>
-    </div>
+
+      <div class="product-form__buttons">
+        <div class="button-add-to-cart">
+          {% assign not_in_cart = true %}
+          {% for item in cart.items %}
+            <div class="mb-3 d-none" hidden>
+              {{ item | json }}
+              <hr>
+              {{ item.prodcut.id }}
+              <hr>
+              {{ prodcut.id }}
+            </div>
+            {% if item.product.id == product.id %}
+              {% assign not_in_cart = false %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+
+          {% if collectionName == 'buttonWhatsapp' %}
+            {%- assign current_variant = product.selected_or_first_available_variant -%}
+
+            <a
+              aria-label="Chat on WhatsApp"
+              href="https://wa.me/+919962712299?text=Prodcut Code: {{current_variant.sku}}%0AProduct Name: {{product.title}}"
+              class="button button-solid-maroon"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 32 32">
+                <path fill="#fff" fill-rule="evenodd"
+                  d="M27.186 4.647A15.74 15.74 0 0 0 15.978 0C7.244 0 .136 7.108.133 15.844a15.81 15.81 0 0 0 2.115 7.921L0 31.977l8.4-2.204a15.824 15.824 0 0 0 7.572 1.929h.006c8.733 0 15.842-7.109 15.845-15.845a15.748 15.748 0 0 0-4.637-11.21ZM15.978 29.026h-.005c-2.363 0-4.68-.636-6.703-1.836l-.481-.285-4.985 1.307 1.33-4.86-.313-.498a13.136 13.136 0 0 1-2.013-7.01C2.811 8.585 8.72 2.677 15.984 2.677a13.08 13.08 0 0 1 9.31 3.862 13.089 13.089 0 0 1 3.854 9.317c-.003 7.262-5.91 13.17-13.17 13.17Zm7.224-9.863c-.396-.199-2.342-1.156-2.705-1.288-.363-.132-.627-.198-.89.198-.264.397-1.023 1.289-1.254 1.552-.231.265-.462.297-.858.099-.396-.198-1.672-.616-3.184-1.965-1.177-1.05-1.972-2.346-2.203-2.742-.23-.397-.024-.611.173-.808.178-.178.396-.463.595-.694.198-.23.263-.396.395-.66.133-.264.066-.495-.032-.694-.099-.198-.89-2.147-1.221-2.94-.322-.771-.648-.666-.89-.679a15.98 15.98 0 0 0-.76-.014c-.264 0-.693.1-1.056.496-.363.396-1.385 1.354-1.385 3.302s1.418 3.832 1.616 4.096c.199.265 2.792 4.263 6.764 5.979.944.408 1.682.652 2.257.834.948.302 1.811.259 2.493.157.761-.114 2.343-.958 2.673-1.883.33-.924.33-1.717.23-1.882-.098-.165-.363-.265-.759-.463l.001-.001Z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span style="padding-left: 4px">Whatsapp</span>
+            </a>
+          {% else %}
+            {% if not_in_cart %}
+              <button
+                type="submit"
+                name="add"
+                class="button product-form__submit  button--primary"
+                data-status-button="{%- if product.selected_or_first_available_variant.available -%} add-to-cart {%- else -%} soldout {%- endif -%}"
+                {% if product.selected_or_first_available_variant.available == false %}
+                  Disabled
+                {% endif %}
+              >
+                <span>
+                  {%- if product.selected_or_first_available_variant.available -%}
+                    ADD TO CART
+                  {%- else -%}
+                    SOLD OUT
+                  {%- endif -%}
+                </span>
+              </button>
+              <a type="button" href="/cart" class="button button-solid-maroon product-form__viewcart">View Cart</a>
+            {% else %}
+              <a type="button" href="/cart" class="button button-solid-maroon product-form__viewcart d-block"
+                >View Cart</a
+              >
+            {% endif %}
+          {% endif %}
+
+          {%- if product.handle != blank -%}
+            {% include 'swym-product-view', product: product %}
+            <button
+              type="button"
+              aria-label="Add to wishlist"
+              data-swaction="addToWishlist"
+              data-product-id="{{product.id | json}}"
+              class="button product-form__wishlist product_{{product.id}}  swym-add-to-wishlist"
+            >
+              Wish list
+            </button>
+          {%- endif -%}
+        </div>
+      </div>
     {%- endform -%}
-    <!--end product form-->
+    <!-- end product form -->
     <!-- Size Guide modal -->
     <div class="size-chart-modal modal modal-size-chart">
       <div class="modal-overlay modal-toggle"></div>
       <div class="modal-wrapper modal-transition">
         <div class="modal-header">
-          <button class="modal-close modal-toggle"><svg class="icon-close icon" viewBox="0 0 24 24">
+          <button class="modal-close modal-toggle">
+            <svg class="icon-close icon" viewBox="0 0 24 24">
               <use xlink:href="#close"></use>
-            </svg></button>
-          <h2 class="modal-heading">Size Chart and Measurement Guide </h2>
+            </svg>
+          </button>
+          <h2 class="modal-heading">Size Chart and Measurement Guide</h2>
         </div>
         <div class="modal-body">
           <div class="modal-content">
@@ -274,212 +336,225 @@
               {{ product.description }}
             </div>
             <div class="size-data-image">
-              <img width="538" height="538" loading="lazy"
-                src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundarisilks-how-to-{{ collection.title | remove:"
-                /" | remove: " " }}.jpg" />
+              <img
+                width="538"
+                height="538"
+                loading="lazy"
+                src="
+                  https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundarisilks-how-to-{{ collection.title | remove:"
+                  /" | remove: " " }}.jpg
+                "
+              >
             </div>
           </div>
         </div>
       </div>
     </div>
     {% if product.metafields.my_fields.product_information %}
-    {% if product.metafields.my_fields.product_custom_description != blank %}
-    <h2 class="product-title-secondary">Description</h2>
-    <div class="product-description-old" style="padding-bottom: 16px;">
-      {{product.metafields.my_fields.product_custom_description}}
-    </div>
-    {% endif %}
-    <h2 class="product-title-secondary"> Specification </h2>
-    <div class="product-description-old">
-      {{product.metafields.my_fields.product_information}}
-    </div>
+      {% if product.metafields.my_fields.product_custom_description != blank %}
+        <h2 class="product-title-secondary">Description</h2>
+        <div class="product-description-old" style="padding-bottom: 16px;">
+          {{ product.metafields.my_fields.product_custom_description }}
+        </div>
+      {% endif %}
+      <h2 class="product-title-secondary">Specification</h2>
+      <div class="product-description-old">
+        {{ product.metafields.my_fields.product_information }}
+      </div>
     {% else %}
-    {% if product.content != blank %}
-    <h2 class="product-title-secondary">Description</h2>
-    <p class="product-description">{{product.content | strip_html }}</p>
-    {% endif %}
-    {% if product.metafields.custom.border_type.value != blank or product.metafields.custom.border_type.value != blank
-    or
-    product.metafields.custom.pallu_color.value != blank or product.metafields.custom.blouse_color.value != blank or
-    product.metafields.custom.angavastram.value != blank or product.metafields.custom.bottom.value != blank or
-    product.metafields.custom.age.value != blank or product.metafields.custom.collar.value != blank or
-    product.metafields.custom.dupatta.value != blank or product.metafields.custom.bottom_color.value != blank or
-    product.metafields.custom.sleeve.value != blank or product.metafields.custom.color.value != blank or
-    product.metafields.custom.size.value != blank or product.metafields.custom.purity.value != blank or
-    product.metafields.custom.material.value != blank or product.metafields.custom.zari.value != blank or
-    product.metafields.custom.blouse.value != blank or product.metafields.custom.border.value != blank or
-    product.metafields.custom.border_color.value != blank or product.metafields.custom.body_color.value != blank
-    %}
-    <h2 class="product-title-secondary"> Specification </h2>
-    {% endif %}
-    <div class="product-detail">
-      {% if product.metafields.custom.material.value != blank %}
-      <dl>
-        <dt> Material</dt>
-        <dd>{{ product.metafields.custom.material.value }}</dd>
-      </dl>
+      {% if product.content != blank %}
+        <h2 class="product-title-secondary">Description</h2>
+        <p class="product-description">{{ product.content | strip_html }}</p>
       {% endif %}
-      {% if product.metafields.custom.body_color.value != blank %}
-      <dl>
-        <dt>Body Color</dt>
-        <dd>{{ product.metafields.custom.body_color.value }}</dd>
-      </dl>
+      {% if product.metafields.custom.border_type.value != blank
+        or product.metafields.custom.border_type.value != blank
+        or product.metafields.custom.pallu_color.value != blank
+        or product.metafields.custom.blouse_color.value != blank
+        or product.metafields.custom.angavastram.value != blank
+        or product.metafields.custom.bottom.value != blank
+        or product.metafields.custom.age.value != blank
+        or product.metafields.custom.collar.value != blank
+        or product.metafields.custom.dupatta.value != blank
+        or product.metafields.custom.bottom_color.value != blank
+        or product.metafields.custom.sleeve.value != blank
+        or product.metafields.custom.color.value != blank
+        or product.metafields.custom.size.value != blank
+        or product.metafields.custom.purity.value != blank
+        or product.metafields.custom.material.value != blank
+        or product.metafields.custom.zari.value != blank
+        or product.metafields.custom.blouse.value != blank
+        or product.metafields.custom.border.value != blank
+        or product.metafields.custom.border_color.value != blank
+        or product.metafields.custom.body_color.value != blank
+      %}
+        <h2 class="product-title-secondary">Specification</h2>
       {% endif %}
-      {% if product.metafields.custom.border_color.value != blank %}
-      <dl>
-        <dt>Border Color</dt>
-        <dd>{{ product.metafields.custom.border_color.value }}</dd>
-      </dl>
-      {% endif %}
-      {% if product.metafields.custom.pallu_color.value != blank %}
-      <dl>
-        <dt>Pallu Color</dt>
-        <dd>{{ product.metafields.custom.pallu_color.value }}</dd>
-      </dl>
-      {% endif %}
-      {% if product.metafields.custom.blouse.value != blank %}
-      <dl>
-        <dt> Blouse</dt>
-        <dd>{{ product.metafields.custom.blouse.value }}</dd>
-      </dl>
-      {% endif %}
-      {% if product.metafields.custom.border.value != blank %}
-      <dl>
-        <dt> Border</dt>
-        <dd>{{ product.metafields.custom.border.value }}</dd>
-      </dl>
-      {% endif %}
-      {% if product.metafields.custom.blouse_color.value != blank %}
-      <dl>
-        <dt> Blouse Color</dt>
-        <dd>{{ product.metafields.custom.blouse_color.value }}</dd>
-      </dl>
-      {% endif %}
-      {% if product.metafields.custom.zari.value != blank %}
-      <dl>
-        <dt> Zari</dt>
-        <dd>{{ product.metafields.custom.zari.value }}</dd>
-      </dl>
-      {% endif %}
-      {% if product.metafields.custom.purity.value != blank %}
-      <dl>
-        <dt> Purity </dt>
-        <dd>{{ product.metafields.custom.purity.value }}</dd>
-      </dl>
-      {% endif %}
-      {% if product.metafields.custom.size.value != blank %}
-      <dl>
-        <dt> Size </dt>
-        <dd>
-          {% for customSize in product.metafields.custom.size.value %}
-            <span>{{customSize}}</span>
-          {% endfor %}
-        </dd>
-      </dl>
-      {% endif %}
-      {% if product.metafields.custom.color.value != blank %}
-      <dl>
-        <dt> Color </dt>
-        <dd>{{ product.metafields.custom.color.value }}</dd>
-      </dl>
-      {% endif %}
-      {% if product.metafields.custom.sleeve.value != blank %}
-      <dl>
-        <dt> Sleeve </dt>
-        <dd>{{ product.metafields.custom.sleeve.value }}</dd>
-      </dl>
-      {% endif %}
-      {% if product.metafields.custom.bottom.value != blank %}
-      <dl>
-        <dt> Bottom </dt>
-        <dd>{{ product.metafields.custom.bottom.value }}</dd>
-      </dl>
-      {% endif %}
-      {% if product.metafields.custom.bottom_color.value != blank %}
-      <dl>
-        <dt> Bottom Color </dt>
-        <dd>{{ product.metafields.custom.bottom_color.value }}</dd>
-      </dl>
-      {% endif %}
-      {% if product.metafields.custom.dupatta.value != blank %}
-      <dl>
-        <dt> Dupatta </dt>
-        <dd>{{ product.metafields.custom.dupatta.value }}</dd>
-      </dl>
-      {% endif %}
-      {% if product.metafields.custom.collar.value != blank %}
-      <dl>
-        <dt> Collar </dt>
-        <dd>{{ product.metafields.custom.collar.value }}</dd>
-      </dl>
-      {% endif %}
-      {% if product.metafields.custom.age.value != blank %}
-      <dl>
-        <dt> Age </dt>
-        <dd>
-          {% for customAge in product.metafields.custom.age.value %}
-            <span>{{customAge}}</span>
-          {% endfor %}
-        </dd>
-      </dl>
-      {% endif %}
-      {% if product.metafields.custom.angavastram.value != blank %}
-      <dl>
-        <dt> Angavastram </dt>
-        <dd>{{ product.metafields.custom.angavastram.value }}</dd>
-      </dl>
-      {% endif %}
-      {% if product.variants.first.weight != blank %}
-      <dl>
-        <dt> Weight </dt>
-        <dd>{{ product.variants.first.weight | weight_with_unit }}</dd>
-      </dl>
-      {% endif %}
-    </div>
+      <div class="product-detail">
+        {% if product.metafields.custom.material.value != blank %}
+          <dl>
+            <dt>Material</dt>
+            <dd>{{ product.metafields.custom.material.value }}</dd>
+          </dl>
+        {% endif %}
+        {% if product.metafields.custom.body_color.value != blank %}
+          <dl>
+            <dt>Body Color</dt>
+            <dd>{{ product.metafields.custom.body_color.value }}</dd>
+          </dl>
+        {% endif %}
+        {% if product.metafields.custom.border_color.value != blank %}
+          <dl>
+            <dt>Border Color</dt>
+            <dd>{{ product.metafields.custom.border_color.value }}</dd>
+          </dl>
+        {% endif %}
+        {% if product.metafields.custom.pallu_color.value != blank %}
+          <dl>
+            <dt>Pallu Color</dt>
+            <dd>{{ product.metafields.custom.pallu_color.value }}</dd>
+          </dl>
+        {% endif %}
+        {% if product.metafields.custom.blouse.value != blank %}
+          <dl>
+            <dt>Blouse</dt>
+            <dd>{{ product.metafields.custom.blouse.value }}</dd>
+          </dl>
+        {% endif %}
+        {% if product.metafields.custom.border.value != blank %}
+          <dl>
+            <dt>Border</dt>
+            <dd>{{ product.metafields.custom.border.value }}</dd>
+          </dl>
+        {% endif %}
+        {% if product.metafields.custom.blouse_color.value != blank %}
+          <dl>
+            <dt>Blouse Color</dt>
+            <dd>{{ product.metafields.custom.blouse_color.value }}</dd>
+          </dl>
+        {% endif %}
+        {% if product.metafields.custom.zari.value != blank %}
+          <dl>
+            <dt>Zari</dt>
+            <dd>{{ product.metafields.custom.zari.value }}</dd>
+          </dl>
+        {% endif %}
+        {% if product.metafields.custom.purity.value != blank %}
+          <dl>
+            <dt>Purity</dt>
+            <dd>{{ product.metafields.custom.purity.value }}</dd>
+          </dl>
+        {% endif %}
+        {% if product.metafields.custom.size.value != blank %}
+          <dl>
+            <dt>Size</dt>
+            <dd>
+              {% for customSize in product.metafields.custom.size.value %}
+                <span>{{ customSize }}</span>
+              {% endfor %}
+            </dd>
+          </dl>
+        {% endif %}
+        {% if product.metafields.custom.color.value != blank %}
+          <dl>
+            <dt>Color</dt>
+            <dd>{{ product.metafields.custom.color.value }}</dd>
+          </dl>
+        {% endif %}
+        {% if product.metafields.custom.sleeve.value != blank %}
+          <dl>
+            <dt>Sleeve</dt>
+            <dd>{{ product.metafields.custom.sleeve.value }}</dd>
+          </dl>
+        {% endif %}
+        {% if product.metafields.custom.bottom.value != blank %}
+          <dl>
+            <dt>Bottom</dt>
+            <dd>{{ product.metafields.custom.bottom.value }}</dd>
+          </dl>
+        {% endif %}
+        {% if product.metafields.custom.bottom_color.value != blank %}
+          <dl>
+            <dt>Bottom Color</dt>
+            <dd>{{ product.metafields.custom.bottom_color.value }}</dd>
+          </dl>
+        {% endif %}
+        {% if product.metafields.custom.dupatta.value != blank %}
+          <dl>
+            <dt>Dupatta</dt>
+            <dd>{{ product.metafields.custom.dupatta.value }}</dd>
+          </dl>
+        {% endif %}
+        {% if product.metafields.custom.collar.value != blank %}
+          <dl>
+            <dt>Collar</dt>
+            <dd>{{ product.metafields.custom.collar.value }}</dd>
+          </dl>
+        {% endif %}
+        {% if product.metafields.custom.age.value != blank %}
+          <dl>
+            <dt>Age</dt>
+            <dd>
+              {% for customAge in product.metafields.custom.age.value %}
+                <span>{{ customAge }}</span>
+              {% endfor %}
+            </dd>
+          </dl>
+        {% endif %}
+        {% if product.metafields.custom.angavastram.value != blank %}
+          <dl>
+            <dt>Angavastram</dt>
+            <dd>{{ product.metafields.custom.angavastram.value }}</dd>
+          </dl>
+        {% endif %}
+        {% if product.variants.first.weight != blank %}
+          <dl>
+            <dt>Weight</dt>
+            <dd>{{ product.variants.first.weight | weight_with_unit }}</dd>
+          </dl>
+        {% endif %}
+      </div>
     {% endif %}
 
     <div class="product-common-note">
       {% if product.metafields.custom.wash_care_tips.value != blank %}
-      <dl>
-        <dt class="product-title-secondary"> Wash Care </dt>
-        <dd class="product-description"> {{ product.metafields.custom.wash_care_tips.value }} </dd>
-      </dl>
+        <dl>
+          <dt class="product-title-secondary">Wash Care</dt>
+          <dd class="product-description">{{ product.metafields.custom.wash_care_tips.value }}</dd>
+        </dl>
       {% endif %}
 
       {% if product.metafields.descriptors.care_guide != blank %}
-      <dl>
-        <dt class="product-title-secondary"> Wash Care </dt>
-        <dd class="product-description"> {{ product.metafields.descriptors.care_guide }} </dd>
-      </dl>
+        <dl>
+          <dt class="product-title-secondary">Wash Care</dt>
+          <dd class="product-description">{{ product.metafields.descriptors.care_guide }}</dd>
+        </dl>
       {% endif %}
 
       {% if product.metafields.custom.delivery_shipping.value != blank %}
-      <dl>
-        <dt class="product-title-secondary"> Delivery Shipping </dt>
-        <dd class="product-description"> {{ product.metafields.custom.delivery_shipping.value }} </dd>
-      </dl>
+        <dl>
+          <dt class="product-title-secondary">Delivery Shipping</dt>
+          <dd class="product-description">{{ product.metafields.custom.delivery_shipping.value }}</dd>
+        </dl>
       {% endif %}
 
       {% if product.metafields.my_fields.delivery_shipping != blank %}
-      <dl>
-        <dt class="product-title-secondary"> Delivery Shipping </dt>
-        <dd class="product-description"> {{ product.metafields.my_fields.delivery_shipping }} </dd>
-      </dl>
+        <dl>
+          <dt class="product-title-secondary">Delivery Shipping</dt>
+          <dd class="product-description">{{ product.metafields.my_fields.delivery_shipping }}</dd>
+        </dl>
       {% endif %}
 
       {% if product.metafields.custom.note.value != blank %}
-      <dl>
-        <dt class="product-title-secondary"> Note </dt>
-        <dd class="product-description"> {{ product.metafields.custom.note.value }} </dd>
-      </dl>
+        <dl>
+          <dt class="product-title-secondary">Note</dt>
+          <dd class="product-description">{{ product.metafields.custom.note.value }}</dd>
+        </dl>
       {% else %}
-      <dl>
-        <dt class="product-title-secondary"> Note </dt>
-        <dd class="product-description"> There might be slight variations in color due to monitor resolution. </dd>
-      </dl>
+        <dl>
+          <dt class="product-title-secondary">Note</dt>
+          <dd class="product-description">There might be slight variations in color due to monitor resolution.</dd>
+        </dl>
       {% endif %}
-
-
     </div>
   </div>
 </section>
@@ -521,6 +596,7 @@
 </script>
 
 <script language="Javascript" type="text/javascript">
+  
   var myProduct = {{ product | json}};
   var customTags = myProduct.tags;
 
@@ -705,6 +781,7 @@
       console.log('no value from measurement page');
     }
   });
+
 </script>
 
 <script>
