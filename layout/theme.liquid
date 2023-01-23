@@ -640,6 +640,7 @@
       <script>
         if ($(window).width() > 764) {
           console.log('if');
+          $(document).ready(function () {
 
             console.log('if doc');
             $('#zoom_03').ezPlus({
@@ -657,14 +658,18 @@
               return false;
             });
 
+          });
         } else {
           console.log('else');
+          $(document).ready(function () {
 
+            console.log('else doc');
             $('#gallery_01 a').on('click', function () {
               var dataImage = $(this).data("image");
               $('.test-gallery').attr('src', dataImage);
               console.log(dataImage);
             });
+          });
         }
       </script>
     {% endif %}
