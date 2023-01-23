@@ -298,7 +298,7 @@ span#productInfoAnchor {
   background: var(--color-white);
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  font-size: 15px;
+  font-size: 14px;
   font-family: var(--font-montserrat);
   cursor: pointer;
 }
@@ -314,6 +314,7 @@ span#productInfoAnchor {
 
 .product__card--image--wrapper {
   border-radius: var(--border-radius);
+  overflow: hidden;
 }
 
 .product__card:hover .product__card-ct1.quick-view-button {

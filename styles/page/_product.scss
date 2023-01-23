@@ -26,12 +26,12 @@
 
   .product {
     &-images {
-      display: flex; 
+      display: flex;
       flex-direction: column-reverse;
 
       @media (min-width: 768px) {
-      display: grid; 
-      grid-template-columns: 116px 1fr;
+        display: grid;
+        grid-template-columns: 116px 1fr;
       }
 
       .product-images-thumbnails {
@@ -40,7 +40,7 @@
         margin-top: 16px;
         margin-bottom: 16px;
 
-        @media (min-width: 768px) { 
+        @media (min-width: 768px) {
           flex-direction: column;
           margin-top: 0;
           margin-bottom: 0;
@@ -286,12 +286,14 @@
         color: rgba(0, 0, 0, 0.85);
         border-bottom: 1px solid #c3c2c9;
         padding-bottom: 8px;
-        span{
+
+        span {
           display: inline-block;
-          &:not(:last-child):after{
-          content: ",";
-          display: inline-block;
-        }
+
+          &:not(:last-child):after {
+            content: ",";
+            display: inline-block;
+          }
         }
       }
     }

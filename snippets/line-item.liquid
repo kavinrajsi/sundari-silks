@@ -18,7 +18,9 @@
   <div class="line-item__details-wrapper">
     <div class="line-item__details">
       <h2 class="line-item__title">
+        <a href="{{line_item.url  | within: collections.all }}" target="_blank">
         {{ line_item.product.title }}
+        </a>
       </h2>
 
       <div hidden>

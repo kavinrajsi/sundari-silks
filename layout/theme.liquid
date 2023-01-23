@@ -25,7 +25,6 @@
     {% endif %}
     {% render 'social-meta-tags' %}
 
-    <link rel="manifest" href="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/manifest.json?v=1672849300">
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="dns-prefetch" href="https://cdn.shopify.com">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
@@ -450,6 +449,7 @@
         {% render 'breadcrumb' %}
         {{ content_for_layout }}
       </main>
+      <div id="root"></div>
       {% section 'footer' %}
     </section>
 
@@ -556,7 +556,7 @@
     <div class="productToaster"></div>
     {% section 'drawer' %}
     {% section 'quickview-modal' %}
-    <!-- common modal -->
+    <!-- Modal -->
     <div class="modal modal-all-page">
       <div class="modal-overlay modal-toggle"></div>
       <div class="modal-wrapper modal-transition">
@@ -578,7 +578,9 @@
         </div>
       </div>
     </div>
+    <!-- Modal end -->
 
+    <style></style>
     <script defer src="{{ 'slick.js' | asset_url }}"></script>
     <script defer src="{{ 'shopify-money.js' | asset_url }}"></script>
     <script defer src="{{ 'predictive-search.js' | asset_url }}"></script>
@@ -597,8 +599,7 @@
 
         //
         if ($(window).width() > 764) {
-
-          var fixmeTop = $(".meFitlerMobile").offset().top; // get initial position of the element
+          var fixmeTop = $('.meFitlerMobile').offset().top; // get initial position of the element
           // var fixmeTop = 296; // get initial position of the element
 
           $(window).scroll(function () {
@@ -608,30 +609,30 @@
             // console.log(fixmeTop);
             if (currentScroll >= fixmeTop) {
               // apply position: fixed if you
-              $(".meFitlerMobile").css({
+              $('.meFitlerMobile').css({
                 // scroll to that element or below it
-                position: "fixed",
-                top: "0",
+                position: 'fixed',
+                top: '0',
               });
-              $(".fixedElement").css({
-                "padding-top": "97px",
+              $('.fixedElement').css({
+                'padding-top': '97px',
               });
             } else {
               // apply position: static
-              $(".meFitlerMobile").css({
+              $('.meFitlerMobile').css({
                 // if you scroll above it
-                position: "static",
+                position: 'static',
               });
-              $(".fixedElement").css({
-                "padding-top": "40px",
+              $('.fixedElement').css({
+                'padding-top': '40px',
               });
             }
           });
         } else {
-          $(".meFitlerMobile").css({
+          $('.meFitlerMobile').css({
             // scroll to that element or below it
-            position: "fixed",
-            bottom: "0",
+            position: 'fixed',
+            bottom: '0',
           });
         }
       </script>
@@ -641,8 +642,8 @@
       <script defer src="{{ 'photoswipe.umd.min.js' | asset_url }}"></script>
       <script defer src="{{ 'photoswipe-lightbox.umd.min.js' | asset_url }}"></script>
       <script defer src="{{ 'photoswipe-control.js' | asset_url }}"></script>
-      <script defer src="{{ 'blouse-data.js' | asset_url }}"></script>
       <script defer src="{{ 'jquery.ez-plus.js'| asset_url }}"></script>
+      <script defer src="{{ 'blouse-data.js' | asset_url }}"></script>
       <script defer src="https://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
       <script defer src="{{ 'jquery.products.min.js'| asset_url }}"></script>
       <script>
@@ -652,7 +653,6 @@
         if ($(window).width() > 764) {
           console.log('if');
           $(document).ready(function () {
-
             console.log('if doc');
             $('#zoom_03').ezPlus({
               constrainType: 'height',
@@ -661,33 +661,33 @@
               gallery: 'gallery_01',
               cursor: 'zoom-in',
               easing: true,
-              galleryActiveClass: 'active'
+              galleryActiveClass: 'active',
             });
             //pass the images to Fancybox
             $('#zoom_03').bind('click', function (e) {
               var ez = $('#zoom_03').data('ezPlus');
               return false;
             });
-
           });
         } else {
           console.log('else');
-          $(document).ready(function () {
 
-            console.log('else doc');
-            $('#gallery_01 a').on('click', function () {
-              var dataImage = $(this).data("image");
-              $('.test-gallery').attr('src', dataImage);
-              console.log(dataImage);
-            });
+          console.log('else doc');
+          $('#gallery_01 a').on('click', function () {
+            var dataImage = $(this).data('image');
+            $('.test-gallery').attr('src', dataImage);
+            console.log(dataImage);
           });
         }
       </script>
     {% endif %}
     <script defer src="{{ 'global.js' | asset_url }}"></script>
-
-    {% include 'swymSnippet' %}
-   {% include 'smile-initializer' %}
-
-</body>
+    <script>
+      if (window.location.search == '?customer_posted=true') {
+        let ded = document.getElementsByClassName('newsletter-form__field-wrapper');
+        ded[0].style.display = 'none';
+        document.getElementById('subscription-from').closest('.footer-dataaction').scrollIntoView();
+      }
+    </script>
+  </body>
 </html>

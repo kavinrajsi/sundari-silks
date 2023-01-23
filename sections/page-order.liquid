@@ -1,4 +1,4 @@
- 
+
   <div class="page-account">
     <aside class="page-account-navigation">
       <nav>
@@ -74,8 +74,8 @@
       </nav>
     </aside>
 
-   
-      
+
+
   <section class="customer-account-detail">
     <h2 class="account-card-title">Order History</h2>
     <div class="customer-account-order-lists">
@@ -104,19 +104,19 @@
             <span class="data-value">{{ order.name }}</span>
           </div>
           <div>
-          {% comment %} 
+          {% comment %}
           <div class="order-invoice">
               <span class="data-value">
                 <a href="{{ order.customer_url }}" target="_blank"> View order details
                 </a>
               </span>
-            </div> 
+            </div>
           {% endcomment %}
-            
-              {% comment %} 
+
+              {% comment %}
               <div class="data-invoice">
         <span class="data-value"> <a href="{{ order.customer_url }}" target="_blank"> Invoice </a></span>
-      </div> 
+      </div>
     {% endcomment %}
           </div>
         </div>
@@ -126,7 +126,7 @@
           {% for line_item in order.line_items %}
           <li>
             {% if line_item.url != blank %}
-            <a href="{{shop.secure_url}}/{{ line_item.url }}" target="_blank">
+            <a href="{{shop.secure_url}}{{ line_item.url }}" target="_blank">
               {% endif %}
               {% if line_item.image != blank %}
               <span>
@@ -140,7 +140,9 @@
             </a>
             {% endif %}
             <span>
+              <a href="{{shop.secure_url}}{{ line_item.url }}" target="_blank">
               {{ line_item.title }}
+              </a>
             </span>
           </li>
           {% endfor %}
@@ -149,9 +151,9 @@
     </div>
     {% endfor %}
     {% else %}
-    
+
     <p  style="margin-bottom: 12px;" >YOU CURRENTLY HAVE NO ORDERS</p>
-    
+
     <a type="button" href="{{ shop.url }}" class="button button-solid-maroon">Continue Shopping </a>
 
     {% endif %}
@@ -161,11 +163,11 @@
     {% endpaginate %}
   </div>
   </section>
-       
-  
+
+
   </div>
 
- 
+
 {% schema %}
   {
     "name": "Section name",

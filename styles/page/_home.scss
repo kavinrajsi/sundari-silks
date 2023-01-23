@@ -181,6 +181,7 @@ body:not(.template-index) {
       .product__card-cta.quick-view-button {
         bottom: 0;
         display: block;
+        display: none !important;
       }
     }
   }
@@ -1089,4 +1090,112 @@ svg.icon {
 
 section#shopify-section-template--16000227246242__instagram {
   padding-bottom: 0 !important;
+}
+
+
+
+// modal
+.modal-all-page {
+  &.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+
+    .modal-overlay {
+      position: fixed;
+      @include z-index(drawer_overlayWrapper);
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      visibility: hidden;
+      opacity: 0;
+      --bs-backdrop-bg: #000;
+      background-color: var(--bs-backdrop-bg);
+      transition: visibility 0s linear 0.3s, opacity 0.3s;
+    }
+
+    .modal-transition {
+      transition: all 0.3s 0.12s;
+      transform: translateX(10%);
+      opacity: 0;
+    }
+
+    &.is-visible {
+      visibility: visible;
+      display: block;
+
+      .modal-overlay {
+        --bs-backdrop-opacity: 0.5;
+        opacity: var(--bs-backdrop-opacity);
+        visibility: visible;
+        transition-delay: 0s;
+      }
+
+      .modal-transition {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .modal-wrapper {
+      position: fixed;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      @include z-index(drawer_overlay);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      justify-self: center;
+      background-color: #fff;
+      border-radius: var(--border-radius);
+      box-shadow: 0 0 1.5em rgba(0%, 0%, 0%, 0.35);
+      top: calc(50% - 212px);
+      max-width: 480px;
+
+      .modal-header,
+      .modal-content {
+        padding: 0px;
+        min-width: 100%;
+      }
+
+      .modal-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .modal-close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        cursor: pointer;
+        top: -10px;
+        right: -10px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: var(--color-white);
+        z-index: 1;
+        padding: 0;
+      }
+
+      .modal-body {
+        width: 100%;
+
+        .modal-content {
+          img {
+            border-radius: 0px;
+          }
+        }
+      }
+    }
+  }
 }

@@ -28,6 +28,7 @@
 <p>
 <span><span class="money">
  {{if price_varies}}From {{/if}}${Shopify.formatMoney(price)}</span>
+
 </span></span>
 </p>
 </div>
@@ -36,18 +37,7 @@
 </div>
 </script>
 {% endraw %}
- 
 
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
-{% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}  
+<script>
   Shopify.Products.showRecentlyViewed({ howManyToShow: 8 });
-{% endjavascript %}
+</script>

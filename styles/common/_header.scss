@@ -45,7 +45,7 @@
   width: 100%;
   @include z-index(header);
   &-container {
-    @include z-index(header);
+    // @include z-index(header);
     background-color: var(--color-white);
     position: relative;
   }
