@@ -186,6 +186,7 @@
             }
 
             //sd
+            console.log(data);
             console.log(dataCircleValue);
             console.log(cart_sizelist);
           });
