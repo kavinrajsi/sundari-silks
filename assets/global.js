@@ -226,10 +226,10 @@
         .then((response) => {
           $(".product-form__submit").hide();
           $(".product-form__viewcart").show();
-          update_cart();
           return response.json();
         })
         .then((data) => {
+          update_cart();
           let pushData = JSON.stringify(data);
           console.log("data 2 :: " + typeof pushData);
           console.log("data 2 :: " + pushData);
