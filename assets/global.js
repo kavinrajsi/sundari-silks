@@ -230,7 +230,7 @@
         })
         .then((data) => {
           update_cart();
-          /*let pushData = JSON.stringify(data);
+          let pushData = JSON.stringify(data);
           let pushDataItem = pushData.items[0];
           console.log(pushDataItem);
           var cart_list = [];
@@ -254,7 +254,6 @@
             .html(cart_list.join(""))
             .delay(2000)
             .fadeOut("slow");
-            */
         })
         .catch((error) => {
           console.error("Error:", error);
