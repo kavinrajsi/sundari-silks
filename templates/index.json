@@ -5,8 +5,8 @@
       "blocks": {
         "ca73578c-33bc-41c8-9383-b57d6e7d0228": {
           "type": "slide",
-          "disabled": true,
           "settings": {
+            "image": "shopify:\/\/shop_images\/sundari-home-page-dummy.png",
             "link": "shopify:\/\/collections\/kanchipuram-silks"
           }
         },
@@ -19,36 +19,42 @@
         },
         "ab99cd22-9db2-4cf4-9676-120271eed88d": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "link": "shopify:\/\/collections\/salwar-material"
           }
         },
         "5cd59610-c2b0-470a-8ce5-780b7df44578": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "link": "shopify:\/\/collections\/manvasanai-collection"
           }
         },
         "8efe5e97-f302-4f66-ae4c-451513f79459": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "link": "https:\/\/www.sundarisilks.com\/collections\/traditional-silks?filter.v.availability=1"
           }
         },
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "link": "shopify:\/\/collections\/karya-workwear-collection"
           }
         },
         "3fbd7fec-f97f-434e-9f56-1ddc4581978e": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "link": "shopify:\/\/collections\/black-and-white-collection"
           }
         },
         "bed9709b-8de2-4214-8e93-8253620cb5e1": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "link": "shopify:\/\/blogs\/article\/the-famous-five-motifs-of-indian-jewellery"
           }
