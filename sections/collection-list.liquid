@@ -12,13 +12,13 @@
     {% for collection in collections %}
     <li class="collection-list__item grid__item">
       <div class="card">
-        <a href="{{ collection.url }}">
+        <a href="{{ collection.url }}?filter.v.availability=1">
 
           <div class="card__content">
             <h3 class="card__heading" style="text-align: left; padding: 0; margin: 0;">
               {{collection.title}}
             </h3>
-            
+
            {%- if collection.description != blank -%}
   <p>{{ collection.description }}</p>
 {%- endif -%}

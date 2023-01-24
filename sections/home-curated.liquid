@@ -9,7 +9,7 @@
     {% for block in section.blocks limit:4 %}
     {% if block.settings.image %}
     <div class="collection-item">
-      <a class="collection-item-link" href="{{ block.settings.link }}">
+      <a class="collection-item-link" href="{{ block.settings.link }}?filter.v.availability=1">
         {{ block.settings.image | image_url : width: 360, height: 608, crop: "top" | image_tag : alt:
         block.settings.image.alt,
         loading: 'lazy', class: "collection-item-image" }}
@@ -31,7 +31,7 @@
     {% for block in section.blocks offset:4 %}
     {% if block.settings.image %}
     <div class="collection-item">
-      <a class="collection-item-link" href="{{ block.settings.link }}">
+      <a class="collection-item-link" href="{{ block.settings.link }}?filter.v.availability=1">
         {{ block.settings.image | image_url : width: 264, height: 290, crop: "top" | image_tag : alt:
         block.settings.image.alt,
         loading: 'lazy', class: "collection-item-image" }}

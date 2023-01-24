@@ -6,7 +6,7 @@
         <div class="section-header-content">
           <p>{{ section.settings.spotlight-description }}</p>
         </div>
-        <a class="section-header-action_link" href="{{ section.settings.spotlight-url }}">
+        <a class="section-header-action_link" href="{{ section.settings.spotlight-url }}?filter.v.availability=1">
           View All
           <svg width="20" height="20">
             <use href="#link-arrow" />
@@ -100,7 +100,7 @@
         {% endif %}
         {% endfor %}
       </div>
-      <a href="{{section.settings.spotlight-url}}" type="button">View All</a>
+      <a href="{{section.settings.spotlight-url}}?filter.v.availability=1" type="button">View All</a>
     </div>
   </div>
 </section>
