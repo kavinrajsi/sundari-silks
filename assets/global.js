@@ -161,28 +161,36 @@
       dataVariantCurrency = $(this).attr("data-variantcurrency"); // get currency code
       dataVariantPrice = $(this).attr("data-VariantPrice"); // get price
       if (dataCircle == optionSelect) {
-        $(".jselecteValue").val(dataCircleValue);
-        console.log(dataVariantPrice);
-        $('.product-price').html('<span class="money" data-currency-inr="'+ dataVariantPrice +'">'+ dataVariantPrice +'</span>');
-
-        $.getJSON("/cart.js", function (cart) {
-          $.each(cart.items, function (index, cartItem) {
-            if (cartItem.variant_id == dataCircleValue) {
-              console.log(cartItem.variant_title);
-              console.log(optionSelectVal);
-              if (cartItem.variant_title == optionSelectVal) {
-
-                console.log("yes");
-
-                $('.product-form__submit').attr("hidden", true);
-                $('.product-form__buttons .button.product-form__viewcart').attr("hidden", false).show();
-
-              } else {
-                $('.product-form__submit').attr("hidden", false);
-                $('.product-form__buttons .button.product-form__viewcart').attr("hidden", true).hide();
-                console.log("no");
-
-              }
+        $(".jselecteValue").val(dataCircleValue); // pass product id to cart input
+        $(".product-price").html(
+          '<span><span class="money" data-currency-' +
+            dataVariantCurrency +
+            '="' +
+            dataVariantCurrency +
+            " " +
+            dataVariantPrice +
+            '">' +
+            dataVariantCurrency +
+            " " +
+            dataVariantPrice +
+            "</span></span>"
+        );
+        var cart_sizelist = [];
+        var productSelectID = parseInt($(".jselecteValue").val());
+        var cartContents = fetch(window.Shopify.routes.root + "cart.js")
+          .then((response) => response.json())
+          .then((data) => {
+            $.each(data.items, function (index, cartItem) {
+              cart_sizelist.push(cartItem.variant_id);
+            });
+            if (jQuery.inArray(productSelectID, cart_sizelist) != -1) {
+              console.log("is in array");
+              $(".product-form__submit").hide();
+              $(".product-form__viewcart").show();
+            } else {
+              console.log("is NOT in array");
+              $(".product-form__submit").show();
+              $(".product-form__viewcart").hide();
             }
             // verification data
             // console.log(data.items);
@@ -190,7 +198,7 @@
             // console.log(productSelectID);
             // console.log(cart_sizelist);
           });
-      
+      }
     });
   });
 
@@ -230,7 +238,11 @@
           cart_list.push(
             '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">' +
               '<div class="toast-body" >' +
-
+              '<img src="' +
+              pushDataItem.featured_image.url +
+              '&width=48" alt="' +
+              pushDataItem.featured_image.alt +
+              '" width="48" height="64">' +
               "<div>" +
               "<p>" +
               pushDataItem.title +
@@ -239,8 +251,6 @@
               "</div>" +
               "</div>"
           );
-          $('.product-form__submit').hide();
-          $('.product-form__viewcart').show();
           $(".productToaster")
             .html(cart_list.join(""))
             .delay(2000)
@@ -267,11 +277,18 @@
   // Modal for product detail page
   // Quick & dirty toggle to demonstrate modal toggle behavior
 
-  window.setTimeout(function(){
+  // $(".cookieModal").on("click", function (e) {
+  //   e.preventDefault();
+  //   console.log("closemoda");
+  //   $(".cookieActive").toggleClass("is-visible");
+  //   $("body").toggleClass("modalScroll");
+  // });
+
+  window.setTimeout(function () {
     // First check, if localStorage is supported.
     if (window.localStorage) {
       // Get the expiration date of the previous popup.
-      var nextPopup = localStorage.getItem( 'nextNewsletter' );
+      var nextPopup = localStorage.getItem("nextNewsletter");
 
       if (nextPopup > new Date()) {
         return;
@@ -281,7 +298,7 @@
       var expires = new Date();
       expires = expires.setHours(expires.getHours() + 24);
 
-      localStorage.setItem( 'nextNewsletter', expires );
+      localStorage.setItem("nextNewsletter", expires);
     }
 
     $(".modal-all-page").addClass("is-visible");
@@ -293,9 +310,9 @@
     $("body").toggleClass("modalScroll");
   });
 
+  // all modal close
   $("button.modal-close.modal-toggle").on("click", function (e) {
     e.preventDefault();
-    console.log("closemoda");
     $(".modal-size-chart").removeClass("is-visible");
     $(".modal-all-page").removeClass("is-visible");
     $("body").removeClass("modalScroll");
