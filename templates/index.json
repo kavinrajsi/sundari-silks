@@ -91,6 +91,7 @@
         },
         "3d1616af-f24e-40c8-b9c6-db9a40ab317c": {
           "type": "collection-image",
+          "disabled": true,
           "settings": {
             "heading": "Coimbatore Cotton",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%)",
