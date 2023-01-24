@@ -24,7 +24,7 @@ footer {
       justify-content: space-around;
       gap: 28px 8px;
       grid-template-columns: repeat(1, 1fr);
-      padding: 0px 8px;
+      padding: 0px 16px;
 
       @media (min-width: 576px) {
         display: grid;
@@ -135,7 +135,6 @@ footer {
       display: flex;
       flex-direction: column;
       margin: 0;
-      padding: 0 8px;
 
       @media (min-width: 768px) {
         padding: 0 0 0 60px;
