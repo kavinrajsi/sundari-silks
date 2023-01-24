@@ -280,6 +280,8 @@
           bottom: 0;
           display: none !important;
       }}
+    {% endstyle %}
+    <style>
 
       body{
         padding-top: 62px;
@@ -289,7 +291,7 @@
           padding-top: 110px;
         }
       }
-    {% endstyle %}
+    </style>
 
     {% if template contains 'index' %}
       {{ 'slick.css' | asset_url | stylesheet_tag }}
