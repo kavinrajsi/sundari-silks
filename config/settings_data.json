@@ -51,7 +51,7 @@
     "mlvedaACS_borderLook": false,
     "type_header_font": "playfair_display_n4",
     "home-section-title-large-largedesktop": 48,
-    "mlvedaACS_positionLeft": "10px",
+    "mlvedaACS_positionLeft": false,
     "mlvedaACS_defaultCurrency": "INR",
     "mlvedaACS_textColor": "inherit",
     "mlvedaACS_flagStyle": "circle",
@@ -66,7 +66,7 @@
     "mlvedaACS_messageColor": "inherit",
     "mlvedaACS_textHoverColor": "inherit",
     "mlvedaACS_enable": true,
-    "mlvedaACS_supportedCurrencies": "INR USD GBP EUR CAD AUD SGD",
+    "mlvedaACS_supportedCurrencies": "INR GBP CAD AUD USD SGD",
     "mlvedaACS_hideDecimal": false,
     "mlvedaACS_hoverBackgroundColor": "inherit",
     "mlvedaACS_currencyFormat": "money_with_currency_format",
@@ -96,10 +96,11 @@
       "footer": {
         "type": "footer",
         "settings": {
+          "logo": "shopify:\/\/shop_images\/sundarisilks-footer-logo-512.png",
           "logo_width": 120,
-          "kanchipurammenu": "",
+          "kanchipurammenu": "kanchipuram-silks",
           "kanchipurammenu_show": true,
-          "popularserchmenu": "",
+          "popularserchmenu": "popular-search",
           "popularserchmenu_show": true
         }
       },
@@ -116,6 +117,7 @@
             "disabled": true,
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-kanchipuram_30c234a7-66f8-48d5-91a6-821dd5a71f1c.png",
               "mega_link": "All Kanchipuram",
               "link": "shopify:\/\/collections\/kanchipuram-silks",
               "title": "All Kanchipuram",
@@ -127,6 +129,7 @@
             "disabled": true,
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-kanchipuram-wedding-edit_b2f741a0-1f63-4c64-855f-5d39e0ed3699.png",
               "mega_link": "Wedding Edit",
               "link": "shopify:\/\/collections\/wedding-saree-collection",
               "title": "Wedding Edit",
@@ -225,6 +228,7 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-women.jpg",
               "mega_link": "Women",
               "link": "shopify:\/\/collections\/women",
               "title": "Women",
@@ -235,6 +239,7 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-men.jpg",
               "mega_link": "Men",
               "link": "shopify:\/\/collections\/men",
               "title": "Men",
@@ -245,6 +250,7 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-fabric.jpg",
               "mega_link": "Fabrics",
               "link": "shopify:\/\/collections\/unstitched-materials",
               "title": "Fabrics",
@@ -255,6 +261,7 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-girls.jpg",
               "mega_link": "Girls",
               "link": "shopify:\/\/collections\/girls",
               "title": "Girls",
@@ -265,6 +272,7 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-boys.jpg",
               "mega_link": "Boys",
               "link": "shopify:\/\/collections\/boys",
               "title": "Boys",
@@ -275,6 +283,7 @@
             "type": "logo_image",
             "settings": {
               "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/sundari-silks-infant-wear-menu-image_c18852b3-18c8-4641-81bd-88ecec95e256.png",
               "mega_link": "Infant Wear",
               "link": "shopify:\/\/collections\/infant-wear",
               "title": "Infant Wears",
@@ -318,12 +327,6 @@
 
     ],
     "blocks": {
-      "10042746950867549768": {
-        "type": "shopify:\/\/apps\/hulk-product-options\/blocks\/app-embed\/380168ef-9475-4244-a291-f66b189208b5",
-        "disabled": true,
-        "settings": {
-        }
-      },
       "3294164036280357830": {
         "type": "shopify:\/\/apps\/mlv-auto-currency-switcher\/blocks\/mlveda-currencies-head\/92ab730f-097e-4571-b27c-3f449e098ca3",
         "disabled": false,
@@ -333,6 +336,12 @@
       "13768625480086291342": {
         "type": "shopify:\/\/apps\/forms\/blocks\/forms\/8744a304-fcb1-4347-b211-bb6b4759a76a",
         "disabled": false,
+        "settings": {
+        }
+      },
+      "10042746950867549768": {
+        "type": "shopify:\/\/apps\/hulk-product-options\/blocks\/app-embed\/380168ef-9475-4244-a291-f66b189208b5",
+        "disabled": true,
         "settings": {
         }
       }
