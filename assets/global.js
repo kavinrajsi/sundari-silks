@@ -190,7 +190,7 @@
             // console.log(productSelectID);
             // console.log(cart_sizelist);
           });
-      }
+      
     });
   });
 
