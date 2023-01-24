@@ -5,8 +5,10 @@
       "blocks": {
         "ca73578c-33bc-41c8-9383-b57d6e7d0228": {
           "type": "slide",
+          "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/sundari-home-page-dummy.png",
+            "image": "shopify:\/\/shop_images\/sundari-silks-sale-year-end-2022-banner-desktop.png",
+            "mobile_image": "shopify:\/\/shop_images\/sundari-silks-sale-year-end-2022-banner-mobile.png",
             "link": "shopify:\/\/collections\/kanchipuram-silks"
           }
         },
@@ -14,48 +16,56 @@
           "type": "slide",
           "disabled": true,
           "settings": {
+            "image": "shopify:\/\/shop_images\/sundari-silks-pongal-2023-banner-desktop.png",
+            "mobile_image": "shopify:\/\/shop_images\/sundari-silks-pongal-2023-banner-mobile.png",
             "link": "shopify:\/\/collections\/festive-edit"
           }
         },
         "ab99cd22-9db2-4cf4-9676-120271eed88d": {
           "type": "slide",
-          "disabled": true,
           "settings": {
+            "image": "shopify:\/\/shop_images\/Online_exclusive_banner.png",
+            "mobile_image": "shopify:\/\/shop_images\/Online_exclusive_MB.png",
             "link": "shopify:\/\/collections\/salwar-material"
           }
         },
         "5cd59610-c2b0-470a-8ce5-780b7df44578": {
           "type": "slide",
-          "disabled": true,
           "settings": {
+            "image": "shopify:\/\/shop_images\/Monsoon_-_Web_Banner.png",
+            "mobile_image": "shopify:\/\/shop_images\/MOBILE_BANNER_1.png",
             "link": "shopify:\/\/collections\/manvasanai-collection"
           }
         },
         "8efe5e97-f302-4f66-ae4c-451513f79459": {
           "type": "slide",
-          "disabled": true,
           "settings": {
+            "image": "shopify:\/\/shop_images\/KANJIVARAM_-_NOVEMBER2-01.png",
+            "mobile_image": "shopify:\/\/shop_images\/KANJIVARAM_-_Mobile_Banner-03.png",
             "link": "https:\/\/www.sundarisilks.com\/collections\/traditional-silks?filter.v.availability=1"
           }
         },
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b": {
           "type": "slide",
-          "disabled": true,
           "settings": {
+            "image": "shopify:\/\/shop_images\/sundari-silks-karya-workwear-collection-banner-desktop.png",
+            "mobile_image": "shopify:\/\/shop_images\/sundari-silks-karya-workwear-collection-banner-mobile.png",
             "link": "shopify:\/\/collections\/karya-workwear-collection"
           }
         },
         "3fbd7fec-f97f-434e-9f56-1ddc4581978e": {
           "type": "slide",
-          "disabled": true,
           "settings": {
+            "image": "shopify:\/\/shop_images\/sundari-silks-monochrome-collection-banner-desktop.png",
+            "mobile_image": "shopify:\/\/shop_images\/sundari-silks-monochrome-collection-banner-mobile.png",
             "link": "shopify:\/\/collections\/black-and-white-collection"
           }
         },
         "bed9709b-8de2-4214-8e93-8253620cb5e1": {
           "type": "slide",
-          "disabled": true,
           "settings": {
+            "image": "shopify:\/\/shop_images\/sundari-silks-the-famous-five-motifs-of-indian-jewellery-banner-desktop.png",
+            "mobile_image": "shopify:\/\/shop_images\/sundari-silks-the-famous-five-motifs-of-indian-jewellery-banner-mobile.png",
             "link": "shopify:\/\/blogs\/article\/the-famous-five-motifs-of-indian-jewellery"
           }
         }
@@ -91,8 +101,8 @@
         },
         "3d1616af-f24e-40c8-b9c6-db9a40ab317c": {
           "type": "collection-image",
-          "disabled": true,
           "settings": {
+            "image": "shopify:\/\/shop_images\/sundari-silks-coimbatore-cotton-png_fa67f5ea-5004-4f1b-8fde-6580dca418ae.png",
             "heading": "Coimbatore Cotton",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%)",
             "link": "shopify:\/\/collections\/coimbatore"
@@ -207,7 +217,7 @@
       "settings": {
         "spotlight-title": "Sundari Spotlight",
         "spotlight-description": "Bringing you our best sellers",
-        "spotlight-collection": "blouse-material",
+        "spotlight-collection": "hasta-collection",
         "spotlight-url": "shopify:\/\/collections\/hasta-collection",
         "spotlight-count": 13
       }
@@ -218,7 +228,7 @@
         "just-dropped-title": "Just Dropped",
         "just-dropped-description": "New arrivals you will love",
         "just-dropped-count": 8,
-        "collection-list": "chiffon-saree | blouse-material | butta-buttis"
+        "collection-list": "kanchipuram-silks | bandhani-sarees | shirts"
       }
     },
     "collaborate": {
@@ -227,6 +237,7 @@
         "fa5013d1-6109-4c81-b660-98dc29a81ca3": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/athirshtam-necklaces.png",
             "contentTitle": "Necklaces",
             "link": "shopify:\/\/collections\/necklaces"
           }
@@ -234,6 +245,7 @@
         "d6761f47-65a7-4751-a264-d641de9efe16": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/athirshtam-earring.png",
             "contentTitle": "Earring",
             "link": "shopify:\/\/collections\/earrings"
           }
@@ -241,6 +253,7 @@
         "1e37576d-42fe-4d66-82b1-6882c6871ee0": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/athirshtam-bangles.png",
             "contentTitle": "Bangles",
             "link": "shopify:\/\/collections\/bangles-bracelets"
           }
@@ -248,6 +261,7 @@
         "54899026-3d9a-4f11-9ab5-b580fea1ccfa": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/athirshtam-rings.png",
             "contentTitle": "Rings",
             "link": "shopify:\/\/collections\/rings"
           }
@@ -255,6 +269,7 @@
         "889bfcee-afdc-446a-86cc-1bbbe3960f1f": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/athirshtam-kids.png",
             "contentTitle": "Kids",
             "link": "shopify:\/\/collections\/kids-jewelry"
           }
@@ -262,6 +277,7 @@
         "9068c96d-920d-469e-a7d3-606ae4828e4e": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/athirshtam-ankles.png",
             "contentTitle": "Ankles",
             "link": "shopify:\/\/collections\/anklets-toe-rings"
           }
@@ -278,6 +294,8 @@
       "settings": {
         "collaborate-title": "Athirshtam Jewellery",
         "collaborate-description": "An eclectic silver jewellery collection embedded with cultural and contemporary nuances",
+        "collaborate-background": "shopify:\/\/shop_images\/athirshtam-collection-pattern-bg.png",
+        "collaborate-background-edge": "shopify:\/\/shop_images\/athirshtam-collection-frame.png",
         "collaborate-border-color": "#dbae40",
         "collaborate-hover-color": "#49194f"
       }
@@ -288,6 +306,7 @@
         "cf647e91-dbe8-4021-a7d9-a66254345f5b": {
           "type": "readymade-image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/readymade-collection-women.png",
             "text": "Women",
             "background": "linear-gradient(180deg, rgba(39, 2, 2, 0), rgba(156, 116, 70, 0.5) 100%)",
             "link": "shopify:\/\/collections\/women"
@@ -296,6 +315,7 @@
         "e4653ca2-9d0a-4e89-979c-9c1b932897db": {
           "type": "readymade-image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/readymade-collection-men.png",
             "text": "Men",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(108, 72, 30, 0.5) 100%)",
             "link": "shopify:\/\/collections\/men"
@@ -304,6 +324,7 @@
         "558c4938-63b0-436c-bb48-95f4396e958e": {
           "type": "readymade-image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/readymade-collection-girl.png",
             "text": "Girls",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
             "link": "shopify:\/\/collections\/girls"
@@ -312,6 +333,7 @@
         "0fa2d46d-88b9-4852-a880-4e28e17aedab": {
           "type": "readymade-image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/readymade-collection-boy.png",
             "text": "Boys",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
             "link": "shopify:\/\/collections\/boys"
@@ -320,6 +342,7 @@
         "6c0d8e0e-f040-459b-9a2a-ea4be141c0d6": {
           "type": "readymade-image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/readymade-collection-fabirc.png",
             "text": "Fabric",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
             "link": "shopify:\/\/collections\/unstitched-materials"
@@ -328,6 +351,7 @@
         "d024e20d-b890-4a5d-b3a1-680f7f65694c": {
           "type": "readymade-image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/readymade-collection-infant.png",
             "text": "Infant",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(156, 116, 70, 0.5) 100%)",
             "link": "shopify:\/\/collections\/infant-wear"
@@ -362,6 +386,9 @@
         "spotlight-title": "The Virtual Store Of Exquisite Products",
         "spotlight-description": "Shop our collection from the comfort of your home",
         "spotlight-button": "Book an Appointment",
+        "vsvirtual-shopping-background": "shopify:\/\/shop_images\/Virtual_Shopping_Background.png",
+        "vsvirtual-shopping-mobile": "shopify:\/\/shop_images\/vs-desktop-image-1.png",
+        "vsvirtual-shopping-desktop": "shopify:\/\/shop_images\/vs-desktop-image-1.png",
         "virtual-shopping-url": "https:\/\/calendly.com\/sundarisilks\/30min"
       }
     },
@@ -426,6 +453,19 @@
     },
     "16686779941b8008d1": {
       "type": "apps",
+      "blocks": {
+        "26b91c2a-4bee-40d3-8ffd-d27fccd96b06": {
+          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "26b91c2a-4bee-40d3-8ffd-d27fccd96b06"
+      ],
       "settings": {
         "include_margins": true
       }
