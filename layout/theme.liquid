@@ -222,11 +222,13 @@
           align-items: center;
           flex-direction: column;
           justify-self: center;
-          background-color: #fff;
+          background-color: transparent;
           border-radius: var(--border-radius);
-          box-shadow: 0 0 1.5em rgba(0,0,0,.35);
+          box-shadow: none;
           top: calc(50% - 212px);
           max-width: 480px
+          padding: 18px;
+
       }
 
       .modal-all-page.modal .modal-wrapper .modal-header,.modal-all-page.modal .modal-wrapper .modal-content {
@@ -673,8 +675,7 @@
       </script>
     {% endif %}
     <script defer src="{{ 'global.js' | asset_url }}"></script>
-  
-{% include 'swymSnippet' %}
 
-</body>
+    {% include 'swymSnippet' %}
+  </body>
 </html>
