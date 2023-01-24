@@ -9,7 +9,7 @@
     {% for block in section.blocks %}
     {% if block.settings.image %}
     <div class="collection-item">
-      <a class="collection-item-link" href="{{ block.settings.link }}?filter.v.availability=1">
+      <a class="collection-item-link" href="{{ block.settings.link }}">
         <img class="lazyload" data-sizes="auto"
           data-src="{{block.settings.image.src | image_url: width:384, height: 384, crop: 'top', format: 'pjpg' }}"
           alt="{{block.settings.image.alt}}">

@@ -13,7 +13,7 @@
     {%- when 'product' -%}
     {%- if collection.url -%}
     <li class="breadcrumbs__item">
-      <a class="breadcrumbs__link" href="{{ collection.url }}?filter.v.availability=1">{{
+      <a class="breadcrumbs__link" href="{{ collection.url }}">{{
         collection.title }}</a>
     </li>
     {%- endif -%}
@@ -23,7 +23,7 @@
     {%- when 'collection' and collection.handle -%}
     {%- if current_tags -%}
     <li class="breadcrumbs__item">
-      <a class="breadcrumbs__link" href="{{ collection.url }}?filter.v.availability=1">{{
+      <a class="breadcrumbs__link" href="{{ collection.url }}">{{
         collection.title }}</a>
     </li>
     <li class="breadcrumbs__item">
@@ -32,7 +32,7 @@
     </li>
     {%- else -%}
     <li class="breadcrumbs__item">
-      <a class="breadcrumbs__link" href="{{ collection.url }}?filter.v.availability=1" aria-current="page">{{
+      <a class="breadcrumbs__link" href="{{ collection.url }}" aria-current="page">{{
         collection.title }}</a>
     </li>
     {%- endif -%}

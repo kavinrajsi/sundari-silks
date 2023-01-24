@@ -223,7 +223,7 @@
         {% for link in linklists.desktop-menu.links %}
         <li
           class="menu-level-1-item {{ link.title | handle }} {% if link.links.size > 0 %} menu-level-1-item-child {% endif %} {% if link.active %}menu-itemActive{% endif %} ">
-          <a href="{{ link.url }}?filter.v.availability=1" {% if link.active %}aria-current="page" {% endif %}>
+          <a href="{{ link.url }}" {% if link.active %}aria-current="page" {% endif %}>
             {{ link.title }}
             {% if link.links.size > 0 %}
             {% render 'icon-chevron-down' %}
@@ -234,7 +234,7 @@
             <ul class="menu-level-2" data-menu-title="{{ link.title | handle }}">
               {% for child_link in link.links %}
               <li class="menu-level-2-item  {% if child_link.active %}menu-itemActive{% endif %}">
-                <a href="{{ child_link.url }}?filter.v.availability=1" {% if child_link.active %}aria-current="page" {%
+                <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page" {%
                   endif %}>
                   {{ child_link.title }}
                   {% for block in section.blocks %}
@@ -251,7 +251,7 @@
                 <ul class="menu-level-3">
                   {% for grandchild_link in child_link.links %}
                   <li class="menu-level-3-item {% if grandchild_link.active %}menu-itemActive{% endif %}">
-                    <a href="{{ grandchild_link.url }}?filter.v.availability=1" {% if grandchild_link.active
+                    <a href="{{ grandchild_link.url }}" {% if grandchild_link.active
                       %}aria-current="page" {% endif %}>
                       {{ grandchild_link.title }}
                     </a>
@@ -277,7 +277,7 @@
         <li {% if link.active %}aria-current="page" {% endif %}
           class="{% if link.links.size > 0 %} has-children {% else %} menu-link {% endif %}  {% if link.active %}menu-itemActive{% endif%}">
           <a {% if link.active %}aria-current="page" {% endif %}
-            href="{% if link.links.size > 0 %}javascript:void(0);{% else %}{{ link.url }}?filter.v.availability=1{% endif %}">{{
+            href="{% if link.links.size > 0 %}javascript:void(0);{% else %}{{ link.url }}{% endif %}">{{
             link.title }}
             {% if link.links.size > 0 %} {% render 'icon-chevron-right' %}{% endif %}</a>
           {% if link.links.size > 0 %}
@@ -286,14 +286,14 @@
             <li class="menu-link {% if child_link.active %}menu-itemActive{% endif%}" {% if link.active
               %}aria-current="page" {% endif %}>
               <a {% if link.active %}aria-current="page" {% endif %}
-                href="{{ child_link.url }}?filter.v.availability=1">{{ child_link.title }}</a>
+                href="{{ child_link.url }}">{{ child_link.title }}</a>
               {% if child_link.links.size > 0 %}
               <ul class="menu dropdown-grandchild">
                 {% for grandchild_link in child_link.links %}
                 <li {% if link.active %}aria-current="page" {% endif %}
                   class="menu-link {% if grandchild_link.active %}menu-itemActive{% endif%}">
                   <a {% if link.active %}aria-current="page" {% endif %}
-                    href="{{ grandchild_link.url }}?filter.v.availability=1">{{ grandchild_link.title }}</a>
+                    href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
                 </li>
                 {% endfor %}
               </ul>
