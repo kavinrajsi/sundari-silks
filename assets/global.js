@@ -160,6 +160,12 @@
       dataCircle = $(this).attr("data-circle"); // get product label name to match with radio for and id
       dataVariantCurrency = $(this).attr("data-variantcurrency"); // get currency code
       dataVariantPrice = $(this).attr("data-VariantPrice"); // get price
+
+      // console.log('dataCircleValue: ' + dataCircleValue);
+
+      console.log('dataCircle: ' + dataCircle);
+      console.log('optionSelect: ' + optionSelect);
+
       if (dataCircle == optionSelect) {
         $(".jselecteValue").val(dataCircleValue); // pass product id to cart input
         $(".product-price").html(
@@ -193,10 +199,10 @@
               $(".product-form__viewcart").hide();
             }
             // verification data
-            // console.log(data.items);
-            // console.log($.inArray(productSelectID, cart_sizelist));
-            // console.log(productSelectID);
-            // console.log(cart_sizelist);
+            console.log(data.items);
+            console.log($.inArray(productSelectID, cart_sizelist));
+            console.log(productSelectID);
+            console.log(cart_sizelist);
           });
       }
     });
