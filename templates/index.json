@@ -16,8 +16,6 @@
           "type": "slide",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/sundari-silks-pongal-2023-banner-desktop.png",
-            "mobile_image": "shopify:\/\/shop_images\/sundari-silks-pongal-2023-banner-mobile.png",
             "link": "shopify:\/\/collections\/festive-edit"
           }
         },
@@ -120,10 +118,10 @@
         "3e91a06e-4db1-487e-920b-fcbc90f781c2": {
           "type": "collection-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/patola_2d4904f8-0145-47a9-97aa-a56f3fecfa07.png",
-            "heading": "Patola",
+            "image": "shopify:\/\/shop_images\/sunari-ilks-venkatagiri-png.png",
+            "heading": "Venkatagiri",
             "background": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%)",
-            "link": "shopify:\/\/collections\/patola"
+            "link": "shopify:\/\/collections\/venkatagiri"
           }
         }
       },

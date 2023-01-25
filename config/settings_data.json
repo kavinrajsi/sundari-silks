@@ -1,246 +1,296 @@
 {
   "current": {
-    "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCQFej6I3rSymWTFkaKs0ngQ",
+    "favicon": "shopify:\/\/shop_images\/favicon.png",
+    "background_color": "#fef1e1",
+    "type_header": "playfair_display_n4",
+    "section-gap-tablet": 16,
+    "section-gap-largetablet": 16,
     "section-gap-desktop": 24,
+    "section-gap-largedesktop": 32,
+    "product-gap-tablet": 16,
+    "product-gap-largetablet": 16,
+    "product-gap-desktop": 24,
     "product-gap-largedesktop": 32,
-    "mlvedaACS_roundDecimal": false,
-    "brand_logo": "shopify:\/\/shop_images\/sundarisilks-footer-logo-512.png",
-    "mlvedaACS_autoSwitch": false,
-    "mlvedaACS_messageContent": "<<shop.name>> process all orders in <<shop.currency>>. While the content of your cart is currently displayed in <<shop.selected_currency>>, you will checkout using <<shop.currency>> at the most current exchange rate.",
-    "home-section-secondary-title-mobile": 14,
-    "social_instagram_link": "https:\/\/www.instagram.com\/sundari_silks\/",
+    "home-section-gap-tablet": 24,
+    "home-section-gap-largetablet": 24,
+    "home-section-gap-desktop": 26,
+    "home-section-gap-largedesktop": 60,
+    "home-section-title-mobile": 22,
+    "home-section-title-tablet": 24,
     "home-section-title-largetablet": 26,
     "home-section-title-desktop": 32,
+    "home-section-title-largedesktop": 48,
+    "home-section-secondary-title-mobile": 14,
+    "home-section-secondary-title-tablet": 16,
     "home-section-secondary-title-largetablet": 16,
-    "mlvedaACS_positionTop": "10px",
+    "home-section-secondary-title-desktop": 18,
+    "home-section-secondary-title-largedesktop": 20,
+    "home-section-secondary-title-space-mobile": 14,
+    "home-section-secondary-title-space-tablet": 18,
+    "home-section-secondary-title-space-largetablet": 18,
+    "home-section-secondary-title-space-desktop": 22,
+    "home-section-secondary-title-space-largedesktop": 26,
+    "brand_logo": "shopify:\/\/shop_images\/sundarisilks-footer-logo-512.png",
+    "social_twitter_link": "https:\/\/www.twitter.com\/sundari_silks",
+    "social_facebook_link": "https:\/\/www.facebook.com\/sundarisilks",
+    "social_pinterest_link": "https:\/\/www.pinterest.com\/sundari_silks\/",
+    "social_instagram_link": "https:\/\/www.instagram.com\/sundari_silks\/",
+    "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCQFej6I3rSymWTFkaKs0ngQ",
+    "checkout_logo_image": "shopify:\/\/shop_images\/sundari-silks-512.png",
+    "checkout_logo_size": "large",
     "checkout_accent_color": "#90181b",
+    "checkout_button_color": "#90181b",
+    "mlvedaACS_roundDecimal": false,
+    "mlvedaACS_autoSwitch": false,
+    "mlvedaACS_messageContent": "<<shop.name>> process all orders in <<shop.currency>>. While the content of your cart is currently displayed in <<shop.selected_currency>>, you will checkout using <<shop.currency>> at the most current exchange rate.",
+    "mlvedaACS_positionTop": "10px",
     "mlvedaACS_isCustomized": true,
+    "home-section-gap-large-largedesktop": 60,
+    "mlvedaACS_positionRight": "10px",
+    "header_text_font": "playfair_display_n4",
+    "mlvedaACS_borderLook": false,
+    "type_header_font": "playfair_display_n4",
+    "home-section-title-large-largedesktop": 48,
+    "mlvedaACS_positionLeft": false,
+    "mlvedaACS_defaultCurrency": "INR",
+    "mlvedaACS_textColor": "inherit",
+    "mlvedaACS_flagStyle": "circle",
+    "mlvedaACS_isMessageDisplay": true,
+    "body_text_font": "montserrat_n4",
+    "mlvedaACS_positionBottom": "10px",
+    "mlvedaACS_messageBackgroundColor": "inherit",
+    "mlvedaACS_roundDecimalValue": 1,
+    "mlvedaACS_roundingrules": "{\"AUD\":{\"reference\":1,\"rule\":1},\"SGD\":{\"reference\":1,\"rule\":1},\"GBP\":{\"reference\":1,\"rule\":1},\"CAD\":{\"reference\":1,\"rule\":1},\"USD\":{\"reference\":1,\"rule\":1}}",
+    "mlvedaACS_backgroundColor": "inherit",
+    "mlvedaACS_position": "top_with_right",
+    "mlvedaACS_messageColor": "inherit",
+    "mlvedaACS_textHoverColor": "inherit",
+    "mlvedaACS_enable": true,
+    "mlvedaACS_supportedCurrencies": "INR GBP CAD AUD USD SGD",
+    "mlvedaACS_hideDecimal": false,
+    "mlvedaACS_hoverBackgroundColor": "inherit",
+    "mlvedaACS_currencyFormat": "money_with_currency_format",
+    "mlvedaACS_borderLineColor": "inherit",
+    "mlvedaACS_displayFlag": false,
     "sections": {
       "announcement-bar": {
-        "settings": {
-        },
+        "type": "announcement-bar",
         "blocks": {
           "e5b9b3cb-42bb-43bc-adac-0cad652993ae": {
+            "type": "announcement",
+            "disabled": true,
             "settings": {
-              "link": "",
               "text": "Year-End sale! Avail up to 30% off on all online purchases from Dec 29th to Dec 31st.",
+              "link": "",
               "announcement-background-color": "#000000",
               "announcement-text-color": "#ffffff"
-            },
-            "disabled": true,
-            "type": "announcement"
+            }
           }
         },
-        "type": "announcement-bar",
         "block_order": [
           "e5b9b3cb-42bb-43bc-adac-0cad652993ae"
-        ]
+        ],
+        "settings": {
+        }
       },
       "footer": {
+        "type": "footer",
         "settings": {
-          "kanchipurammenu_show": true,
-          "popularserchmenu_show": true,
-          "popularserchmenu": "popular-search",
           "logo": "shopify:\/\/shop_images\/sundarisilks-footer-logo-512.png",
+          "logo_width": 120,
           "kanchipurammenu": "kanchipuram-silks",
-          "logo_width": 120
-        },
-        "type": "footer"
+          "kanchipurammenu_show": true,
+          "popularserchmenu": "popular-search",
+          "popularserchmenu_show": true
+        }
       },
       "quickview-modal": {
+        "type": "quickview-modal",
         "settings": {
-        },
-        "type": "quickview-modal"
+        }
       },
       "header": {
-        "settings": {
-          "mobile_menu": "",
-          "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
-          "sticky_menu": "sticky",
-          "menu": "main-menu",
-          "logo_width": 120
-        },
+        "type": "header",
         "blocks": {
           "c37446b7-4fce-4474-9e26-e3348834815e": {
+            "type": "logo_image",
+            "disabled": true,
             "settings": {
-              "image": "shopify:\/\/shop_images\/menu-image-kanchipuram_30c234a7-66f8-48d5-91a6-821dd5a71f1c.png",
               "menu_enable": true,
-              "subtitle": "Explore",
+              "image": "shopify:\/\/shop_images\/menu-image-kanchipuram_30c234a7-66f8-48d5-91a6-821dd5a71f1c.png",
               "mega_link": "All Kanchipuram",
               "link": "shopify:\/\/collections\/kanchipuram-silks",
-              "title": "All Kanchipuram"
-            },
-            "disabled": true,
-            "type": "logo_image"
+              "title": "All Kanchipuram",
+              "subtitle": "Explore"
+            }
           },
           "012b8059-1c4e-413f-9c85-824914bb2502": {
+            "type": "logo_image",
+            "disabled": true,
             "settings": {
               "menu_enable": true,
-              "subtitle": "",
               "mega_link": "Anklets \/ Toe Rings",
               "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Anklets \/ Toe Rings"
-            },
-            "disabled": true,
-            "type": "logo_image"
+              "title": "Anklets \/ Toe Rings",
+              "subtitle": ""
+            }
           },
           "0dc284ce-400a-4c70-b4be-980ee12441ac": {
+            "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/menu-image-girls.jpg",
               "menu_enable": true,
-              "subtitle": "",
+              "image": "shopify:\/\/shop_images\/menu-image-girls.jpg",
               "mega_link": "Girls",
               "link": "shopify:\/\/collections\/girls",
-              "title": "Girls"
-            },
-            "type": "logo_image"
+              "title": "Girls",
+              "subtitle": ""
+            }
           },
           "a825885a-b299-42ea-a5c5-84ba6100ea8c": {
+            "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/menu-image-boys.jpg",
               "menu_enable": true,
-              "subtitle": "",
+              "image": "shopify:\/\/shop_images\/menu-image-boys.jpg",
               "mega_link": "Boys",
               "link": "shopify:\/\/collections\/boys",
-              "title": "Boys"
-            },
-            "type": "logo_image"
+              "title": "Boys",
+              "subtitle": ""
+            }
           },
           "9ec61fc7-ed2a-4490-8411-bf33c7d3eb56": {
+            "type": "logo_image",
+            "disabled": true,
             "settings": {
-              "image": "shopify:\/\/shop_images\/menu-image-kanchipuram-wedding-edit_b2f741a0-1f63-4c64-855f-5d39e0ed3699.png",
               "menu_enable": true,
-              "subtitle": "Explore",
+              "image": "shopify:\/\/shop_images\/menu-image-kanchipuram-wedding-edit_b2f741a0-1f63-4c64-855f-5d39e0ed3699.png",
               "mega_link": "Wedding Edit",
               "link": "shopify:\/\/collections\/wedding-saree-collection",
-              "title": "Wedding Edit"
-            },
-            "disabled": true,
-            "type": "logo_image"
+              "title": "Wedding Edit",
+              "subtitle": "Explore"
+            }
           },
           "6757033e-547a-49db-b111-6aec43c0ef51": {
+            "type": "logo_image",
+            "disabled": true,
             "settings": {
               "menu_enable": true,
-              "subtitle": "",
               "mega_link": "Kids Jewellery",
               "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Kids Jewellery"
-            },
-            "disabled": true,
-            "type": "logo_image"
+              "title": "Kids Jewellery",
+              "subtitle": ""
+            }
           },
           "983fbcfb-efd2-4b72-8014-670919f1d5b1": {
+            "type": "logo_image",
+            "disabled": true,
             "settings": {
               "menu_enable": true,
-              "subtitle": "",
               "mega_link": "Bangles \/ Bracelets",
               "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Bangles \/ Bracelets"
-            },
-            "disabled": true,
-            "type": "logo_image"
+              "title": "Bangles \/ Bracelets",
+              "subtitle": ""
+            }
           },
           "bea63853-ebd2-4352-a35d-d3cb27e4be22": {
+            "type": "logo_image",
+            "disabled": true,
             "settings": {
               "menu_enable": true,
-              "subtitle": "",
               "mega_link": "Men's Bracelets",
               "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Men's Bracelets"
-            },
-            "disabled": true,
-            "type": "logo_image"
+              "title": "Men's Bracelets",
+              "subtitle": ""
+            }
           },
           "bc806da1-0a86-4b42-8116-d24a243e9b21": {
+            "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/menu-image-women.jpg",
               "menu_enable": true,
-              "subtitle": "",
+              "image": "shopify:\/\/shop_images\/menu-image-women.jpg",
               "mega_link": "Women",
               "link": "shopify:\/\/collections\/women",
-              "title": "Women"
-            },
-            "type": "logo_image"
+              "title": "Women",
+              "subtitle": ""
+            }
           },
           "7a42f5b4-6dd8-44e4-aaf9-a4cca16d3985": {
+            "type": "logo_image",
+            "disabled": true,
             "settings": {
               "menu_enable": true,
-              "subtitle": "",
               "mega_link": "Earrings",
               "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Earrings"
-            },
-            "disabled": true,
-            "type": "logo_image"
+              "title": "Earrings",
+              "subtitle": ""
+            }
           },
           "3401dc99-bfe7-473f-8619-ab753f5e667a": {
+            "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/menu-image-men.jpg",
               "menu_enable": true,
-              "subtitle": "",
+              "image": "shopify:\/\/shop_images\/menu-image-men.jpg",
               "mega_link": "Men",
               "link": "shopify:\/\/collections\/men",
-              "title": "Men"
-            },
-            "type": "logo_image"
+              "title": "Men",
+              "subtitle": ""
+            }
           },
           "ff5db7c6-de70-4624-b1a1-620865565274": {
+            "type": "logo_image",
+            "disabled": true,
             "settings": {
               "menu_enable": true,
-              "subtitle": "",
               "mega_link": "Necklaces",
               "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Necklaces"
-            },
-            "disabled": true,
-            "type": "logo_image"
+              "title": "Necklaces",
+              "subtitle": ""
+            }
           },
           "15e15742-5345-4198-ba4b-2a98c13bfc08": {
+            "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/sundari-silks-infant-wear-menu-image_c18852b3-18c8-4641-81bd-88ecec95e256.png",
               "menu_enable": true,
-              "subtitle": "",
+              "image": "shopify:\/\/shop_images\/sundari-silks-infant-wear-menu-image_c18852b3-18c8-4641-81bd-88ecec95e256.png",
               "mega_link": "Infant Wear",
               "link": "shopify:\/\/collections\/infant-wear",
-              "title": "Infant Wears"
-            },
-            "type": "logo_image"
+              "title": "Infant Wears",
+              "subtitle": ""
+            }
           },
           "45a49917-2d4a-4818-a6c7-05e15d8d7934": {
+            "type": "logo_image",
+            "disabled": true,
             "settings": {
               "menu_enable": true,
-              "subtitle": "",
               "mega_link": "Rings",
               "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Rings"
-            },
-            "disabled": true,
-            "type": "logo_image"
+              "title": "Rings",
+              "subtitle": ""
+            }
           },
           "a737801a-d041-4ea1-a346-7ffdfb9cee58": {
+            "type": "logo_image",
+            "disabled": true,
             "settings": {
               "menu_enable": true,
-              "subtitle": "",
               "mega_link": "Pendants",
               "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Pendants"
-            },
-            "disabled": true,
-            "type": "logo_image"
+              "title": "Pendants",
+              "subtitle": ""
+            }
           },
           "218b71c4-c7cb-4558-a8a9-d843f6d9f329": {
+            "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/menu-image-fabric.jpg",
               "menu_enable": true,
-              "subtitle": "",
+              "image": "shopify:\/\/shop_images\/menu-image-fabric.jpg",
               "mega_link": "Fabrics",
               "link": "shopify:\/\/collections\/unstitched-materials",
-              "title": "Fabrics"
-            },
-            "type": "logo_image"
+              "title": "Fabrics",
+              "subtitle": ""
+            }
           }
         },
-        "type": "header",
         "block_order": [
           "c37446b7-4fce-4474-9e26-e3348834815e",
           "9ec61fc7-ed2a-4490-8411-bf33c7d3eb56",
@@ -258,93 +308,43 @@
           "0dc284ce-400a-4c70-b4be-980ee12441ac",
           "a825885a-b299-42ea-a5c5-84ba6100ea8c",
           "15e15742-5345-4198-ba4b-2a98c13bfc08"
-        ]
+        ],
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/sundari-silks-logo.png",
+          "logo_width": 120,
+          "menu": "main-menu",
+          "mobile_menu": "",
+          "sticky_menu": "sticky"
+        }
       },
       "drawer": {
+        "type": "drawer",
         "settings": {
-        },
-        "type": "drawer"
+        }
       }
     },
-    "product-gap-largetablet": 16,
-    "home-section-gap-large-largedesktop": 60,
-    "product-gap-desktop": 24,
-    "mlvedaACS_positionRight": "10px",
     "content_for_index": [
 
     ],
-    "header_text_font": "playfair_display_n4",
-    "section-gap-tablet": 16,
-    "checkout_logo_size": "large",
-    "mlvedaACS_borderLook": false,
-    "checkout_button_color": "#90181b",
-    "social_twitter_link": "https:\/\/www.twitter.com\/sundari_silks",
-    "type_header_font": "playfair_display_n4",
-    "checkout_logo_image": "shopify:\/\/shop_images\/sundari-silks-512.png",
-    "home-section-title-large-largedesktop": 48,
-    "mlvedaACS_positionLeft": false,
-    "mlvedaACS_defaultCurrency": "INR",
-    "product-gap-tablet": 16,
-    "mlvedaACS_textColor": "inherit",
-    "mlvedaACS_flagStyle": "circle",
-    "home-section-gap-largetablet": 24,
-    "home-section-secondary-title-desktop": 18,
-    "social_pinterest_link": "https:\/\/www.pinterest.com\/sundari_silks\/",
-    "mlvedaACS_isMessageDisplay": true,
-    "home-section-gap-desktop": 26,
-    "body_text_font": "montserrat_n4",
-    "home-section-secondary-title-space-largetablet": 18,
-    "mlvedaACS_positionBottom": "10px",
-    "section-gap-largetablet": 16,
-    "mlvedaACS_messageBackgroundColor": "inherit",
-    "mlvedaACS_roundDecimalValue": 1,
-    "mlvedaACS_roundingrules": "{\"AUD\":{\"reference\":1,\"rule\":1},\"SGD\":{\"reference\":1,\"rule\":1},\"GBP\":{\"reference\":1,\"rule\":1},\"CAD\":{\"reference\":1,\"rule\":1},\"USD\":{\"reference\":1,\"rule\":1}}",
-    "mlvedaACS_backgroundColor": "inherit",
-    "mlvedaACS_position": "top_with_right",
-    "mlvedaACS_messageColor": "inherit",
-    "home-section-gap-largedesktop": 60,
-    "home-section-title-largedesktop": 48,
-    "mlvedaACS_textHoverColor": "inherit",
-    "favicon": "shopify:\/\/shop_images\/favicon.png",
-    "mlvedaACS_enable": true,
     "blocks": {
       "10042746950867549768": {
-        "settings": {
-        },
+        "type": "shopify:\/\/apps\/hulk-product-options\/blocks\/app-embed\/380168ef-9475-4244-a291-f66b189208b5",
         "disabled": true,
-        "type": "shopify:\/\/apps\/hulk-product-options\/blocks\/app-embed\/380168ef-9475-4244-a291-f66b189208b5"
+        "settings": {
+        }
       },
       "3294164036280357830": {
-        "settings": {
-        },
+        "type": "shopify:\/\/apps\/mlv-auto-currency-switcher\/blocks\/mlveda-currencies-head\/92ab730f-097e-4571-b27c-3f449e098ca3",
         "disabled": false,
-        "type": "shopify:\/\/apps\/mlv-auto-currency-switcher\/blocks\/mlveda-currencies-head\/92ab730f-097e-4571-b27c-3f449e098ca3"
+        "settings": {
+        }
       },
       "13768625480086291342": {
-        "settings": {
-        },
+        "type": "shopify:\/\/apps\/forms\/blocks\/forms\/8744a304-fcb1-4347-b211-bb6b4759a76a",
         "disabled": false,
-        "type": "shopify:\/\/apps\/forms\/blocks\/forms\/8744a304-fcb1-4347-b211-bb6b4759a76a"
+        "settings": {
+        }
       }
-    },
-    "social_facebook_link": "https:\/\/www.facebook.com\/sundarisilks",
-    "mlvedaACS_supportedCurrencies": "INR GBP CAD AUD USD SGD",
-    "home-section-secondary-title-space-largedesktop": 26,
-    "home-section-secondary-title-space-tablet": 18,
-    "mlvedaACS_hideDecimal": false,
-    "type_header": "playfair_display_n4",
-    "home-section-title-tablet": 24,
-    "mlvedaACS_hoverBackgroundColor": "inherit",
-    "background_color": "#fef1e1",
-    "home-section-secondary-title-tablet": 16,
-    "home-section-secondary-title-largedesktop": 20,
-    "mlvedaACS_currencyFormat": "money_with_currency_format",
-    "mlvedaACS_borderLineColor": "inherit",
-    "section-gap-largedesktop": 32,
-    "home-section-secondary-title-space-mobile": 14,
-    "home-section-title-mobile": 22,
-    "mlvedaACS_displayFlag": false,
-    "home-section-gap-tablet": 24,
-    "home-section-secondary-title-space-desktop": 22
+    }
   }
 }
