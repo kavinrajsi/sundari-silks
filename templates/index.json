@@ -55,17 +55,15 @@
         "bed9709b-8de2-4214-8e93-8253620cb5e1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sundari-silks-the-famous-five-motifs-of-indian-jewellery-banner-desktop.png",
-            "mobile_image": "shopify:\/\/shop_images\/sundari-silks-the-famous-five-motifs-of-indian-jewellery-banner-mobile.png",
-            "link": "shopify:\/\/blogs\/article\/the-famous-five-motifs-of-indian-jewellery"
+            "image": "shopify:\/\/shop_images\/sundarisilks-saree-each-day-to-keep-the-work-blues-away-banner-desktop.png",
+            "mobile_image": "shopify:\/\/shop_images\/sundarisilks-saree-each-day-to-keep-the-work-blues-away-banner-mobile.png",
+            "link": "shopify:\/\/blogs\/article\/a-saree-each-day-to-keep-the-work-blues-away"
           }
         },
         "655cf251-418a-4859-a273-26801c333f2f": {
           "type": "slide",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/Artboard_4.png",
-            "mobile_image": "shopify:\/\/shop_images\/Artboard_4-mobile.png",
             "link": "shopify:\/\/collections\/festive-edit"
           }
         }
