@@ -471,6 +471,7 @@
     <script defer src="{{ 'bootstrap.min.js' | asset_url }}"></script>
     <script defer src="{{ 'drawer.js' | asset_url }}"></script>
     <script defer src="{{ 'quick-view-main.js' | asset_url }}"></script>
+    <script defer src="{{ 'address.js' | asset_url }}"></script>
     {% if template contains 'collection' %}
       <script>
         let url = window.location.href;
@@ -566,5 +567,8 @@
       </script>
     {% endif %}
     <script defer src="{{ 'global.js' | asset_url }}"></script>
+
+    {% include 'swymSnippet' %}
+
   </body>
 </html>

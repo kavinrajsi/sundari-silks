@@ -1226,3 +1226,13 @@ section#shopify-section-template--16000227246242__instagram {
     display: none !important;
   }
 }
+
+
+
+.product__card-wishlist {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  z-index: 1;
+  svg {color: #fff;}
+}

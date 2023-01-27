@@ -75,96 +75,200 @@
 
   <section>
     <h2 class="account-card-title">Address</h2>
-    <div class="address-list">
-      {% for address in customer.addresses %}
+
+  <div class="" style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr;">
+    {% for address in customer.addresses %}
+      <div data-address>
         {% if address == customer.default_address %}
-          <address>
-            <div itemscope itemtype="https://schema.org/Person">
-              <span itemprop="givenName"> {{ customer.default_address.first_name }} </span>
-              <span itemprop="familyName"> {{ customer.default_address.last_name }} </span>
-              <div class="postaladdress" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-                {% if customer.default_address.address2 != blank %}
-                  <span itemprop="streetAddress">{{ customer.default_address.address2 }} </span>
-                {% endif %}
-                {% if customer.default_address.address1 != blank %}
-                  <span itemprop="streetAddress">
-                    {{ customer.default_address.address1 }}
-                  </span>
-                {% endif %}
-                {% if customer.default_address.city != blank %}
-                  <span itemprop="addressLocality"> {{ customer.default_address.city }} </span>
-                {% endif %}
-                {% if customer.default_address.province != blank %}
-                  <span itemprop="addressRegion">{{ customer.default_address.province }}</span>
-                {% endif %}
-                {% if customer.default_address.country != blank %}
-                  <span itemprop="addressRegion"> {{ customer.default_address.country }} </span>
-                {% endif %}
-                {% if customer.default_address.zip != blank %}
-                  <span itemprop="postalCode"> {{ customer.default_address.zip }} </span>
-                {% endif %}
-              </div>
-              {% if customer.default_address.phone != blank %}
-                <span itemprop="telephone">
-                  <a href="tel://{{customer.default_address.phone}}">{{ customer.default_address.phone }}</a>
-                </span>
-              {% endif %}
-            </div>
-            {% comment %}
-                <form class="address-delete-form" method="post" action="/account/addresses/{{ address.id }}">
-                <svg width="24" height="24">
-                  <use href="#trash" />
-                </svg>
-                <input type="hidden" name="_method" value="delete">
-                <button type="submit">delete</button>
-              </form>
-            {% endcomment %}
-          </address>
-        {% else %}
-          <address>
-            <div itemscope itemtype="https://schema.org/Person">
-              <span itemprop="givenName"> {{ customer.first_name }} </span>
-              <span itemprop="familyName"> {{ customer.last_name }} </span>
-              <div class="postaladdress" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-                {% if address.address2 != blank %}
-                  <span itemprop="streetAddress">{{ address.address2 }} </span>
-                {% endif %}
-                {% if address.address1 != blank %}
-                  <span itemprop="streetAddress">
-                    {{ address.address1 }}
-                  </span>
-                {% endif %}
-                {% if address.city != blank %}
-                  <span itemprop="addressLocality"> {{ address.city }} </span>
-                {% endif %}
-                {% if address.province != blank %}
-                  <span itemprop="addressRegion">{{ address.province }}</span>
-                {% endif %}
-                {% if address.country != blank %}
-                  <span itemprop="addressRegion"> {{ address.country }} </span>
-                {% endif %}
-                {% if address.zip != blank %}
-                  <span itemprop="postalCode"> {{ address.zip }} </span>
-                {% endif %}
-              </div>
-              {% if address.phone != blank %}
-                <span itemprop="telephone">
-                  <a href="tel://{{address.phone}}">{{ address.phone }}</a>
-                </span>
-              {% endif %}
-            </div>
-            {% comment %}
-                <form class="address-delete-form" method="post" action="/account/addresses/{{ address.id }}">
-                <svg width="24" height="24">
-                  <use href="#trash" />
-                </svg>
-                <input type="hidden" name="_method" value="delete">
-                <button type="submit">delete</button>
-              </form>
-            {% endcomment %}
-          </address>
+          <p>
+            <strong>{{ 'customer.addresses.default' | t }}</strong>
+          </p>
         {% endif %}
-      {% endfor %}
-    </div>
+        {{ address | format_address }}
+
+        <div class="" style="display: flex;">
+        <button type="button" data-address-toggle>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-edit-3"
+          >
+            <path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+          </svg>
+          Edit
+        </button>
+        <form
+          data-address-delete-form
+          method="post"
+          action="/account/addresses/{{ address.id }}"
+          data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
+        >
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-trash-2"
+            >
+              <polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line>
+            </svg>
+            Delete
+          </button>
+        </form>
+      </div>
+
+        <div data-address-form class="hide">
+          {% form 'customer_address', address %}
+            <h4>{{ 'customer.addresses.edit_address' | t }}</h4>
+            <div data-address-fields class="address-form">
+              <div>
+                <label for="AddressFirstName_{{ form.id }}">
+                  {{ 'customer.addresses.first_name' | t }}
+                </label>
+                <input
+                  type="text"
+                  name="address[first_name]"
+                  id="AddressFirstName_{{ form.id }}"
+                  value="{{ form.first_name }}"
+                  autocapitalize="words"
+                >
+              </div>
+              <div>
+                <label for="AddressLastName_{{ form.id }}">
+                  {{ 'customer.addresses.last_name' | t }}
+                </label>
+                <input
+                  type="text"
+                  name="address[last_name]"
+                  id="AddressLastName_{{ form.id }}"
+                  value="{{ form.last_name }}"
+                  autocapitalize="words"
+                >
+              </div>
+              <div>
+                <label for="AddressCompany_{{ form.id }}">
+                  {{ 'customer.addresses.company' | t }}
+                </label>
+                <input
+                  type="text"
+                  name="address[company]"
+                  id="AddressCompany_{{ form.id }}"
+                  value="{{ form.company }}"
+                  autocapitalize="words"
+                >
+              </div>
+              <div>
+                <label for="AddressAddress1_{{ form.id }}">
+                  {{ 'customer.addresses.address1' | t }}
+                </label>
+                <input
+                  type="text"
+                  name="address[address1]"
+                  id="AddressAddress1_{{ form.id }}"
+                  value="{{ form.address1 }}"
+                  autocapitalize="words"
+                >
+              </div>
+              <div>
+                <label for="AddressAddress2_{{ form.id }}">
+                  {{ 'customer.addresses.address2' | t }}
+                </label>
+                <input
+                  type="text"
+                  name="address[address2]"
+                  id="AddressAddress2_{{ form.id }}"
+                  value="{{ form.address2 }}"
+                  autocapitalize="words"
+                >
+              </div>
+              <div>
+                <label for="AddressCity_{{ form.id }}">
+                  {{ 'customer.addresses.city' | t }}
+                </label>
+                <input
+                  type="text"
+                  name="address[city]"
+                  id="AddressCity_{{ form.id }}"
+                  value="{{ form.city }}"
+                  autocapitalize="words"
+                >
+              </div>
+              <div>
+                <label for="AddressCountry_{{ form.id }}">
+                  {{ 'customer.addresses.country' | t }}
+                </label>
+                <select
+                  name="address[country]"
+                  id="AddressCountry_{{ form.id }}"
+                  class="address-country-option"
+                  data-form-id="{{ form.id }}"
+                  data-default="{{ form.country }}"
+                ></select>
+
+                <div>
+                  <label for="AddressProvince_{{ form.id }}">
+                    {{ 'customer.addresses.province' | t }}
+                  </label>
+                  <select
+                    name="address[province]"
+                    id="AddressProvince_{{ form.id }}"
+                    data-default="{{ form.province }}"
+                  ></select>
+                </div>
+              </div>
+              <div>
+                <label for="AddressZip_{{ form.id }}">
+                  {{ 'customer.addresses.zip' | t }}
+                </label>
+                <input
+                  type="text"
+                  name="address[zip]"
+                  id="AddressZip_{{ form.id }}"
+                  value="{{ form.zip }}"
+                  autocapitalize="characters"
+                >
+              </div>
+              <div>
+                <label for="AddressPhone_{{ form.id }}">
+                  {{ 'customer.addresses.phone' | t }}
+                </label>
+                <input
+                  type="tel"
+                  name="address[phone]"
+                  id="AddressPhone_{{ form.id }}"
+                  value="{{ form.phone }}"
+                  pattern="[0-9\-]*"
+                >
+              </div>
+            </div>
+            {{ form.set_as_default_checkbox }}
+            <label for="address_default_address_{{ form.id }}">
+              {{ 'customer.addresses.set_default' | t }}
+            </label>
+
+            <button type="submit">{{ 'customer.addresses.update' | t }}</button>
+            <button type="button" data-address-toggle data-form-id="{{ form.id }}">
+              {{ 'customer.addresses.cancel' | t }}
+            </button>
+          {% endform %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
   </section>
 </div>

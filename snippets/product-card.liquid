@@ -6,6 +6,13 @@ Usage:
 {% endcomment %}
 <div class="product__card">
   <div class="product__card--img">
+    <div class="product__card-wishlist">
+<!-- Swym Wishlist Plus EPI Button-->
+<button data-with-epi="true" class="swym-button swym-add-to-wishlist-view-product product_{{product.id}}" data-swaction="addToWishlist" data-product-id="{{product.id | json}}" data-variant-id="{{product.variants[0].id}}" data-product-url="{{ shop.url }}{{ product.url }}"><svg width="24" height="24">
+  <use href="#heart"></use>
+</svg></button>
+<!-- Swym Wishlist Plus EPI Button-->
+    </div>
     <a href="{{ product.url | within: collection }}" class="product__card--link">
       <div class="product__card--image--wrapper">
         {% if product.featured_image != blank %}
