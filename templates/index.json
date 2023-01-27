@@ -3,15 +3,6 @@
     "slideshow": {
       "type": "home-slideshow",
       "blocks": {
-        "ca73578c-33bc-41c8-9383-b57d6e7d0228": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/sundari-silks-sale-year-end-2022-banner-desktop.png",
-            "mobile_image": "shopify:\/\/shop_images\/sundari-silks-sale-year-end-2022-banner-mobile.png",
-            "link": "shopify:\/\/collections\/kanchipuram-silks"
-          }
-        },
         "ab99cd22-9db2-4cf4-9676-120271eed88d": {
           "type": "slide",
           "settings": {
@@ -59,24 +50,15 @@
             "mobile_image": "shopify:\/\/shop_images\/sundarisilks-saree-each-day-to-keep-the-work-blues-away-banner-mobile.png",
             "link": "shopify:\/\/blogs\/article\/a-saree-each-day-to-keep-the-work-blues-away"
           }
-        },
-        "655cf251-418a-4859-a273-26801c333f2f": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "link": "shopify:\/\/collections\/festive-edit"
-          }
         }
       },
       "block_order": [
-        "ca73578c-33bc-41c8-9383-b57d6e7d0228",
         "ab99cd22-9db2-4cf4-9676-120271eed88d",
         "5cd59610-c2b0-470a-8ce5-780b7df44578",
         "8efe5e97-f302-4f66-ae4c-451513f79459",
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b",
         "3fbd7fec-f97f-434e-9f56-1ddc4581978e",
-        "bed9709b-8de2-4214-8e93-8253620cb5e1",
-        "655cf251-418a-4859-a273-26801c333f2f"
+        "bed9709b-8de2-4214-8e93-8253620cb5e1"
       ],
       "settings": {
         "layout": "full_bleed",
