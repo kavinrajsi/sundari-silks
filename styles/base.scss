@@ -367,3 +367,18 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-iconbtnlink.swym-
     margin-right: 4px;
   }
 }
+
+
+
+.product__card-wishlist svg{
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+
+.swym-button.swym-add-to-wishlist-view-product.swym-heart.swym-added:after{
+  content: none !important;
+}
+.swym-added.swym-add-to-wishlist-view-product svg{
+  color: var(--color-maroon) !important;
+}
