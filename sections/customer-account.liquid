@@ -74,33 +74,108 @@
   </aside>
 
   <section>
-
     <h2 class="account-card-title">Account</h2>
     <p class="customer-name-firstName">
       <span class="firstName">
-    {{customer.first_name | slice: 0 }}
+        {{ customer.first_name | slice: 0 }}
       </span>
     </p>
     <p class="customer-name">
-    {{customer.name}}
+      {{ customer.name }}
     </p>
     <p class="customer-email">
-    {{customer.email}}
+      {{ customer.email }}
     </p>
     <p class="customer-phone">
-    {{customer.phone}}
+      {{ customer.phone }}
+    </p>
+
+    <br>
+    <br>
+
+    <h2 class="account-card-title">MANAGE YOUR COMMUNICATION PREFERENCES</h2>
+
+    <ul>
+      <li>
+        {% if customer.accepts_marketing == true %}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-check-square"
+          >
+            <polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+          </svg>
+          &nbsp; Notifications for new collection launches, special prices & annual sale
+        {% else %}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-square"
+          >
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+          </svg>
+          &nbsp; Notifications for new collection launches, special prices & annual sale
+        {% endif %}
+      </li>
+      <li>
+        {% if customer.tags contains 'vip' %}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-check-square"
+          >
+            <polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+          </svg>
+          Events & Popup
+        {% else %}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-square"
+          >
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+          </svg>
+          Events & Popup
+        {% endif %}
+      </li>
+    </ul>
+
+    <br>
+    <br>
+
+    <h2 class="account-card-title">PRIVACY SETTINGS</h2>
+    <p>
+      I agree to the website Terms and Conditions. I agree to receiving e-mails for service related information. To know
+      more about how we keep your data safe, refer to our
+      <a href="{{shop.privacy_policy.url}}" target="_blank">Privacy Policy</a>.
     </p>
   </section>
-
-
-  MANAGE YOUR COMMUNICATION PREFERENCES
-Notifications for new collection launches, special prices & annual sale
-Reminder for products in cart
-Events & Popup
-
-
-PRIVACY SETTINGS
-I agree to the website Terms and Conditions. I agree to receiving e-mails for service related information. To know more about how we keep your data safe, refer to our  Privacy Policy.
-
-
 </div>

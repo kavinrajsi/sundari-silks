@@ -889,3 +889,27 @@
     display: block !important;
   }
 }
+
+
+
+.display\:flex{
+  display: flex;
+}
+.margin\:top\:16{
+  margin-top: 8px;
+}
+.contact-address-form-edit{
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  background: var(--color-white);
+  height: 100vh;
+  overflow: hidden;
+  padding: 8px;
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+}
+.account-addresss-lists{
+  display: grid; gap: 20px; grid-template-columns: 1fr;
+}
