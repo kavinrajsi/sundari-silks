@@ -3,44 +3,44 @@
     "slideshow": {
       "type": "home-slideshow",
       "blocks": {
+        "5cd59610-c2b0-470a-8ce5-780b7df44578": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Artboard_1.png",
+            "mobile_image": "shopify:\/\/shop_images\/Artboard_1_1.png",
+            "link": "shopify:\/\/collections\/buttas-buttis"
+          }
+        },
+        "8efe5e97-f302-4f66-ae4c-451513f79459": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Artboard_3.png",
+            "mobile_image": "shopify:\/\/shop_images\/Artboard_3_1.png",
+            "link": "shopify:\/\/collections\/pochampally-silks"
+          }
+        },
+        "6f47c23b-ee37-4e15-9a50-0cb42b78e35b": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Artboard_4.png",
+            "mobile_image": "shopify:\/\/shop_images\/Artboard_4_1.png",
+            "link": "shopify:\/\/collections\/soft-silk"
+          }
+        },
+        "3fbd7fec-f97f-434e-9f56-1ddc4581978e": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Artboard_2.png",
+            "mobile_image": "shopify:\/\/shop_images\/Artboard_2_1.png",
+            "link": "shopify:\/\/collections\/dhoti"
+          }
+        },
         "ab99cd22-9db2-4cf4-9676-120271eed88d": {
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/Online_exclusive_banner.png",
             "mobile_image": "shopify:\/\/shop_images\/Online_exclusive_MB.png",
             "link": "shopify:\/\/collections\/salwar-material"
-          }
-        },
-        "5cd59610-c2b0-470a-8ce5-780b7df44578": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Monsoon_-_Web_Banner.png",
-            "mobile_image": "shopify:\/\/shop_images\/MOBILE_BANNER_1.png",
-            "link": "shopify:\/\/collections\/manvasanai-collection"
-          }
-        },
-        "8efe5e97-f302-4f66-ae4c-451513f79459": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/KANJIVARAM_-_NOVEMBER2-01.png",
-            "mobile_image": "shopify:\/\/shop_images\/KANJIVARAM_-_Mobile_Banner-03.png",
-            "link": "https:\/\/www.sundarisilks.com\/collections\/traditional-silks?filter.v.availability=1"
-          }
-        },
-        "6f47c23b-ee37-4e15-9a50-0cb42b78e35b": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/sundari-silks-karya-workwear-collection-banner-desktop.png",
-            "mobile_image": "shopify:\/\/shop_images\/sundari-silks-karya-workwear-collection-banner-mobile.png",
-            "link": "shopify:\/\/collections\/karya-workwear-collection"
-          }
-        },
-        "3fbd7fec-f97f-434e-9f56-1ddc4581978e": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/sundari-silks-monochrome-collection-banner-desktop.png",
-            "mobile_image": "shopify:\/\/shop_images\/sundari-silks-monochrome-collection-banner-mobile.png",
-            "link": "shopify:\/\/collections\/black-and-white-collection"
           }
         },
         "bed9709b-8de2-4214-8e93-8253620cb5e1": {
@@ -53,11 +53,11 @@
         }
       },
       "block_order": [
-        "ab99cd22-9db2-4cf4-9676-120271eed88d",
         "5cd59610-c2b0-470a-8ce5-780b7df44578",
         "8efe5e97-f302-4f66-ae4c-451513f79459",
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b",
         "3fbd7fec-f97f-434e-9f56-1ddc4581978e",
+        "ab99cd22-9db2-4cf4-9676-120271eed88d",
         "bed9709b-8de2-4214-8e93-8253620cb5e1"
       ],
       "settings": {
