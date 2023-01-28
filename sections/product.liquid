@@ -320,6 +320,12 @@
 
           {%- if product.handle != blank -%}
             {% include 'swym-product-view', product: product %}
+            <button class="swym-button swym-add-to-wishlist-view-product product_{{product.id}}"
+              data-swaction="addToWishlist"
+              data-product-id="{{product.id | json}}">
+            </button>
+
+
             <button
               type="button"
               aria-label="Add to wishlist"
@@ -612,24 +618,24 @@
 </script>
 
 <script language="Javascript" type="text/javascript">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   var myProduct = {{ product | json}};
   var customTags = myProduct.tags;
 
