@@ -376,15 +376,21 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-iconbtnlink.swym-
   display: none;
 }
 
+/* Wishlist icon */
 .product__card-wishlist .swym-added.swym-add-to-wishlist-view-product:after{
   color: var(--color-maroon) !important;
   font-size: 16px;
 }
 
-// .swym-add-to-wishlist, .swym-add-to-wishlist:after, .swym-fave-count
-
-.swym-added.swym-add-to-wishlist, .swym-added.swym-add-to-wishlist + .swym-fave-count,
-.product-form__buttons .button.product-form__wishlist{
-
+/* wishlist button ui */
+button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.swym-loaded{
   color: var(--color-black) !important;
+  background-color: transparent !important;
+  border-color: var(--color-maroon) !important;
+}
+/* wishlist button added */
+button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.swym-loaded.disabled.swym-added.swym-adding{
+  color: var(--color-black) !important;
+  background-color: var(--color-secondary) !important;
+  border-color: var(--color-secondary) !important;
 }
