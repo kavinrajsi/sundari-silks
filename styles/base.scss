@@ -498,16 +498,13 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
         }
       }
 
+
       .swym-simple-wishlist-container .swym-simple-wishlist-container-content .swym-wishlist-detail {
         overflow: hidden;
         padding-right: 4px;
       }
 
       .swym-wishlist-detail-header {
-        @media(min-width: 768px) {
-          padding-top: 20px;
-          padding-bottom: 20px;
-        }
 
         .swym-wishlist-main-title {
           letter-spacing: initial;
@@ -528,6 +525,16 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
 
         .swym-wishlist-context-menu {
           position: static;
+
+          &:before {
+            justify-content: flex-start;
+            padding-right: 8px;
+
+            @media(min-width: 902px) {
+              justify-content: initial;
+              padding-right: initial;
+            }
+          }
         }
       }
 
@@ -555,7 +562,7 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
         display: flex;
         padding: 0;
 
-        @media(min-width: 768px) {
+        @media(min-width: 902px) {
           padding-left: 34px;
           padding-right: 34px;
         }
@@ -577,6 +584,10 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
           background: transparent;
 
           @media(min-width: 768px) {
+            width: calc(35% - 32px);
+          }
+
+          @media(min-width: 902px) {
             width: calc(25% - 32px);
             margin: 0 16px 32px;
           }
@@ -597,7 +608,7 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
             line-height: 24px;
             padding-top: 4px;
 
-            @media(min-width: 768px) {
+            @media(min-width: 902px) {
               padding-top: 8px;
               font-size: 16px;
             }
@@ -625,7 +636,7 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
             line-height: 24px;
             font-size: 13px;
 
-            @media(min-width: 768px) {
+            @media(min-width: 902px) {
               font-size: 14px;
             }
           }
@@ -639,7 +650,7 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
             transition: background-color .2s, border-color .2s, color .2s !important;
             color: #fff;
 
-            @media(min-width: 768px) {
+            @media(min-width: 902px) {
               padding: 8px 16px;
             }
 
