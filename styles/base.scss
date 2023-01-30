@@ -352,8 +352,13 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
     font-family: var(--font-montserrat) !important;
   }
 
+  @media(max-width: 902px) {
 
-
+    .swym-ui-components div:empty,
+    .swym-ui-component div:empty {
+      display: none;
+    }
+  }
 
   #swym-component-container {
 
@@ -468,6 +473,11 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
     }
 
     .swym-ui-component {
+      @media(max-width: 902px) {
+        .swym-ui-component div:empty {
+          display: none;
+        }
+      }
 
       .swym-bg-2 {
         background-color: var(--color-white);
@@ -488,8 +498,12 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
         }
       }
 
-      .swym-wishlist-detail-header {
+      .swym-simple-wishlist-container .swym-simple-wishlist-container-content .swym-wishlist-detail {
+        overflow: hidden;
+        padding-right: 4px;
+      }
 
+      .swym-wishlist-detail-header {
         @media(min-width: 768px) {
           padding-top: 20px;
           padding-bottom: 20px;
@@ -517,18 +531,18 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
         }
       }
 
- .swym-wishlist-context-menu .swym-wishlist-context-menu-item.swym-delete{
-color: var(--color-black);
- }
-
+      .swym-wishlist-context-menu .swym-wishlist-context-menu-item.swym-delete {
+        color: var(--color-black);
+      }
 
       .swym-simple-wishlist-modal .swym-modal-content .swym-close-btn .swym-icon::before {
         color: var(--color-black);
       }
 
       .swym-wishlist-detail-header {
-        margin-bottom: 0;
-        font-family: var(--font-playfair);
+        background: transparent;
+        margin-bottom: 16px;
+        font-family: var(--font-playfair) !important;
       }
 
       .swym-share-btn {
@@ -555,12 +569,12 @@ color: var(--color-black);
           }
         }
 
-
         .swym-wishlist-item {
           margin: 0 8px 16px;
           border: 0px;
           width: calc(50% - 16px);
           justify-content: flex-start;
+          background: transparent;
 
           @media(min-width: 768px) {
             width: calc(25% - 32px);
@@ -644,7 +658,6 @@ color: var(--color-black);
     }
   }
 }
-
 
 /* temp... css for account page */
 .page-account-navigation {
