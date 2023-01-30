@@ -350,23 +350,36 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
   font-family: var(--font-montserrat) !important;
 }
 
-.swym-ui-components {
-  .swym-bg-2 {
-    background-color: var(--color-white) !important;
-  }
-
-  .swym-color-6 {
-    color: var(--color-black) !important;
-  }
-}
-
 #swym-component-container {
   .swym-ui-component {
+
+    .swym-bg-2 {
+      background-color: var(--color-white);
+    }
+
+    .swym-color-6 {
+      color: var(--color-black);
+    }
+
+    // #swym-component-container .swym-ui-component .swym-htc-tabs .swym-htc-tab-item.swym-tab-wishlist.swym-bg-2.swym-selected
+    // #swym-component-container .swym-ui-component .swym-bg-2
+
+    .swym-htc-tabs {
+      .swym-htc-tab-item.swym-bg-2 {
+        color: var(--color-black);
+
+        &.swym-selected {
+          background-color: var(--color-maroon);
+          color: var(--color-white);
+        }
+      }
+    }
+
     .swym-wishlist-detail-header {
 
       @media(min-width: 768px) {
-      padding-top: 20px;
-      padding-bottom: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
       }
 
       .swym-wishlist-main-title {
@@ -381,21 +394,16 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
         font-size: var(--font-h3);
         margin: 8px;
       }
-      .swym-action-container{
+
+      .swym-action-container {
         position: static;
       }
-      .swym-wishlist-context-menu{
+
+      .swym-wishlist-context-menu {
         position: static;
       }
     }
 
-    .swym-bg-2 {
-      background-color: var(--color-white);
-    }
-
-    .swym-color-6 {
-      color: var(--color-black);
-    }
 
     .swym-simple-wishlist-modal .swym-modal-content .swym-close-btn .swym-icon::before {
       color: var(--color-black);
@@ -428,13 +436,14 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
 
 
       .swym-wishlist-item {
-        margin: 0 8px 8px;
+        margin: 0 8px 16px;
         border: 0px;
         width: calc(50% - 16px);
+        justify-content: flex-start;
 
         @media(min-width: 768px) {
-          width: calc(25% - 16px);
-          margin-bottom: 32px;
+          width: calc(25% - 32px);
+          margin: 0 16px 32px;
         }
 
         .swym-delete-btn .swym-icon::before {
@@ -469,6 +478,10 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
           margin: 0;
         }
 
+        .swym-variant-title {
+          margin: 0;
+        }
+
         .swym-product-price {
           margin: 0;
           font-weight: 400;
@@ -490,9 +503,11 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
           border-radius: var(--border-radius);
           transition: background-color .2s, border-color .2s, color .2s !important;
           color: #fff;
+
           @media(min-width: 768px) {
-          padding: 8px 16px;
+            padding: 8px 16px;
           }
+
           overflow: hidden;
           font-weight: 400;
           text-transform: uppercase;
