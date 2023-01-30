@@ -199,7 +199,7 @@
         "spotlight-description": "Bringing you our best sellers",
         "spotlight-collection": "kanchipuram-silks",
         "spotlight-url": "shopify:\/\/collections\/kanchipuram-silks",
-        "spotlight-count": 8
+        "spotlight-count": 9
       }
     },
     "dropped": {
@@ -207,7 +207,7 @@
       "settings": {
         "just-dropped-title": "Just Dropped",
         "just-dropped-description": "New arrivals you will love",
-        "just-dropped-count": 9,
+        "just-dropped-count": 8,
         "collection-list": "kanchipuram-silks | bandhani-sarees | shirts"
       }
     },
