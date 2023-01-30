@@ -341,197 +341,310 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
   border-color: var(--color-secondary) !important;
 }
 
-.swym-ui-component *,
-.swym-ui-component .swym-is-button,
-.swym-ui-component .swym-is-anchor,
-.swym-ui-component .swym-title,
-.swym-ui-component .swym-heading,
-.swym-ui-component .swym-label {
-  font-family: var(--font-montserrat) !important;
-}
+#swym-plugin {
+
+  .swym-ui-component *,
+  .swym-ui-component .swym-is-button,
+  .swym-ui-component .swym-is-anchor,
+  .swym-ui-component .swym-title,
+  .swym-ui-component .swym-heading,
+  .swym-ui-component .swym-label {
+    font-family: var(--font-montserrat) !important;
+  }
 
 
-// .swym-ui-component .swym-share-wishlist-modal .swym-share-wishlist-modal-dialog .swym-share-wishlist-email-btn{
-
-// }
 
 
-#swym-component-container {
-  .swym-ui-component {
+  #swym-component-container {
 
-    .swym-bg-2 {
-      background-color: var(--color-white);
-    }
-
-    .swym-color-6 {
-      color: var(--color-black);
-    }
-
-    // #swym-component-container .swym-ui-component .swym-htc-tabs .swym-htc-tab-item.swym-tab-wishlist.swym-bg-2.swym-selected
-    // #swym-component-container .swym-ui-component .swym-bg-2
-
-    .swym-htc-tabs {
-      .swym-htc-tab-item.swym-bg-2 {
-        color: var(--color-black);
-
-        &.swym-selected {
-          background-color: var(--color-maroon);
-          color: var(--color-white);
-        }
-      }
-    }
-
-    .swym-wishlist-detail-header {
-
-      @media(min-width: 768px) {
-        padding-top: 20px;
-        padding-bottom: 20px;
+    .swym-save-wishlist-modal,
+    .swym-simple-wishlist-modal {
+      .swym-save-wishlist-modal-dialog {
+        border-radius: var(--border-radius);
+        overflow: hidden;
       }
 
-      .swym-wishlist-main-title {
-        letter-spacing: initial;
-        font-family: var(--font-playfair) !important;
-        color: #000;
-        font-weight: normal;
-        line-height: normal;
-        font-size: 20px;
+      .swym-save-summary .swym-save-list-btn,
+      .swym-logged-in .swym-back-btn {
+        border-radius: var(--border-radius);
+        transition: background-color .2s, border-color .2s, color .2s !important;
+        padding: 14px 16px;
+        overflow: hidden;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+        border: 1px solid;
+        color: var(--color-maroon);
+        background-color: var(--color-white);
+        border-color: var(--color-maroon);
+      }
+
+      .swym-save-summary .swym-login-btn,
+      .swym-logged-in .swym-log-out-btn.swym-bg-2 {
+        border-radius: var(--border-radius);
+        transition: background-color .2s, border-color .2s, color .2s !important;
+        padding: 14px 16px;
+        overflow: hidden;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+        border: 1px solid;
+        color: var(--color-white);
+        background-color: var(--color-maroon);
+        border-color: var(--color-maroon);
+      }
+
+      .swym-text-heading {
+        padding: 0;
+        letter-spacing: normal;
+        margin-bottom: 18px;
+        font-family: var(--font-playfair);
+        font-style: normal;
         font-weight: 500;
+        font-size: 30px;
         line-height: 120%;
         font-size: var(--font-h3);
-        margin: 8px;
+        font-size: 20px;
+        line-height: normal;
       }
 
-      .swym-action-container {
-        position: static;
+      .swym-text-content {
+        letter-spacing: normal;
+        font-family: var(--font-montserrat);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: #0009;
+        margin-bottom: 18px;
       }
 
-      .swym-wishlist-context-menu {
-        position: static;
+      .swym-modal-content {
+        border-radius: var(--border-radius);
+        overflow: hidden;
       }
     }
 
-
-    .swym-simple-wishlist-modal .swym-modal-content .swym-close-btn .swym-icon::before {
-      color: var(--color-black);
-    }
-
-    .swym-wishlist-detail-header {
-      margin-bottom: 0;
-      font-family: var(--font-playfair);
-    }
-
-    .swym-share-btn{
-      display: none;
-    }
-
-    .swym-wishlist-grid {
-      max-width: initial;
-      padding: 5vw 0 0;
-      display: flex;
-      padding: 0;
-
-      @media(min-width: 768px) {
-        padding-left: 34px;
-        padding-right: 34px;
+    .swym-empty-wishlist-container {
+      .swym-empty-wishlist-title {
+        padding: 0;
+        letter-spacing: normal;
+        margin-bottom: 18px;
+        font-family: var(--font-playfair);
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 120%;
+        font-size: var(--font-h3);
+        font-size: 20px;
+        line-height: normal;
       }
 
-      .swym-wishlist-image-wrapper {
-        height: auto;
-        max-height: initial;
+      .swym-empty-wishlist-text {
+        letter-spacing: normal;
+        font-family: var(--font-montserrat);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: #0009;
+        margin-bottom: 18px;
+      }
 
-        img {
-          border-radius: var(--border-radius);
+      button.swym-empty-wishlist-continue-btn.swym-button.swym-button-1.swym-is-button.swym-bg-2.swym-color-4 {
+        border-radius: var(--border-radius);
+        transition: background-color .2s, border-color .2s, color .2s !important;
+        color: #fff;
+        padding: 14px 16px;
+        overflow: hidden;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+        border: 1px solid;
+        color: var(--color-white);
+        background-color: var(--color-maroon);
+        border-color: var(--color-maroon);
+      }
+    }
+
+    .swym-ui-component {
+
+      .swym-bg-2 {
+        background-color: var(--color-white);
+      }
+
+      .swym-color-6 {
+        color: var(--color-black);
+      }
+
+      .swym-htc-tabs {
+        .swym-htc-tab-item.swym-bg-2 {
+          color: var(--color-black);
+
+          &.swym-selected {
+            background-color: var(--color-maroon);
+            color: var(--color-white);
+          }
         }
       }
 
-
-      .swym-wishlist-item {
-        margin: 0 8px 16px;
-        border: 0px;
-        width: calc(50% - 16px);
-        justify-content: flex-start;
+      .swym-wishlist-detail-header {
 
         @media(min-width: 768px) {
-          width: calc(25% - 32px);
-          margin: 0 16px 32px;
+          padding-top: 20px;
+          padding-bottom: 20px;
         }
 
-        .swym-delete-btn .swym-icon::before {
-          color: var(--color-white);
+        .swym-wishlist-main-title {
+          letter-spacing: initial;
+          font-family: var(--font-playfair) !important;
+          color: #000;
+          font-weight: normal;
+          line-height: normal;
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 120%;
+          font-size: var(--font-h3);
+          margin: 8px;
         }
 
-        .swym-title {
-          font-weight: 400;
-          color: var(--color-black);
-          margin: 0;
-          text-align: left;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          font-size: 14px;
-          line-height: 24px;
-          padding-top: 4px;
+        .swym-action-container {
+          position: static;
+        }
+
+        .swym-wishlist-context-menu {
+          position: static;
+        }
+      }
+
+ .swym-wishlist-context-menu .swym-wishlist-context-menu-item.swym-delete{
+color: var(--color-black);
+ }
+
+
+      .swym-simple-wishlist-modal .swym-modal-content .swym-close-btn .swym-icon::before {
+        color: var(--color-black);
+      }
+
+      .swym-wishlist-detail-header {
+        margin-bottom: 0;
+        font-family: var(--font-playfair);
+      }
+
+      .swym-share-btn {
+        display: none;
+      }
+
+      .swym-wishlist-grid {
+        max-width: initial;
+        padding: 5vw 0 0;
+        display: flex;
+        padding: 0;
+
+        @media(min-width: 768px) {
+          padding-left: 34px;
+          padding-right: 34px;
+        }
+
+        .swym-wishlist-image-wrapper {
+          height: auto;
+          max-height: initial;
+
+          img {
+            border-radius: var(--border-radius);
+          }
+        }
+
+
+        .swym-wishlist-item {
+          margin: 0 8px 16px;
+          border: 0px;
+          width: calc(50% - 16px);
+          justify-content: flex-start;
 
           @media(min-width: 768px) {
-            padding-top: 8px;
-            font-size: 16px;
+            width: calc(25% - 32px);
+            margin: 0 16px 32px;
           }
 
-          &:hover {
+          .swym-delete-btn .swym-icon::before {
+            color: var(--color-white);
+          }
+
+          .swym-title {
+            font-weight: 400;
+            color: var(--color-black);
+            margin: 0;
+            text-align: left;
             white-space: nowrap;
             overflow: hidden;
-          }
-        }
-
-        .swym-variant-title-spacer {
-          padding: 0;
-          margin: 0;
-        }
-
-        .swym-variant-title {
-          margin: 0;
-        }
-
-        .swym-product-price {
-          margin: 0;
-          font-weight: 400;
-          color: #000;
-          padding: 0;
-          line-height: 24px;
-          font-size: 13px;
-
-          @media(min-width: 768px) {
+            text-overflow: ellipsis;
             font-size: 14px;
-          }
-        }
+            line-height: 24px;
+            padding-top: 4px;
 
-        .swym-add-to-cart-btn {
-          padding: 8px;
-          color: var(--color-white);
-          background-color: var(--color-maroon);
-          border-color: var(--color-maroon);
-          border-radius: var(--border-radius);
-          transition: background-color .2s, border-color .2s, color .2s !important;
-          color: #fff;
+            @media(min-width: 768px) {
+              padding-top: 8px;
+              font-size: 16px;
+            }
 
-          @media(min-width: 768px) {
-            padding: 8px 16px;
+            &:hover {
+              white-space: nowrap;
+              overflow: hidden;
+            }
           }
 
-          overflow: hidden;
-          font-weight: 400;
-          text-transform: uppercase;
-          text-align: center;
-          border: 1px solid;
-          font-size: 14px;
-          display: block;
-          line-height: normal;
-          margin-top: 12px;
+          .swym-variant-title-spacer {
+            padding: 0;
+            margin: 0;
+          }
+
+          .swym-variant-title {
+            margin: 0;
+          }
+
+          .swym-product-price {
+            margin: 0;
+            font-weight: 400;
+            color: #000;
+            padding: 0;
+            line-height: 24px;
+            font-size: 13px;
+
+            @media(min-width: 768px) {
+              font-size: 14px;
+            }
+          }
+
+          .swym-add-to-cart-btn {
+            padding: 8px;
+            color: var(--color-white);
+            background-color: var(--color-maroon);
+            border-color: var(--color-maroon);
+            border-radius: var(--border-radius);
+            transition: background-color .2s, border-color .2s, color .2s !important;
+            color: #fff;
+
+            @media(min-width: 768px) {
+              padding: 8px 16px;
+            }
+
+            overflow: hidden;
+            font-weight: 400;
+            text-transform: uppercase;
+            text-align: center;
+            border: 1px solid;
+            font-size: 14px;
+            display: block;
+            line-height: normal;
+            margin-top: 12px;
+          }
         }
       }
     }
   }
 }
+
 
 /* temp... css for account page */
 .page-account-navigation {
