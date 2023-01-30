@@ -307,7 +307,7 @@ body:not(.template-index) {
 
 // title
 .section-header-title {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-playfair);
   font-weight: 500;
   line-height: 1.2222222222;
   font-size: var(--home-section-title);
@@ -397,7 +397,7 @@ body:not(.template-index) {
     border-bottom-right-radius: var(--border-radius);
 
     .collection-item-title {
-      font-family: "Playfair Display";
+      font-family: var(--font-playfair);
       font-style: normal;
       font-size: 14px;
 
@@ -944,7 +944,7 @@ body:not(.template-index) {
   }
 
   .content-area h3 {
-    font-family: "Playfair Display", serif;
+    font-family: var(--font-playfair);
     font-weight: 500;
     line-height: 1.2222222222;
     font-size: var(--home-section-title);

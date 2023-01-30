@@ -38,8 +38,7 @@
 
          text-align: center;
          margin-bottom: 8px;
-         font-family: "Playfair Display",
-         serif;
+        font-family: var(--font-playfair);
          font-weight: 500;
          line-height: 1.2222222222;
          font-size: var(--home-section-title);
@@ -65,7 +64,7 @@
          &-card-data {
             margin-right: 14px;
             margin-left: 14px;
-   
+
             @media(min-width: 768px) {
                 margin-right: auto;
                 margin-left: auto;
@@ -220,7 +219,7 @@
                  input[aria-invalid="true"]{
                     border: 1px solid #EB001B;
                   }
-              
+
              }
          }
      }

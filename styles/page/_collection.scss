@@ -20,7 +20,7 @@
 .collection-page-title {
   padding-top: var(--Ngap);
   padding-bottom: var(--Ngap);
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-playfair);
   font-weight: 500;
   line-height: 1.2222222222;
   font-size: var(--home-section-title);
@@ -57,7 +57,7 @@
     .collection-page-title {
       padding-top: var(--Ngap);
       padding-bottom: 8px;
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-playfair);
       font-weight: 500;
       line-height: 1.2222222222;
       font-size: var(--home-section-title);
@@ -161,7 +161,7 @@
     padding-bottom: var(--home-section-secondary-title-space);
 
     h3 {
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-playfair);
       font-weight: 500;
       line-height: 1.2222222222;
       font-size: var(--home-section-title);
@@ -180,7 +180,7 @@
 }
 
 h1.title.title--primary {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-playfair);
   font-weight: 500;
   line-height: 1.2222222222;
   font-size: var(--home-section-title);
