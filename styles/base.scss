@@ -1,9 +1,7 @@
 @import "reset";
-
 @import "common/common";
 @import "common/header";
 @import "common/breadcrumbs";
-
 @import "page/home";
 @import "page/collection";
 @import "page/product";
@@ -56,8 +54,6 @@ iframe#dummy-chat-button-iframe {
 .zoomWindowContainer .zoomWindow {
   border: 0px !important;
 }
-
-
 
 button.button.product-form__wishlist.swym-add-to-wishlist.swym-iconbtnlink.swym-heart.swym-loaded {
   display: block !important;
@@ -118,7 +114,6 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-iconbtnlink.swym-
 }
 
 .swym-ui-component .swym-wishlist-grid .swym-wishlist-item .swym-add-to-cart-btn {
-
   color: var(--color-white);
   background-color: var(--color-maroon);
   border-color: var(--color-maroon);
@@ -138,15 +133,12 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-iconbtnlink.swym-
   color: var(--color-white);
 }
 
-
 .test--product-card--grid-four .slick-prev,
 .test--product-card--grid-four .slick-next {
   z-index: 1;
 }
 
-
 .modal.welcomeModal {
-
   position: absolute;
   top: 0;
   left: 0;
@@ -317,7 +309,6 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-iconbtnlink.swym-
   }
 
   &.cookieActive {
-
     // &.is-visible {
     visibility: visible;
     display: block;
@@ -337,17 +328,14 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-iconbtnlink.swym-
     }
 
     // }
-
   }
 }
-
 
 .min-cart-recommendations-card {
   width: 120px;
   display: inline-block;
   vertical-align: text-top;
 }
-
 
 .product-wehelp {
   padding: 20px 25px;
@@ -370,7 +358,6 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-iconbtnlink.swym-
     margin-right: 4px;
   }
 }
-
 
 /* Wishlist icon */
 .product__card-wishlist .swym-added.swym-add-to-wishlist-view-product:after {
@@ -412,7 +399,6 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
   }
 }
 
-
 #swym-component-container {
   .swym-ui-component {
     .swym-wishlist-detail-header {
@@ -446,11 +432,14 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
       }
 
       .swym-wishlist-item {
+        @media(min-width: 768px) {
+          width: 21.9%;
+        }
+
         .swym-title {
           font-weight: 400;
           color: var(--color-black);
           margin: 0;
-
           text-align: left;
           white-space: nowrap;
           overflow: hidden;
@@ -460,7 +449,6 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
           padding-top: 4px;
 
           @media(min-width: 768px) {
-
             padding-top: 8px;
             font-size: 16px;
           }
@@ -476,15 +464,12 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
           font-weight: 400;
           color: #000;
           padding: 0;
-
           line-height: 24px;
           font-size: 13px;
 
           @media(min-width: 768px) {
-
             font-size: 14px;
           }
-
         }
 
         .swym-add-to-cart-btn {
@@ -503,12 +488,12 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
           font-size: 14px;
           display: block;
           line-height: normal;
+          margin-top: 12px;
         }
       }
     }
   }
 }
-
 
 /* temp... css for account page */
 .page-account-navigation {
@@ -528,7 +513,6 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
     padding: 0 10px;
     margin: 10px;
     cursor: pointer;
-
 
     @media(min-width: 768px) {
       padding: 0px 20px;
@@ -562,7 +546,6 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
       background-color: #ddd;
     }
 
-
     @media(min-width: 768px) {
       &:after {
         position: absolute;
@@ -572,7 +555,6 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
         top: 0;
       }
     }
-
 
     &.active {
       &:before {
@@ -590,7 +572,6 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
     }
   }
 }
-
 
 .firstName {
   display: inline-block;
@@ -717,7 +698,6 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
       }
     }
   }
-
 }
 
 .customer-account-detail {
@@ -729,7 +709,6 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
 }
 
 .address-list {
-
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 24px;
@@ -744,5 +723,4 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
     display: block;
     margin-bottom: 4px;
   }
-
 }
