@@ -353,30 +353,33 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-iconbtnlink.swym-
   padding: 20px 25px;
   background: #f5f9fa;
   margin-top: 30px;
+
   h2,
-  h4{
+  h4 {
     font-size: 14px;
     margin-top: 8px;
   }
-  h2{
+
+  h2 {
     font-weight: 600;
     margin-top: 0px;
     margin-bottom: 8px;
   }
-  svg{
+
+  svg {
     margin-right: 4px;
   }
 }
 
 
 /* Wishlist icon */
-.product__card-wishlist .swym-added.swym-add-to-wishlist-view-product:after{
+.product__card-wishlist .swym-added.swym-add-to-wishlist-view-product:after {
   color: var(--color-maroon) !important;
   font-size: 16px;
 }
 
 /* wishlist button ui */
-button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.swym-loaded{
+button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.swym-loaded {
   color: var(--color-black) !important;
   background-color: transparent !important;
   border-color: var(--color-maroon) !important;
@@ -384,10 +387,120 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
 
 /* wishlist button added */
 button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.swym-loaded.swym-added,
-button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.swym-loaded.disabled.swym-added.swym-adding{
+button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.swym-loaded.disabled.swym-added.swym-adding {
   color: var(--color-black) !important;
   background-color: var(--color-secondary) !important;
   border-color: var(--color-secondary) !important;
+}
+
+.swym-ui-component *,
+.swym-ui-component .swym-is-button,
+.swym-ui-component .swym-is-anchor,
+.swym-ui-component .swym-title,
+.swym-ui-component .swym-heading,
+.swym-ui-component .swym-label {
+  font-family: var(--font-montserrat);
+}
+
+.swym-ui-components {
+  .swym-bg-2 {
+    background-color: var(--color-white);
+  }
+
+  .swym-color-6 {
+    color: var(--color-black);
+  }
+}
+
+
+.swym-ui-component {
+  .swym-wishlist-detail-header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .swym-bg-2 {
+    background-color: var(--color-white);
+  }
+
+  .swym-color-6 {
+    color: var(--color-black);
+  }
+
+  .swym-simple-wishlist-modal .swym-modal-content .swym-close-btn .swym-icon::before {
+    color: var(--color-black);
+  }
+
+  .swym-wishlist-detail-header {
+    margin-bottom: 0;
+  }
+
+  .swym-wishlist-grid {
+    max-width: initial;
+    padding-left: 34px;
+    padding-right: 34px;
+
+    .swym-wishlist-item {
+      .swym-title {
+        font-weight: 400;
+        color: var(--color-black);
+        margin: 0;
+
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 14px;
+        line-height: 24px;
+        padding-top: 4px;
+
+        @media(min-width: 768px) {
+
+          padding-top: 8px;
+          font-size: 16px;
+        }
+      }
+
+      .swym-variant-title-spacer {
+        padding: 0;
+        margin: 0;
+      }
+
+      .swym-product-price {
+        margin: 0;
+        font-weight: 400;
+        color: #000;
+        padding: 0;
+
+        line-height: 24px;
+        font-size: 13px;
+
+        @media(min-width: 768px) {
+
+          font-size: 14px;
+        }
+
+      }
+
+      .swym-add-to-cart-btn {
+        color: var(--color-white);
+        background-color: var(--color-maroon);
+        border-color: var(--color-maroon);
+        border-radius: var(--border-radius);
+        transition: background-color .2s, border-color .2s, color .2s !important;
+        color: #fff;
+        padding: 8px 16px;
+        overflow: hidden;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+        border: 1px solid;
+        font-size: 14px;
+        display: block;
+        line-height: normal;
+      }
+    }
+  }
 }
 
 
@@ -456,9 +569,10 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
 
 
     &.active {
-      &:before{
+      &:before {
         background-color: var(--color-maroon);
       }
+
       &:after {
         content: "";
       }
