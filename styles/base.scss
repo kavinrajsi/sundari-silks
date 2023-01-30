@@ -363,12 +363,15 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
 #swym-component-container {
   .swym-ui-component {
     .swym-wishlist-detail-header {
+
+      @media(min-width: 768px) {
       padding-top: 20px;
       padding-bottom: 20px;
+      }
 
       .swym-wishlist-main-title {
         letter-spacing: initial;
-        font-family: var(--font-playfair);
+        font-family: var(--font-playfair) !important;
         color: #000;
         font-weight: normal;
         line-height: normal;
@@ -376,6 +379,13 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
         font-weight: 500;
         line-height: 120%;
         font-size: var(--font-h3);
+        margin: 8px;
+      }
+      .swym-action-container{
+        position: static;
+      }
+      .swym-wishlist-context-menu{
+        position: static;
       }
     }
 
@@ -409,6 +419,7 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
 
       .swym-wishlist-image-wrapper {
         height: auto;
+        max-height: initial;
 
         img {
           border-radius: var(--border-radius);
@@ -417,9 +428,14 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
 
 
       .swym-wishlist-item {
-        margin: 0 8px 8px !important;
-        border: 0px !important;
+        margin: 0 8px 8px;
+        border: 0px;
         width: calc(50% - 16px);
+
+        @media(min-width: 768px) {
+          width: calc(25% - 16px);
+          margin-bottom: 32px;
+        }
 
         .swym-delete-btn .swym-icon::before {
           color: var(--color-white);
@@ -443,8 +459,8 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
           }
 
           &:hover {
-            white-space: nowrap !important;
-            overflow: hidden !important;
+            white-space: nowrap;
+            overflow: hidden;
           }
         }
 
@@ -467,13 +483,16 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
         }
 
         .swym-add-to-cart-btn {
+          padding: 8px;
           color: var(--color-white);
           background-color: var(--color-maroon);
           border-color: var(--color-maroon);
           border-radius: var(--border-radius);
           transition: background-color .2s, border-color .2s, color .2s !important;
           color: #fff;
+          @media(min-width: 768px) {
           padding: 8px 16px;
+          }
           overflow: hidden;
           font-weight: 400;
           text-transform: uppercase;
