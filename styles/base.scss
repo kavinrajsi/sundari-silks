@@ -99,7 +99,6 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-iconbtnlink.swym-
 }
 
 .swym-ui-component .swym-wishlist-grid .swym-wishlist-item {
-  width: 22% !important;
   margin: 0 16px 16px !important;
   border: 0px !important;
 }
@@ -431,9 +430,14 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
         border-radius: var(--border-radius);
       }
 
+
       .swym-wishlist-item {
+        width: 41.8%;
         @media(min-width: 768px) {
-          width: 21.9%;
+          width: 21.8%;
+        }
+        .swym-delete-btn .swym-icon::before{
+          color: var(--color-white);
         }
 
         .swym-title {
