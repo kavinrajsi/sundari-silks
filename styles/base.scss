@@ -391,3 +391,238 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
 }
 
 
+/* temp... css for account page */
+.page-account-navigation {
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media(min-width: 768px) {
+      display: block;
+    }
+  }
+
+  a {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    margin: 10px;
+    cursor: pointer;
+
+
+    @media(min-width: 768px) {
+      padding: 0px 20px;
+      margin: 20px 0;
+    }
+
+    span {
+      display: block;
+    }
+
+    svg {
+      display: none;
+
+      @media(min-width: 768px) {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 2px;
+        transform: rotate(-90deg);
+      }
+    }
+
+    &:before {
+      content: "";
+      width: 100%;
+      height: 1px;
+      bottom: -10px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      background-color: #ddd;
+    }
+
+
+    @media(min-width: 768px) {
+      &:after {
+        position: absolute;
+        left: 0px;
+        border-left: 2px solid var(--color-maroon);
+        height: 100%;
+        top: 0;
+      }
+    }
+
+
+    &.active {
+      &:before{
+        background-color: var(--color-maroon);
+      }
+      &:after {
+        content: "";
+      }
+    }
+
+    &:nth-child(1),
+    &:nth-child(3) {
+      display: none;
+    }
+  }
+}
+
+
+.firstName {
+  display: inline-block;
+  color: var(--color-white);
+  border-radius: 50%;
+  background-color: #a3d8d8;
+  width: 98px;
+  height: 98px;
+  margin-bottom: 20px;
+  position: relative;
+  font-family: var(--font-playfair);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+}
+
+.customer-name,
+.customer-email {
+  font-size: 16px;
+  font-family: var(--font-montserrat);
+}
+
+.page-account {
+  --content-width: 920px;
+  max-width: var(--content-width);
+  margin-top: 60px;
+  margin-bottom: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  gap: 20px;
+
+  @media(min-width: 768px) {
+    grid-template-columns: 180px 1fr;
+    gap: 48px;
+  }
+
+  .account-card {
+    &-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    &-detail {
+      padding-bottom: 12px;
+      margin-bottom: 12px;
+      // border-bottom: 1px solid var(--color-white);
+    }
+
+    &-button {
+      font-weight: 600;
+    }
+  }
+
+  .order-list {
+    background-color: #fff;
+    border-bottom: 1px solid #d5d9d9;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 16%);
+
+    .order-list-header {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      padding: 18px;
+      margin-bottom: 18px;
+      display: flex;
+      background-color: #f0f2f2;
+      border-bottom: 1px solid #d5d9d9;
+
+      .data-title {
+        font-weight: 300;
+      }
+
+      .data-title,
+      .data-value {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .data-value {
+        margin-bottom: 0;
+      }
+
+      &-data {
+        display: flex;
+        text-align: left;
+
+        >div {
+          padding-right: 24px;
+        }
+      }
+    }
+
+    .order-list-data {
+      li {
+        display: flex;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--color-border);
+        }
+
+        .line-item-image {
+          flex: 1 0 100px;
+          max-width: 100px;
+          width: 100px;
+          height: 100px;
+        }
+
+        span:last-child {
+          margin-left: 18px;
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+
+}
+
+.customer-account-detail {
+  padding: 0 14px;
+
+  @media(min-width: 768px) {
+    padding: 0;
+  }
+}
+
+.address-list {
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+
+  address {
+    padding: 20px;
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+  }
+
+  .postaladdress span {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+}
