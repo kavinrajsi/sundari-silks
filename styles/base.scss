@@ -350,6 +350,12 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
   font-family: var(--font-montserrat) !important;
 }
 
+
+// .swym-ui-component .swym-share-wishlist-modal .swym-share-wishlist-modal-dialog .swym-share-wishlist-email-btn{
+
+// }
+
+
 #swym-component-container {
   .swym-ui-component {
 
@@ -412,6 +418,10 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
     .swym-wishlist-detail-header {
       margin-bottom: 0;
       font-family: var(--font-playfair);
+    }
+
+    .swym-share-btn{
+      display: none;
     }
 
     .swym-wishlist-grid {
