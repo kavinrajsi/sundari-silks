@@ -413,91 +413,97 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
 }
 
 
-.swym-ui-component {
-  .swym-wishlist-detail-header {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
+#swym-component-container {
+  .swym-ui-component {
+    .swym-wishlist-detail-header {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
 
-  .swym-bg-2 {
-    background-color: var(--color-white);
-  }
+    .swym-bg-2 {
+      background-color: var(--color-white);
+    }
 
-  .swym-color-6 {
-    color: var(--color-black);
-  }
+    .swym-color-6 {
+      color: var(--color-black);
+    }
 
-  .swym-simple-wishlist-modal .swym-modal-content .swym-close-btn .swym-icon::before {
-    color: var(--color-black);
-  }
+    .swym-simple-wishlist-modal .swym-modal-content .swym-close-btn .swym-icon::before {
+      color: var(--color-black);
+    }
 
-  .swym-wishlist-detail-header {
-    margin-bottom: 0;
-  }
+    .swym-wishlist-detail-header {
+      margin-bottom: 0;
+    }
 
-  .swym-wishlist-grid {
-    max-width: initial;
-    padding-left: 34px;
-    padding-right: 34px;
+    .swym-wishlist-grid {
+      max-width: initial;
+      padding-left: 34px;
+      padding-right: 34px;
 
-    .swym-wishlist-item {
-      .swym-title {
-        font-weight: 400;
-        color: var(--color-black);
-        margin: 0;
-
-        text-align: left;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        font-size: 14px;
-        line-height: 24px;
-        padding-top: 4px;
-
-        @media(min-width: 768px) {
-
-          padding-top: 8px;
-          font-size: 16px;
-        }
-      }
-
-      .swym-variant-title-spacer {
-        padding: 0;
-        margin: 0;
-      }
-
-      .swym-product-price {
-        margin: 0;
-        font-weight: 400;
-        color: #000;
-        padding: 0;
-
-        line-height: 24px;
-        font-size: 13px;
-
-        @media(min-width: 768px) {
-
-          font-size: 14px;
-        }
-
-      }
-
-      .swym-add-to-cart-btn {
-        color: var(--color-white);
-        background-color: var(--color-maroon);
-        border-color: var(--color-maroon);
+      .swym-wishlist-image-wrapper img {
         border-radius: var(--border-radius);
-        transition: background-color .2s, border-color .2s, color .2s !important;
-        color: #fff;
-        padding: 8px 16px;
-        overflow: hidden;
-        font-weight: 400;
-        text-transform: uppercase;
-        text-align: center;
-        border: 1px solid;
-        font-size: 14px;
-        display: block;
-        line-height: normal;
+      }
+
+      .swym-wishlist-item {
+        .swym-title {
+          font-weight: 400;
+          color: var(--color-black);
+          margin: 0;
+
+          text-align: left;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 14px;
+          line-height: 24px;
+          padding-top: 4px;
+
+          @media(min-width: 768px) {
+
+            padding-top: 8px;
+            font-size: 16px;
+          }
+        }
+
+        .swym-variant-title-spacer {
+          padding: 0;
+          margin: 0;
+        }
+
+        .swym-product-price {
+          margin: 0;
+          font-weight: 400;
+          color: #000;
+          padding: 0;
+
+          line-height: 24px;
+          font-size: 13px;
+
+          @media(min-width: 768px) {
+
+            font-size: 14px;
+          }
+
+        }
+
+        .swym-add-to-cart-btn {
+          color: var(--color-white);
+          background-color: var(--color-maroon);
+          border-color: var(--color-maroon);
+          border-radius: var(--border-radius);
+          transition: background-color .2s, border-color .2s, color .2s !important;
+          color: #fff;
+          padding: 8px 16px;
+          overflow: hidden;
+          font-weight: 400;
+          text-transform: uppercase;
+          text-align: center;
+          border: 1px solid;
+          font-size: 14px;
+          display: block;
+          line-height: normal;
+        }
       }
     }
   }
