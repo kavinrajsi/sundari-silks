@@ -398,12 +398,11 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
 
     .swym-wishlist-grid {
       max-width: initial;
-      display: grid;
-      gap: 16px;
-      grid-template-columns: 1fr 1fr;
+      padding: 5vw 0 0;
+      display: flex;
+      padding: 0;
 
       @media(min-width: 768px) {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
         padding-left: 34px;
         padding-right: 34px;
       }
@@ -418,9 +417,9 @@ button.button.product-form__wishlist.swym-add-to-wishlist.swym-text.swym-heart.s
 
 
       .swym-wishlist-item {
-        margin: 0 16px 16px !important;
+        margin: 0 8px 8px !important;
         border: 0px !important;
-        width: auto;
+        width: calc(50% - 16px);
 
         .swym-delete-btn .swym-icon::before {
           color: var(--color-white);
