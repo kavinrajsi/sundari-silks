@@ -3,6 +3,14 @@
     "slideshow": {
       "type": "home-slideshow",
       "blocks": {
+        "b057aa54-244e-4180-aeaf-6a4b090a337a": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sundarisilks-kovai-tharivizha-coimbatore-banner-desktop.png",
+            "mobile_image": "shopify:\/\/shop_images\/sundarisilks-kovai-tharivizha-coimbatore-banner-mobile.png",
+            "link": "#"
+          }
+        },
         "5cd59610-c2b0-470a-8ce5-780b7df44578": {
           "type": "slide",
           "settings": {
@@ -53,6 +61,7 @@
         }
       },
       "block_order": [
+        "b057aa54-244e-4180-aeaf-6a4b090a337a",
         "5cd59610-c2b0-470a-8ce5-780b7df44578",
         "8efe5e97-f302-4f66-ae4c-451513f79459",
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b",
