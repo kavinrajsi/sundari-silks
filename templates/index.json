@@ -29,6 +29,7 @@
         },
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Artboard_4.png",
             "mobile_image": "shopify:\/\/shop_images\/Artboard_4_1.png",
