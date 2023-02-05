@@ -9,7 +9,7 @@
   </div>
   <div class="image-container">
     <div class="large-image-products">
-      <img src="{{ section.settings.largeImage | image_url: width: 1380, height: 480, format: 'pjpg' }}" alt="">
+      <img src="{{ section.settings.largeImage | image_url: width: 1380, height: 480  }}" alt="">
       {%- for block in section.blocks -%}
       <a href="{{ block.settings.productURL }}">
         <div class="dot {% if forloop.first%}active{% endif %}" data-handle="{{block.settings.block_product}}"
@@ -18,7 +18,7 @@
       {% endfor %}
     </div>
     <div class="small-image-products">
-      <img src="{{ section.settings.smallImage | img_url: '1000x', format: 'pjpg' }}" alt="">
+      <img src="{{ section.settings.smallImage | img_url: '1000x'  }}" alt="">
       {%- for block in section.blocks -%}
       <a href="{{ block.settings.productURL }}">
         <div class="dot {% if forloop.first%}active{% endif %}" data-handle="{{block.settings.block_product}}"

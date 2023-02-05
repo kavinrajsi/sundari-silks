@@ -5,7 +5,7 @@
   <a href="{{ product.url | within: collection }}">
   <p>{{ product.title }}</p>
 
-  {{ product.featured_image | image_url: width: 404, height: 404, format: 'pjpg', crop: 'center' | image_tag: alt:product.featured_image.alt}}
+  {{ product.featured_image | image_url: width: 404, height: 404 , crop: 'center' | image_tag: alt:product.featured_image.alt}}
   </a>
 {% endfor %}
 </div>
@@ -14,7 +14,7 @@
 {% for product in collections.boys.products limit:8 %}
   <a href="{{ product.url | within: collection }}">
   <p>{{ product.title }}</p>
-  {{ product.featured_image | image_url: width: 404, height: 404, format: 'pjpg', crop: 'center' | image_tag: alt:product.featured_image.alt}}
+  {{ product.featured_image | image_url: width: 404, height: 404 , crop: 'center' | image_tag: alt:product.featured_image.alt}}
   </a>
 {% endfor %}
 </div>
@@ -24,7 +24,7 @@
     <a href="{{ article.url }}">
 
   <p>{{ article.title }}</p>
-      {{ article.image | image_url: width: 404, height: 404, format: 'pjpg', crop: 'center' | image_tag: alt:article.image.alt}}
+      {{ article.image | image_url: width: 404, height: 404 , crop: 'center' | image_tag: alt:article.image.alt}}
     </a>
   </a>
 {% endfor %}

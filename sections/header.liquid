@@ -111,7 +111,7 @@
                   {% if child_link.title == block.settings.mega_link %}
                   {% if block.settings.image.src != blank %}
                   <img class="menu-level-2-item-titleImage" loading="lazy"
-                    src="{{ block.settings.image.src | image_url:  width: 500, height: 500, format: 'pjpg' }}"
+                    src="{{ block.settings.image.src | image_url:  width: 500, height: 500  }}"
                     alt="{{ block.settings.image.alt }}">
                   {% endif %}
                   {% endif %}

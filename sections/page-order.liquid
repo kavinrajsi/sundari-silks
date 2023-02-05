@@ -130,7 +130,7 @@
               {% endif %}
               {% if line_item.image != blank %}
               <span>
-                {{ line_item.image | image_url: width: 100, height: 100, format: 'pjpg' | image_tag : alt:
+                {{ line_item.image | image_url: width: 100, height: 100  | image_tag : alt:
                 line_item.image.alt }}
               </span>
               {% else %}

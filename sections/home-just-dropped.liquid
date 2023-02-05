@@ -33,8 +33,8 @@
                   {% if product.featured_image != blank %}
                   <!-- [200,400,600,700,800,900,1000,1200] -->
                   <img loading="lazy" id="Image-{{ image.id }}" class="blur-up responsive-image__image lazyload"
-                    src="{{ product.featured_image | image_url: width: '300x', format: 'pjpg' }}"
-                    data-src="{{ product.featured_image | image_url: width: '300x', format: 'pjpg' }}"
+                    src="{{ product.featured_image | image_url: width: '300x'  }}"
+                    data-src="{{ product.featured_image | image_url: width: '300x'  }}"
                     data-aspectratio="{{ product.featured_image.aspect_ratio }}"
                     data-widths="[540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]" data-sizes="auto"
                     data-parent-fit="cover" alt="

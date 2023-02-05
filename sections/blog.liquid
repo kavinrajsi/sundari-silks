@@ -5,11 +5,11 @@
     <div class="blog-card">
       <a href="{{ article.url }}" class="blog-card-url">
         {% if article.image %}
-        {{ article.image | image_url: width: 404, height: 296, format: 'pjpg' | image_tag: alt:article.image.alt,
+        {{ article.image | image_url: width: 404, height: 296  | image_tag: alt:article.image.alt,
         class:'blog-card-image' }}
         <noscript>
           <p>
-            {{ article.image | image_url: width: 404, height: 296, format: 'pjpg' | image_tag: article.title }}
+            {{ article.image | image_url: width: 404, height: 296  | image_tag: article.title }}
           </p>
         </noscript>
         {% endif %}

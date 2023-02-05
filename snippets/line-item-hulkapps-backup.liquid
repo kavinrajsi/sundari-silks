@@ -7,7 +7,7 @@
       <img
         id="{{ line_item.id }}"
         class="article__grid-image lazyload"
-        src="{{ line_item.image | image_url: width: 120, height: 148, format: 'pjpg' }}"
+        src="{{ line_item.image | image_url: width: 120, height: 148  }}"
         data-src="{{ img_url }}"
         data-aspectratio="{{ line_item.image.aspect_ratio }}"
         data-sizes="auto"
