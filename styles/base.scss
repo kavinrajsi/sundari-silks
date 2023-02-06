@@ -24,7 +24,7 @@
 
 #shopify-chat iframe,
 iframe#dummy-chat-button-iframe {
-  bottom: 70px !important;
+  bottom: 0px !important;
   @include z-index(chat_icon);
 
   &[isopen="true"] {
