@@ -214,29 +214,21 @@
     .click(function (e) {
       e.preventDefault();
       let dataItem = $(".jselecteValue").val();
-      // let formData = {
-      //   items: [
-      //     {
-      //       id: dataItem,
-      //       quantity: 1,
-      //     },
-      //   ],
-      // };
+      let formData = {
+        items: [
+          {
+            id: dataItem,
+            quantity: 1,
+          },
+        ],
+      };
 
-      let addToCartForm = document.querySelector('form[action$="/cart/add"]');
-let formData = new FormData(addToCartForm);
-
-
-      // fetch(window.Shopify.routes.root + "cart/add.js", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(formData),
-      // })
-      fetch(window.Shopify.routes.root + 'cart/add.js', {
-        method: 'POST',
-        body: formData
+      fetch(window.Shopify.routes.root + "cart/add.js", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       })
         .then((response) => {
           $(".product-form__submit").hide();
