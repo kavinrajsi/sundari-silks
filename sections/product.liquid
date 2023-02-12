@@ -162,6 +162,8 @@
           </fieldset>
         {%- endfor -%}
       {%- endunless -%}
+
+{% if customer and customer.tags contains 'admin' %}
       <!-- blouse stitching area -->
       <section class="blouseStitching-area">
         {% assign with_blouse = true %}
@@ -209,6 +211,7 @@
 
         <p id="measurement-data" class="line-item-property__field hide"></p>
       </section>
+    {% endif %}
       <!-- blouse stitching area -->
       <div class="mb-3" hidden>
         <select name="id" id="productSelect" class="form-control">
