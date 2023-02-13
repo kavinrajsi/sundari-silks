@@ -333,14 +333,14 @@
         "settings": {
         }
       },
-      "13768625480086291342": {
-        "type": "shopify:\/\/apps\/forms\/blocks\/forms\/8744a304-fcb1-4347-b211-bb6b4759a76a",
-        "disabled": false,
+      "10042746950867549768": {
+        "type": "shopify:\/\/apps\/hulk-product-options\/blocks\/app-embed\/380168ef-9475-4244-a291-f66b189208b5",
+        "disabled": true,
         "settings": {
         }
       },
-      "10042746950867549768": {
-        "type": "shopify:\/\/apps\/hulk-product-options\/blocks\/app-embed\/380168ef-9475-4244-a291-f66b189208b5",
+      "13768625480086291342": {
+        "type": "shopify:\/\/apps\/forms\/blocks\/forms\/8744a304-fcb1-4347-b211-bb6b4759a76a",
         "disabled": true,
         "settings": {
         }
