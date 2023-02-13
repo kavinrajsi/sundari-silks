@@ -213,22 +213,34 @@
     .unbind()
     .click(function (e) {
       e.preventDefault();
-      let dataItem = $(".jselecteValue").val();
-      let formData = {
-        items: [
-          {
-            id: dataItem,
-            quantity: 1,
-          },
-        ],
-      };
+      // let dataItem = $(".jselecteValue").val();
 
-      fetch(window.Shopify.routes.root + "cart/add.js", {
+      // let formData = {
+      //   items: [
+      //     {
+      //       id: dataItem,
+      //       quantity: 1,
+      //     },
+      //   ],
+      // };
+
+      // fetch(window.Shopify.routes.root + "cart/add.js", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(formData),
+      // })
+
+
+      let addToCartform = jQuery.post(window.Shopify.routes.root + 'cart/add.js', $('form[action$="/cart/add"]').serialize());
+      console.log('addToCartform:: ' + JSON.stringify(addToCartform));
+
+      let addToCartForm = document.querySelector('form[action$="/cart/add"]');
+      let formData = new FormData(addToCartForm);
+      console.log(formData);  fetch(window.Shopify.routes.root + "cart/add.js", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+        body: formData,
       })
         .then((response) => {
           $(".product-form__submit").hide();

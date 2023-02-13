@@ -913,3 +913,9 @@
 .account-addresss-lists{
   display: grid; gap: 20px; grid-template-columns: 1fr;
 }
+
+
+
+.hulkapps_option .hulkapps_option_value label.hulkapps_check_option input[type="checkbox"]:checked ~ .hulkapps-custom-check{
+  display: none;
+}

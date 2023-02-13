@@ -69,10 +69,11 @@ var drawer = function () {
         .then((resp) => resp.json())
         .then((data) => {
           let daad = "";
-          console.log(data);
+          console.log('popup: ' + data.items[0]);
           if (data.items.length > 0) {
             $('.cart-item-no').attr('hidden', true);
             data.items.forEach(function (product, index) {
+              console.log(data.items);
               daad +=
                 '<div class="cart__item cartpopup-item"><div class="card__item-image"><img src="' +
                 product.featured_image.url +
