@@ -124,39 +124,6 @@
               "subtitle": "Explore"
             }
           },
-          "012b8059-1c4e-413f-9c85-824914bb2502": {
-            "type": "logo_image",
-            "disabled": true,
-            "settings": {
-              "menu_enable": true,
-              "mega_link": "Anklets \/ Toe Rings",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Anklets \/ Toe Rings",
-              "subtitle": ""
-            }
-          },
-          "0dc284ce-400a-4c70-b4be-980ee12441ac": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/menu-image-girls.jpg",
-              "mega_link": "Girls",
-              "link": "shopify:\/\/collections\/girls",
-              "title": "Girls",
-              "subtitle": ""
-            }
-          },
-          "a825885a-b299-42ea-a5c5-84ba6100ea8c": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/menu-image-boys.jpg",
-              "mega_link": "Boys",
-              "link": "shopify:\/\/collections\/boys",
-              "title": "Boys",
-              "subtitle": ""
-            }
-          },
           "9ec61fc7-ed2a-4490-8411-bf33c7d3eb56": {
             "type": "logo_image",
             "disabled": true,
@@ -167,6 +134,61 @@
               "link": "shopify:\/\/collections\/wedding-saree-collection",
               "title": "Wedding Edit",
               "subtitle": "Explore"
+            }
+          },
+          "ff5db7c6-de70-4624-b1a1-620865565274": {
+            "type": "logo_image",
+            "disabled": true,
+            "settings": {
+              "menu_enable": true,
+              "mega_link": "Necklaces",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Necklaces",
+              "subtitle": ""
+            }
+          },
+          "7a42f5b4-6dd8-44e4-aaf9-a4cca16d3985": {
+            "type": "logo_image",
+            "disabled": true,
+            "settings": {
+              "menu_enable": true,
+              "mega_link": "Earrings",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Earrings",
+              "subtitle": ""
+            }
+          },
+          "983fbcfb-efd2-4b72-8014-670919f1d5b1": {
+            "type": "logo_image",
+            "disabled": true,
+            "settings": {
+              "menu_enable": true,
+              "mega_link": "Bangles \/ Bracelets",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Bangles \/ Bracelets",
+              "subtitle": ""
+            }
+          },
+          "45a49917-2d4a-4818-a6c7-05e15d8d7934": {
+            "type": "logo_image",
+            "disabled": true,
+            "settings": {
+              "menu_enable": true,
+              "mega_link": "Rings",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Rings",
+              "subtitle": ""
+            }
+          },
+          "012b8059-1c4e-413f-9c85-824914bb2502": {
+            "type": "logo_image",
+            "disabled": true,
+            "settings": {
+              "menu_enable": true,
+              "mega_link": "Anklets \/ Toe Rings",
+              "link": "shopify:\/\/collections\/arthirshtam",
+              "title": "Anklets \/ Toe Rings",
+              "subtitle": ""
             }
           },
           "6757033e-547a-49db-b111-6aec43c0ef51": {
@@ -180,14 +202,14 @@
               "subtitle": ""
             }
           },
-          "983fbcfb-efd2-4b72-8014-670919f1d5b1": {
+          "a737801a-d041-4ea1-a346-7ffdfb9cee58": {
             "type": "logo_image",
             "disabled": true,
             "settings": {
               "menu_enable": true,
-              "mega_link": "Bangles \/ Bracelets",
+              "mega_link": "Pendants",
               "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Bangles \/ Bracelets",
+              "title": "Pendants",
               "subtitle": ""
             }
           },
@@ -213,17 +235,6 @@
               "subtitle": ""
             }
           },
-          "7a42f5b4-6dd8-44e4-aaf9-a4cca16d3985": {
-            "type": "logo_image",
-            "disabled": true,
-            "settings": {
-              "menu_enable": true,
-              "mega_link": "Earrings",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Earrings",
-              "subtitle": ""
-            }
-          },
           "3401dc99-bfe7-473f-8619-ab753f5e667a": {
             "type": "logo_image",
             "settings": {
@@ -235,14 +246,36 @@
               "subtitle": ""
             }
           },
-          "ff5db7c6-de70-4624-b1a1-620865565274": {
+          "218b71c4-c7cb-4558-a8a9-d843f6d9f329": {
             "type": "logo_image",
-            "disabled": true,
             "settings": {
               "menu_enable": true,
-              "mega_link": "Necklaces",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Necklaces",
+              "image": "shopify:\/\/shop_images\/menu-image-fabric.jpg",
+              "mega_link": "Fabrics",
+              "link": "shopify:\/\/collections\/unstitched-materials",
+              "title": "Fabrics",
+              "subtitle": ""
+            }
+          },
+          "0dc284ce-400a-4c70-b4be-980ee12441ac": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-girls.jpg",
+              "mega_link": "Girls",
+              "link": "shopify:\/\/collections\/girls",
+              "title": "Girls",
+              "subtitle": ""
+            }
+          },
+          "a825885a-b299-42ea-a5c5-84ba6100ea8c": {
+            "type": "logo_image",
+            "settings": {
+              "menu_enable": true,
+              "image": "shopify:\/\/shop_images\/menu-image-boys.jpg",
+              "mega_link": "Boys",
+              "link": "shopify:\/\/collections\/boys",
+              "title": "Boys",
               "subtitle": ""
             }
           },
@@ -254,39 +287,6 @@
               "mega_link": "Infant Wear",
               "link": "shopify:\/\/collections\/infant-wear",
               "title": "Infant Wears",
-              "subtitle": ""
-            }
-          },
-          "45a49917-2d4a-4818-a6c7-05e15d8d7934": {
-            "type": "logo_image",
-            "disabled": true,
-            "settings": {
-              "menu_enable": true,
-              "mega_link": "Rings",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Rings",
-              "subtitle": ""
-            }
-          },
-          "a737801a-d041-4ea1-a346-7ffdfb9cee58": {
-            "type": "logo_image",
-            "disabled": true,
-            "settings": {
-              "menu_enable": true,
-              "mega_link": "Pendants",
-              "link": "shopify:\/\/collections\/arthirshtam",
-              "title": "Pendants",
-              "subtitle": ""
-            }
-          },
-          "218b71c4-c7cb-4558-a8a9-d843f6d9f329": {
-            "type": "logo_image",
-            "settings": {
-              "menu_enable": true,
-              "image": "shopify:\/\/shop_images\/menu-image-fabric.jpg",
-              "mega_link": "Fabrics",
-              "link": "shopify:\/\/collections\/unstitched-materials",
-              "title": "Fabrics",
               "subtitle": ""
             }
           }
@@ -333,15 +333,15 @@
         "settings": {
         }
       },
-      "10042746950867549768": {
-        "type": "shopify:\/\/apps\/hulk-product-options\/blocks\/app-embed\/380168ef-9475-4244-a291-f66b189208b5",
+      "13768625480086291342": {
+        "type": "shopify:\/\/apps\/forms\/blocks\/forms\/8744a304-fcb1-4347-b211-bb6b4759a76a",
         "disabled": true,
         "settings": {
         }
       },
-      "13768625480086291342": {
-        "type": "shopify:\/\/apps\/forms\/blocks\/forms\/8744a304-fcb1-4347-b211-bb6b4759a76a",
-        "disabled": true,
+      "10042746950867549768": {
+        "type": "shopify:\/\/apps\/hulk-product-options\/blocks\/app-embed\/380168ef-9475-4244-a291-f66b189208b5",
+        "disabled": false,
         "settings": {
         }
       }
