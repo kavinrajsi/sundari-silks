@@ -1,9 +1,9 @@
-<div data-hulkapps-lineitem class="line-item">
+<div class="line-item">
   <div hidden>
     {{ line_item | json }}
   </div>
   <div class="lin-item__image-wrapper">
-    <a href="{{line_item.url  | within: collections.all }}" target="_blank">
+    <a href="{{line_item.url }}" target="_blank">
       <img
         id="{{ line_item.id }}"
         class="article__grid-image lazyload"
@@ -18,7 +18,7 @@
   <div class="line-item__details-wrapper">
     <div class="line-item__details">
       <h2 class="line-item__title">
-        <a href="{{line_item.url  | within: collections.all }}" target="_blank">
+        <a href="{{line_item.url }}" target="_blank">
         {{ line_item.product.title }}
         </a>
       </h2>
@@ -43,7 +43,7 @@
       {% endfor %}
     </div>
     <div class="line-item__right">
-      <div data-hulkapps-ci-price data-key="{{line_item.key}}" class="line-item__price">
+      <div data-key="{{line_item.key}}" class="line-item__price">
         {% comment %} {{ line_item.price | money }} <br> {% endcomment %}
         {% comment %} Compare Price:{{ line_item.variant.compare_at_price | money }} <br> {% endcomment %}
         {% comment %} Price : {{ line_item.variant.price | money }} <br> {% endcomment %}
