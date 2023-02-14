@@ -16,8 +16,99 @@
           <li>Products</li>
           <li>Total</li>
         </ul>
-        {% for line_item in cart.items %}
-        {% render 'line-item', line_item: line_item, index: forloop.index %}
+        {% for item in cart.items %}
+          <div  data-hulkapps-lineitem class="line-item">
+            <div hidden>
+              {{ item | json }}
+            </div>
+            <div class="lin-item__image-wrapper">
+              <a href="{{item.url }}" target="_blank">
+                <img
+                  id="{{ item.id }}"
+                  class="article__grid-image lazyload"
+                  src="{{ item.image | image_url: width: 120, height: 148  }}"
+                  data-src="{{ img_url }}"
+                  data-aspectratio="{{ item.image.aspect_ratio }}"
+                  data-sizes="auto"
+                  alt="{{ item.image.alt | escape }}"
+                >
+              </a>
+            </div>
+            <div class="line-item__details-wrapper">
+              <div class="line-item__details">
+                <h2 class="line-item__title">
+                  <a href="{{item.url }}" target="_blank">
+                  {{ item.product.title }}
+                  </a>
+                </h2>
+                <div>
+                  {% comment %} pro - {{ item.properties | json }} {% endcomment %}
+                  {% comment %} <hr> {% endcomment %}
+                 {% comment %} value - {{ item.options_with_values | json }} {% endcomment %}
+                  {% comment %} <hr> {% endcomment %}
+                  {% comment %} {% for blouseOption in item.options_with_values %}
+                    {{ blouseOption.last }}
+                  {% endfor %} {% endcomment %}
+                </div>
+                {% comment %} {% for option in item.properties %}
+                  {{ option | json }}
+                {% endfor %} {% endcomment %}
+                {% for option in item.options_with_values %}
+                  {% if option.name != 'Title' %}
+                    <div class="line-item__option-block">
+                      <div class="line-item__option">{{ option.name }} :</div>
+                      <div class="line-item__value">{{ option.value }}</div>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+          <span data-hulkapps-line-properties>
+            {%- for property in item.properties -%}
+              {%- assign property_first_char = property.first | slice: 0 -%}
+              {%- if property.last != blank and property_first_char != '_' -%}
+                <div class="product-option">
+                  <dt>{{ property.first }}: </dt>
+                  <dd>
+                    {%- if property.last contains '/uploads/' -%}
+                      <a href="{{ property.last }}" class="link" target="_blank" aria-describedby="a11y-new-window-message">
+                        {{ property.last | split: '/' | last }}
+                      </a>
+                    {%- else -%}
+                      {{ property.last }}
+                    {%- endif -%}
+                  </dd>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </span>
+              </div>
+              <div class="line-item__right">
+                <div class="line-item__price">
+                  {% comment %} {{ item.price | money }} <br> {% endcomment %}
+                  {% comment %} Compare Price:{{ item.variant.compare_at_price | money }} <br> {% endcomment %}
+                  {% comment %} Price : {{ item.variant.price | money }} <br> {% endcomment %}
+                  {% assign savings = 0 %}
+                  {% if item.variant.compare_at_price > item.variant.price %}
+                    <span   data-hulkapps-line-price data-key='{{item.key}}'"  >
+                      <s>{{ item.variant.compare_at_price | money_with_currency }}</s>
+                    </span><br>
+                    <span  data-hulkapps-line-price data-key='{{item.key}}'>{{ item.variant.price | money_with_currency }}</span>
+                    {% assign difference = item.variant.compare_at_price | minus: item.variant.price %}
+                    {% assign diffSaving = difference | times: item.quantity %}
+                    {% assign savings = savings | plus: diffSaving %}
+                    {% comment %} YOU SAVE {{ diffSaving | money }} {% endcomment %}
+                  {% else %}
+                    <span   data-hulkapps-line-price data-key='{{item.key}}'  >{{ item.variant.price | money_with_currency }}</span>
+                  {% endif %}
+                </div>
+                <a aria-label="Remove {{ item.variant.title }}" href="/cart/change?line={{index}}&amp;quantity=0">
+                  <svg>
+                    <use href="#trash-mini" />
+                  </svg>
+                  Remove
+                </a>
+              </div>
+            </div>
+          </div>
         {% endfor %}
       </div>
       <div class="cart__details card__block">

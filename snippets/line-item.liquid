@@ -23,15 +23,18 @@
         </a>
       </h2>
 
-      <div hidden>
-        {{ line_item.properties | json }}
-        <hr>
-        {{ line_item.options_with_values | json }}
-        <hr>
-        {% for blouseOption in line_item.options_with_values %}
+      <div>
+        {% comment %} pro - {{ line_item.properties | json }} {% endcomment %}
+        {% comment %} <hr> {% endcomment %}
+       {% comment %} value - {{ line_item.options_with_values | json }} {% endcomment %}
+        {% comment %} <hr> {% endcomment %}
+        {% comment %} {% for blouseOption in line_item.options_with_values %}
           {{ blouseOption.last }}
-        {% endfor %}
+        {% endfor %} {% endcomment %}
       </div>
+      {% comment %} {% for option in line_item.properties %}
+        {{ option | json }}
+      {% endfor %} {% endcomment %}
 
       {% for option in line_item.options_with_values %}
         {% if option.name != 'Title' %}
@@ -41,24 +44,46 @@
           </div>
         {% endif %}
       {% endfor %}
+
+
+<span data-hulkapps-line-properties>
+  {%- for property in line_item.properties -%}
+    {%- assign property_first_char = property.first | slice: 0 -%}
+    {%- if property.last != blank and property_first_char != '_' -%}
+      <div class="product-option">
+        <dt>{{ property.first }}: </dt>
+        <dd>
+          {%- if property.last contains '/uploads/' -%}
+            <a href="{{ property.last }}" class="link" target="_blank" aria-describedby="a11y-new-window-message">
+              {{ property.last | split: '/' | last }}
+            </a>
+          {%- else -%}
+            {{ property.last }}
+          {%- endif -%}
+        </dd>
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+</span>
+
     </div>
     <div class="line-item__right">
-      <div data-key="{{line_item.key}}" class="line-item__price">
+      <div class="line-item__price">
         {% comment %} {{ line_item.price | money }} <br> {% endcomment %}
         {% comment %} Compare Price:{{ line_item.variant.compare_at_price | money }} <br> {% endcomment %}
         {% comment %} Price : {{ line_item.variant.price | money }} <br> {% endcomment %}
         {% assign savings = 0 %}
         {% if line_item.variant.compare_at_price > line_item.variant.price %}
-          <span>
+          <span   data-hulkapps-line-price data-key='{{item.key}}'"  >
             <s>{{ line_item.variant.compare_at_price | money_with_currency }}</s>
           </span><br>
-          <span>{{ line_item.variant.price | money_with_currency }}</span>
+          <span  data-hulkapps-line-price data-key='{{item.key}}'>{{ line_item.variant.price | money_with_currency }}</span>
           {% assign difference = line_item.variant.compare_at_price | minus: line_item.variant.price %}
           {% assign diffSaving = difference | times: line_item.quantity %}
           {% assign savings = savings | plus: diffSaving %}
           {% comment %} YOU SAVE {{ diffSaving | money }} {% endcomment %}
         {% else %}
-          <span>{{ line_item.variant.price | money_with_currency }}</span>
+          <span   data-hulkapps-line-price data-key='{{item.key}}'  >{{ line_item.variant.price | money_with_currency }}</span>
         {% endif %}
       </div>
       <a aria-label="Remove {{ line_item.variant.title }}" href="/cart/change?line={{index}}&amp;quantity=0">
