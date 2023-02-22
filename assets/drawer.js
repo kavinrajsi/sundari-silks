@@ -65,43 +65,12 @@ var drawer = function () {
     if (open) {
       openDrawer(open);
 
-      fetch("/cart.js")
-        .then((resp) => resp.json())
-        .then((data) => {
-          let daad = "";
-          console.log('popup: ' + data.items[0]);
-          if (data.items.length > 0) {
-            $('.cart-item-no').attr('hidden', true);
-            data.items.forEach(function (product, index) {
-              console.log(data.items);
-              daad +=
-                '<div class="cart__item cartpopup-item"><div class="card__item-image"><img src="' +
-                product.featured_image.url +
-                '" alt="' +
-                product.featured_image.alt +
-                '"></div><div class="card__item-content"><h5>' +
-                product.title +
-                '</h5><p class="productPrice">' +
-                product.quantity +
-                " x " +
-                '<span class="money"  data-currency-inr="' +
-                data.currency +
-                "." +
-                Shopify.formatMoney(product.price) +
-                '">' +
-                Shopify.formatMoney(product.price) +
-                '</span></p><p class="delete"><a class="remove removeCta" data-variant="'+product.variant_id+'" href="/cart/change?line=' +
-                index +
-                1 +
-                '&amp;quantity=1"><svg width="16" height="16"> <use href="#trash-mini" /> </svg> Remove</a></p></div></div>';
-            });
-            document.getElementById("cart__drawer_items").innerHTML = daad;
-          }
-
-          document.getElementById('cart__total_price').innerHTML = '<p><span class="money" data-currency-inr="'+data.currency+'.'+Shopify.formatMoney(data.original_total_price)+'">'+ data.currency +'. '+ Shopify.formatMoney(data.original_total_price) + '</span></p>';
-
-          console.log('popup: ' + JSON.stringify(data));
-        });
+          // $('#cart__drawer').load('.cart-popup');
+      // fetch("/cart.js")
+      //   .then((resp) => resp.json())
+      //   .then((data) => {
+      //     console.log('popup: ' + JSON.stringify(data));
+      //   });
     }
     if (close) {
       closeDrawer(close);

@@ -51,7 +51,7 @@
 {%- endif -%}
 {%- when 'password' -%}
 {%- assign og_title = shop.name -%}
-{%- assign og_url = shop.url -%}
+{%- assign og_url = shop.secure_url -%}
 {%- assign og_description = shop.description | default: shop.name -%}
 {%- endcase -%}
 <meta property="og:site_name" content="{{ shop.name }}">

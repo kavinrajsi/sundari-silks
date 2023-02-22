@@ -73,7 +73,7 @@
                         {{ property.last | split: '/' | last }}
                       </a>
                     {%- else -%}
-                      {{ property.last }}
+                    &nbsp; {{ property.last | remove: "yes" | remove: "[" | remove: "]" }}
                     {%- endif -%}
                   </dd>
                 </div>
@@ -127,7 +127,7 @@
             <button class="page-cart-atbutton" type="submit" name="checkout">
             PROCEED TO CHECKOUT
           </button>
-            <a class="page-card-atllink" href="{{shop.url}}">Continue Shopping</a>
+            <a class="page-card-atllink" href="{{shop.secure_url}}">Continue Shopping</a>
           </div>
         </div>
       </div>

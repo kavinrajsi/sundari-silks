@@ -58,7 +58,7 @@
               {{ property.last | split: '/' | last }}
             </a>
           {%- else -%}
-            {{ property.last }}
+          &nbsp; {{ property.last | remove: "yes" | remove: "[" | remove: "]" }}
           {%- endif -%}
         </dd>
       </div>
