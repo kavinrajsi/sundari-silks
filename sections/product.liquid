@@ -34,11 +34,12 @@
           data-image="{{ product_image | image_url }}"
           data-zoom-image="{{ product_image  |  image_url: width:"1256",  height: "1886" }}"
         >
-          <img id="img_{{forloop.index}}" src=" {{ product_image | image_url: width:"320 ", height: "480 " }}">
+          <img alt="{{ product.title }}" id="img_{{forloop.index}}" src=" {{ product_image | image_url: width:"320 ", height: "480 " }}">
         </a>
       {% endfor %}
     </div>
     <img
+      alt="{{ product.title }}"
       src="{{ product_image | image_url: width:"640", height: "960" }}"
       data-zoom-image="{{ product_image | image_url: width:"1256",  height: "1886" }}"
       class="test-gallery"
