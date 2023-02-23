@@ -28,12 +28,15 @@
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="dns-prefetch" href="https://cdn.shopify.com">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.net">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preload" as="font" href="{{ header_font | font_url }}" type="font/woff2" crossorigin>
     <link rel="preload" as="font" href="{{ body_font | font_url }}" type="font/woff2" crossorigin>
     <link rel="preload" as="font" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="font/woff2" crossorigin>
     <link rel="preload" href="{{'base.css' | asset_url}}" as="style">
 
     {{ 'image-lazy.js' | asset_url | preload_tag: as: 'script' }}
@@ -50,6 +53,7 @@
     {{ 'photoswipe-control.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'blouse-data.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'global.js' | asset_url | preload_tag: as: 'script' }}
+    {{ 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js' | asset_url | preload_tag: as: 'script' }}
 
     {{ content_for_header }}
     {% if product -%}
