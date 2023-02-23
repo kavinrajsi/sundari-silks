@@ -341,7 +341,7 @@
     $(this).toggleClass("faqActive");
   });
 
-  $(".footer-main h6").click(function () {
+  $(".footer-main p").click(function () {
     $(this).next("ul").toggleClass("footerActive");
   });
 

@@ -46,7 +46,7 @@
           </svg>
         </div>
         <div class="header-wishlist">
-          <a  aria-label="" href="#swym-wishlist" class="swym-wishlist">
+          <a  aria-label="wishlist" href="#swym-wishlist" class="swym-wishlist">
           <svg width="24" height="24">
             <use href="#heart" />
           </svg>
@@ -69,11 +69,11 @@
         <div class="header-account">
           {% if shop.customer_accounts_enabled %}
             {% if customer %}
-              <a  aria-label=""  href="/account" class="header__icon header__icon--account icon-customer-name{% if section.settings.menu != blank %} small-hide{% endif %}">
+              <a  aria-label="Account"  href="/account" class="header__icon header__icon--account icon-customer-name{% if section.settings.menu != blank %} small-hide{% endif %}">
                 {{customer.first_name | slice: 0 }}
                 </a>
               {% else %}
-              <a  aria-label=""  href="{{ routes.account_login_url }}"
+              <a  aria-label="Account"  href="{{ routes.account_login_url }}"
                 class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
                 <svg width="24" height="24">
                   <use href="#user" />
