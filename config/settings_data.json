@@ -114,13 +114,12 @@
         "blocks": {
           "c37446b7-4fce-4474-9e26-e3348834815e": {
             "type": "logo_image",
-            "disabled": true,
             "settings": {
               "menu_enable": true,
               "image": "shopify:\/\/shop_images\/menu-image-kanchipuram_30c234a7-66f8-48d5-91a6-821dd5a71f1c.png",
-              "mega_link": "All Kanchipuram",
+              "mega_link": "All Kanchipurams",
               "link": "shopify:\/\/collections\/kanchipuram-silks",
-              "title": "All Kanchipurams",
+              "title": "All Kanchipuram",
               "subtitle": "Explore"
             }
           },
