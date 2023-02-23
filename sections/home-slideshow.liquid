@@ -3,12 +3,17 @@
     data-slick='{"autoplay": true, "cssEase": "linear", "slidesToShow": 1, "slidesToScroll": 1, "autoplaySpeed": 3000, "fade": true, "arrows": false, "dots": true, "adaptiveHeight": true }'>
     {% for block in section.blocks %}
     {% if block.settings.image %}
-    <div class="item">
+    <div class="item" dataSliderItem="{{ forloop.index }}">
       <a href="{{block.settings.link}}?filter.v.availability=1">
+        {% if forloop.index == 1 %}
         {{ block.settings.image | image_url : width: 2560, height: 800 | image_tag : alt: block.settings.image.alt,
         class: 'desktopBanner', loading: "auto" }}
-        <img loading="auto" src="//cdn.shopify.com/s/files/1/0490/1158/9282/{{ block.settings.mobile_image.src }}"
-          alt="{{ block.settings.mobile_image.alt }}" class="mobileBanner">
+        {% else %}
+        {{ block.settings.image | image_url : width: 2560, height: 800 | image_tag : alt: block.settings.image.alt,
+          class: 'desktopBanner', loading: "lazy" }}
+        {% endif %}
+        <img {% if forloop.index == 1 %} loading="auto" {% else %} loading="lazy" {%endif%} src="//cdn.shopify.com/s/files/1/0490/1158/9282/{{ block.settings.mobile_image.src }}"
+          alt="{{ block.settings.mobile_image.alt }}" class="mobileBanner" >
       </a>
     </div>
     {% endif %}
