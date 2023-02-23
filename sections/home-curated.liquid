@@ -11,8 +11,7 @@
     <div class="collection-item">
       <a class="collection-item-link" href="{{ block.settings.link }}?filter.v.availability=1">
         {{ block.settings.image | image_url : width: 360, height: 608, crop: "top" | image_tag : alt:
-        block.settings.image.alt,
-        loading: 'lazy', class: "collection-item-image" }}
+          block.settings.heading, loading: 'lazy', class: "collection-item-image" }}
         <div class="collection-item-name" style="background: {{block.settings.background}};">
           <div class="collection-item-title"> {{block.settings.heading}} </div>
         </div>
@@ -33,8 +32,7 @@
     <div class="collection-item">
       <a class="collection-item-link" href="{{ block.settings.link }}?filter.v.availability=1">
         {{ block.settings.image | image_url : width: 264, height: 290, crop: "top" | image_tag : alt:
-        block.settings.image.alt,
-        loading: 'lazy', class: "collection-item-image" }}
+          block.settings.heading, loading: 'lazy', class: "collection-item-image" }}
         <div class="collection-item-name" style="background: {{block.settings.background}};">
           <div class="collection-item-title"> {{block.settings.heading}} </div>
         </div>

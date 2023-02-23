@@ -445,7 +445,7 @@
       <div class="modal-overlay modal-toggle"></div>
       <div class="modal-wrapper modal-transition">
         <div class="modal-header">
-          <button class="modal-close modal-toggle">
+          <button class="modal-close modal-toggle" aria-label="close">
             <svg class="icon-close icon" viewBox="0 0 24 24">
               <use xlink:href="#close"></use>
             </svg>
@@ -465,7 +465,6 @@
     </div>
     <!-- Modal end -->
 
-    <style></style>
     <script defer src="{{ 'slick.js' | asset_url }}"></script>
     <script defer src="{{ 'shopify-money.js' | asset_url }}"></script>
     <script defer src="{{ 'predictive-search.js' | asset_url }}"></script>
@@ -473,14 +472,6 @@
     <script defer src="{{ 'drawer.js' | asset_url }}"></script>
     <script defer src="{{ 'quick-view-main.js' | asset_url }}"></script>
     <script defer src="{{ 'address.js' | asset_url }}"></script>
-    {% if template contains 'index' %}
-      <script>
-        if ($(window).width() > 764) {
-        } else {
-      $('.homepageBanner .large-12.columns .item:nth-child(1) img.desktopBanner:first-child').attr('loading', 'auto');
-        }
-      </script>
-    {% endif %}
     {% if template contains 'collection' %}
       <script>
         let url = window.location.href;
