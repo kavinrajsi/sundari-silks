@@ -1,3 +1,11 @@
+{% for block in section.blocks %}
+  {% if block.settings.image %}
+    <link rel="preload" as="image" href="//cdn.shopify.com/s/files/1/0490/1158/9282/{{ block.settings.mobile_image.src }}">
+    <link rel="preload" as="image" href="//cdn.shopify.com/s/files/1/0490/1158/9282/{{ block.settings.image.src }}">
+  <div class="item" dataSliderItem="{{ forloop.index }}">
+  {% endif %}
+{% endfor %}
+
 <div class="large-12 columns">
   <div class="slider single-item"
     data-slick='{"autoplay": true, "cssEase": "linear", "slidesToShow": 1, "slidesToScroll": 1, "autoplaySpeed": 3000, "fade": true, "arrows": false, "dots": true, "adaptiveHeight": true }'>
