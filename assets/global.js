@@ -325,7 +325,7 @@
   $("button.modal-close.modal-toggle").on("click", function (e) {
     e.preventDefault();
     $(".modal-size-chart").removeClass("is-visible");
-    // $(".modal-all-page").removeClass("is-visible");
+    $(".modal-all-page").removeClass("is-visible");
     $("body").removeClass("modalScroll");
   });
 
