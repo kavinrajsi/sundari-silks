@@ -1,118 +1,120 @@
 <div class="collection-page-header pageCollectionFourGrid">
   <div class="collection-page-title {% if customer and customer.tags contains 'admin' %} d-none {% endif %}">
     {% if collection.title != blank %}
-    <h1>{{ collection.title }}</h1>
+      <h1>{{ collection.title }}</h1>
     {% endif %}
   </div>
-  <div
-    class="collection-page-header-image text-center d-none {% if customer and customer.tags contains 'admin' %} d-block {% endif %}">
-    {% if collection.image != blank %}
-    <div class="collection-page-image">
-      <img srcset="{%- if collection.image.width >= 165 -%}{{ collection.image | image_url: width: 165 }} 165w,{%- endif -%}
-      {%- if collection.image.width >= 360 -%}{{ collection.image | image_url: width: 360 }} 360w,{%- endif -%}
-      {%- if collection.image.width >= 535 -%}{{ collection.image | image_url: width: 535 }} 535w,{%- endif -%}
-      {%- if collection.image.width >= 750 -%}{{ collection.image | image_url: width: 750 }} 750w,{%- endif -%}
-      {%- if collection.image.width >= 1070 -%}{{ collection.image | image_url: width: 1070 }} 1070w,{%- endif -%}
-      {%- if collection.image.width >= 1500 -%}{{ collection.image | image_url: width: 1500 }} 1500w,{%- endif -%}
-      {{ collection.image | image_url }} {{ collection.image.width }}w"
-        src="{{ collection.image | image_url: width: 750 }}" alt="" width="{{ collection.image.width }}"
-        height="{{ collection.image.height }}">
-    </div>
-    {% endif %}
-    <div class="collection-page-content-area">
-      <div class="collection-page-title text-left">
-        <h1 class="text-left">{{ collection.title }}</h1>
+  {% comment %}
+    <div
+      class="collection-page-header-image text-center d-none {% if customer and customer.tags contains 'admin' %} d-block {% endif %}">
+      {% if collection.image != blank %}
+      <div class="collection-page-image">
+        <img srcset="{%- if collection.image.width >= 165 -%}{{ collection.image | image_url: width: 165 }} 165w,{%- endif -%}
+        {%- if collection.image.width >= 360 -%}{{ collection.image | image_url: width: 360 }} 360w,{%- endif -%}
+        {%- if collection.image.width >= 535 -%}{{ collection.image | image_url: width: 535 }} 535w,{%- endif -%}
+        {%- if collection.image.width >= 750 -%}{{ collection.image | image_url: width: 750 }} 750w,{%- endif -%}
+        {%- if collection.image.width >= 1070 -%}{{ collection.image | image_url: width: 1070 }} 1070w,{%- endif -%}
+        {%- if collection.image.width >= 1500 -%}{{ collection.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+        {{ collection.image | image_url }} {{ collection.image.width }}w"
+          src="{{ collection.image | image_url: width: 750 }}" alt="" width="{{ collection.image.width }}"
+          height="{{ collection.image.height }}">
       </div>
-      <div class="collection-page-description text-left">
-        <p>{{ collection.description }}</p>
+      {% endif %}
+      <div class="collection-page-content-area">
+        <div class="collection-page-title text-left">
+          <h1 class="text-left">{{ collection.title }}</h1>
+        </div>
+        <div class="collection-page-description text-left">
+          <p>{{ collection.description }}</p>
+        </div>
       </div>
     </div>
-  </div>
-
+  {% endcomment %}
 </div>
 
-
 {% if customer and customer.tags contains 'admin' %}
-{% if collection.metafields.custom.sub_collection_one.value != blank %}
-  {% comment %}
-  <ul class="collection-sub-list">
-    {% assign ShopURL = shop.url | append: "/colections/" %}
-    {% if collection.metafields.custom.sub_collection_one.value != blank %}
-    <li>
-      <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_one.value.handle }}">
-      <span>  {{ collection.metafields.custom.sub_collection_one.value.title }} </span>
-        <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
-      </a>
-    </li>
-    {% endif %}
-    {% if collection.metafields.custom.sub_collection_two.value != blank %}
-    <li>
-      <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_two.value.handle }}">
-      <span>  {{ collection.metafields.custom.sub_collection_two.value.title }} </span>
-        <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
-      </a>
-    </li>
-    {% endif %}
-    {% if collection.metafields.custom.sub_collection_three.value != blank %}
-    <li>
-      <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_three.value.handle }}">
-       <span> {{ collection.metafields.custom.sub_collection_three.value.title }} </span>
-        <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
-      </a>
-    </li>
-    {% endif %}
-    {% if collection.metafields.custom.sub_collection_four.value != blank %}
-    <li>
-      <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_four.value.handle }}">
-        <span> {{ collection.metafields.custom.sub_collection_four.value.title }} </span>
-        <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
-      </a>
-    </li>
-    {% endif %}
-    {% if collection.metafields.custom.sub_collection_five.value != blank %}
-    <li>
-      <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_five.value.handle }}">
-        <span>{{ collection.metafields.custom.sub_collection_five.value.title }}</span>
-        <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
-      </a>
-    </li>
-    {% endif %}
-    {% if collection.metafields.custom.sub_collection_six.value != blank %}
-    <li>
-      <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_six.value.handle }}">
-        <span>{{ collection.metafields.custom.sub_collection_six.value.title }}</span>
-        <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
-      </a>
-    </li>
-    {% endif %}
-    {% if collection.metafields.custom.sub_collection_seven.value != blank %}
-    <li>
-      <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_seven.value.handle }}">
-        <span>{{ collection.metafields.custom.sub_collection_seven.value.title }}</span>
-        <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
-      </a>
-    </li>
-    {% endif %}
-  </ul>
-{% endcomment %}
+  {% if collection.metafields.custom.sub_collection_one.value != blank %}
+    {% comment %}
+      <ul class="collection-sub-list">
+        {% assign ShopURL = shop.url | append: "/colections/" %}
+        {% if collection.metafields.custom.sub_collection_one.value != blank %}
+        <li>
+          <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_one.value.handle }}">
+          <span>  {{ collection.metafields.custom.sub_collection_one.value.title }} </span>
+            <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
+          </a>
+        </li>
+        {% endif %}
+        {% if collection.metafields.custom.sub_collection_two.value != blank %}
+        <li>
+          <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_two.value.handle }}">
+          <span>  {{ collection.metafields.custom.sub_collection_two.value.title }} </span>
+            <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
+          </a>
+        </li>
+        {% endif %}
+        {% if collection.metafields.custom.sub_collection_three.value != blank %}
+        <li>
+          <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_three.value.handle }}">
+           <span> {{ collection.metafields.custom.sub_collection_three.value.title }} </span>
+            <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
+          </a>
+        </li>
+        {% endif %}
+        {% if collection.metafields.custom.sub_collection_four.value != blank %}
+        <li>
+          <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_four.value.handle }}">
+            <span> {{ collection.metafields.custom.sub_collection_four.value.title }} </span>
+            <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
+          </a>
+        </li>
+        {% endif %}
+        {% if collection.metafields.custom.sub_collection_five.value != blank %}
+        <li>
+          <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_five.value.handle }}">
+            <span>{{ collection.metafields.custom.sub_collection_five.value.title }}</span>
+            <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
+          </a>
+        </li>
+        {% endif %}
+        {% if collection.metafields.custom.sub_collection_six.value != blank %}
+        <li>
+          <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_six.value.handle }}">
+            <span>{{ collection.metafields.custom.sub_collection_six.value.title }}</span>
+            <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
+          </a>
+        </li>
+        {% endif %}
+        {% if collection.metafields.custom.sub_collection_seven.value != blank %}
+        <li>
+          <a href="{{ ShopURL }}{{ collection.metafields.custom.sub_collection_seven.value.handle }}">
+            <span>{{ collection.metafields.custom.sub_collection_seven.value.title }}</span>
+            <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/collection-background-image.png?v=1641294316">
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    {% endcomment %}
+  {% endif %}
 {% endif %}
-{% endif %}
-
-
-
 
 {% render 'filter' %}
 <div class="fixedElement section-{{ section.id }}-paddings collectionGrid">
   <section>
     {% paginate collection.products by 24 %}
-    <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="3" collection-list-desktop="4">
-      {% for product in collection.products %}
-      {% render 'product-card', product: product %}
-      {% endfor %}
-    </div>
-    <div class="pagination--number">
-      {{ paginate | default_pagination: next: 'Next', previous: 'Previous' }}
-    </div>
+      <div
+        class="collection-list-grid"
+        collection-list-mobile="2"
+        collection-list-tablet="3"
+        collection-list-desktop="4"
+      >
+        {% for product in collection.products %}
+          {% render 'product-card', product: product %}
+        {% endfor %}
+      </div>
+      <div class="pagination--number">
+        {{ paginate | default_pagination: next: 'Next', previous: 'Previous' }}
+      </div>
     {% endpaginate %}
   </section>
 </div>
