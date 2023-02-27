@@ -61,7 +61,7 @@
           <span>{{ line_item.variant.price | money_with_currency }}</span>
         {% endif %}
       </div>
-      <a aria-label="Remove {{ line_item.variant.title }}" href="/cart/change?line={{index}}&amp;quantity=0">
+      <a aria-label="Remove {{ line_item.variant.title }}" href="/cart/change?line={{forloop.index }}&amp;quantity=0">
         <svg>
           <use href="#trash-mini" />
         </svg>
