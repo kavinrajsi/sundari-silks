@@ -374,6 +374,43 @@
       </div>
     </div>
   </section>
+
+  <div class="homepage-blogfeed">
+  <div class="section-header text-center">
+    <div class="section-header-title">Blogs by Sundari Silks</div>
+    <div class="section-header-content">Stories of Fabrics, Styling Tips, Decor Inspiration and more…</div>
+  </div>
+  <div class="section-content">
+    <div class="blog-feed-container">
+      {% for article in blog.articles limit: 4 %}
+        <div class="blog-feed-card">
+          <div class="blog-feed-card-wrapper">
+            <a href=" {{ article.url }}" class="blog-feed-card-link">
+              {% if article.image %}
+              <img id="Image-{{ article.id }}" loading="lazy" class="{{ article_class }} blog-feed-card-image"
+                src="{{article.image.src | image_url: width:404, height: 296, crop: 'top'  }}"
+                alt="{{ article.image.alt | escape }}">
+              {% endif %}
+              <h3 class="blog-feed-card-title"> {{ article.title | escape }} </h3>
+              <p class="blog-feed-card-content">
+                {% if article.excerpt.size > 0 %}
+                {{ article.excerpt | strip_html | truncate: 100 }}
+                {% else %}
+                {{ article.content | strip_html | truncate: 100 }}
+                {% endif %}
+              </p>
+              <p class="blog-feed-card-cta"> Read More </p>
+            </a>
+          </div>
+        </div>
+    {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+
+
   <section class="shopify-section homepage-section noleftright section-multi-band section-men">
     <div class="collection-banner-text-image">
       <img

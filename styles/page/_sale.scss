@@ -524,6 +524,7 @@ section.instagram-page {
       padding-bottom: 0;
     }
     div#insta-feed {
+      z-index: 1;
       display: grid;
       gap: 16px;
       padding: 0 15px;
