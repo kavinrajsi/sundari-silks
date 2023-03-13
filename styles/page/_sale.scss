@@ -2,7 +2,11 @@
   display: none;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500&display=swap');
+
 .page-sale {
+  --font-spe: "Frank Ruhl Libre", serif;
+
   .shopify-section {
     padding-top: 60px;
     padding-bottom: 0;
@@ -35,19 +39,127 @@
           bottom: 0;
           margin: 0 auto;
           text-align: center;
-          display: block !important;
-          img{
+          display: none !important;
+          img {
             max-width: 72%;
             text-align: center;
             margin: 0 auto;
           }
-      }
-
+        }
       }
     }
   }
 
+  .section-banner {
+    overflow: hidden;
+  }
+  .banner-sale-unit-mobile {
+    overflow: hidden;
+    position: relative;
+    &-content {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 30px;
+      img {
+        max-width: 120px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 10px 0;
+      }
 
+      .banner-sale {
+        &-title {
+          font-size: 24px;
+          font-weight: 500;
+          line-height: 1.4;
+          color: #475619;
+          font-family: "Playfair Display", serif;
+          text-align: center;
+        }
+
+        &-upto {
+          font-size: 20px;
+          // line-height: 45px;
+          color: #5b3524;
+          font-family: var(--font-spe);
+          text-align: center;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          span {
+            padding: 0px 4px;
+            font-weight: 500;
+            font-size: 24px;
+            color: #3d5110;
+            font-family: var(--font-spe);
+            text-align: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            b {
+              font-weight: 500;
+            font-size: 24px;
+              color: #3d5110;
+              font-family: var(--font-spe);
+              text-align: center;
+              display: inline-block;
+            }
+          }
+        }
+        &-date {
+          font-size: 14px;
+          line-height: normal;
+          color: #5b3220;
+          font-weight: 500;
+          font-family: "Montserrat";
+          text-align: center;
+        }
+
+        &-info {
+          margin-top: 4px;
+          font-size: 14px;
+          line-height: normal;
+          color: #5b3220;
+          font-weight: 500;
+          font-family: "Montserrat";
+          text-align: center;
+        }
+      }
+      nav {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 24px;
+        @media (min-width: 562px) {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        a {
+          border-radius: var(--border-radius);
+          text-align: center;
+          line-height: normal;
+          color: #3f0125;
+          font-family: "Playfair Display";
+          text-transform: uppercase;
+          background-color: #b7926a;
+          font-weight: 500;
+          letter-spacing: 0.8px;
+          font-size: 16px;
+          padding: 4px 6px;
+        }
+      }
+    }
+  }
 
   // discount nav
   .section-discount {
@@ -63,6 +175,10 @@
     }
   }
 
+  .collection-saree .collection-item-name .collection-item-title {
+    margin-bottom: 0;
+  }
+
   // single collection
 
   .section-single-band {
@@ -76,6 +192,10 @@
         text-align: center;
         min-height: 348px;
         object-fit: cover;
+        object-position: left center;
+        @media (min-width: 968px) {
+          object-position: initial;
+        }
       }
     }
     &.band-content-right {
@@ -177,9 +297,10 @@
       margin: 0 auto;
       text-align: center;
       display: block;
-      max-width: 240px;
-      text-align: center;
-      margin: 0 auto;
+      max-width: 140px;
+      @media (min-width: 768px) {
+        max-width: 240px;
+      }
     }
     .collection-banner-content {
       padding: 0 15px;
@@ -247,13 +368,12 @@
       a {
         width: 100%;
         text-align: center;
-        background-color: rgba(252, 250, 250, 0.6);
         font-weight: 600;
         font-family: var(--font-montserrat);
         border-radius: var(--border-radius);
         cursor: pointer;
-        border: 1px solid #f3ece8;
-        background-color: #f3ece8;
+        border: 1px solid rgba(252, 250, 250, 0.8);
+        background-color: rgba(252, 250, 250, 0.8);
         font-size: 13px;
         @media (min-width: 562px) {
           font-size: 14px;
