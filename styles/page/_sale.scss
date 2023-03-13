@@ -537,6 +537,18 @@
   }
 }
 
+section.instagram-page {
+  .section-header-title,
+  .section-header-content {
+    text-align: center;
+  }
+
+  .section-header-content {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+
 .page-width {
   .shopify-block.shopify-app-block {
     padding-bottom: var(--home-section-space);
@@ -547,7 +559,7 @@
       padding-left: 60px;
       padding-right: 60px;
 
-      padding-top: 60px;
+      padding-top: 0px;
       padding-bottom: 0;
     }
     div#insta-feed {
