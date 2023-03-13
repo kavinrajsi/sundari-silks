@@ -1,21 +1,403 @@
-<div class="page-sale"></div>
+<div class="page-sale">
+  <div class="section-banner">
+    <div class="banner-sale-unit-mobile">
+      <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/online-sale-banner-mobile.png?v=1678678079" alt="">
+      <div class="banner-sale-unit-mobile-content">
+        <h2 class="banner-sale-title">Annual Discount <br> Sale</h2>
+        <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/banner-mobile-divider.png?v=1678679964" alt="">
+        <p class="banner-sale-upto">UP TO
+          <span>50
+            <b>%</b>
+          </span>
+          OFF</p>
+        <p class="banner-sale-date">Feb 24th - Mar 11th</p>
+        <p class="banner-sale-info">Exclusive to Online Store</p>
+        <nav class="banner-sale-unit">
+          <a href="#">saree</a>
+          <a href="#">cotton</a>
+          <a href="#">men</a>
+          <a href="#">women</a>
+        </nav>
+      </div>
+    </div>
+    <div class="banner-sale-unit-desktop">
+      <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/online-sale-banner-desktop-1.png?v=1678678296" alt="">
+      <nav class="banner-sale-unit" style="display: none">
+        <a href="">
+          <img src="" alt="">
+        </a>
+        <a href="">
+          <img src="" alt="">
+        </a>
+        <a href="">
+          <img src="" alt="">
+        </a>
+        <a href="">
+          <img src="" alt="">
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="section-discount">
+    <nav>
+      <a href="#">
+        <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/online-sale-15.png?v=1678682547" alt="">
+      </a>
+      <a href="#">
+        <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/online-sale-20.png?v=1678682547" alt="">
+      </a>
+      <a href="#">
+        <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/online-sale-30.png?v=1678682547" alt="">
+      </a>
+      <a href="#">
+        <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/online-sale-50.png?v=1678682547" alt="">
+      </a>
+    </nav>
+  </div>
+
+  <section class="sale-just-dropped">
+    <div class="shopify-section homepage-section">
+      {% assign my_array = section.settings.collection-list | split: "| " %}
+      {% assign collect = 0 %}
+      {% assign collectionCount = 8 %}
+      <div class="homepage-justdropped">
+        <div class="section-header-wrapper">
+          <div class="section-header text-left">
+            <div class="section-header-title">Just Dropped</div>
+            <div class="section-header-content">New arrivals you will love</div>
+          </div>
+          <div class="tab-buttton">
+            {% for item in my_array %}
+              <div id="titem_{{forloop.index}}" class="tab {% if forloop.first %} active {% endif %} ">
+                {{ item | downcase | replace: "-", " " }}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="homepage-justdropped-content">
+          <!-- TODO: Remove sold ou product from loop -->
+          {% for item in my_array %}
+            {% assign collect = collections[item] %}
+            <div class="justdropped-box {% if forloop.first %} active {% endif %}" id="pitem_{{forloop.index}}">
+              <div
+                class="test--product-card--grid-four"
+                data-mobile-count="2"
+                data-tablet-count="3"
+                data-laptop-count="4"
+                data-desktop-count="4"
+                data-ldesktop-count="6">
+
+                {% for product in collect.products limit: collectionCount %}
+                  {% if product.available %}
+                    <div class="item">
+                      <div class="product__card">
+                        <div class="product__card--img">
+                          <a href="{{ product.url | within: collection }}" class="product__card--link">
+                            <div
+                              class="product__card--image--wrapper">
+                              {% if product.featured_image != blank %}
+                                <!-- [200,400,600,700,800,900,1000,1200] -->
+                                <img
+                                  loading="lazy"
+                                  id="Image-{{ image.id }}"
+                                  class="blur-up responsive-image__image lazyload"
+                                  src="{{ product.featured_image | image_url: width: '300x'  }}"
+                                  data-src="{{ product.featured_image | image_url: width: '300x'  }}"
+                                  data-aspectratio="{{ product.featured_image.aspect_ratio }}"
+                                  data-widths="[540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+                                  data-sizes="auto"
+                                  data-parent-fit="cover"
+                                  alt="
+                                {% if product.feature_image.alt != blank %}
+                                  {{ product.feature_image.alt }}
+                                {% else %}
+                                  {{ product.title }}
+                                {% endif %}">
+                                {% comment %}
+                                {% endcomment %}
+                              {% else %}
+                                {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
+                              {% endif %}
+                              <div class="product__card--status">
+                                {% unless product.available %}
+                                  <!-- TODO: Sold out chip color -->
+                                  <span class="product__card--status-soldout">sold out</span>
+                                {% endunless %}
+
+                                {% for variant in product.variants limit: 1 %}
+                                  {% if variant.compare_at_price > variant.price %}
+                                    <span class="product__card--status-soldout">
+                                      {{ variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | remove: '.0' | slice: 0, 2 }}% off
+                                    </span>
+                                  {% endif %}
+                                {% endfor %}
+
+                              </div>
+                            </div>
+                          </a>
+                          <div class="product__card-cta quick-view-button">
+                            <span
+                              id="productInfoAnchor"
+                              class="quick-view"
+                              product-handle="{{ product.handle }}"
+                              product-price="{{ product.price | money_without_trailing_zeros }}">Quick View</span>
+                          </div>
+                        </div>
+                        <div class="product__card--content">
+                          <a href="{{ product.url | within: collection }}" class="product__card--link">
+                            <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
+                            <div class="product__variant--price">
+                              {% if product.price_varies %}
+                                <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency }}</p>
+                              {% else %}
+                                <p>
+                                  {% if product.compare_at_price_max > product.price %}
+                                    <span>
+                                      <s>{{ product.compare_at_price_max | money_with_currency }}</s>
+                                    </span>
+                                    <span>{{ product.price | money_with_currency }}</span>
+                                  {% else %}
+                                    <span>{{ product.price | money_with_currency }}</span>
+                                  {% endif %}
+                                </p>
+                              {% endif %}
+                            </div>
+                            {% if product.variants.size > 1 %}
+                              <div class="product__variant--list" hidden>
+                                <span class="product__variant--list-title">
+                                  {{ product.options }} :
+                                </span>
+                                {% for variant in product.variants %}
+                                  {% if variant.inventory_quantity == 0 %}
+                                    <s>
+                                    {% endif %}
+                                    <span class="product__variant--list-name">
+                                      {{ variant.title }}
+                                    </span>
+                                    {% if variant.inventory_quantity == 0 %}
+                                    </s>
+                                  {% endif %}
+                                {% endfor %}
+                              </div>
+                            {% endif %}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if forloop.last == true %}
+                    <div class="item">
+                      <div class="last-card product__card product__card--explore">
+                        <a href="/collections/{{collect.handle}}?filter.v.availability=1">
+                          <div class="product__card--img">
+                            <div class="product__card--image--wrapper">
+                              <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/white-image.png?v=1670490446" alt="">
+                            </div>
+                            <div class="product__card--content">
+                              Explore All
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-saree-band band-content-right">
+    <a href="#">
+      <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/online-sale-saree-1.png?v=1678680997" alt="">
+      <div class="section-saree-band-content">
+        <div class="content-title">Mangalagiri<br>Cotton Sarees</div>
+        <div class="button">SHOP NOW</div>
+      </div>
+    </a>
+  </div>
+
+  <section class="home-page-curated-section">
+    <div class="section-header-wrapper">
+      <div class="section-header text-center">
+        <div class="section-header-title">{{ section.settings.curated-title }}</div>
+        <div class="section-header-content">{{ section.settings.curated-description }}</div>
+      </div>
+    </div>
+    <div class="section-content collection-saree">
+      {% for block in section.blocks limit: 4 %}
+        {% if block.settings.image %}
+          <div class="collection-item">
+            <a class="collection-item-link" href="{{ block.settings.link }}?filter.v.availability=1">
+              {{ block.settings.image | image_url: width: 360, height: 608, crop: "top" | image_tag: alt: 
+               block.settings.heading, loading: 'lazy', class: "collection-item-image" }}
+              <div class="collection-item-name" style="background: {{block.settings.background}};">
+                <div class="collection-item-title">
+                  {{ block.settings.heading }}
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <div class="section-saree-band band-content-left">
+    <a href="#">
+      <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/online-sale-saree-2.png?v=1678681511" alt="">
+      <div class="section-saree-band-content">
+        <div class="content-title">Splendid Kanchjivarams</div>
+        <div class="button">SHOP NOW</div>
+      </div>
+    </a>
+  </div>
+
+  <section class="home-page-curated-section">
+    <div class="section-header-wrapper">
+      <div class="section-header text-center">
+        <div class="section-header-title">{{ section.settings.curated-title }}</div>
+        <div class="section-header-content">{{ section.settings.curated-description }}</div>
+      </div>
+    </div>
+    <div class="section-content collection-saree">
+      {% for block in section.blocks limit: 4 %}
+        {% if block.settings.image %}
+          <div class="collection-item">
+            <a class="collection-item-link" href="{{ block.settings.link }}?filter.v.availability=1">
+              {{ block.settings.image | image_url: width: 360, height: 608, crop: "top" | image_tag: alt: 
+               block.settings.heading, loading: 'lazy', class: "collection-item-image" }}
+              <div class="collection-item-name" style="background: {{block.settings.background}};">
+                <div class="collection-item-title">
+                  {{ block.settings.heading }}
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="section-content collection-readymade">
+      {% for block in section.blocks limit: 4 offset: 6 %}
+        {% if block.settings.image %}
+          <div class="collection-item">
+            <a class="collection-item-link" href="{{ block.settings.link }}?filter.v.availability=1">
+              {{ block.settings.image | image_url: width: 264, height: 290, crop: "top" | image_tag: alt: 
+               block.settings.heading, loading: 'lazy', class: "collection-item-image" }}
+              <div class="collection-item-name" style="background: {{block.settings.background}};">
+                <div class="collection-item-title">
+                  {{ block.settings.heading }}
+                </div>
+              </div>
+            </a>
+          </div>
+        {% else %}
+          <div class="collection-item">
+            <a class="collection-item-link" href="#">
+              {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+
+</div>
 {% schema %}
   {
-    "name": "Banner",
-    "class": "sale-banner",
+    "name": "Just Dropped Section",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "just-dropped-title",
+        "label": "Section Title",
+        "default": "Just Dropped"
+      },
+      {
+        "type": "text",
+        "id": "just-dropped-description",
+        "label": "Section Description",
+        "default": "New arrivals you will love"
+      },
+      {
+        "type": "number",
+        "id": "just-dropped-count",
+        "label": "Product Count",
+        "default": 6
+      },
+      {
+        "type": "text",
+        "id": "collection-list",
+        "label": "Collection List",
+        "default": "andhra-cottons | half-fine-kanchipuram | readymades",
+        "info": "enter collection name and use | as separator, use only 4 collection"
+      }, {
+        "type": "text",
+        "id": "curated-title",
+        "label": "Section Title",
+        "default": "Curated collection"
+      }, {
+        "type": "text",
+        "id": "curated-description",
+        "label": "Section Description",
+        "default": "Styles for every occasion"
+      }
+    ],
     "blocks": [
       {
-        "name": "banner",
-        "type": "section",
+        "type": "collection-image",
+        "name": "Curated Image Section",
+        "limit": 4,
         "settings": [
           {
             "type": "image_picker",
-            "id": "sale-banner-desktop",
-            "label": "Desktop Banner"
+            "id": "image",
+            "label": "Image",
+            "info": "File Dimensions: 609x479, Max Size: 100 KB & File Type: PNG"
           }, {
+            "type": "text",
+            "id": "heading",
+            "label": "Text"
+          }, {
+            "type": "color_background",
+            "id": "background",
+            "label": "Background color for title",
+            "default": "linear-gradient(#ffffff, #000000)"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "Image link"
+          }
+        ]
+      }, {
+        "type": "readymade-image",
+        "name": "Readymade Image Section",
+        "limit": 6,
+        "settings": [
+          {
             "type": "image_picker",
-            "id": "sale-banner-mobile",
-            "label": "Mobile Banner"
+            "id": "image",
+            "label": "Image",
+            "info": "File Dimensions: 609x479, Max Size: 100 KB & File Type: PNG"
+          }, {
+            "type": "text",
+            "id": "heading",
+            "label": "Text"
+          }, {
+            "type": "color_background",
+            "id": "background",
+            "label": "Background color for title",
+            "default": "linear-gradient(#ffffff, #000000)"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "Image link"
           }
         ]
       }

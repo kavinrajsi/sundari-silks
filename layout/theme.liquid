@@ -166,11 +166,24 @@
       --blog-feed-content: 14px;
       }
       }
+
+      @font-face {
+        font-family: 'voltaire_frangelaregular';
+        src: url({{ "voltairefrangela-webfont.woff2" | asset_url }}) format('woff2'),
+        url({{ "voltairefrangela-webfont.woff" | asset_url }}) format('woff');
+        font-weight: normal;
+        font-style: normal;
+      }
     {% endstyle %}
 
     {% if template contains 'index' %}
       {{ 'slick.css' | asset_url | stylesheet_tag }}
     {% endif %}
+
+    {% if template contains 'page' %}
+      {{ 'slick.css' | asset_url | stylesheet_tag }}
+    {% endif %}
+
 
     <link rel="stylesheet" href="{{'base.css' | asset_url }}">
 
