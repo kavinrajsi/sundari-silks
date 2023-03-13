@@ -2,6 +2,67 @@
   "sections": {
     "main": {
       "type": "page-sale",
+      "blocks": {
+        "7e28aa4b-0245-4cc0-bff7-25934673da56": {
+          "type": "sale-banner",
+          "settings": {
+            "sale-banner-desktop": "shopify:\/\/shop_images\/online-sale-banner-desktop-1.png",
+            "sale-banner-mobile": "shopify:\/\/shop_images\/online-sale-banner-mobile.png",
+            "sale-banner-collection1-image": "shopify:\/\/shop_images\/online-sale-banner-saree.png",
+            "sale-banner-collection1-url": "shopify:\/\/collections\/kanchipuram-silks",
+            "sale-banner-collection2-image": "shopify:\/\/shop_images\/online-sale-banner-cotton.png",
+            "sale-banner-collection2-url": "shopify:\/\/collections\/kanchipuram-silks",
+            "sale-banner-collection3-image": "shopify:\/\/shop_images\/online-sale-banner-women.png",
+            "sale-banner-collection3-url": "shopify:\/\/collections\/kanchipuram-silks",
+            "sale-banner-collection4-image": "shopify:\/\/shop_images\/online-sale-banner-men.png",
+            "sale-banner-collection4-url": "shopify:\/\/collections\/kanchipuram-silks"
+          }
+        },
+        "43898918-1d27-4df6-8b0c-42eeeaf373bd": {
+          "type": "sale-percentage",
+          "settings": {
+            "sale-percentage-one-image": "shopify:\/\/shop_images\/online-sale-15.png",
+            "sale-percentage-one-link": "shopify:\/\/collections\/kanchipuram-silks",
+            "sale-percentage-two-image": "shopify:\/\/shop_images\/online-sale-20.png",
+            "sale-percentage-two-link": "shopify:\/\/collections\/kanchipuram-silks",
+            "sale-percentage-three-image": "shopify:\/\/shop_images\/online-sale-30.png",
+            "sale-percentage-three-link": "shopify:\/\/collections\/kanchipuram-silks",
+            "sale-percentage-four-image": "shopify:\/\/shop_images\/online-sale-50.png",
+            "sale-percentage-four-link": "shopify:\/\/collections\/kanchipuram-silks"
+          }
+        },
+        "8d3363a8-f284-4ec6-b117-c729ce6e7caa": {
+          "type": "just-dropped",
+          "settings": {
+            "collection-list": "andhra-cottons | half-fine-kanchipuram | readymades"
+          }
+        },
+        "1522b0bb-ddd7-4b60-8068-123ec900f01c": {
+          "type": "sale-saree-left-banner",
+          "settings": {
+            "sale-saree-left": "shopify:\/\/shop_images\/online-sale-saree-1.png",
+            "sale-saree-left-url": "shopify:\/\/collections\/kanchipuram-silks",
+            "sale-saree-left-text": "Mangalagiri<br>Cotton Sarees",
+            "sale-saree-left-button": "SHOP NOW"
+          }
+        },
+        "b1f5d6fc-3178-41ba-83a3-84da6a9d2d25": {
+          "type": "sale-saree-right-banner",
+          "settings": {
+            "sale-saree-right": "shopify:\/\/shop_images\/online-sale-saree-2.png",
+            "sale-saree-right-url": "shopify:\/\/collections\/kanchipuram-silks",
+            "sale-saree-right-text": "Splendid Kanchjivarams",
+            "sale-saree-right-button": "SHOP NOW"
+          }
+        }
+      },
+      "block_order": [
+        "7e28aa4b-0245-4cc0-bff7-25934673da56",
+        "43898918-1d27-4df6-8b0c-42eeeaf373bd",
+        "8d3363a8-f284-4ec6-b117-c729ce6e7caa",
+        "1522b0bb-ddd7-4b60-8068-123ec900f01c",
+        "b1f5d6fc-3178-41ba-83a3-84da6a9d2d25"
+      ],
       "settings": {
       }
     }
