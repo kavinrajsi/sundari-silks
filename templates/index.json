@@ -51,14 +51,6 @@
             "mobile_image": "shopify:\/\/shop_images\/sundarisilks-classic-colour-palettes-of-ganga-jamuna-sarees-banner-mobile.png",
             "link": "shopify:\/\/blogs\/article\/5-classic-colour-palettes-of-ganga-jamuna-sarees"
           }
-        },
-        "b057aa54-244e-4180-aeaf-6a4b090a337a": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/sundari-silks-chennai-sale-banner-desktop.png",
-            "mobile_image": "shopify:\/\/shop_images\/sundari-silks-chennai-sale-banner-mobile.png",
-            "link": "#"
-          }
         }
       },
       "block_order": [
@@ -67,8 +59,7 @@
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b",
         "3fbd7fec-f97f-434e-9f56-1ddc4581978e",
         "ab99cd22-9db2-4cf4-9676-120271eed88d",
-        "bed9709b-8de2-4214-8e93-8253620cb5e1",
-        "b057aa54-244e-4180-aeaf-6a4b090a337a"
+        "bed9709b-8de2-4214-8e93-8253620cb5e1"
       ],
       "settings": {
         "layout": "full_bleed",
