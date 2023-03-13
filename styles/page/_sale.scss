@@ -145,13 +145,13 @@
             // font-size: 22px;
           }
           @include interpolate(
-              "font-size",
-              420px,
-              14px,
-              1200px,
-              22px,
-              "ease-in"
-            );
+            "font-size",
+            420px,
+            14px,
+            1200px,
+            22px,
+            "ease-in"
+          );
         }
 
         &-info {
@@ -167,57 +167,56 @@
             // font-size: 22px;
           }
           @include interpolate(
-              "font-size",
-              420px,
-              14px,
-              1200px,
-              22px,
-              "ease-in"
-            );
-        }
+            "font-size",
+            420px,
+            14px,
+            1200px,
+            22px,
+            "ease-in"
+          );
         }
       }
-      nav {
-        margin-top: 24px;
-        display: grid;
-        gap: 16px;
-        grid-template-columns: repeat(2, 1fr);
-        margin-left: auto;
-        margin-right: auto;
-        @media (min-width: 576px) {
-          gap: 20px;
-          grid-template-columns: repeat(4, 1fr);
+    }
+    nav {
+      margin-top: 24px;
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(2, 1fr);
+      margin-left: auto;
+      margin-right: auto;
+      @media (min-width: 576px) {
+        gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+      }
+      a {
+        border-radius: var(--border-radius);
+        text-align: center;
+        line-height: normal;
+        color: #3f0125;
+        font-family: "Playfair Display";
+        text-transform: uppercase;
+        background-color: #b7926a;
+        font-weight: 500;
+        letter-spacing: 0.8px;
+        font-size: 16px;
+        padding: 4px 6px;
+        flex: 0 0 100px;
+        max-width: 100px;
+        img {
+          display: none;
         }
-        a {
-          border-radius: var(--border-radius);
-          text-align: center;
-          line-height: normal;
-          color: #3f0125;
-          font-family: "Playfair Display";
-          text-transform: uppercase;
-          background-color: #b7926a;
-          font-weight: 500;
-          letter-spacing: 0.8px;
-          font-size: 16px;
-          padding: 4px 6px;
-          flex: 0 0 100px;
-          max-width: 100px;
-          img {
+        @media (min-width: 768px) {
+          span {
             display: none;
           }
-          @media (min-width: 768px) {
-            span {
-              display: none;
-            }
-            img {
-              display: block;
-            }
-            padding: 0;
-            border: 0;
-            background: transparent;
-            max-width: initial;
-            flex: initial;
+          img {
+            display: block;
           }
+          padding: 0;
+          border: 0;
+          background: transparent;
+          max-width: initial;
+          flex: initial;
         }
       }
     }
@@ -533,6 +532,31 @@
     .collection-banner-content {
       &::before {
         background-image: url("https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-collection-banner-men-border.png?v=1678712361");
+      }
+    }
+  }
+}
+
+.page-width {
+  .shopify-block.shopify-app-block {
+    div#insta-feed {
+      display: grid;
+      gap: 16px;
+      padding: 0 15px;
+      grid-template-columns: 1fr 1fr;
+
+      @media (min-width: 992px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+      a {
+        div.instafeed-container {
+          width: 100% !important;
+          padding-top: 100% !important;
+          img {
+            width: 100% !important;
+            height: 100% !important;
+          }
+        }
       }
     }
   }
