@@ -2,29 +2,26 @@
   display: none;
 }
 @import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500&display=swap");
-
 @import "../common/interpolate";
-
 .page-sale {
   --font-spe: "Frank Ruhl Libre", serif;
-
   .shopify-section {
-    padding-top: 60px;
+    padding-top: 30px;
+    @media (min-width: 768px) {
+      padding-top: 60px;
+    }
     padding-bottom: 0;
     &.noleftright {
       padding-left: 0;
       padding-right: 0;
     }
   }
-
   img {
     border-radius: 0 !important;
   }
-
   .section-banner {
     overflow: hidden;
   }
-
   .banner-sale-unit-mobile {
     overflow: hidden;
     position: relative;
@@ -43,24 +40,20 @@
       flex-direction: column;
       text-align: center;
       padding: 40px 30px;
-
       @media (min-width: 576px) {
         padding: 90px 30px;
       }
-
       @media (min-width: 768px) {
         padding: 30px;
       }
       @media (min-width: 992px) {
         padding: 20px;
       }
-
       img {
         display: block;
         margin: 0 auto;
         text-align: center;
       }
-
       .banner-sale {
         &-title {
           font-weight: 600;
@@ -73,9 +66,14 @@
             67px,
             "ease-in"
           );
-          // @media (min-width: 420px) {
-          //   font-size: 32px;
-          // }
+
+          max-width: 300px;
+          text-align: center;
+          margin: 0 auto;
+
+          @media (min-width: 768px) {
+            max-width: initial;
+          }
           // @media (min-width: 992px) {
           //   font-size: 67px;
           // }
@@ -84,12 +82,10 @@
           font-family: "Playfair Display", serif;
           text-align: center;
         }
-
         &-upto {
           display: flex;
           justify-content: center;
           align-items: center;
-
           color: #5b3524;
           font-family: var(--font-spe);
           text-align: center;
@@ -104,24 +100,19 @@
           font-size: 20px;
           // @media (min-width: 992px) {
           //   font-size: 50px;
-
           // }
-
           span {
             padding: 0px 4px;
             font-weight: 500;
-
             color: #3d5110;
             font-family: var(--font-spe);
             text-align: center;
-
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 24px;
             // @media (min-width: 992px) {
             //   font-size: 58px;
-
             // }
             @include interpolate(
               "font-size",
@@ -153,7 +144,6 @@
             "ease-in"
           );
         }
-
         &-info {
           margin-top: 4px;
           font-size: 14px;
@@ -221,7 +211,6 @@
       }
     }
   }
-
   // discount nav
   .section-discount {
     nav {
@@ -235,13 +224,10 @@
       align-items: center;
     }
   }
-
   .collection-saree .collection-item-name .collection-item-title {
     margin-bottom: 0;
   }
-
   // single collection
-
   .section-single-band {
     a {
       display: block;
@@ -291,7 +277,6 @@
           @media (min-width: 968px) {
             background-size: cover;
           }
-
           @media (min-width: 1140px) {
             background-size: contain;
           }
@@ -359,27 +344,10 @@
           width: auto;
           min-width: 128px;
         }
-        // border: 0;
-        // color: #ffffff;
-        // font-weight: 400;
-        // font-family: "Montserrat";
-        // text-align: center;
-        // border-radius: 26px;
-        // line-height: normal;
-        // font-size: 16px;
-        // background-color: rgba(249, 248, 247, 0.369);
-        // @media (min-width: 768px) {
-        //   width: 176px;
-        //   height: 52px;
-        //   line-height: normal;
-        //   font-size: 20px;
-        // }
       }
     }
   }
-
   // multi collection
-
   .collection-banner-text-image {
     overflow: hidden;
     padding-bottom: var(--home-section-space);
@@ -429,17 +397,14 @@
         background-image: url("https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-collection-banner-border.png?v=1678712977");
         background-repeat: no-repeat;
         background-position: top center;
-
         @media (min-width: 968px) {
           background-size: cover;
         }
-
         @media (min-width: 1140px) {
           background-size: contain;
         }
       }
     }
-
     /* title */
     .collection-banner-text-banner-title {
       text-align: center;
@@ -456,7 +421,6 @@
         font-size: var(--home-section-title);
       }
     }
-
     /* content */
     .collection-banner-text-banner-content {
       margin-left: auto;
@@ -475,14 +439,12 @@
         max-width: initial;
       }
     }
-
     /* nav text */
     .collection-banner-text-nav {
       display: grid;
       gap: 20px;
       grid-template-columns: repeat(2, 1fr);
       margin-top: 24px;
-
       @media (min-width: 768px) {
         margin-top: 48px;
         display: flex;
@@ -512,7 +474,6 @@
       }
     }
   }
-
   .section-women {
     .collection-banner-content {
       &::before {
@@ -520,7 +481,6 @@
       }
     }
   }
-
   .section-fabric {
     .collection-banner-content {
       &::before {
@@ -536,29 +496,30 @@
     }
   }
 }
-
 section.instagram-page {
+  .section-header-title {
+    padding-top: 30px;
+    @media (min-width: 768px) {
+      padding-top: 60px;
+    }
+  }
   .section-header-title,
   .section-header-content {
     text-align: center;
   }
-
   .section-header-content {
     padding-bottom: 0;
     margin-bottom: 0;
   }
 }
-
 .page-width {
   .shopify-block.shopify-app-block {
     padding-bottom: var(--home-section-space);
     padding-left: var(--Ngap);
     padding-right: var(--Ngap);
-
     @media (min-width: 1364px) {
       padding-left: 60px;
       padding-right: 60px;
-
       padding-top: 0px;
       padding-bottom: 0;
     }
@@ -567,7 +528,6 @@ section.instagram-page {
       gap: 16px;
       padding: 0 15px;
       grid-template-columns: 1fr 1fr;
-
       @media (min-width: 992px) {
         grid-template-columns: 1fr 1fr 1fr 1fr;
       }
@@ -580,6 +540,10 @@ section.instagram-page {
             height: 100% !important;
           }
         }
+      }
+      .instafeed-overlay:after {
+        width: 100% !important;
+        height: 100% !important;
       }
     }
   }
