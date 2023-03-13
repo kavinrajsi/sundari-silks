@@ -1,8 +1,9 @@
 .template-page .breadcrumbs {
   display: none;
 }
-
 @import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500&display=swap");
+
+@import "../common/interpolate";
 
 .page-sale {
   --font-spe: "Frank Ruhl Libre", serif;
@@ -20,7 +21,6 @@
     border-radius: 0 !important;
   }
 
-
   .section-banner {
     overflow: hidden;
   }
@@ -28,12 +28,12 @@
   .banner-sale-unit-mobile {
     overflow: hidden;
     position: relative;
-    background-image: url('https://cdn.shopify.com/s/files/1/0490/1158/9282/files/online-sale-banner-mobile.png?v=1678678079');
+    background-image: url("https://cdn.shopify.com/s/files/1/0490/1158/9282/files/online-sale-banner-mobile.png?v=1678678079");
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
-    @media(min-width: 768px){
-      background-image: url('https://cdn.shopify.com/s/files/1/0490/1158/9282/files/online-sale-banner-desktop.png?v=1678719291');
+    @media (min-width: 768px) {
+      background-image: url("https://cdn.shopify.com/s/files/1/0490/1158/9282/files/online-sale-banner-desktop.png?v=1678719291");
     }
     &-content {
       width: 100%;
@@ -44,24 +44,41 @@
       text-align: center;
       padding: 40px 30px;
 
-    @media(min-width: 576px){
-      padding: 90px 30px;
-    }
+      @media (min-width: 576px) {
+        padding: 90px 30px;
+      }
+
+      @media (min-width: 768px) {
+        padding: 30px;
+      }
+      @media (min-width: 992px) {
+        padding: 20px;
+      }
 
       img {
-        max-width: 120px;
+        display: block;
         margin: 0 auto;
         text-align: center;
-        padding: 10px 0;
       }
 
       .banner-sale {
         &-title {
           font-weight: 600;
           font-size: 22px;
-          @media (min-width: 420px) {
-            font-size: 32px;
-          }
+          @include interpolate(
+            "font-size",
+            420px,
+            32px,
+            1200px,
+            67px,
+            "ease-in"
+          );
+          // @media (min-width: 420px) {
+          //   font-size: 32px;
+          // }
+          // @media (min-width: 992px) {
+          //   font-size: 67px;
+          // }
           line-height: 1.4;
           color: #475619;
           font-family: "Playfair Display", serif;
@@ -69,19 +86,31 @@
         }
 
         &-upto {
-          font-size: 20px;
-          color: #5b3524;
-          font-family: var(--font-spe);
-          text-align: center;
-
           display: flex;
           justify-content: center;
           align-items: center;
 
+          color: #5b3524;
+          font-family: var(--font-spe);
+          text-align: center;
+          @include interpolate(
+            "font-size",
+            420px,
+            20px,
+            1200px,
+            38px,
+            "ease-in"
+          );
+          font-size: 20px;
+          // @media (min-width: 992px) {
+          //   font-size: 50px;
+
+          // }
+
           span {
             padding: 0px 4px;
             font-weight: 500;
-            font-size: 24px;
+
             color: #3d5110;
             font-family: var(--font-spe);
             text-align: center;
@@ -89,15 +118,19 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            font-size: 24px;
+            // @media (min-width: 992px) {
+            //   font-size: 58px;
 
-            b {
-              font-weight: 500;
-              font-size: 24px;
-              color: #3d5110;
-              font-family: var(--font-spe);
-              text-align: center;
-              display: inline-block;
-            }
+            // }
+            @include interpolate(
+              "font-size",
+              420px,
+              24px,
+              1200px,
+              58px,
+              "ease-in"
+            );
           }
         }
         &-date {
@@ -107,6 +140,18 @@
           font-weight: 500;
           font-family: "Montserrat";
           text-align: center;
+          @media (min-width: 992px) {
+            font-weight: 600;
+            // font-size: 22px;
+          }
+          @include interpolate(
+              "font-size",
+              420px,
+              14px,
+              1200px,
+              22px,
+              "ease-in"
+            );
         }
 
         &-info {
@@ -117,6 +162,19 @@
           font-weight: 500;
           font-family: "Montserrat";
           text-align: center;
+          @media (min-width: 992px) {
+            font-weight: 600;
+            // font-size: 22px;
+          }
+          @include interpolate(
+              "font-size",
+              420px,
+              14px,
+              1200px,
+              22px,
+              "ease-in"
+            );
+        }
         }
       }
       nav {
@@ -144,16 +202,18 @@
           padding: 4px 6px;
           flex: 0 0 100px;
           max-width: 100px;
-          img{
+          img {
             display: none;
           }
-          @media(min-width: 768px){
-            span{
+          @media (min-width: 768px) {
+            span {
               display: none;
             }
-            img{
+            img {
               display: block;
             }
+            padding: 0;
+            border: 0;
             background: transparent;
             max-width: initial;
             flex: initial;
@@ -355,6 +415,9 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      @media (min-width: 968px) {
+        padding: 0;
+      }
       &::before {
         content: "";
         display: block;
@@ -364,17 +427,15 @@
         top: 0;
         left: 0;
         right: 0px;
-        background: url('https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-collection-banner-border.png?v=1678712977')
-        no-repeat center;
+        background-image: url("https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-collection-banner-border.png?v=1678712977");
+        background-repeat: no-repeat;
+        background-position: top center;
 
         @media (min-width: 968px) {
           background-size: cover;
         }
 
         @media (min-width: 1140px) {
-          top: -12px;
-          left: 4px;
-          width: calc(100% - 8px);
           background-size: contain;
         }
       }
@@ -453,31 +514,26 @@
     }
   }
 
-  .section-women{
+  .section-women {
     .collection-banner-content {
       &::before {
-        background: url('https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-collection-banner-blouse-border.png?v=1678712361')
-          no-repeat center;
+        background-image: url("https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-collection-banner-blouse-border.png?v=1678712361");
       }
     }
   }
 
-  .section-fabric{
+  .section-fabric {
     .collection-banner-content {
       &::before {
-        background: url('https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-collection-banner-border.png?v=1678712977')
-          no-repeat center;
+        background-image: url("https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-collection-banner-fabric-border.png?v=1678725540");
       }
     }
   }
-  .section-men{
+  .section-men {
     .collection-banner-content {
       &::before {
-        background: url('https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-collection-banner-men-border.png?v=1678712361')
-          no-repeat center;
+        background-image: url("https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-collection-banner-men-border.png?v=1678712361");
       }
     }
   }
-
-
 }
