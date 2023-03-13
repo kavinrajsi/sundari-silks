@@ -16,6 +16,39 @@
     border-radius: 0 !important;
   }
 
+  .banner-sale-unit {
+    &-mobile {
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+
+    &-desktop {
+      display: none;
+
+      @media (min-width: 768px) {
+        display: block !important;
+        nav.banner-sale-unit {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: 0 auto;
+          text-align: center;
+          display: block !important;
+          img{
+            max-width: 70%;
+            text-align: center;
+            margin: 0 auto;
+          }
+      }
+
+      }
+    }
+  }
+
+
+
   // discount nav
   .section-discount {
     nav {

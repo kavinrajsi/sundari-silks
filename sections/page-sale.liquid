@@ -1,4 +1,5 @@
 <div class="page-sale">
+
   <div class="section-banner">
     <div class="banner-sale-unit-mobile">
       <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/online-sale-banner-mobile.png?v=1678678079" alt="">
@@ -20,24 +21,24 @@
         </nav>
       </div>
     </div>
-    <div class="banner-sale-unit-desktop">
+  </div>
+  <div class="banner-sale-unit-desktop" style="display: none">
       <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/online-sale-banner-desktop-1.png?v=1678678296" alt="">
       <nav class="banner-sale-unit" style="display: none">
         <a href="">
-          <img src="" alt="">
+          <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-online-banner-saree.png?v=1678706884" alt="">
         </a>
         <a href="">
-          <img src="" alt="">
+          <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-online-banner-women.png?v=1678706884" alt="">
         </a>
         <a href="">
-          <img src="" alt="">
+          <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-online-banner-men.png?v=1678706884" alt="">
         </a>
         <a href="">
-          <img src="" alt="">
+          <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-online-banner-cotton.png?v=1678706884" alt="">
         </a>
       </nav>
     </div>
-  </div>
 
   <section class="shopify-section homepage-section">
   <div class="section-discount">
@@ -401,41 +402,4 @@
       </div>
     </div>
   </section>
-  <div class="homepage-blogfeed">
-  <div class="section-header text-center">
-    <div class="section-header-title">Blogs by Sundari Silks</div>
-    <div class="section-header-content">Stories of Fabrics, Styling Tips, Decor Inspiration and more…</div>
-  </div>
-  <div class="section-content">
-    <div class="blog-feed-container">
-      {% if section.settings.blog != blank and section.settings.blog.articles_count > 0 %}
-      {% for article in section.settings.blog.articles limit: 4 %}
-      <div class="blog-feed-card">
-        <div class="blog-feed-card-wrapper">
-          <a href=" {{ article.url }}" class="blog-feed-card-link">
-            {% if article.image %}
-            <img id="Image-{{ article.id }}" loading="lazy" class="{{ article_class }} blog-feed-card-image"
-              src="{{article.image.src | image_url: width:404, height: 296, crop: 'top'  }}"
-              alt="{{ article.image.alt | escape }}">
-            {% else %}
-            {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg' }}
-            {% endif %}
-            <h3 class="blog-feed-card-title"> {{ article.title | escape }} </h3>
-            <p class="blog-feed-card-content">
-              {% if article.excerpt.size > 0 %}
-              {{ article.excerpt | strip_html | truncate: 100 }}
-              {% else %}
-              {{ article.content | strip_html | truncate: 100 }}
-              {% endif %}
-            </p>
-            <p class="blog-feed-card-cta"> Read More </p>
-          </a>
-        </div>
-      </div>
-      {% endfor %}
-      {% endif %}
-
-    </div>
-  </div>
-</div>
 </div>
