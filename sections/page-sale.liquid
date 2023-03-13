@@ -39,6 +39,7 @@
     </div>
   </div>
 
+  <section class="shopify-section homepage-section">
   <div class="section-discount">
     <nav>
       <a href="#">
@@ -55,489 +56,386 @@
       </a>
     </nav>
   </div>
+  </section>
 
-  <section class="sale-just-dropped">
-    <div class="shopify-section homepage-section">
-      {% assign my_array = section.settings.collection-list | split: "| " %}
-      {% assign collect = 0 %}
-      {% assign collectionCount = 8 %}
-      <div class="homepage-justdropped">
-        <div class="section-header-wrapper">
-          <div class="section-header text-left">
-            <div class="section-header-title">Just Dropped</div>
-            <div class="section-header-content">New arrivals you will love</div>
-          </div>
-          <div class="tab-buttton">
-            {% for item in my_array %}
-              <div id="titem_{{forloop.index}}" class="tab {% if forloop.first %} active {% endif %} ">
-                {{ item | downcase | replace: "-", " " }}
+<section class="shopify-section homepage-section home-page-curated-section">
+  <div class="section-header-wrapper">
+    <div class="section-header text-center">
+      <div class="section-header-title">Curated collection</div>
+      <div class="section-header-content">Styles for every occasion</div>
+    </div>
+  </div>
+  <div class="section-content collection-saree">
+        <div class="collection-item">
+          <a class="collection-item-link" href="#">
+            <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-kanchipuram-silk.png?crop=top&height=608&v=1677646099&width=352" class="collection-item-image" alt="">
+            <div class="collection-item-name">
+              <div class="collection-item-title">
+               Kanchipuram Silk
               </div>
-            {% endfor %}
-          </div>
+            </div>
+          </a>
         </div>
-        <div class="homepage-justdropped-content">
-          <!-- TODO: Remove sold ou product from loop -->
-          {% for item in my_array %}
-            {% assign collect = collections[item] %}
-            <div class="justdropped-box {% if forloop.first %} active {% endif %}" id="pitem_{{forloop.index}}">
-              <div
-                class="test--product-card--grid-four"
-                data-mobile-count="2"
-                data-tablet-count="3"
-                data-laptop-count="4"
-                data-desktop-count="4"
-                data-ldesktop-count="6">
-
-                {% for product in collect.products limit: collectionCount %}
-                  {% if product.available %}
-                    <div class="item">
-                      <div class="product__card">
-                        <div class="product__card--img">
-                          <a href="{{ product.url | within: collection }}" class="product__card--link">
-                            <div
-                              class="product__card--image--wrapper">
-                              {% if product.featured_image != blank %}
-                                <!-- [200,400,600,700,800,900,1000,1200] -->
-                                <img
-                                  loading="lazy"
-                                  id="Image-{{ image.id }}"
-                                  class="blur-up responsive-image__image lazyload"
-                                  src="{{ product.featured_image | image_url: width: '300x'  }}"
-                                  data-src="{{ product.featured_image | image_url: width: '300x'  }}"
-                                  data-aspectratio="{{ product.featured_image.aspect_ratio }}"
-                                  data-widths="[540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
-                                  data-sizes="auto"
-                                  data-parent-fit="cover"
-                                  alt="
-                                {% if product.feature_image.alt != blank %}
-                                  {{ product.feature_image.alt }}
-                                {% else %}
-                                  {{ product.title }}
-                                {% endif %}">
-                                {% comment %}
-                                {% endcomment %}
-                              {% else %}
-                                {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
-                              {% endif %}
-                              <div class="product__card--status">
-                                {% unless product.available %}
-                                  <!-- TODO: Sold out chip color -->
-                                  <span class="product__card--status-soldout">sold out</span>
-                                {% endunless %}
-
-                                {% for variant in product.variants limit: 1 %}
-                                  {% if variant.compare_at_price > variant.price %}
-                                    <span class="product__card--status-soldout">
-                                      {{ variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | remove: '.0' | slice: 0, 2 }}% off
-                                    </span>
-                                  {% endif %}
-                                {% endfor %}
-
-                              </div>
-                            </div>
-                          </a>
-                          <div class="product__card-cta quick-view-button">
-                            <span
-                              id="productInfoAnchor"
-                              class="quick-view"
-                              product-handle="{{ product.handle }}"
-                              product-price="{{ product.price | money_without_trailing_zeros }}">Quick View</span>
-                          </div>
-                        </div>
-                        <div class="product__card--content">
-                          <a href="{{ product.url | within: collection }}" class="product__card--link">
-                            <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
-                            <div class="product__variant--price">
-                              {% if product.price_varies %}
-                                <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency }}</p>
-                              {% else %}
-                                <p>
-                                  {% if product.compare_at_price_max > product.price %}
-                                    <span>
-                                      <s>{{ product.compare_at_price_max | money_with_currency }}</s>
-                                    </span>
-                                    <span>{{ product.price | money_with_currency }}</span>
-                                  {% else %}
-                                    <span>{{ product.price | money_with_currency }}</span>
-                                  {% endif %}
-                                </p>
-                              {% endif %}
-                            </div>
-                            {% if product.variants.size > 1 %}
-                              <div class="product__variant--list" hidden>
-                                <span class="product__variant--list-title">
-                                  {{ product.options }} :
-                                </span>
-                                {% for variant in product.variants %}
-                                  {% if variant.inventory_quantity == 0 %}
-                                    <s>
-                                    {% endif %}
-                                    <span class="product__variant--list-name">
-                                      {{ variant.title }}
-                                    </span>
-                                    {% if variant.inventory_quantity == 0 %}
-                                    </s>
-                                  {% endif %}
-                                {% endfor %}
-                              </div>
-                            {% endif %}
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  {% endif %}
-                  {% if forloop.last == true %}
-                    <div class="item">
-                      <div class="last-card product__card product__card--explore">
-                        <a href="/collections/{{collect.handle}}?filter.v.availability=1">
-                          <div class="product__card--img">
-                            <div class="product__card--image--wrapper">
-                              <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/white-image.png?v=1670490446" alt="">
-                            </div>
-                            <div class="product__card--content">
-                              Explore All
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  {% endif %}
-                {% endfor %}
+        <div class="collection-item">
+          <a class="collection-item-link" href="#">
+            <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-raw-silk.png?crop=top&height=608&v=1677646099&width=352" class="collection-item-image" alt="">
+            <div class="collection-item-name">
+              <div class="collection-item-title">
+               Raw Silk
               </div>
+            </div>
+          </a>
+        </div>
+        <div class="collection-item">
+          <a class="collection-item-link" href="#">
+            <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-kanchi-cotton.png?crop=top&height=608&v=1677646099&width=352" class="collection-item-image" alt="">
+            <div class="collection-item-name">
+              <div class="collection-item-title">
+               Kanchi Cotton
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="collection-item">
+          <a class="collection-item-link" href="#">
+            <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-chettinadu-collection.png?crop=top&height=608&v=1677646099&width=352" class="collection-item-image" alt="">
+            <div class="collection-item-name">
+              <div class="collection-item-title">
+               Chettinady Cotton
+              </div>
+            </div>
+          </a>
+        </div>
+  </div>
+</section>
+<section class="shopify-section homepage-section noleftright section-single-band band-content-right">
+  <a href="#">
+    <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/online-sale-saree-1.png?v=1678680997" alt="">
+    <div class="section-single-band-content">
+      <div class="content-title">
+        Mangalagiri<br>
+        Cotton Sarees
+      </div>
+      <div class="button">SHOP NOW</div>
+    </div>
+  </a>
+</section>
+<section class="shopify-section homepage-section sale-just-dropped">
+  <div class="">
+    {% assign my_array = "andhra-cottons | half-fine-kanchipuram | tussar-silk" | split: "| " %}
+    {% assign collect = 0 %}
+    {% assign collectionCount = 8 %}
+    <div class="homepage-justdropped">
+      <div class="section-header-wrapper">
+        <div class="section-header text-left">
+          <div class="section-header-title">Just Dropped</div>
+          <div class="section-header-content">New arrivals you will love</div>
+        </div>
+        <div class="tab-buttton">
+          {% for item in my_array %}
+            <div id="titem_{{forloop.index}}" class="tab {% if forloop.first %} active {% endif %} ">
+              {{ item | downcase | replace: "-", " " }}
             </div>
           {% endfor %}
         </div>
       </div>
-    </div>
-  </section>
-
-  <div class="section-saree-band band-content-right">
-    <a href="#">
-      <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/online-sale-saree-1.png?v=1678680997" alt="">
-      <div class="section-saree-band-content">
-        <div class="content-title">Mangalagiri<br>Cotton Sarees</div>
-        <div class="button">SHOP NOW</div>
-      </div>
-    </a>
-  </div>
-
-  <section class="home-page-curated-section">
-    <div class="section-header-wrapper">
-      <div class="section-header text-center">
-        <div class="section-header-title">{{ section.settings.curated-title }}</div>
-        <div class="section-header-content">{{ section.settings.curated-description }}</div>
-      </div>
-    </div>
-    <div class="section-content collection-saree">
-      {% for block in section.blocks limit: 4 %}
-        {% if block.settings.image %}
-          <div class="collection-item">
-            <a class="collection-item-link" href="{{ block.settings.link }}?filter.v.availability=1">
-              {{ block.settings.image | image_url: width: 360, height: 608, crop: "top" | image_tag: alt:
-               block.settings.heading, loading: 'lazy', class: "collection-item-image" }}
-              <div class="collection-item-name" style="background: {{block.settings.background}};">
-                <div class="collection-item-title">
-                  {{ block.settings.heading }}
-                </div>
-              </div>
-            </a>
+      <div class="homepage-justdropped-content">
+        <!-- TODO: Remove sold ou product from loop -->
+        {% for item in my_array %}
+          {% assign collect = collections[item] %}
+          <div class="justdropped-box {% if forloop.first %} active {% endif %}" id="pitem_{{forloop.index}}">
+            <div
+              class="test--product-card--grid-four"
+              data-mobile-count="2"
+              data-tablet-count="3"
+              data-laptop-count="4"
+              data-desktop-count="4"
+              data-ldesktop-count="6">
+              {% for product in collect.products limit: collectionCount %}
+                {% if product.available %}
+                  <div class="item">
+                    <div class="product__card">
+                      <div class="product__card--img">
+                        <a href="{{ product.url | within: collection }}" class="product__card--link">
+                          <div
+                            class="product__card--image--wrapper">
+                            {% if product.featured_image != blank %}
+                              <!-- [200,400,600,700,800,900,1000,1200] -->
+                              <img
+                                loading="lazy"
+                                id="Image-{{ image.id }}"
+                                class="blur-up responsive-image__image lazyload"
+                                src="{{ product.featured_image | image_url: width: '300x'  }}"
+                                data-src="{{ product.featured_image | image_url: width: '300x'  }}"
+                                data-aspectratio="{{ product.featured_image.aspect_ratio }}"
+                                data-widths="[540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+                                data-sizes="auto"
+                                data-parent-fit="cover"
+                                alt="
+                              {% if product.feature_image.alt != blank %}
+                                {{ product.feature_image.alt }}
+                              {% else %}
+                                {{ product.title }}
+                              {% endif %}">
+                              {% comment %}
+                              {% endcomment %}
+                            {% else %}
+                              {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
+                            {% endif %}
+                            <div class="product__card--status">
+                              {% unless product.available %}
+                                <!-- TODO: Sold out chip color -->
+                                <span class="product__card--status-soldout">sold out</span>
+                              {% endunless %}
+                              {% for variant in product.variants limit: 1 %}
+                                {% if variant.compare_at_price > variant.price %}
+                                  <span class="product__card--status-soldout">
+                                    {{ variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | remove: '.0' | slice: 0, 2 }}% off
+                                  </span>
+                                {% endif %}
+                              {% endfor %}
+                            </div>
+                          </div>
+                        </a>
+                        <div class="product__card-cta quick-view-button">
+                          <span
+                            id="productInfoAnchor"
+                            class="quick-view"
+                            product-handle="{{ product.handle }}"
+                            product-price="{{ product.price | money_without_trailing_zeros }}">Quick View</span>
+                        </div>
+                      </div>
+                      <div class="product__card--content">
+                        <a href="{{ product.url | within: collection }}" class="product__card--link">
+                          <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
+                          <div class="product__variant--price">
+                            {% if product.price_varies %}
+                              <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency }}</p>
+                            {% else %}
+                              <p>
+                                {% if product.compare_at_price_max > product.price %}
+                                  <span>
+                                    <s>{{ product.compare_at_price_max | money_with_currency }}</s>
+                                  </span>
+                                  <span>{{ product.price | money_with_currency }}</span>
+                                {% else %}
+                                  <span>{{ product.price | money_with_currency }}</span>
+                                {% endif %}
+                              </p>
+                            {% endif %}
+                          </div>
+                          {% if product.variants.size > 1 %}
+                            <div class="product__variant--list" hidden>
+                              <span class="product__variant--list-title">
+                                {{ product.options }} :
+                              </span>
+                              {% for variant in product.variants %}
+                                {% if variant.inventory_quantity == 0 %}
+                                  <s>
+                                  {% endif %}
+                                  <span class="product__variant--list-name">
+                                    {{ variant.title }}
+                                  </span>
+                                  {% if variant.inventory_quantity == 0 %}
+                                  </s>
+                                {% endif %}
+                              {% endfor %}
+                            </div>
+                          {% endif %}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
+                {% if forloop.last == true %}
+                  <div class="item">
+                    <div class="last-card product__card product__card--explore">
+                      <a href="/collections/{{collect.handle}}?filter.v.availability=1">
+                        <div class="product__card--img">
+                          <div class="product__card--image--wrapper">
+                            <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/white-image.png?v=1670490446" alt="">
+                          </div>
+                          <div class="product__card--content">
+                            Explore All
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
           </div>
-        {% endif %}
-      {% endfor %}
+        {% endfor %}
+      </div>
     </div>
-  </section>
-
-  <div class="section-saree-band band-content-left">
+  </div>
+</section>
+<section class="shopify-section homepage-section noleftright section-multi-band">
+  <div class="collection-banner-text-image">
+    <img
+      src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-collection-banner-1.png?v=1678693806"
+      alt=""
+    >
+    <div class="collection-banner-content">
+      <p class="collection-banner-text-banner-title">Plentiful Creations for Women</p>
+      <img
+        class="small"
+        src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-collection-banner-divider.png?v=1678694287"
+        alt=""
+      >
+      <p class="collection-banner-text-banner-content">Explore</p>
+      <nav class="collection-banner-text-nav">
+        <a href="#">SALWAR SET</a>
+        <a href="#">KURTA</a>
+        <a href="#">SKIRTS</a>
+        <a href="#">BLOUSE</a>
+      </nav>
+    </div>
+  </div>
+</section>
+<section class="shopify-section homepage-section home-page-curated-section">
+  <div class="section-header-wrapper">
+    <div class="section-header text-center">
+      <div class="section-header-title">Curated collection</div>
+      <div class="section-header-content">Styles for every occasion</div>
+    </div>
+  </div>
+  <div class="section-content collection-saree">
+        <div class="collection-item">
+          <a class="collection-item-link" href="#">
+            <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-kanchipuram-silk.png?crop=top&height=608&v=1677646099&width=352" class="collection-item-image" alt="">
+            <div class="collection-item-name">
+              <div class="collection-item-title">
+               Kanchipuram Silk
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="collection-item">
+          <a class="collection-item-link" href="#">
+            <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-raw-silk.png?crop=top&height=608&v=1677646099&width=352" class="collection-item-image" alt="">
+            <div class="collection-item-name">
+              <div class="collection-item-title">
+               Raw Silk
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="collection-item">
+          <a class="collection-item-link" href="#">
+            <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-kanchi-cotton.png?crop=top&height=608&v=1677646099&width=352" class="collection-item-image" alt="">
+            <div class="collection-item-name">
+              <div class="collection-item-title">
+               Kanchi Cotton
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="collection-item">
+          <a class="collection-item-link" href="#">
+            <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-chettinadu-collection.png?crop=top&height=608&v=1677646099&width=352" class="collection-item-image" alt="">
+            <div class="collection-item-name">
+              <div class="collection-item-title">
+               Chettinady Cotton
+              </div>
+            </div>
+          </a>
+        </div>
+  </div>
+</section>
+  <section class="shopify-section homepage-section noleftright section-single-band band-content-left">
     <a href="#">
       <img src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/online-sale-saree-2.png?v=1678681511" alt="">
-      <div class="section-saree-band-content">
-        <div class="content-title">Splendid Kanchjivarams</div>
+      <div class="section-single-band-content">
+        <div class="content-title">
+          Splendid <br>
+          Kanchjivarams
+        </div>
         <div class="button">SHOP NOW</div>
       </div>
     </a>
-  </div>
-
-  <section class="home-page-curated-section">
-    <div class="section-header-wrapper">
-      <div class="section-header text-center">
-        <div class="section-header-title">{{ section.settings.curated-title }}</div>
-        <div class="section-header-content">{{ section.settings.curated-description }}</div>
+  </section>
+  <section class="shopify-section homepage-section noleftright section-multi-band">
+    <div class="collection-banner-text-image">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-collection-banner-2.png?v=1678693806"
+        alt=""
+      >
+      <div class="collection-banner-content">
+        <p class="collection-banner-text-banner-title">Diverse Section of Fabrics</p>
+        <img
+          class="small"
+          src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-collection-banner-divider.png?v=1678694287"
+          alt=""
+        >
+        <p class="collection-banner-text-banner-content">Shop Now</p>
+        <nav class="collection-banner-text-nav">
+          <a href="#">BLOUSE</a>
+          <a href="#">SALWAR</a>
+          <a href="#">PAVADAI SATTAI</a>
+        </nav>
       </div>
     </div>
-    <div class="section-content collection-saree">
-      {% for block in section.blocks limit: 4 %}
-        {% if block.settings.image %}
-          <div class="collection-item">
-            <a class="collection-item-link" href="{{ block.settings.link }}?filter.v.availability=1">
-              {{ block.settings.image | image_url: width: 360, height: 608, crop: "top" | image_tag: alt:
-               block.settings.heading, loading: 'lazy', class: "collection-item-image" }}
-              <div class="collection-item-name" style="background: {{block.settings.background}};">
-                <div class="collection-item-title">
-                  {{ block.settings.heading }}
-                </div>
-              </div>
-            </a>
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
-    <div class="section-content collection-readymade">
-      {% for block in section.blocks limit: 4 offset: 6 %}
-        {% if block.settings.image %}
-          <div class="collection-item">
-            <a class="collection-item-link" href="{{ block.settings.link }}?filter.v.availability=1">
-              {{ block.settings.image | image_url: width: 264, height: 290, crop: "top" | image_tag: alt:
-               block.settings.heading, loading: 'lazy', class: "collection-item-image" }}
-              <div class="collection-item-name" style="background: {{block.settings.background}};">
-                <div class="collection-item-title">
-                  {{ block.settings.heading }}
-                </div>
-              </div>
-            </a>
-          </div>
-        {% else %}
-          <div class="collection-item">
-            <a class="collection-item-link" href="#">
-              {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
-            </a>
-          </div>
-        {% endif %}
-      {% endfor %}
+  </section>
+  <section class="shopify-section homepage-section noleftright section-multi-band">
+    <div class="collection-banner-text-image">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-collection-banner-3.png?v=1678693806"
+        alt=""
+      >
+      <div class="collection-banner-content">
+        <p class="collection-banner-text-banner-title">Men's World of Comfort</p>
+        <img
+          class="small"
+          src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sale-collection-banner-divider.png?v=1678694287"
+          alt=""
+        >
+        <p class="collection-banner-text-banner-content">Shop the Sale Collection</p>
+        <nav class="collection-banner-text-nav">
+          <a href="#">DHOTI</a>
+          <a href="#">SHIRT</a>
+          <a href="#">SHORT KURTA</a>
+          <a href="#">LONG KURTA</a>
+        </nav>
+      </div>
     </div>
   </section>
+  <div class="homepage-blogfeed">
+  <div class="section-header text-center">
+    <div class="section-header-title">Blogs by Sundari Silks</div>
+    <div class="section-header-content">Stories of Fabrics, Styling Tips, Decor Inspiration and more…</div>
+  </div>
+  <div class="section-content">
+    <div class="blog-feed-container">
+      {% if section.settings.blog != blank and section.settings.blog.articles_count > 0 %}
+      {% for article in section.settings.blog.articles limit: 4 %}
+      <div class="blog-feed-card">
+        <div class="blog-feed-card-wrapper">
+          <a href=" {{ article.url }}" class="blog-feed-card-link">
+            {% if article.image %}
+            <img id="Image-{{ article.id }}" loading="lazy" class="{{ article_class }} blog-feed-card-image"
+              src="{{article.image.src | image_url: width:404, height: 296, crop: 'top'  }}"
+              alt="{{ article.image.alt | escape }}">
+            {% else %}
+            {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+            <h3 class="blog-feed-card-title"> {{ article.title | escape }} </h3>
+            <p class="blog-feed-card-content">
+              {% if article.excerpt.size > 0 %}
+              {{ article.excerpt | strip_html | truncate: 100 }}
+              {% else %}
+              {{ article.content | strip_html | truncate: 100 }}
+              {% endif %}
+            </p>
+            <p class="blog-feed-card-cta"> Read More </p>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+      {% endif %}
 
-
+    </div>
+  </div>
 </div>
-{% schema %}
-{
-  "name": "Sale Section",
-  "tag": "section",
-  "blocks": [
-    {
-      "type": "sale-banner",
-      "name": "Sale Banner",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "sale-banner-desktop",
-          "label": "Banner Desktop"
-        },
-        {
-          "type": "image_picker",
-          "id": "sale-banner-mobile",
-          "label": "Banner Mobile"
-        },
-        {
-          "type": "image_picker",
-          "id": "sale-banner-collection1-image",
-          "label": "Collection One Image"
-        },
-        {
-          "type": "url",
-          "id": "sale-banner-collection1-url",
-          "label": "Collection One URL"
-        },
-        {
-          "type": "image_picker",
-          "id": "sale-banner-collection2-image",
-          "label": "Collection Two Image"
-        },
-        {
-          "type": "url",
-          "id": "sale-banner-collection2-url",
-          "label": "Collection Two URL"
-        },
-        {
-          "type": "image_picker",
-          "id": "sale-banner-collection3-image",
-          "label": "Collection Three Image"
-        },
-        {
-          "type": "url",
-          "id": "sale-banner-collection3-url",
-          "label": "Collection Three URL"
-        },
-        {
-          "type": "image_picker",
-          "id": "sale-banner-collection4-image",
-          "label": "Collection Four Image"
-        },
-        {
-          "type": "url",
-          "id": "sale-banner-collection4-url",
-          "label": "Collection Four URL"
-        }
-      ]
-    },
-    {
-      "type": "just-dropped",
-      "name": "Just Dropped",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "text",
-          "id": "collection-list",
-          "label": "Collection List",
-          "default": "andhra-cottons | half-fine-kanchipuram | readymades",
-          "info": "enter collection name and use | as separator, use only 4 collection"
-        }
-      ]
-    },
-    {
-      "type": "sale-percentage",
-      "name": "Sale Percentage",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "sale-percentage-one-image",
-          "label": "Image"
-        },
-        {
-          "type": "url",
-          "id": "sale-percentage-one-link",
-          "label": "Image link"
-        },
-        {
-          "type": "image_picker",
-          "id": "sale-percentage-two-image",
-          "label": "Image"
-        },
-        {
-          "type": "url",
-          "id": "sale-percentage-two-link",
-          "label": "Image link"
-        },
-        {
-          "type": "image_picker",
-          "id": "sale-percentage-three-image",
-          "label": "Image"
-        },
-        {
-          "type": "url",
-          "id": "sale-percentage-three-link",
-          "label": "Image link"
-        },
-        {
-          "type": "image_picker",
-          "id": "sale-percentage-four-image",
-          "label": "Image"
-        },
-        {
-          "type": "url",
-          "id": "sale-percentage-four-link",
-          "label": "Image link"
-        }
-      ]
-    },
-    {
-      "type": "sale-saree-left-banner",
-      "name": "Sale Saree Left Banner",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "sale-saree-left",
-          "label": "Collection Image"
-        },
-        {
-          "type": "url",
-          "id": "sale-saree-left-url",
-          "label": "Collection URL"
-        },
-        {
-          "type": "text",
-          "id": "sale-saree-left-text",
-          "label": "Collection Title"
-        },
-        {
-          "type": "text",
-          "id": "sale-saree-left-button",
-          "label": "Collection Button"
-        }
-      ]
-    },
-    {
-      "type": "sale-saree-right-banner",
-      "name": "Sale Saree Right Banner",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "sale-saree-right",
-          "label": "Banner Desktop"
-        },
-        {
-          "type": "url",
-          "id": "sale-saree-right-url",
-          "label": "Collection URL"
-        },
-        {
-          "type": "text",
-          "id": "sale-saree-right-text",
-          "label": "Collection Title"
-        },
-        {
-          "type": "text",
-          "id": "sale-saree-right-button",
-          "label": "Collection Button"
-        }
-      ]
-    },
-    {
-      "type": "collection-image",
-      "name": "Curated Image Section",
-      "limit": 4,
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image",
-          "info": "File Dimensions: 609x479, Max Size: 100 KB & File Type: PNG"
-        },
-        {
-          "type": "text",
-          "id": "heading",
-          "label": "Text"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Image link"
-        }
-      ]
-    },
-    {
-      "type": "readymade-image",
-      "name": "Readymade Image Section",
-      "limit": 4,
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image",
-          "info": "File Dimensions: 609x479, Max Size: 100 KB & File Type: PNG"
-        },
-        {
-          "type": "text",
-          "id": "heading",
-          "label": "Text"
-        },
-        {
-          "type": "color_background",
-          "id": "background",
-          "label": "Background color for title",
-          "default": "linear-gradient(#ffffff, #000000)"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Image link"
-        }
-      ]
-    }
-  ]
-}
-
-{% endschema %}
+</div>
