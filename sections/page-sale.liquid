@@ -316,6 +316,7 @@
       {
         "type": "sale-banner",
         "name": "Sale Banner",
+        "limit": 1,
         "settings": [
           {
             "type": "image_picker",
@@ -329,39 +330,19 @@
         ]
       },
       {
-        "type": "text",
-        "id": "just-dropped-title",
-        "label": "Section Title",
-        "default": "Just Dropped"
+        "type": "just-dropped",
+        "name": "Just Dropped",
+        "settings": [
+          {
+            "type": "text",
+            "id": "collection-list",
+            "label": "Collection List",
+            "default": "andhra-cottons | half-fine-kanchipuram | readymades",
+            "info": "enter collection name and use | as separator, use only 4 collection"
+          }
+        ]
       },
       {
-        "type": "text",
-        "id": "just-dropped-description",
-        "label": "Section Description",
-        "default": "New arrivals you will love"
-      },
-      {
-        "type": "number",
-        "id": "just-dropped-count",
-        "label": "Product Count",
-        "default": 6
-      }, {
-        "type": "text",
-        "id": "collection-list",
-        "label": "Collection List",
-        "default": "andhra-cottons | half-fine-kanchipuram | readymades",
-        "info": "enter collection name and use | as separator, use only 4 collection"
-      }, {
-        "type": "text",
-        "id": "curated-title",
-        "label": "Section Title",
-        "default": "Curated collection"
-      }, {
-        "type": "text",
-        "id": "curated-description",
-        "label": "Section Description",
-        "default": "Styles for every occasion"
-      }, {
         "type": "sale-percentage",
         "name": "Sale Percentage",
         "limit": 4,
@@ -376,7 +357,8 @@
             "label": "Image link"
           }
         ]
-      }, {
+      },
+      {
         "type": "collection-image",
         "name": "Curated Image Section",
         "limit": 4,
