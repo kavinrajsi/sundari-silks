@@ -539,6 +539,17 @@
 
 .page-width {
   .shopify-block.shopify-app-block {
+    padding-bottom: var(--home-section-space);
+    padding-left: var(--Ngap);
+    padding-right: var(--Ngap);
+
+    @media (min-width: 1364px) {
+      padding-left: 60px;
+      padding-right: 60px;
+
+      padding-top: 60px;
+      padding-bottom: 0;
+    }
     div#insta-feed {
       display: grid;
       gap: 16px;
