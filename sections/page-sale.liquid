@@ -310,9 +310,24 @@
 </div>
 {% schema %}
   {
-    "name": "Just Dropped Section",
+    "name": "Sale Section",
     "tag": "section",
-    "settings": [
+    "blocks": [
+      {
+        "type": "sale-banner",
+        "name": "Sale Banner",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "sale-banner-desktop",
+            "label": "Banner Desktop"
+          }, {
+            "type": "url",
+            "id": "sale-banner-mobile",
+            "label": "Banner Mobile"
+          }
+        ]
+      },
       {
         "type": "text",
         "id": "just-dropped-title",
@@ -330,8 +345,7 @@
         "id": "just-dropped-count",
         "label": "Product Count",
         "default": 6
-      },
-      {
+      }, {
         "type": "text",
         "id": "collection-list",
         "label": "Collection List",
@@ -347,10 +361,22 @@
         "id": "curated-description",
         "label": "Section Description",
         "default": "Styles for every occasion"
-      }
-    ],
-    "blocks": [
-      {
+      }, {
+        "type": "sale-percentage",
+        "name": "Sale Percentage",
+        "limit": 4,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "sale-percentage-image",
+            "label": "Image"
+          }, {
+            "type": "url",
+            "id": "sale-percentage-link",
+            "label": "Image link"
+          }
+        ]
+      }, {
         "type": "collection-image",
         "name": "Curated Image Section",
         "limit": 4,
