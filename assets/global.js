@@ -110,7 +110,7 @@
       $(".header-mobile-navigation-list").hide().removeClass("active");
       $(".closeMenu").hide().removeClass("active");
       $(".burgerMenu").show().addClass("active");
-      $("body").toggleClass("header-seachActive");
+      $("body").toggleClass("hidden");
     });
   });
   /**
