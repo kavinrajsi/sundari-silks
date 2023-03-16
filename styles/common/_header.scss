@@ -832,6 +832,10 @@
 }
 
 
+.hc_cd.at_top.hc_cd_sticky ~ .fullpage .header .header-mobile-navigation-list.active{
+top: 46px;
+height: calc(100vh - 46px)
+}
 .hc_cd.at_top.hc_cd_sticky ~ .fullpage .header {
 top: 46px;
 }
