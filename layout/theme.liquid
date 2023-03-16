@@ -54,7 +54,7 @@
     {{ 'global.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js' | asset_url | preload_tag: as: 'script' }}
 
-    {{ content_for_header }}
+    {{ content_for_header }}{% if product %}<script id="hc_product_countdown_dates" data-p_id="{{ product.id }}" type="application/json">{{ shop.metafields.hc_product_countdown.dates_json }}</script>{% endif %}
     {% if product -%}
       <script id="hc_product_countdown_dates" data-p_id="{{ product.id }}" type="application/json">
         {{ shop.metafields.hc_product_countdown.dates_json }}
