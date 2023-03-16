@@ -835,3 +835,9 @@
 .hc_cd.at_top.hc_cd_sticky ~ .fullpage .header {
 top: 46px;
 }
+
+
+.hc_cd.at_top.hc_cd_sticky ~ .shopify-section .drawer.is-visible .drawer__wrapper,
+.hc_cd.at_top.hc_cd_sticky ~ .fullpage .meFilter.is-visible .fitler--wrapper{
+    z-index: 1999;
+}
