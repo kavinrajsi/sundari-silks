@@ -60,7 +60,7 @@
       height: calc(100vh - 60px);
       overflow-y: hidden;
       .filter--content {
-        height: calc(100vh - 130px);
+        height: calc(100vh - 160px);
         overflow: scroll;
       }
       .filter-group {
@@ -69,6 +69,7 @@
         max-width: 40%;
         min-width: 40%;
         border-right: 1px solid var(--color-border);
+        &:last-child{display: none;}
         summary {
           cursor: pointer;
           div {
@@ -105,6 +106,7 @@
         position: absolute;
         top: 0;
         left: 40%;
+        left: 38.2%;
         // max-height: 230px;
         overflow-y: scroll;
         .filter-group-display__list {
