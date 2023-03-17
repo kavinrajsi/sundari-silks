@@ -23,6 +23,10 @@
     overflow: hidden;
   }
   .banner-sale-unit-mobile {
+    margin-top: 40px;
+    @media (min-width: 768px) {
+    margin-top: 46px;
+    }
     overflow: hidden;
     position: relative;
     background-image: url("https://cdn.shopify.com/s/files/1/0490/1158/9282/files/online-sale-banner-mobile.png?v=1678678079");
