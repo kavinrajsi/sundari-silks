@@ -442,7 +442,7 @@
     }
     /* nav text */
     .collection-banner-text-nav {
-      z-index: 2;
+      z-index: 1;
       display: grid;
       gap: 20px;
       grid-template-columns: repeat(2, 1fr);
