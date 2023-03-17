@@ -547,12 +547,16 @@ section.instagram-page {
           img {
             width: 100% !important;
             height: 100% !important;
+            + .instafeed-overlay{
+              width: 100% !important;
+              height: 100% !important;
+              &:after {
+                width: 100% !important;
+                height: 100% !important;
+              }
+            }
           }
         }
-      }
-      .instafeed-overlay:after {
-        width: 100% !important;
-        height: 100% !important;
       }
     }
   }
