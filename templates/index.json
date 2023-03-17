@@ -9,15 +9,6 @@
         "blog_show_author": true
       }
     },
-    "db57ed54-ad4e-485e-89b8-021ebc25d590": {
-      "type": "instafeed",
-      "disabled": true,
-      "settings": {
-        "heading_size": 20,
-        "feed_width": 100,
-        "html_area": ""
-      }
-    },
     "16790214929ca996a0": {
       "type": "apps",
       "blocks": {
@@ -40,7 +31,6 @@
   },
   "order": [
     "main",
-    "db57ed54-ad4e-485e-89b8-021ebc25d590",
     "16790214929ca996a0"
   ]
 }
