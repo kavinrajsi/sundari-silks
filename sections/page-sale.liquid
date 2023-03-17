@@ -408,7 +408,8 @@
   </div>
   <div class="section-content">
     <div class="blog-feed-container">
-      {% for article in blog.articles limit: 4 %}
+      {% if section.settings.blog != blank and section.settings.blog.articles_count > 0 %}
+      {% for article in section.settings.blog.articles limit: 4 %}
         <div class="blog-feed-card">
           <div class="blog-feed-card-wrapper">
             <a href=" {{ article.url }}" class="blog-feed-card-link">
@@ -430,6 +431,7 @@
           </div>
         </div>
     {% endfor %}
+    {% endif %}
     </div>
   </div>
 </div>
@@ -442,3 +444,37 @@
       </div>
     </div>
 </div>
+
+
+
+{% schema %}
+  {
+  "name": "Sale Page",
+  "tag": "section",
+  "settings": [
+  {
+  "type": "text",
+  "id": "heading",
+  "default": "Blogs by Sundari Silks",
+  "label": "Blog Title"
+  },
+  {
+  "type": "text",
+  "id": "richtext",
+  "default": "Stories of Fabrics, Styling Tips, Decor Inspiration and more…",
+  "label": "Blog Description"
+  },
+  {
+  "type": "blog",
+  "id": "blog",
+  "label": "Blog"
+  },
+  {
+  "type": "checkbox",
+  "id": "blog_show_author",
+  "label": "Show author",
+  "default": true
+  }
+  ]
+  }
+  {% endschema %}
