@@ -35,7 +35,13 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preload" as="font" href="{{ header_font | font_url }}" type="font/woff2" crossorigin>
     <link rel="preload" as="font" href="{{ body_font | font_url }}" type="font/woff2" crossorigin>
-    <link rel="preload" as="font" href="https://cdn.shopify.com/s/files/1/0490/1158/9282/t/22/assets/slick.woff" type="font/woff" crossorigin>
+    <link
+      rel="preload"
+      as="font"
+      href="https://cdn.shopify.com/s/files/1/0490/1158/9282/t/22/assets/slick.woff"
+      type="font/woff"
+      crossorigin
+    >
     <link rel="preload" href="{{'base.css' | asset_url}}" as="style">
 
     {{ 'image-lazy.js' | asset_url | preload_tag: as: 'script' }}
@@ -52,9 +58,18 @@
     {{ 'photoswipe-control.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'blouse-data.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'global.js' | asset_url | preload_tag: as: 'script' }}
-    {{ 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js' | asset_url | preload_tag: as: 'script' }}
+    {{
+      'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js'
+      | asset_url
+      | preload_tag: as: 'script'
+    }}
 
-    {{ content_for_header }}{% if product %}<script id="hc_product_countdown_dates" data-p_id="{{ product.id }}" type="application/json">{{ shop.metafields.hc_product_countdown.dates_json }}</script>{% endif %}
+    {{ content_for_header }}
+    {% if product -%}
+      <script id="hc_product_countdown_dates" data-p_id="{{ product.id }}" type="application/json">
+        {{ shop.metafields.hc_product_countdown.dates_json }}
+      </script>
+    {%- endif %}
     {% if product -%}
       <script id="hc_product_countdown_dates" data-p_id="{{ product.id }}" type="application/json">
         {{ shop.metafields.hc_product_countdown.dates_json }}
@@ -183,7 +198,6 @@
     {% if template contains 'page' %}
       {{ 'slick.css' | asset_url | stylesheet_tag }}
     {% endif %}
-
 
     <link rel="stylesheet" href="{{'base.css' | asset_url }}">
 
@@ -370,13 +384,14 @@
         "url": {{ request.origin | append: page.url | json }}
       }
     </script>
+
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
         "@type": "Organization",
         "name": {{ shop.name | json }},
         {% if settings.brand_logo != blank %}
-        "logo": {{ settings.brand_logo.src | prepend: "https:" | json }},
+        "logo": "https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundari-silks-logo.png",
         {% endif %}
         "sameAs": [
           {{ settings.social_twitter_link | json }},
@@ -458,28 +473,28 @@
     {% section 'quickview-modal' %}
     <!-- Modal -->
     {% comment %}
-    <div class="modal modal-all-page">
-      <div class="modal-overlay modal-toggle"></div>
-      <div class="modal-wrapper modal-transition">
-        <div class="modal-header">
-          <button class="modal-close modal-toggle" aria-label="close">
-            <svg class="icon-close icon" viewBox="0 0 24 24">
-              <use xlink:href="#close"></use>
-            </svg>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="modal-content">
-            <img
-              width="580"
-              height="524"
-              alt="sundari Silks Chennai Sale 2023"
-              src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundari-silks-chennai-sale-pop_up-2023.png?v=1677129577"
-            >
+      <div class="modal modal-all-page">
+        <div class="modal-overlay modal-toggle"></div>
+        <div class="modal-wrapper modal-transition">
+          <div class="modal-header">
+            <button class="modal-close modal-toggle" aria-label="close">
+              <svg class="icon-close icon" viewBox="0 0 24 24">
+                <use xlink:href="#close"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-content">
+              <img
+                width="580"
+                height="524"
+                alt="sundari Silks Chennai Sale 2023"
+                src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundari-silks-chennai-sale-pop_up-2023.png?v=1677129577"
+              >
+            </div>
           </div>
         </div>
       </div>
-    </div>
     {% endcomment %}
     <!-- Modal end -->
 
@@ -587,6 +602,5 @@
     <script defer src="{{ 'global.js' | asset_url }}"></script>
 
     {% include 'swymSnippet' %}
-
   </body>
 </html>
