@@ -344,7 +344,8 @@ body:not(.template-index) {
 
 // curated collection
 .collection-saree,
-.collection-readymade {
+.collection-readymade,
+.collection-other {
   display: grid;
   gap: var(--Ngap);
   grid-template-columns: repeat(2, 1fr);
