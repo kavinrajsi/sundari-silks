@@ -9,6 +9,7 @@
     {% endcomment %}
     <ul id="predictive-search-results-list" class="predictive-search__results-list" role="listbox" aria-labelledby="predictive-search-products">
       {%- for product in predictive_search.resources.products -%}
+      {% if product.available %}
         <li class="predictive-search__list-item" role="option">
           <a href="{{ product.url }}" class="predictive-search__item"  >
             {%- if product.featured_media != blank -%}
@@ -20,18 +21,27 @@
                 height="{{ 120 | divided_by: product.featured_media.preview_image.aspect_ratio }}"
               >
             {%- endif -%}
+        <div class="product__card--status">
+                {% unless product.available %}
+                <!-- TODO: Sold out chip color -->
+                <span class="product__card--status-soldout">sold out</span>
+                {% endunless %}
+
+                
+
+              </div>
             <div class="predictive-search__item-content">
-              {%- if settings.predictive_search_show_vendor -%}
-                <span class="visually-hidden">Vendor</span>
-                <div class="predictive-search__item-vendor">{{ product.vendor }}</div>
-              {%- endif -%}
               <span class="predictive-search__item-heading">{{ product.title }}</span>
-              {%- if settings.predictive_search_show_price -%}
-                {% comment %}Render price{% endcomment %}
-              {%- endif -%}
+              <span>{% for variant in product.variants limit:1 %}
+                  {% if variant.compare_at_price > variant.price %}
+                 <span class="product__card--status-soldout">
+                 {{  variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | remove: '.0' | slice: 0, 2 }}% off </span>
+                {% endif %}
+                {% endfor %}</span>
             </div>
           </a>
         </li>
+       {% endif %}
       {%- endfor -%}
       <li class="predictive-search__list-item" role="option">
         <button class="predictive-search__item"  >
