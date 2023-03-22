@@ -15,8 +15,8 @@
     >
       {%- for product in predictive_search.resources.products -%}
         {% if product.available %}
-          <li class="predictive-search__list-item" role="option" style="position:relative;">
-            <a href="{{ product.url }}" class="predictive-search__item">
+          <li class="predictive-search__list-item" role="option">
+            <a href="{{ product.url }}" class="predictive-search__item" style="position:relative;">
               {%- if product.featured_media != blank -%}
                 <img
                   class="predictive-search__image"
