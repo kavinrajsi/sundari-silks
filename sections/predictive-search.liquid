@@ -51,24 +51,26 @@
               </div>
               <div class="predictive-search__item-content">
                 <span class="predictive-search__item-heading">{{ product.title }}</span><br>
-                <span class="predictive-search__item-price">
-                  {% if product.price_varies %}
-                    <p>
-                      From {{ product.price_min | money_with_currency }} to
-                      {{ product.price_max | money_without_currency }}
-                    </p>
-                  {% else %}
-                    <p>
-                      {% if product.compare_at_price_max > product.price %}
-                        <span
-                          ><s>{{ product.compare_at_price_max | money_with_currency }}</s></span
-                        >
-                        <span>{{ product.price | money_with_currency }}</span>
-                      {% else %}
-                        <span>{{ product.price | money_with_currency }}</span>
-                      {% endif %}
-                    </p>
-                  {% endif %}
+                <span class="predictive-search__item-price"
+                  ><small>
+                    {% if product.price_varies %}
+                      <p>
+                        From {{ product.price_min | money_with_currency }} to
+                        {{ product.price_max | money_without_currency }}
+                      </p>
+                    {% else %}
+                      <p>
+                        {% if product.compare_at_price_max > product.price %}
+                          <span
+                            ><s>{{ product.compare_at_price_max | money_with_currency }}</s></span
+                          >
+                          <span>{{ product.price | money_with_currency }}</span>
+                        {% else %}
+                          <span>{{ product.price | money_with_currency }}</span>
+                        {% endif %}
+                      </p>
+                    {% endif %}
+                  </small>
                 </span>
               </div>
             </a>
