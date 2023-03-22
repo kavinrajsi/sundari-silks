@@ -2,86 +2,108 @@
 <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="3" collection-list-desktop="4">
   {%- for product in search.results -%}
   {%- case product.object_type -%}
-      {%- when 'product' -%}
-      <div class="product__card">
-        <div class="product__card--img">
-          <a href="{{ product.url | within: collection }}" class="product__card--link">
-            <div class="product__card--image--wrapper">
-              {% if product.featured_image != blank %}
-              <!-- [200,400,600,700,800,900,1000,1200] -->
-              <img loading="lazy" id="Image-{{ image.id }}" class="blur-up responsive-image__image lazyload"
-                src="{{ product.featured_image | image_url: width: '300x'  }}"
-                data-src="{{ product.featured_image | image_url: width: '300x'  }}"
-                data-aspectratio="{{ product.featured_image.aspect_ratio }}"
-                data-widths="[540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]" data-sizes="auto"
-                data-parent-fit="cover" alt="
+  {%- when 'product' -%}
+  <div class="product__card">
+    <div class="product__card--img">
+      <a href="{{ product.url | within: collection }}" class="product__card--link">
+        <div class="product__card--image--wrapper">
+          {% if product.featured_image != blank %}
+          <!-- [200,400,600,700,800,900,1000,1200] -->
+          <img loading="lazy" id="Image-{{ image.id }}" class="blur-up responsive-image__image lazyload"
+            src="{{ product.featured_image | image_url: width: '300x'  }}"
+            data-src="{{ product.featured_image | image_url: width: '300x'  }}"
+            data-aspectratio="{{ product.featured_image.aspect_ratio }}"
+            data-widths="[540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]" data-sizes="auto" data-parent-fit="cover"
+            alt="
                   {% if  product.feature_image.alt != blank %}
                   {{ product.feature_image.alt }}
                   {% else %}
                   {{ product.title }}
                   {% endif %}">
-              {% comment %}
-              {% endcomment %}
-              {% else %}
-              {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
-              {% endif %}
-              <div class="product__card--status">
-                {% unless product.available %}
-                <!-- TODO: Sold out chip color -->
-                <span class="product__card--status-soldout">sold out</span>
-                {% endunless %}
+          {% comment %}
+          {% endcomment %}
+          {% else %}
+          {{ 'product-1' | placeholder_svg_tag: 'product-img' }}
+          {% endif %}
+          <div class="product__card--status">
+            {% unless product.available %}
+            <!-- TODO: Sold out chip color -->
+            <span class="product__card--status-soldout">sold out</span>
+            {% endunless %}
 
-                {% for variant in product.variants limit:1 %}
-                  {% if variant.compare_at_price > variant.price %}
-                 <span class="product__card--status-soldout">
-                 {{  variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | remove: '.0' | slice: 0, 2 }}% off </span>
-                {% endif %}
-                {% endfor %}
+            {% for variant in product.variants limit:1 %}
+            {% if variant.compare_at_price > variant.price %}
+            <span class="product__card--status-soldout">
+              {{ variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price |
+              remove: '.0' | slice: 0, 2 }}% off </span>
+            {% endif %}
+            {% endfor %}
 
-              </div>
-            </div>
-          </a>
-          <div class="product__card-cta quick-view-button">
-              <span id="productInfoAnchor" class="quick-view" product-handle="{{ product.handle }}"
-              product-price="{{ product.price | money_without_trailing_zeros }}">Quick View</span>
           </div>
         </div>
-        <div class="product__card--content">
-          <a href="{{ product.url | within: collection }}" class="product__card--link">
-            <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
-            <div class="product__variant--price">
-              {% if product.price_varies %}
-              <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency
-                }}</p>
-              {% else %}
-              <p>
-                {% if product.compare_at_price_max > product.price %}
-                <span><s>{{ product.compare_at_price_max | money_with_currency }}</s></span>
-                <span>{{ product.price | money_with_currency }}</span>
-                {% else %}
-                <span>{{ product.price | money_with_currency }}</span>
-                {% endif %}
-              </p>
-              {% endif %}
-            </div>
-            {% if product.variants.size > 1 %}
-            <div class="product__variant--list" hidden>
-              <span class="product__variant--list-title">
-                {{product.options }} :
-              </span>
-              {% for variant in product.variants %}
-              {% if variant.inventory_quantity == 0 %} <s> {% endif %}
-                <span class="product__variant--list-name"> {{ variant.title }} </span>
-                {% if variant.inventory_quantity == 0 %} </s> {% endif %}
-              {% endfor %}
-            </div>
-            {% endif %}
-          </a>
-        </div>
+      </a>
+      <div class="product__card-cta quick-view-button">
+        <span id="productInfoAnchor" class="quick-view" product-handle="{{ product.handle }}"
+          product-price="{{ product.price | money_without_trailing_zeros }}">Quick View</span>
       </div>
-     
+    </div>
+    <div class="product__card--content">
+      <a href="{{ product.url | within: collection }}" class="product__card--link">
+        <h2 itemprop="name" class="product__title">{{ product.title }}</h2>
+        <div class="product__variant--price">
+          {% if product.price_varies %}
+          <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency
+            }}</p>
+          {% else %}
+          <p>
+            {% if product.compare_at_price_max > product.price %}
+            <span><s>{{ product.compare_at_price_max | money_with_currency }}</s></span>
+            <span>{{ product.price | money_with_currency }}</span>
+            {% else %}
+            <span>{{ product.price | money_with_currency }}</span>
+            {% endif %}
+          </p>
+          {% endif %}
+        </div>
+        {% if product.variants.size > 1 %}
+        <div class="product__variant--list" hidden>
+          <span class="product__variant--list-title">
+            {{product.options }} :
+          </span>
+          {% for variant in product.variants %}
+          {% if variant.inventory_quantity == 0 %} <s> {% endif %}
+            <span class="product__variant--list-name"> {{ variant.title }} </span>
+            {% if variant.inventory_quantity == 0 %} </s> {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+      </a>
+    </div>
+  </div>
   {%- when 'article' -%}
-      
+    {% assign product = article %}
+    <div class="blog-feed-card">
+      <div class="blog-feed-card-wrapper">
+        <a href=" {{ article.url }}" class="blog-feed-card-link">
+          {% if article.image %}
+          <img id="Image-{{ article.id }}" loading="lazy" class="{{ article_class }} blog-feed-card-image"
+            src="{{article.image.src | image_url: width:404, height: 296, crop: 'top'  }}"
+            alt="{{ article.image.alt | escape }}">
+          {% else %}
+          {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+          <h3 class="blog-feed-card-title"> {{ article.title | escape }} </h3>
+          <p class="blog-feed-card-content">
+            {% if article.excerpt.size > 0 %}
+            {{ article.excerpt | strip_html | truncate: 100 }}
+            {% else %}
+            {{ article.content | strip_html | truncate: 100 }}
+            {% endif %}
+          </p>
+          <p class="blog-feed-card-cta"> Read More </p>
+        </a>
+      </div>
+    </div>
   {%- when 'page' -%}
   {%- endcase -%}
   {%- endfor -%}
