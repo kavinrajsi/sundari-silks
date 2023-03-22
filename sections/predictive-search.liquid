@@ -50,7 +50,10 @@
                 {% endfor %}
               </div>
               <div class="predictive-search__item-content">
-                <span class="predictive-search__item-heading">{{ product.title }}</span><br>
+                <span class="predictive-search__item-heading"
+                  ><b>{{ product.title }}</b></span
+                ><br>
+                <br>
                 <span class="predictive-search__item-price"
                   ><small>
                     {% if product.price_varies %}
