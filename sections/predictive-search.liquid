@@ -1,12 +1,12 @@
 {%- if predictive_search.performed -%}
   <div id="predictive-search-results">
-    {% comment %}
-      {%- if predictive_search.resources.products.size > 0 -%}
-        <h3 id="predictive-search-products" class="predictive-search__heading">
-          Products
-        </h3>
-      {%- endif -%}
-    {% endcomment %}
+    <style>
+        @media (min-width: 768px){
+      .header-search-area-wrapper .header-search-area-container #predictive-search-results-list li:first-child {
+           padding-left: 14px;
+      }
+        }
+    </style>
     <ul
       id="predictive-search-results-list"
       class="predictive-search__results-list"
