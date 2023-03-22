@@ -1,66 +1,82 @@
 {%- if predictive_search.performed -%}
   <div id="predictive-search-results">
     {% comment %}
-    {%- if predictive_search.resources.products.size > 0 -%}
-      <h3 id="predictive-search-products" class="predictive-search__heading">
-        Products
-      </h3>
-    {%- endif -%}
+      {%- if predictive_search.resources.products.size > 0 -%}
+        <h3 id="predictive-search-products" class="predictive-search__heading">
+          Products
+        </h3>
+      {%- endif -%}
     {% endcomment %}
-    <ul id="predictive-search-results-list" class="predictive-search__results-list" role="listbox" aria-labelledby="predictive-search-products">
+    <ul
+      id="predictive-search-results-list"
+      class="predictive-search__results-list"
+      role="listbox"
+      aria-labelledby="predictive-search-products"
+    >
       {%- for product in predictive_search.resources.products -%}
-      {% if product.available %}
-        <li class="predictive-search__list-item" role="option">
-          <a href="{{ product.url }}" class="predictive-search__item"  >
-            {%- if product.featured_media != blank -%}
-              <img class="predictive-search__image"
-              loading="lazy"
-                src="{{ product.featured_media.src | image_url: width: 180, height: 180  }}"
-                alt="{{ product.featured_media.alt }}"
-                width="120"
-                height="{{ 120 | divided_by: product.featured_media.preview_image.aspect_ratio }}"
-              >
-            {%- endif -%}
-        <div class="product__card--status">
+        {% if product.available %}
+          <li class="predictive-search__list-item" role="option" style="position:relative;">
+            <a href="{{ product.url }}" class="predictive-search__item">
+              {%- if product.featured_media != blank -%}
+                <img
+                  class="predictive-search__image"
+                  loading="lazy"
+                  src="{{ product.featured_media.src | image_url: width: 180, height: 180  }}"
+                  alt="{{ product.featured_media.alt }}"
+                  width="120"
+                  height="{{ 120 | divided_by: product.featured_media.preview_image.aspect_ratio }}"
+                >
+              {%- endif -%}
+              <div class="product__card--status">
                 {% unless product.available %}
-                <!-- TODO: Sold out chip color -->
-                <span class="product__card--status-soldout">sold out</span>
+                  <!-- TODO: Sold out chip color -->
+                  <span class="product__card--status-soldout">sold out</span>
                 {% endunless %}
 
-                {% for variant in product.variants limit:1 %}
+                {% for variant in product.variants limit: 1 %}
                   {% if variant.compare_at_price > variant.price %}
-                 <span class="product__card--status-soldout">
-                 {{  variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | remove: '.0' | slice: 0, 2 }}% off </span>
-                {% endif %}
+                    <span class="product__card--status-soldout">
+                      {{
+                        variant.compare_at_price
+                        | minus: variant.price
+                        | times: 100.0
+                        | divided_by: variant.compare_at_price
+                        | remove: '.0'
+                        | slice: 0, 2
+                      -}}
+                      % off
+                    </span>
+                  {% endif %}
                 {% endfor %}
-                
               </div>
-            <div class="predictive-search__item-content">
-              <span class="predictive-search__item-heading">{{ product.title }}</span><br>
-              <span class="predictive-search__item-price">
-                {% if product.price_varies %}
-              <p>From {{ product.price_min | money_with_currency }} to {{ product.price_max | money_without_currency
-                }}</p>
-              {% else %}
-              <p>
-                {% if product.compare_at_price_max > product.price %}
-                <span><s>{{ product.compare_at_price_max | money_with_currency }}</s></span>
-                <span>{{ product.price | money_with_currency }}</span>
-                {% else %}
-                <span>{{ product.price | money_with_currency }}</span>
-                {% endif %}
-              </p>
-              {% endif %}
-              </span>
-            </div>
-          </a>
-        </li>
-       {% endif %}
+              <div class="predictive-search__item-content">
+                <span class="predictive-search__item-heading">{{ product.title }}</span><br>
+                <span class="predictive-search__item-price">
+                  {% if product.price_varies %}
+                    <p>
+                      From {{ product.price_min | money_with_currency }} to
+                      {{ product.price_max | money_without_currency }}
+                    </p>
+                  {% else %}
+                    <p>
+                      {% if product.compare_at_price_max > product.price %}
+                        <span
+                          ><s>{{ product.compare_at_price_max | money_with_currency }}</s></span
+                        >
+                        <span>{{ product.price | money_with_currency }}</span>
+                      {% else %}
+                        <span>{{ product.price | money_with_currency }}</span>
+                      {% endif %}
+                    </p>
+                  {% endif %}
+                </span>
+              </div>
+            </a>
+          </li>
+        {% endif %}
       {%- endfor -%}
       <li class="predictive-search__list-item" role="option">
-        <button class="predictive-search__item"  >
-          View all “{{ predictive_search.terms }}”
-        </button>
+        <button class="predictive-search__item">View all “{{ predictive_search.terms }}”</button>
       </li>
     </ul>
   </div>
