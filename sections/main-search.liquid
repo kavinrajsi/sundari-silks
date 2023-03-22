@@ -4,35 +4,7 @@
   {%- case product.object_type -%}
     
   {%- when 'page' -%}
-  {%- when 'article' -%} 
-    <div class="product__card">
-      <div class="product__card--img">
-        <a href=" {{ product.url }}" class="product__card--link">
-          <div class="product__card--image--wrapper">
-            {% if product.image %}
-            <img id="Image-{{ product.id }}" loading="lazy" class="{{ article_class }} blog-feed-card-image"
-              src="{{product.image.src | image_url: width:404, height: 296, crop: 'top'  }}"
-              alt="{{ product.image.alt | escape }}">
-            {% endif %} 
-          </div>
-        </a>        
-      </div>
-      <div class="product__card--content">
-        <a href="{{ product.url | within: collection }}" class="product__card--link">
-          <h2 itemprop="name" class="product__title">{{ product.title | escape }} </h2>
-          <div class="product__variant--price">
-            <p>
-              {% if product.excerpt.size > 0 %}
-            {{ product.excerpt | strip_html | truncate: 100 }}
-            {% else %}
-            {{ product.content | strip_html | truncate: 100 }}
-            {% endif %}
-            </p>
-            <p style="text-decoration: underline; text-underline-position: under;"> Read More </p>
-          </div>
-        </a>
-      </div>
-    </div>
+ 
   {%- when 'product' -%}
   <div class="product__card">
     <div class="product__card--img">
