@@ -3,7 +3,7 @@
   {%- for product in search.results -%}
 
 
-      {% if product.available %}
+      
       <div class="product__card">
         <div class="product__card--img">
           <a href="{{ product.url | within: collection }}" class="product__card--link">
@@ -80,7 +80,7 @@
           </a>
         </div>
       </div>
-      {% endif %}
+     
 
   {%- endfor -%}
 </div>
