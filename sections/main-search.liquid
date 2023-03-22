@@ -81,7 +81,26 @@
     </div>
   </div>
   {%- when 'article' -%}
-    {{ product | json }}
+    <div class="blog-feed-card">
+      <div class="blog-feed-card-wrapper">
+        <a href=" {{ product.url }}" class="blog-feed-card-link">
+          {% if product.image %}
+          <img id="Image-{{ product.id }}" loading="lazy" class="{{ article_class }} blog-feed-card-image"
+            src="{{product.image.src | image_url: width:404, height: 296, crop: 'top'  }}"
+            alt="{{ product.image.alt | escape }}">
+          {% endif %}
+          <h3 class="blog-feed-card-title"> {{ product.title | escape }} </h3>
+          <p class="blog-feed-card-content">
+            {% if product.excerpt.size > 0 %}
+            {{ product.excerpt | strip_html | truncate: 100 }}
+            {% else %}
+            {{ product.content | strip_html | truncate: 100 }}
+            {% endif %}
+          </p>
+          <p class="blog-feed-card-cta"> Read More </p>
+        </a>
+      </div>
+    </div>
   {%- when 'page' -%}
   {%- endcase -%}
   {%- endfor -%}
