@@ -1,9 +1,10 @@
 {% paginate search.results by 27 %}
 <div class="collection-list-grid" collection-list-mobile="2" collection-list-tablet="3" collection-list-desktop="4">
   {%- for product in search.results -%}
+  {%- case product.object_type -%}
 
 
-      
+      {% if product.available %}
       <div class="product__card">
         <div class="product__card--img">
           <a href="{{ product.url | within: collection }}" class="product__card--link">
@@ -80,8 +81,11 @@
           </a>
         </div>
       </div>
-     
+      {% endif %}
 
+  {%- when 'article' -%}
+  {%- when 'page' -%}
+  {%- endcase -%}
   {%- endfor -%}
 </div>
 <div class="pagination--number">
