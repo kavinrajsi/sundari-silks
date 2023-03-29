@@ -93,11 +93,20 @@
           <div class="section-header-content">New arrivals you will love</div>
         </div>
         <div class="tab-buttton">
-          {% for item in my_array %}
+            <div id="titem_1" class="tab  active  ">
+              Kanchipuram Silks
+            </div>
+            <div id="titem_2" class="tab  ">
+              Tussar
+            </div>
+            <div id="titem_3" class="tab  ">
+              Silk Cotton
+            </div>
+          {% comment %} {% for item in my_array %}
             <div id="titem_{{forloop.index}}" class="tab {% if forloop.first %} active {% endif %} ">
               {{ item | downcase | replace: "-", " " }}
             </div>
-          {% endfor %}
+          {% endfor %} {% endcomment %}
         </div>
       </div>
       <div class="homepage-justdropped-content">
@@ -428,7 +437,6 @@
       </div>
     </div>
   </section>
-
 <section class="shopify-section homepage-section home-page-curated-section">
   <div class="section-header-wrapper">
     <div class="section-header text-center">
@@ -459,7 +467,6 @@
     </div>
   </div>
 </section>
-
   <section class="shopify-section homepage-section">
   <div class="homepage-blogfeed">
   <div class="section-header text-center">
@@ -504,7 +511,6 @@
       </div>
     </div>
 </section>
-
 </div>
 {% schema %}
   {
