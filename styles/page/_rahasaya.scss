@@ -1,4 +1,81 @@
-
-.page-rahasaya{
+body.template-page.rahasya {
+  background: #080707;
+  .header-container,
+  .header-action-list,
+  .header-nav-list-main .menu-level-2 {
     background: #080707;
   }
+
+  .header-nav-list-main .second-menu {
+    background-color: transparent;
+  }
+
+  .header-action-list {
+    border-color: #fff;
+  }
+  .header-action-list-icon div[class^="header"] svg,
+  .header-action-list,
+  .header-nav-list-main .menu-level-1 .menu-level-1-item a,
+  .header-nav-list-main .menu-level-2 a {
+    color: #fff;
+  }
+  .header-nav-list-main
+    .menu-level-1-item.kanchipuram
+    .second-menu
+    .menu-level-2
+    a:hover,
+  .header-nav-list-main
+    .menu-level-1-item.mumbai-collection
+    .second-menu
+    .menu-level-2
+    a:hover,
+  .header-nav-list-main
+    .menu-level-1-item.decor-accessories
+    .second-menu
+    .menu-level-2
+    a:hover,
+  .header-nav-list-main
+    .menu-level-1-item.athirshtam
+    .second-menu
+    .menu-level-2
+    a:hover {
+    color: #000;
+  }
+  .header-nav-list-main .menu-level-3 .menu-level-3-item a:hover {
+    color: #000;
+  }
+  .breadcrumbs {
+    display: none;
+  }
+  .section-rahasaya {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .text-para {
+    padding-top: var(--Ngap);
+    padding-bottom: var(--Ngap);
+    font-size: 30px;
+    line-height: 1.24;
+    color: #dbcfa9;
+    font-weight: 400;
+    font-family: "Playfair Display";
+    text-align: center;
+  }
+  .text-subpara {
+    font-size: 16px;
+    line-height: 1.24;
+    color: #dbcfa9;
+    font-weight: 400;
+    font-family: "Montserrat";
+    text-align: center;
+  }
+  .image-center {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+  }
+  .rahasya-logo {
+    padding-bottom: var(--Ngap);
+  }
+}
