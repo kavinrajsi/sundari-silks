@@ -1,81 +1,263 @@
+@import "../common/interpolate";
+
+:root {
+  --color-bg-rahasya: #080707;
+  --color-bg-white: #fff;
+  --color-bg-black: #000;
+}
+
 body.template-page.rahasya {
-  background: #080707;
+  background: var(--color-bg-rahasya);
+
   .header-container,
   .header-action-list,
-  .header-nav-list-main .menu-level-2 {
-    background: #080707;
+  .header-nav-list-main .menu-level-2,
+  footer .footer-copyright,
+  footer {
+    background: var(--color-bg-rahasya);
   }
 
   .header-nav-list-main .second-menu {
     background-color: transparent;
   }
 
-  .header-action-list {
-    border-color: #fff;
+  .header-action-list,
+  footer .footer-dataaction .subscription-from form input[type="email"],
+  footer .footer-copyright {
+    border-color: var(--color-bg-white);
   }
+
   .header-action-list-icon div[class^="header"] svg,
   .header-action-list,
   .header-nav-list-main .menu-level-1 .menu-level-1-item a,
-  .header-nav-list-main .menu-level-2 a {
-    color: #fff;
+  .header-nav-list-main .menu-level-2 a,
+  footer .footer-main p,
+  footer .footer-care li,
+  footer .footer-main .menu-link a,
+  footer .footer-dataaction .subscription-from form label span.title,
+  footer .footer-dataaction .subscription-from form label span.content,
+  footer .footer-dataaction .subscription-from form input[type="email"],
+  footer .footer-inbound-link > h2.footer-inbound-link__title,
+  footer .footer-inbound-link__lists a,
+  footer .footer-copyright,
+  footer .footer-copyright a {
+    color: var(--color-bg-white);
   }
-  .header-nav-list-main
-    .menu-level-1-item.kanchipuram
-    .second-menu
-    .menu-level-2
-    a:hover,
-  .header-nav-list-main
-    .menu-level-1-item.mumbai-collection
-    .second-menu
-    .menu-level-2
-    a:hover,
-  .header-nav-list-main
-    .menu-level-1-item.decor-accessories
-    .second-menu
-    .menu-level-2
-    a:hover,
-  .header-nav-list-main
-    .menu-level-1-item.athirshtam
-    .second-menu
-    .menu-level-2
-    a:hover {
-    color: #000;
+
+  .header-nav-list-main.menu-level-1-item.kanchipuram.second-menu.menu-level-2a:hover,
+  .header-nav-list-main.menu-level-1-item.mumbai-collection.second-menu.menu-level-2a:hover,
+  .header-nav-list-main.menu-level-1-item.decor-accessories.second-menu.menu-level-2a:hover,
+  .header-nav-list-main.menu-level-1-item.athirshtam.second-menu.menu-level-2a:hover {
+    color: var(--color-bg-black);
   }
+
   .header-nav-list-main .menu-level-3 .menu-level-3-item a:hover {
-    color: #000;
+    color: var(--color-bg-black);
   }
+
   .breadcrumbs {
     display: none;
   }
+
   .section-rahasaya {
     max-width: 1140px;
     margin-left: auto;
     margin-right: auto;
+    @include interpolate("padding-top", 420px, 40px, 1024px, 104px, "ease-in");
+    @include interpolate(
+      "padding-bottom",
+      420px,
+      40px,
+      1024px,
+      104px,
+      "ease-in"
+    );
+    padding-left: 16px;
+    padding-right: 16px;
+
+    br {
+      display: none;
+
+      @media (min-width: 992px) {
+        display: inline-block;
+      }
+    }
   }
-  .text-para {
-    padding-top: var(--Ngap);
-    padding-bottom: var(--Ngap);
-    font-size: 30px;
-    line-height: 1.24;
-    color: #dbcfa9;
-    font-weight: 400;
-    font-family: "Playfair Display";
-    text-align: center;
+
+  .fw\:500 {
+    font-weight: 500;
+    font-weight: bold;
   }
-  .text-subpara {
-    font-size: 16px;
-    line-height: 1.24;
-    color: #dbcfa9;
-    font-weight: 400;
-    font-family: "Montserrat";
-    text-align: center;
+
+  .fs\:italic {
+    font-style: italic;
   }
+
   .image-center {
     margin: 0 auto;
     text-align: center;
     display: block;
   }
+
+  .text-title {
+    line-height: 1.3;
+    font-size: 22px;
+    @media (min-width: 1024px) {
+      line-height: 1.6;
+      font-size: 30px;
+    }
+    color: #dbcfa9;
+    font-family: var(--font-playfair);
+    text-align: center;
+  }
+
+  .text-subpara {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #dbcfa9;
+    font-family: var(--font-montserrat);
+    text-align: center;
+  }
+
   .rahasya-logo {
-    padding-bottom: var(--Ngap);
+    max-width: 240px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @media (min-width: 992px) {
+      max-width: 280px;
+      margin-top: 34px;
+      margin-bottom: 46px;
+    }
+  }
+
+  .latest-innovation {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 992px) {
+      max-width: initial;
+    }
+
+    h3 {
+      margin-bottom: 22px;
+      @media (min-width: 992px) {
+        margin-bottom: 32px;
+      }
+    }
+
+    p {
+      margin-bottom: 22px;
+      @media (min-width: 992px) {
+        margin-bottom: 76px;
+      }
+    }
+  }
+
+  .rahasya-image-wrapper {
+    position: relative;
+    z-index: 1;
+
+    .design-cant-find {
+      z-index: 3;
+      position: relative;
+      @media (min-width: 992px) {
+        position: absolute;
+        top: 202px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      h3 {
+        margin-top: 22px;
+        @media (min-width: 992px) {
+          margin-top: 0;
+        }
+      }
+      p {
+        margin-top: 18px;
+        @media (min-width: 992px) {
+          margin-top: 42px;
+        }
+      }
+    }
+
+    .we-invite {
+      z-index: 3;
+      position: relative;
+
+      @media (min-width: 992px) {
+        position: absolute;
+        bottom: 62px;
+        bottom: 220px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      h3 {
+        color: #dbcfa9;
+        font-family: var(--font-montserrat);
+        font-size: 22px;
+        line-height: 1.3;
+        margin-top: 22px;
+        @media (min-width: 1024px) {
+          margin-top: 0;
+          font-size: 19px;
+          line-height: 1.6;
+        }
+      }
+
+      p {
+        color: #dbcfa9;
+        font-family: var(--font-montserrat);
+        margin-top: 14px;
+        font-size: 14px;
+        @media (min-width: 968px) {
+          margin-top: 42px;
+          font-size: 19px;
+        }
+      }
+
+      img {
+        max-width: 138px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 14px;
+        margin-bottom: 14px;
+
+        @media (min-width: 968px) {
+          margin-top: 32px;
+          margin-bottom: 32px;
+        }
+      }
+
+      .treat-yourself {
+        font-family: var(--font-playfair);
+        text-align: center;
+        margin-top: 0;
+        font-size: 22px;
+        @media (min-width: 968px) {
+          font-size: 30px;
+        }
+      }
+    }
+
+    &:after {
+      z-index: 2;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: url("https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundarisilks-rahasya-background.png?v=1680535946")
+        no-repeat top center;
+      background-size: contain;
+    }
   }
 }
