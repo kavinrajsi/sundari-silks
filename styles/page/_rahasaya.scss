@@ -12,6 +12,10 @@ body.template-page.rahasya {
   .header-container,
   .header-action-list,
   .header-nav-list-main .menu-level-2,
+  .header-mobile-navigation-list .cd-primary-nav,
+  .header-mobile-navigation-list .cd-primary-nav li ul,
+  .header-search-area-wrapper .header-search-area-containerWrapper,
+  .header-search-area-wrapper .header-search-area-container .predictive-search input,
   footer .footer-copyright,
   footer {
     background: var(--color-bg-rahasya);
@@ -22,6 +26,11 @@ body.template-page.rahasya {
   }
 
   .header-action-list,
+  .header-mobile-navigation-list .cd-primary-nav li a,
+  .header-search-area-wrapper .header-search-area-container,
+  .header-search-area-wrapper .header-search-area-container .predictive-search,
+  .header-search-area-wrapper .header-search-area-container #predictive-search .predictive-content li a,
+  .header-search-area-wrapper .header-search-area-container .predictive-search input,
   footer .footer-dataaction .subscription-from form input[type="email"],
   footer .footer-copyright {
     border-color: var(--color-bg-white);
@@ -31,6 +40,9 @@ body.template-page.rahasya {
   .header-action-list,
   .header-nav-list-main .menu-level-1 .menu-level-1-item a,
   .header-nav-list-main .menu-level-2 a,
+  .header-mobile-navigation-list .cd-primary-nav li a,
+  .header-search-area-wrapper .header-search-area-container,
+  .header-search-area-wrapper .header-search-area-container .predictive-search input,
   footer .footer-main p,
   footer .footer-care li,
   footer .footer-main .menu-link a,

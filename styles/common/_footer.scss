@@ -197,6 +197,7 @@ footer {
 
           button[type="submit"],
           input[type="submit"] {
+            border-color: transparent;
             background-color: var(--color-maroon);
             border-radius: var(--border-radius);
             color: var(--color-white);
