@@ -5,6 +5,7 @@
       "blocks": {
         "ab99cd22-9db2-4cf4-9676-120271eed88d": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/sundarisilks-sale-banner-dekstop.png",
             "mobile_image": "shopify:\/\/shop_images\/sundarisilks-sale-banner-mobile.png",
