@@ -20,11 +20,12 @@ body.template-page.rahasya {
   footer {
     background: var(--color-bg-rahasya);
   }
-
+  .header-action-list-icon .header-currency-price-list a.pick_currency.mldesk{
+    background: var(--color-bg-rahasya) !important;
+  }
   .header-nav-list-main .second-menu {
     background-color: transparent;
   }
-
   .header-action-list,
   .header-mobile-navigation-list .cd-primary-nav li a,
   .header-search-area-wrapper .header-search-area-container,
@@ -35,7 +36,9 @@ body.template-page.rahasya {
   footer .footer-copyright {
     border-color: var(--color-bg-white);
   }
-
+  .header-action-list-icon .header-currency-price-list a.pick_currency.mldesk .nice-select .list{
+    border-color: var(--color-bg-white) !important;
+  }
   .header-action-list-icon div[class^="header"] svg,
   .header-action-list,
   .header-nav-list-main .menu-level-1 .menu-level-1-item a,
@@ -54,6 +57,10 @@ body.template-page.rahasya {
   footer .footer-copyright,
   footer .footer-copyright a {
     color: var(--color-bg-white);
+  }
+
+  .header-action-list-icon .header-currency-price-list a.pick_currency.mldesk .nice-select .list{
+    color: var(--color-bg-white) !important;
   }
 
   .header-nav-list-main.menu-level-1-item.kanchipuram.second-menu.menu-level-2a:hover,
