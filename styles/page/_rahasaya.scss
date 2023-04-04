@@ -71,6 +71,9 @@ body.template-page.rahasya {
   .header-nav-list-main .menu-level-3 .menu-level-3-item a:hover {
     color: var(--color-bg-black);
   }
+  .nice-select .option:hover{
+    color: var(--color-bg-black) !important;
+  }
 
   .breadcrumbs {
     display: none;
