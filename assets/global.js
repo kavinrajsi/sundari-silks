@@ -326,6 +326,7 @@
     e.preventDefault();
     $(".modal-size-chart").removeClass("is-visible");
     $(".modal-all-page").removeClass("is-visible");
+    $('video').trigger('pause');
     $("body").removeClass("modalScroll");
   });
 
