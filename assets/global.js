@@ -298,6 +298,8 @@
   window.setTimeout(function () {
     // First check, if localStorage is supported.
     if (window.localStorage) {
+
+    $(".modal-all-page video").trigger('play');
       // Get the expiration date of the previous popup.
       var nextPopup = localStorage.getItem("nextNewsletter");
       if (nextPopup > new Date()) {
@@ -312,6 +314,7 @@
     }
 
     $(".modal-all-page").addClass("is-visible");
+    console.log('play');
   }, 3000);
 
 
