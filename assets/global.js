@@ -300,6 +300,8 @@
     if (window.localStorage) {
       // Get the expiration date of the previous popup.
       var nextPopup = localStorage.getItem("nextNewsletter");
+      $('video').trigger('pause');
+      console.log('video paused');
 
       if (nextPopup > new Date()) {
         return;
