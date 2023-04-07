@@ -64,6 +64,17 @@
       | preload_tag: as: 'script'
     }}
 
+    <link
+      rel="preload"
+      as="video"
+      href="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundarisils-rahasya-video-1.ogg?v=1680847321"
+    >
+    <link
+      rel="preload"
+      as="video"
+      href="https://cdn.shopify.com/videos/c/o/v/1d109207e8be43e28500f0b0bdec6e2e.mp4"
+    >
+
     {{ content_for_header }}
     {% if product -%}
       <script id="hc_product_countdown_dates" data-p_id="{{ product.id }}" type="application/json">
@@ -463,30 +474,37 @@
     {% section 'drawer' %}
     {% section 'quickview-modal' %}
     <!-- Modal -->
-    {% comment %}
-      <div class="modal modal-all-page">
-        <div class="modal-overlay modal-toggle"></div>
-        <div class="modal-wrapper modal-transition">
-          <div class="modal-header">
-            <button class="modal-close modal-toggle" aria-label="close">
-              <svg class="icon-close icon" viewBox="0 0 24 24">
-                <use xlink:href="#close"></use>
-              </svg>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="modal-content">
+    <div class="modal modal-all-page">
+      <div class="modal-overlay modal-toggle"></div>
+      <div class="modal-wrapper modal-transition">
+        <div class="modal-header">
+          <button class="modal-close modal-toggle" aria-label="close">
+            <svg class="icon-close icon" viewBox="0 0 24 24">
+              <use xlink:href="#close"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-content">
+            <video width="580" height="524" controls preload="none">
+              <source src="https://cdn.shopify.com/videos/c/o/v/1d109207e8be43e28500f0b0bdec6e2e.mp4" type="video/mp4">
+              <source
+                src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundarisils-rahasya-video-1.ogg?v=1680847321"
+                type="video/ogg"
+              >
+            </video>
+            {% comment %}
               <img
                 width="580"
                 height="524"
                 alt="sundari Silks Chennai Sale 2023"
                 src="https://cdn.shopify.com/s/files/1/0490/1158/9282/files/sundari-silks-chennai-sale-pop_up-2023.png?v=1677129577"
               >
-            </div>
+            {% endcomment %}
           </div>
         </div>
       </div>
-    {% endcomment %}
+    </div>
     <!-- Modal end -->
 
     <script defer src="{{ 'slick.js' | asset_url }}"></script>
