@@ -300,9 +300,6 @@
     if (window.localStorage) {
       // Get the expiration date of the previous popup.
       var nextPopup = localStorage.getItem("nextNewsletter");
-      $('video').trigger('pause');
-      console.log('video paused');
-
       if (nextPopup > new Date()) {
         return;
       }
@@ -317,6 +314,7 @@
     $(".modal-all-page").addClass("is-visible");
   }, 3000);
 
+
   $(".modal-size-toggle").on("click", function (e) {
     e.preventDefault();
     $(".modal-size-chart").toggleClass("is-visible");
@@ -327,17 +325,10 @@
   $("button.modal-close.modal-toggle").on("click", function (e) {
     e.preventDefault();
     $(".modal-size-chart").removeClass("is-visible");
-    // $(".modal-all-page").removeClass("is-visible");
-    $("body").removeClass("modalScroll");
-  });
-
-
-  $(".modal-all-page button.modal-close.modal-toggle").on("click", function (e) {
-    $('video').trigger('pause');
-    console.log('video paused');
     $(".modal-all-page").removeClass("is-visible");
     $("body").removeClass("modalScroll");
   });
+
 
   $(".product-title-secondary").click(function () {
     $(this)
