@@ -3,15 +3,6 @@
     "slideshow": {
       "type": "home-slideshow",
       "blocks": {
-        "ab99cd22-9db2-4cf4-9676-120271eed88d": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/sundarisilks-sale-banner-dekstop.png",
-            "mobile_image": "shopify:\/\/shop_images\/sundarisilks-sale-banner-mobile.png",
-            "link": "shopify:\/\/collections\/salwar-material"
-          }
-        },
         "5cd59610-c2b0-470a-8ce5-780b7df44578": {
           "type": "slide",
           "settings": {
@@ -44,6 +35,14 @@
             "link": "shopify:\/\/collections\/mangalagiri-cotton"
           }
         },
+        "ab99cd22-9db2-4cf4-9676-120271eed88d": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sundarisilks-contemporary-shirts-for-men-desktop.png",
+            "mobile_image": "shopify:\/\/shop_images\/sundarisilks-contemporary-shirts-for-men-mobile.png",
+            "link": "shopify:\/\/collections\/boys-shirts"
+          }
+        },
         "bed9709b-8de2-4214-8e93-8253620cb5e1": {
           "type": "slide",
           "settings": {
@@ -54,11 +53,11 @@
         }
       },
       "block_order": [
-        "ab99cd22-9db2-4cf4-9676-120271eed88d",
         "5cd59610-c2b0-470a-8ce5-780b7df44578",
         "8efe5e97-f302-4f66-ae4c-451513f79459",
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b",
         "3fbd7fec-f97f-434e-9f56-1ddc4581978e",
+        "ab99cd22-9db2-4cf4-9676-120271eed88d",
         "bed9709b-8de2-4214-8e93-8253620cb5e1"
       ],
       "settings": {
