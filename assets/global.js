@@ -299,7 +299,7 @@
     // First check, if localStorage is supported.
     if (window.localStorage) {
 
-    $(".modal-all-page video").trigger('play');
+    // $(".modal-all-page video").trigger('play');
       // Get the expiration date of the previous popup.
       var nextPopup = localStorage.getItem("nextNewsletter");
       if (nextPopup > new Date()) {
@@ -313,7 +313,7 @@
       localStorage.setItem("nextNewsletter", expires);
     }
 
-    $(".modal-all-page").addClass("is-visible");
+    // $(".modal-all-page").addClass("is-visible");
     console.log('play');
   }, 3000);
 
@@ -328,7 +328,7 @@
   $("button.modal-close.modal-toggle").on("click", function (e) {
     e.preventDefault();
     $(".modal-size-chart").removeClass("is-visible");
-    $(".modal-all-page").removeClass("is-visible");
+    // $(".modal-all-page").removeClass("is-visible");
     $("body").removeClass("modalScroll");
   });
 
