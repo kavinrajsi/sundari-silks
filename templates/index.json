@@ -30,6 +30,8 @@
         "3fbd7fec-f97f-434e-9f56-1ddc4581978e": {
           "type": "slide",
           "settings": {
+            "image": "shopify:\/\/shop_images\/sundarisilks-magalagiri-cotton-banner-desktop-apr.png",
+            "mobile_image": "shopify:\/\/shop_images\/sundarisilks-magalagiri-cotton-banner-mobile-apr.png",
             "link": "shopify:\/\/collections\/mangalagiri"
           }
         },
