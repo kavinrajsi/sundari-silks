@@ -22,6 +22,8 @@
         "6f47c23b-ee37-4e15-9a50-0cb42b78e35b": {
           "type": "slide",
           "settings": {
+            "image": "shopify:\/\/shop_images\/sundarisilks-softsilk-banner-desktop-apr.png",
+            "mobile_image": "shopify:\/\/shop_images\/sundarisilks-softsilk-banner-mobile-apr.png",
             "link": "shopify:\/\/collections\/soft-silk"
           }
         },
