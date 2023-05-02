@@ -252,7 +252,7 @@
               "menu_enable": true,
               "image": "shopify:\/\/shop_images\/sundari-silks-infant-wear-menu-image_c18852b3-18c8-4641-81bd-88ecec95e256.png",
               "mega_link": "Infant Wear",
-              "link": "shopify:\/\/collections\/infant-wear",
+              "link": "shopify:\/\/collections\/infant-wear-old",
               "title": "Infant Wears",
               "subtitle": ""
             }
@@ -336,12 +336,6 @@
       "3294164036280357830": {
         "type": "shopify:\/\/apps\/mlv-auto-currency-switcher\/blocks\/mlveda-currencies-head\/92ab730f-097e-4571-b27c-3f449e098ca3",
         "disabled": false,
-        "settings": {
-        }
-      },
-      "13768625480086291342": {
-        "type": "shopify:\/\/apps\/forms\/blocks\/forms\/8744a304-fcb1-4347-b211-bb6b4759a76a",
-        "disabled": true,
         "settings": {
         }
       },
